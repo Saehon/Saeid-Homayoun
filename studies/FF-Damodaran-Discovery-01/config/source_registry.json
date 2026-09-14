@@ -1,0 +1,70 @@
+{
+  "study_id": "FF-DAMODARAN-DISCOVERY-01",
+  "policy": {
+    "authoritative_sources_only_for_primary_data": true,
+    "raw_files_immutable": true,
+    "sha256_required": true,
+    "download_timestamp_required": true,
+    "year_specific_industry_mapping_required": true,
+    "notes": "Damodaran states that industry categories may vary across archived vintages; mappings must therefore be validated by year."
+  },
+  "sources": [
+    {
+      "id": "FF5_MONTHLY",
+      "provider": "Kenneth R. French Data Library",
+      "source_level": "S1",
+      "landing_page": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+      "download_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip",
+      "format": "zip/csv",
+      "frequency": "monthly"
+    },
+    {
+      "id": "MOM_MONTHLY",
+      "provider": "Kenneth R. French Data Library",
+      "source_level": "S1",
+      "landing_page": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+      "download_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Momentum_Factor_CSV.zip",
+      "format": "zip/csv",
+      "frequency": "monthly"
+    },
+    {
+      "id": "FF49_MONTHLY",
+      "provider": "Kenneth R. French Data Library",
+      "source_level": "S1",
+      "landing_page": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+      "download_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/49_Industry_Portfolios_CSV.zip",
+      "format": "zip/csv",
+      "frequency": "monthly"
+    },
+    {
+      "id": "DAM_BETA",
+      "provider": "Aswath Damodaran / NYU Stern",
+      "source_level": "S1",
+      "landing_page": "https://pages.stern.nyu.edu/adamodar/New_Home_Page/datafile/Betas.html",
+      "current_url": "https://www.stern.nyu.edu/~adamodar/pc/datasets/betas.xls",
+      "archive_template": "https://pages.stern.nyu.edu/~adamodar/pc/archives/betas{yy}.xls",
+      "archive_years": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+      "current_vintage": 2026
+    },
+    {
+      "id": "DAM_WACC",
+      "provider": "Aswath Damodaran / NYU Stern",
+      "source_level": "S1",
+      "landing_page": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/wacc.html",
+      "current_url": "https://www.stern.nyu.edu/~adamodar/pc/datasets/wacc.xls",
+      "archive_template": "https://pages.stern.nyu.edu/~adamodar/pc/archives/wacc{yy}.xls",
+      "archive_years": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+      "current_vintage": 2026
+    },
+    {
+      "id": "DAM_EVA",
+      "provider": "Aswath Damodaran / NYU Stern",
+      "source_level": "S1",
+      "landing_page": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/EVA.html",
+      "current_url": "https://www.stern.nyu.edu/~adamodar/pc/datasets/EVA.xls",
+      "archive_template": "https://pages.stern.nyu.edu/~adamodar/pc/archives/EVA{yy}.xls",
+      "archive_years": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+      "current_vintage": 2026
+    }
+  ]
+}
