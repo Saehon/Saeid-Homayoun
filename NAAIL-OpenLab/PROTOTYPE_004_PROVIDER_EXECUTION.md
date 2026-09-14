@@ -132,6 +132,16 @@ After credentials are configured and the first real provider artifacts exist:
 
 No superiority claim is assumed in advance.
 
+## Google Drive mirror
+
+Prototype 004 is mirrored in the NAAIL OpenLab Google Drive archive.
+
+- Drive folder: https://drive.google.com/drive/folders/1m4IrriQ4bPm_O4OVt8s4dRhb_f9ygkFL
+- Frozen archive ZIP: https://drive.google.com/file/d/186iK2UbKUAaOOCdZsfbJqhVXCVuIuyCr/view?usp=drivesdk
+- Readable checkpoint: https://drive.google.com/file/d/13kHKgHFF72o28CDOi9XpWHQ90qYbd-Tt/view?usp=drivesdk
+
+GitHub remains the source of truth for version-controlled implementation. Google Drive is the synchronized archive/mirror checkpoint.
+
 ## Official technical references
 
 - Google Gemini API getting started: https://ai.google.dev/gemini-api/docs/get-started
