@@ -11,9 +11,16 @@ All notable public changes to ECONOVA-S™ are documented here.
 - Added `automation/ai_handoff.schema.json` for the canonical handoff contract.
 - Added `automation/sample_handoff.json` as an auditable example.
 - Added `automation/validate_handoff.py` with schema, role-separation and SHA-256 integrity checks.
-- Added `.github/workflows/ai_to_ai_contract.yml` as a zero-secret CI contract validator.
-- Added the public rule `agent_consensus != scientific_truth` and preserved `discovery_claim_allowed = false`.
-- Elevated AI-to-AI scientific automation to the root README with a GitHub-rendered architecture diagram and workflow badge.
+- Added `automation/orchestrator.py` as a runnable seven-stage provider-neutral orchestration runtime.
+- Added chained parent/content hashes and a final run hash for tamper-evident provenance.
+- Added explicit independence classification (`role_independent_only` vs `role_and_tool_independent`).
+- Added blocking scientific risk flags and downstream failure containment.
+- Added `automation/test_orchestrator.py` covering valid chains, hash continuity and replication-failure stop behavior.
+- Added `automation/RELIABILITY_STANDARD.md` with least-privilege, observability, fault-containment and live-model promotion requirements.
+- Added `automation/README.md` as the developer guide for attaching replaceable live model adapters.
+- Upgraded `.github/workflows/ai_to_ai_contract.yml` to compile, test, execute the deterministic orchestration, enforce safety invariants and upload an auditable chain artifact.
+- Added the public rules `agent_consensus != scientific_truth`, `human_gate_required = true`, and `discovery_claim_allowed = false`.
+- Elevated runnable AI-to-AI scientific automation to the root README with a GitHub-rendered architecture diagram and workflow badge.
 
 ### Documentation and research-software publication layer
 - Redesigned the root `README.md` as a professional research-software landing page with explicit version semantics, quick start, flagship study, implemented capabilities, provenance policy, scientific limits and repository map.
