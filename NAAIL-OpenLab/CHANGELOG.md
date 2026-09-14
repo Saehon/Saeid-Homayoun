@@ -1,5 +1,16 @@
 # Changelog
 
+## Marketplace Edition scaffold — 2026-09-14
+### OpenAI + Google + Microsoft distribution preparation
+- Added `marketplace/` as a provider-neutral distribution layer without exposing the private NAAIL scientific core.
+- Added provider packages for OpenAI ChatGPT Apps SDK/MCP, Google Cloud Marketplace/Gemini Enterprise, and Microsoft Marketplace/Microsoft 365 Copilot.
+- Added a provider-neutral public API contract for research-question framing, competing hypotheses, evidence metadata, empirical design, reproducible analysis, robustness/falsification, Chain-of-Evidence, Human Gate, and research-artifact export.
+- Added common marketplace submission gates covering production service, privacy/security, rights/licensing, provider-specific review, commercial/IP review, and Human Gate authorization.
+- Added public security/data-handling policy plus draft privacy policy, draft terms of use, support policy, and marketplace listing metadata.
+- Preserved a strict public/private boundary: proprietary orchestration, unpublished prompts, provider credentials, private gold labels, licensed/restricted data, patent-candidate mechanisms, and commercial logic remain outside the public marketplace package.
+- Marketplace documents explicitly state that NAAIL has not yet been submitted, approved, certified, endorsed, or listed by OpenAI, Google, or Microsoft.
+- This scaffold is a **v0.2.4 target** and does not replace the validated v0.2.3 executable software release until production endpoints and provider-specific validations are completed.
+
 ## v0.2.3 — 2026-09-14
 ### Audit Digital Twin Prototype 003
 - Extended the frozen synthetic benchmark from Revenue Recognition to three domains: Revenue Recognition & Cut-off, Goodwill Impairment, and ICFR Deficiency.
