@@ -1,9 +1,9 @@
 # NAAIL OpenLab™
 ## Nordic Accounting, Audit & Assurance Intelligence Lab
 
-**Evidence-governed AI for business-school education, audit Digital Twins, and reproducible scientific discovery.**
+**Evidence-governed AI for audit Digital Twins, business-school education, and reproducible scientific discovery.**
 
-[![Version](https://img.shields.io/badge/version-0.2.2-blue)](./VERSION)
+[![Version](https://img.shields.io/badge/version-0.2.3-blue)](./VERSION)
 [![Use](https://img.shields.io/badge/use-research%20%26%20education-green)](./LICENSE.md)
 [![Commercial](https://img.shields.io/badge/commercial%20use-not%20licensed-red)](./COMMERCIAL_USE.md)
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--2536--0446-brightgreen)](https://orcid.org/0000-0002-2536-0446)
@@ -12,62 +12,55 @@
 **ORCID:** https://orcid.org/0000-0002-2536-0446  
 **GitHub:** https://github.com/Saehon
 
-> NAAIL OpenLab is an independent research initiative. It is not affiliated with, endorsed by, sponsored by, or certified by OpenAI, Google, Microsoft, Deloitte, EY, KPMG, PwC, the IFRS Foundation, PCAOB, or any other referenced organization.
+> NAAIL OpenLab is an independent research initiative. References to OpenAI, Google, Microsoft, Deloitte, EY, KPMG, PwC, IFRS Foundation, PCAOB, AICPA, universities, regulators, or other organizations describe public technologies, standards, research inspirations, or comparison targets only. They do not imply affiliation, endorsement, sponsorship, authorization, or ownership.
 
 ---
 
-## Next architecture snapshot — V2026.3
+## Current executable milestone — Audit Workspace V0.4 / Prototype 003
 
-The next implementation architecture is now frozen as **NAAIL OpenLab V2026.3 — Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture**.
+NAAIL has moved beyond architecture-only documentation into a validated **three-case synthetic Audit Digital Twin benchmark** for **Client XYZ**.
 
-It adds a vendor-neutral dual-stack design built around:
+### Frozen benchmark domains
 
-- Google ADK / Antigravity-style agent development;
-- Microsoft Agent Framework orchestration;
-- **A2A + MCP** interoperability;
-- **GraphRAG + NAAIL Digital Twin** integration;
-- Google AI Co-Scientist-inspired hypothesis generation, critique and ranking;
-- ERA-style reproducible empirical conversion;
-- AlphaEvolve-inspired model/specification evolution;
-- AlphaFold/DeepMind-inspired latent-structure reasoning;
-- Computational Discovery;
-- Science One-style **Chain-of-Evidence**;
-- AI-to-AI **Critic / Defender / Replicator / Falsifier** roles;
-- DAG governance, rights/licensing gates, temporal/OOS validation, and mandatory **Human Gate** approval.
+| Case | Deterministic control finding | Synthetic amount | Human Gate |
+|---|---|---:|---|
+| Revenue Recognition & Cut-off | `TX-002`, `TX-003` | EUR 190,000 proposed adjustment | `PENDING_HUMAN_APPROVAL` |
+| Goodwill Impairment | `GW-DR`, `GW-MAR` | EUR 440,000 estimated adjustment | `PENDING_HUMAN_APPROVAL` |
+| ICFR Deficiency | `CTRL-JE-02`, `CTRL-IT-03` | EUR 530,000 estimated exposure | `PENDING_HUMAN_APPROVAL` |
 
-**Architecture snapshot:** [V2026.3 Multi-Agent Digital Twin](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
+On these deliberately constructed frozen synthetic cases, the deterministic control condition produces precision/recall of **1.00 / 1.00** with **0 / 0** false positives/false negatives. These values are benchmark properties only and are **not claims of real-world audit effectiveness**.
 
-This is an architecture snapshot for the next implementation cycle. It does **not** replace the validated public software release marker **v0.2.2 / Prototype 002**.
+Prototype 003 preserves:
 
----
-
-## Current executable milestone — Audit Workspace V0.4 / Prototype 002
-
-NAAIL has moved beyond architecture-only documentation into a validated **synthetic Audit Digital Twin research baseline** for **Client XYZ — Revenue Recognition & Cut-off**.
-
-Prototype 002 adds explicit Materiality and Risk roles, evidence-linked testing, **Evidence Passport™**, a persistent **Professional Decision DAG™**, provider-neutral model adapters, regression tests, and a mandatory **Human Gate**.
-
-Frozen deterministic baseline:
-
-- planted exceptions: `TX-002`, `TX-003`;
-- proposed adjustment: **EUR 190,000**;
-- planning materiality: **EUR 120,000**;
-- precision: **1.00**;
-- recall: **1.00**;
-- false positives / false negatives: **0 / 0**;
-- final status: **`PENDING_HUMAN_APPROVAL`**.
-
-These figures apply only to the frozen synthetic benchmark and are not claims of real-world audit effectiveness.
+- **Evidence Passport™** with reproducible source hashing;
+- **Professional Decision DAG™**;
+- case-specific assertions and evidence identifiers;
+- **RPA, AA, EG, PS, DS, DIST**;
+- precision/recall and error tracking;
+- provider-neutral model-adapter boundaries;
+- mandatory **Human Gate**;
+- seven validated regression/scientific-integrity tests in the private R&D master.
 
 See: **[Prototype Status V0.4](./PROTOTYPE_STATUS_V0.4.md)**
 
-The detailed executable implementation remains in the private R&D master pending IP review.
+### Architecture comparison status
+
+Prototype 003 defines four comparison conditions:
+
+1. deterministic baseline — **executed**;
+2. single-agent AI — **not yet executed**;
+3. sequential-agent AI — **not yet executed**;
+4. governed multi-agent AI — **not yet executed**.
+
+Unconfigured AI modes are recorded as `NOT_EXECUTED_PROVIDER_REQUIRED`. NAAIL does not replace missing provider runs with simulated AI results.
+
+The detailed executable implementation remains private pending IP review.
 
 ---
 
 ## What NAAIL OpenLab is
 
-NAAIL OpenLab is a **research-first, human-led AI platform** for Accounting, Auditing, Finance, Economics, sustainability, and professional-intelligence research. Auditing is the first deep implementation vertical.
+NAAIL OpenLab is a **research-first, human-led AI platform** spanning Accounting, Auditing, Assurance, Finance, Economics, Sustainability, and professional-intelligence research. Auditing is the first deep implementation vertical.
 
 The platform combines:
 
@@ -77,129 +70,71 @@ The platform combines:
 - **Audit Digital Twin** — synthetic clients, fictional audit-firm architectures, specialist agents, and human-review gates;
 - **Scientific Discovery** — competing hypotheses, ERA-style empirical design, computational discovery, adversarial review, falsification, replication, and Chain-of-Evidence.
 
-> **Knowledge and evidence remain governed; technology may evolve, compete, and be replaced.**
+> **Models generate. Agents debate. Code tests. Evidence decides. Humans approve.**
+
+---
+
+## Scientific discovery protocol
+
+**Research Question → Literature Validation → Competing Hypotheses → Multi-Agent Critique → ERA-Style Empirical Design → Computational Discovery → Empirical Test → Adversarial Review → Falsification → Temporal/OOS Validation → Replication → Chain-of-Evidence → DAG Governance → Human Gate**
+
+No model output, agent consensus, statistical significance, or predictive accuracy is automatically treated as scientific discovery.
 
 ---
 
 ## Product / research pillars
 
-### 1. Business School AI
-Bachelor/master education and research across Accounting, Auditing, Finance, and Economics with AI/data methods integrated into the curriculum.
+### Audit Workspace
+Planning, materiality, risk assessment, controls, analytics, evidence, testing, documentation, review, CAM/KAM, ICFR, fraud, estimates, going concern, and ESG assurance.
 
-### 2. Audit Workspace
-Planning, materiality, risk assessment, controls, analytics, evidence, testing, documentation, review, reporting, CAM/KAM, ICFR, fraud, estimates, going concern, and ESG assurance.
+### Governed Agent Mesh
+A canonical **37-role Audit Digital Twin**: 36 operational audit-agent roles plus one **Audit Scientific Supervisor Agent™**. Material agents require scoped tools, evidence policy, evaluation, handoff rules, traceability, and Human Gate controls.
 
-### 3. Governed Agent Mesh
-A canonical **37-role Audit Digital Twin**: 36 operational audit-agent roles plus one **Audit Scientific Supervisor Agent™**. Each material agent should have a role, risk class, scoped tools, evidence policy, evaluation suite, handoff rules, and Human Gate.
+### Digital Twin Laboratory
+Synthetic **Client XYZ** and fictional **Firm Alpha–Delta** architectures enable controlled experiments on the same evidence without reproducing proprietary Big Four systems.
 
-### 4. Digital Twin Laboratory
-Synthetic **Client XYZ** and fictional **Firm Alpha–Delta** architectures enable controlled experiments on the same audit problem and evidence. The objective is to compare risk identification, procedures, evidence use, conclusions, documentation, CAM/KAM judgments, cost, latency, and stability—not to reproduce proprietary Big Four systems.
+### Evidence Intelligence
+Professional conclusions prioritize applicable law, regulation, and authoritative standards. Academic research uses relevance-gated FT50, current AJG/ABS 4*/4, selected high-fit 3, and other peer-reviewed evidence while assessing identification, construct validity, data quality, reproducibility, contradictory evidence, and limitations.
 
-### 5. Evidence Intelligence
-Professional conclusions prioritize applicable law, regulation, and authoritative standards. Academic research uses relevance-gated FT50, current AJG/ABS 4*/4, selected high-fit 3, and other peer-reviewed evidence while also assessing identification, construct validity, data quality, reproducibility, contradictory evidence, and limitations.
-
-### 6. Scientific Discovery
-
-**Research Question → Literature Validation → Competing Hypotheses → Multi-Agent Critique → ERA-Style Empirical Design → Computational Discovery → Empirical Test → Adversarial Review → Falsification → Replication → Chain-of-Evidence → Human Gate**
-
-No AI output or statistically significant result is automatically treated as a scientific discovery.
+### Business School AI
+Non-commercial research and teaching support for bachelor, master, doctoral, and professional education across Accounting, Auditing, Finance, Economics, Sustainability, and AI/data methods.
 
 ---
 
 ## Engineering standards
 
-NAAIL is moving toward a production-quality research engineering discipline informed by current public patterns from Microsoft, Google, and OpenAI while remaining provider-neutral.
-
 | Standard | Purpose |
 |---|---|
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Public seven-layer reference architecture |
-| [V2026.3 Multi-Agent Digital Twin](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md) | Next Google + Microsoft dual-stack architecture with Co-Scientist, ERA, AlphaEvolve, GraphRAG, Digital Twin, Chain-of-Evidence and Human Gate |
-| [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, lifecycle, and Human Gates |
-| [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, audit-quality metrics, regression gates |
-| [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, data/privacy rules, threat controls, Failure Memory |
-| [ROADMAP.md](./ROADMAP.md) | V0.2 → V1.0 product/research roadmap |
-| [docs/AI_ENGINEERING_BENCHMARK.md](./docs/AI_ENGINEERING_BENCHMARK.md) | Microsoft/Google/OpenAI public engineering benchmark |
-| [PROTOTYPE_STATUS_V0.4.md](./PROTOTYPE_STATUS_V0.4.md) | Current Audit Digital Twin executable milestone |
-| [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) | Research, rights, privacy, IP, eval, and human-approval release gate |
+| [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, lifecycle, Human Gates |
+| [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, regression gates, audit-quality metrics |
+| [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, privacy, threat controls, Failure Memory |
+| [docs/AI_ENGINEERING_BENCHMARK.md](./docs/AI_ENGINEERING_BENCHMARK.md) | Public Microsoft/Google/OpenAI engineering benchmark |
+| [PROTOTYPE_STATUS_V0.4.md](./PROTOTYPE_STATUS_V0.4.md) | Current executable research milestone |
+| [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) | Research, rights, privacy, IP, eval and human-approval gates |
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | Contribution and contributor-IP rules |
 
-The private R&D master contains deeper runtime, observability, security, evaluation, orchestration, agent implementation and promotion contracts that are intentionally not published.
+### Architecture snapshot V2026.3
 
----
+The next implementation architecture is frozen as **NAAIL OpenLab V2026.3 — Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture**, with provider-neutral interoperability, A2A/MCP concepts, GraphRAG, Digital Twins, Co-Scientist-style reasoning, ERA, AlphaEvolve-inspired search, Chain-of-Evidence, adversarial AI-to-AI review, DAG governance, and Human Gate.
 
-## Audit-quality evaluation
+[Read the V2026.3 architecture snapshot →](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
 
-Material audit-agent workflows should be evaluated on professional quality and system reliability, including:
-
-- **RPA** — Risk–Procedure Alignment;
-- **AA** — Assertion Alignment;
-- **EG** — Evidence Grounding;
-- **PS** — Professional Skepticism;
-- **DS** — Documentation Sufficiency;
-- **DIST** — Decision/Inference Stability;
-- citation validity and traceability;
-- false-positive / false-negative rates;
-- human override frequency and reason;
-- reproducibility;
-- adversarial robustness;
-- task completion, latency, and cost.
-
-Development, validation, Blind Gold, adversarial, and temporal-holdout cases should remain separated. NAAIL must never optimize models/specifications simply for favorable p-values or desired conclusions.
-
----
-
-## Research integrity
-
-NAAIL requires, where applicable:
-
-1. literature validation and contradictory-evidence search;
-2. explicit data provenance and variable construction;
-3. reproducible code and run/version manifests;
-4. appropriate identification and robustness analysis;
-5. falsification and preservation of material negative results;
-6. adversarial critique and independent validation;
-7. separation of professional authority from academic evidence;
-8. explicit human approval before scientific/professional claims.
-
-P-hacking, HARKing, fabricated citations, benchmark leakage, selective reporting, unsupported causality, and circular AI self-validation are prohibited by design.
-
----
-
-## Public flagship systems
-
-| System | Research focus | Release status |
-|---|---|---|
-| **NAAIL OpenLab™** | Business-school AI, audit Digital Twins, evidence governance, scientific discovery | Public research platform |
-| **POMELO™ / POMELO VERA™** | Professional accounting/audit intelligence, verification, governed agent evolution | Proprietary R&D |
-| **KIWI™** | CAM/KAM intelligence and empirical audit research | Research program |
-| **IFRS-AI-Inspector** | Standards-aware assurance and Digital Twin research | Public prototype |
-| **ICFR + TimesFM** | Dynamic internal-control risk and forecasting | Empirical research program |
-
-Related public repositories include:
-- https://github.com/Saehon/IFRS-AI-Inspector
-- https://github.com/Saehon/AAA
-- https://github.com/Saehon/AuditData-API
-- https://github.com/Saehon/timesfm
-- https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture
+The architecture snapshot is not a claim of official integration, partnership, or endorsement.
 
 ---
 
 ## Public / private boundary
 
-### Public research assets
-Research-safe documentation, selected code/notebooks, synthetic simulations, educational materials, citation metadata, evaluation principles, and reproducibility artifacts.
+**Public research assets:** research-safe documentation, synthetic benchmark descriptions, evaluation principles, selected code/notebooks, educational materials, citation metadata, and reproducibility artifacts.
 
-### Private R&D assets
-Detailed orchestration/control logic, unpublished agent specifications, private benchmarks, licensed/restricted data, experimental results, patent-candidate mechanisms, commercial strategy, and pre-commercial implementation.
+**Private R&D assets:** detailed orchestration/control logic, unpublished agent specifications, provider adapters, private benchmarks, licensed/restricted data, experimental results, patent-candidate mechanisms, commercial strategy, and pre-commercial implementation.
 
-### Third-party assets
-Standards, papers, datasets, models, software, rankings, logos, and other materials retain their own rights and licenses.
-
-No private or proprietary repository should be copied into this public hub merely for convenience.
+**Third-party assets:** standards, papers, datasets, models, software, rankings, logos, and upstream repositories retain their original rights and licenses.
 
 ---
 
-## Licensing, commercial use, trademarks, and patent caution
+## Licensing and IP
 
 NAAIL OpenLab is **free for permitted non-commercial research and education**. Commercial use is not licensed unless separately authorized in writing.
 
@@ -208,21 +143,13 @@ NAAIL OpenLab is **free for permitted non-commercial research and education**. C
 - [PATENT_NOTICE.md](./PATENT_NOTICE.md)
 - [TRADEMARKS.md](./TRADEMARKS.md)
 
-Public disclosure can affect patent rights. Patent-sensitive technical details should remain private until reviewed by qualified patent counsel. Do not describe NAAIL as “patent pending” unless an application has actually been filed.
-
----
-
-## Contributing
-
-Issues, reproducibility reports, documentation corrections, synthetic-case ideas, benchmark proposals, and research suggestions are welcome subject to [CONTRIBUTING.md](./CONTRIBUTING.md).
-
-Substantial outside code or patent-sensitive contributions should **not** be accepted into core IP until a formal contributor-IP/CLA process is in place.
+Public disclosure can affect patent rights. Patent-sensitive enabling details should remain private until reviewed by qualified patent counsel. Do not describe NAAIL as “patent pending” unless an application has actually been filed.
 
 ---
 
 ## Citation
 
-> **Homayoun, S. (2026).** *NAAIL OpenLab: An Evidence-Governed AI Platform for Business-School Education, Audit Digital Twins, and Reproducible Scientific Discovery* (Version 0.2.2) [Computer software]. GitHub. https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
+> **Homayoun, S. (2026).** *NAAIL OpenLab: An Evidence-Governed AI Platform for Business-School Education, Audit Digital Twins, and Reproducible Scientific Discovery* (Version 0.2.3) [Computer software]. GitHub. https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
 
 ORCID: **https://orcid.org/0000-0002-2536-0446**
 
@@ -232,16 +159,10 @@ Citation formats:
 - [codemeta.json](./codemeta.json)
 - [AUTHORS.md](./AUTHORS.md)
 
-Architecture citation:
-
-> **Homayoun, S. (2026).** *NAAIL OpenLab V2026.3: Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture* [Research architecture]. NAAIL OpenLab. ORCID: 0000-0002-2536-0446.
-
 ---
 
-## Current release
+## Current release and next milestone
 
-**NAAIL OpenLab v0.2.2 — Audit Digital Twin Prototype 002 release, 14 September 2026.**
+**NAAIL OpenLab v0.2.3 — Audit Digital Twin Prototype 003 release, 14 September 2026.**
 
-**Next architecture snapshot:** **V2026.3**, covering Google + Microsoft multi-agent interoperability, GraphRAG-enabled Digital Twins, Co-Scientist/ERA/AlphaEvolve scientific discovery, Chain-of-Evidence, adversarial AI-to-AI review, and Human Gate governance.
-
-The next executable milestone is **Prototype 003**: add frozen Goodwill Impairment and ICFR Deficiency cases, then compare deterministic, single-agent, sequential-agent and governed multi-agent architectures under identical evidence and evaluation gates.
+**Next executable milestone: Prototype 004.** Configure real provider/model adapters in the private R&D environment and run blinded comparisons of single-agent, sequential-agent, and governed multi-agent architectures under identical frozen evidence, Evidence Passports, evaluation metrics, Decision DAG controls, and Human Gate requirements. Report failures, cost, latency, error rates, and human overrides—not only favorable outputs.
