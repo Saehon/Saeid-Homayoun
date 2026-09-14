@@ -1,0 +1,61 @@
+{
+  "study_id": "MNSc-FamaFrench-01-v3",
+  "frozen_before_result_interpretation": true,
+  "ranking_rule": "Pairwise/score-based scientific priority using theory coherence, falsifiability, empirical testability, data feasibility, identification feasibility, information gain, economic importance, and replication feasibility; never p-value optimization.",
+  "candidates": [
+    {
+      "id": "H1",
+      "claim": "Official archive vintages around the FIZ-to-CIZ transition exhibit economically non-trivial measurement sensitivity in factor and/or portfolio return series.",
+      "counterclaim": "Vintage differences are economically negligible relative to ordinary monthly variation.",
+      "priority_score": 44,
+      "rank": 1,
+      "status": "primary"
+    },
+    {
+      "id": "H2",
+      "claim": "Holding the historical calendar and model specification fixed, some CAPM/FF3/FF5 empirical conclusions are sensitive to archive vintage.",
+      "counterclaim": "Model signs, significance classifications, and alpha magnitudes are stable across vintages.",
+      "priority_score": 42,
+      "rank": 2,
+      "status": "primary"
+    },
+    {
+      "id": "H3",
+      "claim": "The inferred effective factor dimension can differ across vintages under a reduced-rank framework.",
+      "counterclaim": "The inferred factor dimension is stable across vintages.",
+      "priority_score": 39,
+      "rank": 3,
+      "status": "planned_extension"
+    },
+    {
+      "id": "H4",
+      "claim": "Revision sensitivity is heterogeneous across factors, portfolios, and historical subperiods rather than uniform.",
+      "counterclaim": "Revision sensitivity is approximately homogeneous across series and subperiods.",
+      "priority_score": 38,
+      "rank": 4,
+      "status": "secondary"
+    },
+    {
+      "id": "H5",
+      "claim": "Apparent mean-revision evidence weakens materially after multiplicity control for families of tests.",
+      "counterclaim": "Key revision signals remain statistically reliable after FDR control.",
+      "priority_score": 36,
+      "rank": 5,
+      "status": "robustness"
+    },
+    {
+      "id": "H0_ATTRIBUTION",
+      "claim": "The two-vintage difference cannot by itself identify the pure causal effect of FIZ-to-CIZ because ordinary archive revisions are a competing channel.",
+      "counterclaim": "All observed archive differences can be attributed to FIZ-to-CIZ alone.",
+      "priority_score": 45,
+      "rank": 0,
+      "status": "governance_constraint"
+    }
+  ],
+  "meta_review": {
+    "survivors_for_primary_execution": ["H1", "H2", "H4", "H5"],
+    "survivor_for_extension": ["H3"],
+    "non_negotiable_constraint": "H0_ATTRIBUTION",
+    "reason": "The primary package can measure sensitivity and conclusion stability immediately. Pure causal attribution requires an additional decomposition design."
+  }
+}
