@@ -6,12 +6,12 @@ authors:
   - family-names: "Homayoun"
     given-names: "Saeid"
     orcid: "https://orcid.org/0000-0002-2536-0446"
-version: "0.2.2"
+version: "0.2.3"
 date-released: "2026-09-14"
 repository-code: "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab"
 url: "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab"
 abstract: >-
-  NAAIL OpenLab is a research-first, human-led artificial intelligence platform for business-school education, audit simulation, and reproducible scientific discovery. Version 0.2.2 advances the public Audit Digital Twin program to Prototype 002, with a modular synthetic Client XYZ revenue-recognition benchmark, explicit Materiality and Risk roles, Evidence Passport and Professional Decision DAG concepts, provider-neutral model comparison, frozen audit-quality metrics, reproducibility tests, and a mandatory Human Gate. Detailed orchestration and patent-sensitive implementation remain private.
+  NAAIL OpenLab is a research-first, human-led artificial intelligence platform for business-school education, audit simulation, and reproducible scientific discovery. Version 0.2.3 advances the Audit Digital Twin research program to Prototype 003, with frozen synthetic Revenue Recognition, Goodwill Impairment, and ICFR Deficiency cases, Evidence Passport and Professional Decision DAG governance, provider-neutral architecture comparison, seven validated regression tests, and a mandatory Human Gate. AI architecture comparisons are not reported as executed until real provider/model adapters are configured and run against the same frozen evidence.
 keywords:
   - accounting
   - auditing
