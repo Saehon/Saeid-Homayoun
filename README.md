@@ -90,16 +90,27 @@ flowchart LR
 
 ---
 
-## Selected repositories
+## Original NAAIL public products
 
-| Repository | Why it matters |
-|---|---|
-| **[Saeid-Homayoun](https://github.com/Saehon/Saeid-Homayoun)** | ECONOVA-S™ core architecture, NAAIL OpenLab, scientific governance, reproducibility, AI-to-AI orchestration, and flagship empirical studies |
-| **[AAA](https://github.com/Saehon/AAA)** | Audit analytics, accounting/auditing AI, and inspection-oriented research tooling |
-| **[IFRS-AI-Inspector](https://github.com/Saehon/IFRS-AI-Inspector)** | AI-assisted IFRS inspection and professional accounting intelligence |
-| **[Google-Antigravity-using-a-multi-agent-BERT-architecture](https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture)** | Companion V2026.3 engineering repository for Google + Microsoft multi-agent orchestration, accounting/audit Digital Twins, A2A/MCP, GraphRAG, evidence governance, and scientific-discovery agents |
-| **[timesfm](https://github.com/Saehon/timesfm)** | Time-series / foundation-model experimentation for accounting and risk research |
-| **[artificial-analysis-intelligence-index](https://github.com/Saehon/artificial-analysis-intelligence-index)** | AI model intelligence and benchmarking experiments |
+These are the primary original research repositories to use when evaluating this portfolio.
+
+| Repository | Role | Maturity |
+|---|---|---|
+| **[Saeid-Homayoun](https://github.com/Saehon/Saeid-Homayoun)** | ECONOVA-S™ core architecture, NAAIL OpenLab, scientific governance, reproducibility, AI-to-AI orchestration, and flagship empirical studies | Research Prototype / flagship hub |
+| **[AAA](https://github.com/Saehon/AAA)** | Audit analytics, accounting/auditing AI, notebooks, empirical prototypes and research tooling | Research Laboratory / Research Prototype |
+| **[IFRS-AI-Inspector](https://github.com/Saehon/IFRS-AI-Inspector)** | Standards-aware IFRS assurance and financial-reporting digital-twin research | Research Prototype |
+| **[Multi-Agent Accounting AI Framework](https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture)** | Companion V2026.3 engineering repository for Google + Microsoft multi-agent orchestration, BERT/NLP, A2A/MCP, GraphRAG, evidence governance and accounting/audit Digital Twins | Research Prototype |
+
+### Private / IP-sensitive R&D
+
+- **POMELO™ / POMELO VERA™** — proprietary professional-intelligence, verification, evidence, benchmark, and governance R&D in `Saehon/pomelo-core`.
+- **PCAOB Inspection Agent** — private evidence-linked inspection and remediation research in `Saehon/IFRS-PCAOB-AI`.
+
+### Upstream / reference / integration repositories
+
+Repositories such as **[timesfm](https://github.com/Saehon/timesfm)**, `yfinance`, financial-NLP references, synthetic-data projects, and other upstream/imported repositories are used for **integration, replication, benchmarking, experimentation, or teaching**. They are not presented as original NAAIL inventions. In particular, `Saehon/timesfm` is a fork/reference of Google Research TimesFM.
+
+[Full product portfolio and maturity matrix →](PRODUCT_PORTFOLIO.md) · [NAAIL repository standard →](NAAIL_PRODUCT_STANDARD.md) · [Third-party notices →](THIRD_PARTY_NOTICES.md)
 
 ---
 
