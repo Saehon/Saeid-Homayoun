@@ -8,6 +8,7 @@ on:
   pull_request:
     paths:
       - "studies/MNSc-FamaFrench-01/**"
+      - ".github/workflows/fama_french_fiz_ciz.yml"
   workflow_dispatch:
 
 permissions:
@@ -32,7 +33,6 @@ jobs:
       - run: pytest -q
 
   real-data-run:
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: unit-tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
