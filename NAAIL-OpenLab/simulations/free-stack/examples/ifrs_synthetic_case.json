@@ -1,0 +1,14 @@
+{
+  "case_id": "IFRS-SIM-001",
+  "evidence_class": "synthetic",
+  "entity": "Reporting Entity XYZ",
+  "period": "20X6",
+  "industry": "technology services",
+  "facts": {
+    "revenue": "Three-year customer contract with setup activity, variable consideration, and annual service delivery.",
+    "goodwill": "Acquired cash-generating unit shows margin decline and higher discount rates.",
+    "provision": "Customer dispute exists; management has not documented probability or measurement assumptions."
+  },
+  "simulation_objective": "Identify reporting issues, evidence gaps, alternatives, and questions requiring authoritative IFRS review and human judgment.",
+  "authoritative_standard_text_included": false
+}
