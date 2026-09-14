@@ -1,61 +1,75 @@
 # NAAIL OpenLab™ — Prototype Status V0.4
 
-## Prototype 002 — modular Audit Digital Twin baseline
+## Prototype 003 — three-case Audit Digital Twin benchmark
 
-NAAIL OpenLab has progressed from the first deterministic scaffold to **Prototype 002**, a modular, provider-neutral research baseline for a synthetic **Client XYZ — Revenue Recognition & Cut-off** case.
+NAAIL OpenLab has advanced to **Prototype 003**, extending the synthetic Audit Digital Twin from one Revenue Recognition case to a frozen three-domain benchmark:
 
-### What Prototype 002 adds
+1. **Revenue Recognition & Cut-off**
+2. **Goodwill Impairment**
+3. **ICFR Deficiency**
 
-The research-safe public scope now includes:
+Prototype 003 also defines a common architecture-comparison harness for:
 
-- an explicit **Materiality Agent**;
-- an explicit **Risk Agent**;
-- an evidence-linked **Evidence Agent**;
-- a reproducible **Evidence Passport™** concept linking case hash, evidence IDs, assertions, adapter identity and limitations;
-- a persistent **Professional Decision DAG™** concept linking case → materiality → risk → evidence → judgment → critic → Human Gate;
-- a provider-neutral model-adapter contract so deterministic, OpenAI, Gemini, Microsoft/Azure, local/open-model or future adapters can be evaluated against the same frozen case;
-- regression tests for frozen exceptions, proposed adjustment, evidence hashing, DAG termination and Human Gate enforcement.
+- deterministic baseline;
+- single-agent AI;
+- sequential-agent AI;
+- governed multi-agent AI.
 
-### Frozen baseline result
+### Scientific-integrity rule
 
-The synthetic benchmark contains two planted year-end cut-off exceptions. The deterministic control condition identifies both and produces:
+Only the deterministic baseline is currently executed. The three AI architectures are registered but remain **`NOT_EXECUTED_PROVIDER_REQUIRED`** until a real provider/model adapter is configured and run against the same frozen cases. NAAIL does not substitute simulated or placeholder AI outputs for empirical model evidence.
 
-- flagged evidence IDs: `TX-002`, `TX-003`;
+### Frozen deterministic control results
+
+#### Revenue Recognition & Cut-off
+
+- planted exceptions: `TX-002`, `TX-003`;
 - proposed adjustment: **EUR 190,000**;
 - planning materiality: **EUR 120,000**;
-- baseline precision: **1.00**;
-- baseline recall: **1.00**;
-- false positives: **0**;
-- false negatives: **0**;
-- final state: **`PENDING_HUMAN_APPROVAL`**.
+- precision / recall: **1.00 / 1.00**;
+- false positives / false negatives: **0 / 0**.
 
-These values are properties of the frozen synthetic benchmark only. They are not evidence of real-world audit effectiveness.
+#### Goodwill Impairment
 
-### NAAIL evaluation metrics
+- planted valuation exceptions: `GW-DR`, `GW-MAR`;
+- synthetic estimated adjustment: **EUR 440,000**;
+- planning materiality: **EUR 150,000**;
+- precision / recall: **1.00 / 1.00**;
+- false positives / false negatives: **0 / 0**.
 
-Prototype 002 retains the NAAIL research metrics:
+#### ICFR Deficiency
 
-- **RPA** — Risk–Procedure Alignment;
-- **AA** — Assertion Alignment;
-- **EG** — Evidence Grounding;
-- **PS** — Professional Skepticism;
-- **DS** — Documentation Sufficiency;
-- **DIST** — Decision / Inference Stability;
-- precision / recall;
-- false-positive / false-negative rates.
+- planted control deficiencies: `CTRL-JE-02`, `CTRL-IT-03`;
+- synthetic estimated exposure: **EUR 530,000**;
+- planning materiality: **EUR 120,000**;
+- precision / recall: **1.00 / 1.00**;
+- false positives / false negatives: **0 / 0**.
 
-### Research engineering rule
+These values are properties of deliberately constructed synthetic cases. They are not evidence of real-world audit effectiveness, impairment measurement, control-deficiency severity, or professional assurance quality.
 
-The deterministic adapter is the control condition. Future AI/model adapters must consume the same frozen evidence and cannot modify gold labels, bypass evidence/provenance checks, bypass the critic/reviewer stage, or self-approve a high-risk conclusion.
+### Governance preserved across all cases
+
+Prototype 003 preserves:
+
+- Evidence Passport™ with reproducible source hashing;
+- case-specific assertions and evidence identifiers;
+- Professional Decision DAG™;
+- mandatory `PENDING_HUMAN_APPROVAL` Human Gate;
+- RPA, AA, EG, PS, DS and DIST;
+- precision / recall and false-positive / false-negative tracking;
+- provider-neutral model-adapter boundaries;
+- frozen regression tests.
+
+The private regression suite contains **7 tests**, all passing at the Prototype 003 validation checkpoint.
 
 ### Public/private boundary
 
-The public repository intentionally discloses the research-safe benchmark design, evaluation logic, governance principles and status only. Detailed orchestration logic, private benchmark extensions, unpublished agent specifications, prompts, patent-candidate mechanisms and pre-commercial implementation remain in the private NAAIL R&D master pending IP review.
+The public repository intentionally discloses the research-safe benchmark design, deterministic control results, evaluation logic and governance principles only. Detailed orchestration logic, unpublished provider adapters, private prompts/specifications, benchmark extensions and patent-sensitive implementation remain in the private NAAIL R&D master pending IP review.
 
 ### Independence and rights
 
-This prototype is independent research software. It does not reproduce proprietary Big Four platforms, source code, prompts, screenshots, confidential methodology or client data. Firm and client simulations are fictional and synthetic.
+This prototype is independent research software using fictional clients and synthetic evidence. It does not reproduce proprietary Big Four platforms, source code, prompts, screenshots, confidential methodology or client data.
 
-### Next milestone — Prototype 003
+### Next milestone — Prototype 004
 
-Expand the benchmark beyond revenue recognition by adding **Goodwill Impairment** and **ICFR Deficiency** cases, then compare deterministic baseline, single-agent, sequential-agent and governed multi-agent orchestration under frozen evidence, the same metrics, Evidence Passport™, Decision DAG™ and Human Gate.
+Configure real provider adapters in the private R&D environment and run **blinded, frozen-evidence comparisons** of single-agent, sequential-agent and governed multi-agent architectures. Provider runs must use the same case versions, Evidence Passports, evaluation metrics, Decision DAG controls and Human Gate. Any model comparison must report failures, cost, latency, false positives/negatives and human overrides—not only favorable outputs.
