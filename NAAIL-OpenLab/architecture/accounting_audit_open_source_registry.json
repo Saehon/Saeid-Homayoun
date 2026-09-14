@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-ACCOUNTING-AUDIT-OSS-2026.09",
+  "status": "CURATED_REFERENCES_ADOPTED_RUNTIME_GATED",
+  "knowledge_rag_core_version": "KRG2026.3",
+  "boundary": {
+    "external_software_belongs_to_technology_or_ingestion_layer": true,
+    "external_repo_may_modify_knowledge_rag_core": false,
+    "parsed_output_requires_provenance_validation": true,
+    "human_gate_required": true
+  },
+  "projects": [
+    {
+      "name": "Stanford EDGAR Filings Dataset Parser",
+      "repository": "https://github.com/Stanford-Advanced-FinTech-Lab-SAFTL/stanford-edgar-filings-dataset",
+      "license": "MIT",
+      "license_verified": true,
+      "naail_role": "sec_edgar_ingestion_and_layout_preserving_parser_reference",
+      "state": "ADOPT_INGESTION_REFERENCE",
+      "third_party_code_vendored": false,
+      "knowledge_core_authority": false
+    },
+    {
+      "name": "Maxed MCP",
+      "repository": "https://github.com/Maxed-OSS/maxed-mcp",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "naail_role": "deterministic_accounting_mcp_tool_reference",
+      "state": "ADOPT_ACCOUNTING_TOOL_REFERENCE",
+      "third_party_code_vendored": false,
+      "knowledge_core_authority": false
+    },
+    {
+      "name": "Agent for Accounting",
+      "repository": "https://github.com/FoundrySoftHQ/agent-for-accounting",
+      "license": "MIT",
+      "license_verified": true,
+      "naail_role": "reconciliation_and_close_workflow_reference",
+      "state": "ADOPT_RECONCILIATION_REFERENCE",
+      "third_party_code_vendored": false,
+      "knowledge_core_authority": false
+    },
+    {
+      "name": "AI Accounting Skills",
+      "repository": "https://github.com/cynco-labs/ai-accounting-skills",
+      "license": "MIT",
+      "license_verified": true,
+      "naail_role": "agent_native_accounting_skill_and_hard_gate_reference",
+      "state": "ADOPT_SKILL_REFERENCE",
+      "third_party_code_vendored": false,
+      "knowledge_core_authority": false
+    },
+    {
+      "name": "ClawCounting",
+      "repository": "https://github.com/johnkozan/clawcounting",
+      "license": "MIT",
+      "license_verified": true,
+      "naail_role": "deterministic_double_entry_ledger_reference",
+      "state": "ADOPT_LEDGER_REFERENCE",
+      "third_party_code_vendored": false,
+      "knowledge_core_authority": false
+    },
+    {
+      "name": "closegate",
+      "repository": "https://github.com/esploro-group/closegate",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "naail_role": "finance_control_policy_gate_hitl_and_adversarial_eval_reference",
+      "state": "ADOPT_CONTROL_GATE_REFERENCE",
+      "third_party_code_vendored": false,
+      "knowledge_core_authority": false
+    }
+  ],
+  "promotion_gates": [
+    "license_and_notice_verification",
+    "version_or_commit_pinning",
+    "dependency_security_review",
+    "privacy_and_data_use_review",
+    "synthetic_client_xyz_sandbox",
+    "frozen_benchmark_evaluation",
+    "reproducibility_test",
+    "failure_memory_logging",
+    "knowledge_rag_core_boundary_test",
+    "human_architecture_gate"
+  ],
+  "invariants": {
+    "external_repo_is_authoritative_accounting_truth": false,
+    "external_repo_may_rewrite_knowledge_rag_core": false,
+    "parsed_output_is_authoritative_without_validation": false,
+    "agent_generated_journal_is_posted_without_gate": false,
+    "third_party_code_is_naail_owned": false,
+    "human_gate_required": true
+  }
+}
