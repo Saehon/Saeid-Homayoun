@@ -1,5 +1,8 @@
 # Changelog
 
+## Daily activity — 2026-09-14
+- Published the full [Daily Research & Engineering Activity — 14 September 2026](./docs/activity/2026-09-14.md), covering architecture, scientific discovery, Audit Digital Twin development, evaluation, data-integration scope, education, GitHub professionalization, citation/DOI readiness, IP governance, and next implementation priorities.
+
 ## Architecture snapshot V2026.3 — 2026-09-14
 ### Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture
 - Added a frozen next-architecture snapshot without replacing the validated public software release v0.2.2 / Prototype 002.
