@@ -4,6 +4,17 @@ All notable public changes to ECONOVA-S™ are documented here.
 
 ## [Unreleased]
 
+### AI-to-AI scientific automation
+- Added `AI_TO_AI_AUTOMATION.md` as the canonical multi-agent automation and governance specification.
+- Added a formal Agent → Theory/DAG → Empirical Design → Independent Replicator → Scientific Red-Team → Welfare Review → Evidence Passport → Human Gate sequence.
+- Added machine-readable handoff fields for task identity, claims, evidence, methods, assumptions, confidence, contradictions, failure status, provenance and required next action.
+- Added `automation/ai_handoff.schema.json` for the canonical handoff contract.
+- Added `automation/sample_handoff.json` as an auditable example.
+- Added `automation/validate_handoff.py` with schema, role-separation and SHA-256 integrity checks.
+- Added `.github/workflows/ai_to_ai_contract.yml` as a zero-secret CI contract validator.
+- Added the public rule `agent_consensus != scientific_truth` and preserved `discovery_claim_allowed = false`.
+- Elevated AI-to-AI scientific automation to the root README with a GitHub-rendered architecture diagram and workflow badge.
+
 ### Documentation and research-software publication layer
 - Redesigned the root `README.md` as a professional research-software landing page with explicit version semantics, quick start, flagship study, implemented capabilities, provenance policy, scientific limits and repository map.
 - Added `ARCHITECTURE.md` as the canonical public description of the two-core V2.5 architecture.
