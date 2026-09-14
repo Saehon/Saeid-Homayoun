@@ -18,6 +18,7 @@ def as_bool(s: pd.Series) -> pd.Series:
 def main() -> None:
     ff = pd.read_csv(P / "ff49_industry_year.csv")
     factors = pd.read_csv(P / "ff_factors_year.csv")
+    exposures = pd.read_csv(P / "ff49_factor_exposures_year.csv")
     dam = pd.read_csv(P / "damodaran_industry_year.csv")
     cw = pd.read_csv(CW)
 
@@ -57,18 +58,22 @@ def main() -> None:
     agg = mapped.groupby(["year", "ff49_industry"], as_index=False)[numeric_cols].sum(min_count=1)
     meta = mapped.groupby(["year", "ff49_industry"], as_index=False).agg(
         mapped_damodaran_industries=("damodaran_industry", "nunique"),
-        min_mapping_confidence=("mapping_confidence", lambda x: ";".join(sorted(set(map(str, x)))))
+        mapping_confidence_set=("mapping_confidence", lambda x: ";".join(sorted(set(map(str, x)))))
     )
     agg = agg.merge(meta, on=["year", "ff49_industry"], validate="one_to_one")
 
     panel = ff.merge(agg, on=["year", "ff49_industry"], how="inner", validate="one_to_one")
+    panel = panel.merge(exposures, on=["year", "ff49_industry"], how="left", validate="one_to_one")
     panel = panel.merge(factors, on="year", how="left", validate="many_to_one")
     panel = panel.sort_values(["ff49_industry", "year"]).reset_index(drop=True)
+
+    # Strict forecasting outcome: all predictors dated t; outcome is industry return in t+1.
     panel["future_industry_return_1y"] = panel.groupby("ff49_industry")["industry_return"].shift(-1)
     panel.to_csv(OUT, index=False)
 
     coverage = len(panel) / max(1, len(ff))
-    print(f"Wrote {len(panel):,} rows to {OUT}; FF49 coverage={coverage:.1%}")
+    exposure_coverage = panel.filter(regex=r"^ff_beta_").notna().any(axis=1).mean()
+    print(f"Wrote {len(panel):,} rows to {OUT}; FF49 mapping coverage={coverage:.1%}; factor-exposure coverage={exposure_coverage:.1%}")
 
 
 if __name__ == "__main__":
