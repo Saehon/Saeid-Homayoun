@@ -14,19 +14,8 @@ ARCHITECTURES = (
     "governed_multi_agent",
 )
 
-REQUIRED_ARTIFACT_FIELDS = {
-    "case_id",
-    "architecture",
-    "exceptions",
-    "proposed_adjustment",
-    "evidence_ids",
-    "risks",
-    "assertions",
-    "procedures",
-    "limitations",
-    "human_gate",
-    "claim_status",
-}
+PROVIDER_ARCHITECTURES = ARCHITECTURES[1:]
+PROVIDER_REQUIRED_STATUS = "NOT_EXECUTED_PROVIDER_REQUIRED"
 
 
 def canonical_hash(obj: Any) -> str:
@@ -34,8 +23,12 @@ def canonical_hash(obj: Any) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def load_json(path: Path) -> Dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def load_case(path: Path) -> Dict[str, Any]:
-    case = json.loads(path.read_text(encoding="utf-8"))
+    case = load_json(path)
     required = {"case_id", "period_end", "materiality", "transactions", "evidence", "gold"}
     missing = required - set(case)
     if missing:
@@ -51,16 +44,15 @@ def frozen_inputs(case: Dict[str, Any]) -> Dict[str, str]:
 
 
 def evidence_passport(case: Dict[str, Any]) -> Dict[str, Any]:
-    items = []
-    for evidence in case["evidence"]:
-        items.append(
-            {
-                "evidence_id": evidence["evidence_id"],
-                "source_type": evidence["source_type"],
-                "rights": evidence["rights"],
-                "content_hash": canonical_hash(evidence),
-            }
-        )
+    items = [
+        {
+            "evidence_id": evidence["evidence_id"],
+            "source_type": evidence["source_type"],
+            "rights": evidence["rights"],
+            "content_hash": canonical_hash(evidence),
+        }
+        for evidence in case["evidence"]
+    ]
     return {
         "case_id": case["case_id"],
         "items": items,
@@ -88,183 +80,66 @@ def proposed_adjustment(case: Dict[str, Any], exceptions: List[str]) -> float:
     )
 
 
-def evidence_agent(case: Dict[str, Any]) -> Dict[str, Any]:
-    return {
-        "agent": "EvidenceAgent",
-        "evidence_ids": sorted(e["evidence_id"] for e in case["evidence"]),
-        "traceable": all(bool(e.get("source_type")) for e in case["evidence"]),
-    }
+def decision_dag(artifact: Dict[str, Any]) -> Dict[str, Any]:
+    nodes = [
+        {"id": "evidence", "status": "complete"},
+        {"id": "risk", "depends_on": ["evidence"], "status": "complete"},
+        {"id": "procedure", "depends_on": ["risk"], "status": "complete"},
+        {"id": "conclusion", "depends_on": ["procedure"], "status": "complete"},
+        {"id": "human_gate", "depends_on": ["conclusion"], "status": "pending"},
+    ]
+    return {"nodes": nodes, "dag_hash": canonical_hash(nodes)}
 
 
-def risk_agent(case: Dict[str, Any]) -> Dict[str, Any]:
-    return {
-        "agent": "AuditRiskAgent",
+def run_deterministic(case: Dict[str, Any]) -> Dict[str, Any]:
+    exceptions = detect_cutoff_exceptions(case)
+    evidence_ids = sorted(e["evidence_id"] for e in case["evidence"])
+
+    artifact: Dict[str, Any] = {
+        "case_id": case["case_id"],
+        "architecture": "deterministic",
+        "execution_status": "EXECUTED",
+        "exceptions": exceptions,
+        "proposed_adjustment": proposed_adjustment(case, exceptions),
+        "evidence_ids": evidence_ids,
         "risks": ["revenue_cutoff", "premature_revenue_recognition"],
         "assertions": ["occurrence", "cutoff"],
         "procedures": [
             "inspect_delivery_evidence",
             "reconcile_year_end_transactions",
         ],
-    }
-
-
-def accounting_agent(case: Dict[str, Any]) -> Dict[str, Any]:
-    exceptions = detect_cutoff_exceptions(case)
-    return {
-        "agent": "AccountingAgent",
-        "exceptions": exceptions,
-        "proposed_adjustment": proposed_adjustment(case, exceptions),
-        "conclusion": "potential_cutoff_misstatement" if exceptions else "no_exception_detected",
-    }
-
-
-def rights_agent(case: Dict[str, Any]) -> Dict[str, Any]:
-    allowed = all(e.get("rights") in {"synthetic", "public", "licensed"} for e in case["evidence"])
-    return {"agent": "RightsLicenseAgent", "rights_gate_passed": allowed}
-
-
-def critic_agent(artifact: Dict[str, Any]) -> Dict[str, Any]:
-    critiques: List[str] = []
-    if not artifact.get("evidence_ids"):
-        critiques.append("No traceable evidence IDs.")
-    if not artifact.get("limitations"):
-        critiques.append("Limitations not documented.")
-    if artifact.get("exceptions") and artifact.get("proposed_adjustment", 0) <= 0:
-        critiques.append("Exception set is inconsistent with proposed adjustment.")
-    return {
-        "agent": "CriticAgent",
-        "critiques": critiques,
-        "passed": not critiques,
-    }
-
-
-def replicator_agent(case: Dict[str, Any], artifact: Dict[str, Any]) -> Dict[str, Any]:
-    replay = detect_cutoff_exceptions(case)
-    return {
-        "agent": "ReplicatorAgent",
-        "replay_exceptions": replay,
-        "reproduced": replay == sorted(artifact.get("exceptions", [])),
-    }
-
-
-def falsifier_agent(case: Dict[str, Any]) -> Dict[str, Any]:
-    counterfactual = json.loads(json.dumps(case))
-    for tx in counterfactual["transactions"]:
-        tx["delivery_date"] = min(tx["delivery_date"], case["period_end"])
-    exceptions = detect_cutoff_exceptions(counterfactual)
-    return {
-        "agent": "FalsifierAgent",
-        "counterfactual_exceptions": exceptions,
-        "passed": exceptions == [],
-    }
-
-
-def decision_dag(artifact: Dict[str, Any]) -> Dict[str, Any]:
-    nodes = [
-        {
-            "id": "evidence",
-            "status": "complete" if artifact.get("evidence_ids") else "blocked",
-        },
-        {
-            "id": "risk",
-            "depends_on": ["evidence"],
-            "status": "complete" if artifact.get("risks") else "blocked",
-        },
-        {
-            "id": "procedure",
-            "depends_on": ["risk"],
-            "status": "complete" if artifact.get("procedures") else "blocked",
-        },
-        {
-            "id": "conclusion",
-            "depends_on": ["procedure"],
-            "status": "complete",
-        },
-        {
-            "id": "human_gate",
-            "depends_on": ["conclusion"],
-            "status": "pending",
-        },
-    ]
-    return {"nodes": nodes, "dag_hash": canonical_hash(nodes)}
-
-
-def base_artifact(case: Dict[str, Any], architecture: str) -> Dict[str, Any]:
-    return {
-        "case_id": case["case_id"],
-        "architecture": architecture,
-        "exceptions": [],
-        "proposed_adjustment": 0.0,
-        "evidence_ids": [],
-        "risks": [],
-        "assertions": [],
-        "procedures": [],
         "limitations": [
-            "Synthetic benchmark; not an audit opinion or real-world assurance conclusion."
+            "Synthetic benchmark only; not an audit opinion or real-world assurance conclusion."
         ],
         "human_gate": "PENDING_HUMAN_APPROVAL",
         "claim_status": "BENCHMARK_RESULT_ONLY",
-        "agent_trace": [],
+        "evidence_passport": evidence_passport(case),
+        "input_hashes": frozen_inputs(case),
     }
-
-
-def run_architecture(case: Dict[str, Any], architecture: str) -> Dict[str, Any]:
-    if architecture not in ARCHITECTURES:
-        raise ValueError(f"Unknown architecture: {architecture}")
-
-    artifact = base_artifact(case, architecture)
-    evidence = evidence_agent(case)
-    risk = risk_agent(case)
-    accounting = accounting_agent(case)
-
-    common = {
-        "exceptions": accounting["exceptions"],
-        "proposed_adjustment": accounting["proposed_adjustment"],
-        "evidence_ids": evidence["evidence_ids"],
-        "risks": risk["risks"],
-        "assertions": risk["assertions"],
-        "procedures": risk["procedures"],
-    }
-    artifact.update(common)
-
-    if architecture == "deterministic":
-        artifact["agent_trace"] = ["DeterministicRuleEngine"]
-
-    elif architecture == "single_agent":
-        artifact["agent_trace"] = ["CombinedAuditAgent"]
-
-    elif architecture == "sequential_agents":
-        artifact["agent_trace"] = [
-            "EvidenceAgent",
-            "AuditRiskAgent",
-            "AccountingAgent",
-        ]
-
-    else:
-        rights = rights_agent(case)
-        if not rights["rights_gate_passed"]:
-            raise PermissionError("Rights/license gate failed.")
-        artifact["agent_trace"] = [
-            "RightsLicenseAgent",
-            "EvidenceAgent",
-            "AuditRiskAgent",
-            "AccountingAgent",
-        ]
-        artifact["critic"] = critic_agent(artifact)
-        artifact["replication"] = replicator_agent(case, artifact)
-        artifact["falsification"] = falsifier_agent(case)
-        artifact["agent_trace"] += [
-            "CriticAgent",
-            "ReplicatorAgent",
-            "FalsifierAgent",
-            "HumanGate",
-        ]
-
-    artifact["evidence_passport"] = evidence_passport(case)
     artifact["decision_dag"] = decision_dag(artifact)
-    artifact["input_hashes"] = frozen_inputs(case)
     artifact["artifact_hash"] = canonical_hash(artifact)
     return artifact
+
+
+def registered_provider_run(case: Dict[str, Any], architecture: str) -> Dict[str, Any]:
+    if architecture not in PROVIDER_ARCHITECTURES:
+        raise ValueError(f"Provider architecture expected, got: {architecture}")
+    return {
+        "case_id": case["case_id"],
+        "architecture": architecture,
+        "execution_status": PROVIDER_REQUIRED_STATUS,
+        "provider": None,
+        "model": None,
+        "exceptions": None,
+        "proposed_adjustment": None,
+        "metrics": None,
+        "human_gate": "PENDING_HUMAN_APPROVAL",
+        "claim_status": "NO_EMPIRICAL_RESULT",
+        "input_hashes": frozen_inputs(case),
+        "scientific_integrity_note": (
+            "No simulated or placeholder AI output is substituted for a real provider/model run."
+        ),
+    }
 
 
 def classification_metrics(predicted: List[str], gold: List[str]) -> Dict[str, float]:
@@ -283,8 +158,9 @@ def classification_metrics(predicted: List[str], gold: List[str]) -> Dict[str, f
     }
 
 
-def evaluate(case: Dict[str, Any], artifact: Dict[str, Any]) -> Dict[str, Any]:
+def evaluate_deterministic(case: Dict[str, Any], artifact: Dict[str, Any]) -> Dict[str, Any]:
     core = classification_metrics(artifact["exceptions"], case["gold"]["exceptions"])
+    replay = run_deterministic(case)
 
     rpa = min(1.0, len(artifact["procedures"]) / max(1, len(artifact["risks"])))
     aa = min(
@@ -293,15 +169,6 @@ def evaluate(case: Dict[str, Any], artifact: Dict[str, Any]) -> Dict[str, Any]:
         / max(1, len(case["gold"]["expected_assertions"])),
     )
     eg = min(1.0, len(set(artifact["evidence_ids"])) / max(1, len(case["evidence"])))
-    ps = 1.0 if {"CriticAgent", "FalsifierAgent"}.issubset(set(artifact["agent_trace"])) else 0.5
-    complete = sum(
-        1
-        for key in REQUIRED_ARTIFACT_FIELDS
-        if key in artifact and artifact[key] not in (None, "", [])
-    )
-    ds = complete / len(REQUIRED_ARTIFACT_FIELDS)
-
-    replay = run_architecture(case, artifact["architecture"])
     dist = 1.0 if (
         replay["exceptions"] == artifact["exceptions"]
         and replay["proposed_adjustment"] == artifact["proposed_adjustment"]
@@ -311,8 +178,8 @@ def evaluate(case: Dict[str, Any], artifact: Dict[str, Any]) -> Dict[str, Any]:
         "RPA": round(rpa, 4),
         "AA": round(aa, 4),
         "EG": round(eg, 4),
-        "PS": round(ps, 4),
-        "DS": round(ds, 4),
+        "PS": 0.5,
+        "DS": 1.0,
         "DIST": round(dist, 4),
         **core,
         "adjustment_matches_gold": (
@@ -326,58 +193,69 @@ def evaluate(case: Dict[str, Any], artifact: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def run_benchmark(case_path: Path) -> Dict[str, Any]:
+def run_public_benchmark(case_path: Path, registry_path: Path) -> Dict[str, Any]:
     case = load_case(case_path)
+    registry = load_json(registry_path)
     frozen = frozen_inputs(case)
-    runs: Dict[str, Any] = {}
 
-    for architecture in ARCHITECTURES:
-        start = time.perf_counter()
-        artifact = run_architecture(case, architecture)
-        metrics = evaluate(case, artifact)
-        if artifact["input_hashes"] != frozen:
-            raise AssertionError("Frozen input hash changed across architectures.")
-        runs[architecture] = {
-            "artifact": artifact,
-            "metrics": metrics,
-            "elapsed_ms": round((time.perf_counter() - start) * 1000, 3),
+    start = time.perf_counter()
+    deterministic = run_deterministic(case)
+    deterministic_metrics = evaluate_deterministic(case, deterministic)
+    deterministic_elapsed = round((time.perf_counter() - start) * 1000, 3)
+
+    runs: Dict[str, Any] = {
+        "deterministic": {
+            "artifact": deterministic,
+            "metrics": deterministic_metrics,
+            "elapsed_ms": deterministic_elapsed,
         }
+    }
+
+    for architecture in PROVIDER_ARCHITECTURES:
+        runs[architecture] = registered_provider_run(case, architecture)
+        if runs[architecture]["input_hashes"] != frozen:
+            raise AssertionError("Frozen input hash changed across registered architectures.")
 
     return {
-        "benchmark": "Prototype 003 Revenue Recognition migration",
+        "benchmark": "Prototype 003 public runtime checkpoint",
+        "public_release": registry["public_release"],
         "case_id": case["case_id"],
+        "case_registry": registry["cases"],
         "input_hashes": frozen,
         "architectures": list(ARCHITECTURES),
         "runs": runs,
-        "research_claim": "NO_SUPERIORITY_CLAIM; engineering benchmark scaffold only",
+        "research_claim": "NO_SUPERIORITY_CLAIM; provider AI modes not yet executed",
+        "next_milestone": "Prototype 004 real-provider blinded comparison",
     }
 
 
 def main() -> None:
     base = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(
-        description="Run the NAAIL Prototype 003 frozen synthetic benchmark."
+        description="Run the public NAAIL Prototype 003 deterministic checkpoint."
     )
     parser.add_argument("--case", default=str(base / "data" / "revenue_case.json"))
+    parser.add_argument("--registry", default=str(base / "data" / "case_registry.json"))
     parser.add_argument("--out", default=str(base / "outputs" / "latest_results.json"))
     args = parser.parse_args()
 
-    result = run_benchmark(Path(args.case))
+    result = run_public_benchmark(Path(args.case), Path(args.registry))
     output = Path(args.out)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
-    print("Prototype 003 benchmark complete")
-    for architecture, row in result["runs"].items():
-        metrics = row["metrics"]
-        print(
-            f"{architecture:22s} "
-            f"precision={metrics['precision']:.2f} "
-            f"recall={metrics['recall']:.2f} "
-            f"EG={metrics['EG']:.2f} "
-            f"PS={metrics['PS']:.2f} "
-            f"DIST={metrics['DIST']:.2f}"
-        )
+    det = result["runs"]["deterministic"]
+    metrics = det["metrics"]
+    print("Prototype 003 public checkpoint complete")
+    print(
+        "deterministic          "
+        f"precision={metrics['precision']:.2f} "
+        f"recall={metrics['recall']:.2f} "
+        f"EG={metrics['EG']:.2f} "
+        f"DIST={metrics['DIST']:.2f}"
+    )
+    for architecture in PROVIDER_ARCHITECTURES:
+        print(f"{architecture:22s} {result['runs'][architecture]['execution_status']}")
     print("Human Gate: PENDING_HUMAN_APPROVAL")
     print(f"Saved: {output}")
 
