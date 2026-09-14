@@ -1,0 +1,38 @@
+{
+  "study_id": "MNSc-FamaFrench-01-v3",
+  "status": "pre_registered_not_executed",
+  "discovery_system": {
+    "candidate_objects": [
+      "measurement summaries",
+      "asset-pricing specifications",
+      "HAC lag sensitivity",
+      "multiplicity controls",
+      "reduced-rank factor-dimension estimators",
+      "additional portfolio families"
+    ],
+    "allowed_models": ["CAPM", "FF3", "FF5"],
+    "allowed_hac_lags": [3, 6, 12],
+    "frozen_subperiods": ["full", "post_1990", "post_2000", "post_gfc_2009", "post_covid_2020"]
+  },
+  "validation_system": {
+    "holdout_principle": "Do not expose future independent replication/placebo results to the generator before candidate rules are frozen.",
+    "primary_hac_lag": 6,
+    "primary_conclusion_threshold": 0.05,
+    "fdr_method": "Benjamini-Hochberg"
+  },
+  "scientific_fitness": [
+    "theory coherence",
+    "measurement stability",
+    "out-of-sample or external stability where applicable",
+    "robustness",
+    "economic magnitude",
+    "parsimony",
+    "interpretability",
+    "reproducibility",
+    "computational cost"
+  ],
+  "forbidden_objective": "maximize statistical significance or minimize p-values",
+  "lineage_required": true,
+  "failed_candidates_preserved": true,
+  "discovery_claim_allowed": false
+}
