@@ -49,7 +49,22 @@ Official provider URLs
   -> Human Gate
 ```
 
-## Run order
+## Easiest execution: GitHub Actions
+
+No local Python setup is required for the first preparation stage.
+
+1. Open the repository **Actions** tab.
+2. Select **FF-Damodaran Prepare Crosswalk**.
+3. Choose **Run workflow**.
+4. When it finishes, download the artifact `ff-damodaran-crosswalk-review`.
+5. Review `candidate_crosswalk.csv`. Copy only defensible mappings into `crosswalk/reviewed_crosswalk.csv`, set `approved=true`, assign weights, and ensure weights sum to 1 within each year × FF49 industry.
+6. Commit the reviewed crosswalk.
+7. In Actions, run **FF-Damodaran Full Baseline**.
+8. Download `ff-damodaran-baseline-results`, which contains Tables 1–5 and the evidence/Data Passport files.
+
+The workflow intentionally stops if no human-approved crosswalk exists.
+
+## Local run order
 
 ```bash
 pip install -r requirements-study.txt
