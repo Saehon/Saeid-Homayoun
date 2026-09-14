@@ -1,0 +1,18 @@
+variable,concept,definition_formula,unit,source,timing,transformation,role,status
+old_factor_j,FIZ-era factor value,Official July-2024 archive value for factor j,decimal monthly return,Kenneth R. French historical archive,month t as represented in July-2024 snapshot,none,input,frozen
+new_factor_j,CIZ-era factor value,Official July-2025 archive value for factor j,decimal monthly return,Kenneth R. French historical archive,month t as represented in July-2025 snapshot,none,input,frozen
+old_portfolio_j,FIZ-era portfolio value,Official July-2024 archive value for portfolio j,decimal monthly return,Kenneth R. French historical archive,month t as represented in July-2024 snapshot,none,input,frozen
+new_portfolio_j,CIZ-era portfolio value,Official July-2025 archive value for portfolio j,decimal monthly return,Kenneth R. French historical archive,month t as represented in July-2025 snapshot,none,input,frozen
+delta_j,Vintage revision,new_j minus old_j,decimal monthly return,constructed,common month t,new-old,measurement,frozen
+DCS_j,Data Construction Sensitivity,mean absolute delta_j,basis points per month,constructed,common matched sample,10000*mean(abs(delta)),primary outcome,frozen
+mean_diff_j,Mean vintage difference,mean delta_j,basis points per month,constructed,common matched sample,10000*mean(delta),primary outcome,frozen
+max_abs_diff_j,Maximum vintage difference,max absolute delta_j,basis points,constructed,common matched sample,10000*max(abs(delta)),robustness,frozen
+vintage_corr_j,Vintage stability correlation,corr(old_j new_j),correlation,constructed,common matched sample,Pearson correlation,stability,frozen
+alpha_old,Asset-pricing alpha under old vintage,intercept from CAPM/FF3/FF5 using old vintage,decimal monthly return,constructed,common matched sample,HAC/NW lag 6,model outcome,frozen
+alpha_new,Asset-pricing alpha under new vintage,intercept from CAPM/FF3/FF5 using new vintage,decimal monthly return,constructed,common matched sample,HAC/NW lag 6,model outcome,frozen
+alpha_change,Alpha sensitivity,alpha_new minus alpha_old,basis points per month,constructed,same model and sample,10000*(new-old),primary outcome,frozen
+conclusion_reversal,Conclusion sensitivity,sign change OR frozen 5% significance-status change,binary,constructed,same model and common sample,no adaptive threshold,primary outcome,frozen
+q_bh,FDR-adjusted q-value,Benjamini-Hochberg adjustment within pre-specified revision-test family,probability,constructed,pre-specified family,BH FDR,robustness,frozen
+K_star_old,Effective factor dimension under old vintage,Reduced-rank selected factor dimension,count,planned extension,common matched sample,method to be frozen before execution,latent structure,planned
+K_star_new,Effective factor dimension under new vintage,Reduced-rank selected factor dimension,count,planned extension,common matched sample,method to be frozen before execution,latent structure,planned
+damodaran_jensen_alpha,Industry Jensen alpha,Published industry benchmark field,decimal return,Damodaran NYU Stern,January-2026 dataset,numeric cleaning,complementary benchmark,secondary
