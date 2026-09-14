@@ -10,9 +10,9 @@ The architecture remains governed by exactly two permanent cores:
 1. Stable Economic Knowledge Core™
 2. Replaceable Technology Core™
 
-## Software roadmap
+## Software and research roadmap
 
-### v0.2 — Real Data + Evidence RAG — Current
+### v0.2 — Real Data + Evidence RAG — Completed baseline
 - GPT-5.6 Sol as a replaceable backend.
 - Controlled evidence metadata registry.
 - Real-data ingestion.
@@ -22,15 +22,27 @@ The architecture remains governed by exactly two permanent cores:
 - Red-team review.
 - Evidence Passport™ and Human Gate.
 
-### v0.3 — Publication-Grade Empirical Study
-- One complete real-data economics/finance study.
-- Frozen pre-analysis design and causal DAG.
-- Full Variable DNA™.
-- Replication-before-extension benchmark.
-- Identification Gate™.
-- Robustness, placebo, negative controls and sensitivity analysis.
-- Economic magnitude and welfare interpretation.
-- Reproducible replication package.
+### v0.3 — Official Public Data + Publication-Grade Empirical Study — Active
+- Official Fama–French current and historical archive adapters.
+- Official Damodaran / NYU Stern industry-data adapters.
+- SEC EDGAR XBRL CompanyFacts ingestion with filing-date chronology controls.
+- Frozen first real-data study: **MNSc–FamaFrench–01**.
+- July 2024 FIZ-era vs July 2025 CIZ-era archive comparison.
+- Data Construction Sensitivity (DCS).
+- Conclusion Reversal analysis.
+- HAC factor-premium inference.
+- CAPM/FF3/FF5 alpha stability.
+- Six-table empirical output.
+- Source hashes and Evidence Passport™.
+- Reproducible GitHub Actions real-data workflow.
+
+#### Remaining v0.3 gates
+- Archive the first successful real-data workflow artifacts.
+- Replicate with FF3 and additional archived portfolio families.
+- Reduced-rank factor-dimension estimation.
+- Multiplicity/FDR reliability analysis.
+- Independent red-team replication.
+- SEC × Fama–French × Damodaran chronology-safe firm/industry extension.
 
 ### v0.4 — Scientific Evidence Graph
 - User-owned/licensed FT50 and AJG/ABS 4*/4 corpus.
