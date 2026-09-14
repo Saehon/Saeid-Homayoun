@@ -1,5 +1,18 @@
 # Changelog
 
+## FT50 / AJG 4* Scientific Replication Arena — v0.2.4 target — 2026-09-14
+### External top-journal reproducibility and methodological benchmark layer
+- Added `benchmarks/ft50_abs4/README.md` as the public entry point for external FT50/AJG 4* benchmark integration.
+- Added `benchmarks/ft50_abs4/registry.json` with initial Management Science, Review of Financial Studies, Journal of Financial Economics, and Journal of Finance benchmark families.
+- Added `benchmarks/ft50_abs4/BENCHMARK_PROTOCOL.md` defining source verification, exact Git commit pinning, environment reconstruction, original-result replication, clean-room reproduction, robustness, falsification, temporal/OOS validation, cross-dataset/Digital Twin tests, Chain-of-Evidence, and Human Gate.
+- Added `benchmarks/ft50_abs4/validate_registry.py` for machine-readable registry validation.
+- Added `tests/SCIENTIFIC_REPLICATION_ARENA.md` as the NAAIL Scientific Replication Arena™ test contract.
+- Added `external/FT50_ABS4_SOURCE_POLICY.md` so third-party repositories remain external sources with their original rights/licenses unless separately permitted.
+- Extended `EVALUATION_STANDARD.md` with formal Layer 7 — FT50 / AJG 4* external benchmark tests.
+- Updated `README.md` and `CURRENT_PROJECT_STATE.md` so the benchmark layer is visible in the canonical public architecture and current-state checkpoint.
+- Preserved v0.2.3 as the validated executable release; the replication arena is a v0.2.4 research-testing capability until external source commits are pinned, environments reconstructed, and benchmark runs executed and reviewed.
+- Explicitly prohibited treating journal prestige, statistical significance, or benchmark registration as proof of reproducibility, identification validity, or scientific truth.
+
 ## Student Pilot 002 — Microsoft Agent Edition — v0.2.4 target — 2026-09-14
 ### Microsoft-connected university–industry Digital Twin roadmap
 - Added `Student_Pilot_002_Microsoft/README.md` as the next education-facing executable roadmap.
