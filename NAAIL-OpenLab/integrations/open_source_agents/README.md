@@ -2,6 +2,10 @@
 
 This directory is the governed integration boundary for third-party open-source agent frameworks and domain-agent research projects used in NAAIL OpenLab™ education and research.
 
+## Public landing page
+
+- [`../../BUSINESS_SCHOOL_OPEN_AGENT_PACK.md`](../../BUSINESS_SCHOOL_OPEN_AGENT_PACK.md) — public Business-School Open Agent Pack landing page for the NAAIL V2026.3 integration.
+
 ## Registries
 
 - [`registry.json`](./registry.json) — general open-source orchestration and agent-framework registry.
