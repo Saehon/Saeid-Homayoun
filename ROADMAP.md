@@ -22,40 +22,67 @@ The architecture remains governed by exactly two permanent cores:
 - Red-team review.
 - Evidence Passport™ and Human Gate.
 
-### v0.3 — Official Public Data + Publication-Grade Empirical Study — Active
+### v0.3 — Governed Scientific Discovery + Publication-Grade Empirical Study — Active
 - Official Fama–French current and historical archive adapters.
 - Official Damodaran / NYU Stern industry-data adapters.
 - SEC EDGAR XBRL CompanyFacts ingestion with filing-date chronology controls.
 - Frozen first real-data study: **MNSc–FamaFrench–01**.
-- July 2024 FIZ-era vs July 2025 CIZ-era archive comparison.
+- Co-Scientist-style hypothesis tournament functions.
+- DAG / systems governance.
+- ERA-style hypothesis-to-executable-test conversion.
+- AlphaEvolve-inspired search governance.
+- Computational Discovery candidate lineage and evaluator controls.
+- AlphaFold-inspired latent-structure validation rules.
+- Science One-inspired Chain-of-Evidence and CoE Audit requirements.
+- Mirendil-inspired closed-loop R&D containment boundary.
+- Machine-readable discovery study manifest.
+- Discovery gate validator and gate-bypass tests.
+- Publication-grade study template.
+- AI-to-AI scientific automation and fault containment.
 - Data Construction Sensitivity (DCS).
 - Conclusion Reversal analysis.
 - HAC factor-premium inference.
 - CAPM/FF3/FF5 alpha stability.
 - Six-table empirical output.
 - Source hashes and Evidence Passport™.
-- Reproducible GitHub Actions real-data workflow.
 
 #### Remaining v0.3 gates
-- Archive the first successful real-data workflow artifacts.
+- Archive the first successful FIZ→CIZ real-data workflow artifacts.
+- Complete the hypothesis-tournament artifact for the flagship study.
+- Complete independent replication and AI-to-AI red-team artifacts.
+- Complete falsification package.
+- Build claim-level Chain-of-Evidence.
+- Run CoE Audit.
 - Replicate with FF3 and additional archived portfolio families.
-- Reduced-rank factor-dimension estimation.
-- Multiplicity/FDR reliability analysis.
-- Independent red-team replication.
-- SEC × Fama–French × Damodaran chronology-safe firm/industry extension.
+- Add reduced-rank factor-dimension / latent-structure estimation.
+- Add multiplicity/FDR reliability analysis.
+- Complete Human Gate review for the study's allowed evidence class.
 
-### v0.4 — Scientific Evidence Graph
+### v0.4 — Scientific Evidence Graph + Verifiable Literature Layer
 - User-owned/licensed FT50 and AJG/ABS 4*/4 corpus.
 - Evidence Graph / GraphRAG.
-- Claim-to-source traceability.
+- Claim-to-source traceability by construction.
+- Reference verification.
 - Contradiction and disagreement preservation.
 - Versioned literature benchmarks.
+- Machine-readable claim/evidence graph compatible with Chain-of-Evidence auditing.
 
-### v0.5 — Multi-Agent Scientific Verification
-- Separate hypothesis generator, econometrician, replicator, red team, benchmarker and welfare agent.
-- AI-to-AI independent adjudication.
+### v0.5 — Multi-Model Scientific Verification
+- Separate hypothesis generator, theory/DAG agent, empirical designer, replicator, red team, CoE auditor, benchmarker and welfare agent.
+- Different-model / isolated-context validation paths where available.
+- Blind holdouts and independent execution environments.
 - Failure memory and reproducibility checks.
 - Automated scientific gate dashboard.
+- Controlled Mirendil-inspired improvement loop that cannot rewrite governance constraints.
+
+### v0.6 — Computational Discovery Engine
+- Parallel candidate model/algorithm generation.
+- Frozen evaluator registry.
+- AlphaEvolve-inspired mutation and lineage tracking.
+- Search-budget governance.
+- Explore/exploit policies.
+- DiscoverySystem / ValidationSystem separation.
+- Latent-structure benchmark suite.
 
 ### v1.0 — Governed Scientific Economic Intelligence Platform
 - Stable public API and documented interfaces.
@@ -63,12 +90,13 @@ The architecture remains governed by exactly two permanent cores:
 - Dataset/tool connector governance.
 - Production-grade security and observability.
 - Versioned benchmark suite.
+- Chain-of-Evidence and CoE Audit in the default publication workflow.
 - Formal release and DOI archive.
 
 ## Non-goals
 
-ECONOVA-S does not treat novelty, statistical significance, predictive accuracy or LLM confidence as sufficient evidence of scientific discovery.
+ECONOVA-S™ does not treat novelty, statistical significance, predictive accuracy, evaluator score, agent consensus, or LLM confidence as sufficient evidence of scientific discovery.
 
 ## Governing rule
 
-**AI explores. Economics constrains. Evidence verifies. Humans approve.**
+**Generate broadly. Ground literature. Convert hypotheses to executable tests. Search scientifically. Preserve every evidence chain. Attack the result. Reproduce it. Let humans decide.**
