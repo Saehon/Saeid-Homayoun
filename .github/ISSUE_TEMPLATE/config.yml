@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security policy
+    url: https://github.com/Saehon/Saeid-Homayoun/blob/main/SECURITY.md
+    about: Read this before reporting vulnerabilities or sensitive security concerns.
+  - name: Support policy
+    url: https://github.com/Saehon/Saeid-Homayoun/blob/main/SUPPORT.md
+    about: Guidance for software, empirical-method, and research-workflow questions.
