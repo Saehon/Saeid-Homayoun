@@ -26,22 +26,17 @@ def detect(df: pd.DataFrame) -> tuple[list[str], list[str]]:
         "eva_roe", "eva_roc", "eva_roc_wacc",
     ]
     fund = [cols[x] for x in wanted_fund if x in cols]
-
-    factor = []
-    for c in df.columns:
-        k = safe(c)
-        if k in {"mkt_rf", "smb", "hml", "rmw", "cma", "mom", "rf"}:
-            factor.append(c)
+    factor = [c for c in df.columns if safe(c).startswith("ff_beta_")]
     return fund, factor
 
 
-def table1(df: pd.DataFrame, fund: list[str], factor: list[str]) -> pd.DataFrame:
+def table1(fund: list[str], factor: list[str]) -> pd.DataFrame:
     rows = [
         ("future_industry_return_1y", "Outcome", "FF49 industry return in year t+1"),
         ("industry_return", "Market outcome", "FF49 industry return in year t"),
     ]
-    rows += [(x, "Damodaran fundamental", f"Year-t industry measure: {x}") for x in fund]
-    rows += [(x, "Fama-French factor", f"Year-t compounded factor return: {x}") for x in factor]
+    rows += [(x, "Damodaran fundamental", f"Year-t Damodaran industry measure: {x}") for x in fund]
+    rows += [(x, "Fama-French exposure", f"Rolling 60-month FF5+Momentum loading available at end of year t: {x}") for x in factor]
     return pd.DataFrame(rows, columns=["variable", "role", "definition"])
 
 
@@ -66,9 +61,9 @@ def fit_clustered(df: pd.DataFrame, predictors: list[str]) -> pd.DataFrame:
         rows.append({
             "variable": v,
             "coef": model.params[v],
-            "std_err": model.bse[v],
+            "std_err_cluster_industry": model.bse[v],
             "t": model.tvalues[v],
-            "p_value": model.pvalues[v],
+            "p_value_descriptive_not_fitness": model.pvalues[v],
             "n": int(model.nobs),
             "adj_r2": model.rsquared_adj,
         })
@@ -115,17 +110,17 @@ def main() -> None:
     fund, factor = detect(df)
     if not fund:
         raise RuntimeError("No canonical Damodaran predictors detected; inspect processed column names.")
+    if not factor:
+        raise RuntimeError("No rolling FF factor exposures detected; run build_factor_exposures.py first.")
 
-    t1 = table1(df, fund, factor)
-    t1.to_csv(OUT / "table1_variable_definitions.csv", index=False)
-
+    table1(fund, factor).to_csv(OUT / "table1_variable_definitions.csv", index=False)
     desc_cols = ["future_industry_return_1y", "industry_return"] + fund + factor
     describe(df, desc_cols).to_csv(OUT / "table2_descriptive_statistics.csv")
     df[desc_cols].corr().to_csv(OUT / "table3_correlations.csv")
 
     models = []
     for label, x in [
-        ("Factor-only", factor),
+        ("Factor-exposure-only", factor),
         ("Fundamentals-only", fund),
         ("Combined", factor + fund),
     ]:
@@ -133,20 +128,22 @@ def main() -> None:
         if not res.empty:
             res.insert(0, "model", label)
             models.append(res)
+    if not models:
+        raise RuntimeError("No baseline regression had sufficient complete observations.")
     pd.concat(models, ignore_index=True).to_csv(OUT / "table4_main_regressions.csv", index=False)
 
     oos = pd.DataFrame([
-        expanding_oos(df, factor, "Factor-only"),
+        expanding_oos(df, factor, "Factor-exposure-only"),
         expanding_oos(df, fund, "Fundamentals-only"),
         expanding_oos(df, factor + fund, "Combined"),
     ])
-    factor_r2 = oos.loc[oos["model"].eq("Factor-only"), "oos_r2"].iloc[0]
+    factor_r2 = oos.loc[oos["model"].eq("Factor-exposure-only"), "oos_r2"].iloc[0]
     oos["incremental_oos_r2_vs_factor_only"] = oos["oos_r2"] - factor_r2
     oos.to_csv(OUT / "table5_temporal_oos_and_data_value.csv", index=False)
 
     print(f"Wrote Tables 1-5 to {OUT}")
-    print(f"Detected fundamental predictors: {fund}")
-    print(f"Detected factor predictors: {factor}")
+    print(f"Damodaran predictors: {fund}")
+    print(f"Industry-specific FF exposures: {factor}")
 
 
 if __name__ == "__main__":
