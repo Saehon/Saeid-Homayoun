@@ -1,0 +1,7 @@
+# Optional executable dependencies for the NAAIL Open-Source Academic Agent Foundry.
+# Pin exact versions in frozen research/replication environments.
+# Upstream licenses remain controlling for upstream packages.
+
+dspy
+knowledge-storm
+smolagents
