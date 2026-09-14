@@ -11,6 +11,32 @@ NAAIL Marketplace Edition is the public product-distribution layer for NAAIL Ope
 
 ➡️ **[Open the NAAIL Marketplace Product Page](./marketplace/README.md)**
 
+➡️ **[Open NAAIL Discovery™ — Customer Preference Feed](./marketplace/CUSTOMER_PREFERENCE_DISCOVERY.md)**
+
+## NAAIL Discovery™ — personalized professional feed
+
+NAAIL now includes a public design for a **short-card, preference-driven professional discovery experience** inspired by modern consumer recommendation patterns while remaining evidence-governed and independent from third-party proprietary algorithms.
+
+Users should not have to choose among dozens of agents. Instead, NAAIL can learn from declared roles, topics, projects, and explicit feedback to recommend one relevant professional object at a time.
+
+```text
+Open NAAIL
+    ↓
+Role + topic preferences
+    ↓
+Professional "For You" feed
+    ↓
+Audit case / research opportunity / IFRS issue / ICFR alert / finance signal
+    ↓
+ASK | ANALYZE | SIMULATE | EVIDENCE | SAVE
+    ↓
+USEFUL | NOT RELEVANT | WHY RECOMMENDED?
+    ↓
+Preference profile improves
+```
+
+The preference layer is designed for **professional relevance, evidence quality, learning value, and decision usefulness**—not pure engagement optimization.
+
 ## Marketplace product families
 
 | Product | Primary users | Core outcome |
@@ -59,6 +85,7 @@ These edition names describe a future product strategy. Commercial licensing and
 ## Marketplace preparation package
 
 - [Customer-facing marketplace page](./marketplace/README.md)
+- [NAAIL Discovery™ customer preference feed](./marketplace/CUSTOMER_PREFERENCE_DISCOVERY.md)
 - [OpenAI / ChatGPT package](./marketplace/openai/README.md)
 - [Google / Gemini / Google Cloud package](./marketplace/google/README.md)
 - [Microsoft Marketplace / Copilot package](./marketplace/microsoft/README.md)
@@ -85,10 +112,11 @@ These edition names describe a future product strategy. Commercial licensing and
 **Marketplace target:** v0.2.4  
 **Submission status:** not submitted  
 **Provider approval:** none claimed  
-**Commercial marketplace launch:** not yet launched
+**Commercial marketplace launch:** not yet launched  
+**NAAIL Discovery™ preference engine:** design specification only — not yet implemented or validated
 
 The marketplace target becomes releasable only after production endpoints, authentication, privacy/security completion, provider-specific packaging and validation, executable benchmark evidence, and the NAAIL Human Gate are complete.
 
 ## Independent-project notice
 
-NAAIL™ / NAAIL OpenLab™ is an independent research initiative. References to OpenAI, Google, Microsoft, Anthropic, Deloitte, EY, KPMG, PwC, regulators, standards setters, universities, and other organizations describe public technologies, standards, research inspirations, interoperability targets, or comparison benchmarks only. They do not imply affiliation, endorsement, sponsorship, authorization, certification, or marketplace approval.
+NAAIL™ / NAAIL OpenLab™ is an independent research initiative. References to OpenAI, Google, Microsoft, Anthropic, TikTok, Deloitte, EY, KPMG, PwC, regulators, standards setters, universities, and other organizations describe public technologies, standards, research inspirations, interoperability targets, interface patterns, or comparison benchmarks only. They do not imply affiliation, endorsement, sponsorship, authorization, certification, marketplace approval, or access to proprietary algorithms.
