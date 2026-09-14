@@ -1,7 +1,7 @@
 # NAAIL OpenLab™ — Current Student Agent Academy State
 
 ## Canonical checkpoint
-This file records the current public state of the NAAIL Student Agent Academy, Digital Twin Student Simulation, Microsoft Student Pilot roadmap, and Big Four / industry partnership design.
+This file records the current public state of the NAAIL Student Agent Academy, Digital Twin Student Simulation, Microsoft Student Pilot roadmap, Big Four / industry partnership design, and its connection to the wider NAAIL Prototype 004 provider-testing architecture.
 
 ## Positioning
 NAAIL uses a university–industry model in which an industry partner may contribute learning objectives, challenge briefs, guest sessions, synthetic scenarios, or an approved educational proxy-agent specification. NAAIL converts those inputs into a governed synthetic Digital Twin exercise without requiring disclosure of proprietary production systems or confidential client data.
@@ -39,7 +39,7 @@ Student AI-readiness metrics:
 These are educational/research constructs and are not validated for automated employment decisions.
 
 ## Big Four / Industry Partnership Pilot
-The repository now includes an executive-facing partnership design for a first university–industry pilot.
+The repository includes an executive-facing partnership design for a first university–industry pilot.
 
 Recommended pilot shape:
 - one university course;
@@ -58,12 +58,28 @@ The partner receives aggregate/anonymized learning insight by default. Individua
 See: `./BIG4_PARTNERSHIP_PILOT.md`
 
 ## Student Pilot 002 — Microsoft Agent Edition
-The next implementation milestone is a Microsoft 365/Copilot-compatible educational agent connected to the same NAAIL synthetic Digital Twin and governance architecture.
+The next education-facing implementation milestone is a Microsoft 365/Copilot-compatible educational agent connected to the same NAAIL synthetic Digital Twin and governance architecture.
 
 Target flow:
 Microsoft / Copilot-compatible Agent → NAAIL Educational Proxy Agent → Synthetic Client XYZ Digital Twin → Student workspace → Instructor dashboard → Aggregate anonymized Industry Partner dashboard → Human Gate.
 
 See: `../../Student_Pilot_002_Microsoft/README.md`
+
+## Link to Prototype 004 provider testing
+The wider NAAIL project now includes a credential-gated Prototype 004 provider harness for Google Gemini and Microsoft Foundry. That provider-testing layer is separate from the classroom pilot, but it supplies the same governance principles needed before a provider-backed educational agent should be trusted:
+- frozen evidence;
+- gold-label withholding from provider prompts;
+- provider/model metadata capture;
+- evidence-ID validation;
+- hallucinated-evidence detection;
+- Evidence Passport™;
+- Professional Decision DAG™;
+- mandatory Human Gate;
+- explicit `NOT_EXECUTED_PROVIDER_REQUIRED` when credentials are unavailable rather than fabricated model results.
+
+Student Pilot 002 should only move from roadmap to provider-backed classroom execution after the relevant provider path passes the required technical, privacy, consent, regression, and human-review gates.
+
+See: `../../PROTOTYPE_004_PROVIDER_EXECUTION.md`
 
 ## Partnership safeguards
 - Use neutral partner labels until a written agreement exists.
@@ -76,12 +92,13 @@ See: `../../Student_Pilot_002_Microsoft/README.md`
 - Do not use NAAIL student scores for automatic employment decisions.
 
 ## Release status
-Validated executable release remains **v0.2.3**. Student Agent Academy, marketplace integration, Big Four / industry partnership pilot, and Student Pilot 002 are **v0.2.4 target capabilities** pending real provider integration, institutional privacy/consent controls, and pilot validation.
+Validated executable release remains **v0.2.3**. The Big Four / industry partnership pilot, Student Agent Academy marketplace integration, and Student Pilot 002 remain **v0.2.4 target capabilities**. Prototype 004 now provides the real-provider execution harness, but credential-gated provider jobs and human review must complete before provider-backed empirical claims or classroom deployment are made.
 
 ## Canonical project links
 - Main NAAIL OpenLab: https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
 - Student Pilot 001: https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab/Student_Pilot_001
 - Student Pilot 002 — Microsoft: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/Student_Pilot_002_Microsoft/README.md
 - Big Four / Industry Partnership Pilot: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/docs/education/BIG4_PARTNERSHIP_PILOT.md
+- Prototype 004 provider execution checkpoint: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_004_PROVIDER_EXECUTION.md
 - Student Agent Academy specification: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md
 - Digital Twin Student Simulation: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/docs/education/DIGITAL_TWIN_STUDENT_SIMULATION.md
