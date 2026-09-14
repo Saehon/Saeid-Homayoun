@@ -10,6 +10,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "evidence" / "download_manifest.json"
 PROCESSED = ROOT / "data" / "processed"
+CROSSWALK = ROOT / "crosswalk" / "reviewed_crosswalk.csv"
 OUT = ROOT / "evidence" / "data_passport.json"
 
 
@@ -40,6 +41,7 @@ def main() -> None:
     for name in [
         "ff49_industry_year.csv",
         "ff_factors_year.csv",
+        "ff49_factor_exposures_year.csv",
         "damodaran_industry_year.csv",
         "econova_ff_damodaran_panel.csv",
     ]:
@@ -47,19 +49,23 @@ def main() -> None:
         if path.exists():
             processed.append(csv_profile(path))
 
+    crosswalk_profile = csv_profile(CROSSWALK) if CROSSWALK.exists() else None
     passport = {
         "study_id": "FF-DAMODARAN-DISCOVERY-01",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "authoritative_source_policy": True,
         "raw_manifest": raw,
+        "reviewed_crosswalk": crosswalk_profile,
         "processed_artifacts": processed,
         "scientific_controls": {
             "year_specific_mapping": True,
             "manual_crosswalk_approval_required": True,
+            "rolling_factor_exposures": "60 months; minimum 36 months",
             "future_outcome_constructed_after_time_sort": True,
             "null_results_preserved": True,
-            "human_gate_required": True,
-        },
+            "p_value_is_fitness_target": False,
+            "human_gate_required": True
+        }
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(passport, indent=2), encoding="utf-8")
