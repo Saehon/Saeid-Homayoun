@@ -35,9 +35,46 @@ def test_causal_label_requires_identification():
     assert any("causal" in e and "identification" in e for e in errors)
 
 
-def test_chain_of_evidence_gate_requires_artifact():
+def test_gate_cannot_be_true_without_required_artifact():
     record = copy.deepcopy(BASE)
     record["gates"]["chain_of_evidence"] = True
     record["artifacts"]["chain_of_evidence"] = None
     errors = validator.validate_governance(record)
-    assert any("chain_of_evidence" in e for e in errors)
+    assert any("chain_of_evidence" in e and "artifact" in e for e in errors)
+
+
+def test_discovery_requires_frozen_protocol_and_holdout_isolation():
+    record = copy.deepcopy(BASE)
+    record["discovery_claim_allowed"] = True
+    record["study_stage"] = "approved"
+    record["integrity"]["protocol_frozen"] = False
+    record["integrity"]["holdout_isolated"] = False
+    errors = validator.validate_governance(record)
+    assert any("protocol_frozen" in e for e in errors)
+    assert any("holdout_isolated" in e for e in errors)
+
+
+def test_role_only_ai_review_is_insufficient_for_discovery():
+    record = copy.deepcopy(BASE)
+    record["discovery_claim_allowed"] = True
+    record["study_stage"] = "approved"
+    record["integrity"]["ai_review_independence_level"] = "role_only"
+    errors = validator.validate_governance(record)
+    assert any("role-only" in e for e in errors)
+
+
+def test_human_decision_must_explicitly_authorize_scientific_claim():
+    record = copy.deepcopy(BASE)
+    record["discovery_claim_allowed"] = True
+    record["study_stage"] = "approved"
+    record["human_gate"]["approved"] = True
+    record["human_gate"]["reviewer"] = "Independent reviewer"
+    record["human_gate"]["decision_date"] = "2026-09-14"
+    record["human_gate"]["decision"] = "PROCEED"
+    record["human_gate"]["independence_statement"] = "Reviewer did not generate the candidate result."
+    errors = validator.validate_governance(record)
+    assert any("does not authorize" in e for e in errors)
+
+
+def test_nonexistent_local_artifact_does_not_resolve():
+    assert validator._artifact_is_resolvable("discovery/definitely_missing_artifact.json") is False
