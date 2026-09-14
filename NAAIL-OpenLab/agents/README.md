@@ -17,6 +17,10 @@ This directory is the canonical navigation layer for specialist agent families u
 
 See the [Canonical Master Platform Hierarchy](../architecture/MASTER_PLATFORM_HIERARCHY.md).
 
+## Free simulation path
+
+The IFRS and PCAOB families now share a **free/open-source Digital Twin simulation stack** at [`../simulations/free-stack/`](../simulations/free-stack/). The deterministic core runs with standard Python and synthetic/public evidence, while Hugging Face, Kaggle, and GitHub integrations are optional adapters behind provenance and license gates.
+
 ## Digital-Twin principle
 
 Every specialist family may operate through a research-safe NAAIL Digital Twin. For IFRS and PCAOB workflows, the Digital Twin must clearly separate authoritative/public evidence from simulation, academic evidence, model-generated reasoning, and human judgment.
