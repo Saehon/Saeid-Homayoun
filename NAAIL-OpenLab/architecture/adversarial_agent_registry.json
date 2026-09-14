@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "registry_id": "NAAIL-ADVERSARIAL-AGENTS-2026.09",
   "status": "ARCHITECTURE_ADOPTED_RUNTIME_GATED",
   "core_boundary": {
@@ -23,6 +23,8 @@
       "name": "GAA - General Adversarial Accounting & Audit Agent",
       "document": "../GAA_ACCOUNTING_AUDIT_AGENT.md",
       "evidence_registry": "../knowledge/accounting_audit_free_evidence_registry.json",
+      "open_source_pack": "../OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md",
+      "open_source_registry": "accounting_audit_open_source_registry.json",
       "execution_layer": "technology_core",
       "knowledge_access": "read_only_governed_contract",
       "may_modify_knowledge_rag_core": false,
