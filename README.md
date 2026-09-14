@@ -1,13 +1,18 @@
 # ECONOVA-S™
 
-### Governed AI-to-AI scientific economic intelligence for data economy, finance, and sustainable welfare research
+### Governed AI-to-AI Scientific Economic Intelligence
+**Data Economy · Finance · Sustainable Welfare · GPT-5.6 Sol Reasoning · Co-Scientist · ERA · Computational Discovery**
 
 [![AI-to-AI Scientific Contract](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/ai_to_ai_contract.yml/badge.svg)](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/ai_to_ai_contract.yml)
 [![Scientific Discovery Protocol](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific_discovery_protocol.yml/badge.svg)](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific_discovery_protocol.yml)
+[![GPT-5.6 Sol](https://img.shields.io/badge/Reasoning%20Backend-GPT--5.6%20Sol-111111)](prototype_v02/)
+[![Architecture V2.5](https://img.shields.io/badge/Architecture-V2.5-555555)](ARCHITECTURE.md)
 
-ECONOVA-S™ is an independent research-software platform for **AI-assisted scientific discovery with explicit economic theory, real-data provenance, econometric identification, computational discovery, independent replication, adversarial review, Chain-of-Evidence verification, falsification, and human scientific governance**.
+ECONOVA-S™ is an independent, governed research-software platform for **AI-assisted scientific discovery in economics and finance**. In supported prototype workflows, **GPT-5.6 Sol serves as the current high-reasoning backend inside the Replaceable Technology Core™** for hypothesis generation, empirical-design critique, scientific red-teaming, evidence synthesis, and structured agent-to-agent reasoning.
 
-> **Generate broadly. Ground literature. Convert hypotheses to executable tests. Search scientifically. Preserve every evidence chain. Attack the result. Reproduce it. Let humans decide.**
+GPT-5.6 Sol is deliberately **not** the scientific authority. ECONOVA-S™ separates model intelligence from scientific acceptance: economic theory, causal DAGs, provenance, identification, replication, falsification, Chain-of-Evidence, welfare interpretation, and the Human Gate™ remain governed independently of the model backend.
+
+> **GPT-5.6 Sol reasons. ECONOVA-S™ governs. Evidence decides. Humans approve.**
 
 ## Status
 
@@ -16,6 +21,7 @@ ECONOVA-S™ is an independent research-software platform for **AI-assisted scie
 | Canonical architecture | **V2.5** |
 | Latest citable software | **v0.2.0** |
 | Active development | **v0.3** |
+| Current high-reasoning backend | **GPT-5.6 Sol — replaceable** |
 | AI-to-AI automation | **Runnable deterministic orchestration + governance tests** |
 | Scientific discovery protocol | **Machine-readable study manifest + gate validator** |
 | Flagship empirical study | **MNSc–FamaFrench–01: FIZ→CIZ transition** |
@@ -33,7 +39,7 @@ ECONOVA-S™ is an independent research-software platform for **AI-assisted scie
 ECONOVA-S™ separates stable scientific meaning from replaceable technology:
 
 1. **Stable Economic Knowledge Core™** — economics, finance, data economy, causal DAGs, Variable DNA™, identification, replication, falsification, sustainability, Chain-of-Evidence, and welfare.
-2. **Replaceable Technology Core™** — LLMs, retrieval, Python/R/Stata/EViews, databases, evaluators, model routers, tool protocols, and compute.
+2. **Replaceable Technology Core™** — GPT-5.6 Sol and future LLMs, retrieval, Python/R/Stata/EViews, databases, evaluators, model routers, tool protocols, and compute.
 
 The **AI-to-AI Scientific Intelligence Fabric™** connects the two cores; it is not a third core.
 
@@ -76,6 +82,7 @@ flowchart LR
 | **Mirendil-inspired** | Closed-loop R&D improvement with observability and evaluation, but no authority to weaken scientific gates |
 | **AI-to-AI review** | Independent replicator + adversarial critic + explicit independence class |
 | **DAG governance** | Evidence class and identification logic constrained by explicit causal/system structure |
+| **GPT-5.6 Sol** | Replaceable high-reasoning backend for generation, critique, synthesis and red-team workflows; never the final scientific gate |
 
 The full canonical protocol is in [`GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md`](GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md).
 
@@ -145,6 +152,7 @@ The public repository includes:
 - formal AI-to-AI handoff/provenance contract;
 - chained SHA-256 integrity and final run hash;
 - runnable deterministic orchestration;
+- GPT-5.6 Sol as the current replaceable high-reasoning backend in supported prototype workflows;
 - Co-Scientist-style hypothesis functions;
 - ERA-style hypothesis-to-empirical conversion rules;
 - AlphaEvolve-inspired scientific search governance;
@@ -158,7 +166,6 @@ The public repository includes:
 - risk flags and scientific stop conditions;
 - failure propagation and fault containment;
 - Evidence Passport™ and Human Gate™ controls;
-- GPT-5.6 Sol as a replaceable backend in the v0.2 prototype;
 - evidence-grounded metadata RAG;
 - official Fama–French data adapters;
 - Damodaran / NYU Stern industry-data adapters;
@@ -168,7 +175,7 @@ The public repository includes:
 - temporal/out-of-sample checks;
 - Stata `.do` export.
 
-The scientific contract is provider-neutral. OpenAI, Google/Gemini, Microsoft/Azure, local models, or future providers may be attached as replaceable adapters without changing the Stable Economic Knowledge Core™ or scientific gates.
+The scientific contract is provider-neutral. GPT-5.6 Sol can be upgraded or replaced by future OpenAI, Google/Gemini, Microsoft/Azure, local, or other model backends without changing the Stable Economic Knowledge Core™ or scientific gates.
 
 ---
 
@@ -201,7 +208,7 @@ The canonical discovery manifest for this study currently remains **pre-discover
 
 ## Scientific assurance
 
-ECONOVA-S™ does **not** treat novelty, statistical significance, predictive accuracy, evaluator score, LLM confidence, or multi-agent agreement as sufficient evidence of discovery.
+ECONOVA-S™ does **not** treat novelty, statistical significance, predictive accuracy, evaluator score, GPT-5.6 Sol confidence, or multi-agent agreement as sufficient evidence of discovery.
 
 A serious claim must survive the applicable gates for:
 
@@ -241,7 +248,7 @@ automation/ai_handoff.schema.json       Scientific handoff contract
 discovery/study_manifest.schema.json    Study-level discovery contract
 discovery/validate_study_manifest.py    Machine discovery-gate validator
 templates/STUDY_DISCOVERY_TEMPLATE.md   Publication-grade study template
-prototype_v02/                          Real-data + evidence-RAG workbench
+prototype_v02/                          GPT-5.6 Sol real-data + evidence-RAG workbench
 prototype_v03/                          Official public-data ingestion layer
 studies/MNSc-FamaFrench-01/             First frozen empirical study
 .github/                                CI, governance, issue and PR templates
@@ -261,4 +268,4 @@ Research and permitted non-commercial use are governed by [`LICENSE`](LICENSE). 
 
 ## Independence
 
-ECONOVA-S™ is an **independent research project**. References to Google, Google Research, Google DeepMind, Microsoft, OpenAI, Mirendil, Azure, or other organizations and technologies identify methodological inspiration, model providers, public research systems, or interoperability targets only; they do not imply sponsorship, employment, endorsement, partnership, or organizational affiliation unless explicitly documented.
+ECONOVA-S™ is an **independent research project**. References to GPT-5.6 Sol, OpenAI, Google, Google Research, Google DeepMind, Microsoft, Mirendil, Azure, or other organizations and technologies identify methodological inspiration, model providers, public research systems, or interoperability targets only; they do not imply sponsorship, employment, endorsement, partnership, or organizational affiliation unless explicitly documented.
