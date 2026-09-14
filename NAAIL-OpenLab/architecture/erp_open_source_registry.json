@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-ERP-OSS-2026.09",
+  "status": "ARCHITECTURE_ADOPTED_RUNTIME_GATED",
+  "knowledge_rag_core_version": "KRG2026.3",
+  "boundary": {
+    "erp_belongs_to_technology_or_simulation_layer": true,
+    "erp_may_modify_knowledge_rag_core": false,
+    "erp_output_is_authoritative_without_validation": false,
+    "adapter_first_required": true,
+    "human_gate_required": true
+  },
+  "priority_projects": [
+    {
+      "name": "ERPNext",
+      "repository": "https://github.com/frappe/erpnext",
+      "license": "GPL-3.0",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_PRIMARY_SANDBOX_REFERENCE",
+      "naail_role": "modern_erp_accounting_operations_digital_twin",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "Odoo Community",
+      "repository": "https://github.com/odoo/odoo",
+      "license": "LGPL-3.0 for open-source core; other bundled components may vary",
+      "license_status": "verified_upstream_core",
+      "state": "ADOPT_ENTERPRISE_BENCHMARK_REFERENCE",
+      "naail_role": "broad_enterprise_process_benchmark",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "Apache OFBiz",
+      "repository": "https://github.com/apache/ofbiz-framework",
+      "license": "Apache-2.0",
+      "license_status": "project_family_known_permissive_reverify_exact_ref_before_runtime",
+      "state": "ADOPT_ENTERPRISE_PROCESS_REFERENCE",
+      "naail_role": "erp_crm_ecommerce_supply_chain_mrp_reference",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "LedgerSMB",
+      "repository": "https://github.com/ledgersmb/LedgerSMB",
+      "license": "GPL family",
+      "license_status": "reverify_exact_version_before_runtime",
+      "state": "ADOPT_ACCOUNTING_CONTROL_REFERENCE",
+      "naail_role": "double_entry_accounting_audit_control_benchmark",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "iDempiere",
+      "repository": "https://github.com/idempiere/idempiere",
+      "license": "GPL-2.0-or-later family",
+      "license_status": "reverify_exact_version_before_runtime",
+      "state": "ADOPT_COMPLEX_CONTROL_REFERENCE",
+      "naail_role": "complex_erp_crm_mfg_scm_icfr_workflow_reference",
+      "third_party_code_vendored": false
+    }
+  ],
+  "additional_projects": [
+    {"name":"Dolibarr","repository":"https://github.com/Dolibarr/dolibarr","state":"ADOPT_SME_REFERENCE","license_review":"required_before_runtime"},
+    {"name":"Tryton","repository":"https://github.com/tryton/tryton","state":"SANDBOX_REFERENCE","license_review":"required_before_runtime"},
+    {"name":"metasfresh","repository":"https://github.com/metasfresh/metasfresh","state":"SANDBOX_REFERENCE","license_review":"required_before_runtime"},
+    {"name":"Axelor Open Suite","repository":"https://github.com/axelor/axelor-open-suite","state":"SANDBOX_REFERENCE","license_review":"required_before_runtime"},
+    {"name":"inoERP","repository":"https://github.com/inoerp/inoERP","state":"RESEARCH_REFERENCE","license_review":"required_before_runtime"},
+    {"name":"FrontAccounting","repository":"https://github.com/FrontAccountingERP/FA","state":"EDUCATION_REFERENCE","license_review":"required_before_runtime"},
+    {"name":"webERP","repository":"https://github.com/webERP-team/webERP","state":"EDUCATION_REFERENCE","license_review":"required_before_runtime"},
+    {"name":"ERP5","repository":"https://github.com/Nexedi/erp5","state":"RESEARCH_REFERENCE","license_review":"required_before_runtime"}
+  ],
+  "process_domains": [
+    "order_to_cash",
+    "purchase_to_pay",
+    "record_to_report",
+    "inventory",
+    "fixed_assets",
+    "payroll",
+    "manufacturing",
+    "revenue",
+    "journal_entries",
+    "internal_controls"
+  ],
+  "promotion_gates": [
+    "exact_repo_and_branch_verification",
+    "license_and_notice_review",
+    "version_or_commit_pinning",
+    "dependency_security_review",
+    "privacy_and_data_use_review",
+    "isolated_synthetic_client_xyz_sandbox",
+    "erp_event_and_ledger_provenance",
+    "frozen_benchmark_evaluation",
+    "reproducibility_test",
+    "failure_memory_logging",
+    "knowledge_rag_core_boundary_test",
+    "human_architecture_gate"
+  ],
+  "invariants": {
+    "third_party_erp_is_knowledge_authority": false,
+    "third_party_erp_may_modify_knowledge_rag_core": false,
+    "erp_output_is_audit_evidence_without_provenance": false,
+    "erp_generated_journal_is_posted_without_gate": false,
+    "third_party_code_is_naail_owned": false,
+    "human_gate_required": true
+  }
+}
