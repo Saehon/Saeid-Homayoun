@@ -8,9 +8,12 @@ on:
   pull_request:
     paths:
       - 'studies/FF-Damodaran-Discovery-01/.run_prepare_pr'
+  issue_comment:
+    types: [created]
 
 jobs:
   prepare:
+    if: ${{ github.event_name != 'issue_comment' || (github.event.issue.number == 11 && github.event.comment.body == '/run-ff-damodaran-prepare') }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
