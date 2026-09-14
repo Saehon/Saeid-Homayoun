@@ -2,6 +2,9 @@ name: FF-Damodaran Prepare Crosswalk
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'studies/FF-Damodaran-Discovery-01/.run_prepare'
 
 jobs:
   prepare:
