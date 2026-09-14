@@ -59,10 +59,8 @@ class GeminiProvider(BaseProvider):
         key = api_key or os.getenv("GEMINI_API_KEY")
         if not key:
             raise ProviderConfigurationError("GEMINI_API_KEY is not configured.")
-        self.info = ProviderInfo(
-            provider="google_gemini",
-            model=model or os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
-        )
+        selected_model = model or os.getenv("GEMINI_MODEL") or "gemini-2.5-flash"
+        self.info = ProviderInfo(provider="google_gemini", model=selected_model)
         try:
             from google import genai
             from google.genai import types
@@ -133,7 +131,6 @@ class FoundryProvider(BaseProvider):
                 self._UserMessage(content=user),
             ],
             model=self.info.model,
-            temperature=0,
         )
         text = response.choices[0].message.content
         return _extract_json(text or "")
