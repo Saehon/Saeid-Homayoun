@@ -1,0 +1,50 @@
+{
+  "constitution_version": "2026.09",
+  "status": "canonical_machine_readable_governance",
+  "scope": "ECONOVA-S and NAAIL publication-grade scientific discovery workflows",
+  "invariants": {
+    "agent_consensus_is_scientific_truth": false,
+    "optimize_for_p_value": false,
+    "discovery_claim_default": false,
+    "human_gate_required": true,
+    "failed_and_null_results_must_be_retained": true,
+    "protocol_relaxation_by_agent_allowed": false,
+    "external_system_names_imply_execution": false,
+    "review_role_separation_alone_counts_as_independence": false,
+    "evidence_lineage_required": true,
+    "holdout_leakage_allowed": false
+  },
+  "minimum_discovery_gates": [
+    "literature_validation",
+    "hypothesis_tournament",
+    "dag_governance",
+    "empirical_conversion",
+    "provenance",
+    "replication_or_oos",
+    "adversarial_review",
+    "falsification",
+    "chain_of_evidence",
+    "coe_audit",
+    "economic_significance",
+    "reproducibility"
+  ],
+  "mandatory_integrity_controls": [
+    "protocol_frozen",
+    "evaluator_frozen",
+    "holdout_isolated",
+    "failure_memory_retained",
+    "code_data_lineage_recorded",
+    "p_value_optimization_prohibited",
+    "external_method_execution_truthful"
+  ],
+  "scientific_method_inspirations": {
+    "co_scientist": "hypothesis generation, critique, ranking, evolution and meta-review",
+    "era": "conversion of scientific problems into executable empirical software and scorable tests",
+    "alphaevolve": "evaluator-guided evolutionary search over code, algorithms and specifications",
+    "computational_discovery": "parallel candidate generation and systematic empirical comparison",
+    "alphafold": "latent-structure reasoning and rigorous benchmark discipline; not a claim that AlphaFold is executed for business research",
+    "science_one": "Chain-of-Evidence and CoE Audit for verifiability",
+    "mirendil": "closed-loop R&D acceleration and failure-driven iteration; not a Google product"
+  },
+  "final_authority": "human_reviewer"
+}
