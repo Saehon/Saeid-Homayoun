@@ -49,7 +49,7 @@
     "hypothesis_tournament": null,
     "empirical_manifest": "studies/MNSc-FamaFrench-01/artifacts/empirical_manifest.json",
     "provenance_manifest": "studies/MNSc-FamaFrench-01/artifacts/data_provenance.json",
-    "search_registry": null,
+    "search_registry": "studies/MNSc-FamaFrench-01/artifacts/search_registry.json",
     "replication_report": null,
     "red_team_report": null,
     "falsification_report": null,
