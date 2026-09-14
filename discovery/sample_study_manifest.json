@@ -1,0 +1,49 @@
+{
+  "study_id": "MNSc-FamaFrench-01",
+  "research_goal": "Test whether the FIZ-to-CIZ data-construction transition changes empirical conclusions drawn from Fama-French factors and benchmark portfolios.",
+  "evidence_class": "associational",
+  "methods": [
+    "co_scientist_style",
+    "era_style",
+    "alphaevolve_inspired",
+    "computational_discovery",
+    "alphafold_inspired_latent_structure",
+    "science_one_chain_of_evidence",
+    "coe_audit",
+    "mirendil_inspired_closed_loop",
+    "ai_to_ai_review",
+    "dag_governance"
+  ],
+  "gates": {
+    "literature_validation": true,
+    "hypothesis_tournament": false,
+    "dag_governance": true,
+    "empirical_conversion": true,
+    "search_integrity": true,
+    "latent_structure_validation": false,
+    "provenance": true,
+    "identification": false,
+    "replication_or_oos": false,
+    "adversarial_review": false,
+    "falsification": false,
+    "chain_of_evidence": false,
+    "coe_audit": false,
+    "economic_significance": false,
+    "welfare_interpretation": false,
+    "reproducibility": true
+  },
+  "artifacts": {
+    "evidence_passport": "studies/MNSc-FamaFrench-01/artifacts/evidence_passport.json",
+    "human_gate_record": "studies/MNSc-FamaFrench-01/HUMAN_GATE.md",
+    "chain_of_evidence": null,
+    "coe_audit": null,
+    "replication_report": null,
+    "red_team_report": null
+  },
+  "human_gate": {
+    "approved": false,
+    "reviewer": "",
+    "decision_date": null
+  },
+  "discovery_claim_allowed": false
+}
