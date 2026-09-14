@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.2.2 — 2026-09-14
+### Audit Digital Twin Prototype 002
+- Advanced the public prototype status from Prototype 001 to Prototype 002.
+- Added explicit Materiality and Risk agent roles to the private executable baseline.
+- Added Evidence Passport™ with reproducible source hashing, evidence IDs, assertions, adapter identity and limitations.
+- Added Professional Decision DAG™ with dependency-aware nodes and a mandatory Human Gate.
+- Added a provider-neutral model-adapter contract for future OpenAI, Gemini, Microsoft/Azure, local/open-model and other comparative runs.
+- Added five regression tests covering frozen exceptions, materiality comparison, evidence hashing, Human Gate termination and baseline error rates.
+- Preserved the frozen synthetic Client XYZ revenue-recognition benchmark and public/private IP boundary.
+- Updated public citation metadata and version marker to v0.2.2.
+
 ## v0.2.1 — 2026-09-14
 ### Governance and engineering hardening
 - Added public seven-layer reference architecture.
