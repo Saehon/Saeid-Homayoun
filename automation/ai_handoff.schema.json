@@ -66,6 +66,22 @@
       "additionalProperties": true
     },
     "required_next_action": {"type": "string"},
+    "parent_content_sha256": {
+      "type": ["string", "null"],
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "independence": {
+      "type": "object",
+      "properties": {
+        "class": {"enum": ["role_independent_only", "role_and_tool_independent"]},
+        "criteria": {"type": "object"}
+      },
+      "additionalProperties": true
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
     "content_sha256": {
       "type": "string",
       "pattern": "^[a-fA-F0-9]{64}$"
