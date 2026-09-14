@@ -1,0 +1,95 @@
+{
+  "registry_name": "NAAIL Google-Inspired Scientific Discovery Phase Registry",
+  "platform": "NAAIL OpenLab V2026.3 Multi-Agent Digital Twin",
+  "knowledge_rag_core": "KRG2026.3",
+  "default_external_execution_status": "NOT_EXECUTED",
+  "external_system_names_imply_execution": false,
+  "technology_core_may_rewrite_knowledge_core": false,
+  "human_gate_required": true,
+  "phases": [
+    {
+      "phase_id": "P00",
+      "name": "problem_framing_and_literature_grounding",
+      "google_reference": ["Gemini for Science / Literature Insights", "Science One problem-investigator principle"],
+      "naail_gate": ["literature_provenance", "source_hierarchy", "reference_verification"],
+      "status": "METHODOLOGICAL_REFERENCE"
+    },
+    {
+      "phase_id": "P01",
+      "name": "hypothesis_generation_and_tournament",
+      "google_reference": ["Co-Scientist", "Gemini for Science / Hypothesis Generation"],
+      "naail_gate": ["falsifiability", "theory_fit", "novelty_screen", "failure_memory"],
+      "status": "METHODOLOGICAL_REFERENCE"
+    },
+    {
+      "phase_id": "P02",
+      "name": "dag_and_identification",
+      "google_reference": ["AI-assisted scientific reasoning"],
+      "naail_gate": ["professional_decision_dag", "chronology", "confounding", "selection", "leakage"],
+      "status": "NAAIL_GOVERNED"
+    },
+    {
+      "phase_id": "P03",
+      "name": "empirical_conversion",
+      "google_reference": ["Empirical Research Assistance (ERA)"],
+      "naail_gate": ["variable_dna", "sample_rules", "estimand", "executable_code", "metrics", "robustness_plan"],
+      "status": "METHODOLOGICAL_REFERENCE"
+    },
+    {
+      "phase_id": "P04",
+      "name": "digital_twin_and_data_binding",
+      "google_reference": ["Gemini / agent orchestration where available"],
+      "naail_gate": ["evidence_passport", "rights_review", "hash", "version", "raw_derived_status"],
+      "status": "NAAIL_GOVERNED"
+    },
+    {
+      "phase_id": "P05",
+      "name": "model_algorithm_measure_search",
+      "google_reference": ["Computational Discovery", "AlphaEvolve"],
+      "naail_gate": ["frozen_fitness_function", "candidate_lineage", "holdout_isolation", "no_pvalue_optimization"],
+      "status": "METHODOLOGICAL_REFERENCE"
+    },
+    {
+      "phase_id": "P06",
+      "name": "latent_structure_discovery",
+      "google_reference": ["AlphaFold-inspired structural reasoning"],
+      "naail_gate": ["domain_interpretation", "simple_baseline", "stability", "external_validation"],
+      "status": "CONCEPTUAL_TRANSFER_ONLY"
+    },
+    {
+      "phase_id": "P07",
+      "name": "domain_specific_forecasting_and_simulation",
+      "google_reference": ["TimesFM when task-appropriate", "other domain-specific Google research models when rights/access permit"],
+      "naail_gate": ["temporal_holdout", "benchmark_comparison", "model_terms_review"],
+      "status": "OPTIONAL_PROVIDER_TARGET"
+    },
+    {
+      "phase_id": "P08",
+      "name": "robustness_adversarial_review_and_falsification",
+      "google_reference": ["Science One integrity principles"],
+      "naail_gate": ["gaa_critic", "negative_controls", "placebo", "alternative_specifications", "contradictory_evidence"],
+      "status": "NAAIL_GOVERNED"
+    },
+    {
+      "phase_id": "P09",
+      "name": "replication_and_oos",
+      "google_reference": ["Science One / CoE verification principles"],
+      "naail_gate": ["independent_rerun", "environment_pinning", "clean_room_replication", "oos_validation"],
+      "status": "NAAIL_GOVERNED"
+    },
+    {
+      "phase_id": "P10",
+      "name": "chain_of_evidence_and_coe_audit",
+      "google_reference": ["Science One Framework", "Chain-of-Evidence", "CoE Audit"],
+      "naail_gate": ["reference_verification", "score_reproduction", "method_code_alignment", "claim_evidence_alignment"],
+      "status": "METHODOLOGICAL_REFERENCE"
+    },
+    {
+      "phase_id": "P11",
+      "name": "human_authority",
+      "google_reference": [],
+      "naail_gate": ["explicit_human_approval"],
+      "status": "NAAIL_ONLY_AUTHORITY"
+    }
+  ]
+}
