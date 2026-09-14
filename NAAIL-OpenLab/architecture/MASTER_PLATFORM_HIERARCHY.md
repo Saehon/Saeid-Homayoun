@@ -8,9 +8,9 @@
 
 **NAAIL OpenLab™ → master platform**  
 **NAAIL Multi-Agent Digital Twin → core architecture**  
-**POMELO™ · KIWI™ · ECONOVA-S™ · ESG Intelligence · ICFR Intelligence · Forensic Intelligence → specialist agent families**
+**POMELO™ · KIWI™ · ECONOVA-S™ · IFRS Intelligence · PCAOB Intelligence · ESG Intelligence · ICFR Intelligence · Forensic Intelligence → specialist agent families**
 
-ECONOVA-S™ is **not an alternative or competing platform to NAAIL OpenLab™**. It is the dedicated **Data Economy & Economic Intelligence Agent family within NAAIL OpenLab™**.
+ECONOVA-S™, IFRS Intelligence, PCAOB Intelligence, KIWI™, POMELO™, ESG Intelligence, ICFR Intelligence, and Forensic Intelligence are **specialist agent families within NAAIL OpenLab™**, not competing umbrella platforms.
 
 ## Master hierarchy
 
@@ -32,10 +32,32 @@ V2026.3 Multi-Agent Digital Twin
 ├── Professional Digital-Twin Agents
 │   ├── KIWI™ — Audit / CAM / KAM Intelligence
 │   ├── POMELO™ — Accounting & Assurance Intelligence
+│   ├── IFRS Intelligence Agent™ — IFRS Reporting & Standards Digital Twin
+│   ├── PCAOB Intelligence Agent™ — Audit Inspection & Regulatory Digital Twin
 │   ├── ESG / Sustainability Intelligence Agent
 │   ├── ICFR & Controls Intelligence Agent
 │   ├── Forensic Intelligence Agent
 │   └── ECONOVA-S™ — Data Economy & Economic Intelligence Agent
+│
+├── IFRS Intelligence Agent™
+│   ├── IFRS Standards Knowledge Twin
+│   ├── Financial Reporting Digital Twin
+│   ├── Accounting Policy & Judgment Agent
+│   ├── Disclosure Compliance Agent
+│   ├── IFRS Evidence & Citation Agent
+│   ├── IFRS Scenario Simulation Agent
+│   ├── IFRS Assurance Handoff
+│   └── Human Professional Judgment Gate
+│
+├── PCAOB Intelligence Agent™
+│   ├── PCAOB Standards & Rules Knowledge Twin
+│   ├── Inspection Findings Digital Twin
+│   ├── Audit Deficiency Classification Agent
+│   ├── Remediation & Recurrence Agent
+│   ├── ICFR / Audit Quality Linkage Agent
+│   ├── Inspection Risk & Supervisory Attention Agent
+│   ├── PCAOB Evidence & Provenance Agent
+│   └── Human Regulatory / Research Gate
 │
 ├── ECONOVA-S™
 │   ├── Economic Digital Twin
@@ -49,8 +71,10 @@ V2026.3 Multi-Agent Digital Twin
 │   └── FT50 / Management Science Research Engine
 │
 ├── Data & Evidence Layer
+│   ├── IFRS Foundation / IASB authoritative materials
 │   ├── SEC / EDGAR / XBRL
-│   ├── PCAOB / AAER
+│   ├── PCAOB standards, rules, inspection and enforcement evidence
+│   ├── AAER
 │   ├── CAM / KAM
 │   ├── Fama–French
 │   ├── Damodaran
@@ -62,6 +86,8 @@ V2026.3 Multi-Agent Digital Twin
     ├── Student Digital Twins
     ├── Audit Simulations
     ├── Accounting Simulations
+    ├── IFRS Judgment Simulations
+    ├── PCAOB Inspection Simulations
     ├── Economic Simulations
     ├── Big Four-style Agent Exercises
     └── Reproducible Research Laboratories
@@ -70,11 +96,13 @@ V2026.3 Multi-Agent Digital Twin
 ## Canonical public positioning
 
 > **NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin**  
-> An evidence-governed multi-agent platform for accounting, auditing, economics, sustainability, forensic analytics, education, and reproducible scientific discovery.
+> An evidence-governed multi-agent platform for accounting, auditing, IFRS reporting, PCAOB inspection research, economics, sustainability, forensic analytics, education, and reproducible scientific discovery.
 >
-> **Specialist Agent Families:** POMELO™ · KIWI™ · **ECONOVA-S™** · ESG Intelligence · ICFR Intelligence · Forensic Intelligence
+> **Specialist Agent Families:** POMELO™ · KIWI™ · ECONOVA-S™ · IFRS Intelligence · PCAOB Intelligence · ESG Intelligence · ICFR Intelligence · Forensic Intelligence
 >
-> **ECONOVA-S™** is the dedicated **Data Economy & Economic Intelligence Agent** within NAAIL OpenLab™, providing economic digital twins, asset-pricing research, financial-data analytics, LLM-based economic discovery, and reproducible empirical research workflows.
+> **IFRS Intelligence Agent™** is the dedicated IFRS reporting and standards Digital Twin within NAAIL OpenLab™, supporting standards-grounded accounting judgments, disclosure analysis, scenario simulation, and evidence-linked professional review.
+>
+> **PCAOB Intelligence Agent™** is the dedicated PCAOB audit-inspection and regulatory Digital Twin within NAAIL OpenLab™, supporting inspection-finding analysis, deficiency classification, remediation research, audit-quality analytics, and evidence-linked supervisory research.
 
 ## Specialist agent-family boundaries
 
@@ -83,6 +111,12 @@ Accounting, assurance, professional intelligence, evidence verification, account
 
 ### KIWI™
 Audit intelligence focused on Critical Audit Matters, Key Audit Matters, audit evidence, assertions, risk–procedure alignment, audit-quality measurement, and CAM/KAM research.
+
+### IFRS Intelligence Agent™
+IFRS Accounting Standards, standards-grounded financial reporting, accounting-policy analysis, recognition and measurement judgments, presentation and disclosure analysis, cross-standard reasoning, financial-reporting Digital Twins, evidence provenance, and human-reviewed professional decision support. It must distinguish authoritative IFRS material from research commentary and model-generated suggestions.
+
+### PCAOB Intelligence Agent™
+PCAOB auditing standards, rules, inspection findings, enforcement and public regulatory evidence; audit-deficiency classification; recurrence and remediation; inspection-risk analytics; supervisory-attention research; ICFR/audit-quality linkage; and governed inspection Digital-Twin simulation. It is a research and professional-support agent and does not represent or act on behalf of the PCAOB.
 
 ### ECONOVA-S™
 Economics, finance, data economy, asset pricing, financial/economic data science, Fama–French, Damodaran, SEC/XBRL economic evidence, economic digital twins, LLM economic research, and FT50/Management Science empirical research workflows.
@@ -95,6 +129,16 @@ Internal control over financial reporting, material weaknesses, control risk, re
 
 ### Forensic Intelligence
 Fraud risk, anomalies, investigative analytics, forensic evidence graphs, professional skepticism, and governed forensic simulation.
+
+## Digital-Twin rule for IFRS and PCAOB agents
+
+Both new families use the NAAIL Digital Twin pattern:
+
+`authoritative evidence → evidence passport → domain resolver → structured professional issue → specialist agents → critic/defender → scenario or empirical test → Decision DAG → falsification/replication where applicable → Human Gate`
+
+For **IFRS Intelligence**, the Digital Twin represents a synthetic or research-safe reporting entity, accounting event, policy choice, estimate, disclosure problem, or cross-standard interaction. It must preserve the difference between authoritative IFRS requirements, interpretive guidance, academic evidence, and model-generated reasoning.
+
+For **PCAOB Intelligence**, the Digital Twin represents a synthetic or public-evidence-based audit engagement, inspection finding, deficiency pattern, remediation trajectory, or supervisory-risk scenario. It must not imply access to confidential PCAOB inspection information or non-public firm data.
 
 ## Shared scientific-discovery layer
 
@@ -120,6 +164,8 @@ NAAIL-OpenLab/
 ├── agents/
 │   ├── pomelo/
 │   ├── kiwi/
+│   ├── ifrs/
+│   ├── pcaob/
 │   ├── econova-s/
 │   ├── esg/
 │   ├── icfr/
@@ -138,12 +184,13 @@ This is a **navigation target**, not permission to move existing files without p
 ## Naming rules
 
 1. Public pages should introduce **NAAIL OpenLab™** before any specialist agent family.
-2. Do not describe ECONOVA-S™, KIWI™, or POMELO™ as a platform competing with NAAIL OpenLab™.
+2. Do not describe ECONOVA-S™, KIWI™, POMELO™, IFRS Intelligence, or PCAOB Intelligence as a platform competing with NAAIL OpenLab™.
 3. Use **“within NAAIL OpenLab™”**, **“specialist agent family”**, or equivalent language for subsystem descriptions.
 4. `V2026.3 Multi-Agent Digital Twin` identifies the canonical architecture, while semantic versions such as `v0.2.3` identify executable releases.
-5. External AI systems and firms remain methodological inspirations, providers, benchmarks, or comparison targets unless a documented relationship exists.
-6. Scientific-discovery governance is shared across all agent families and cannot be weakened locally.
-7. Human approval remains mandatory for material professional or scientific claims.
+5. External AI systems, regulators, standard setters, and firms remain evidence sources, methodological inspirations, providers, benchmarks, or comparison targets unless a documented relationship exists.
+6. IFRS Foundation/IASB and PCAOB names identify authoritative/public evidence domains; their use does not imply affiliation, endorsement, sponsorship, certification, or authorization.
+7. Scientific-discovery governance is shared across all agent families and cannot be weakened locally.
+8. Human approval remains mandatory for material professional or scientific claims.
 
 ## Governance priority
 
