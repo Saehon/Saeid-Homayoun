@@ -1,0 +1,37 @@
+{
+  "task_id": "MNSc-FamaFrench-01",
+  "run_id": "example-validation-001",
+  "sender": "empirical_design_agent",
+  "receiver": "independent_replicator",
+  "claim": "The frozen design is ready for independent reproduction; no empirical conclusion is asserted.",
+  "evidence": [
+    {
+      "source": "Kenneth R. French Data Library historical archives",
+      "role": "authoritative primary data",
+      "sha256": null,
+      "retrieved_at": null
+    }
+  ],
+  "method": "Frozen FIZ-to-CIZ paired archive comparison with HAC inference and CAPM/FF3/FF5 specifications.",
+  "assumptions": [
+    "Official archive files correspond to the documented July release snapshots.",
+    "Common-date alignment is enforced before comparison."
+  ],
+  "confidence": 0.75,
+  "contradictions": [
+    "Live archive execution has not yet been independently validated in CI."
+  ],
+  "failure_status": {
+    "failed": false,
+    "reasons": []
+  },
+  "provenance": {
+    "model_or_tool": "ECONOVA-S contract example",
+    "version": "0.3-dev",
+    "timestamp_utc": "2026-09-14T10:45:00Z",
+    "prompt_or_config_sha256": null,
+    "code_commit": null
+  },
+  "required_next_action": "Independently reproduce Tables 1-6 and verify source hashes before interpretation.",
+  "content_sha256": "0cb47a0207f430cc0d2177f54aa4e27467ab2cace2aa456809d078aed1beb25f"
+}
