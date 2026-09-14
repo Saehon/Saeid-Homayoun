@@ -2,10 +2,13 @@
 
 **GitHub publication state:** PUBLIC  
 **Public preview published:** 14 September 2026  
+**Google Drive working mirror:** SYNCHRONIZED  
 **Repository:** `Saehon/Saeid-Homayoun`  
 **Project path:** `NAAIL-OpenLab/`
 
-## What is published
+## Published public-preview state
+
+NAAIL OpenLab is publicly published on GitHub as a research-safe public preview. The canonical public landing page is `PUBLIC_PREVIEW.md`, and the current publication record is this file.
 
 The following NAAIL OpenLab materials are publicly accessible on GitHub:
 
@@ -21,6 +24,8 @@ The following NAAIL OpenLab materials are publicly accessible on GitHub:
 - Microsoft / Google / OpenAI marketplace-preparation scaffolding;
 - evaluation, governance, security, licensing, citation, and IP notices;
 - public-preview landing page.
+
+A synchronized Google Drive working document is maintained separately for project continuity. The Drive copy is a working mirror and does not replace GitHub as the public publication surface.
 
 ## What “published” means here
 
@@ -40,6 +45,7 @@ Published means the material is available in the public GitHub repository. It do
 - **Provider testing:** Prototype 004 harness present; credential-gated empirical runs and human review remain required before provider-performance claims.
 - **Student Pilot 002:** roadmap/public architecture; provider-backed classroom deployment remains gated by technical, privacy, consent, institutional, and Human Gate requirements.
 - **Big Four / industry pilot:** publicly documented proposal; no partner relationship is claimed without written authorization.
+- **Google Drive:** synchronized project mirror updated to the same public-preview milestone.
 
 ## Public/private boundary
 
@@ -49,6 +55,7 @@ The public GitHub repository intentionally excludes provider credentials, confid
 
 - Public Preview: `PUBLIC_PREVIEW.md`
 - Main README: `README.md`
+- Publication Status: `PUBLICATION_STATUS.md`
 - Big Four / Industry Partnership Pilot: `docs/education/BIG4_PARTNERSHIP_PILOT.md`
 - Student Agent Academy State: `docs/education/CURRENT_STUDENT_AGENT_ACADEMY_STATE.md`
 - Student Pilot 001: `Student_Pilot_001/README.md`
