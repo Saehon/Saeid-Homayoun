@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-FINANCE-OSS-2026.09",
+  "status": "ARCHITECTURE_ADOPTED_RUNTIME_GATED",
+  "specialist_family": "ECONOVA-S",
+  "knowledge_rag_core_version": "KRG2026.3",
+  "boundary": {
+    "finance_tools_belong_to_technology_or_research_layer": true,
+    "finance_tool_may_modify_knowledge_rag_core": false,
+    "software_license_equals_data_license": false,
+    "free_access_equals_free_redistribution": false,
+    "research_score_equals_external_credit_rating": false,
+    "human_gate_required": true
+  },
+  "projects": [
+    {
+      "name": "OpenBB",
+      "repository": "https://github.com/OpenBB-finance/OpenBB",
+      "license": "AGPL-3.0",
+      "license_status": "verified_upstream",
+      "state": "REFERENCE_ISOLATED_AGPL",
+      "naail_role": "financial_terminal_and_provider_abstraction",
+      "third_party_code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "FinanceToolkit",
+      "repository": "https://github.com/JerBouma/FinanceToolkit",
+      "license": "MIT",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_ANALYTICS_REFERENCE",
+      "naail_role": "ratios_valuation_performance_risk_fixed_income_mcp",
+      "third_party_code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "FinanceDatabase",
+      "repository": "https://github.com/JerBouma/FinanceDatabase",
+      "license": "MIT",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_SECURITY_MASTER_REFERENCE",
+      "naail_role": "instrument_and_security_reference_database",
+      "third_party_code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "yfinance",
+      "repository": "https://github.com/ranaroussi/yfinance",
+      "license": "Apache-2.0",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_MARKET_DATA_ADAPTER",
+      "naail_role": "market_price_and_company_information_adapter",
+      "third_party_code_vendored": false,
+      "runtime_executed": false,
+      "data_rights_separate_from_software_license": true
+    },
+    {
+      "name": "QuantLib",
+      "repository": "https://github.com/quantlib/QuantLib",
+      "license": "BSD-style permissive",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_PRICING_RISK_REFERENCE",
+      "naail_role": "fixed_income_derivatives_rates_and_pricing",
+      "third_party_code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "FinRL",
+      "repository": "https://github.com/AI4Finance-Foundation/FinRL",
+      "license": "MIT",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_AI_FINANCE_REFERENCE",
+      "naail_role": "reinforcement_learning_finance_research_environment",
+      "third_party_code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "PyPortfolioOpt",
+      "repository": "https://github.com/PyPortfolio/PyPortfolioOpt",
+      "license": "MIT",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_PORTFOLIO_REFERENCE",
+      "naail_role": "portfolio_optimization_and_efficient_frontier",
+      "third_party_code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Riskfolio-Lib",
+      "repository": "https://github.com/dcajasn/Riskfolio-Lib",
+      "license": "BSD-style permissive",
+      "license_status": "verified_upstream",
+      "state": "ADOPT_RISK_PORTFOLIO_REFERENCE",
+      "naail_role": "advanced_risk_measures_and_portfolio_optimization",
+      "third_party_code_vendored": false,
+      "runtime_executed": false
+    }
+  ],
+  "approved_public_data_families": [
+    "SEC",
+    "FRED_subject_to_series_rights",
+    "World_Bank",
+    "Sveriges_Riksbank",
+    "Fama_French",
+    "Damodaran_subject_to_use_terms",
+    "GLEIF",
+    "other_rights_cleared_market_data_adapters"
+  ],
+  "prohibited_claims": [
+    "naail_is_bloomberg",
+    "naail_is_sp_global",
+    "naail_scores_are_sp_moodys_or_fitch_ratings",
+    "public_github_code_grants_proprietary_market_data_rights",
+    "open_source_tool_output_is_authoritative_without_validation"
+  ],
+  "promotion_gates": [
+    "exact_upstream_ref_verification",
+    "software_license_review",
+    "separate_data_terms_review",
+    "version_or_commit_pinning",
+    "dependency_security_review",
+    "privacy_and_data_use_review",
+    "rights_cleared_or_synthetic_sandbox",
+    "provenance_and_timestamp_capture",
+    "frozen_benchmark_evaluation",
+    "out_of_sample_validation",
+    "reproducibility_test",
+    "failure_memory_logging",
+    "knowledge_rag_core_boundary_test",
+    "human_architecture_gate"
+  ]
+}
