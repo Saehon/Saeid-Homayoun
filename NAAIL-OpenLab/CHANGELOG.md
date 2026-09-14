@@ -1,5 +1,18 @@
 # Changelog
 
+## Prototype 004 real-provider harness — 2026-09-14
+### Google Gemini + Microsoft Foundry credential-gated execution
+- Implemented real-provider adapters for Google Gemini using `google-genai` and Microsoft Foundry using `azure-ai-inference`.
+- Added one common provider runner for single-agent, sequential-agent, and governed multi-agent execution against the same frozen Revenue benchmark.
+- Withheld frozen gold labels from provider prompts and preserved separate case/gold hashes for reproducibility.
+- Added evidence-ID validation, hallucinated-evidence detection, provider/model metadata capture, Evidence Passport™, Professional Decision DAG™, and mandatory Human Gate enforcement.
+- Added provider contract tests covering gold withholding, multi-call orchestration, critic/supervisor ordering, evidence validation, and Human Gate protection.
+- Extended GitHub Actions so Gemini and Microsoft Foundry jobs run only when required credentials are configured; otherwise the workflow records `NOT_EXECUTED_PROVIDER_REQUIRED` rather than fabricating model results.
+- Required provider result artifacts to preserve `PENDING_HUMAN_APPROVAL` and prohibited superiority claims before cross-provider replication and human review.
+- Added `PROTOTYPE_004_PROVIDER_EXECUTION.md` as the canonical provider-execution checkpoint.
+- Created a synchronized Google Drive mirror folder and uploaded a frozen Prototype 004 archive ZIP plus readable checkpoint.
+- Preserved the validated public software release at v0.2.3; Prototype 004 remains the next empirical execution milestone until credential-gated provider jobs complete and pass review.
+
 ## FT50 / AJG 4* Scientific Replication Arena — v0.2.4 target — 2026-09-14
 ### External top-journal reproducibility and methodological benchmark layer
 - Added `benchmarks/ft50_abs4/README.md` as the public entry point for external FT50/AJG 4* benchmark integration.
