@@ -51,6 +51,33 @@ The same frozen synthetic case should run across Firm Alpha–Delta architecture
 - complete Chain-of-Evidence;
 - explicit human approval.
 
+### 7. FT50 / AJG 4* external benchmark tests
+Selected public replication repositories from FT50 and AJG/ABS 4* journals may be registered as external scientific benchmarks. They are not treated as NAAIL-owned code by default.
+
+Each external benchmark must pass the applicable controls in the **NAAIL Scientific Replication Arena™**:
+- source/publication verification;
+- rights and license review;
+- exact Git commit pinning before execution;
+- environment reconstruction;
+- original-result replication;
+- independent/clean-room reproduction where feasible;
+- specification robustness;
+- causal or ML/AI diagnostics as appropriate;
+- adversarial Critic–Defender review;
+- temporal/out-of-sample validation;
+- cross-dataset or Digital Twin testing where appropriate;
+- complete Chain-of-Evidence;
+- Human Gate.
+
+Canonical resources:
+- `benchmarks/ft50_abs4/registry.json`
+- `benchmarks/ft50_abs4/BENCHMARK_PROTOCOL.md`
+- `benchmarks/ft50_abs4/validate_registry.py`
+- `tests/SCIENTIFIC_REPLICATION_ARENA.md`
+- `external/FT50_ABS4_SOURCE_POLICY.md`
+
+External benchmark publication status must never substitute for reproducibility, identification validity, falsification, provenance, or evidence quality.
+
 ## Frozen benchmark policy
 Keep separate:
 - development cases;
