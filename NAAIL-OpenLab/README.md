@@ -1,6 +1,8 @@
 # NAAIL OpenLab™ V0.2 — Evidence-Enabled Business School AI Platform
 
-A free, open-source prototype for business-school education, research, and professional simulation across Accounting, Auditing, Finance, and Economics. **Auditing is the first implemented vertical.**
+A **free-for-research-and-education, non-commercial, source-available** prototype for business-school education, research, and professional simulation across Accounting, Auditing, Finance, and Economics. **Auditing is the first implemented vertical.**
+
+> **License notice:** commercial use is not licensed. Software/code is governed by the PolyForm Noncommercial License 1.0.0 and original NAAIL educational/research content by CC BY-NC 4.0, unless a file states otherwise. See `LICENSE.md`. Separate written permission is required for commercial use.
 
 ## What V0.2 adds
 
@@ -57,10 +59,20 @@ No result should be labelled a scientific discovery until required validation, f
 
 The education layer is designed around guided learning rather than answer dumping. It supports Socratic tutoring, synthetic cases, simulations, learning outcomes, rubrics and instructor-controlled assessment.
 
+## License and commercial-use restriction
+
+NAAIL OpenLab is **not released for unrestricted commercial use**.
+
+- **Software/source code:** PolyForm Noncommercial License 1.0.0, unless otherwise stated.
+- **Original NAAIL educational/research content:** CC BY-NC 4.0, unless otherwise stated.
+- **Commercial use:** requires a separate written commercial license from the rights holder.
+- **Trademarks/branding:** NAAIL™, NAAIL OpenLab™, POMELO™, KIWI™ and associated source-identifying branding are not licensed for commercial branding or endorsement.
+- **Patent rights:** are not waived or dedicated to the public domain. See `PATENT_NOTICE.md`.
+
+Commercially restricted activities include selling the software/content, paid SaaS or hosted deployment, incorporation into commercial products, commercial training packages, paid consulting deliverables, or other commercial exploitation without separate written authorization.
+
 ## Legal and rights safeguards
 
-- Software is intended for permissive open-source distribution under Apache-2.0 unless a file states otherwise.
-- Original NAAIL educational material may be distributed under CC BY 4.0 when clearly marked.
 - Third-party standards, publications, datasets, rankings, logos and proprietary platform content retain their own rights.
 - Public simulations use synthetic data and fictional firms/clients.
 - Do not redistribute copyrighted IFRS text, journal articles, restricted course packs or licensed datasets without permission.
@@ -69,8 +81,12 @@ The education layer is designed around guided learning rather than answer dumpin
 
 These controls reduce legal and privacy risk but do not provide a guarantee against all legal issues. Institutions should complete their own legal, privacy and data-protection review before production use with real students, licensed content, commercial APIs, or real client data.
 
+## Patent/disclosure warning
+
+The public NAAIL release occurred on **14 September 2026**. Public disclosure can affect patent rights. Until qualified patent counsel has reviewed the disclosed material and any new invention concepts, new enabling technical details should remain in the private development repository. Do not describe NAAIL OpenLab as “patent pending” unless a patent application has actually been filed.
+
 ## Public release status
 
-**V0.2 public research release — September 2026.**
+**V0.2 non-commercial research release — September 2026.**
 
-The private development/master version is maintained separately. This public folder contains only materials intended for open research and education use.
+The private development/master version is maintained separately. This public folder contains only materials intended for non-commercial research and education use.
