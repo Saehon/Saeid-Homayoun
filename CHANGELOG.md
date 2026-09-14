@@ -4,10 +4,30 @@ All notable public changes to ECONOVA-S™ are documented here.
 
 ## [Unreleased]
 
-### Planned
-- Real-data end-to-end empirical study with publication-grade Evidence Passport™.
-- Stronger replication, identification, welfare and external-validation gates.
-- Curated user-owned/licensed evidence corpus and benchmark expansion.
+### In progress
+- Execute and archive the first official FIZ→CIZ real-data workflow artifacts.
+- Replicate on FF3 and additional archived portfolio families.
+- Reduced-rank factor-dimension and multiplicity/FDR extensions.
+- SEC × Fama–French × Damodaran chronology-safe empirical extension.
+
+## [0.3.0-dev] — 2026-09-14
+
+### Added
+- Official public-data ingestion layer for Fama–French, Damodaran / NYU Stern and SEC EDGAR XBRL CompanyFacts.
+- SEC filing-date chronology gate and source-provenance rules.
+- Frozen first real-data study: `MNSc-FamaFrench-01`.
+- Official July 2024 FIZ-era vs July 2025 CIZ-era Fama–French archive comparison design.
+- Data Construction Sensitivity (DCS).
+- Conclusion Reversal construct.
+- HAC/Newey–West factor-premium inference.
+- CAPM, FF3 and FF5 alpha-stability analysis.
+- Six-table empirical output contract.
+- SHA-256 source archive fingerprints and Evidence Passport™.
+- Offline parser/logic tests and manual GitHub Actions real-data workflow.
+
+### Scientific status
+- Real-data reproducibility / measurement-change study under active validation.
+- `discovery_claim_allowed = false` remains enforced.
 
 ## [0.2.0] — 2026-09-14
 
