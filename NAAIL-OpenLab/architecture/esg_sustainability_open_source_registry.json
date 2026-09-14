@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-ESG-SUSTAINABILITY-2026.09",
+  "platform": "NAAIL OpenLab V2026.3",
+  "specialist_family": "ESG & Sustainability Intelligence",
+  "knowledge_rag_core_version": "KRG2026.3",
+  "status": "ARCHITECTURE_ADOPTED_RUNTIME_GATED",
+  "core_boundary": {
+    "technology_and_reference_layer_only": true,
+    "may_modify_knowledge_rag_core": false,
+    "knowledge_access": "read_only_governed_contract",
+    "human_gate_required": true
+  },
+  "projects": [
+    {
+      "name": "EFRAG Digital Template to XBRL Converter",
+      "repository": "https://github.com/EFRAG-EU/Digital-Template-to-XBRL-Converter",
+      "license": "MIT",
+      "license_verified": true,
+      "authority_note": "Official EFRAG GitHub organization; software tool is not a substitute for legally effective EU text",
+      "naail_role": ["vsme_digital_reporting", "xbrl_conversion", "xbrl_json", "validation_reference"],
+      "state": "ADOPT_PRIORITY",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "OS-Climate physrisk",
+      "repository": "https://github.com/os-climate/physrisk",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "naail_role": ["physical_climate_risk", "asset_hazard_modelling", "scenario_analysis"],
+      "state": "ADOPT_PRIORITY",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Klimatbyran garbo",
+      "repository": "https://github.com/Klimatbyran/garbo",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "naail_role": ["company_ghg_extraction", "nordic_sustainability_reports", "emissions_validation"],
+      "state": "ADOPT_PRIORITY",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Open SDG",
+      "repository": "https://github.com/open-sdg/open-sdg",
+      "license": "MIT",
+      "license_verified": true,
+      "naail_role": ["sdg_indicators", "sdg_metadata", "sdg_publication_workflow"],
+      "state": "ADOPT_SDG_REFERENCE",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Taxonomy4Good",
+      "repository": "https://github.com/HiveGuard-AI/taxonomy4good",
+      "license": "MIT",
+      "license_verified": true,
+      "naail_role": ["esg_taxonomy", "eu_taxonomy_nlp", "sdg_mapping", "sustainability_classification"],
+      "state": "ADOPT_TAXONOMY_REFERENCE",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Altiorem Data",
+      "repository": "https://github.com/AltioremLibrary/altiorem-data",
+      "license": "CC0-1.0",
+      "license_verified": true,
+      "naail_role": ["sustainability_research_metadata", "esg_categories", "sdg_mapping", "sasb_sector_research_support"],
+      "state": "ADOPT_KNOWLEDGE_DATA_REFERENCE",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "OntoSustain RSO",
+      "repository": "https://github.com/OntoSustain/RSO",
+      "license": "UNVERIFIED_IN_CURRENT_REVIEW",
+      "license_verified": false,
+      "naail_role": ["sustainability_ontology", "gri_esrs_semantic_mapping", "graphrag_reference"],
+      "state": "REFERENCE_LICENSE_REVIEW",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "OpenClimate",
+      "repository": "https://github.com/Open-Earth-Foundation/OpenClimate",
+      "license": "SOURCE_AND_DATA_TERMS_REVIEW_REQUIRED",
+      "license_verified": false,
+      "naail_role": ["climate_action_graph", "emissions_targets", "entity_climate_data"],
+      "state": "REFERENCE_DATA_RIGHTS_REVIEW",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Our World in Data CO2 Data",
+      "repository": "https://github.com/owid/co2-data",
+      "license": "SOURCE_LEVEL_TERMS_APPLY",
+      "license_verified": false,
+      "naail_role": ["co2_data", "ghg_data", "emissions_trends", "empirical_climate_research"],
+      "state": "ADOPT_DATA_REFERENCE_WITH_SOURCE_RIGHTS",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Our World in Data Energy Data",
+      "repository": "https://github.com/owid/energy-data",
+      "license": "SOURCE_LEVEL_TERMS_APPLY",
+      "license_verified": false,
+      "naail_role": ["energy_transition", "electricity_mix", "renewables", "fossil_energy"],
+      "state": "ADOPT_DATA_REFERENCE_WITH_SOURCE_RIGHTS",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "CodeCarbon",
+      "repository": "https://github.com/mlco2/codecarbon",
+      "license": "VERIFY_BEFORE_VENDORING",
+      "license_verified": false,
+      "naail_role": ["ai_compute_carbon_footprint", "experiment_emissions_tracking"],
+      "state": "ADOPT_REFERENCE_RUNTIME_GATED",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "SAPIENT",
+      "repository": "https://github.com/SEI-LA-SDGs/SAPIENT",
+      "license": "VERIFY_BEFORE_CODE_REUSE",
+      "license_verified": false,
+      "naail_role": ["sdg_text_mapping", "eu_taxonomy_mapping", "sustainability_nlp"],
+      "state": "SANDBOX_REFERENCE",
+      "code_vendored": false,
+      "runtime_executed": false
+    },
+    {
+      "name": "Sustainable Finance Observatory Data",
+      "repository": "https://github.com/SFObservatory/Data.SFO",
+      "license": "RESEARCH_DATA_TERMS_REVIEW_REQUIRED",
+      "license_verified": false,
+      "naail_role": ["sustainable_finance", "investor_esg_preferences", "eu_taxonomy_research"],
+      "state": "ADOPT_RESEARCH_DATA_REFERENCE",
+      "code_vendored": false,
+      "runtime_executed": false
+    }
+  ],
+  "standards_sources": [
+    {
+      "domain": "ESRS_CSRS",
+      "canonical_authority": "European Union / EFRAG",
+      "public_replication_of_full_text_allowed_by_default": false,
+      "store_metadata_and_links": true,
+      "current_legal_status_check_required": true
+    },
+    {
+      "domain": "EU_TAXONOMY",
+      "canonical_authority": "European Union",
+      "public_replication_of_full_text_allowed_by_default": false,
+      "store_metadata_and_links": true,
+      "current_legal_status_check_required": true
+    },
+    {
+      "domain": "ISSB_IFRS_S1_S2_SASB",
+      "canonical_authority": "IFRS Foundation",
+      "public_replication_of_full_text_allowed_by_default": false,
+      "store_metadata_and_links": true,
+      "rights_review_required": true
+    },
+    {
+      "domain": "GRI",
+      "canonical_authority": "Global Reporting Initiative",
+      "public_replication_of_full_text_allowed_by_default": false,
+      "store_metadata_and_links": true,
+      "rights_review_required": true
+    },
+    {
+      "domain": "UN_SDG",
+      "canonical_authority": "United Nations",
+      "store_metadata_and_links": true,
+      "source_level_rights_review_required": true
+    }
+  ],
+  "agents": [
+    "esrs_csrd_agent",
+    "eu_taxonomy_agent",
+    "vsme_digital_reporting_agent",
+    "issb_sasb_mapping_agent",
+    "gri_mapping_agent",
+    "sdg_intelligence_agent",
+    "carbon_ghg_accounting_agent",
+    "climate_risk_agent",
+    "sustainable_finance_agent",
+    "esg_assurance_agent"
+  ],
+  "promotion_gates": [
+    "upstream_repository_or_authoritative_source_verification",
+    "software_license_review",
+    "data_and_standards_rights_review",
+    "regulatory_effective_date_check",
+    "version_or_commit_pinning",
+    "dependency_security_review",
+    "synthetic_or_rights_cleared_sandbox",
+    "evidence_passport_and_lineage",
+    "frozen_benchmark_evaluation",
+    "contradictory_evidence_test",
+    "reproducibility_test",
+    "failure_memory_logging",
+    "human_architecture_knowledge_research_gate"
+  ],
+  "invariants": {
+    "public_access_equals_public_domain": false,
+    "software_license_equals_data_license": false,
+    "standards_text_may_be_republished_by_default": false,
+    "third_party_esg_score_equals_ground_truth": false,
+    "estimated_emission_equals_reported_emission": false,
+    "sdg_mapping_equals_causal_impact": false,
+    "climate_scenario_equals_forecast": false,
+    "external_repo_may_modify_knowledge_rag_core": false,
+    "human_gate_required": true
+  }
+}
