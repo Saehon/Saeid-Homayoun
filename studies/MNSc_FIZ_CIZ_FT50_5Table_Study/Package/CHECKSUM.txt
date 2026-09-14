@@ -1,10 +1,12 @@
 Authoritative binary package (Google Drive)
 
 File: MNSc_FIZ_CIZ_FT50_5Table_Study.zip
-Size: 159545 bytes
-SHA-256: 1d5ef2e44c17e6bf320c761fd145a5ce84f2f55d80590d16480b37994503d5cd
+Size: 163869 bytes
+SHA-256: 2e82bebc8c306ef3880be5184ff0fedee59f65bb3f399342effd223361bd288e
 Drive file ID: 15InBq6Hm9SwcD2WhDTwYr22HgbO8fCez
 Drive URL: https://drive.google.com/file/d/15InBq6Hm9SwcD2WhDTwYr22HgbO8fCez/view
+Author: Saeid Homayoun
+ORCID: 0000-0002-2536-0446
 Updated: 2026-09-14
 
-GitHub contains the same study in unpacked reproducible form under Data/, Code/, Tables/, and Manuscript/.
+GitHub contains the same study in unpacked reproducible form under Data/, Code/, Tables/, and Manuscript/, with citation metadata in CITATION.cff.
