@@ -9,12 +9,13 @@ For a fast review of this portfolio:
 5. **Machine-enforced Scientific Discovery Contract:** [Co-Scientist + ERA + AlphaEvolve + latent structure + Chain-of-Evidence + Mirendil-style R&D + Human Gate](./SCIENTIFIC_DISCOVERY_CONTRACT.md)
 6. **Open-source agent education stack:** [ADK + Agent Framework + CAMEL + smolagents + Haystack + MCP + Ollama and extended ecosystem](./OPEN_SOURCE_AGENT_STACK.md)
 7. **Student Open-Source Agent Lab:** [framework-comparison and Digital Twin teaching design](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
-8. **Current platform overview:** [README.md](./README.md)
-9. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
-10. **Executable demos index:** [demos/README.md](./demos/README.md)
-11. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
-12. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
-13. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
+8. **SEC EDGAR Education Lab™:** [official SEC EDGAR/XBRL/CompanyFacts education and research module](./SEC_EDGAR_EDUCATION_LAB.md)
+9. **Current platform overview:** [README.md](./README.md)
+10. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
+11. **Executable demos index:** [demos/README.md](./demos/README.md)
+12. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
+13. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
+14. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
 
 ## Current release checkpoint
 
@@ -30,6 +31,46 @@ Only the deterministic comparison condition has been executed. Single-agent, seq
 
 The research-safe public runtime reproduces the Revenue deterministic checkpoint and exposes the scientific-integrity gates without publishing private provider adapters, patent-sensitive orchestration, or detailed private benchmark internals.
 
+## SEC EDGAR Education Lab™ — published public module
+
+NAAIL OpenLab now includes a public SEC-data education and research layer built around **SEC EDGAR, XBRL, CompanyFacts, CompanyConcept, Frames, and filing-level evidence**.
+
+Canonical flow:
+
+```text
+SEC EDGAR / XBRL / CompanyFacts
+        ↓
+Evidence acquisition + provenance
+        ↓
+Python / pandas / open-source adapters
+        ↓
+Accounting and disclosure analytics
+        ↓
+Audit / ICFR / forensic reasoning
+        ↓
+NLP / RAG / LLM / governed agents
+        ↓
+Critic + Defender + Replicator
+        ↓
+Evidence Passport™ + Decision DAG™
+        ↓
+Student professional judgment
+        ↓
+Human Gate™
+```
+
+The authoritative evidence layer remains the U.S. Securities and Exchange Commission. Third-party GitHub libraries are treated as software adapters or teaching tools and retain their own licenses.
+
+Canonical resources:
+
+- [SEC EDGAR Education Lab landing page](./SEC_EDGAR_EDUCATION_LAB.md)
+- [Full SEC Lab module](./education/sec-edgar-lab/README.md)
+- [Assignment Bank](./education/sec-edgar-lab/ASSIGNMENTS.md)
+- [Governed Agent Specification](./education/sec-edgar-lab/AGENT_SPEC.md)
+- [SEC CompanyFacts Python Starter](./education/sec-edgar-lab/sec_companyfacts_starter.py)
+- [Integration Manifest](./education/sec-edgar-lab/INTEGRATION_MANIFEST.md)
+- [NAAIL Education Hub](./docs/education/README.md)
+
 ## V2026.3 architecture snapshot
 
 V2026.3 is the frozen next-generation architecture target. It combines Google ADK / Antigravity-style agent development, Microsoft Agent Framework orchestration, A2A + MCP interoperability, GraphRAG, NAAIL Digital Twins, Co-Scientist-style hypothesis generation and critique, ERA-style empirical conversion, AlphaEvolve-inspired evaluator-guided search, AlphaFold/DeepMind-inspired latent-structure reasoning, Computational Discovery, Science One-style Chain-of-Evidence, AI-to-AI Critic / Defender / Replicator / Falsifier roles, Professional Decision DAG™ governance, rights/licensing gates, temporal/OOS validation, clean-room replication, and a mandatory Human Gate.
@@ -40,9 +81,9 @@ Companion multi-agent engineering repository: [Google-Antigravity-using-a-multi-
 
 ## Machine-enforced scientific discovery contract
 
-The public scientific-discovery layer now separates **Generator → Evaluator → Validation → Human Authority** and treats external system names as methodological inspiration unless actual execution is evidenced.
+The public scientific-discovery layer separates **Generator → Evaluator → Validation → Human Authority** and treats external system names as methodological inspiration unless actual execution is evidenced.
 
-The contract requires, before any discovery claim can pass:
+Before any discovery claim can pass, the contract requires:
 
 - literature validation and competing-hypothesis review;
 - executable empirical conversion;
