@@ -83,6 +83,13 @@ V2026.3 Multi-Agent Digital Twin
 │   └── Open Research / Replication Repositories
 │
 └── Education & Simulation Layer
+    ├── Free / Open-Source Simulation Stack
+    │   ├── Standard-Python deterministic core
+    │   ├── GitHub code / replication adapters
+    │   ├── Hugging Face local-model adapters
+    │   ├── Kaggle dataset adapter with license gate
+    │   ├── PCAOB public inspection datasets
+    │   └── SEC EDGAR / XBRL public evidence
     ├── Student Digital Twins
     ├── Audit Simulations
     ├── Accounting Simulations
@@ -140,6 +147,20 @@ For **IFRS Intelligence**, the Digital Twin represents a synthetic or research-s
 
 For **PCAOB Intelligence**, the Digital Twin represents a synthetic or public-evidence-based audit engagement, inspection finding, deficiency pattern, remediation trajectory, or supervisory-risk scenario. It must not imply access to confidential PCAOB inspection information or non-public firm data.
 
+## Free / open-source simulation rule
+
+The canonical free simulation path is [`../simulations/free-stack/`](../simulations/free-stack/). Its **deterministic core requires no paid model API** and is intended to run with standard Python, synthetic fixtures, and public evidence.
+
+Optional extensions may use:
+
+- **GitHub** for pinned open-source tools, replication packages, CI, and code provenance;
+- **Hugging Face** for locally runnable models/embeddings after model-card and license review;
+- **Kaggle** for dataset discovery/acquisition after dataset-specific license, provenance, and leakage review;
+- **PCAOB public inspection datasets** and public reports as preferred primary evidence for PCAOB research;
+- **SEC EDGAR/XBRL** as preferred primary evidence for issuer and filing data.
+
+Convenience sources never outrank authoritative evidence. The repository does not bundle full copyrighted IFRS Standards text, and free/open tooling does not imply access to non-public PCAOB data. Every simulation remains subject to the Evidence Passport, Decision DAG, reproducibility, adversarial review, and Human Gate.
+
 ## Shared scientific-discovery layer
 
 Specialist agents do not maintain separate scientific constitutions. Publication-grade work inherits the common NAAIL scientific contract:
@@ -171,6 +192,8 @@ NAAIL-OpenLab/
 │   ├── icfr/
 │   └── forensic/
 ├── digital-twins/
+├── simulations/
+│   └── free-stack/
 ├── scientific-discovery/
 ├── education/
 ├── datasets/
