@@ -8,14 +8,14 @@ This ECONOVA-S™ v0.3 study is synchronized with a canonical Google Drive study
 https://docs.google.com/document/d/1vseh8YEFbnCkCcfzRxZfNIgXUGn20g8mGzWHV2oXUso/edit
 
 **Latest synchronized Drive revision:**
-`ANLCKQkBiJTJ25SA7fksyzis5JyRp2v2FWgphl5F4y_LjL4VD5rc9Mqlhpg1nK3CwcT5qtUIWcq8lpodQC23KMS0xZfwSwfDjxjwlZW4kzk`
+`ANLCKQn1OI5rqvRpkCRPJ9OmR7cg0DHP0hvYBZpc1GXEUlVOYLhwdOxP-BJ_1GE_Dfv0omZrb6IHtKplERDbAeO41xsnqvBmAEtaLMs4T4E`
 
 **ECONOVA-S canonical architecture master:**
 https://docs.google.com/document/d/1l3cZJY23FJr_9oiEPc2vRCrH6Er96AfQX-WAoCzJIRQ/edit
 
 ## Source of truth
 
-GitHub remains the executable source of truth for code, tests, workflows, protocol manifests, execution records, and version history. Google Drive preserves the canonical study record, design, scientific gates, and cross-system checkpoint.
+GitHub remains the executable source of truth for code, tests, workflows, protocol manifests, execution records, and version history. Google Drive preserves the canonical study record, design, scientific gates, citations, and cross-system checkpoint.
 
 ## V3 discovery package now frozen in GitHub
 
@@ -37,6 +37,18 @@ GitHub remains the executable source of truth for code, tests, workflows, protoc
 - `v3/protocol/14_EVIDENCE_PASSPORT.json`
 - `v3/protocol/15_HUMAN_GATE.md`
 - `v3/TINYFISH_EXECUTION_STATUS.md`
+
+## Research evidence anchors
+
+The canonical Drive record and the GitHub landing page now share the same core scholarly lineage:
+
+- Kenneth R. French Data Library — official source for the FIZ→CIZ transition and historical archive vintages.
+- Fama & French (1993), *Journal of Financial Economics* — FF3 specification.
+- Fama & French (2015), *Journal of Financial Economics* — FF5 specification.
+- Newey & West (1987), *Econometrica* — HAC / Newey–West inference.
+- Benjamini & Hochberg (1995), *JRSS Series B* — BH-FDR multiple-testing control.
+
+GitHub landing-page citation commit: `17f31d7bddc10d1da21c81c23b0db982cce1ad48`.
 
 ## Critical interpretation rule
 
