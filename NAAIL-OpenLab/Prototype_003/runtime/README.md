@@ -1,11 +1,11 @@
-# NAAIL OpenLab — Prototype 003 Public Runtime
+# NAAIL OpenLab — Prototype 003 Runtime / Prototype 004 Provider Harness
 
 **Status:** executable public research checkpoint  
 **Architecture target:** V2026.3  
 **Current public release:** v0.2.3 / Prototype 003  
-**Next milestone:** Prototype 004 — real-provider blinded architecture comparison
+**Next empirical milestone:** Prototype 004 — real-provider blinded architecture comparison
 
-This directory implements the research-safe public runtime for Prototype 003 under the frozen rule:
+This directory preserves the Prototype 003 frozen benchmark and now adds a credential-gated Prototype 004 harness for real Google Gemini and Microsoft Foundry model runs.
 
 > **Same case. Same evidence. Same gold labels. Same evaluator. Different execution architecture.**
 
@@ -14,89 +14,130 @@ This directory implements the research-safe public runtime for Prototype 003 und
 Prototype 003 registers four architecture conditions:
 
 1. deterministic baseline — **executed**;
-2. single-agent AI — **`NOT_EXECUTED_PROVIDER_REQUIRED`**;
-3. sequential-agent AI — **`NOT_EXECUTED_PROVIDER_REQUIRED`**;
-4. governed multi-agent AI — **`NOT_EXECUTED_PROVIDER_REQUIRED`**.
+2. single-agent AI — **`NOT_EXECUTED_PROVIDER_REQUIRED`** until a real model runs;
+3. sequential-agent AI — **`NOT_EXECUTED_PROVIDER_REQUIRED`** until a real model runs;
+4. governed multi-agent AI — **`NOT_EXECUTED_PROVIDER_REQUIRED`** until a real model runs.
 
-The public runtime **does not simulate AI outputs** and does not replace missing Gemini, Microsoft/Azure, OpenAI, local-model, or other provider runs with deterministic placeholders. A provider/model result becomes empirical evidence only after an actual adapter is configured and run against the same frozen case/evidence/gold/evaluator state.
+Prototype 004 does not simulate provider outputs. A result becomes empirical evidence only after the real provider adapter executes on the same frozen case inputs. Gold labels are never included in provider prompts.
 
-## Three-case Prototype 003 registry
-
-The public case registry records the validated synthetic benchmark checkpoint:
+## Current frozen Prototype 003 registry
 
 | Case | Deterministic result | Synthetic amount | Public detailed runtime |
 |---|---|---:|---|
-| Revenue Recognition & Cut-off | `TX-002`, `TX-003` | EUR 190,000 | Yes — research-safe migration included here |
-| Goodwill Impairment | `GW-DR`, `GW-MAR` | EUR 440,000 | No — detailed implementation remains private pending IP review |
-| ICFR Deficiency | `CTRL-JE-02`, `CTRL-IT-03` | EUR 530,000 | No — detailed implementation remains private pending IP review |
+| Revenue Recognition & Cut-off | `TX-002`, `TX-003` | EUR 190,000 | Yes |
+| Goodwill Impairment | `GW-DR`, `GW-MAR` | EUR 440,000 | Summary only; detailed implementation remains private pending IP review |
+| ICFR Deficiency | `CTRL-JE-02`, `CTRL-IT-03` | EUR 530,000 | Summary only; detailed implementation remains private pending IP review |
 
-All three remain synthetic benchmark cases with mandatory `PENDING_HUMAN_APPROVAL`. The amounts and labels are benchmark properties, not claims about real entities, auditors, accounting failures, control failures, or assurance quality.
+All benchmark cases require `PENDING_HUMAN_APPROVAL`.
 
-## What runs publicly now
+## Prototype 004 provider adapters
 
-The Revenue Recognition migration (`P003-B-REV-001`) reproduces the deterministic frozen benchmark with:
+### Google Gemini
 
-- planted exceptions `TX-002` and `TX-003`;
-- proposed adjustment EUR 190,000;
-- planning materiality EUR 120,000;
-- Evidence Passport with hashes;
-- Professional Decision DAG;
-- RPA, AA, EG, PS, DS and DIST engineering-test fields;
-- precision / recall and FP/FN tracking;
-- mandatory Human Gate.
+Implementation: `providers.GeminiProvider` using the official `google-genai` SDK.
 
-The other three architecture modes are emitted only as registered, non-executed conditions until a real provider is configured.
+Required GitHub secret:
 
-## Run
+```text
+GEMINI_API_KEY
+```
+
+Optional repository variable:
+
+```text
+GEMINI_MODEL
+```
+
+If not set, the adapter uses `gemini-2.5-flash`.
+
+### Microsoft Foundry
+
+Implementation: `providers.FoundryProvider` using the official `azure-ai-inference` SDK.
+
+Required GitHub secrets:
+
+```text
+AZURE_INFERENCE_ENDPOINT
+AZURE_INFERENCE_CREDENTIAL
+AZURE_INFERENCE_MODEL
+```
+
+The model value is the Foundry deployment/model identifier configured for the endpoint.
+
+## Architecture conditions executed by a configured provider
+
+`provider_runner.py` supports:
+
+- `single_agent` — one evidence-to-conclusion model call;
+- `sequential_agents` — Evidence Agent → Risk/Accounting Agent → Review Agent;
+- `governed_multi_agent` — Evidence Agent → Audit Risk Agent → Accounting/Procedure Agent → Critic/Falsifier → Supervisor.
+
+Every executed provider artifact is normalized to the same evaluator contract and forcibly terminates at `PENDING_HUMAN_APPROVAL`. A provider cannot self-approve the Human Gate.
+
+## Local deterministic run
 
 ```bash
 cd NAAIL-OpenLab/Prototype_003/runtime
 python prototype003.py
-```
-
-The runner writes `outputs/latest_results.json` and reports the deterministic result plus explicit provider-required statuses.
-
-## Test
-
-```bash
 python -m unittest discover -s tests -v
 ```
 
-The current public test suite checks:
+## Local real-provider run
 
-- v0.2.3 three-case registry state;
-- frozen Revenue gold labels and adjustment;
-- deterministic replay stability;
-- frozen input hashes;
-- Evidence/Human-Gate governance;
-- bounded evaluator outputs;
-- prohibition on fabricated AI results;
-- no superiority/discovery claim.
+```bash
+python -m pip install -r requirements-providers.txt
+python provider_runner.py --provider gemini --architecture all
+python provider_runner.py --provider foundry --architecture all
+```
 
-No third-party Python package is required for this public scaffold.
+## GitHub Actions
+
+`.github/workflows/prototype_003_runtime.yml` now has three jobs:
+
+1. frozen deterministic benchmark + contract tests;
+2. Gemini real-provider comparison when `GEMINI_API_KEY` is available;
+3. Microsoft Foundry real-provider comparison when all required Foundry secrets are available.
+
+When credentials are absent, the workflow records `NOT_EXECUTED_PROVIDER_REQUIRED` rather than fabricating a result. When credentials are present, it uploads JSON result artifacts for all three AI architectures.
+
+## Evaluation
+
+Executed provider runs report:
+
+- RPA — Risk–Procedure Alignment proxy;
+- AA — Assertion Alignment;
+- EG — Evidence Grounding;
+- PS — Professional Skepticism proxy;
+- DS — Documentation Sufficiency;
+- precision / recall;
+- false positives / false negatives;
+- adjustment match;
+- invalid/hallucinated evidence count;
+- Human Gate enforcement.
+
+`DIST` remains unset for a single provider pass and should be populated only after repeated blinded runs under a frozen repetition protocol.
+
+These are engineering benchmark measures. They are not validated professional audit-quality constructs without further empirical validation.
+
+## Official provider documentation used for the adapter contracts
+
+- Google Gemini API Python SDK: https://ai.google.dev/gemini-api/docs/get-started
+- Gemini 2.5 Flash model: https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash
+- Microsoft Foundry model inference: https://learn.microsoft.com/en-us/rest/api/microsoft-foundry/modelinference/
+- Microsoft Foundry Python inference quickstart: https://learn.microsoft.com/en-us/azure/ai-foundry/model-inference/how-to/quickstart-ai-project
 
 ## Governance invariants
 
 ```text
+gold_labels_visible_to_provider = false
 same_case_across_architectures = true
 same_evidence_across_architectures = true
 same_gold_labels_across_architectures = true
 same_evaluator_across_architectures = true
+provider_self_approval_allowed = false
 human_gate_required = true
-benchmark_leakage_allowed = false
-simulated_ai_result_substitution_allowed = false
+simulated_provider_results_allowed = false
 unsupported_discovery_claim_allowed = false
 ```
 
-## Prototype 004 target
-
-The next defensible step is to configure **real provider adapters in the private R&D environment** and run blinded frozen-evidence comparisons for single-agent, sequential-agent and governed multi-agent architectures. Each run must preserve provider/model/version metadata, Evidence Passport, Decision DAG, Human Gate, identical benchmark inputs, cost/latency, failures, false positives/negatives and human overrides.
-
-Provider/runtime technology can change. The scientific contract may not silently change with it.
-
-See also:
-
-- `../../PROTOTYPE_STATUS_V0.4.md`
-- `../../PROTOTYPE_003_EXECUTION_SPEC.md`
-- `../../CURRENT_PROJECT_STATE.md`
-- `../../versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md`
+The next scientific step is not another architecture document. It is repeated, blinded, frozen-evidence provider execution followed by cross-provider replication, falsification, cost/latency reporting, and human review.
