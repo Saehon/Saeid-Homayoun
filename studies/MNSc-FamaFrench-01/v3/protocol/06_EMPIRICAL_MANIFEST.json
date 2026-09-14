@@ -1,0 +1,45 @@
+{
+  "study_id": "MNSc-FamaFrench-01-v3",
+  "design_status": "frozen_pre_result",
+  "primary_data": {
+    "source": "Kenneth R. French Data Library historical archives",
+    "old_snapshot": "July 2024 FIZ-era",
+    "new_snapshot": "July 2025 CIZ-era",
+    "common_sample_rule": "intersection of monthly dates present in both factor and six-portfolio files across both snapshots",
+    "source_hashes_required": true
+  },
+  "secondary_data": {
+    "source": "Aswath Damodaran / NYU Stern industry datasets",
+    "vintage": "January 2026 / current archived retrieval in executable package",
+    "role": "complementary_benchmark_not_transition_validation"
+  },
+  "primary_series": ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "RF"],
+  "test_assets": ["SMALL LoBM", "ME1 BM2", "SMALL HiBM", "BIG LoBM", "ME2 BM2", "BIG HiBM"],
+  "primary_constructs": ["DCS", "mean vintage difference", "alpha change", "Conclusion Reversal"],
+  "models": {
+    "CAPM": ["Mkt-RF"],
+    "FF3": ["Mkt-RF", "SMB", "HML"],
+    "FF5": ["Mkt-RF", "SMB", "HML", "RMW", "CMA"]
+  },
+  "inference": {
+    "primary": "HAC/Newey-West lag 6",
+    "sensitivity": ["HAC lag 3", "HAC lag 12"],
+    "multiplicity": "Benjamini-Hochberg FDR on pre-specified revision-test family",
+    "significance_threshold_for_conclusion_reversal": 0.05
+  },
+  "subperiods": ["full", "post_1990", "post_2000", "post_gfc_2009", "post_covid_2020"],
+  "planned_extensions": [
+    "reduced-rank factor-dimension comparison",
+    "same-regime annual archive placebo pairs",
+    "additional Fama-French portfolio families",
+    "independent Python/Stata replication"
+  ],
+  "attribution_rule": "Observed differences are archive/construction-regime sensitivity. No pure causal FIZ-to-CIZ attribution without additional decomposition.",
+  "search_rule": "No p-value-driven specification selection. Search/evolution uses frozen scientific fitness and validation separation.",
+  "run_command": "python studies/MNSc-FamaFrench-01/v3/build_v3.py --output studies/MNSc-FamaFrench-01/v3/artifact",
+  "scientific_status": {
+    "evidence_class": "associational",
+    "identification_gate": false,
+    "discovery_claim_allowed": false
+  }
+}
