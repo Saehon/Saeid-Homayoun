@@ -4,6 +4,8 @@ import argparse
 import json
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
 MANDATORY_FOR_DISCOVERY = [
     "literature_validation",
     "hypothesis_tournament",
@@ -27,6 +29,43 @@ METHOD_GATES = {
     "coe_audit": "coe_audit",
 }
 
+GATE_ARTIFACTS = {
+    "hypothesis_tournament": "hypothesis_tournament",
+    "empirical_conversion": "empirical_manifest",
+    "search_integrity": "search_registry",
+    "provenance": "provenance_manifest",
+    "replication_or_oos": "replication_report",
+    "adversarial_review": "red_team_report",
+    "falsification": "falsification_report",
+    "chain_of_evidence": "chain_of_evidence",
+    "coe_audit": "coe_audit",
+}
+
+INTEGRITY_REQUIRED_FOR_DISCOVERY = [
+    "protocol_frozen",
+    "evaluator_frozen",
+    "holdout_isolated",
+    "failure_memory_retained",
+    "code_data_lineage_recorded",
+    "p_value_optimization_prohibited",
+    "external_method_execution_truthful",
+]
+
+MANDATORY_DISCOVERY_ARTIFACTS = [
+    "evidence_passport",
+    "human_gate_record",
+    "hypothesis_tournament",
+    "empirical_manifest",
+    "provenance_manifest",
+    "search_registry",
+    "replication_report",
+    "red_team_report",
+    "falsification_report",
+    "chain_of_evidence",
+    "coe_audit",
+    "failure_memory",
+]
+
 
 def validate_schema(record: dict, schema: dict) -> list[str]:
     try:
@@ -40,24 +79,51 @@ def validate_schema(record: dict, schema: dict) -> list[str]:
     ]
 
 
+def _artifact_is_resolvable(value: str) -> bool:
+    if value.startswith(("https://", "http://", "doi:", "urn:")):
+        return True
+    return (REPO_ROOT / value).exists()
+
+
 def validate_governance(record: dict) -> list[str]:
     errors: list[str] = []
     gates = record.get("gates", {})
     methods = set(record.get("methods", []))
+    integrity = record.get("integrity", {})
+    artifacts = record.get("artifacts", {})
     human = record.get("human_gate", {})
     claim_allowed = bool(record.get("discovery_claim_allowed", False))
     evidence_class = record.get("evidence_class")
+    study_stage = record.get("study_stage")
 
-    # Method-specific gates must never be represented as complete when their
-    # corresponding method-specific validation is absent.
+    # A gate cannot be represented as complete without its required evidence artifact.
+    for gate, artifact_name in GATE_ARTIFACTS.items():
+        if gates.get(gate, False) and not artifacts.get(artifact_name):
+            errors.append(
+                f"gate '{gate}' is true but required artifact '{artifact_name}' is not recorded"
+            )
+
+    # Method-specific validation becomes mandatory before a discovery claim.
     for method, gate in METHOD_GATES.items():
         if method in methods and claim_allowed and not gates.get(gate, False):
             errors.append(f"discovery blocked: method '{method}' requires gate '{gate}'")
 
     if claim_allowed:
+        if study_stage != "approved":
+            errors.append("discovery blocked: study_stage must be 'approved'")
+
         for gate in MANDATORY_FOR_DISCOVERY:
             if not gates.get(gate, False):
                 errors.append(f"discovery blocked: mandatory gate '{gate}' is false")
+
+        for control in INTEGRITY_REQUIRED_FOR_DISCOVERY:
+            if not integrity.get(control, False):
+                errors.append(f"discovery blocked: integrity control '{control}' is false")
+
+        if integrity.get("ai_review_independence_level") == "role_only":
+            errors.append(
+                "discovery blocked: AI-to-AI review requires independence beyond role-only prompting"
+            )
 
         if evidence_class in {"causal", "structural_equilibrium"} and not gates.get("identification", False):
             errors.append("discovery blocked: causal/structural evidence requires identification gate")
@@ -71,23 +137,25 @@ def validate_governance(record: dict) -> list[str]:
             errors.append("discovery blocked: Human Gate reviewer is missing")
         if not human.get("decision_date"):
             errors.append("discovery blocked: Human Gate decision_date is missing")
+        if human.get("decision") != "APPROVE_FOR_SCIENTIFIC_CLAIM":
+            errors.append("discovery blocked: Human Gate decision does not authorize a scientific claim")
+        if not str(human.get("independence_statement", "")).strip():
+            errors.append("discovery blocked: Human Gate independence statement is missing")
+
+        for artifact_name in MANDATORY_DISCOVERY_ARTIFACTS:
+            value = artifacts.get(artifact_name)
+            if not value:
+                errors.append(f"discovery blocked: required artifact '{artifact_name}' is missing")
+            elif not _artifact_is_resolvable(str(value)):
+                errors.append(
+                    f"discovery blocked: artifact '{artifact_name}' does not resolve to a repository path or external URI"
+                )
 
     # Scientific class cannot be silently inflated.
     if evidence_class == "causal" and not gates.get("identification", False):
         errors.append("evidence class 'causal' requires identification=true")
     if evidence_class == "replicated" and not gates.get("replication_or_oos", False):
         errors.append("evidence class 'replicated' requires replication_or_oos=true")
-
-    # Science One / CoE integrity requirements.
-    artifacts = record.get("artifacts", {})
-    if gates.get("chain_of_evidence", False) and not artifacts.get("chain_of_evidence"):
-        errors.append("chain_of_evidence gate is true but no chain_of_evidence artifact is recorded")
-    if gates.get("coe_audit", False) and not artifacts.get("coe_audit"):
-        errors.append("coe_audit gate is true but no coe_audit artifact is recorded")
-    if gates.get("replication_or_oos", False) and not artifacts.get("replication_report"):
-        errors.append("replication_or_oos gate is true but no replication_report artifact is recorded")
-    if gates.get("adversarial_review", False) and not artifacts.get("red_team_report"):
-        errors.append("adversarial_review gate is true but no red_team_report artifact is recorded")
 
     return errors
 
@@ -110,6 +178,7 @@ def main() -> int:
 
     print("SCIENTIFIC DISCOVERY MANIFEST: VALID")
     print(f"study_id={record['study_id']}")
+    print(f"study_stage={record['study_stage']}")
     print(f"evidence_class={record['evidence_class']}")
     print(f"discovery_claim_allowed={record['discovery_claim_allowed']}")
     return 0

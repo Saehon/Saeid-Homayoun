@@ -7,8 +7,11 @@
   "required": [
     "study_id",
     "research_goal",
+    "study_stage",
     "evidence_class",
+    "methods",
     "gates",
+    "integrity",
     "artifacts",
     "human_gate",
     "discovery_claim_allowed"
@@ -16,6 +19,9 @@
   "properties": {
     "study_id": {"type": "string", "minLength": 1},
     "research_goal": {"type": "string", "minLength": 1},
+    "study_stage": {
+      "enum": ["concept", "preregistered", "executing", "validated", "replicated", "human_review", "approved", "retired"]
+    },
     "evidence_class": {
       "enum": ["theoretical", "descriptive", "associational", "predictive", "causal", "structural_equilibrium", "replicated"]
     },
@@ -77,27 +83,74 @@
         "reproducibility": {"type": "boolean"}
       }
     },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol_frozen",
+        "evaluator_frozen",
+        "holdout_isolated",
+        "failure_memory_retained",
+        "code_data_lineage_recorded",
+        "p_value_optimization_prohibited",
+        "external_method_execution_truthful",
+        "ai_review_independence_level"
+      ],
+      "properties": {
+        "protocol_frozen": {"type": "boolean"},
+        "evaluator_frozen": {"type": "boolean"},
+        "holdout_isolated": {"type": "boolean"},
+        "failure_memory_retained": {"type": "boolean"},
+        "code_data_lineage_recorded": {"type": "boolean"},
+        "p_value_optimization_prohibited": {"type": "boolean"},
+        "external_method_execution_truthful": {"type": "boolean"},
+        "ai_review_independence_level": {
+          "enum": ["role_only", "context_isolated", "model_diverse", "code_path_independent", "human_external"]
+        }
+      }
+    },
     "artifacts": {
       "type": "object",
-      "additionalProperties": true,
-      "required": ["evidence_passport", "human_gate_record"],
+      "additionalProperties": false,
+      "required": [
+        "evidence_passport",
+        "human_gate_record",
+        "hypothesis_tournament",
+        "empirical_manifest",
+        "provenance_manifest",
+        "search_registry",
+        "replication_report",
+        "red_team_report",
+        "falsification_report",
+        "chain_of_evidence",
+        "coe_audit",
+        "failure_memory"
+      ],
       "properties": {
         "evidence_passport": {"type": "string", "minLength": 1},
         "human_gate_record": {"type": "string", "minLength": 1},
+        "hypothesis_tournament": {"type": ["string", "null"]},
+        "empirical_manifest": {"type": ["string", "null"]},
+        "provenance_manifest": {"type": ["string", "null"]},
+        "search_registry": {"type": ["string", "null"]},
+        "replication_report": {"type": ["string", "null"]},
+        "red_team_report": {"type": ["string", "null"]},
+        "falsification_report": {"type": ["string", "null"]},
         "chain_of_evidence": {"type": ["string", "null"]},
         "coe_audit": {"type": ["string", "null"]},
-        "replication_report": {"type": ["string", "null"]},
-        "red_team_report": {"type": ["string", "null"]}
+        "failure_memory": {"type": ["string", "null"]}
       }
     },
     "human_gate": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["approved", "reviewer", "decision_date"],
+      "required": ["approved", "reviewer", "decision_date", "decision", "independence_statement"],
       "properties": {
         "approved": {"type": "boolean"},
         "reviewer": {"type": "string"},
-        "decision_date": {"type": ["string", "null"]}
+        "decision_date": {"type": ["string", "null"]},
+        "decision": {"enum": ["REVISE", "PROCEED", "APPROVE_FOR_SCIENTIFIC_CLAIM"]},
+        "independence_statement": {"type": "string"}
       }
     },
     "discovery_claim_allowed": {"type": "boolean"}
