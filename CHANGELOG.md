@@ -4,6 +4,24 @@ All notable public changes to ECONOVA-S™ are documented here.
 
 ## [Unreleased]
 
+### Google/DeepMind-inspired scientific discovery protocol
+- Added `GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md` as the canonical publication-grade discovery workflow.
+- Added explicit AI Co-Scientist-style Generation → Reflection → Ranking → Evolution → Proximity → Meta-review logic.
+- Added ERA-style hypothesis-to-executable empirical conversion requirements.
+- Added AlphaEvolve-inspired search governance with frozen scientific fitness and candidate lineage.
+- Added Computational Discovery explore/exploit and evaluator-integrity requirements.
+- Added AlphaFold-inspired latent-structure reasoning rules with baseline, interpretation, stability and OOS/external validation requirements.
+- Added Science One-inspired Chain-of-Evidence completeness/correctness requirements.
+- Added CoE Audit requirements for reference verification, score/result verification, specification integrity, method-code alignment and claim-evidence alignment.
+- Added Mirendil-inspired closed-loop R&D containment rules; self-improvement cannot rewrite scientific governance.
+- Added `discovery/study_manifest.schema.json` for machine-readable study governance.
+- Added `discovery/sample_study_manifest.json` for the flagship pre-discovery study state.
+- Added `discovery/validate_study_manifest.py` to block scientific-discovery claims when mandatory gates are incomplete.
+- Added `discovery/test_discovery_manifest.py` covering Human Gate bypass, causal-label inflation and Chain-of-Evidence artifact enforcement.
+- Added `templates/STUDY_DISCOVERY_TEMPLATE.md` with a 15-stage publication workflow.
+- Added `.github/workflows/scientific_discovery_protocol.yml` for zero-secret discovery-governance CI.
+- Upgraded `README.md`, `ARCHITECTURE.md`, `SCIENTIFIC_ASSURANCE.md`, `REPRODUCIBILITY.md`, `AI_TO_AI_AUTOMATION.md`, `PROJECT_STATUS.md`, and `ROADMAP.md` to one consistent discovery protocol.
+
 ### AI-to-AI scientific automation
 - Added `AI_TO_AI_AUTOMATION.md` as the canonical multi-agent automation and governance specification.
 - Added a formal Agent → Theory/DAG → Empirical Design → Independent Replicator → Scientific Red-Team → Welfare Review → Evidence Passport → Human Gate sequence.
@@ -33,6 +51,7 @@ All notable public changes to ECONOVA-S™ are documented here.
 
 ### In progress
 - Execute and archive the first official FIZ→CIZ real-data workflow artifacts.
+- Complete hypothesis tournament, replication, red-team, falsification, Chain-of-Evidence and CoE Audit for the flagship study.
 - Replicate on FF3 and additional archived portfolio families.
 - Reduced-rank factor-dimension and multiplicity/FDR extensions.
 - SEC × Fama–French × Damodaran chronology-safe empirical extension.
