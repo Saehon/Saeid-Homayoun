@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a reproducible software defect in ECONOVA-S™
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve ECONOVA-S. Do not include secrets, confidential data, restricted manuscripts, or proprietary datasets.
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: ECONOVA-S release, folder version, or commit SHA.
+      placeholder: v0.2.0 / commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - GPT / agent workflow
+        - Evidence RAG
+        - Data ingestion
+        - Econometrics
+        - Stata export
+        - Evidence Passport / Human Gate
+        - CI / tests
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Exact steps, command, inputs and environment needed to reproduce the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, package versions and relevant runtime details.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed API keys, credentials, private data and confidential information.
+          required: true
+        - label: I searched existing issues for the same problem.
+          required: true
