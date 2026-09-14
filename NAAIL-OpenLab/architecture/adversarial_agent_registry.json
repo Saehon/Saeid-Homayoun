@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.4",
   "registry_id": "NAAIL-ADVERSARIAL-AGENTS-2026.09",
   "status": "ARCHITECTURE_ADOPTED_RUNTIME_GATED",
   "core_boundary": {
@@ -27,6 +27,8 @@
       "master_free_data_fabric": "../FREE_DATA_FABRIC.md",
       "open_source_pack": "../OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md",
       "open_source_registry": "accounting_audit_open_source_registry.json",
+      "audit_analytics_pack": "../AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md",
+      "audit_analytics_registry": "audit_analytics_open_source_registry.json",
       "execution_layer": "technology_core",
       "knowledge_access": "read_only_governed_contract",
       "may_modify_knowledge_rag_core": false,
@@ -45,7 +47,10 @@
         "accounting_fraud_misstatement",
         "pcaob_audit_deficiency",
         "cam_as3101_challenge",
-        "icfr_deficiency_challenge"
+        "icfr_deficiency_challenge",
+        "journal_entry_analytics",
+        "xbrl_validation",
+        "audit_evidence_traceability"
       ],
       "human_gate_required": true,
       "runtime_executed": false
