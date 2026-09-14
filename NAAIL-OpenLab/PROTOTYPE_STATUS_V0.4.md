@@ -1,44 +1,61 @@
 # NAAIL OpenLab™ — Prototype Status V0.4
 
-## First executable Audit Digital Twin scaffold
+## Prototype 002 — modular Audit Digital Twin baseline
 
-NAAIL OpenLab has moved from architecture-only documentation to its first executable research scaffold for a synthetic **Client XYZ — Revenue Recognition & Cut-off** case.
+NAAIL OpenLab has progressed from the first deterministic scaffold to **Prototype 002**, a modular, provider-neutral research baseline for a synthetic **Client XYZ — Revenue Recognition & Cut-off** case.
 
-### Publicly disclosed scope
+### What Prototype 002 adds
 
-The prototype demonstrates a reproducible, human-governed path from synthetic audit evidence to:
+The research-safe public scope now includes:
 
-- risk identification;
-- assertion mapping;
-- evidence-linked exceptions;
-- professional-judgment support;
-- audit-quality evaluation;
-- critic/reviewer checks;
-- a mandatory Human Gate.
+- an explicit **Materiality Agent**;
+- an explicit **Risk Agent**;
+- an evidence-linked **Evidence Agent**;
+- a reproducible **Evidence Passport™** concept linking case hash, evidence IDs, assertions, adapter identity and limitations;
+- a persistent **Professional Decision DAG™** concept linking case → materiality → risk → evidence → judgment → critic → Human Gate;
+- a provider-neutral model-adapter contract so deterministic, OpenAI, Gemini, Microsoft/Azure, local/open-model or future adapters can be evaluated against the same frozen case;
+- regression tests for frozen exceptions, proposed adjustment, evidence hashing, DAG termination and Human Gate enforcement.
 
-The first frozen synthetic case contains deliberately planted year-end revenue cut-off exceptions and is evaluated using NAAIL research metrics including:
+### Frozen baseline result
 
-- RPA — Risk–Procedure Alignment;
-- AA — Assertion Alignment;
-- EG — Evidence Grounding;
-- PS — Professional Skepticism;
-- DS — Documentation Sufficiency;
-- DIST — Decision / Inference Stability;
+The synthetic benchmark contains two planted year-end cut-off exceptions. The deterministic control condition identifies both and produces:
+
+- flagged evidence IDs: `TX-002`, `TX-003`;
+- proposed adjustment: **EUR 190,000**;
+- planning materiality: **EUR 120,000**;
+- baseline precision: **1.00**;
+- baseline recall: **1.00**;
+- false positives: **0**;
+- false negatives: **0**;
+- final state: **`PENDING_HUMAN_APPROVAL`**.
+
+These values are properties of the frozen synthetic benchmark only. They are not evidence of real-world audit effectiveness.
+
+### NAAIL evaluation metrics
+
+Prototype 002 retains the NAAIL research metrics:
+
+- **RPA** — Risk–Procedure Alignment;
+- **AA** — Assertion Alignment;
+- **EG** — Evidence Grounding;
+- **PS** — Professional Skepticism;
+- **DS** — Documentation Sufficiency;
+- **DIST** — Decision / Inference Stability;
 - precision / recall;
 - false-positive / false-negative rates.
 
-### Research engineering principle
+### Research engineering rule
 
-Prototype 001 uses deterministic, reproducible logic as a baseline. Future LLM/agent/model adapters must be evaluated against the same frozen benchmark and cannot bypass evidence, evaluation, reviewer, or Human Gate requirements.
+The deterministic adapter is the control condition. Future AI/model adapters must consume the same frozen evidence and cannot modify gold labels, bypass evidence/provenance checks, bypass the critic/reviewer stage, or self-approve a high-risk conclusion.
 
 ### Public/private boundary
 
-The public repository intentionally discloses only the research-safe concept, evaluation framework and status. Detailed orchestration logic, private benchmarks, unpublished agent specifications, patent-candidate mechanisms and pre-commercial implementation remain in the private NAAIL R&D master.
+The public repository intentionally discloses the research-safe benchmark design, evaluation logic, governance principles and status only. Detailed orchestration logic, private benchmark extensions, unpublished agent specifications, prompts, patent-candidate mechanisms and pre-commercial implementation remain in the private NAAIL R&D master pending IP review.
 
 ### Independence and rights
 
 This prototype is independent research software. It does not reproduce proprietary Big Four platforms, source code, prompts, screenshots, confidential methodology or client data. Firm and client simulations are fictional and synthetic.
 
-### Next milestone
+### Next milestone — Prototype 003
 
-Expand Prototype 001 into a controlled benchmark suite covering revenue recognition, goodwill impairment, ICFR, going concern and journal-entry fraud, then compare single-agent, sequential-agent and multi-agent orchestration under the same frozen cases.
+Expand the benchmark beyond revenue recognition by adding **Goodwill Impairment** and **ICFR Deficiency** cases, then compare deterministic baseline, single-agent, sequential-agent and governed multi-agent orchestration under frozen evidence, the same metrics, Evidence Passport™, Decision DAG™ and Human Gate.
