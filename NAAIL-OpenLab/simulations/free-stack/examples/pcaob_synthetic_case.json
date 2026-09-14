@@ -1,0 +1,15 @@
+{
+  "case_id": "PCAOB-SIM-001",
+  "evidence_class": "synthetic",
+  "engagement": "Audit Engagement XYZ",
+  "period": "20X6",
+  "industry": "industrial distribution",
+  "facts": {
+    "revenue": "Year-end revenue testing identified unusual cutoff entries but follow-up documentation is incomplete.",
+    "inventory": "Cycle counts were observed at one location; alternate procedures for other material locations are unclear.",
+    "control": "Management review control documentation lacks evidence of precision and review thresholds.",
+    "documentation": "Several conclusions are documented without clear linkage to underlying evidence."
+  },
+  "simulation_objective": "Identify inspection-risk themes, evidence gaps, remediation questions, alternative explanations, and issues requiring human review.",
+  "nonpublic_pcaob_data_included": false
+}
