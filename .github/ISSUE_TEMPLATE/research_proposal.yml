@@ -1,0 +1,59 @@
+name: Research proposal
+description: Propose a reproducible ECONOVA-S™ research extension
+title: "[Research]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals should be falsifiable, reproducible, evidence-grounded, and consistent with the two-core architecture.
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State one precise economics, finance, data-economy, or sustainability question.
+    validations:
+      required: true
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Theory and mechanism
+      description: Explain the economic mechanism and competing explanation(s).
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Literature prior
+      description: Provide relevant primary research, preferably FT50/AJG/ABS 4*/4 where appropriate. Do not fabricate citations.
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data and provenance
+      description: Identify the intended dataset, unit of analysis, timing, access rights, and provenance.
+    validations:
+      required: true
+  - type: textarea
+    id: identification
+    attributes:
+      label: Identification strategy
+      description: State whether the proposal is descriptive, associational, predictive, causal, or structural and what identifies the target estimand.
+    validations:
+      required: true
+  - type: textarea
+    id: falsification
+    attributes:
+      label: Falsification / robustness / replication
+      description: State what result would count as failure and how the claim will be challenged.
+    validations:
+      required: true
+  - type: checkboxes
+    id: governance
+    attributes:
+      label: Scientific governance
+      options:
+        - label: I understand that novelty, significance, prediction accuracy, or LLM confidence alone do not establish scientific discovery.
+          required: true
+        - label: I will preserve provenance and comply with dataset, article, software, and repository licenses.
+          required: true
