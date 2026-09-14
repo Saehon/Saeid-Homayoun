@@ -1,0 +1,52 @@
+{
+  "case_id": "P003-B-REV-001",
+  "case_family": "Revenue Recognition & Cut-off",
+  "period_end": "2024-12-31",
+  "materiality": 120000,
+  "transactions": [
+    {
+      "transaction_id": "TX-001",
+      "amount": 110000,
+      "recognition_date": "2024-12-30",
+      "delivery_date": "2024-12-30"
+    },
+    {
+      "transaction_id": "TX-002",
+      "amount": 140000,
+      "recognition_date": "2024-12-31",
+      "delivery_date": "2025-01-02"
+    },
+    {
+      "transaction_id": "TX-003",
+      "amount": 50000,
+      "recognition_date": "2024-12-31",
+      "delivery_date": "2025-01-03"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "EV-001",
+      "source_type": "synthetic_invoice_register",
+      "rights": "synthetic",
+      "description": "Frozen synthetic year-end invoice register."
+    },
+    {
+      "evidence_id": "EV-002",
+      "source_type": "synthetic_delivery_log",
+      "rights": "synthetic",
+      "description": "Frozen synthetic delivery and cut-off evidence."
+    },
+    {
+      "evidence_id": "EV-003",
+      "source_type": "synthetic_revenue_ledger",
+      "rights": "synthetic",
+      "description": "Frozen synthetic revenue ledger."
+    }
+  ],
+  "gold": {
+    "exceptions": ["TX-002", "TX-003"],
+    "proposed_adjustment": 190000,
+    "expected_assertions": ["occurrence", "cutoff"],
+    "expected_human_gate": "PENDING_HUMAN_APPROVAL"
+  }
+}
