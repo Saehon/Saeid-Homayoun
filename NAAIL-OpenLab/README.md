@@ -1,7 +1,7 @@
 # NAAIL OpenLab™
 ## Nordic Accounting, Audit & Assurance Intelligence Lab
 
-**Evidence-governed AI for audit Digital Twins, business-school education, and reproducible scientific discovery.**
+**Evidence-governed AI for audit Digital Twins, business-school education, university–industry talent development, and reproducible scientific discovery.**
 
 [![Version](https://img.shields.io/badge/version-0.2.3-blue)](./VERSION)
 [![Use](https://img.shields.io/badge/use-research%20%26%20education-green)](./LICENSE.md)
@@ -58,19 +58,55 @@ The detailed executable implementation remains private pending IP review. A rese
 
 ---
 
+## NAAIL Big Four Student Agent Academy™ — v0.2.4 target
+
+NAAIL now includes a public university–industry design for preparing students to work with AI-enabled audit and assurance workflows **before entering professional practice**.
+
+The model does not require a firm to disclose proprietary audit technology. Instead, an industry partner may contribute a learning objective, challenge brief, guest session, synthetic scenario, or approved educational proxy-agent specification. NAAIL converts that contribution into a governed synthetic Digital Twin exercise.
+
+```text
+Industry Partner
+    ↓
+Educational Proxy Agent
+    ↓
+Synthetic Client XYZ Digital Twin
+    ↓
+Student tests / challenges / documents AI advice
+    ↓
+RPA + AA + EG + PS + DS + DIST
++ AIV + CER + HOR + ESC
+    ↓
+Professional Decision DAG™
+    ↓
+Human Gate
+    ↓
+Student feedback + aggregate anonymized partner insight
+```
+
+Initial student simulations reuse the existing three-case benchmark family: Revenue Recognition & Cut-off, Goodwill Impairment, and ICFR / Control Deficiency.
+
+Read:
+- **[NAAIL Big Four Student Agent Academy™](./docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md)**
+- **[Digital Twin Student Simulation™](./docs/education/DIGITAL_TWIN_STUDENT_SIMULATION.md)**
+
+Until a written partnership agreement exists, NAAIL uses neutral labels such as **Firm Alpha**, **Firm Beta**, or **Industry Partner** and does not imply Big Four sponsorship, certification, endorsement, or production-system equivalence.
+
+---
+
 ## What NAAIL OpenLab is
 
-NAAIL OpenLab is a **research-first, human-led AI platform** spanning Accounting, Auditing, Assurance, Finance, Economics, Sustainability, and professional-intelligence research. Auditing is the first deep implementation vertical.
+NAAIL OpenLab is a **research-first, human-led AI platform** spanning Accounting, Auditing, Assurance, Finance, Economics, Sustainability, professional-intelligence research, and AI-enabled business-school education. Auditing is the first deep implementation vertical.
 
 The platform combines:
 
 - **Knowledge Core™** — governed standards, research evidence, professional guidance, ontologies, and validated knowledge;
 - **Technology Core™** — replaceable models, agents, retrieval, tools, memory, orchestration, and deployment technologies;
 - **Adaptive Intelligence Fabric™** — governed routing of tasks, evidence, models, tools, policies, and approvals;
-- **Audit Digital Twin** — synthetic clients, fictional audit-firm architectures, specialist agents, and human-review gates;
-- **Scientific Discovery** — competing hypotheses, ERA-style empirical design, computational discovery, adversarial review, falsification, replication, and Chain-of-Evidence.
+- **Audit Digital Twin** — synthetic clients, fictional audit-firm architectures, specialist agents, student simulations, and human-review gates;
+- **Scientific Discovery** — competing hypotheses, ERA-style empirical design, computational discovery, adversarial review, falsification, replication, and Chain-of-Evidence;
+- **Industry–Education Partnership Fabric** — educational proxy agents, Digital Twin student labs, skill feedback, and privacy-governed university–industry collaboration.
 
-> **Models generate. Agents debate. Code tests. Evidence decides. Humans approve.**
+> **Models generate. Agents debate. Code tests. Evidence decides. Students challenge. Humans approve.**
 
 ---
 
@@ -91,7 +127,7 @@ Planning, materiality, risk assessment, controls, analytics, evidence, testing, 
 A canonical **37-role Audit Digital Twin**: 36 operational audit-agent roles plus one **Audit Scientific Supervisor Agent™**. Material agents require scoped tools, evidence policy, evaluation, handoff rules, traceability, and Human Gate controls.
 
 ### Digital Twin Laboratory
-Synthetic **Client XYZ** and fictional **Firm Alpha–Delta** architectures enable controlled experiments on the same evidence without reproducing proprietary Big Four systems.
+Synthetic **Client XYZ** and fictional **Firm Alpha–Delta** architectures enable controlled experiments on the same evidence without reproducing proprietary Big Four systems. The Digital Twin now also supports a privacy-governed **Student Learning Twin** for educational event traces, decision revision, evidence use, and learning evaluation.
 
 ### Evidence Intelligence
 Professional conclusions prioritize applicable law, regulation, and authoritative standards. Academic research uses relevance-gated FT50, current AJG/ABS 4*/4, selected high-fit 3, and other peer-reviewed evidence while assessing identification, construct validity, data quality, reproducibility, contradictory evidence, and limitations.
@@ -99,17 +135,28 @@ Professional conclusions prioritize applicable law, regulation, and authoritativ
 ### Business School AI
 Non-commercial research and teaching support for bachelor, master, doctoral, and professional education across Accounting, Auditing, Finance, Economics, Sustainability, and AI/data methods.
 
+### Student Agent Academy
+A governed university–industry learning environment where students test, challenge, modify, reject, or escalate AI recommendations using frozen synthetic evidence. Academic grading and recruitment pathways remain separable; individual student data are not shared with partners by default.
+
+### Multi-Cloud Marketplace Preparation
+Provider-neutral marketplace scaffolding for future OpenAI, Google, and Microsoft distribution while preserving the private NAAIL scientific core.
+
+See **[Marketplace Edition](./MARKETPLACE_EDITION.md)** and **[marketplace/](./marketplace/README.md)**.
+
 ---
 
 ## Engineering standards
 
 | Standard | Purpose |
 |---|---|
-| [ARCHITECTURE.md](./ARCHITECTURE.md) | Public seven-layer reference architecture |
-| [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, lifecycle, Human Gates |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | Public seven-layer reference architecture + Industry–Education Partnership Fabric |
+| [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, educational proxy agents, lifecycle, Human Gates |
 | [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, regression gates, audit-quality metrics |
 | [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, privacy, threat controls, Failure Memory |
 | [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md) | Research-safe executable checkpoint, frozen input hashes, no-fabricated-AI gate, CI contract |
+| [Student Agent Academy](./docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md) | University–industry education and talent-readiness model |
+| [Digital Twin Student Simulation](./docs/education/DIGITAL_TWIN_STUDENT_SIMULATION.md) | Three-case student simulation, AI conditions, scoring and partner reporting |
+| [Marketplace Edition](./MARKETPLACE_EDITION.md) | OpenAI/Google/Microsoft distribution architecture and readiness status |
 | [docs/AI_ENGINEERING_BENCHMARK.md](./docs/AI_ENGINEERING_BENCHMARK.md) | Public Microsoft/Google/OpenAI engineering benchmark |
 | [PROTOTYPE_STATUS_V0.4.md](./PROTOTYPE_STATUS_V0.4.md) | Current executable research milestone |
 | [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) | Research, rights, privacy, IP, eval and human-approval gates |
@@ -127,9 +174,9 @@ The architecture snapshot is not a claim of official integration, partnership, o
 
 ## Public / private boundary
 
-**Public research assets:** research-safe documentation, synthetic benchmark descriptions, evaluation principles, selected code/notebooks, educational materials, citation metadata, and reproducibility artifacts.
+**Public research assets:** research-safe documentation, synthetic benchmark descriptions, evaluation principles, selected code/notebooks, educational materials, university–industry partnership patterns, citation metadata, and reproducibility artifacts.
 
-**Private R&D assets:** detailed orchestration/control logic, unpublished agent specifications, provider adapters, private benchmarks, licensed/restricted data, experimental results, patent-candidate mechanisms, commercial strategy, and pre-commercial implementation.
+**Private R&D assets:** detailed orchestration/control logic, unpublished agent specifications, provider adapters, private benchmarks, licensed/restricted data, experimental results, partner-confidential material, individual recruitment data, patent-candidate mechanisms, commercial strategy, and pre-commercial implementation.
 
 **Third-party assets:** standards, papers, datasets, models, software, rankings, logos, and upstream repositories retain their original rights and licenses.
 
@@ -164,6 +211,8 @@ Citation formats:
 
 ## Current release and next milestone
 
-**NAAIL OpenLab v0.2.3 — Audit Digital Twin Prototype 003 release, 14 September 2026.**
+**Validated executable release: NAAIL OpenLab v0.2.3 — Audit Digital Twin Prototype 003, 14 September 2026.**
 
-**Next executable milestone: Prototype 004.** Configure real provider/model adapters in the private R&D environment and run blinded comparisons of single-agent, sequential-agent, and governed multi-agent architectures under identical frozen evidence, Evidence Passports, evaluation metrics, Decision DAG controls, and Human Gate requirements. Report failures, cost, latency, error rates, and human overrides—not only favorable outputs.
+**v0.2.4 target:** Marketplace + Student Agent Academy integration. The public architecture now specifies OpenAI/Google/Microsoft distribution scaffolding and the Big Four Student Agent Academy / Digital Twin student-simulation layer. These additions remain pre-production until real provider adapters, institutional privacy/consent controls, and pilot validation are completed.
+
+**Next executable milestone: Prototype 004.** Configure real provider/model adapters in the private R&D environment and run blinded comparisons of single-agent, sequential-agent, and governed multi-agent architectures under identical frozen evidence, Evidence Passports, evaluation metrics, Decision DAG controls, and Human Gate requirements. The student pilot should reuse the same frozen evidence family while measuring learning, AI verification, contradictory-evidence recognition, human override reasoning, and escalation judgment.
