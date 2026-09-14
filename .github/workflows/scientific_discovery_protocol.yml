@@ -42,7 +42,38 @@ jobs:
         run: python discovery/validate_study_manifest.py discovery/sample_study_manifest.json
       - name: Run discovery-governance tests
         run: python -m pytest -q discovery/test_discovery_manifest.py
-      - name: Enforce canonical scientific invariants
+      - name: Validate machine-readable scientific constitution
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from discovery.validate_study_manifest import (
+              INTEGRITY_REQUIRED_FOR_DISCOVERY,
+              MANDATORY_FOR_DISCOVERY,
+          )
+
+          constitution = json.loads(
+              Path("discovery/scientific_constitution.json").read_text(encoding="utf-8")
+          )
+          invariants = constitution["invariants"]
+
+          assert invariants["agent_consensus_is_scientific_truth"] is False
+          assert invariants["optimize_for_p_value"] is False
+          assert invariants["discovery_claim_default"] is False
+          assert invariants["human_gate_required"] is True
+          assert invariants["failed_and_null_results_must_be_retained"] is True
+          assert invariants["protocol_relaxation_by_agent_allowed"] is False
+          assert invariants["external_system_names_imply_execution"] is False
+          assert invariants["review_role_separation_alone_counts_as_independence"] is False
+          assert invariants["evidence_lineage_required"] is True
+          assert invariants["holdout_leakage_allowed"] is False
+
+          assert set(constitution["minimum_discovery_gates"]) == set(MANDATORY_FOR_DISCOVERY)
+          assert set(constitution["mandatory_integrity_controls"]) == set(INTEGRITY_REQUIRED_FOR_DISCOVERY)
+          assert constitution["final_authority"] == "human_reviewer"
+          print("Scientific constitution matches executable validator.")
+          PY
+      - name: Enforce canonical scientific invariants in narrative governance
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -64,5 +95,5 @@ jobs:
           missing = [x for x in required if x not in joined]
           assert not missing, f"Missing canonical discovery controls: {missing}"
           assert "agent_consensus != scientific_truth" in automation
-          print("Scientific discovery governance invariants present.")
+          print("Narrative scientific discovery governance invariants present.")
           PY
