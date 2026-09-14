@@ -1,0 +1,48 @@
+# NAAIL OpenLab™ — Public Reference Architecture
+
+NAAIL OpenLab is a research-first, human-led AI platform for business-school education, audit simulation, and reproducible scientific discovery. This public architecture intentionally omits patent-sensitive implementation details.
+
+## Design goal
+Build a platform that is:
+- evidence-governed;
+- model/provider-neutral;
+- auditable and reproducible;
+- safe for synthetic education/research use;
+- explicit about human responsibility;
+- testable through frozen benchmarks and Digital Twin scenarios.
+
+## Seven public layers
+1. **Experience Layer** — Student, instructor, researcher, auditor, reviewer, and administrator interfaces.
+2. **Audit Workspace** — Planning, materiality, risk, controls, analytics, evidence, testing, documentation, review, and reporting.
+3. **Agent Mesh** — Specialist agents with explicit roles, scoped tools, handoffs, structured outputs, and human approval points.
+4. **Knowledge & Evidence Plane** — Standards references, lawful guidance, FT50/AJG research intelligence, provenance, citations, and Knowledge Graph/GraphRAG services.
+5. **Governance & Observability Plane** — Identity/RBAC, registries, run tracing, evaluation, quality monitoring, defect memory, and release controls.
+6. **Digital Twin Lab** — Synthetic Client XYZ, fictional Firm Alpha–Delta, regulator/audit-committee roles, and repeatable case environments.
+7. **Scientific Discovery Plane** — Hypothesis portfolios, ERA-style empirical conversion, computational discovery, adversarial review, falsification, replication, Chain-of-Evidence, and Human Gate.
+
+## Stable vs replaceable
+### Knowledge Core™
+Stable professional and scientific knowledge, standards mappings, validated literature, evidence structures, ontologies, and benchmark definitions.
+
+### Technology Core™
+Replaceable models, agent runtimes, orchestration frameworks, retrieval components, tools, memory implementations, and deployment infrastructure.
+
+### Adaptive Intelligence Fabric™
+A governed bridge that routes tasks, context, evidence, tools, models, policies, and approvals between the two cores.
+
+## Vendor-neutral runtime principle
+NAAIL should be able to support different providers and frameworks behind a common internal contract. Provider-specific features may be used through adapters, but business logic, evidence rules, evaluation criteria, and human gates should remain portable.
+
+## Workflow principle
+Use the simplest orchestration pattern that satisfies the task:
+- direct tool call;
+- single agent;
+- specialist delegation;
+- explicit sequential/concurrent workflow;
+- graph-based workflow;
+- long-running checkpointed workflow.
+
+Every material workflow must expose its stages, dependencies, approvals, failure states, and evaluation results.
+
+## Public/private boundary
+The public repository describes research-safe interfaces, governance principles, synthetic scenarios, evaluation standards, and educational materials. Detailed orchestration logic, unpublished methods, private datasets, commercial strategy, and patent-candidate mechanisms remain in the private development master.
