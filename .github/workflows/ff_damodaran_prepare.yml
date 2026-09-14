@@ -1,0 +1,45 @@
+name: FF-Damodaran Prepare Crosswalk
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install study dependencies
+        run: pip install -r studies/FF-Damodaran-Discovery-01/requirements-study.txt
+      - name: Download authoritative provider data
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/download_sources.py
+      - name: Build FF49 annual returns and factors
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/build_ff49_annual.py
+      - name: Estimate rolling industry factor exposures
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/build_factor_exposures.py
+      - name: Build Damodaran vintage panel
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/build_damodaran_panel.py
+      - name: Generate mapping candidates
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/suggest_crosswalk.py
+      - name: Generate partial Data Passport
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/make_data_passport.py
+      - name: Run scientific contract
+        run: python studies/FF-Damodaran-Discovery-01/tests/test_contract.py
+      - name: Upload review package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ff-damodaran-crosswalk-review
+          retention-days: 30
+          path: |
+            studies/FF-Damodaran-Discovery-01/crosswalk/candidate_crosswalk.csv
+            studies/FF-Damodaran-Discovery-01/evidence/download_manifest.json
+            studies/FF-Damodaran-Discovery-01/evidence/data_passport.json
