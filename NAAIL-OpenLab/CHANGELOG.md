@@ -1,5 +1,19 @@
 # Changelog
 
+## Student Agent Academy + Digital Twin Education — v0.2.4 target — 2026-09-14
+### University–industry AI audit learning layer
+- Added the **NAAIL Big Four Student Agent Academy™** as a public university–industry education and talent-readiness model.
+- Added a governed **Educational Proxy Agent** concept so firms can contribute learning objectives, challenge briefs, synthetic scenarios, guest sessions, or approved proxy-agent specifications without exposing proprietary production systems or confidential client data.
+- Added the **NAAIL Digital Twin Student Simulation™** specification using the existing Client XYZ three-case family: Revenue Recognition & Cut-off, Goodwill Impairment, and ICFR / Control Deficiency.
+- Added controlled teaching/research conditions: no AI, general AI assistant, single educational audit agent, sequential specialist agents, and governed multi-agent + Human Gate.
+- Added student decision states: `ACCEPT_AGENT`, `MODIFY_AGENT`, `REJECT_AGENT`, `REQUEST_MORE_EVIDENCE`, and `ESCALATE_TO_HUMAN`.
+- Extended evaluation beyond RPA, AA, EG, PS, DS, and DIST with education-specific constructs: **AIV** (AI Verification), **CER** (Contradictory Evidence Recognition), **HOR** (Human Override Reasoning), and **ESC** (Escalation Judgment).
+- Added a privacy-governed **Student Learning Twin** for event traces, evidence use, revisions, escalation choices, and educational feedback.
+- Added default aggregate/anonymized partner reporting and explicit separation of academic grading from recruitment pathways.
+- Prohibited automatic employment decisions from NAAIL student scores and prohibited individual-level partner disclosure without explicit student consent and appropriate institutional/privacy approval.
+- Updated `README.md`, `ARCHITECTURE.md`, and `AGENTS.md` so the education layer is a first-class NAAIL capability.
+- Preserved the current validated executable version at **v0.2.3**; the Student Agent Academy remains part of the **v0.2.4 target** until institutional controls, provider adapters, and pilot validation are completed.
+
 ## Marketplace Edition scaffold — 2026-09-14
 ### OpenAI + Google + Microsoft distribution preparation
 - Added `marketplace/` as a provider-neutral distribution layer without exposing the private NAAIL scientific core.
