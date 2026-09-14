@@ -3,10 +3,11 @@
 ### Governed AI-to-AI scientific economic intelligence for data economy, finance, and sustainable welfare research
 
 [![AI-to-AI Scientific Contract](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/ai_to_ai_contract.yml/badge.svg)](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/ai_to_ai_contract.yml)
+[![Scientific Discovery Protocol](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific_discovery_protocol.yml/badge.svg)](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific_discovery_protocol.yml)
 
-ECONOVA-S™ is an independent research-software platform for **AI-assisted scientific discovery with explicit economic theory, real-data provenance, econometric identification, independent replication, adversarial review, failure containment, and human scientific governance**.
+ECONOVA-S™ is an independent research-software platform for **AI-assisted scientific discovery with explicit economic theory, real-data provenance, econometric identification, computational discovery, independent replication, adversarial review, Chain-of-Evidence verification, falsification, and human scientific governance**.
 
-> **AI explores. Economics constrains. Agents challenge. Evidence verifies. Humans approve.**
+> **Generate broadly. Ground literature. Convert hypotheses to executable tests. Search scientifically. Preserve every evidence chain. Attack the result. Reproduce it. Let humans decide.**
 
 ## Status
 
@@ -15,7 +16,8 @@ ECONOVA-S™ is an independent research-software platform for **AI-assisted scie
 | Canonical architecture | **V2.5** |
 | Latest citable software | **v0.2.0** |
 | Active development | **v0.3** |
-| AI-to-AI automation | **Runnable deterministic orchestration + CI governance tests** |
+| AI-to-AI automation | **Runnable deterministic orchestration + governance tests** |
+| Scientific discovery protocol | **Machine-readable study manifest + gate validator** |
 | Flagship empirical study | **MNSc–FamaFrench–01: FIZ→CIZ transition** |
 | Scientific claim gate | `discovery_claim_allowed = false` |
 
@@ -28,10 +30,10 @@ ECONOVA-S™ is an independent research-software platform for **AI-assisted scie
 
 > **When does data become information, and when does information become economic and social value?**
 
-ECONOVA-S separates stable scientific meaning from replaceable technology:
+ECONOVA-S™ separates stable scientific meaning from replaceable technology:
 
-1. **Stable Economic Knowledge Core™** — economics, finance, data economy, causal DAGs, Variable DNA™, identification, replication, falsification, sustainability, and welfare.
-2. **Replaceable Technology Core™** — LLMs, retrieval, Python/R/Stata/EViews, databases, model routers, tool protocols, and compute.
+1. **Stable Economic Knowledge Core™** — economics, finance, data economy, causal DAGs, Variable DNA™, identification, replication, falsification, sustainability, Chain-of-Evidence, and welfare.
+2. **Replaceable Technology Core™** — LLMs, retrieval, Python/R/Stata/EViews, databases, evaluators, model routers, tool protocols, and compute.
 
 The **AI-to-AI Scientific Intelligence Fabric™** connects the two cores; it is not a third core.
 
@@ -39,33 +41,45 @@ The **AI-to-AI Scientific Intelligence Fabric™** connects the two cores; it is
 
 ---
 
-# AI-to-AI Scientific Automation™
+# Scientific Discovery Stack
 
-The repository now contains a **runnable, vendor-neutral orchestration layer**. It does not treat one model reviewing itself as independent scientific validation.
+ECONOVA-S™ now formalizes a single publication-grade discovery sequence inspired by current Google Research / Google DeepMind scientific-AI systems and adjacent autonomous-R&D work.
 
 ```mermaid
 flowchart LR
-    A[Research Question] --> B[Explorer]
-    B --> C[Theory & DAG]
-    C --> D[Empirical Design]
-    D --> E[Independent Replicator]
-    E --> F[Scientific Red-Team]
-    F --> G[Welfare Reviewer]
-    G --> H[Evidence Passport™]
-    H --> I{Human Gate™}
-    I -->|Revise| B
-    I -->|Proceed| J[Next Scientific Stage]
+    A[Research Goal] --> B[Literature Grounding]
+    B --> C[Co-Scientist Hypothesis Tournament]
+    C --> D[DAG / Systems Governance]
+    D --> E[ERA Empirical Conversion]
+    E --> F[AlphaEvolve / Computational Discovery]
+    F --> G[Latent-Structure Analysis]
+    G --> H[Independent Replication]
+    H --> I[AI-to-AI Red-Team]
+    I --> J[Science One Chain-of-Evidence]
+    J --> K[CoE Audit]
+    K --> L[Falsification]
+    L --> M[Welfare Interpretation]
+    M --> N[Evidence Passport™]
+    N --> O{Human Gate™}
 ```
 
-## Machine-readable scientific contract
+## Methodological mapping
 
-Each agent handoff records:
+| Layer | ECONOVA-S™ implementation |
+|---|---|
+| **AI Co-Scientist-style** | Generation → Reflection → Ranking → Evolution → Proximity → Meta-review hypothesis tournament |
+| **ERA-style** | Converts hypotheses into real data, Variable DNA™, executable code, estimands, metrics, robustness and replication tests |
+| **AlphaEvolve-inspired** | Evolves algorithms, measures, estimators, prompts and specifications against frozen scientific fitness |
+| **Computational Discovery** | Parallel candidate generation/evaluation with lineage, immutable evaluator outputs and exploration/exploitation control |
+| **AlphaFold-inspired** | Searches latent economic structures such as factors, regimes, networks and hidden mechanisms; requires interpretation + validation |
+| **Science One-inspired** | Chain-of-Evidence for claim completeness/correctness plus CoE Audit |
+| **Mirendil-inspired** | Closed-loop R&D improvement with observability and evaluation, but no authority to weaken scientific gates |
+| **AI-to-AI review** | Independent replicator + adversarial critic + explicit independence class |
+| **DAG governance** | Evidence class and identification logic constrained by explicit causal/system structure |
 
-`TaskID · RunID · Sender · Receiver · Claim · Evidence · Method · Assumptions · Confidence · Contradictions · FailureStatus · Provenance · ParentHash · IndependenceClass · RiskFlags · RequiredNextAction · ContentSHA256`
+The full canonical protocol is in [`GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md`](GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md).
 
-Each handoff is SHA-256 hashed and linked to the previous handoff. The full run receives a final chain hash, making the automation trace tamper-evident.
-
-### Non-bypassable invariants
+### Non-bypassable scientific invariants
 
 ```text
 agent_consensus_is_scientific_truth = false
@@ -74,15 +88,21 @@ human_gate_approved = false   # default
 discovery_claim_allowed = false
 ```
 
-### Failure containment
+External names such as AI co-scientist, ERA, AlphaEvolve, Computational Discovery, AlphaFold, Science One, and Mirendil describe **methodological inspiration unless the corresponding external system is actually executed and recorded in the Evidence Passport™**.
 
-The orchestrator stops downstream execution when a blocking failure is reported, including:
+---
 
-`missing evidence · provenance failure · chronology/leakage failure · invalid construct · invalid identification · replication failure · unresolved red-team contradiction · materially incomplete welfare review`
+# AI-to-AI Scientific Automation™
 
-Failure is treated as a valid scientific result; it is never silently converted into success.
+The repository contains a **runnable, vendor-neutral orchestration layer**. It does not treat one model reviewing its own answer as independent scientific validation.
 
-## Run the offline governance demo
+Each agent handoff records:
+
+`TaskID · RunID · Sender · Receiver · Claim · Evidence · Method · Assumptions · Confidence · Contradictions · FailureStatus · Provenance · ParentHash · IndependenceClass · RiskFlags · RequiredNextAction · ContentSHA256`
+
+Each handoff is SHA-256 hashed and linked to the previous handoff. Blocking failures stop or reroute the pipeline rather than being silently converted into success.
+
+### Run the offline automation demo
 
 ```bash
 python automation/orchestrator.py \
@@ -90,44 +110,31 @@ python automation/orchestrator.py \
   --output automation/artifacts/demo_chain.json
 ```
 
-Run the tests:
+### Validate the scientific-discovery manifest
 
 ```bash
-python -m pytest -q automation/test_orchestrator.py
-python automation/validate_handoff.py automation/sample_handoff.json
+python discovery/validate_study_manifest.py discovery/sample_study_manifest.json
+python -m pytest -q discovery/test_discovery_manifest.py
 ```
 
-The deterministic demo validates orchestration, hash continuity, routing, stop conditions, failure propagation, and Human Gate enforcement. **It does not validate a scientific hypothesis.**
+The current sample is intentionally valid while preserving:
 
-### Automation resources
+```text
+discovery_claim_allowed = false
+```
 
-- [`AI_TO_AI_AUTOMATION.md`](AI_TO_AI_AUTOMATION.md) — scientific automation architecture;
-- [`automation/orchestrator.py`](automation/orchestrator.py) — runnable role-based runtime;
-- [`automation/ai_handoff.schema.json`](automation/ai_handoff.schema.json) — machine-readable contract;
-- [`automation/validate_handoff.py`](automation/validate_handoff.py) — handoff/hash validator;
-- [`automation/test_orchestrator.py`](automation/test_orchestrator.py) — governance and failure-containment tests;
-- [`automation/RELIABILITY_STANDARD.md`](automation/RELIABILITY_STANDARD.md) — research-engineering reliability standard;
-- [`.github/workflows/ai_to_ai_contract.yml`](.github/workflows/ai_to_ai_contract.yml) — zero-secret CI and auditable trace generation.
+### Core governance resources
+
+- [`AI_TO_AI_AUTOMATION.md`](AI_TO_AI_AUTOMATION.md) — agent automation and routing;
+- [`GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md`](GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md) — canonical discovery protocol;
+- [`SCIENTIFIC_ASSURANCE.md`](SCIENTIFIC_ASSURANCE.md) — scientific claim gates;
+- [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) — reproducibility contract;
+- [`discovery/study_manifest.schema.json`](discovery/study_manifest.schema.json) — machine-readable study contract;
+- [`discovery/validate_study_manifest.py`](discovery/validate_study_manifest.py) — discovery gate validator;
+- [`templates/STUDY_DISCOVERY_TEMPLATE.md`](templates/STUDY_DISCOVERY_TEMPLATE.md) — publication-grade study template;
+- [`.github/workflows/scientific_discovery_protocol.yml`](.github/workflows/scientific_discovery_protocol.yml) — zero-secret protocol CI.
 
 > **Engineering rule: automate execution, not scientific authority.**
-
----
-
-## Scientific independence
-
-A review is not considered independent merely because a second prompt or second agent label is used. ECONOVA-S records an **independence class** for each stage.
-
-Stronger publication-grade independence should combine several of the following:
-
-- separate role and isolated context;
-- different model/tool configuration;
-- independent code execution path;
-- independent reconstruction from the Evidence Passport;
-- frozen pre-analysis protocol;
-- blinded benchmark or holdout;
-- external human review.
-
-`agent_consensus != scientific_truth`
 
 ---
 
@@ -137,16 +144,21 @@ The public repository includes:
 
 - formal AI-to-AI handoff/provenance contract;
 - chained SHA-256 integrity and final run hash;
-- runnable seven-stage deterministic orchestration;
+- runnable deterministic orchestration;
+- Co-Scientist-style hypothesis functions;
+- ERA-style hypothesis-to-empirical conversion rules;
+- AlphaEvolve-inspired scientific search governance;
+- Computational Discovery candidate-lineage rules;
+- AlphaFold-inspired latent-structure validation rules;
+- Science One-inspired Chain-of-Evidence and CoE Audit requirements;
+- Mirendil-inspired closed-loop R&D containment boundary;
+- machine-enforced discovery manifest;
 - independent-replicator and scientific-red-team roles;
 - explicit independence classification;
 - risk flags and scientific stop conditions;
 - failure propagation and fault containment;
-- Evidence Passport™ and Human Gate™ concepts;
+- Evidence Passport™ and Human Gate™ controls;
 - GPT-5.6 Sol as a replaceable backend in the v0.2 prototype;
-- Co-Scientist-style hypothesis generation and critique;
-- ERA-style empirical conversion;
-- AlphaEvolve-inspired scientific search;
 - evidence-grounded metadata RAG;
 - official Fama–French data adapters;
 - Damodaran / NYU Stern industry-data adapters;
@@ -156,7 +168,7 @@ The public repository includes:
 - temporal/out-of-sample checks;
 - Stata `.do` export.
 
-The deterministic orchestration runtime is provider-neutral. Live models from OpenAI, Microsoft/Azure, Google, local systems, or future providers may be attached as replaceable adapters **without changing the scientific contract**.
+The scientific contract is provider-neutral. OpenAI, Google/Gemini, Microsoft/Azure, local models, or future providers may be attached as replaceable adapters without changing the Stable Economic Knowledge Core™ or scientific gates.
 
 ---
 
@@ -183,15 +195,17 @@ It implements:
 [Study folder →](studies/MNSc-FamaFrench-01/)  
 [Validation PR →](https://github.com/Saehon/Saeid-Homayoun/pull/9)
 
+The canonical discovery manifest for this study currently remains **pre-discovery** because replication, adversarial review, falsification, Chain-of-Evidence, CoE Audit and final Human Gate are not yet complete.
+
 ---
 
 ## Scientific assurance
 
-ECONOVA-S does **not** treat novelty, statistical significance, predictive accuracy, LLM confidence, or multi-agent agreement as sufficient evidence of discovery.
+ECONOVA-S™ does **not** treat novelty, statistical significance, predictive accuracy, evaluator score, LLM confidence, or multi-agent agreement as sufficient evidence of discovery.
 
 A serious claim must survive the applicable gates for:
 
-**literature validity → construct validity → provenance → chronology/leakage → identification → replication/OOS → falsification → adversarial review → economic magnitude → welfare interpretation → Human Gate**
+**literature validation → hypothesis tournament → DAG governance → construct validity → ERA empirical conversion → provenance/chronology → identification → search integrity → latent-structure validation when used → replication/OOS → AI-to-AI adversarial review → falsification → Chain-of-Evidence → CoE Audit → economic significance → welfare interpretation → reproducibility → Human Gate**
 
 [Scientific Assurance Standard →](SCIENTIFIC_ASSURANCE.md)
 
@@ -215,20 +229,22 @@ GitHub and Kaggle can be used for replication examples or mirrors, but should no
 ## Repository map
 
 ```text
-README.md                         Project front door
-ARCHITECTURE.md                   Canonical V2.5 architecture
-AI_TO_AI_AUTOMATION.md            Multi-agent scientific automation
-SCIENTIFIC_ASSURANCE.md           Scientific claim gates
-RESEARCH_SOFTWARE_CARD.md         Intended use and limitations
-REPRODUCIBILITY.md                Reproducibility contract
-DATA_SOURCES.md                   Data/provenance policy
-automation/orchestrator.py        Runnable AI-to-AI runtime
-automation/ai_handoff.schema.json Scientific handoff contract
-automation/RELIABILITY_STANDARD.md Reliability/fault-containment standard
-prototype_v02/                    Real-data + evidence-RAG workbench
-prototype_v03/                    Official public-data ingestion layer
-studies/MNSc-FamaFrench-01/       First frozen empirical study
-.github/                          CI, governance, issue and PR templates
+README.md                               Project front door
+ARCHITECTURE.md                         Canonical V2.5 architecture
+GOOGLE_INSPIRED_DISCOVERY_PROTOCOL.md   Canonical scientific-discovery protocol
+AI_TO_AI_AUTOMATION.md                  Multi-agent scientific automation
+SCIENTIFIC_ASSURANCE.md                 Scientific claim gates
+REPRODUCIBILITY.md                      Reproducibility + Chain-of-Evidence contract
+DATA_SOURCES.md                         Data/provenance policy
+automation/orchestrator.py              Runnable AI-to-AI runtime
+automation/ai_handoff.schema.json       Scientific handoff contract
+discovery/study_manifest.schema.json    Study-level discovery contract
+discovery/validate_study_manifest.py    Machine discovery-gate validator
+templates/STUDY_DISCOVERY_TEMPLATE.md   Publication-grade study template
+prototype_v02/                          Real-data + evidence-RAG workbench
+prototype_v03/                          Official public-data ingestion layer
+studies/MNSc-FamaFrench-01/             First frozen empirical study
+.github/                                CI, governance, issue and PR templates
 ```
 
 ---
@@ -245,4 +261,4 @@ Research and permitted non-commercial use are governed by [`LICENSE`](LICENSE). 
 
 ## Independence
 
-ECONOVA-S™ is an **independent research project**. References to Microsoft, OpenAI, Google, DeepMind, Azure, or other organizations and technologies identify engineering inspiration, model providers, or interoperability targets only; they do not imply sponsorship, employment, endorsement, or organizational affiliation unless explicitly documented.
+ECONOVA-S™ is an **independent research project**. References to Google, Google Research, Google DeepMind, Microsoft, OpenAI, Mirendil, Azure, or other organizations and technologies identify methodological inspiration, model providers, public research systems, or interoperability targets only; they do not imply sponsorship, employment, endorsement, partnership, or organizational affiliation unless explicitly documented.
