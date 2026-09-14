@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-GAA-EVIDENCE-001",
+  "status": "ADOPTED_GOVERNED_SOURCE_REGISTRY",
+  "knowledge_rag_core_version": "KRG2026.3",
+  "technology_agent": "GAA-General-Adversarial-Accounting-Audit-Agent",
+  "boundary_rules": {
+    "evidence_sources_belong_to_knowledge_rag_core": true,
+    "gaa_belongs_to_technology_core": true,
+    "gaa_may_modify_knowledge_rag_core": false,
+    "technology_upgrade_may_change_evidence_meaning": false,
+    "human_gate_required": true
+  },
+  "sources": [
+    {
+      "id": "SEC_EDGAR_XBRL",
+      "name": "SEC EDGAR APIs and XBRL structured filing data",
+      "authority_type": "regulator_public_data",
+      "url": "https://www.sec.gov/edgar/sec-api-documentation",
+      "adoption_state": "ADOPT_EVIDENCE_SOURCE",
+      "primary_uses": [
+        "financial_statements",
+        "structured_facts",
+        "filing_disclosures",
+        "company_year_digital_twins",
+        "accounting_policy_evidence",
+        "reproducible_filing_benchmarks"
+      ],
+      "authoritative_for": ["filed_public_company_information"],
+      "notes": "Use with provenance, filing date, accession identifiers, taxonomy context, and SEC fair-access requirements."
+    },
+    {
+      "id": "SEC_AAER",
+      "name": "SEC Accounting and Auditing Enforcement Releases",
+      "authority_type": "regulator_enforcement",
+      "url": "https://www.sec.gov/enforcement-litigation/accounting-auditing-enforcement-releases",
+      "adoption_state": "ADOPT_EVIDENCE_SOURCE",
+      "primary_uses": [
+        "accounting_misstatement_patterns",
+        "fraud_failure_cases",
+        "disclosure_failure_cases",
+        "accountant_auditor_enforcement_patterns",
+        "synthetic_adversarial_case_design"
+      ],
+      "authoritative_for": ["published_sec_enforcement_material"],
+      "notes": "Convert real cases into clearly labeled synthetic educational/research scenarios when identities are unnecessary."
+    },
+    {
+      "id": "PCAOB_INSPECTIONS",
+      "name": "PCAOB inspection reports and public inspection data",
+      "authority_type": "audit_regulator_public_data",
+      "url": "https://pcaobus.org/oversight/inspections/firm-inspection-reports",
+      "adoption_state": "ADOPT_EVIDENCE_SOURCE",
+      "primary_uses": [
+        "audit_deficiency_patterns",
+        "audit_quality_benchmarks",
+        "inspection_digital_twins",
+        "adversarial_audit_review"
+      ],
+      "authoritative_for": ["published_pcaob_inspection_material"],
+      "notes": "Preserve inspection report context and do not generalize individual inspection findings into universal audit-firm quality claims."
+    },
+    {
+      "id": "PCAOB_AS_3101",
+      "name": "PCAOB AS 3101 and Critical Audit Matter requirements",
+      "authority_type": "audit_standard",
+      "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS3101",
+      "adoption_state": "ADOPT_AUTHORITATIVE_STANDARD_SOURCE",
+      "primary_uses": [
+        "cam_identification",
+        "cam_communication",
+        "cam_documentation",
+        "standards_judge",
+        "kiwi_validation"
+      ],
+      "authoritative_for": ["applicable_pcaob_as_3101_requirements"],
+      "notes": "Apply only to the relevant jurisdiction, engagement type, period, and effective requirements."
+    }
+  ],
+  "technology_references": [
+    {
+      "repository": "Maxed-OSS/maxed-mcp",
+      "role": "accounting_tool_and_mcp_reference",
+      "state": "ADOPT_TECHNOLOGY_REFERENCE",
+      "knowledge_authority": false,
+      "license_review": "Apache-2.0 verified at adoption review"
+    },
+    {
+      "repository": "GAJETOso/financeskills",
+      "role": "finance_accounting_skill_library_reference",
+      "state": "EVALUATE_TECHNOLOGY_REFERENCE",
+      "knowledge_authority": false,
+      "license_review": "Re-verify exact version before runtime dependency promotion"
+    }
+  ],
+  "benchmark_families": [
+    "revenue_recognition_cutoff",
+    "accounting_fraud_misstatement",
+    "pcaob_audit_deficiency",
+    "cam_as3101_challenge",
+    "icfr_deficiency_challenge"
+  ],
+  "required_controls": [
+    "Evidence Passport",
+    "source provenance",
+    "jurisdiction resolver",
+    "temporal applicability",
+    "contradictory evidence search",
+    "falsification",
+    "replication",
+    "Failure Memory",
+    "Human Gate"
+  ]
+}
