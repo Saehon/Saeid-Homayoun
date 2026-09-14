@@ -1,104 +1,266 @@
-# NAAIL OpenLab™ V0.2 — Evidence-Enabled Business School AI Platform
+# NAAIL OpenLab™
+## Nordic Accounting, Audit & Assurance Intelligence Lab
 
-A **free-for-research-and-education, non-commercial, source-available** prototype for business-school education, research, and professional simulation across Accounting, Auditing, Finance, and Economics. **Auditing is the first implemented vertical.**
+**Evidence-governed AI for accounting, auditing, finance, sustainability, and business-school research.**
 
-> **License notice:** commercial use is not licensed. Software/code is governed by the PolyForm Noncommercial License 1.0.0 and original NAAIL educational/research content by CC BY-NC 4.0, unless a file states otherwise. See `LICENSE.md`. Separate written permission is required for commercial use.
+NAAIL OpenLab is the public research and education hub of **Dr. Saeid Homayoun**. It brings together agentic AI, accounting and audit intelligence, empirical research, digital twins, financial NLP, knowledge graphs, RAG/GraphRAG, reproducibility, and governed scientific discovery.
 
-## What V0.2 adds
+**Principal Investigator:** Saeid Homayoun  
+**GitHub:** https://github.com/Saehon  
+**Google Scholar:** https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en  
+**ORCID:** https://orcid.org/0000-0002-2536-0446  
+**Research portfolio:** [RESEARCH_PORTFOLIO.md](./RESEARCH_PORTFOLIO.md)
 
-- A formal **FT50 + AJG/ABS evidence layer** for education and research.
-- The Financial Times **2026 FT50** list as a factual journal registry.
-- A rights-aware **AJG/ABS import architecture** rather than redistribution of a full proprietary/licensed guide.
-- Dual evidence hierarchies:
-  - **professional audit decisions:** authoritative standards/regulation first;
-  - **academic education/research:** FT50, current AJG/ABS 4*/4, then selected high-fit 3.
-- Audit course-to-literature mapping for Bachelor, Master and Research levels.
-- Literature-review protocol requiring contradictory evidence, replication checks, frozen manifests and AI-to-AI critique.
-- Audit Digital Twin architecture with fictional firms and synthetic client cases.
+> NAAIL OpenLab is an independent research initiative. It is not affiliated with, endorsed by, sponsored by, or certified by OpenAI, Google, Microsoft, the Big Four, the IFRS Foundation, PCAOB, or any other referenced organization.
+
+---
+
+## Mission
+
+NAAIL OpenLab develops and evaluates **professional AI systems that can show their evidence, preserve provenance, survive adversarial review, reproduce their calculations, disclose uncertainty, and remain subject to human professional judgment**.
+
+The lab focuses on a central research question:
+
+> **How can AI systems support accounting, auditing, assurance, finance, and sustainability decisions without weakening evidence quality, reproducibility, professional accountability, or scientific validity?**
+
+---
+
+## Flagship research systems
+
+| System | Primary research purpose | Status |
+|---|---|---|
+| **POMELO™ / POMELO VERA™** | Evidence, verification, benchmarking, professional judgment, agent evaluation, controlled evolution | Proprietary R&D |
+| **IFRS-AI-Inspector** | Multi-agent digital twin for continuous IFRS assurance and standards-aware reasoning | Public research prototype |
+| **KIWI™** | CAM/KAM intelligence, audit evidence alignment, topic classification, risk-procedure analysis | Research program |
+| **ICFR + TimesFM** | Dynamic internal-control risk, forecasting, out-of-time prediction, supervisory attention | Empirical research program |
+| **Multi-Agent Accounting AI** | BERT/NLP, anomaly detection, ESG, cyber, automation, accounting-agent orchestration | Public research prototype |
+
+### Public flagship repositories
+
+- **IFRS-AI-Inspector** — https://github.com/Saehon/IFRS-AI-Inspector
+- **Multi-Agent Accounting AI** — https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture
+- **AAA — Audit & Accounting AI Laboratory** — https://github.com/Saehon/AAA
+- **PCAOB AI Inspector notebook** — https://github.com/Saehon/AAA/blob/main/PCAOB_AI_Inspector.ipynb
+- **AuditData-API** — https://github.com/Saehon/AuditData-API
+- **ICFR/TimesFM supporting repository** — https://github.com/Saehon/timesfm
+
+See the full verified portfolio in [RESEARCH_PORTFOLIO.md](./RESEARCH_PORTFOLIO.md).
+
+---
+
+## Scientific operating model
+
+NAAIL research follows a governed discovery pipeline:
+
+**Research Question → Literature Validation → Competing Hypotheses → Multi-Agent Critique → ERA-Style Empirical Design → Computational Discovery → Empirical Test → Adversarial Review → Falsification → Replication → Chain-of-Evidence → Human Gate**
+
+The methodological design draws inspiration from contemporary scientific-AI ideas such as multi-agent co-scientist reasoning, empirical research assistance, evolutionary model search, latent-structure discovery, and reproducible computational science. These are methodological inspirations only and do not imply technical dependency, partnership, or endorsement.
+
+### Non-negotiable scientific gates
+
+A result is not treated as a scientific discovery merely because an LLM, agent swarm, model-selection routine, or statistical test produces a favorable result. NAAIL requires:
+
+1. literature validation and contradictory-evidence search;
+2. explicit data provenance and variable construction;
+3. reproducible code and frozen run manifests;
+4. appropriate identification and robustness analysis;
+5. falsification and negative-result retention;
+6. adversarial critique and independent evaluation where feasible;
+7. separation of professional authority from academic evidence;
+8. human approval before scientific or professional claims.
+
+---
 
 ## Core architecture
 
-- **Knowledge Core™** — stable disciplinary knowledge, standards, validated literature, evidence and ontology.
-- **Technology Core™** — replaceable models, agents, orchestration, RAG/GraphRAG, memory, tools and deployment.
-- **Adaptive Intelligence Fabric™** — routes tasks, evidence, models and policies between the two cores.
-- **Scientific Discovery** — Co-Scientist → ERA → Computational Discovery / AlphaEvolve-style search → adversarial review → falsification → replication → Chain-of-Evidence → Human Gate.
+### 1. Stable Knowledge Core™
+Governed accounting, auditing, finance, sustainability, legal/regulatory, methodological, and literature knowledge with explicit source authority and provenance.
 
-## Business School scope
+### 2. Replaceable Technology Core™
+Foundation models, small language models, BERT-family models, agents, RAG/GraphRAG, knowledge graphs, digital twins, evaluators, forecasting models, orchestration frameworks, and future AI technologies.
 
-NAAIL OpenLab is designed to support bachelor’s and master’s education and research across:
+### 3. Adaptive Intelligence Fabric™
+Routes tasks, evidence, models, policies, tools, and evaluation logic across the knowledge and technology layers.
 
-- Accounting
-- Auditing
-- Finance
-- Economics
-- AI/data methods across business disciplines
+The governing principle is simple:
 
-Auditing is the first fully implemented professional lab.
+> **Knowledge and evidence must remain governed; technology may evolve, compete, and be replaced.**
+
+---
+
+## Research domains
+
+NAAIL OpenLab currently spans:
+
+- Accounting and financial reporting
+- Auditing and assurance
+- CAM/KAM analytics
+- Internal control over financial reporting (ICFR)
+- PCAOB and audit-inspection analytics
+- ESG and sustainability reporting
+- ESG assurance
+- Forensic accounting and fraud analytics
+- Financial NLP and textual analysis
+- Agentic AI and multi-agent systems
+- Knowledge graphs, RAG, and GraphRAG
+- Digital twins and professional simulation
+- Explainable and governed AI
+- Empirical capital-markets research
+- Data economy and computational discovery
+
+---
 
 ## Audit Digital Twin
 
-The Audit Digital Twin uses **37 roles: 36 operational audit-agent roles + one Audit Scientific Supervisor**. Initial synthetic simulations include revenue recognition, goodwill impairment, ICFR, going concern, and fraud/journal-entry risks.
+The Audit Digital Twin is the first deeply developed professional simulation vertical in NAAIL OpenLab.
 
-Firm Alpha, Firm Beta, Firm Gamma and Firm Delta are **fictional research archetypes**. They do not reproduce any proprietary Deloitte, EY, KPMG, PwC, Omnia, Canvas, Clara, Aura, or other commercial audit platform.
+It uses fictional firms, synthetic clients, structured audit risks, assertions, evidence, procedures, controls, and human-review gates. Current simulation topics include:
 
-## Evidence policy
+- revenue recognition;
+- goodwill and impairment;
+- ICFR and material weaknesses;
+- going concern;
+- fraud and journal-entry testing;
+- CAM/KAM evidence alignment;
+- sustainability and ESG assurance.
 
-NAAIL does **not** treat journal prestige as professional authority. When a task concerns how an audit/accounting requirement must be applied, applicable law, regulation and authoritative standards control. Journal evidence supports theory, methods, measurement, pedagogy, benchmark design and professional judgment.
+Public simulations must not reproduce proprietary audit-firm software, confidential methodologies, client data, or restricted standards content.
 
-For academic work, research agents should prioritize relevant FT50 and current AJG/ABS 4*/4 research, followed by selected high-fit AJG/ABS 3 research, while also evaluating relevance, identification, data quality, construct validity, reproducibility, recency, contradictory evidence and limitations.
+---
 
-## Scientific Discovery protocol
+## Evidence architecture
 
-Research workflows follow:
+NAAIL separates **professional authority** from **academic evidence**.
 
-**Research Question → Literature Validation → Contradictory Evidence Search → Co-Scientist → ERA Empirical Design → Computational Discovery / AlphaEvolve-style Search → Empirical Test → AI-to-AI Review → Falsification → Replication → Science One-style Chain-of-Evidence → DAG Governance → Human Gate.**
+### Professional decisions
+Priority is given to applicable law, regulation, authoritative standards, official guidance, and properly licensed professional materials.
 
-No result should be labelled a scientific discovery until required validation, falsification, reproducibility and human-approval gates pass.
+### Academic research and education
+Priority is given to relevant high-quality peer-reviewed research, including FT50 and current AJG/ABS 4*/4 literature, followed by selected high-fit AJG/ABS 3 work where appropriate.
 
-## Student Lab
+Journal ranking is never treated as a substitute for relevance, identification quality, construct validity, data quality, reproducibility, contradictory evidence, or professional authority.
 
-The education layer is designed around guided learning rather than answer dumping. It supports Socratic tutoring, synthetic cases, simulations, learning outcomes, rubrics and instructor-controlled assessment.
+---
 
-## License and commercial-use restriction
+## Research portfolio structure
 
-NAAIL OpenLab is **not released for unrestricted commercial use**.
+For external presentation, the NAAIL portfolio is organized around five primary research lines:
 
-- **Software/source code:** PolyForm Noncommercial License 1.0.0, unless otherwise stated.
-- **Original NAAIL educational/research content:** CC BY-NC 4.0, unless otherwise stated.
-- **Commercial use:** requires a separate written commercial license from the rights holder.
-- **Trademarks/branding:** NAAIL™, NAAIL OpenLab™, POMELO™, KIWI™ and associated source-identifying branding are not licensed for commercial branding or endorsement.
-- **Patent rights:** are not waived or dedicated to the public domain. See `PATENT_NOTICE.md`.
+1. **POMELO™ / VERA™** — governed professional accounting and audit intelligence.
+2. **IFRS-AI-Inspector** — continuous standards-aware assurance and digital twins.
+3. **KIWI™** — CAM/KAM intelligence and empirical audit research.
+4. **ICFR + TimesFM** — dynamic internal-control risk and forecasting.
+5. **Multi-Agent Accounting AI** — agentic accounting, audit, ESG, cyber, NLP, and automation.
 
-Commercially restricted activities include selling the software/content, paid SaaS or hosted deployment, incorporation into commercial products, commercial training packages, paid consulting deliverables, or other commercial exploitation without separate written authorization.
+Supporting repositories provide data engineering, financial NLP, synthetic data, APIs, benchmarking, and replication infrastructure.
 
-## Legal and rights safeguards
+---
 
-- Third-party standards, publications, datasets, rankings, logos and proprietary platform content retain their own rights.
-- Public simulations use synthetic data and fictional firms/clients.
-- Do not redistribute copyrighted IFRS text, journal articles, restricted course packs or licensed datasets without permission.
-- NAAIL OpenLab is an independent education/research project and is not affiliated with the Big Four or other referenced organizations.
-- Human approval remains mandatory for professional or scientific conclusions.
+## Education layer
 
-These controls reduce legal and privacy risk but do not provide a guarantee against all legal issues. Institutions should complete their own legal, privacy and data-protection review before production use with real students, licensed content, commercial APIs, or real client data.
+NAAIL OpenLab is also designed as a non-commercial research and teaching environment for bachelor, master, doctoral, and professional learning.
 
-## Patent/disclosure warning
+The education layer emphasizes:
 
-The public NAAIL release occurred on **14 September 2026**. Public disclosure can affect patent rights. Until qualified patent counsel has reviewed the disclosed material and any new invention concepts, new enabling technical details should remain in the private development repository. Do not describe NAAIL OpenLab as “patent pending” unless a patent application has actually been filed.
+- guided reasoning rather than answer dumping;
+- synthetic cases rather than confidential client data;
+- transparent rubrics and learning outcomes;
+- reproducible analytics;
+- evidence-based literature use;
+- human instructor control;
+- digital-twin simulation;
+- AI literacy for accounting, auditing, finance, and economics.
 
-## How to cite NAAIL OpenLab
+---
 
-If you use NAAIL OpenLab in research, teaching, benchmarking, or Digital Twin experiments, please cite the software and include the author ORCID.
+## Reproducibility and governance
 
-**APA-style citation:**
+NAAIL projects should increasingly converge toward a common reproducibility package containing:
+
+```text
+project/
+├── README.md
+├── CITATION.cff
+├── LICENSE / rights notice
+├── data/ or data_manifest/
+├── src/
+├── tests/
+├── notebooks/
+├── configs/
+├── results/
+├── docs/
+└── run_manifest.json
+```
+
+Every empirical research project should document data origin, transformations, exclusions, model specifications, evaluation metrics, robustness tests, random seeds where relevant, software environment, and known limitations.
+
+---
+
+## Public / private boundary
+
+NAAIL uses three clear release categories:
+
+**Public research assets** — documentation, selected code, notebooks, synthetic examples, educational material, and replication artifacts intentionally released for research and teaching.
+
+**Proprietary research systems** — confidential code, patent-sensitive architecture, evaluation assets, private benchmarks, restricted datasets, and pre-commercial systems.
+
+**Third-party assets** — software, data, standards, papers, models, and repositories that retain their original licenses and rights.
+
+No private or proprietary repository should be copied into this public hub merely for convenience.
+
+---
+
+## Licensing and IP
+
+NAAIL OpenLab is **free for non-commercial research and education where the applicable file license permits it**. It is not released for unrestricted commercial use.
+
+- Software/source code: governed by the applicable repository or file license.
+- Original educational/research content: governed by the applicable NAAIL notice.
+- Commercial exploitation requires separate written permission where stated.
+- NAAIL™, NAAIL OpenLab™, POMELO™, KIWI™, and related source-identifying marks are not licensed for third-party endorsement or branding.
+- Patent rights are not waived by publication.
+
+See:
+
+- [LICENSE.md](./LICENSE.md)
+- [COMMERCIAL_USE.md](./COMMERCIAL_USE.md)
+- [PATENT_NOTICE.md](./PATENT_NOTICE.md)
+- [TRADEMARKS.md](./TRADEMARKS.md)
+
+Public disclosure can affect patent rights. New patent-sensitive technical details should remain private until qualified legal review is completed.
+
+---
+
+## Citation
+
+**APA-style citation**
 
 > Homayoun, S. (2026). *NAAIL OpenLab: An Evidence-Governed AI Platform for Business-School Education, Audit Digital Twins, and Reproducible Scientific Discovery* (Version 0.2.0) [Computer software]. GitHub. https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
 
-**ORCID:** https://orcid.org/0000-0002-2536-0446
+Machine-readable metadata: [CITATION.cff](./CITATION.cff)
 
-Machine-readable citation metadata are available in [`CITATION.cff`](./CITATION.cff).
+---
 
-## Public release status
+## Collaboration
 
-**V0.2 non-commercial research release — September 2026.**
+NAAIL OpenLab is suitable for collaboration in:
 
-The private development/master version is maintained separately. This public folder contains only materials intended for non-commercial research and education use.
+- accounting and auditing AI;
+- agentic and multi-agent systems;
+- financial NLP;
+- digital twins;
+- CAM/KAM and ICFR research;
+- sustainability and ESG assurance;
+- reproducible empirical research;
+- scientific AI and computational discovery;
+- professional AI evaluation and governance.
+
+External collaborators should use public repositories and public documentation unless separate access has been explicitly granted.
+
+---
+
+## Release status
+
+**NAAIL OpenLab V0.2 — public non-commercial research release, September 2026.**
+
+The public repository is intentionally narrower than the private R&D environment. Stronger scientific, professional, or product claims require stronger evidence.
