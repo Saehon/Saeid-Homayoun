@@ -30,23 +30,36 @@ jobs:
         working-directory: NAAIL-OpenLab/Prototype_003/runtime
         run: python -m unittest discover -s tests -v
 
-      - name: Run frozen benchmark
+      - name: Run public deterministic checkpoint
         working-directory: NAAIL-OpenLab/Prototype_003/runtime
         run: python prototype003.py
 
-      - name: Validate benchmark output
+      - name: Validate scientific-integrity output
         working-directory: NAAIL-OpenLab/Prototype_003/runtime
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
+
           p = Path("outputs/latest_results.json")
           assert p.exists(), "Benchmark output missing"
           result = json.loads(p.read_text())
-          assert len(result["runs"]) == 4
+          assert result["public_release"] == "0.2.3"
+          assert len(result["case_registry"]) == 3
           assert "NO_SUPERIORITY_CLAIM" in result["research_claim"]
-          for row in result["runs"].values():
-              assert row["artifact"]["human_gate"] == "PENDING_HUMAN_APPROVAL"
-              assert row["metrics"]["unsupported_discovery_claim"] is False
-          print("Prototype 003 CI governance gate passed")
+
+          deterministic = result["runs"]["deterministic"]
+          assert deterministic["artifact"]["execution_status"] == "EXECUTED"
+          assert deterministic["artifact"]["human_gate"] == "PENDING_HUMAN_APPROVAL"
+          assert deterministic["metrics"]["unsupported_discovery_claim"] is False
+
+          for architecture in ("single_agent", "sequential_agents", "governed_multi_agent"):
+              row = result["runs"][architecture]
+              assert row["execution_status"] == "NOT_EXECUTED_PROVIDER_REQUIRED"
+              assert row["provider"] is None
+              assert row["model"] is None
+              assert row["exceptions"] is None
+              assert row["metrics"] is None
+
+          print("Prototype 003 CI scientific-integrity gate passed")
           PY
