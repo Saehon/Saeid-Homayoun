@@ -1,0 +1,72 @@
+{
+  "registry_version": "2026.09",
+  "policy": {
+    "authoritative_sources_override_convenience_sources": true,
+    "license_review_required_before_redistribution": true,
+    "model_output_is_authoritative_evidence": false,
+    "kaggle_dataset_requires_dataset_specific_license_review": true,
+    "ifrs_full_standard_text_bundled": false,
+    "nonpublic_pcaob_data_assumed_available": false
+  },
+  "sources": [
+    {
+      "id": "pcaob_public_inspection_data",
+      "type": "authoritative_public_data",
+      "provider": "PCAOB",
+      "url": "https://pcaobus.org/oversight/inspections/firm-inspection-reports",
+      "use": ["inspection simulation", "deficiency research", "temporal validation"],
+      "redistribution": "follow PCAOB/public-source terms",
+      "status": "preferred_primary_evidence"
+    },
+    {
+      "id": "sec_edgar",
+      "type": "authoritative_public_data",
+      "provider": "U.S. SEC",
+      "url": "https://www.sec.gov/edgar",
+      "use": ["filings", "XBRL", "CompanyFacts", "audit-report evidence"],
+      "redistribution": "follow SEC access and source rules",
+      "status": "preferred_primary_evidence"
+    },
+    {
+      "id": "hf_minilm",
+      "type": "optional_model",
+      "provider": "Hugging Face / sentence-transformers",
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+      "license": "Apache-2.0",
+      "use": ["semantic similarity", "retrieval embeddings"],
+      "status": "optional_approved_example"
+    },
+    {
+      "id": "hf_finbert",
+      "type": "optional_model",
+      "provider": "Hugging Face / ProsusAI",
+      "url": "https://huggingface.co/ProsusAI/finbert",
+      "use": ["financial text classification", "research comparison"],
+      "status": "license_terms_review_required_before_redistribution"
+    },
+    {
+      "id": "github_smolagents",
+      "type": "open_source_tooling",
+      "provider": "Hugging Face",
+      "url": "https://github.com/huggingface/smolagents",
+      "use": ["optional agent orchestration", "local-model experiments"],
+      "status": "pin_commit_and_verify_license_before_release"
+    },
+    {
+      "id": "github_sec_edgar_downloader",
+      "type": "open_source_tooling",
+      "provider": "jadchaar/sec-edgar-downloader",
+      "url": "https://github.com/jadchaar/sec-edgar-downloader",
+      "use": ["SEC filing acquisition adapter"],
+      "status": "optional_tooling_verify_current_license_and_commit"
+    },
+    {
+      "id": "kagglehub",
+      "type": "dataset_adapter",
+      "provider": "Kaggle",
+      "url": "https://github.com/Kaggle/kagglehub",
+      "use": ["optional Kaggle dataset acquisition"],
+      "status": "tooling_allowed_dataset_license_must_be_checked_separately"
+    }
+  ]
+}
