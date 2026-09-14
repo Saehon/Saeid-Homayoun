@@ -1,0 +1,41 @@
+name: AI-to-AI Scientific Contract
+
+on:
+  push:
+    paths:
+      - "AI_TO_AI_AUTOMATION.md"
+      - "automation/**"
+      - ".github/workflows/ai_to_ai_contract.yml"
+  pull_request:
+    paths:
+      - "AI_TO_AI_AUTOMATION.md"
+      - "automation/**"
+      - ".github/workflows/ai_to_ai_contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install schema validator
+        run: python -m pip install --upgrade jsonschema
+      - name: Compile validator
+        run: python -m py_compile automation/validate_handoff.py
+      - name: Validate canonical sample handoff
+        run: python automation/validate_handoff.py automation/sample_handoff.json
+      - name: Enforce discovery gate in public automation docs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path("AI_TO_AI_AUTOMATION.md").read_text(encoding="utf-8")
+          assert "discovery_claim_allowed = false" in text
+          assert "agent_consensus != scientific_truth" in text
+          print("Scientific automation gates present.")
+          PY
