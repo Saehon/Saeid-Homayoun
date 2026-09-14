@@ -16,31 +16,48 @@ The portfolio is intentionally organized around **working systems and measurable
 | Project | Role in portfolio | What to inspect |
 |---|---|---|
 | **NAAIL OpenLab / ECONOVA-S™** | Public research hub | scientific workflow, executable audit prototypes, reproducibility, evaluation |
+| **KIWI™ AAR Corp CAM Unit Test** | Primary executable audit benchmark | one-company CAM measurement, falsification, temporal reallocation, regression tests |
 | **AAA — Audit & Accounting AI Laboratory** | Experimental audit/accounting AI lab | notebooks, audit analytics, multi-agent/NLP experiments |
 | **IFRS-AI-Inspector** | Standards-aware public prototype | digital-twin reasoning, deterministic checks, provenance, human review |
 | **POMELO™ / VERA™** | Private/proprietary R&D | professional-AI verification, evidence governance, agent evaluation |
-| **KIWI™ / CAM-KAM research** | Empirical audit-intelligence program | CAM/KAM measurement, benchmark design, risk–procedure/evidence alignment |
 | **ICFR + TimesFM research** | Time-series/risk application | internal-control forecasting and temporal evaluation |
 
 ## Start here: executable proof of work
 
-### CAM/KAM Agentic Audit Intelligence benchmark
+### KIWI™ AAR Corp CAM Unit Test
 
-Path: [`demos/cam-kam-agent-benchmark/`](./demos/cam-kam-agent-benchmark/)
+Path: [`demos/aar-cam-unit-test/`](./demos/aar-cam-unit-test/)
 
-This small standard-library Python demo converts CAM/KAM text into six transparent prototype dimensions:
+This is the preferred CAM research benchmark in the public portfolio. It uses **AAR Corp only** as a permanent unit-test company before any KIWI CAM model is scaled to a larger U.S. CAM population.
 
-**RPA · AA · EG · PS · DS · DIST**
+Observed structure:
 
-It includes sample data, deterministic scoring, JSON output, unit tests, and explicit limitations. The objective is to show how a domain research idea becomes an executable and falsifiable benchmark.
+- 10 CAM observations;
+- 2020–2024;
+- exactly 2 CAMs per year;
+- Inventory persists across all five years;
+- Revenue persists through 2023 and exits in 2024;
+- Acquired Intangibles / Business Combination enters in 2024;
+- 2024 CAM count remains 2;
+- 2024 CARS = **0.667**.
+
+The central result is simple and testable: **CAM quantity is unchanged while CAM composition changes sharply.**
+
+The demo includes frozen RPA, EDS, SIS, SQI, CIIS and CARS measures; correct-vs-swapped-response falsification; a year-level exact sign test; weight robustness; public metadata/company-year extracts; and regression tests.
 
 Run:
 
 ```bash
-cd NAAIL-OpenLab/demos/cam-kam-agent-benchmark
-python benchmark.py sample_cases.csv --output results.json
-python -m unittest test_benchmark.py
+cd NAAIL-OpenLab/demos/aar-cam-unit-test
+python aar_cam_unit_test.py
+python -m unittest test_aar_cam_unit_test.py
 ```
+
+### Scientific boundary
+
+AAR provides five company-year observations. It is used as a **measurement-development, falsification and proof-of-mechanism case**, not as a basis for population OLS, fixed effects, DiD, or causal claims. SQI is a CAM structural/communication-quality measure, not an audit-quality score.
+
+This explicit boundary is part of the research design: strong AI research should document where inference is valid and where it is not.
 
 ## Original work vs. reference infrastructure
 
@@ -48,8 +65,8 @@ A professional research portfolio must distinguish original contributions from u
 
 ### Original / NAAIL-led
 - NAAIL OpenLab / ECONOVA-S architecture and research workflow
+- KIWI AAR Corp CAM measurement and unit-test architecture
 - POMELO / VERA research architecture and verification concepts
-- KIWI CAM/KAM research architecture and measurement program
 - NAAIL Audit Digital Twin research prototypes
 - IFRS-AI-Inspector integration/research framework
 - accounting/audit applications and empirical research designs
@@ -70,11 +87,12 @@ Repositories or codebases such as **TimesFM**, **yfinance**, **AuditData-API**, 
 
 ## Current engineering priorities
 
-- convert flagship research ideas into compact runnable demos;
-- add frozen benchmark cases and temporal/industry holdouts;
-- compare deterministic, single-agent, sequential-agent, and governed multi-agent systems;
-- add machine-readable run manifests and evidence artifacts;
-- publish evaluation results, including failures;
+- keep AAR Corp as the frozen CAM regression/unit-test company;
+- require future CAM models to reproduce the AAR benchmark before scale-up;
+- add controlled degradation tests while preserving the original CAM reference boundary;
+- compare deterministic, embedding, LLM and governed multi-agent measures against the same AAR cases;
+- maintain machine-readable run manifests and evidence artifacts;
+- publish evaluation failures as well as successes;
 - maintain clear upstream attribution and third-party rights boundaries;
 - keep patent-sensitive and proprietary mechanisms outside the public repository.
 
