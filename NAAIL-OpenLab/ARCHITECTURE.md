@@ -48,31 +48,45 @@ A participating firm can shape learning objectives without exposing confidential
 
 ## Stable vs replaceable
 ### Knowledge Core™
-Stable professional and scientific knowledge, standards mappings, validated literature, evidence structures, ontologies, and benchmark definitions.
+Stable professional and scientific knowledge, standards mappings, validated literature, evidence structures, ontologies, benchmark definitions, causal rules, replication requirements, and professional judgment logic.
+
+The Knowledge Core changes through authoritative standards/regulatory updates, validated research, ontology governance, reproducible benchmark evidence, and approved domain review — not merely because a model vendor releases a new capability.
 
 ### Technology Core™
-Replaceable models, agent runtimes, orchestration frameworks, retrieval components, tools, memory implementations, and deployment infrastructure.
+Replaceable models, agent runtimes, orchestration frameworks, retrieval components, tools, memory implementations, code-execution environments, observability, evaluation tooling, provider adapters, and deployment infrastructure.
+
+The Technology Core is expected to change more frequently than the Knowledge Core.
 
 ### Adaptive Intelligence Fabric™
 A governed bridge that routes tasks, context, evidence, tools, models, policies, and approvals between the two cores.
 
+**Canonical policy:** [Knowledge Core, Technology Core & AI Technology Radar](./CORE_ARCHITECTURE_AND_TECHNOLOGY_RADAR.md)
+
 ## Vendor-neutral runtime principle
-NAAIL should be able to support different providers and frameworks behind a common internal contract. Provider-specific features may be used through adapters, but business logic, evidence rules, evaluation criteria, and human gates should remain portable.
+NAAIL should be able to support different providers and frameworks behind a common internal contract. Provider-specific features may be used through adapters, but business logic, evidence rules, evaluation criteria, scientific invariants, and human gates should remain portable.
 
 This principle also applies to educational proxy agents: the learning objectives and evaluation contract should not depend on a specific vendor model.
 
 ## V2026.3 implementation profile
 
-The next architecture snapshot formalizes a Google + Microsoft dual-stack pattern while preserving provider neutrality:
+The next architecture snapshot uses a **four-provider replaceable Technology Core** while preserving a provider-neutral Knowledge Core:
 
 ```text
-Google ADK / Antigravity-style development
+OpenAI Agents SDK / Responses / MCP
         +
-Microsoft Agent Framework
+Google ADK / Agents CLI / A2A ecosystem
         +
-A2A + MCP interoperability
+Anthropic Claude Agent SDK / Claude Code / MCP
         +
-Microsoft GraphRAG / evidence graph
+Microsoft Agent Framework / Azure enterprise workflows
+        +
+Local / open-model adapters
+        ↓
+NAAIL Provider Contract + Technology Radar
+        ↓
+MCP + A2A interoperability
+        +
+GraphRAG / evidence graph
         +
 NAAIL Digital Twin ontology
         +
@@ -95,9 +109,13 @@ Professional Decision DAG™
 Human Gate
 ```
 
-A2A and MCP are treated as interoperability layers; GraphRAG is treated as an evidence/relationship layer; and the Digital Twin remains a NAAIL domain abstraction rather than a dependency on any single cloud vendor.
+OpenAI, Google, Anthropic/Claude, Microsoft, and local/open technologies are Technology Core candidates, not owners of the scientific architecture. A2A and MCP are treated as interoperability layers; GraphRAG is treated as an evidence/relationship layer; and the Digital Twin remains a NAAIL domain abstraction rather than a dependency on any single cloud vendor.
 
-See [V2026.3 Multi-Agent Digital Twin](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md).
+Technology candidates move through **WATCH → EVALUATE → SANDBOX → ADOPT → REPLACE/RETIRE** and must pass frozen benchmark, rights, privacy, security, reproducibility, observability, cost, and Human Gate requirements before promotion.
+
+See:
+- [V2026.3 Multi-Agent Digital Twin](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
+- [Knowledge Core, Technology Core & AI Technology Radar](./CORE_ARCHITECTURE_AND_TECHNOLOGY_RADAR.md)
 
 ## Digital Twin expansion
 
@@ -166,6 +184,7 @@ temporal_leakage_allowed = false
 prediction_equals_causality = false
 human_gate_required = true
 unsupported_discovery_claim_allowed = false
+provider_release_changes_scientific_truth = false
 ```
 
 ## Workflow principle
@@ -180,4 +199,4 @@ Use the simplest orchestration pattern that satisfies the task:
 Every material workflow must expose its stages, dependencies, approvals, failure states, and evaluation results.
 
 ## Public/private boundary
-The public repository describes research-safe interfaces, governance principles, synthetic scenarios, evaluation standards, educational materials, and university–industry partnership patterns. Detailed orchestration logic, unpublished methods, private datasets, partner-confidential material, recruitment data, commercial strategy, and patent-candidate mechanisms remain in the private development master or separately governed partner environment.
+The public repository describes research-safe interfaces, governance principles, synthetic scenarios, evaluation standards, educational materials, university–industry partnership patterns, and Technology Radar policy. Detailed orchestration logic, unpublished methods, private datasets, partner-confidential material, recruitment data, commercial strategy, credentials, private provider adapters, and patent-candidate mechanisms remain in the private development master or separately governed partner environment.
