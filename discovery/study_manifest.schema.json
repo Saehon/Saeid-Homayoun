@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Saehon/Saeid-Homayoun/discovery/study_manifest.schema.json",
+  "title": "ECONOVA-S Scientific Discovery Study Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "study_id",
+    "research_goal",
+    "evidence_class",
+    "gates",
+    "artifacts",
+    "human_gate",
+    "discovery_claim_allowed"
+  ],
+  "properties": {
+    "study_id": {"type": "string", "minLength": 1},
+    "research_goal": {"type": "string", "minLength": 1},
+    "evidence_class": {
+      "enum": ["theoretical", "descriptive", "associational", "predictive", "causal", "structural_equilibrium", "replicated"]
+    },
+    "methods": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "co_scientist_style",
+          "era_style",
+          "alphaevolve_inspired",
+          "computational_discovery",
+          "alphafold_inspired_latent_structure",
+          "science_one_chain_of_evidence",
+          "coe_audit",
+          "mirendil_inspired_closed_loop",
+          "ai_to_ai_review",
+          "dag_governance"
+        ]
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "literature_validation",
+        "hypothesis_tournament",
+        "dag_governance",
+        "empirical_conversion",
+        "search_integrity",
+        "latent_structure_validation",
+        "provenance",
+        "identification",
+        "replication_or_oos",
+        "adversarial_review",
+        "falsification",
+        "chain_of_evidence",
+        "coe_audit",
+        "economic_significance",
+        "welfare_interpretation",
+        "reproducibility"
+      ],
+      "properties": {
+        "literature_validation": {"type": "boolean"},
+        "hypothesis_tournament": {"type": "boolean"},
+        "dag_governance": {"type": "boolean"},
+        "empirical_conversion": {"type": "boolean"},
+        "search_integrity": {"type": "boolean"},
+        "latent_structure_validation": {"type": "boolean"},
+        "provenance": {"type": "boolean"},
+        "identification": {"type": "boolean"},
+        "replication_or_oos": {"type": "boolean"},
+        "adversarial_review": {"type": "boolean"},
+        "falsification": {"type": "boolean"},
+        "chain_of_evidence": {"type": "boolean"},
+        "coe_audit": {"type": "boolean"},
+        "economic_significance": {"type": "boolean"},
+        "welfare_interpretation": {"type": "boolean"},
+        "reproducibility": {"type": "boolean"}
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["evidence_passport", "human_gate_record"],
+      "properties": {
+        "evidence_passport": {"type": "string", "minLength": 1},
+        "human_gate_record": {"type": "string", "minLength": 1},
+        "chain_of_evidence": {"type": ["string", "null"]},
+        "coe_audit": {"type": ["string", "null"]},
+        "replication_report": {"type": ["string", "null"]},
+        "red_team_report": {"type": ["string", "null"]}
+      }
+    },
+    "human_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approved", "reviewer", "decision_date"],
+      "properties": {
+        "approved": {"type": "boolean"},
+        "reviewer": {"type": "string"},
+        "decision_date": {"type": ["string", "null"]}
+      }
+    },
+    "discovery_claim_allowed": {"type": "boolean"}
+  }
+}
