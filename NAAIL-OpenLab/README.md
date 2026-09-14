@@ -16,6 +16,31 @@
 
 ---
 
+## Next architecture snapshot — V2026.3
+
+The next implementation architecture is now frozen as **NAAIL OpenLab V2026.3 — Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture**.
+
+It adds a vendor-neutral dual-stack design built around:
+
+- Google ADK / Antigravity-style agent development;
+- Microsoft Agent Framework orchestration;
+- **A2A + MCP** interoperability;
+- **GraphRAG + NAAIL Digital Twin** integration;
+- Google AI Co-Scientist-inspired hypothesis generation, critique and ranking;
+- ERA-style reproducible empirical conversion;
+- AlphaEvolve-inspired model/specification evolution;
+- AlphaFold/DeepMind-inspired latent-structure reasoning;
+- Computational Discovery;
+- Science One-style **Chain-of-Evidence**;
+- AI-to-AI **Critic / Defender / Replicator / Falsifier** roles;
+- DAG governance, rights/licensing gates, temporal/OOS validation, and mandatory **Human Gate** approval.
+
+**Architecture snapshot:** [V2026.3 Multi-Agent Digital Twin](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
+
+This is an architecture snapshot for the next implementation cycle. It does **not** replace the validated public software release marker **v0.2.2 / Prototype 002**.
+
+---
+
 ## Current executable milestone — Audit Workspace V0.4 / Prototype 002
 
 NAAIL has moved beyond architecture-only documentation into a validated **synthetic Audit Digital Twin research baseline** for **Client XYZ — Revenue Recognition & Cut-off**.
@@ -88,6 +113,7 @@ NAAIL is moving toward a production-quality research engineering discipline info
 | Standard | Purpose |
 |---|---|
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Public seven-layer reference architecture |
+| [V2026.3 Multi-Agent Digital Twin](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md) | Next Google + Microsoft dual-stack architecture with Co-Scientist, ERA, AlphaEvolve, GraphRAG, Digital Twin, Chain-of-Evidence and Human Gate |
 | [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, lifecycle, and Human Gates |
 | [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, audit-quality metrics, regression gates |
 | [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, data/privacy rules, threat controls, Failure Memory |
@@ -154,6 +180,7 @@ Related public repositories include:
 - https://github.com/Saehon/AAA
 - https://github.com/Saehon/AuditData-API
 - https://github.com/Saehon/timesfm
+- https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture
 
 ---
 
@@ -205,10 +232,16 @@ Citation formats:
 - [codemeta.json](./codemeta.json)
 - [AUTHORS.md](./AUTHORS.md)
 
+Architecture citation:
+
+> **Homayoun, S. (2026).** *NAAIL OpenLab V2026.3: Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture* [Research architecture]. NAAIL OpenLab. ORCID: 0000-0002-2536-0446.
+
 ---
 
 ## Current release
 
 **NAAIL OpenLab v0.2.2 — Audit Digital Twin Prototype 002 release, 14 September 2026.**
 
-The next milestone is **Prototype 003**: add frozen Goodwill Impairment and ICFR Deficiency cases, then compare deterministic, single-agent, sequential-agent and governed multi-agent architectures under identical evidence and evaluation gates.
+**Next architecture snapshot:** **V2026.3**, covering Google + Microsoft multi-agent interoperability, GraphRAG-enabled Digital Twins, Co-Scientist/ERA/AlphaEvolve scientific discovery, Chain-of-Evidence, adversarial AI-to-AI review, and Human Gate governance.
+
+The next executable milestone is **Prototype 003**: add frozen Goodwill Impairment and ICFR Deficiency cases, then compare deterministic, single-agent, sequential-agent and governed multi-agent architectures under identical evidence and evaluation gates.
