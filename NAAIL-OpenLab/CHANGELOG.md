@@ -1,5 +1,21 @@
 # Changelog
 
+## Architecture snapshot V2026.3 — 2026-09-14
+### Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture
+- Added a frozen next-architecture snapshot without replacing the validated public software release v0.2.2 / Prototype 002.
+- Added Google ADK / Antigravity-style development plus Microsoft Agent Framework as a vendor-neutral dual-stack reference.
+- Added A2A + MCP interoperability and explicit GraphRAG + NAAIL Digital Twin integration.
+- Added Co-Scientist-style hypothesis generation, critique and ranking.
+- Added ERA-style conversion of hypotheses into reproducible empirical tests with explicit data provenance, variables, code and evaluation metrics.
+- Added AlphaEvolve-style evaluator-guided model, algorithm, measure, prompt and specification search.
+- Added AlphaFold/DeepMind-inspired latent-structure reasoning and Computational Discovery.
+- Added dedicated Critic, Defender, Replicator and Falsifier roles for AI-to-AI adversarial review.
+- Added Science One-style Chain-of-Evidence and Professional Decision DAG™ governance from evidence to claim.
+- Added Research Study Twin, ResearchHypothesis, EmpiricalDesign and ReplicationRun entities to the Digital Twin domain model.
+- Added rights/licensing gate before evidence enters the Digital Twin.
+- Added mandatory temporal/out-of-sample validation, clean-room replication and Human Gate before professional or scientific claims.
+- Added `versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md` and linked it from the public README and architecture.
+
 ## v0.2.2 — 2026-09-14
 ### Audit Digital Twin Prototype 002
 - Advanced the public prototype status from Prototype 001 to Prototype 002.
