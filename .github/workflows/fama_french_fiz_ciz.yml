@@ -32,9 +32,10 @@ jobs:
       - run: pytest -q
 
   real-data-run:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: unit-tests
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: studies/MNSc-FamaFrench-01
@@ -48,9 +49,12 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Run official July 2024 vs July 2025 archive comparison
         run: python run_study.py --old 2024 --new 2025 --output artifacts
+      - name: List generated artifacts
+        run: find artifacts -maxdepth 1 -type f -print | sort
       - name: Upload empirical tables and Evidence Passport
         uses: actions/upload-artifact@v4
         with:
           name: MNSc-FamaFrench-01-FIZ-CIZ-artifacts
           path: studies/MNSc-FamaFrench-01/artifacts/
+          if-no-files-found: error
           retention-days: 90
