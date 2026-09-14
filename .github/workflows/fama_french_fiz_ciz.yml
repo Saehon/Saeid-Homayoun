@@ -1,0 +1,56 @@
+name: MNSc-FamaFrench-01 FIZ-CIZ Study
+
+on:
+  push:
+    paths:
+      - "studies/MNSc-FamaFrench-01/**"
+      - ".github/workflows/fama_french_fiz_ciz.yml"
+  pull_request:
+    paths:
+      - "studies/MNSc-FamaFrench-01/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: studies/MNSc-FamaFrench-01
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: studies/MNSc-FamaFrench-01/requirements.txt
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r requirements.txt
+      - run: python -m py_compile run_study.py test_study.py
+      - run: pytest -q
+
+  real-data-run:
+    if: github.event_name == 'workflow_dispatch'
+    needs: unit-tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: studies/MNSc-FamaFrench-01
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: studies/MNSc-FamaFrench-01/requirements.txt
+      - run: pip install -r requirements.txt
+      - name: Run official July 2024 vs July 2025 archive comparison
+        run: python run_study.py --old 2024 --new 2025 --output artifacts
+      - name: Upload empirical tables and Evidence Passport
+        uses: actions/upload-artifact@v4
+        with:
+          name: MNSc-FamaFrench-01-FIZ-CIZ-artifacts
+          path: studies/MNSc-FamaFrench-01/artifacts/
+          retention-days: 90
