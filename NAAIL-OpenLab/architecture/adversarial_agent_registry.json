@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-ADVERSARIAL-AGENTS-2026.09",
+  "status": "ARCHITECTURE_ADOPTED_RUNTIME_GATED",
+  "core_boundary": {
+    "knowledge_rag_core_version": "KRG2026.3",
+    "technology_core_only": true,
+    "may_modify_knowledge_rag_core": false,
+    "human_gate_required": true
+  },
+  "roles": [
+    "proposer",
+    "critic",
+    "defender",
+    "falsifier",
+    "replicator",
+    "evidence_auditor",
+    "judge"
+  ],
+  "projects": [
+    {
+      "name": "Microsoft Agent Framework",
+      "repository": "https://github.com/microsoft/agent-framework",
+      "naail_role": "orchestration_reference",
+      "state": "ADOPT_ARCHITECTURE",
+      "runtime_executed": false,
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "DMAD",
+      "repository": "https://github.com/MraDonkey/DMAD",
+      "naail_role": "diverse_multi_agent_debate_protocol",
+      "state": "ADOPT_PROTOCOL",
+      "runtime_executed": false,
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "Debate-or-Vote",
+      "repository": "https://github.com/deeplearning-wisc/debate-or-vote",
+      "naail_role": "debate_vs_vote_benchmark_protocol",
+      "state": "ADOPT_BENCHMARK_PROTOCOL",
+      "runtime_executed": false,
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "CAMEL",
+      "repository": "https://github.com/camel-ai/camel",
+      "naail_role": "role_diversity_multi_agent_sandbox",
+      "state": "SANDBOX_REFERENCE",
+      "runtime_executed": false,
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "Microsoft PyRIT",
+      "repository": "https://github.com/microsoft/PyRIT",
+      "naail_role": "generative_ai_red_team_reference",
+      "state": "ADOPT_RED_TEAM_REFERENCE",
+      "runtime_executed": false,
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "NVIDIA garak",
+      "repository": "https://github.com/NVIDIA/garak",
+      "naail_role": "llm_vulnerability_scanner_reference",
+      "state": "ADOPT_RED_TEAM_REFERENCE",
+      "runtime_executed": false,
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "promptfoo",
+      "repository": "https://github.com/promptfoo/promptfoo",
+      "naail_role": "provider_neutral_eval_and_red_team_reference",
+      "state": "ADOPT_EVAL_REFERENCE",
+      "runtime_executed": false,
+      "third_party_code_vendored": false
+    }
+  ],
+  "promotion_gates": [
+    "upstream_repository_verification",
+    "license_and_terms_review",
+    "version_or_commit_pinning",
+    "dependency_security_review",
+    "privacy_and_data_use_review",
+    "synthetic_sandbox_execution",
+    "frozen_benchmark_evaluation",
+    "reproducibility_test",
+    "failure_memory_logging",
+    "human_architecture_gate"
+  ],
+  "scientific_invariants": {
+    "agent_consensus_is_truth": false,
+    "majority_vote_is_truth": false,
+    "statistical_significance_is_discovery": false,
+    "predictive_accuracy_is_causality": false,
+    "adversarial_agent_may_modify_knowledge_rag_core": false,
+    "red_team_tool_may_modify_knowledge_rag_core": false,
+    "human_gate_required": true
+  }
+}
