@@ -11,6 +11,16 @@ Artificial intelligence is increasingly capable of generating hypotheses, execut
 
 Between the two cores, an **AI-to-AI Scientific Intelligence Fabric™** coordinates a Mirendil-inspired autonomous R&D loop, Google Co-Scientist-style hypothesis generation and critique, ERA-style empirical conversion, AlphaEvolve-inspired evolutionary search, Computational Discovery, and AlphaFold-inspired latent-structure reasoning. The framework requires a systems map and causal DAG before testing, replication of established results before extension, chronology-safe and out-of-sample evaluation where appropriate, independent adversarial review, robustness and falsification, reproducibility, economic-significance assessment, welfare interpretation, and explicit human approval before any finding is treated as a scientific discovery. ECONOVA-S therefore treats AI not as an autonomous authority but as a governed scientific search and execution system. Its central research question is: **When does data become information, and when does information become economic and social value?**
 
+## Research Foundation: FT50 and AJG/ABS 4*/4
+
+ECONOVA-S™ was designed through a **systematic, relevance-gated synthesis of current research from FT50 and AJG/ABS 4*/4 journals and closely related top-tier research streams** in economics, finance, accounting, information systems, strategy, organization science, operations, sustainability, behavioral economics, and AI-enabled decision making.
+
+The architecture therefore does not treat frontier AI methods as substitutes for established scholarship. Economic mechanisms, construct definitions, causal assumptions, variable design, identification strategies, empirical benchmarks, robustness standards, and welfare interpretation are grounded in the relevant top-journal literature before they are exposed to AI-assisted search, model evolution, or autonomous experimentation.
+
+The evidence layer is intentionally **living rather than frozen**: new relevant FT50 and AJG/ABS 4*/4 research is incorporated into the Knowledge Core through literature validation and benchmark updates without changing the two-core architecture itself. ECONOVA-S uses this literature to support theory formation, hypothesis design, measurement, econometrics, causal reasoning, replication, falsification, out-of-sample validation, and scientific acceptance criteria.
+
+For academic accuracy, this statement means the architecture is systematically benchmarked against the **relevant current literature across these leading journal sets**; it does not claim that every article ever published in every FT50 or AJG/ABS 4*/4 journal has been individually reviewed.
+
 ## Architectural Principle
 
 > **Stable Economic Meaning + Living Evidence + Replaceable Technology + Independent Scientific Verification**
@@ -141,7 +151,7 @@ Supporting artifacts include a causal DAG, Variable DNA, data-provenance manifes
 
 ## Methodological Positioning
 
-ECONOVA-S draws methodological inspiration from frontier work on AI-assisted scientific discovery, multi-agent reasoning, computational experimentation, human–AI complementarity, behavioral information experiments, data economics, AI in finance, and sustainability economics. References to Co-Scientist, AlphaEvolve, AlphaFold/DeepMind Science, Mirendil, and related systems describe **architectural inspiration unless the corresponding system is actually executed**.
+ECONOVA-S draws methodological inspiration from frontier work on AI-assisted scientific discovery, multi-agent reasoning, computational experimentation, human–AI complementarity, behavioral information experiments, data economics, AI in finance, and sustainability economics. These technological and methodological components are embedded within a scientific foundation that is continuously validated against relevant current FT50 and AJG/ABS 4*/4 research. References to Co-Scientist, AlphaEvolve, AlphaFold/DeepMind Science, Mirendil, and related systems describe **architectural inspiration unless the corresponding system is actually executed**.
 
 ## Canonical Research Question
 
