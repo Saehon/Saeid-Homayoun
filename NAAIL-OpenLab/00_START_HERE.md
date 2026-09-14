@@ -14,12 +14,13 @@ For a fast review of this portfolio:
 10. **Open-source agent education stack:** [ADK + Agent Framework + CAMEL + smolagents + Haystack + MCP + Ollama and extended ecosystem](./OPEN_SOURCE_AGENT_STACK.md)
 11. **Student Open-Source Agent Lab:** [framework-comparison and Digital Twin teaching design](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
 12. **SEC EDGAR Education Lab™:** [official SEC EDGAR/XBRL/CompanyFacts education and research module](./SEC_EDGAR_EDUCATION_LAB.md)
-13. **Current platform overview:** [README.md](./README.md)
-14. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
-15. **Executable demos index:** [demos/README.md](./demos/README.md)
-16. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
-17. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
-18. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
+13. **NAAIL Free Data Fabric™:** [governed free/public data for accounting, audit, governance, Nordic research, ESG, finance/economics and scientific discovery](./FREE_DATA_FABRIC.md)
+14. **Current platform overview:** [README.md](./README.md)
+15. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
+16. **Executable demos index:** [demos/README.md](./demos/README.md)
+17. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
+18. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
+19. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
 
 ## Current release checkpoint
 
@@ -87,6 +88,33 @@ Canonical resources:
 - [SEC CompanyFacts Python Starter](./education/sec-edgar-lab/sec_companyfacts_starter.py)
 - [Integration Manifest](./education/sec-edgar-lab/INTEGRATION_MANIFEST.md)
 - [NAAIL Education Hub](./docs/education/README.md)
+
+## NAAIL Free Data Fabric™ — governed evidence expansion
+
+NAAIL now maintains a cross-domain registry for free/public data that can support accounting, audit, governance, Nordic research, ESG, finance/economics, forensics, and scientific discovery while preserving the frozen `KRG2026.3` Knowledge & RAG Core boundary.
+
+Current source families include:
+
+- SEC Financial Statement Data Sets and Financial Statement & Notes;
+- SEC AAER, insider transactions, Form 13F, and Form ADV/IAPD;
+- PCAOB AuditorSearch / Form AP and public inspection data;
+- filings.xbrl.org for ESEF/UKSEF/Inline XBRL evidence;
+- GLEIF LEI and parent-relationship data;
+- Statistics Sweden, Sveriges Riksbank, and Brønnøysundregistrene;
+- World Bank and Climate TRACE;
+- OpenAlex and Crossref;
+- Fama–French, Damodaran, and series-level-rights-filtered FRED;
+- Stanford Rock Center public governance research as an index/link research source rather than a bulk authoritative company dataset.
+
+Every source must pass rights review, provenance verification, validation, and Evidence Passport™ capture before admission to the Knowledge & RAG Core. Free access is never treated as proof of authority or unrestricted redistribution rights.
+
+Canonical resources:
+
+- [NAAIL Free Data Fabric™](./FREE_DATA_FABRIC.md)
+- [Machine-readable Free Data Source Registry](./architecture/free_data_source_registry.json)
+- [Free Data Registry Tests](./tests/test_free_data_source_registry.py)
+- [Accounting/Audit Free Evidence Registry](./knowledge/accounting_audit_free_evidence_registry.json)
+- [Open-Source Accounting & Audit Pack](./OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md)
 
 ## V2026.3 architecture snapshot
 
