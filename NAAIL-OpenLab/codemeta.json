@@ -2,9 +2,9 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "NAAIL OpenLab",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "datePublished": "2026-09-14",
-  "description": "An evidence-governed, human-led AI platform for business-school education, Audit Digital Twins, multi-agent audit simulation, and reproducible scientific discovery.",
+  "description": "An evidence-governed, human-led AI platform for business-school education, Audit Digital Twins, multi-agent audit simulation, and reproducible scientific discovery. Version 0.2.2 advances the public Audit Digital Twin program to Prototype 002 with a modular synthetic revenue-recognition benchmark, Evidence Passport and Professional Decision DAG concepts, provider-neutral model comparison, reproducibility tests, and a mandatory Human Gate.",
   "codeRepository": "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab",
   "url": "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab",
   "author": [
