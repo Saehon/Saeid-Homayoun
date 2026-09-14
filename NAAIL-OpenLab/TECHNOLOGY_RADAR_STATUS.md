@@ -1,20 +1,24 @@
 # NAAIL OpenLab™ — Technology Radar Status
 
 **Platform:** NAAIL OpenLab™  
-**Knowledge Core:** `K2026.3`  
+**Knowledge & RAG Core:** `KRG2026.3`  
 **Technology Core design state:** `T2026.9-design`  
 **Status:** Public architecture/evaluation registry — not a claim of production integration
 
-> **Knowledge should be durable. Technology should be replaceable.**
+> **Knowledge and RAG semantics stay governed and stable. Technology stays replaceable.**
 
-## Core separation
+## Frozen core boundary
 
 NAAIL maintains two independently governed cores:
 
-- **Knowledge Core™** — accounting, auditing, assurance, CAM/KAM, ICFR, ESG, finance/economics, theory, causal DAGs, identification, evidence rules, benchmarks, replication, Chain-of-Evidence, Evidence Passport™, and Human Gate™.
-- **Technology Core™** — foundation models, agent SDKs, orchestration, retrieval, MCP/A2A, memory, tool calling, sandboxes, observability, evaluation tooling, UI adapters, and deployment infrastructure.
+- **Knowledge & RAG Core™** — accounting, auditing, assurance, CAM/KAM, ICFR, ESG, finance/economics, theory, causal DAGs, identification, evidence rules, source hierarchy, provenance, ontology, GraphRAG semantics, benchmark definitions, replication, Chain-of-Evidence, Evidence Passport™, and Human Gate™.
+- **Technology Core™** — foundation models, agent SDKs, orchestration, embedding models, vector/graph engines, retrievers, rerankers, caches, indexes, MCP/A2A implementations, memory implementations, tool calling, sandboxes, observability, evaluation tooling, UI adapters, and deployment infrastructure.
 
-The **Adaptive Intelligence Fabric™** connects them so technology can change without silently changing scientific or professional meaning.
+The **Adaptive Intelligence Fabric™** connects them so technology can change without silently changing scientific, professional, or evidence meaning.
+
+**Canonical invariant:** Technology Core components may read and operate on the Knowledge & RAG Core through governed contracts, but they may not silently rewrite, merge with, or redefine it.
+
+Read the frozen invariant: [FROZEN_KNOWLEDGE_RAG_CORE_INVARIANT.md](./FROZEN_KNOWLEDGE_RAG_CORE_INVARIANT.md)
 
 ## Current provider radar
 
@@ -64,13 +68,17 @@ A technology may move from EVALUATE toward SANDBOX/ADOPT only after review of:
 - observability and traceability;
 - portability / vendor lock-in risk;
 - Human Gate compatibility;
-- regression against frozen NAAIL benchmarks.
+- regression against frozen NAAIL benchmarks;
+- compatibility with the frozen Knowledge & RAG Core.
 
-## Knowledge Core firewall
+## Knowledge & RAG Core firewall
 
-A provider or model upgrade must never automatically change:
+A provider, model, embedding, vector database, graph engine, retriever, or agent-framework upgrade must never automatically change:
 
+- canonical evidence sources or source IDs;
 - professional standards mappings;
+- ontology semantics;
+- GraphRAG entity/relation semantics;
 - causal DAGs;
 - construct definitions;
 - benchmark gold definitions;
@@ -80,7 +88,10 @@ A provider or model upgrade must never automatically change:
 - Human Gate rules.
 
 ```text
+technology_core_may_rewrite_knowledge_rag_core = false
 provider_release_changes_scientific_truth = false
+embedding_change_changes_evidence_meaning = false
+vector_db_change_changes_ontology = false
 model_upgrade_changes_causal_DAG_automatically = false
 new_framework_bypasses_human_gate = false
 new_model_bypasses_replication = false
@@ -95,11 +106,14 @@ Review material changes from OpenAI, Google, Anthropic/Claude, Microsoft, and se
 ### Quarterly benchmark review
 Rerun selected frozen NAAIL cases when executable adapters exist and compare evidence quality, reliability, reproducibility, cost, latency, and human-review acceptance.
 
-### Knowledge Core updates
-Update separately, only when justified by authoritative standards/regulation, validated research, benchmark evidence, or approved ontology/governance changes.
+### Knowledge & RAG Core updates
+Update separately and only through governed evidence-based change control: authoritative standards/regulation, validated research, verified ontology corrections, benchmark revisions, or other approved knowledge-governance decisions.
+
+A vendor technology release is not a Knowledge & RAG Core update trigger.
 
 ## Canonical references
 
+- [Frozen Knowledge & RAG Core Invariant](./FROZEN_KNOWLEDGE_RAG_CORE_INVARIANT.md)
 - [Knowledge Core, Technology Core & AI Technology Radar](./CORE_ARCHITECTURE_AND_TECHNOLOGY_RADAR.md)
 - [Public Reference Architecture](./ARCHITECTURE.md)
 - [Scientific Discovery Platform](./SCIENTIFIC_DISCOVERY_PLATFORM.md)
