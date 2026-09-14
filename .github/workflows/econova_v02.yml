@@ -1,19 +1,49 @@
-name: ECONOVA-S v0.2 Tests
+name: ECONOVA-S v0.2 CI
+
 on:
   push:
-    paths: ["prototype_v02/**"]
+    paths:
+      - "prototype_v02/**"
+      - ".github/workflows/econova_v02.yml"
   pull_request:
-    paths: ["prototype_v02/**"]
+    paths:
+      - "prototype_v02/**"
+      - ".github/workflows/econova_v02.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: econova-v02-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
+    name: Python 3.12 validation
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     defaults:
       run:
         working-directory: prototype_v02
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
-      - run: pytest -q
+          cache: "pip"
+          cache-dependency-path: prototype_v02/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile Python sources
+        run: python -m compileall -q .
+
+      - name: Run tests
+        run: pytest -q
