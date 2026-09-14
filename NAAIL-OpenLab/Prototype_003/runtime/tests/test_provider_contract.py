@@ -21,7 +21,7 @@ class FakeProvider(providers.BaseProvider):
         return {
             "exceptions": ["TX-002", "TX-003"],
             "proposed_adjustment": 190000,
-            "evidence_ids": ["EV-DELIVERY", "EV-LEDGER", "EV-CONTRACT"],
+            "evidence_ids": ["EV-001", "EV-002", "EV-003"],
             "risks": ["revenue_cutoff", "premature_revenue_recognition"],
             "assertions": ["occurrence", "cutoff"],
             "procedures": ["inspect delivery evidence", "reconcile year-end transactions"],
@@ -50,6 +50,7 @@ class ProviderContractTests(unittest.TestCase):
         self.assertEqual(result["artifact"]["human_gate"], "PENDING_HUMAN_APPROVAL")
         self.assertEqual(result["metrics"]["precision"], 1.0)
         self.assertEqual(result["metrics"]["recall"], 1.0)
+        self.assertEqual(result["metrics"]["invalid_evidence_count"], 0)
 
     def test_sequential_contract_uses_multiple_calls(self):
         provider = FakeProvider()
