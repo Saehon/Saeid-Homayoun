@@ -4,11 +4,36 @@
 **Public release:** v0.2.2  
 **Executable milestone:** Audit Workspace V0.4 / Prototype 002  
 **Next executable milestone:** Prototype 003  
+**Next architecture snapshot:** V2026.3 — Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture  
 **Candidate next release:** v0.3.0 only after release gates pass
 
 ## Purpose
 
-This file is the compact public state checkpoint for NAAIL OpenLab. It exists so collaborators can identify the current executable state and next research milestone without relying on chat history.
+This file is the compact public state checkpoint for NAAIL OpenLab. It exists so collaborators can identify the current executable state, next research milestone, and next-generation architecture without relying on chat history.
+
+## V2026.3 next-architecture checkpoint
+
+V2026.3 is now the frozen architecture target for the next implementation cycle. It does **not** change the validated software release number. The architecture combines:
+
+- Google ADK / Antigravity-style agent development;
+- Microsoft Agent Framework orchestration;
+- A2A + MCP interoperability;
+- GraphRAG + NAAIL Digital Twin integration;
+- Co-Scientist-style hypothesis generation, critique, ranking and refinement;
+- ERA-style conversion from hypotheses to reproducible empirical designs;
+- AlphaEvolve-inspired evaluator-guided model/specification evolution;
+- AlphaFold/DeepMind-inspired latent-structure reasoning;
+- Computational Discovery;
+- Science One-style Chain-of-Evidence;
+- AI-to-AI Critic / Defender / Replicator / Falsifier roles;
+- Professional Decision DAG™ governance;
+- rights/licensing gates before evidence enters the twin;
+- temporal/out-of-sample validation and clean-room replication;
+- mandatory Human Gate approval before professional or scientific claims.
+
+Canonical architecture snapshot: [versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
+
+Companion engineering repository: https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture
 
 ## Current validated synthetic baseline
 
@@ -38,7 +63,7 @@ Canonical workflow:
 
 ## Prototype 003 — execution-ready program
 
-Prototype 003 converts the current single-case baseline into a controlled **multi-case × multi-architecture benchmark**.
+Prototype 003 converts the current single-case baseline into a controlled **multi-case × multi-architecture benchmark** and is the first executable milestone expected to operationalize the V2026.3 architecture selectively.
 
 ### Case families
 
@@ -59,7 +84,7 @@ Canonical P003-C scope: [PROTOTYPE_003C_SEC_SCOPE.md](./PROTOTYPE_003C_SEC_SCOPE
 
 ### P003-C evidence pipeline
 
-**SEC EDGAR → 10-K / iXBRL → source hash → normalized accounting evidence → Evidence Passport™ → controlled research scenario → frozen gold labels → architecture comparison → Professional Decision DAG™ → Human Gate**
+**SEC EDGAR → 10-K / iXBRL → source hash → normalized accounting evidence → Rights & License Gate → Evidence Passport™ → Digital Twin → controlled research scenario → frozen gold labels → architecture comparison → Professional Decision DAG™ → Human Gate**
 
 Target normalized evidence includes, where available and relevant, goodwill balances, goodwill/intangible notes, acquisitions and purchase-price allocation, impairment-policy disclosures, segment/reporting-unit context, management estimates and uncertainty disclosures, cash-flow/valuation-relevant disclosures, and related XBRL facts.
 
@@ -115,6 +140,8 @@ Development, validation, Blind Gold, adversarial/red-team, and temporal/modified
 
 Prototype 003 is designed to export linked empirical tables including `CASE_MANIFEST`, `RUN_LEVEL`, `METRIC_LEVEL`, `EVIDENCE_LEVEL`, `DECISION_LEVEL`, `HUMAN_GATE_LEVEL`, and `FAILURE_LOG`.
 
+V2026.3 additionally defines architecture-level research objects that can be implemented when useful, including `ResearchHypothesis`, `EmpiricalDesign`, `ReplicationRun`, `AgentRun`, `ModelVersion`, `EvidencePassport`, and `Claim`.
+
 ## First empirical study
 
 Primary research question:
@@ -129,7 +156,7 @@ No superiority claim is assumed in advance. The benchmark is designed to test th
 
 Do not promote v0.3.0 until the benchmark cases are frozen/versioned/hashable; all four architectures run under identical evidence/gold/evaluation conditions; run manifests are complete; Evidence Passport™, Professional Decision DAG™, and Human Gate are enforced; regression/leakage/reproducibility tests pass; clean-environment replication succeeds; empirical outputs can be regenerated; and public artifacts pass rights, privacy, and IP review.
 
-Until those gates pass, **v0.2.2 remains the current public release**.
+V2026.3 architecture elements should be promoted into the executable release only after they are implemented, tested, reproducible, and cleared through the same release gates. Until those gates pass, **v0.2.2 remains the current public release**.
 
 ## Scientific rule
 
@@ -148,6 +175,8 @@ NAAIL OpenLab is an independent research initiative. References to Microsoft, Al
 ## Canonical links
 
 - NAAIL OpenLab: https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
+- V2026.3 architecture: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md
+- Companion multi-agent engineering repository: https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture
 - Current state: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/CURRENT_PROJECT_STATE.md
 - Prototype status: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_STATUS_V0.4.md
 - Next-version plan: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/NEXT_VERSION_PLAN.md
