@@ -11,7 +11,8 @@ This page is the canonical portfolio map for repositories under the `Saehon` Git
 
 **Public release:** NAAIL OpenLab **v0.2.2** — Audit Digital Twin Prototype 002 release, 14 September 2026.  
 **Current executable milestone:** Audit Workspace V0.4 / Prototype 002.  
-**Next technical milestone:** **Prototype 003**.
+**Next technical milestone:** **Prototype 003**.  
+**Frozen next architecture:** **V2026.3 — Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture**.
 
 Prototype 002 is a frozen synthetic Revenue Recognition & Cut-off benchmark for Client XYZ. Its public deterministic control result identifies planted exceptions `TX-002` and `TX-003`, with a proposed adjustment of EUR 190,000 against planning materiality of EUR 120,000, precision/recall of 1.00/1.00, no false positives or false negatives, and final state `PENDING_HUMAN_APPROVAL`. These figures apply only to the frozen synthetic benchmark and are not claims of real-world audit effectiveness.
 
@@ -25,7 +26,19 @@ Prototype 003 should add frozen **Goodwill Impairment** and **ICFR Deficiency** 
 Every material run must preserve Evidence Passport™, Professional Decision DAG™, Human Gate, provider-neutral model-adapter boundaries, reproducibility, and frozen evaluation measures including RPA, AA, EG, PS, DS, DIST, precision/recall, false positives/negatives, cost, latency, and human overrides.
 
 Public NAAIL release: https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab  
-Prototype status: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_STATUS_V0.4.md
+Prototype status: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_STATUS_V0.4.md  
+V2026.3 architecture: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md
+
+## V2026.3 cross-portfolio architecture
+
+V2026.3 is the next implementation architecture, not a claim that all components are already executable. It defines a common research engineering contract across the NAAIL portfolio:
+
+**Evidence / Rights Gate → Digital Twin → Multi-Agent Orchestration → GraphRAG / Evidence Graph → Co-Scientist → ERA → AlphaEvolve-style Search → Latent-Structure Reasoning → Computational Discovery → Critic / Defender / Replicator / Falsifier → Chain-of-Evidence → Professional Decision DAG™ → Human Gate.**
+
+Primary technology references are Google ADK / Antigravity-style tooling, Microsoft Agent Framework, A2A + MCP interoperability, Microsoft GraphRAG, DTDL/Open Digital Twins concepts, and provider-neutral model adapters. Managed cloud services remain optional adapters rather than mandatory dependencies.
+
+The companion public engineering repository is:
+https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture
 
 ## Flagship / original NAAIL research
 
@@ -34,7 +47,7 @@ Prototype status: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenL
 | [Saeid-Homayoun](https://github.com/Saehon/Saeid-Homayoun) | ECONOVA-S™, NAAIL OpenLab, scientific governance, research record | Public flagship |
 | [AAA](https://github.com/Saehon/AAA) | Audit & Accounting AI, audit analytics, PCAOB-oriented research | Public flagship |
 | [IFRS-AI-Inspector](https://github.com/Saehon/IFRS-AI-Inspector) | IFRS assurance, standards-aware AI, digital-twin research | Public flagship |
-| [Google-Antigravity-using-a-multi-agent-BERT-architecture](https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture) | Multi-agent accounting AI and financial-text intelligence | Public flagship |
+| [Google-Antigravity-using-a-multi-agent-BERT-architecture](https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture) | V2026.3 companion engineering repository for Google + Microsoft multi-agent orchestration, accounting/audit Digital Twins, A2A/MCP, GraphRAG, evidence governance, and scientific-discovery agents | Public flagship |
 | [pomelo-core](https://github.com/Saehon/pomelo-core) | POMELO™ / VERA™ proprietary R&D core | Private flagship |
 | [IFRS-PCAOB-AI](https://github.com/Saehon/IFRS-PCAOB-AI) | IFRS/PCAOB research and governed professional AI | Private research |
 
@@ -63,7 +76,7 @@ The private `Saeid-Homayoun-` repository is the development master for patent-se
 
 ## Shared integration architecture
 
-External Source → Adapter → Rights & License Check → Validation → Evidence Passport → NAAIL Research System → Evaluation → Human Gate
+External Source → Adapter → Rights & License Check → Validation → Evidence Passport → NAAIL Digital Twin / Research System → Evaluation → Professional Decision DAG™ → Human Gate
 
 Priority integrations: **AuditData-API → TimesFM → yfinance**, followed by financial NLP and synthetic-data adapters.
 
