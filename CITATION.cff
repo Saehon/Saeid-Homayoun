@@ -1,16 +1,16 @@
 cff-version: 1.2.0
 message: "If you use or build on ECONOVA-S™, please cite this repository."
-title: "ECONOVA-S: An FT50- and AJG/ABS 4*/4-Grounded Dual-Core Architecture for Governed AI Scientific Discovery in Economics and Finance — Architecture and Proof of Concept"
+title: "ECONOVA-S: A Dual-Core Scientific Economic Intelligence Platform for Governed AI Scientific Discovery in Economics and Finance"
 type: software
 authors:
   - family-names: "Homayoun"
     given-names: "Saeid"
     orcid: "https://orcid.org/0000-0002-2536-0446"
-version: "2.5"
+version: "0.2.0"
 date-released: "2026-09-14"
 repository-code: "https://github.com/Saehon/Saeid-Homayoun"
 abstract: >-
-  ECONOVA-S is a dual-core scientific economic intelligence architecture grounded in a systematic, relevance-gated synthesis of current FT50 and AJG/ABS 4*/4 research. It separates a Stable Economic Knowledge Core from a Replaceable Technology Core and uses a supporting AI-to-AI Scientific Intelligence Fabric for governed hypothesis generation, empirical conversion, specification search, independent review, replication, falsification, welfare interpretation, Evidence Passport construction, and human approval. POC-001 demonstrates computational and governance feasibility through an executable synthetic firm-year pipeline centered on Data Capability, Green Innovation, Firm Value, and Social Data Value. The POC is demonstration evidence only: results are associational, synthetic estimates are not treated as economic findings, and discovery_claim_allowed remains false pending real-data validation, credible identification, replication, and human scientific judgment.
+  ECONOVA-S is a dual-core scientific economic intelligence platform built around Canonical Architecture V2.5. It separates a Stable Economic Knowledge Core from a Replaceable Technology Core and uses a supporting AI-to-AI Scientific Intelligence Fabric for governed hypothesis generation, ERA-style empirical conversion, AlphaEvolve-inspired specification search, evidence-grounded RAG, econometric testing, independent red-team review, replication, falsification, welfare interpretation, Evidence Passport construction, and explicit human approval. Software release v0.2.0 adds real-data ingestion paths, evidence metadata retrieval, six-table empirical reporting, temporal out-of-sample checks, Stata export, and a non-bypassable discovery gate. POC and prototype outputs are research-workbench evidence only; discovery_claim_allowed remains false until real-data provenance, construct validation, credible identification, replication or appropriate out-of-sample evidence, economic significance, welfare validation, and human scientific judgment are satisfied.
 keywords:
   - artificial intelligence
   - economics
@@ -19,6 +19,9 @@ keywords:
   - scientific discovery
   - multi-agent systems
   - econometrics
+  - causal inference
+  - retrieval augmented generation
+  - replication
   - sustainability
   - welfare
-  - proof of concept
+  - research software
