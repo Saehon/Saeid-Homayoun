@@ -6,12 +6,14 @@ For a fast review of this portfolio:
 2. **Executable audit proof-of-work:** [KIWI™ AAR Corp CAM Unit Test](./demos/aar-cam-unit-test/)
 3. **Recruiter / research-engineering view:** [RECRUITER_PORTFOLIO.md](./RECRUITER_PORTFOLIO.md)
 4. **V2026.3 architecture:** [Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
-5. **Current platform overview:** [README.md](./README.md)
-6. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
-7. **Executable demos index:** [demos/README.md](./demos/README.md)
-8. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
-9. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
-10. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
+5. **Open-source agent education stack:** [ADK + Agent Framework + CAMEL + smolagents + Haystack + MCP + Ollama and extended ecosystem](./OPEN_SOURCE_AGENT_STACK.md)
+6. **Student Open-Source Agent Lab:** [framework-comparison and Digital Twin teaching design](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
+7. **Current platform overview:** [README.md](./README.md)
+8. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
+9. **Executable demos index:** [demos/README.md](./demos/README.md)
+10. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
+11. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
+12. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
 
 ## Current release checkpoint
 
@@ -34,6 +36,20 @@ V2026.3 is the frozen next-generation architecture target. It combines Google AD
 V2026.3 is an architecture target, not evidence that all components are already implemented or validated.
 
 Companion multi-agent engineering repository: [Google-Antigravity-using-a-multi-agent-BERT-architecture](https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture).
+
+## Open-source agent education stack — v0.2.4 target
+
+NAAIL now maintains a provider-neutral public registry and education design for open-source agent frameworks. The **core educational stack** is Google ADK, Microsoft Agent Framework, CAMEL-AI, Hugging Face smolagents, Haystack, the MCP Python SDK, and Ollama. The **extended comparison ecosystem** includes LlamaIndex, OpenAI Agents SDK, GPT Researcher, Browser Use, OpenHands, MetaGPT, and CrewAI.
+
+The integration is deliberately adapter-based: upstream code is not presented as NAAIL-owned software, framework and model terms remain separate, and registry inclusion does not mean that a framework has already been installed, executed, benchmarked, security-reviewed, or validated.
+
+Canonical resources:
+
+- [Open-Source Agent Education Stack](./OPEN_SOURCE_AGENT_STACK.md)
+- [Machine-readable upstream registry](./integrations/open_source_agents/registry.json)
+- [Open-Source Student Agent Lab](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
+
+A recommended low-cost classroom profile is **Ollama + a compatible local model + smolagents + MCP + synthetic Client XYZ evidence**, subject to model-license, hardware, and institutional IT requirements. Comparative framework claims require frozen tasks, equivalent evidence access, declared versions, reproducible runs, retained failures, prespecified metrics, and Human Gate review.
 
 ## Fastest additional technical review
 
