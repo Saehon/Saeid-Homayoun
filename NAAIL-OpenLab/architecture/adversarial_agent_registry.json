@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "registry_id": "NAAIL-ADVERSARIAL-AGENTS-2026.09",
   "status": "ARCHITECTURE_ADOPTED_RUNTIME_GATED",
   "core_boundary": {
@@ -16,6 +16,36 @@
     "replicator",
     "evidence_auditor",
     "judge"
+  ],
+  "specializations": [
+    {
+      "id": "GAA_ACCOUNTING_AUDIT",
+      "name": "GAA - General Adversarial Accounting & Audit Agent",
+      "document": "../GAA_ACCOUNTING_AUDIT_AGENT.md",
+      "evidence_registry": "../knowledge/accounting_audit_free_evidence_registry.json",
+      "execution_layer": "technology_core",
+      "knowledge_access": "read_only_governed_contract",
+      "may_modify_knowledge_rag_core": false,
+      "roles": [
+        "accounting_critic",
+        "audit_critic",
+        "fraud_falsifier",
+        "cam_kam_challenger",
+        "icfr_challenger",
+        "evidence_auditor",
+        "independent_replicator",
+        "standards_judge"
+      ],
+      "benchmark_families": [
+        "revenue_recognition_cutoff",
+        "accounting_fraud_misstatement",
+        "pcaob_audit_deficiency",
+        "cam_as3101_challenge",
+        "icfr_deficiency_challenge"
+      ],
+      "human_gate_required": true,
+      "runtime_executed": false
+    }
   ],
   "projects": [
     {
