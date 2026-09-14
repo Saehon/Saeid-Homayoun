@@ -65,6 +65,18 @@ The agent must distinguish:
 
 A model-generated conclusion may not be upgraded to authoritative IFRS evidence.
 
+## Free simulation edition
+
+A **zero-paid-API deterministic simulation** is available at [`../../simulations/free-stack/`](../../simulations/free-stack/). It uses synthetic Reporting Entity XYZ cases and the Python standard library, so it can run locally or in GitHub Actions without a paid model provider.
+
+Optional enrichment can use Hugging Face embeddings/models or Kaggle datasets only after model/dataset-specific license and provenance review. The public repository does **not** bundle full IFRS Standards text. Professional conclusions must be reconciled to lawfully accessed authoritative IFRS material and approved through the Human Gate.
+
+Quick start:
+
+```bash
+python NAAIL-OpenLab/simulations/free-stack/run_simulation.py --agent ifrs --input NAAIL-OpenLab/simulations/free-stack/examples/ifrs_synthetic_case.json
+```
+
 ## Scientific and professional governance
 
 The IFRS family inherits the NAAIL Scientific Discovery Contract, Evidence Passport™, Chain-of-Evidence, adversarial review, Failure Memory™, reproducibility controls, Decision DAG™, and mandatory Human Gate.
