@@ -9,16 +9,42 @@ Build a platform that is:
 - auditable and reproducible;
 - safe for synthetic education/research use;
 - explicit about human responsibility;
-- testable through frozen benchmarks and Digital Twin scenarios.
+- testable through frozen benchmarks and Digital Twin scenarios;
+- usable as a safe university–industry learning bridge without exposing proprietary firm systems or client data.
 
 ## Seven public layers
-1. **Experience Layer** — Student, instructor, researcher, auditor, reviewer, and administrator interfaces.
+1. **Experience Layer** — Student, instructor, researcher, auditor, reviewer, administrator, and approved industry-partner interfaces.
 2. **Audit Workspace** — Planning, materiality, risk, controls, analytics, evidence, testing, documentation, review, and reporting.
-3. **Agent Mesh** — Specialist agents with explicit roles, scoped tools, handoffs, structured outputs, and human approval points.
+3. **Agent Mesh** — Specialist agents with explicit roles, scoped tools, handoffs, structured outputs, human approval points, and educational proxy-agent variants.
 4. **Knowledge & Evidence Plane** — Standards references, lawful guidance, FT50/AJG research intelligence, provenance, citations, and Knowledge Graph/GraphRAG services.
-5. **Governance & Observability Plane** — Identity/RBAC, registries, run tracing, evaluation, quality monitoring, defect memory, and release controls.
-6. **Digital Twin Lab** — Synthetic Client XYZ, fictional Firm Alpha–Delta, regulator/audit-committee roles, and repeatable case environments.
+5. **Governance & Observability Plane** — Identity/RBAC, registries, run tracing, evaluation, quality monitoring, defect memory, privacy/consent controls, and release controls.
+6. **Digital Twin Lab** — Synthetic Client XYZ, fictional Firm Alpha–Delta, regulator/audit-committee roles, repeatable case environments, student simulations, and controlled partner challenges.
 7. **Scientific Discovery Plane** — Hypothesis portfolios, ERA-style empirical conversion, computational discovery, adversarial review, falsification, replication, Chain-of-Evidence, and Human Gate.
+
+## Cross-cutting Industry–Education Partnership Fabric
+
+The **NAAIL Big Four Student Agent Academy™** is a cross-cutting education and talent-readiness layer built on the seven-layer architecture. It does not add a separate proprietary audit methodology. Instead, it combines:
+
+```text
+Industry learning objective / challenge brief
+        ↓
+Educational Proxy Agent
+        ↓
+Synthetic Digital Twin + Frozen Evidence
+        ↓
+Student Decision Workspace
+        ↓
+RPA / AA / EG / PS / DS / DIST
++ AIV / CER / HOR / ESC
+        ↓
+Professional Decision DAG™
+        ↓
+Human Gate
+        ↓
+Student feedback + aggregate anonymized partner insight
+```
+
+A participating firm can shape learning objectives without exposing confidential client data, proprietary production agents, internal prompts, or protected audit methodology. Until a written agreement permits otherwise, public simulations use neutral labels such as **Firm Alpha**, **Firm Beta**, or **Industry Partner**.
 
 ## Stable vs replaceable
 ### Knowledge Core™
@@ -32,6 +58,8 @@ A governed bridge that routes tasks, context, evidence, tools, models, policies,
 
 ## Vendor-neutral runtime principle
 NAAIL should be able to support different providers and frameworks behind a common internal contract. Provider-specific features may be used through adapters, but business logic, evidence rules, evaluation criteria, and human gates should remain portable.
+
+This principle also applies to educational proxy agents: the learning objectives and evaluation contract should not depend on a specific vendor model.
 
 ## V2026.3 implementation profile
 
@@ -73,7 +101,7 @@ See [V2026.3 Multi-Agent Digital Twin](./versions/V2026.3_MULTI_AGENT_DIGITAL_TW
 
 ## Digital Twin expansion
 
-V2026.3 extends the Digital Twin Lab beyond engagement simulation to include linked professional and scientific state:
+V2026.3 extends the Digital Twin Lab beyond engagement simulation to include linked professional, educational, and scientific state:
 
 - Organization / Entity Twin;
 - Engagement Twin;
@@ -84,7 +112,10 @@ V2026.3 extends the Digital Twin Lab beyond engagement simulation to include lin
 - CAM/KAM Twin;
 - ESG / Assurance Twin;
 - Forensic Investigation Twin;
-- Research Study Twin.
+- Research Study Twin;
+- **Student Learning Twin** — a privacy-governed representation of case interactions, evidence use, decision revisions, escalation choices, and learning outcomes for educational feedback and research.
+
+The Student Learning Twin must not become an uncontrolled employment-profiling system. Individual-level use outside the course requires explicit consent and appropriate institutional/privacy governance.
 
 Claims should be traceable through a graph such as:
 
@@ -92,7 +123,30 @@ Claims should be traceable through a graph such as:
 Evidence -> Transformation -> Model/Agent Run -> Result -> Claim
 Claim -> Critique -> Replication -> Falsification -> Human Decision
 Research Hypothesis -> Empirical Design -> Replication Run -> Evidence Passport
+Student Task -> Evidence Viewed -> Agent Advice -> Student Decision -> Revision -> Human Feedback
 ```
+
+## Digital Twin student simulation profile
+
+The initial education pilot reuses the three Prototype 003 synthetic case families:
+
+1. Revenue Recognition & Cut-off;
+2. Goodwill Impairment;
+3. ICFR / Control Deficiency.
+
+Controlled teaching/research conditions may compare:
+
+- no AI;
+- general AI assistant;
+- single educational audit agent;
+- sequential specialist agents;
+- governed multi-agent system + Human Gate.
+
+All conditions must use the same frozen evidence and declared scoring rules before comparative claims are made.
+
+See:
+- [NAAIL Big Four Student Agent Academy™](./docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md)
+- [Digital Twin Student Simulation™](./docs/education/DIGITAL_TWIN_STUDENT_SIMULATION.md)
 
 ## Scientific discovery governance
 
@@ -126,4 +180,4 @@ Use the simplest orchestration pattern that satisfies the task:
 Every material workflow must expose its stages, dependencies, approvals, failure states, and evaluation results.
 
 ## Public/private boundary
-The public repository describes research-safe interfaces, governance principles, synthetic scenarios, evaluation standards, and educational materials. Detailed orchestration logic, unpublished methods, private datasets, commercial strategy, and patent-candidate mechanisms remain in the private development master.
+The public repository describes research-safe interfaces, governance principles, synthetic scenarios, evaluation standards, educational materials, and university–industry partnership patterns. Detailed orchestration logic, unpublished methods, private datasets, partner-confidential material, recruitment data, commercial strategy, and patent-candidate mechanisms remain in the private development master or separately governed partner environment.
