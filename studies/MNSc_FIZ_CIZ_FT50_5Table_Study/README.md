@@ -3,6 +3,29 @@
 ## Purpose
 This folder supplies a compact empirical data section for a Management Science-oriented manuscript. It combines a Fama–French factor-data module with a Damodaran industry-level external-validation module.
 
+## Author and citation
+
+**Author:** Saeid Homayoun  
+**ORCID:** https://orcid.org/0000-0002-2536-0446
+
+### Recommended citation
+
+> Homayoun, S. (2026). *MNSc FIZ–CIZ FT50 Five-Table Study: Fama–French and Damodaran empirical replication package* (Version 1.0) [Data set and computer software]. GitHub, Saehon/Saeid-Homayoun. https://github.com/Saehon/Saeid-Homayoun/tree/mnsc-fiz-ciz-ft50-5table-study-v1/studies/MNSc_FIZ_CIZ_FT50_5Table_Study. ORCID: https://orcid.org/0000-0002-2536-0446
+
+### BibTeX
+
+```bibtex
+@misc{homayoun2026mnsc_fiz_ciz,
+  author       = {Homayoun, Saeid},
+  title        = {MNSc FIZ--CIZ FT50 Five-Table Study: Fama--French and Damodaran Empirical Replication Package},
+  year         = {2026},
+  version      = {1.0},
+  publisher    = {GitHub},
+  howpublished = {\url{https://github.com/Saehon/Saeid-Homayoun/tree/mnsc-fiz-ciz-ft50-5table-study-v1/studies/MNSc_FIZ_CIZ_FT50_5Table_Study}},
+  note         = {ORCID: 0000-0002-2536-0446}
+}
+```
+
 ## Five manuscript tables
 1. **Table 1 — Variable definitions and provenance**
 2. **Table 2 — Descriptive statistics**
