@@ -1,0 +1,56 @@
+{
+  "study_id": "MNSc-FamaFrench-01-v3",
+  "status": "pre_run_scaffold",
+  "completeness": false,
+  "correctness": false,
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim": "The study compares two official Fama-French historical archive vintages on a common monthly calendar.",
+      "evidence": ["official archive URLs captured by execution", "source_manifest.csv", "SHA-256 hashes"],
+      "status": "design_grounded_execution_pending"
+    },
+    {
+      "claim_id": "C2",
+      "claim": "Observed vintage differences measure archive/construction-regime sensitivity and are not automatically the pure causal effect of FIZ-to-CIZ.",
+      "evidence": ["04_CAUSAL_DAG.md", "ATTRIBUTION_FIREWALL.md"],
+      "status": "governance_grounded"
+    },
+    {
+      "claim_id": "C3",
+      "claim": "DCS and alpha/conclusion sensitivity differ from zero or are economically material for specified series/models.",
+      "evidence": ["Table 1", "Table 3", "Table 5", "runtime logs"],
+      "status": "pending_empirical_run"
+    },
+    {
+      "claim_id": "C4",
+      "claim": "Any reported mean-revision evidence remains reliable after the pre-specified multiplicity procedure.",
+      "evidence": ["Table 5 BH-FDR output"],
+      "status": "pending_empirical_run"
+    },
+    {
+      "claim_id": "C5",
+      "claim": "Damodaran industry results are complementary benchmarking evidence only and do not validate the FIZ-to-CIZ transition.",
+      "evidence": ["06_EMPIRICAL_MANIFEST.json", "ATTRIBUTION_FIREWALL.md"],
+      "status": "governance_grounded"
+    },
+    {
+      "claim_id": "C6",
+      "claim": "Any latent factor-dimension difference is independently validated and economically interpretable.",
+      "evidence": ["08_LATENT_STRUCTURE.md", "future reduced-rank outputs", "replication report"],
+      "status": "not_yet_tested"
+    }
+  ],
+  "required_before_completion": [
+    "successful official-data run",
+    "source hashes",
+    "Python/Stata reconciliation",
+    "falsification outputs",
+    "red-team review",
+    "reference verification",
+    "method-code alignment audit",
+    "human decision"
+  ],
+  "chain_of_evidence_gate": false,
+  "discovery_claim_allowed": false
+}
