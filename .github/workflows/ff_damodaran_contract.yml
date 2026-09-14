@@ -17,5 +17,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run offline scientific contract tests
+      - name: Install study dependencies
+        run: pip install -r studies/FF-Damodaran-Discovery-01/requirements-study.txt
+      - name: Run governance contract tests
         run: python studies/FF-Damodaran-Discovery-01/tests/test_contract.py
+      - name: Run synthetic end-to-end pipeline test
+        run: python studies/FF-Damodaran-Discovery-01/tests/test_synthetic_pipeline.py
