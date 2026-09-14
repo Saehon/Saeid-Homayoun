@@ -1,0 +1,91 @@
+{
+  "registry_version": "2026.09.14",
+  "integration_mode": "external_benchmark_reference",
+  "third_party_code_copied_into_naail_core": false,
+  "pin_commit_before_execution": true,
+  "human_gate_required": true,
+  "benchmarks": [
+    {
+      "benchmark_id": "MNSC_DEKOK_FRP",
+      "journal": "Management Science",
+      "ft50": true,
+      "ajg_band": "4*",
+      "title": "How Resilient Are Firms' Financial Reporting Processes?",
+      "repository": "https://github.com/TiesdeKok/mnsc.2023.4670",
+      "domain": ["accounting", "financial_reporting", "textual_analysis", "reproducibility"],
+      "languages": ["Python", "SAS", "Stata"],
+      "tests": ["original_replication", "coefficient_recovery", "alternative_variables", "specification_robustness", "temporal_holdout", "clean_room_replication"],
+      "data_constraints": "Requires licensed/proprietary source data for full reproduction; do not redistribute restricted data.",
+      "license_status": "VERIFY_SOURCE_LICENSE_BEFORE_CODE_REUSE",
+      "source_commit": null
+    },
+    {
+      "benchmark_id": "RFS_TEMPLATE_R",
+      "journal": "Review of Financial Studies",
+      "ft50": true,
+      "ajg_band": "4*",
+      "title": "RFS Reproducible R Project Template",
+      "repository": "https://github.com/review-of-financial-studies/template-r",
+      "domain": ["reproducibility", "research_engineering", "R"],
+      "languages": ["R"],
+      "tests": ["environment_reconstruction", "relative_path_portability", "dependency_lock", "table_figure_reproduction", "provenance_check"],
+      "license_status": "Modified BSD for code; verify repository LICENSE before reuse",
+      "source_commit": null
+    },
+    {
+      "benchmark_id": "RFS_TEMPLATE_STATA",
+      "journal": "Review of Financial Studies",
+      "ft50": true,
+      "ajg_band": "4*",
+      "title": "RFS Reproducible Stata Project Template",
+      "repository": "https://github.com/review-of-financial-studies/template-stata",
+      "domain": ["reproducibility", "research_engineering", "Stata"],
+      "languages": ["Stata"],
+      "tests": ["environment_reconstruction", "relative_path_portability", "dependency_lock", "table_figure_reproduction", "log_completeness"],
+      "license_status": "Modified BSD for code; verify repository LICENSE before reuse",
+      "source_commit": null
+    },
+    {
+      "benchmark_id": "JFE_BAKER_DID",
+      "journal": "Journal of Financial Economics",
+      "ft50": true,
+      "ajg_band": "4*",
+      "title": "How Much Should We Trust Staggered Difference-in-Difference Estimates?",
+      "repository": "https://github.com/andrewchbaker/JFE_DID",
+      "domain": ["causal_inference", "difference_in_differences", "simulation", "corporate_finance"],
+      "languages": ["R"],
+      "tests": ["twfe", "alternative_did_estimators", "event_study", "pretrend_detection", "placebo", "false_rejection", "heterogeneity", "monte_carlo"],
+      "data_constraints": "Some workflows require WRDS or author-provided data.",
+      "license_status": "VERIFY_SOURCE_LICENSE_BEFORE_CODE_REUSE",
+      "source_commit": null
+    },
+    {
+      "benchmark_id": "RFS_MVML_REVISITED",
+      "journal": "Review of Financial Studies",
+      "ft50": true,
+      "ajg_band": "4*",
+      "title": "Man versus Machine Learning Revisited",
+      "repository": "https://github.com/yandi-zhu/Man-versus-Machine-Learning-Revisited",
+      "domain": ["machine_learning", "earnings_forecasts", "asset_pricing", "out_of_sample_validation"],
+      "languages": ["Python", "Jupyter"],
+      "tests": ["lookahead_bias", "random_forest", "ml_variants", "temporal_oos", "benchmark_model_comparison", "data_leakage", "fama_macbeth"],
+      "data_constraints": "Full reproduction may require WRDS datasets.",
+      "license_status": "VERIFY_REPOSITORY_LICENSE_AND_DATA_RIGHTS",
+      "source_commit": null
+    },
+    {
+      "benchmark_id": "JF_DEBIT_CARD_REPLICATION",
+      "journal": "Journal of Finance",
+      "ft50": true,
+      "ajg_band": "4*",
+      "title": "How Debit Cards Enable the Poor to Save More",
+      "repository": "https://github.com/skhiggins/BachasGertlerHigginsSeira_JF_replication",
+      "domain": ["empirical_finance", "replication", "research_engineering"],
+      "languages": ["Stata", "R", "Python"],
+      "tests": ["end_to_end_pipeline", "environment_lock", "table_reproduction", "log_reproduction", "restricted_data_boundary"],
+      "data_constraints": "Most original results require confidential data; use only legally available inputs.",
+      "license_status": "CC BY 4.0 for repository except identified third-party files; verify LICENSE.md",
+      "source_commit": null
+    }
+  ]
+}
