@@ -1,0 +1,29 @@
+name: NAAIL Google-Inspired Scientific Discovery Governance
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md'
+      - 'NAAIL-OpenLab/architecture/google_science_phase_registry.json'
+      - 'NAAIL-OpenLab/architecture/digital_twin_science_link_registry.json'
+      - 'NAAIL-OpenLab/tests/test_google_scientific_discovery_orchestration.py'
+      - '.github/workflows/naail_google_scientific_discovery.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md'
+      - 'NAAIL-OpenLab/architecture/google_science_phase_registry.json'
+      - 'NAAIL-OpenLab/architecture/digital_twin_science_link_registry.json'
+      - 'NAAIL-OpenLab/tests/test_google_scientific_discovery_orchestration.py'
+
+jobs:
+  governance-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test runner
+        run: python -m pip install pytest
+      - name: Validate Google-inspired scientific discovery governance
+        run: python -m pytest -q NAAIL-OpenLab/tests/test_google_scientific_discovery_orchestration.py
