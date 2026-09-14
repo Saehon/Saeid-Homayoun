@@ -1,0 +1,37 @@
+{
+  "study_id": "MNSc-FamaFrench-01-v3",
+  "passport_status": "pre_run",
+  "research_question": "How sensitive are factor realizations, portfolio returns, asset-pricing alphas, statistical conclusions, and inferred factor structure to official Fama-French archive vintage across the FIZ-to-CIZ transition?",
+  "evidence_class": "associational",
+  "primary_sources": [
+    "Kenneth R. French historical archives — July 2024",
+    "Kenneth R. French historical archives — July 2025"
+  ],
+  "secondary_source_role": {
+    "source": "Aswath Damodaran / NYU Stern industry data",
+    "role": "complementary_benchmark_not_transition_validation"
+  },
+  "source_hashes": "pending_runtime",
+  "common_sample": "pending_runtime",
+  "primary_methods": ["DCS", "CAPM", "FF3", "FF5", "HAC/Newey-West(6)", "Conclusion Reversal", "BH-FDR"],
+  "planned_extension": "reduced-rank factor-dimension comparison",
+  "attribution_limit": "Archive-vintage differences can combine construction-regime change and ordinary revisions; pure FIZ-to-CIZ causal attribution is not identified by the primary two-vintage comparison.",
+  "gates": {
+    "literature": true,
+    "hypothesis_tournament": true,
+    "dag": true,
+    "empirical_design": true,
+    "provenance_runtime": false,
+    "identification": false,
+    "replication": false,
+    "red_team": false,
+    "falsification": false,
+    "chain_of_evidence": false,
+    "coe_audit": false,
+    "human_gate": false
+  },
+  "human_gate_required": true,
+  "human_gate_approved": false,
+  "causal_claim": false,
+  "discovery_claim_allowed": false
+}
