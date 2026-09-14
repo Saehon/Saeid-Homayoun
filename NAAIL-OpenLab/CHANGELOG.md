@@ -1,5 +1,17 @@
 # Changelog
 
+## Big Four / Industry Partnership Pilot — v0.2.4 target — 2026-09-14
+### Executive university–industry pilot layer
+- Added `docs/education/BIG4_PARTNERSHIP_PILOT.md` as the executive-facing partnership design for firms, universities, and external reviewers.
+- Defined a win–win–win model linking Industry Partner → Educational Proxy Agent → Synthetic Client XYZ Digital Twin → Student professional judgment → governed evaluation → Human Gate → aggregate anonymized partner insight.
+- Defined a recommended first pilot of one university course, one industry partner, approximately 20–40 master students, a 4–6 week teaching window, three synthetic Digital Twin cases, one Educational Proxy Agent, instructor dashboard, aggregate partner dashboard, and pre/post learning evaluation.
+- Reaffirmed the ten-metric student/professional evaluation framework: RPA, AA, EG, PS, DS, DIST, AIV, CER, HOR, and ESC.
+- Added default aggregate/anonymized partner reporting, with individual student disclosure for recruitment only after explicit consent and appropriate institutional/privacy approval.
+- Added explicit success criteria covering reproducibility, agent/evidence traceability, learning outcomes, Human Gate enforcement, privacy-safe reporting, data-leakage prevention, limitations/failure documentation, instructor usability, student usability, and partner value without proprietary-system disclosure.
+- Linked the partnership design to Student Pilot 001 and Student Pilot 002 — Microsoft Agent Edition.
+- Updated `docs/education/CURRENT_STUDENT_AGENT_ACADEMY_STATE.md` so the Big Four / industry pilot is part of the canonical education-state checkpoint.
+- Reaffirmed that this is a v0.2.4 target design and does not imply an existing Big Four partnership, Microsoft certification, marketplace approval, or validated recruitment instrument.
+
 ## Prototype 004 real-provider harness — 2026-09-14
 ### Google Gemini + Microsoft Foundry credential-gated execution
 - Implemented real-provider adapters for Google Gemini using `google-genai` and Microsoft Foundry using `azure-ai-inference`.
