@@ -1,14 +1,18 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "registry_id": "NAAIL-GAA-EVIDENCE-001",
   "status": "ADOPTED_GOVERNED_SOURCE_REGISTRY",
   "knowledge_rag_core_version": "KRG2026.3",
+  "parent_free_data_registry": "../architecture/free_data_source_registry.json",
+  "parent_free_data_fabric": "../FREE_DATA_FABRIC.md",
   "technology_agent": "GAA-General-Adversarial-Accounting-Audit-Agent",
   "boundary_rules": {
     "evidence_sources_belong_to_knowledge_rag_core": true,
     "gaa_belongs_to_technology_core": true,
     "gaa_may_modify_knowledge_rag_core": false,
     "technology_upgrade_may_change_evidence_meaning": false,
+    "free_access_means_unrestricted_redistribution": false,
+    "provenance_required": true,
     "human_gate_required": true
   },
   "sources": [
@@ -103,6 +107,7 @@
   "required_controls": [
     "Evidence Passport",
     "source provenance",
+    "rights review",
     "jurisdiction resolver",
     "temporal applicability",
     "contradictory evidence search",
