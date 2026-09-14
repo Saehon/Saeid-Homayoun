@@ -1,7 +1,12 @@
 # NAAIL OpenLab™
-## Nordic Accounting, Audit & Assurance Intelligence Lab
+## V2026.3 Multi-Agent Digital Twin
+### Nordic Accounting, Audit & Assurance Intelligence Lab
 
-**Evidence-governed AI for audit Digital Twins, business-school education, university–industry talent development, and reproducible scientific discovery.**
+**An evidence-governed multi-agent platform for accounting, auditing, economics, sustainability, forensic analytics, education, and reproducible scientific discovery.**
+
+**Specialist Agent Families:** **POMELO™ · KIWI™ · ECONOVA-S™ · ESG Intelligence · ICFR Intelligence · Forensic Intelligence**
+
+**ECONOVA-S™ is the dedicated Data Economy & Economic Intelligence Agent within NAAIL OpenLab™.** It provides economic digital twins, asset-pricing research, financial/economic data analytics, LLM-based economic discovery, and reproducible empirical research workflows. It is not a separate competing umbrella platform.
 
 [![Version](https://img.shields.io/badge/version-0.2.3-blue)](./VERSION)
 [![Use](https://img.shields.io/badge/use-research%20%26%20education-green)](./LICENSE.md)
@@ -13,6 +18,36 @@
 **GitHub:** https://github.com/Saehon
 
 > NAAIL OpenLab is an independent research initiative. References to OpenAI, Google, Microsoft, Deloitte, EY, KPMG, PwC, IFRS Foundation, PCAOB, AICPA, universities, regulators, journals, or other organizations describe public technologies, standards, research inspirations, replication sources, or comparison targets only. They do not imply affiliation, endorsement, sponsorship, authorization, or ownership.
+
+---
+
+## Canonical hierarchy
+
+**NAAIL OpenLab™ → master platform**  
+**NAAIL Multi-Agent Digital Twin → core architecture**  
+**POMELO™ · KIWI™ · ECONOVA-S™ · ESG Intelligence · ICFR Intelligence · Forensic Intelligence → specialist agent families**
+
+```text
+NAAIL OpenLab™
+V2026.3 Multi-Agent Digital Twin
+│
+├── NAAIL Scientific Discovery & Governance Layer
+├── Professional Digital-Twin Agents
+│   ├── KIWI™ — Audit / CAM / KAM Intelligence
+│   ├── POMELO™ — Accounting & Assurance Intelligence
+│   ├── ESG / Sustainability Intelligence
+│   ├── ICFR & Controls Intelligence
+│   ├── Forensic Intelligence
+│   └── ECONOVA-S™ — Data Economy & Economic Intelligence
+├── Data & Evidence Layer
+└── Education & Simulation Layer
+```
+
+Canonical references:
+- **[Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
+- **[Specialist Agent Families](./agents/README.md)**
+- **[Scientific Discovery Contract](./SCIENTIFIC_DISCOVERY_CONTRACT.md)**
+- **[V2026.3 Architecture Snapshot](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)**
 
 ---
 
@@ -95,15 +130,16 @@ Until a written partnership agreement exists, NAAIL uses neutral labels such as 
 
 ## What NAAIL OpenLab is
 
-NAAIL OpenLab is a **research-first, human-led AI platform** spanning Accounting, Auditing, Assurance, Finance, Economics, Sustainability, professional-intelligence research, and AI-enabled business-school education. Auditing is the first deep implementation vertical.
+NAAIL OpenLab is a **research-first, human-led AI platform** spanning Accounting, Auditing, Assurance, Finance, Economics, Sustainability, Forensics, internal controls, professional-intelligence research, and AI-enabled business-school education. Auditing is the first deep implementation vertical; other specialist families share the same master platform and governance.
 
 The platform combines:
 
 - **Knowledge Core™** — governed standards, research evidence, professional guidance, ontologies, and validated knowledge;
 - **Technology Core™** — replaceable models, agents, retrieval, tools, memory, orchestration, and deployment technologies;
 - **Adaptive Intelligence Fabric™** — governed routing of tasks, evidence, models, tools, policies, and approvals;
-- **Audit Digital Twin** — synthetic clients, fictional audit-firm architectures, specialist agents, student simulations, and human-review gates;
+- **Professional Digital Twins** — synthetic clients, economic environments, fictional firm architectures, specialist agents, student simulations, and human-review gates;
 - **Scientific Discovery** — competing hypotheses, ERA-style empirical design, computational discovery, adversarial review, falsification, replication, and Chain-of-Evidence;
+- **Specialist Agent Families** — POMELO™, KIWI™, ECONOVA-S™, ESG Intelligence, ICFR Intelligence, and Forensic Intelligence;
 - **Industry–Education Partnership Fabric** — educational proxy agents, Digital Twin student labs, skill feedback, and privacy-governed university–industry collaboration.
 
 > **Models generate. Agents debate. Code tests. Evidence decides. Students challenge. Humans approve.**
@@ -167,6 +203,9 @@ Publication in a top journal is not treated as proof of reproducibility or causa
 
 ## Product / research pillars
 
+### Specialist Agent Families
+POMELO™, KIWI™, ECONOVA-S™, ESG Intelligence, ICFR Intelligence, and Forensic Intelligence are modular professional/research agent families under the NAAIL master platform. See **[agents/](./agents/README.md)**.
+
 ### Audit Workspace
 Planning, materiality, risk assessment, controls, analytics, evidence, testing, documentation, review, CAM/KAM, ICFR, fraud, estimates, going concern, and ESG assurance.
 
@@ -174,7 +213,7 @@ Planning, materiality, risk assessment, controls, analytics, evidence, testing, 
 A canonical **37-role Audit Digital Twin**: 36 operational audit-agent roles plus one **Audit Scientific Supervisor Agent™**. Material agents require scoped tools, evidence policy, evaluation, handoff rules, traceability, and Human Gate controls.
 
 ### Digital Twin Laboratory
-Synthetic **Client XYZ** and fictional **Firm Alpha–Delta** architectures enable controlled experiments on the same evidence without reproducing proprietary Big Four systems. The Digital Twin now also supports a privacy-governed **Student Learning Twin** for educational event traces, decision revision, evidence use, and learning evaluation.
+Synthetic **Client XYZ** and fictional **Firm Alpha–Delta** architectures enable controlled experiments on the same evidence without reproducing proprietary Big Four systems. The Digital Twin now also supports a privacy-governed **Student Learning Twin** for educational event traces, decision revision, evidence use, and learning evaluation. ECONOVA-S™ extends the Digital Twin concept to economic/data-economy research environments.
 
 ### Evidence Intelligence
 Professional conclusions prioritize applicable law, regulation, and authoritative standards. Academic research uses relevance-gated FT50, current AJG/ABS 4*/4, selected high-fit 3, and other peer-reviewed evidence while assessing identification, construct validity, data quality, reproducibility, contradictory evidence, and limitations.
@@ -199,8 +238,11 @@ See **[Marketplace Edition](./MARKETPLACE_EDITION.md)** and **[marketplace/](./m
 
 | Standard | Purpose |
 |---|---|
+| [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md) | Canonical master-brand relationship, specialist-agent boundaries, and target repository navigation |
+| [Specialist Agent Families](./agents/README.md) | Entry points for POMELO, KIWI, ECONOVA-S, ESG, ICFR, and Forensic Intelligence |
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Public seven-layer reference architecture + Industry–Education Partnership Fabric |
 | [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, educational proxy agents, lifecycle, Human Gates |
+| [SCIENTIFIC_DISCOVERY_CONTRACT.md](./SCIENTIFIC_DISCOVERY_CONTRACT.md) | Common scientific-discovery constitution inherited by all specialist agent families |
 | [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, regression gates, audit-quality metrics + FT50/AJG 4* benchmark layer |
 | [FT50/AJG 4* Benchmark Lab](./benchmarks/ft50_abs4/README.md) | External replication registry, provenance rules, robustness/falsification and clean-room testing |
 | [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, privacy, threat controls, Failure Memory |
@@ -215,7 +257,7 @@ See **[Marketplace Edition](./MARKETPLACE_EDITION.md)** and **[marketplace/](./m
 
 ### Architecture snapshot V2026.3
 
-The next implementation architecture is frozen as **NAAIL OpenLab V2026.3 — Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture**, with provider-neutral interoperability, A2A/MCP concepts, GraphRAG, Digital Twins, Co-Scientist-style reasoning, ERA, AlphaEvolve-inspired search, Chain-of-Evidence, adversarial AI-to-AI review, DAG governance, and Human Gate.
+The next implementation architecture is frozen as **NAAIL OpenLab V2026.3 — Multi-Agent Digital Twin Scientific Discovery Architecture**, with provider-neutral interoperability, A2A/MCP concepts, GraphRAG, Digital Twins, Co-Scientist-style reasoning, ERA, AlphaEvolve-inspired search, Chain-of-Evidence, adversarial AI-to-AI review, DAG governance, and Human Gate.
 
 [Read the V2026.3 architecture snapshot →](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
 
