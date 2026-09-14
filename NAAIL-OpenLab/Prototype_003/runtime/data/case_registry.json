@@ -1,0 +1,44 @@
+{
+  "prototype": "Prototype 003",
+  "public_release": "0.2.3",
+  "cases": [
+    {
+      "case_id": "P003-B-REV-001",
+      "case_family": "Revenue Recognition & Cut-off",
+      "public_runtime_materialized": true,
+      "deterministic_status": "EXECUTED",
+      "exceptions": ["TX-002", "TX-003"],
+      "synthetic_amount": 190000,
+      "materiality": 120000,
+      "human_gate": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "case_id": "P003-GW-001",
+      "case_family": "Goodwill Impairment",
+      "public_runtime_materialized": false,
+      "deterministic_status": "EXECUTED_PRIVATE_RND_MASTER",
+      "exceptions": ["GW-DR", "GW-MAR"],
+      "synthetic_amount": 440000,
+      "materiality": 150000,
+      "human_gate": "PENDING_HUMAN_APPROVAL",
+      "note": "Public repository exposes only research-safe summary results; detailed benchmark implementation remains private pending IP review."
+    },
+    {
+      "case_id": "P003-ICFR-001",
+      "case_family": "ICFR Deficiency",
+      "public_runtime_materialized": false,
+      "deterministic_status": "EXECUTED_PRIVATE_RND_MASTER",
+      "exceptions": ["CTRL-JE-02", "CTRL-IT-03"],
+      "synthetic_amount": 530000,
+      "materiality": 120000,
+      "human_gate": "PENDING_HUMAN_APPROVAL",
+      "note": "Public repository exposes only research-safe summary results; detailed benchmark implementation remains private pending IP review."
+    }
+  ],
+  "ai_architectures": {
+    "single_agent": "NOT_EXECUTED_PROVIDER_REQUIRED",
+    "sequential_agents": "NOT_EXECUTED_PROVIDER_REQUIRED",
+    "governed_multi_agent": "NOT_EXECUTED_PROVIDER_REQUIRED"
+  },
+  "scientific_integrity_rule": "Never substitute simulated or placeholder AI outputs for empirical provider/model evidence."
+}
