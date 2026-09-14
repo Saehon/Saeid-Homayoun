@@ -83,8 +83,29 @@ Primary research question:
 
 The intended comparison includes deterministic control, single-agent AI, sequential agents, governed multi-agent orchestration, and a human-only/human-led baseline where feasible. Outcomes include RPA, AA, EG, PS, DS, DIST, exception detection, false positives/negatives, decision stability, completion time, cost, reproducibility, and human overrides.
 
+## Project continuity and transfer archive
+
+The canonical private transfer archive for continuing NAAIL work without reconstructing prior decisions is:
+
+https://github.com/Saehon/Saeid-Homayoun-/tree/main/Download-NAAIL-OpenLab/transfer_context/2026-09-14
+
+Read the archive `README.md` first, then the four ordered parts. The archive preserves:
+
+- researcher identity and ORCID;
+- repository classifications and authorship boundaries;
+- public/private IP rules;
+- invention-disclosure identifiers;
+- current citation/version state;
+- external-integration architecture;
+- Prototype 001 and Prototype 002 history;
+- Google Drive mirror references;
+- Prototype 003 continuation target.
+
+Google Drive mirror/archive folder:
+https://drive.google.com/drive/folders/193O-ICy6843wEgP0gy713cGUbYq8rGy0
+
+GitHub remains the **source of truth** for version-controlled research/software state. Google Drive is maintained as a **private mirror/archive** unless explicitly changed.
+
 ## Research and IP boundary
 
 A GitHub commit is a dated software/research record, not a patent filing. Public research records are separated from patent-sensitive implementation details. Existing third-party/open-source licenses remain controlling for upstream material. Original NAAIL work should use repository-specific `CITATION.cff`, ORCID attribution, reproducibility documentation, research records, and explicit rights notices.
-
-GitHub remains the **source of truth** for version-controlled research/software state. Google Drive is maintained as a **private mirror/archive** unless explicitly changed.
