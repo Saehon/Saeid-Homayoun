@@ -1,5 +1,18 @@
 # Changelog
 
+## Student Pilot 002 — Microsoft Agent Edition — v0.2.4 target — 2026-09-14
+### Microsoft-connected university–industry Digital Twin roadmap
+- Added `Student_Pilot_002_Microsoft/README.md` as the next education-facing executable roadmap.
+- Defined a Microsoft 365 / Copilot-compatible agent surface connected through a NAAIL adapter boundary to the Educational Proxy Agent and Synthetic Client XYZ Digital Twin.
+- Preserved the ten-metric evaluation framework: RPA, AA, EG, PS, DS, DIST, AIV, CER, HOR, and ESC.
+- Defined separate Student, Instructor, and Industry-Partner views, with aggregate/anonymized partner reporting by default.
+- Required explicit separation between academic grading and recruitment use; individual student disclosure requires explicit consent plus institutional/privacy approval.
+- Reused the frozen Student Pilot 001 case family: Revenue Recognition & Cut-off, Goodwill Impairment, and ICFR / Control Deficiency.
+- Added release gates for real Microsoft-compatible provider identity, frozen evidence, privacy/consent, regression/evaluation tests, Human Gate, and no confidential client/firm data.
+- Updated `marketplace/microsoft/README.md` so the Microsoft distribution package and Student Agent Academy share the same next milestone.
+- Reaffirmed that no Microsoft or Big Four partnership, endorsement, certification, or production-system equivalence is claimed without written authorization.
+- Kept the validated software release at v0.2.3; Student Pilot 002 remains part of the v0.2.4 target until a real provider-backed execution is completed and validated.
+
 ## Student Agent Academy + Digital Twin Education — v0.2.4 target — 2026-09-14
 ### University–industry AI audit learning layer
 - Added the **NAAIL Big Four Student Agent Academy™** as a public university–industry education and talent-readiness model.
