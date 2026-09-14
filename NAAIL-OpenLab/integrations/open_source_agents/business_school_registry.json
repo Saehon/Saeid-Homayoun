@@ -1,0 +1,141 @@
+{
+  "registry_name": "NAAIL OpenLab Business-School Open Agent Pack",
+  "registry_version": "0.1.0",
+  "date_reviewed": "2026-09-14",
+  "naail_target": "V2026.3 / v0.2.4",
+  "scope": [
+    "non-commercial research",
+    "business-school education",
+    "simulation",
+    "reproducible scientific evaluation"
+  ],
+  "claim_policy": {
+    "joint_endorsement_claim": false,
+    "statement": "No project in this registry is represented as jointly approved, certified, or endorsed by MIT, Harvard, the Big Four, Microsoft, Google, and OpenAI.",
+    "academic_affiliation_is_not_endorsement": true,
+    "big4_usecase_evidence_is_not_project_endorsement": true,
+    "registry_inclusion_is_not_execution_or_validation": true
+  },
+  "orchestration_frameworks": [
+    {
+      "id": "google-adk",
+      "name": "Google Agent Development Kit (ADK)",
+      "maintainer_provenance": "Google",
+      "repository": "https://github.com/google/adk-python",
+      "license_review": "Apache-2.0 reported by upstream",
+      "naail_status": "ADAPTER_TARGET",
+      "business_school_roles": ["multi-agent teaching", "workflow orchestration", "evaluation", "digital-twin labs"]
+    },
+    {
+      "id": "microsoft-agent-framework",
+      "name": "Microsoft Agent Framework",
+      "maintainer_provenance": "Microsoft",
+      "repository": "https://github.com/microsoft/agent-framework",
+      "license_review": "MIT verified from upstream LICENSE",
+      "naail_status": "ADAPTER_TARGET",
+      "business_school_roles": ["enterprise orchestration", "handoffs", "workflow comparison", "audit education"]
+    },
+    {
+      "id": "openai-agents-sdk",
+      "name": "OpenAI Agents SDK",
+      "maintainer_provenance": "OpenAI",
+      "repository": "https://github.com/openai/openai-agents-python",
+      "license_review": "MIT verified from upstream LICENSE",
+      "naail_status": "ADAPTER_TARGET",
+      "business_school_roles": ["tools", "guardrails", "handoffs", "multi-agent workflow comparison"]
+    }
+  ],
+  "domain_projects": [
+    {
+      "id": "finrobot",
+      "name": "FinRobot",
+      "domains": ["finance", "financial analysis", "valuation", "accounting analytics", "equity research"],
+      "paper": "https://arxiv.org/abs/2405.14767",
+      "repository": "https://github.com/AI4Finance-Foundation/FinRobot",
+      "evidence_class": ["ARXIV_DOMAIN_EVALUATED", "OPEN_SOURCE_CODE"],
+      "license_review": "Apache-2.0 reported by upstream",
+      "naail_status": "DOMAIN_ADAPTER_CANDIDATE",
+      "risk_rule": "Research/education only; no investment recommendation or live-trading authority"
+    },
+    {
+      "id": "tradingagents",
+      "name": "TradingAgents",
+      "domains": ["finance", "trading simulation", "risk management", "multi-agent debate"],
+      "paper": "https://arxiv.org/abs/2412.20138",
+      "project_page": "https://tradingagents-ai.github.io/",
+      "repository": "https://github.com/TauricResearch/TradingAgents",
+      "evidence_class": ["ARXIV_DOMAIN_EVALUATED", "MIT_AFFILIATED_AUTHORSHIP", "OPEN_SOURCE_CODE"],
+      "institution_note": "Project materials identify one author with MIT affiliation. This is authorship evidence, not MIT certification or endorsement.",
+      "license_review": "Apache-2.0 verified from upstream LICENSE",
+      "naail_status": "DOMAIN_ADAPTER_CANDIDATE",
+      "risk_rule": "Simulation/research only; no live trading without separately governed authorization"
+    },
+    {
+      "id": "econagent",
+      "name": "EconAgent",
+      "domains": ["economics", "macroeconomic simulation", "policy", "data economy"],
+      "paper": "https://arxiv.org/abs/2310.10436",
+      "repository": "https://github.com/tsinghua-fib-lab/ACL24-EconAgent",
+      "evidence_class": ["ARXIV_DOMAIN_EVALUATED", "RELEASED_CODE"],
+      "license_review": "UNVERIFIED: no root LICENSE file observed during 2026-09-14 review",
+      "naail_status": "REFERENCE_ONLY_LICENSE_REVIEW_REQUIRED",
+      "risk_rule": "Do not vendor, redistribute, or package upstream code until rights are clarified"
+    },
+    {
+      "id": "ai-economist",
+      "name": "AI Economist",
+      "domains": ["economics", "tax policy", "mechanism design", "multi-agent reinforcement learning"],
+      "paper": "https://arxiv.org/abs/2108.02755",
+      "harvard_reference": "https://parkes.seas.harvard.edu/publications/ai-economist-taxation-policy-design-two-level-deep-multiagent-reinforcement",
+      "repository": "https://github.com/salesforce/ai-economist",
+      "evidence_class": ["PEER_REVIEWED_ACADEMIC_BASELINE", "HARVARD_AFFILIATED_COAUTHOR"],
+      "institution_note": "David C. Parkes is a Harvard professor/dean and coauthor. This is academic-affiliation evidence, not Harvard product endorsement.",
+      "license_review": "BSD-3-Clause reported by upstream",
+      "repository_state": "archived baseline/reference",
+      "naail_status": "ACADEMIC_BENCHMARK_ARCHIVED"
+    }
+  ],
+  "professional_practice_evidence": [
+    {
+      "organization": "Deloitte",
+      "reference": "https://www.deloitte.com/global/en/about/press-room/unveils-connected-agentic-intelligence-omnia-advance-audit-assurance.html",
+      "use_in_naail": ["agent orchestration", "human-led audit workflow", "audit-quality governance"],
+      "endorsement_of_registry_projects": false
+    },
+    {
+      "organization": "EY",
+      "reference": "https://www.ey.com/en_us/newsroom/2026/04/ey-launches-enterprise-scale-agentic-ai-to-redefine-the-audit-experience-for-the-ai-era",
+      "use_in_naail": ["enterprise assurance agents", "professional judgment", "Microsoft-integrated audit technology"],
+      "endorsement_of_registry_projects": false
+    },
+    {
+      "organization": "KPMG",
+      "reference": "https://kpmg.com/us/en/media/news/kpmg-llp-becomes-first-big-four-firm-with-aiuc-1-certified-ai-capability.html",
+      "use_in_naail": ["adversarial testing", "hallucination testing", "prompt-injection testing", "governance", "reliability"],
+      "endorsement_of_registry_projects": false
+    },
+    {
+      "organization": "PwC",
+      "reference": "https://www.pwc.com/us/en/services/consulting/cybersecurity-data-tech-risk/library/agentic-ai-controls-across-platforms.html",
+      "use_in_naail": ["cross-platform handoff controls", "identity", "permissions", "audit trails", "escalation"],
+      "endorsement_of_registry_projects": false
+    }
+  ],
+  "naail_required_controls": [
+    "Evidence Passport",
+    "Professional Decision DAG",
+    "RPA",
+    "AA",
+    "EG",
+    "PS",
+    "DS",
+    "DIST",
+    "AIV",
+    "CER",
+    "HOR",
+    "ESC",
+    "adversarial review",
+    "falsification",
+    "Human Gate"
+  ]
+}
