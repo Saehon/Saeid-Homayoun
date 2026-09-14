@@ -1,0 +1,85 @@
+name: MNSc FIZ-CIZ V3 Real Data Package
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'studies/MNSc-FamaFrench-01/v3/**'
+      - '.github/workflows/mnsc_fiz_ciz_v3.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-real-data-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r studies/MNSc-FamaFrench-01/v3/requirements.txt
+
+      - name: Build official-data empirical package
+        run: python studies/MNSc-FamaFrench-01/v3/build_v3.py --output studies/MNSc-FamaFrench-01/v3/artifact
+
+      - name: Validate five canonical tables
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/table1_descriptive_dcs.csv
+          test -s studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/table2_correlations.csv
+          test -s studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/table3_baseline_regressions.csv
+          test -s studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/table4_damodaran_external_validation.csv
+          test -s studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/table5_robustness_fdr_subperiods.csv
+          test -s studies/MNSc-FamaFrench-01/v3/artifact/01_Data_Raw/source_manifest.csv
+          cat studies/MNSc-FamaFrench-01/v3/artifact/RUN_SUMMARY.json
+
+      - name: Upload full replication package
+        uses: actions/upload-artifact@v4
+        with:
+          name: MNSc_FIZ_CIZ_V3_real_data_package
+          path: studies/MNSc-FamaFrench-01/v3/artifact/
+          if-no-files-found: error
+
+      - name: Upload raw data
+        uses: actions/upload-artifact@v4
+        with:
+          name: 01_Data_Raw
+          path: studies/MNSc-FamaFrench-01/v3/artifact/01_Data_Raw/
+
+      - name: Upload clean data
+        uses: actions/upload-artifact@v4
+        with:
+          name: 02_Data_Clean
+          path: studies/MNSc-FamaFrench-01/v3/artifact/02_Data_Clean/
+
+      - name: Upload Stata code
+        uses: actions/upload-artifact@v4
+        with:
+          name: 03_Stata_Code
+          path: studies/MNSc-FamaFrench-01/v3/artifact/03_Stata_Code/
+
+      - name: Upload five-table outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: 04_Output_5_Tables
+          path: studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/
+
+      - name: Upload empirical results document
+        uses: actions/upload-artifact@v4
+        with:
+          name: 05_Manuscript
+          path: studies/MNSc-FamaFrench-01/v3/artifact/05_Manuscript/
+
+      - name: Upload literature anchors
+        uses: actions/upload-artifact@v4
+        with:
+          name: 07_FT50_ABS4_Literature
+          path: studies/MNSc-FamaFrench-01/v3/artifact/07_FT50_ABS4_Literature/
