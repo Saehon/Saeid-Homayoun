@@ -4,6 +4,28 @@
 
 **ECONOVA-S™ v0.3 real-data study**
 
+**Author:** Saeid Homayoun  
+**ORCID:** [0000-0002-2536-0446](https://orcid.org/0000-0002-2536-0446)
+
+### Recommended citation
+
+> Homayoun, S. (2026). *When Data Construction Changes Asset Pricing: The FIZ–CIZ Transition and the Stability of Fama–French Factors* (MNSc–FamaFrench–01, ECONOVA-S™ v0.3 research study and replication package). GitHub. https://github.com/Saehon/Saeid-Homayoun/tree/main/studies/MNSc-FamaFrench-01
+
+Until a DOI is formally minted, cite the GitHub study URL above. A machine-readable citation record is available in [`CITATION.cff`](CITATION.cff).
+
+### BibTeX
+
+```bibtex
+@misc{homayoun2026fizciz,
+  author       = {Homayoun, Saeid},
+  title        = {When Data Construction Changes Asset Pricing: The FIZ--CIZ Transition and the Stability of Fama--French Factors},
+  year         = {2026},
+  howpublished = {ECONOVA-S v0.3 research study and replication package},
+  note         = {MNSc--FamaFrench--01},
+  url          = {https://github.com/Saehon/Saeid-Homayoun/tree/main/studies/MNSc-FamaFrench-01}
+}
+```
+
 This study uses only official Kenneth R. French Data Library historical archives to test whether the CRSP **FIZ → CIZ** data-construction transition changes empirical conclusions drawn from Fama–French factors and benchmark portfolios.
 
 The French Data Library states that Legacy Format (FIZ) files were discontinued after the December 2024 data release and that U.S. research returns use CRSP Flat File Format 2.0 (CIZ) beginning with the January 2025 release. The library provides annual July archive snapshots, including July 2024 (FIZ-era) and July 2025 (CIZ-era) files.
