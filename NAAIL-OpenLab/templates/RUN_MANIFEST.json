@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "run_id": "",
+  "trace_id": "",
+  "created_at": "",
+  "purpose": "education|research|benchmark",
+  "case_id": "",
+  "case_version": "",
+  "workflow_id": "",
+  "workflow_version": "",
+  "agents": [],
+  "models": [],
+  "tools": [],
+  "evidence_manifest": [],
+  "dataset_manifest": [],
+  "configuration": {},
+  "human_approvals": [],
+  "metrics": {
+    "RPA": null,
+    "AA": null,
+    "EG": null,
+    "PS": null,
+    "DS": null,
+    "DIST": null,
+    "citation_validity": null,
+    "false_positive_rate": null,
+    "false_negative_rate": null,
+    "latency_ms": null,
+    "cost": null
+  },
+  "failures": [],
+  "limitations": [],
+  "reproducibility": {
+    "environment": "",
+    "seed": null,
+    "code_commit": "",
+    "data_hashes": []
+  },
+  "claim_status": "exploratory",
+  "human_gate": {
+    "required": true,
+    "status": "pending",
+    "reviewer_role": "",
+    "decision": "",
+    "rationale": ""
+  }
+}
