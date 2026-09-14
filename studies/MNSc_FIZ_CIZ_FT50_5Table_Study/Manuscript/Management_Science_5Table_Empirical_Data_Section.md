@@ -4,6 +4,9 @@
 
 **MNSc FIZ–CIZ FT50 Study — Replication-ready Stata and Python package**
 
+**Author:** Saeid Homayoun  
+**ORCID:** https://orcid.org/0000-0002-2536-0446
+
 ## 1. Data and empirical positioning
 
 The empirical module uses two deliberately separate evidence streams. First, monthly Fama–French five-factor observations provide the asset-pricing time-series benchmark. Second, Damodaran industry cost-of-capital data provide an external cross-sectional construction/consistency check. The sources are not mechanically merged because they represent different units of analysis and economic objects.
@@ -37,6 +40,10 @@ The beta coefficient remains positive and statistically precise across conventio
 The repository contains frozen CSV inputs, a Stata do-file, a Python script, and CSV outputs for each of the five tables. The Stata workflow uses native commands for the main analysis and implements winsorization without requiring external packages. The Python workflow uses pandas and statsmodels. For final submission, GitHub-mirrored inputs should be refreshed against the authoritative Kenneth R. French Data Library and NYU Stern/Damodaran archive, with source hashes preserved.
 
 The complete binary submission package, including Word and Excel artifacts, is maintained in the synchronized Google Drive study folder. GitHub stores the reproducible unpacked scientific content because the connector used for this update cannot reliably commit the full ZIP as one binary blob.
+
+## 6. How to cite this study
+
+> Homayoun, S. (2026). *MNSc FIZ–CIZ FT50 Five-Table Study: Fama–French and Damodaran empirical replication package* (Version 1.0) [Data set and computer software]. GitHub, Saehon/Saeid-Homayoun. https://github.com/Saehon/Saeid-Homayoun/tree/mnsc-fiz-ciz-ft50-5table-study-v1/studies/MNSc_FIZ_CIZ_FT50_5Table_Study. ORCID: https://orcid.org/0000-0002-2536-0446
 
 ## References
 
