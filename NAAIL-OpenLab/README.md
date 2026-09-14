@@ -12,7 +12,7 @@
 **ORCID:** https://orcid.org/0000-0002-2536-0446  
 **GitHub:** https://github.com/Saehon
 
-> NAAIL OpenLab is an independent research initiative. References to OpenAI, Google, Microsoft, Deloitte, EY, KPMG, PwC, IFRS Foundation, PCAOB, AICPA, universities, regulators, or other organizations describe public technologies, standards, research inspirations, or comparison targets only. They do not imply affiliation, endorsement, sponsorship, authorization, or ownership.
+> NAAIL OpenLab is an independent research initiative. References to OpenAI, Google, Microsoft, Deloitte, EY, KPMG, PwC, IFRS Foundation, PCAOB, AICPA, universities, regulators, journals, or other organizations describe public technologies, standards, research inspirations, replication sources, or comparison targets only. They do not imply affiliation, endorsement, sponsorship, authorization, or ownership.
 
 ---
 
@@ -116,6 +116,53 @@ The platform combines:
 
 No model output, agent consensus, statistical significance, or predictive accuracy is automatically treated as scientific discovery.
 
+### FT50 / AJG 4* Scientific Replication Arena™
+
+NAAIL now includes a governed external benchmark layer for selected public replication repositories associated with **FT50 and AJG/ABS 4/4\*** research. External projects are used as reproducibility and methodological benchmarks; they are **not treated as NAAIL-owned code** by default.
+
+The benchmark flow is:
+
+```text
+FT50 / AJG 4* publication
+        ↓
+Verified public replication repository
+        ↓
+Rights / license review
+        ↓
+Exact Git commit pinning
+        ↓
+Environment reconstruction
+        ↓
+Original-result replication
+        ↓
+Independent / clean-room reproduction
+        ↓
+Specification + causal/ML robustness
+        ↓
+Critic–Defender adversarial review
+        ↓
+Temporal / out-of-sample validation
+        ↓
+Cross-dataset / Digital Twin test
+        ↓
+Chain-of-Evidence
+        ↓
+Human Gate
+```
+
+Initial benchmark families include **Management Science accounting/reproducibility**, **Review of Financial Studies reproducibility and machine learning**, **Journal of Financial Economics causal inference / staggered DiD**, and **Journal of Finance end-to-end empirical replication**. The registry is designed to expand to relevant TAR, JAR, JAE and other high-quality accounting, finance, economics and AI/data replication assets after provenance and rights review.
+
+Canonical resources:
+
+- **[FT50/AJG 4* Benchmark Lab](./benchmarks/ft50_abs4/README.md)**
+- **[Benchmark Registry](./benchmarks/ft50_abs4/registry.json)**
+- **[Benchmark Protocol](./benchmarks/ft50_abs4/BENCHMARK_PROTOCOL.md)**
+- **[Registry Validator](./benchmarks/ft50_abs4/validate_registry.py)**
+- **[Scientific Replication Arena](./tests/SCIENTIFIC_REPLICATION_ARENA.md)**
+- **[External Source / Rights Policy](./external/FT50_ABS4_SOURCE_POLICY.md)**
+
+Publication in a top journal is not treated as proof of reproducibility or causal validity. Every registered benchmark remains subject to NAAIL evidence, falsification, replication, provenance, leakage, and Human Gate controls.
+
 ---
 
 ## Product / research pillars
@@ -131,6 +178,9 @@ Synthetic **Client XYZ** and fictional **Firm Alpha–Delta** architectures enab
 
 ### Evidence Intelligence
 Professional conclusions prioritize applicable law, regulation, and authoritative standards. Academic research uses relevance-gated FT50, current AJG/ABS 4*/4, selected high-fit 3, and other peer-reviewed evidence while assessing identification, construct validity, data quality, reproducibility, contradictory evidence, and limitations.
+
+### Scientific Replication Arena
+A governed testing layer for selected external FT50/AJG 4* replication repositories. NAAIL compares published methods with alternative specifications, causal estimators, ML/AI models, temporal holdouts, cross-dataset tests, Digital Twin ground truth, and independent reproduction without optimizing for favorable p-values.
 
 ### Business School AI
 Non-commercial research and teaching support for bachelor, master, doctoral, and professional education across Accounting, Auditing, Finance, Economics, Sustainability, and AI/data methods.
@@ -151,7 +201,8 @@ See **[Marketplace Edition](./MARKETPLACE_EDITION.md)** and **[marketplace/](./m
 |---|---|
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Public seven-layer reference architecture + Industry–Education Partnership Fabric |
 | [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, educational proxy agents, lifecycle, Human Gates |
-| [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, regression gates, audit-quality metrics |
+| [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, regression gates, audit-quality metrics + FT50/AJG 4* benchmark layer |
+| [FT50/AJG 4* Benchmark Lab](./benchmarks/ft50_abs4/README.md) | External replication registry, provenance rules, robustness/falsification and clean-room testing |
 | [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, privacy, threat controls, Failure Memory |
 | [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md) | Research-safe executable checkpoint, frozen input hashes, no-fabricated-AI gate, CI contract |
 | [Student Agent Academy](./docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md) | University–industry education and talent-readiness model |
@@ -174,11 +225,11 @@ The architecture snapshot is not a claim of official integration, partnership, o
 
 ## Public / private boundary
 
-**Public research assets:** research-safe documentation, synthetic benchmark descriptions, evaluation principles, selected code/notebooks, educational materials, university–industry partnership patterns, citation metadata, and reproducibility artifacts.
+**Public research assets:** research-safe documentation, synthetic benchmark descriptions, evaluation principles, selected code/notebooks, educational materials, university–industry partnership patterns, citation metadata, reproducibility artifacts, and external-benchmark manifests/metadata.
 
 **Private R&D assets:** detailed orchestration/control logic, unpublished agent specifications, provider adapters, private benchmarks, licensed/restricted data, experimental results, partner-confidential material, individual recruitment data, patent-candidate mechanisms, commercial strategy, and pre-commercial implementation.
 
-**Third-party assets:** standards, papers, datasets, models, software, rankings, logos, and upstream repositories retain their original rights and licenses.
+**Third-party assets:** standards, papers, datasets, models, software, rankings, logos, upstream repositories, and external replication packages retain their original rights and licenses. Registration in the NAAIL benchmark catalog does not transfer ownership.
 
 ---
 
@@ -213,6 +264,6 @@ Citation formats:
 
 **Validated executable release: NAAIL OpenLab v0.2.3 — Audit Digital Twin Prototype 003, 14 September 2026.**
 
-**v0.2.4 target:** Marketplace + Student Agent Academy integration. The public architecture now specifies OpenAI/Google/Microsoft distribution scaffolding and the Big Four Student Agent Academy / Digital Twin student-simulation layer. These additions remain pre-production until real provider adapters, institutional privacy/consent controls, and pilot validation are completed.
+**v0.2.4 target:** Marketplace + Student Agent Academy + FT50/AJG 4* Scientific Replication Arena integration. The public architecture now specifies OpenAI/Google/Microsoft distribution scaffolding, the Big Four Student Agent Academy / Digital Twin student-simulation layer, and a governed external-replication benchmark registry. These additions remain pre-production until real provider adapters, institutional privacy/consent controls, exact external-source commit pinning, environment reconstruction, and benchmark execution/validation are completed.
 
-**Next executable milestone: Prototype 004.** Configure real provider/model adapters in the private R&D environment and run blinded comparisons of single-agent, sequential-agent, and governed multi-agent architectures under identical frozen evidence, Evidence Passports, evaluation metrics, Decision DAG controls, and Human Gate requirements. The student pilot should reuse the same frozen evidence family while measuring learning, AI verification, contradictory-evidence recognition, human override reasoning, and escalation judgment.
+**Next executable milestone: Prototype 004.** Configure real provider/model adapters in the private R&D environment and run blinded comparisons of single-agent, sequential-agent, and governed multi-agent architectures under identical frozen evidence, Evidence Passports, evaluation metrics, Decision DAG controls, and Human Gate requirements. In parallel, execute the first pinned external replication benchmarks beginning with the Management Science accounting/reproducibility family and JFE causal-inference family, while retaining unsuccessful and null replications as evidence rather than suppressing them.
