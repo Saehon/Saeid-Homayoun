@@ -87,7 +87,7 @@ flowchart LR
 ### MNSc–FamaFrench–01
 **When Data Construction Changes Asset Pricing: The FIZ–CIZ Transition and the Stability of Fama–French Factors**
 
-The study uses official Kenneth R. French historical archive snapshots to test whether a data-construction change can alter asset-pricing conclusions.
+The study uses official Kenneth R. French historical archive snapshots to test whether a data-construction change can alter asset-pricing conclusions. The official Kenneth R. French Data Library notes that CRSP's Legacy Format (FIZ) files were discontinued after the December 2024 release and that the new format begins with the January 2025 release.
 
 Current research objects include:
 
@@ -102,6 +102,18 @@ Current research objects include:
 - explicit pre-discovery status until replication, adversarial review, falsification, Chain-of-Evidence, and Human Gate are complete.
 
 [Open the study →](studies/MNSc-FamaFrench-01/)
+
+### Research evidence anchors
+
+| Research element | Primary citation / source |
+|---|---|
+| **FIZ → CIZ transition and archive vintages** | [Kenneth R. French Data Library — Changes in CRSP Data](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html) |
+| **FF3 specification** | Fama, E. F., & French, K. R. (1993), *Common risk factors in the returns on stocks and bonds*, **Journal of Financial Economics, 33(1), 3–56**. [DOI](https://doi.org/10.1016/0304-405X(93)90023-5) |
+| **FF5 specification** | Fama, E. F., & French, K. R. (2015), *A five-factor asset pricing model*, **Journal of Financial Economics, 116(1), 1–22**. [DOI](https://doi.org/10.1016/j.jfineco.2014.10.010) |
+| **HAC / Newey–West inference** | Newey, W. K., & West, K. D. (1987), *A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix*, **Econometrica, 55(3), 703–708**. [DOI](https://doi.org/10.2307/1913610) |
+| **BH-FDR multiple-testing control** | Benjamini, Y., & Hochberg, Y. (1995), *Controlling the false discovery rate: A practical and powerful approach to multiple testing*, **JRSS Series B, 57(1), 289–300**. [DOI](https://doi.org/10.1111/j.2517-6161.1995.tb02031.x) |
+
+These anchors define the study's source and method lineage. They do **not** by themselves establish that the observed July-2024 versus July-2025 archive differences are caused solely by the FIZ→CIZ transition; the study's attribution firewall remains in force.
 
 ---
 
