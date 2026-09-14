@@ -13,6 +13,37 @@ NAAIL Marketplace Edition is the public product-distribution layer for NAAIL Ope
 
 ➡️ **[Open NAAIL Discovery™ — Customer Preference Feed](./marketplace/CUSTOMER_PREFERENCE_DISCOVERY.md)**
 
+➡️ **[Open Knowledge Core / Technology Core & AI Technology Radar](./CORE_ARCHITECTURE_AND_TECHNOLOGY_RADAR.md)**
+
+➡️ **[Open Current Technology Radar Status](./TECHNOLOGY_RADAR_STATUS.md)**
+
+## Stable Knowledge Core™ + Replaceable Technology Core™
+
+NAAIL separates durable professional/scientific meaning from fast-changing AI technology.
+
+```text
+                    NAAIL OpenLab™
+                          │
+        ┌─────────────────┴─────────────────┐
+        │                                   │
+  KNOWLEDGE CORE™                    TECHNOLOGY CORE™
+  Slow-moving                         Fast-moving
+  Domain/science governed             Engineering/vendor governed
+        │                                   │
+        └──────── Adaptive Intelligence ────┘
+                    Fabric™
+                          │
+                 Evidence + Human Gate
+```
+
+**Knowledge Core™** contains professional standards mappings, accounting/audit/finance/economics knowledge, CAM/KAM, ICFR, ESG, theory, causal DAGs, identification, evidence rules, replication, Chain-of-Evidence, benchmarks, and Human Gate requirements.
+
+**Technology Core™** contains replaceable foundation models, agent SDKs, orchestration frameworks, retrieval, MCP/A2A, memory, tool calling, sandboxes, observability, evaluation tooling, UI adapters, and deployment infrastructure.
+
+The current Technology Radar tracks **OpenAI, Google AI, Anthropic/Claude, Microsoft AI, MCP, A2A, and local/open-model ecosystems** behind provider-neutral boundaries. A provider/model release must not silently rewrite the Knowledge Core.
+
+Current provider technologies are publicly classified as **WATCH / EVALUATE / SANDBOX / ADOPT / REPLACE-RETIRE**. The present public registry does **not** claim production integration where it has not been executed and validated.
+
 ## NAAIL Discovery™ — personalized professional feed
 
 NAAIL now includes a public design for a **short-card, preference-driven professional discovery experience** inspired by modern consumer recommendation patterns while remaining evidence-governed and independent from third-party proprietary algorithms.
@@ -86,6 +117,8 @@ These edition names describe a future product strategy. Commercial licensing and
 
 - [Customer-facing marketplace page](./marketplace/README.md)
 - [NAAIL Discovery™ customer preference feed](./marketplace/CUSTOMER_PREFERENCE_DISCOVERY.md)
+- [Knowledge Core / Technology Core & AI Technology Radar](./CORE_ARCHITECTURE_AND_TECHNOLOGY_RADAR.md)
+- [Current Technology Radar Status](./TECHNOLOGY_RADAR_STATUS.md)
 - [OpenAI / ChatGPT package](./marketplace/openai/README.md)
 - [Google / Gemini / Google Cloud package](./marketplace/google/README.md)
 - [Microsoft Marketplace / Copilot package](./marketplace/microsoft/README.md)
@@ -110,6 +143,8 @@ These edition names describe a future product strategy. Commercial licensing and
 
 **Current validated research release:** NAAIL OpenLab v0.2.3  
 **Marketplace target:** v0.2.4  
+**Knowledge Core reference:** K2026.3  
+**Technology Core public design state:** T2026.9-design  
 **Submission status:** not submitted  
 **Provider approval:** none claimed  
 **Commercial marketplace launch:** not yet launched  
