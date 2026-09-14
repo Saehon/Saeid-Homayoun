@@ -1,0 +1,99 @@
+year,ff49_industry,damodaran_industry,mapping_weight,mapping_confidence,reviewer,review_status,human_gate_approved,rationale
+2026,Agric,Farming/Agriculture,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Food,Food Processing,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Soda,Beverage (Soft),1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Beer,Beverage (Alcoholic),1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Smoke,Tobacco,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Toys,Recreation,1.00,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Closest recreation and sporting-goods sector
+2026,Fun,Entertainment,0.50,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Entertainment component
+2026,Fun,Recreation,0.30,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Recreation component
+2026,Fun,Hotel/Gaming,0.20,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Gaming and leisure component
+2026,Books,Publishing & Newspapers,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct publishing match
+2026,Hshld,Household Products,0.70,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Core household products
+2026,Hshld,Furn/Home Furnishings,0.30,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Home furnishings component
+2026,Clths,Apparel,0.70,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Core clothing sector
+2026,Clths,Shoe,0.30,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Footwear component
+2026,Hlth,Hospitals/Healthcare Facilities,0.60,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Healthcare services component excluding drugs and medical equipment
+2026,Hlth,Healthcare Support Services,0.40,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Healthcare support component
+2026,MedEq,Healthcare Products,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Medical devices and healthcare products
+2026,Drugs,Drugs (Pharmaceutical),0.60,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Pharmaceutical component
+2026,Drugs,Drugs (Biotechnology),0.40,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Biotechnology component
+2026,Chems,Chemical (Basic),0.40,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Basic chemicals component
+2026,Chems,Chemical (Diversified),0.20,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Diversified chemicals component
+2026,Chems,Chemical (Specialty),0.40,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Specialty chemicals component
+2026,Rubbr,Rubber& Tires,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct rubber and tire match
+2026,Txtls,Apparel,0.80,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Textile output is largely absorbed by apparel in current Damodaran taxonomy
+2026,Txtls,Furn/Home Furnishings,0.20,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Home-textile component
+2026,BldMt,Building Materials,0.60,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Building material production
+2026,BldMt,Construction Supplies,0.40,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Construction supply component
+2026,Cnstr,Engineering/Construction,0.50,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Engineering and construction services
+2026,Cnstr,Homebuilding,0.30,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Residential construction component
+2026,Cnstr,Construction Supplies,0.20,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Construction-related supply exposure
+2026,Steel,Steel,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,FabPr,Machinery,0.70,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Fabricated industrial products overlap strongly with machinery
+2026,FabPr,Electrical Equipment,0.30,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Electrical fabricated-products component
+2026,Mach,Machinery,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,ElcEq,Electrical Equipment,0.70,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Electrical equipment core
+2026,ElcEq,Electronics (General),0.30,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,General electronics component
+2026,Autos,Auto & Truck,0.70,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Vehicle manufacturing component
+2026,Autos,Auto Parts,0.30,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Auto-parts component
+2026,Aero,Aerospace/Defense,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct aerospace match
+2026,Ships,Shipbuilding & Marine,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Guns,Aerospace/Defense,1.00,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Defense-related manufacturing proxy
+2026,Gold,Precious Metals,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Gold is included in precious metals
+2026,Mines,Metals & Mining,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct mining match
+2026,Coal,Coal & Related Energy,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Oil,Oil/Gas (Integrated),0.20,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Integrated oil and gas component
+2026,Oil,Oil/Gas (Production and Exploration),0.45,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Exploration and production component
+2026,Oil,Oil/Gas Distribution,0.15,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Distribution component
+2026,Oil,Oilfield Svcs/Equip.,0.20,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Oilfield service and equipment component
+2026,Util,Power,0.45,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Electric power utilities
+2026,Util,Utility (General),0.40,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Diversified utility component
+2026,Util,Utility (Water),0.15,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Water utility component
+2026,Telcm,Telecom. Services,0.55,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Telecom service core
+2026,Telcm,Telecom (Wireless),0.25,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Wireless telecom component
+2026,Telcm,Telecom. Equipment,0.20,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Telecommunications equipment component
+2026,PerSv,Business & Consumer Services,1.00,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Closest broad consumer and personal service category
+2026,BusSv,Business & Consumer Services,0.45,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,General business services
+2026,BusSv,Computer Services,0.25,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,IT-enabled business services
+2026,BusSv,Information Services,0.15,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Information-services component
+2026,BusSv,Environmental & Waste Services,0.15,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Specialized commercial-services component
+2026,Hardw,Computers/Peripherals,0.60,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Computer hardware core
+2026,Hardw,Electronics (Consumer & Office),0.20,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Consumer and office electronics
+2026,Hardw,Office Equipment & Services,0.20,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Office hardware component
+2026,Softw,Software (System & Application),0.65,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,System and application software core
+2026,Softw,Software (Internet),0.20,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Internet software component
+2026,Softw,Software (Entertainment),0.15,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Entertainment software component
+2026,Chips,Semiconductor,0.70,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Semiconductor manufacturing
+2026,Chips,Semiconductor Equip,0.30,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Semiconductor equipment component
+2026,LabEq,Electronics (General),0.50,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Instrumentation and general electronics component
+2026,LabEq,Healthcare Products,0.50,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Medical and laboratory equipment component
+2026,Paper,Paper/Forest Products,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Boxes,Packaging & Container,1.00,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Direct sector match
+2026,Trans,Transportation,0.35,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,General transportation component
+2026,Trans,Transportation (Railroads),0.20,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Railroad component
+2026,Trans,Trucking,0.25,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Trucking component
+2026,Trans,Air Transport,0.20,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Air transport component
+2026,Whlsl,Retail (Distributors),0.75,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Distributor and wholesale proxy
+2026,Whlsl,Food Wholesalers,0.25,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Food wholesale component
+2026,Rtail,Retail (General),0.25,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,General retail component
+2026,Rtail,Retail (Special Lines),0.35,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Specialty retail component
+2026,Rtail,Retail (Automotive),0.15,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Automotive retail component
+2026,Rtail,Retail (Building Supply),0.10,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Building-supply retail component
+2026,Rtail,Retail (Grocery and Food),0.15,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Grocery retail component
+2026,Meals,Restaurant/Dining,0.80,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Restaurant and dining core
+2026,Meals,Hotel/Gaming,0.20,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Hospitality and leisure component
+2026,Banks,Banks (Regional),0.70,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Regional banking component
+2026,Banks,Bank (Money Center),0.30,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Money-center banking component
+2026,Insur,Insurance (General),0.35,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,General insurance component
+2026,Insur,Insurance (Life),0.20,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Life insurance component
+2026,Insur,Insurance (Prop/Cas.),0.35,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Property and casualty component
+2026,Insur,Reinsurance,0.10,MEDIUM,GPT-5.6 Sol,AI_REVIEWED,false,Reinsurance component
+2026,RlEst,R.E.I.T.,0.40,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,REIT component
+2026,RlEst,Real Estate (Development),0.20,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Development component
+2026,RlEst,Real Estate (General/Diversified),0.20,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Diversified real estate component
+2026,RlEst,Real Estate (Operations & Services),0.20,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Real-estate operations and services component
+2026,Fin,Financial Svcs. (Non-bank & Insurance),0.40,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Non-bank financial-services component
+2026,Fin,Brokerage & Investment Banking,0.30,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Brokerage and investment-banking component
+2026,Fin,Investments & Asset Management,0.30,HIGH,GPT-5.6 Sol,AI_REVIEWED,false,Investment-management component
+2026,Other,Diversified,1.00,LOW,GPT-5.6 Sol,AI_REVIEWED,false,Residual-category proxy only; requires human review
