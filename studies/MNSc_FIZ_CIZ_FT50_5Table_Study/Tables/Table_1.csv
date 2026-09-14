@@ -1,0 +1,11 @@
+Variable,Source,Definition,Unit,Role,FT50/AJG4 Grounding
+Mkt_RF,Fama-French,Market excess return,Monthly %,Time-series factor,"Fama-French (2015); Feng, Giglio & Xiu (2020)"
+SMB,Fama-French,Size factor,Monthly %,Time-series factor,Fama-French (2015)
+HML,Fama-French,Value factor,Monthly %,Time-series factor,Fama-French (2015)
+RMW,Fama-French,Profitability factor,Monthly %,Time-series factor,Fama-French (2015)
+CMA,Fama-French,Investment factor,Monthly %,Time-series factor,Fama-French (2015)
+WACC,Damodaran,Industry cost of capital,Percent,Dependent variable,Cross-sectional industry validation
+Beta,Damodaran,Industry equity beta,Ratio,Risk exposure,CAPM / factor-model benchmark
+D_weight,Damodaran,Debt/(Debt+Equity),Percent,Capital structure control,Cross-sectional control
+Stock_SD,Damodaran,Industry stock-return standard deviation,Percent,Risk/uncertainty control,Cross-sectional control
+AfterTax_Cost_Debt,Damodaran,After-tax debt cost,Percent,Financing-cost control,Cross-sectional control
