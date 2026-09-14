@@ -1,0 +1,21 @@
+name: FF-Damodaran Scientific Contract
+
+on:
+  push:
+    paths:
+      - 'studies/FF-Damodaran-Discovery-01/**'
+      - '.github/workflows/ff_damodaran_contract.yml'
+  pull_request:
+    paths:
+      - 'studies/FF-Damodaran-Discovery-01/**'
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run offline scientific contract tests
+        run: python studies/FF-Damodaran-Discovery-01/tests/test_contract.py
