@@ -1,0 +1,54 @@
+ECONOVA-S™ RESEARCH AND NON-COMMERCIAL LICENSE v1.0
+
+Copyright © 2026 Saeid Homayoun. All rights reserved except as expressly granted below.
+
+1. Scope
+This license applies to the ECONOVA-S™ repository, including its source code, documentation, architecture descriptions, schemas, workflows, prompts, diagrams, research protocols, examples, and other original materials authored by the Licensor, except for third-party materials that are governed by their own licenses.
+
+2. Permitted Non-Commercial Use
+Subject to all terms of this license, you may access, study, reproduce internally, test, evaluate, and modify the Project solely for bona fide non-commercial academic research, teaching, personal study, or non-commercial experimentation. You may distribute modified or unmodified copies only for the same permitted non-commercial purposes and only if you retain this license, all copyright notices, attribution notices, and trademark notices.
+
+3. Commercial Use Requires Prior Written Permission
+No commercial use is permitted without a separate written commercial license signed or expressly authorized by the Licensor. Commercial use includes, without limitation:
+(a) sale, resale, licensing, sublicensing, rental, or paid distribution;
+(b) use in or for a commercial product, service, platform, software-as-a-service offering, API, model, agent, workflow, consultancy, advisory engagement, or client deliverable;
+(c) internal operational use by a for-profit organization other than source review or evaluation undertaken solely to decide whether to request a commercial license;
+(d) monetization through advertising, subscription, transaction fees, service fees, or any other revenue-generating activity;
+(e) incorporating the Project or a substantial derivative into a commercial AI system, financial product, analytics product, research product, or decision-support service;
+(f) using the Project to train, fine-tune, distill, benchmark for deployment, or otherwise improve a commercial AI model or commercial agentic system; and
+(g) commercial exploitation of derivative works based substantially on the Project.
+
+4. Academic Use and Citation
+Academic publication of research performed using the Project is permitted for non-commercial scholarly purposes, provided the Project and author are appropriately cited. Citation does not grant any additional copyright, trademark, patent, or commercial rights.
+
+5. Derivative Works
+Derivative works created under the permitted non-commercial grant remain subject to this license when distributed. You may not remove or alter notices indicating ownership, licensing restrictions, provenance, or attribution.
+
+6. No Sublicensing or Transfer
+Rights granted under this license are personal to the licensee and may not be sublicensed, assigned, sold, or transferred except with prior written permission from the Licensor.
+
+7. Patent Rights
+To the extent the Licensor owns or later obtains patent claims that are necessarily infringed solely by exercising the expressly permitted non-commercial rights under this license, the Licensor grants a non-exclusive, non-transferable patent license only for those permitted non-commercial purposes. No patent license is granted for any commercial use. Any commercial patent license must be separately negotiated in writing.
+
+8. Trademarks and Project Identity
+No trademark, trade name, branding, endorsement, or passing-off rights are granted. ECONOVA-S™, Stable Economic Knowledge Core™, Replaceable Technology Core™, AI-to-AI Scientific Intelligence Fabric™, Variable DNA™, Evidence Passport™, and other project names or marks identified by the Licensor remain reserved to the Licensor to the extent protected by applicable law. You may refer to the Project accurately for attribution and scholarly citation, but you may not imply endorsement, sponsorship, affiliation, or authorization.
+
+9. Third-Party Materials
+Third-party software, data, publications, models, APIs, standards, and other materials remain subject to their own licenses, terms, and rights. This license grants no rights in third-party materials.
+
+10. No Implied Rights
+Except for the limited permissions expressly stated above, no rights are granted by implication, estoppel, exhaustion, or otherwise. All rights not expressly granted are reserved.
+
+11. Termination
+Any rights granted under this license terminate automatically upon material breach. Following termination, you must stop all use not independently permitted by law and cease distribution of the Project and derivatives. The Licensor may separately agree in writing to cure or reinstate rights.
+
+12. Commercial Licensing
+Any person or organization wishing to use ECONOVA-S™ commercially must obtain prior written permission and a separate commercial license from the Licensor. Commercial license requests should be directed to the repository owner through GitHub or another contact channel explicitly designated by the Licensor.
+
+13. Disclaimer
+THE PROJECT IS PROVIDED “AS IS,” WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, OR FITNESS FOR FINANCIAL, INVESTMENT, LEGAL, REGULATORY, OR PROFESSIONAL DECISION-MAKING. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR SHALL NOT BE LIABLE FOR ANY CLAIM, LOSS, LIABILITY, OR DAMAGES ARISING FROM USE OF THE PROJECT.
+
+14. Reservation of Rights
+This license is a source-available, research/non-commercial license. It is not an open-source license as defined by the Open Source Initiative. Publication of source materials does not place the Project in the public domain and does not waive copyright, trademark, patent, database, contractual, or other rights that may apply.
+
+END OF LICENSE
