@@ -1,6 +1,8 @@
 # NAAIL OpenLab™ — Public Preview
 
-**Published public preview — 14 September 2026**
+**Published public preview — 14 September 2026**  
+**GitHub publication state — PUBLIC**  
+**Google Drive working mirror — SYNCHRONIZED**
 
 NAAIL OpenLab™ is an independent, evidence-governed AI research and education platform for Accounting, Auditing, Assurance, Finance, Economics, Sustainability, and professional AI evaluation.
 
@@ -133,9 +135,13 @@ These are research and educational constructs and should not be treated as valid
 
 ## Publication status
 
-This page publishes the **NAAIL OpenLab public preview on GitHub**. It does **not** claim Microsoft, Google, OpenAI, Deloitte, EY, KPMG, PwC, any university, regulator, journal, or other organization has approved, certified, sponsored, endorsed, adopted, or partnered with NAAIL.
+This page publishes the **NAAIL OpenLab public preview on GitHub**. The connected Google Drive document is maintained as a synchronized working mirror; GitHub remains the public publication surface.
+
+This publication does **not** claim Microsoft, Google, OpenAI, Deloitte, EY, KPMG, PwC, any university, regulator, journal, or other organization has approved, certified, sponsored, endorsed, adopted, or partnered with NAAIL.
 
 The validated executable software release remains **v0.2.3**. Marketplace integration, Student Agent Academy institutional deployment, Big Four partnership deployment, Student Pilot 002, FT50/AJG replication execution, and provider-backed Prototype 004 empirical results remain governed next-stage capabilities until their respective validation gates are completed.
+
+See: [Publication Status](./PUBLICATION_STATUS.md)
 
 ## Principal Investigator
 
@@ -150,6 +156,7 @@ GitHub: **https://github.com/Saehon**
 ## Start here
 
 - [Main README](./README.md)
+- [Publication Status](./PUBLICATION_STATUS.md)
 - [Current Student Agent Academy State](./docs/education/CURRENT_STUDENT_AGENT_ACADEMY_STATE.md)
 - [Big Four / Industry Partnership Pilot](./docs/education/BIG4_PARTNERSHIP_PILOT.md)
 - [Student Pilot 001](./Student_Pilot_001/README.md)
