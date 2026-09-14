@@ -5,6 +5,9 @@ on:
   push:
     paths:
       - 'studies/FF-Damodaran-Discovery-01/.run_prepare'
+  pull_request:
+    paths:
+      - 'studies/FF-Damodaran-Discovery-01/.run_prepare_pr'
 
 jobs:
   prepare:
