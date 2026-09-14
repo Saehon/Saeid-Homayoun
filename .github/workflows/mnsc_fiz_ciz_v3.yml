@@ -22,7 +22,7 @@ jobs:
   build-real-data-package:
     if: >-
       github.event_name != 'issue_comment' ||
-      (github.event.issue.number == 8 && contains(github.event.comment.body, '/run-mnsc-v3'))
+      (github.actor == 'Saehon' && github.event.issue.number == 8 && contains(github.event.comment.body, '/run-mnsc-v3'))
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
