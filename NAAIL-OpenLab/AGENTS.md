@@ -100,7 +100,33 @@ For educational proxy agents, add:
 ## Provider neutrality
 NAAIL may implement adapters for OpenAI, Google, Microsoft, local/open models, or future providers. An agent's professional definition and evaluation contract must not depend on a single model vendor.
 
+## Open-source educational agent adapters
+
+NAAIL may use third-party open-source agent frameworks through a governed adapter boundary. The current v0.2.4 target registry includes a core education stack of **Google ADK, Microsoft Agent Framework, CAMEL-AI, Hugging Face smolagents, Haystack, MCP Python SDK, and Ollama**, plus an extended comparison ecosystem including LlamaIndex, OpenAI Agents SDK, GPT Researcher, Browser Use, OpenHands, MetaGPT, and CrewAI.
+
+For every open-source framework used in a NAAIL run, record where applicable:
+
+- upstream repository;
+- exact release, package version, or commit;
+- current upstream license review state;
+- model/provider and model identifier;
+- tool permissions;
+- evidence corpus/version;
+- agent role and risk class;
+- handoff trace;
+- failed-run state;
+- evaluation output;
+- Human Gate state.
+
+Registry inclusion is **not** proof that a framework has been installed, executed, benchmarked, security-reviewed, or validated. No comparative-superiority claim may be made without frozen tasks, equivalent evidence access, declared versions, prespecified metrics, retained failed/null results, robustness analysis, and Human Gate review.
+
+Upstream project licenses, trademarks, hosted APIs, model weights, and release-specific obligations remain external to the NAAIL license. Do not copy or relicense third-party code into NAAIL merely because it is used in a teaching or research workflow.
+
+Canonical specification: [OPEN_SOURCE_AGENT_STACK.md](./OPEN_SOURCE_AGENT_STACK.md)  
+Machine-readable registry: [integrations/open_source_agents/registry.json](./integrations/open_source_agents/registry.json)
+
 ## Related education specifications
 
 - [NAAIL Big Four Student Agent Academy™](./docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md)
 - [Digital Twin Student Simulation™](./docs/education/DIGITAL_TWIN_STUDENT_SIMULATION.md)
+- [Open-Source Student Agent Lab](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
