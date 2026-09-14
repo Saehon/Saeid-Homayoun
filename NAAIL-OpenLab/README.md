@@ -85,6 +85,18 @@ These controls reduce legal and privacy risk but do not provide a guarantee agai
 
 The public NAAIL release occurred on **14 September 2026**. Public disclosure can affect patent rights. Until qualified patent counsel has reviewed the disclosed material and any new invention concepts, new enabling technical details should remain in the private development repository. Do not describe NAAIL OpenLab as “patent pending” unless a patent application has actually been filed.
 
+## How to cite NAAIL OpenLab
+
+If you use NAAIL OpenLab in research, teaching, benchmarking, or Digital Twin experiments, please cite the software and include the author ORCID.
+
+**APA-style citation:**
+
+> Homayoun, S. (2026). *NAAIL OpenLab: An Evidence-Governed AI Platform for Business-School Education, Audit Digital Twins, and Reproducible Scientific Discovery* (Version 0.2.0) [Computer software]. GitHub. https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
+
+**ORCID:** https://orcid.org/0000-0002-2536-0446
+
+Machine-readable citation metadata are available in [`CITATION.cff`](./CITATION.cff).
+
 ## Public release status
 
 **V0.2 non-commercial research release — September 2026.**
