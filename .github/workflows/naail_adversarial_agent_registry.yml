@@ -1,0 +1,36 @@
+name: NAAIL Adversarial Agent Registry
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/ADVERSARIAL_INTELLIGENCE_FABRIC.md'
+      - 'NAAIL-OpenLab/architecture/adversarial_agent_registry.json'
+      - 'NAAIL-OpenLab/tests/test_adversarial_agent_registry.py'
+      - '.github/workflows/naail_adversarial_agent_registry.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/ADVERSARIAL_INTELLIGENCE_FABRIC.md'
+      - 'NAAIL-OpenLab/architecture/adversarial_agent_registry.json'
+      - 'NAAIL-OpenLab/tests/test_adversarial_agent_registry.py'
+      - '.github/workflows/naail_adversarial_agent_registry.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-adversarial-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pytest
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Validate adversarial Technology Core registry
+        run: pytest -q NAAIL-OpenLab/tests/test_adversarial_agent_registry.py
