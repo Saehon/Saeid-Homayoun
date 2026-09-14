@@ -46,13 +46,20 @@ def describe(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
 
 
 def fit_clustered(df: pd.DataFrame, predictors: list[str]) -> pd.DataFrame:
-    use = df[["future_industry_return_1y", "ff49_industry"] + predictors].dropna().copy()
+    use = df[["future_industry_return_1y", "ff49_industry", "year"] + predictors].dropna().copy()
     if len(use) < 30 or not predictors:
         return pd.DataFrame()
-    X = pd.get_dummies(use[predictors + ["ff49_industry"]], columns=["ff49_industry"], drop_first=True, dtype=float)
+
+    X = pd.get_dummies(
+        use[predictors + ["ff49_industry", "year"]].assign(year=use["year"].astype(str)),
+        columns=["ff49_industry", "year"],
+        drop_first=True,
+        dtype=float,
+    )
     X = sm.add_constant(X, has_constant="add")
     y = use["future_industry_return_1y"].astype(float)
     model = sm.OLS(y, X).fit(cov_type="cluster", cov_kwds={"groups": use["ff49_industry"]})
+
     keep = ["const"] + predictors
     rows = []
     for v in keep:
@@ -66,6 +73,9 @@ def fit_clustered(df: pd.DataFrame, predictors: list[str]) -> pd.DataFrame:
             "p_value_descriptive_not_fitness": model.pvalues[v],
             "n": int(model.nobs),
             "adj_r2": model.rsquared_adj,
+            "industry_fe": True,
+            "year_fe": True,
+            "se_cluster": "industry",
         })
     return pd.DataFrame(rows)
 
@@ -79,17 +89,26 @@ def expanding_oos(df: pd.DataFrame, predictors: list[str], label: str) -> dict:
         test = use[use["year"] == test_year]
         if train.empty or test.empty:
             continue
+
         combined = pd.concat([train, test], ignore_index=True)
-        X = pd.get_dummies(combined[predictors + ["ff49_industry"]], columns=["ff49_industry"], drop_first=True, dtype=float)
+        X = pd.get_dummies(
+            combined[predictors + ["ff49_industry"]],
+            columns=["ff49_industry"],
+            drop_first=True,
+            dtype=float,
+        )
         X_train = X.iloc[:len(train)]
         X_test = X.iloc[len(train):]
-        m = LinearRegression().fit(X_train, train["future_industry_return_1y"])
-        p = m.predict(X_test)
-        preds.extend(p.tolist())
+        model = LinearRegression().fit(X_train, train["future_industry_return_1y"])
+        pred = model.predict(X_test)
+
+        preds.extend(pred.tolist())
         actual.extend(test["future_industry_return_1y"].tolist())
         benchmark.extend([train["future_industry_return_1y"].mean()] * len(test))
+
     if not actual:
         return {"model": label, "n_oos": 0, "oos_r2": np.nan, "mae": np.nan, "rmse": np.nan}
+
     y = np.asarray(actual)
     p = np.asarray(preds)
     b = np.asarray(benchmark)
@@ -101,6 +120,7 @@ def expanding_oos(df: pd.DataFrame, predictors: list[str], label: str) -> dict:
         "oos_r2": 1 - sse / sse_b if sse_b > 0 else np.nan,
         "mae": mean_absolute_error(y, p),
         "rmse": mean_squared_error(y, p) ** 0.5,
+        "validation": "expanding_window_temporal",
     }
 
 
