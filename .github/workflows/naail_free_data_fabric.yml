@@ -1,0 +1,33 @@
+name: NAAIL Free Data Fabric Guard
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/FREE_DATA_FABRIC.md'
+      - 'NAAIL-OpenLab/architecture/free_data_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_free_data_source_registry.py'
+      - '.github/workflows/naail_free_data_fabric.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/FREE_DATA_FABRIC.md'
+      - 'NAAIL-OpenLab/architecture/free_data_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_free_data_source_registry.py'
+      - '.github/workflows/naail_free_data_fabric.yml'
+
+jobs:
+  validate-free-data-fabric:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate registry JSON
+        run: python -m json.tool NAAIL-OpenLab/architecture/free_data_source_registry.json > /dev/null
+
+      - name: Run Free Data Fabric tests
+        run: python -m pytest -q NAAIL-OpenLab/tests/test_free_data_source_registry.py
