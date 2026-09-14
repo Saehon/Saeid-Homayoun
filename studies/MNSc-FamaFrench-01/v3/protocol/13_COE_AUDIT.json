@@ -1,0 +1,28 @@
+{
+  "study_id": "MNSc-FamaFrench-01-v3",
+  "status": "not_run",
+  "checks": {
+    "reference_verification": false,
+    "official_source_verification": false,
+    "source_hash_verification": false,
+    "reported_number_reproduction": false,
+    "specification_integrity": false,
+    "method_code_alignment": false,
+    "claim_evidence_alignment": false,
+    "python_stata_reconciliation": false,
+    "attribution_language_compliance": false
+  },
+  "blocking_findings": [],
+  "required_inputs": [
+    "successful official-data artifacts",
+    "source_manifest.csv",
+    "Tables 1-5",
+    "runtime log / RUN_SUMMARY",
+    "Stata replication outputs",
+    "red-team report",
+    "falsification report",
+    "manuscript draft"
+  ],
+  "coe_audit_gate": false,
+  "discovery_claim_allowed": false
+}
