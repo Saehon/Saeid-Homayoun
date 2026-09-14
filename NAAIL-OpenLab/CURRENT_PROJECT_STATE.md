@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This file is the compact public state checkpoint for NAAIL OpenLab. It does not replace the README, architecture, evaluation, security, citation, or research-record files. It exists so collaborators can identify the current executable state and next research milestone without relying on chat history.
+This file is the compact public state checkpoint for NAAIL OpenLab. It exists so collaborators can identify the current executable state and next research milestone without relying on chat history.
 
 ## Current validated synthetic baseline
 
@@ -30,17 +30,7 @@ These results apply only to the frozen synthetic benchmark and are not claims of
 
 ## Prototype 002 capabilities
 
-Prototype 002 adds:
-
-- explicit Materiality and Risk roles;
-- evidence-linked testing;
-- Evidence Passport™;
-- persistent Professional Decision DAG™;
-- provider-neutral model-adapter contract;
-- deterministic control adapter;
-- frozen quality metrics;
-- regression testing;
-- mandatory Human Gate.
+Prototype 002 includes explicit Materiality and Risk roles, evidence-linked testing, Evidence Passport™, a persistent Professional Decision DAG™, provider-neutral model adapters, frozen quality metrics, regression testing, and a mandatory Human Gate.
 
 Canonical workflow:
 
@@ -50,11 +40,28 @@ Canonical workflow:
 
 Prototype 003 converts the current single-case baseline into a controlled **multi-case × multi-architecture benchmark**.
 
-### Frozen case families
+### Case families
 
-1. Revenue Recognition & Cut-off — retained Prototype 002 baseline;
-2. Goodwill Impairment — new synthetic valuation/estimate case;
-3. ICFR Deficiency — new synthetic controls case.
+1. **Revenue Recognition & Cut-off** — retained Prototype 002 frozen baseline.
+2. **P003-C: SEC-Anchored Goodwill / Impairment** — restricted to exactly three public-company evidence anchors:
+   - Microsoft Corporation;
+   - Alphabet Inc. (Google);
+   - Amazon.com, Inc.
+3. **ICFR Deficiency** — controlled controls-deficiency benchmark.
+
+### Hard scope rule for P003-C
+
+P003-C may use only **SEC EDGAR / Form 10-K / iXBRL** as the real-company evidence layer. No fourth company may be added without an explicit, versioned scope change.
+
+The three companies are evidence anchors only. Controlled or synthetic transformations create benchmark scenarios, planted ambiguities/exceptions, and frozen gold labels. NAAIL must not convert those benchmark scenarios into unsupported claims that Microsoft, Alphabet, or Amazon has an undisclosed goodwill impairment, audit failure, ICFR deficiency, or deficient audit quality.
+
+Canonical P003-C scope: [PROTOTYPE_003C_SEC_SCOPE.md](./PROTOTYPE_003C_SEC_SCOPE.md)
+
+### P003-C evidence pipeline
+
+**SEC EDGAR → 10-K / iXBRL → source hash → normalized accounting evidence → Evidence Passport™ → controlled research scenario → frozen gold labels → architecture comparison → Professional Decision DAG™ → Human Gate**
+
+Target normalized evidence includes, where available and relevant, goodwill balances, goodwill/intangible notes, acquisitions and purchase-price allocation, impairment-policy disclosures, segment/reporting-unit context, management estimates and uncertainty disclosures, cash-flow/valuation-relevant disclosures, and related XBRL facts.
 
 ### Execution architectures
 
@@ -75,7 +82,7 @@ Provider/model adapters may not modify gold labels, bypass Evidence Passport™,
 
 - `P003-A` — common case/evidence/gold/run-manifest contracts;
 - `P003-B` — Revenue baseline migration;
-- `P003-C` — Goodwill Impairment case;
+- `P003-C` — SEC-anchored Goodwill / Impairment benchmark using Microsoft, Alphabet, and Amazon only;
 - `P003-D` — ICFR Deficiency case;
 - `P003-E` — four runner contracts;
 - `P003-F` — governance artifacts;
@@ -106,17 +113,7 @@ Development, validation, Blind Gold, adversarial/red-team, and temporal/modified
 
 ## Manuscript-ready outputs
 
-Prototype 003 is designed to export linked empirical tables including:
-
-- `CASE_MANIFEST`;
-- `RUN_LEVEL`;
-- `METRIC_LEVEL`;
-- `EVIDENCE_LEVEL`;
-- `DECISION_LEVEL`;
-- `HUMAN_GATE_LEVEL`;
-- `FAILURE_LOG`.
-
-These support reproducible descriptive statistics, architecture-by-case comparisons, evidence-grounding and professional-judgment tests, stability/reproducibility analysis, cost/latency analysis, human-override analysis, and robustness/falsification tests.
+Prototype 003 is designed to export linked empirical tables including `CASE_MANIFEST`, `RUN_LEVEL`, `METRIC_LEVEL`, `EVIDENCE_LEVEL`, `DECISION_LEVEL`, `HUMAN_GATE_LEVEL`, and `FAILURE_LOG`.
 
 ## First empirical study
 
@@ -130,7 +127,7 @@ No superiority claim is assumed in advance. The benchmark is designed to test th
 
 ## Candidate v0.3.0 promotion rule
 
-Do not promote v0.3.0 until the three cases are frozen/versioned/hashable; all four architectures run under identical evidence/gold/evaluation conditions; run manifests are complete; Evidence Passport™, Professional Decision DAG™, and Human Gate are enforced; regression/leakage/reproducibility tests pass; clean-environment replication succeeds; empirical outputs can be regenerated; and public artifacts pass rights, privacy, and IP review.
+Do not promote v0.3.0 until the benchmark cases are frozen/versioned/hashable; all four architectures run under identical evidence/gold/evaluation conditions; run manifests are complete; Evidence Passport™, Professional Decision DAG™, and Human Gate are enforced; regression/leakage/reproducibility tests pass; clean-environment replication succeeds; empirical outputs can be regenerated; and public artifacts pass rights, privacy, and IP review.
 
 Until those gates pass, **v0.2.2 remains the current public release**.
 
@@ -142,11 +139,11 @@ No LLM output, model score, agent consensus, or statistically significant result
 
 ## Public / private boundary
 
-Public repositories contain research-safe documentation, synthetic demonstrations, selected reproducibility artifacts, citation metadata, evaluation principles, and non-sensitive code.
+Public repositories contain research-safe documentation, SEC-source references, controlled/synthetic demonstrations, selected reproducibility artifacts, citation metadata, evaluation principles, and non-sensitive code.
 
 Patent-sensitive architecture, detailed orchestration, unpublished prompts/specifications, private benchmark logic, restricted data, pre-commercial product logic, and deeper provider/runtime implementation remain private until IP review.
 
-NAAIL OpenLab is an independent research initiative. References to Google, Microsoft, OpenAI, Big Four firms, IFRS Foundation, PCAOB, or other organizations describe public patterns, standards, research context, or interoperability targets only and do not imply affiliation or endorsement.
+NAAIL OpenLab is an independent research initiative. References to Microsoft, Alphabet/Google, Amazon, SEC, OpenAI, Big Four firms, IFRS Foundation, PCAOB, or other organizations describe public evidence, public patterns, standards, research context, or interoperability targets only and do not imply affiliation or endorsement.
 
 ## Canonical links
 
@@ -155,6 +152,7 @@ NAAIL OpenLab is an independent research initiative. References to Google, Micro
 - Prototype status: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_STATUS_V0.4.md
 - Next-version plan: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/NEXT_VERSION_PLAN.md
 - Prototype 003 execution spec: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_003_EXECUTION_SPEC.md
+- Prototype 003-C SEC scope: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_003C_SEC_SCOPE.md
 - Execution tracker: https://github.com/Saehon/Saeid-Homayoun/issues/18
 - Portfolio index: https://github.com/Saehon/Saeid-Homayoun/blob/main/GITHUB_PORTFOLIO_INDEX.md
 - ORCID: https://orcid.org/0000-0002-2536-0446
