@@ -1,0 +1,20 @@
+# Default ownership for ECONOVA-S™ public repository
+* @Saehon
+
+# Scientific architecture and governance
+README.md @Saehon
+ABSTRACT.md @Saehon
+CITATION.cff @Saehon
+GOVERNANCE.md @Saehon
+LICENSE @Saehon
+COMMERCIAL_LICENSE.md @Saehon
+IP_NOTICE.md @Saehon
+PATENT_PRESERVATION.md @Saehon
+PRIVATE_IMPLEMENTATION_POLICY.md @Saehon
+
+# Executable prototypes
+/prototype/ @Saehon
+/prototype_v02/ @Saehon
+
+# GitHub automation and contribution controls
+/.github/ @Saehon
