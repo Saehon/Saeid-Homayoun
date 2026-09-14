@@ -1,0 +1,127 @@
+{
+  "registry_name": "NAAIL OpenLab Open-Source Agent Education Stack",
+  "registry_version": "0.1.0",
+  "naail_target": "v0.2.4",
+  "validated_public_release": "v0.2.3",
+  "policy": {
+    "integration_mode": "reference-and-adapter; no upstream ownership transfer",
+    "license_rule": "verify the current upstream license and release-specific terms before installation, modification, redistribution, or packaging",
+    "model_terms_rule": "model weights and hosted APIs are governed separately from agent-framework licenses",
+    "professional_rule": "all material outputs remain subject to NAAIL evidence controls and Human Gate",
+    "execution_rule": "registry inclusion does not mean installed, executed, benchmarked, security-reviewed, or validated"
+  },
+  "projects": [
+    {
+      "name": "Google Agent Development Kit (ADK)",
+      "tier": "core",
+      "repository": "https://github.com/google/adk-python",
+      "naail_role": "code-first agent orchestration, classroom labs, comparative multi-agent experiments",
+      "integration_status": "adapter-target",
+      "recommended_lab": "enterprise-orchestration-comparison"
+    },
+    {
+      "name": "Microsoft Agent Framework",
+      "tier": "core",
+      "repository": "https://github.com/microsoft/agent-framework",
+      "naail_role": "enterprise-style orchestration, workflow comparison, Microsoft-aligned education",
+      "integration_status": "adapter-target",
+      "recommended_lab": "enterprise-orchestration-comparison"
+    },
+    {
+      "name": "CAMEL-AI",
+      "tier": "core",
+      "repository": "https://github.com/camel-ai/camel",
+      "naail_role": "multi-agent role simulation, debate, auditor-client-regulator experiments",
+      "integration_status": "adapter-target",
+      "recommended_lab": "audit-digital-twin-simulation"
+    },
+    {
+      "name": "Hugging Face smolagents",
+      "tier": "core",
+      "repository": "https://github.com/huggingface/smolagents",
+      "naail_role": "lightweight student agents, tool use and code-agent exercises",
+      "integration_status": "adapter-target",
+      "recommended_lab": "low-cost-classroom"
+    },
+    {
+      "name": "Haystack",
+      "tier": "core",
+      "repository": "https://github.com/deepset-ai/haystack",
+      "naail_role": "evidence-grounded RAG, retrieval, routing and evaluation",
+      "integration_status": "adapter-target",
+      "recommended_lab": "evidence-rag-laboratory"
+    },
+    {
+      "name": "Model Context Protocol Python SDK",
+      "tier": "core",
+      "repository": "https://github.com/modelcontextprotocol/python-sdk",
+      "naail_role": "standardized tool, resource and prompt interoperability",
+      "integration_status": "adapter-target",
+      "recommended_lab": "tool-interoperability"
+    },
+    {
+      "name": "Ollama",
+      "tier": "core",
+      "repository": "https://github.com/ollama/ollama",
+      "naail_role": "local-model runtime for low-cost and offline-compatible teaching",
+      "integration_status": "runtime-target",
+      "recommended_lab": "low-cost-classroom"
+    },
+    {
+      "name": "LlamaIndex",
+      "tier": "extended",
+      "repository": "https://github.com/run-llama/llama_index",
+      "naail_role": "data/RAG interfaces and knowledge-base experiments",
+      "integration_status": "reference-target",
+      "recommended_lab": "evidence-rag-laboratory"
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "tier": "extended",
+      "repository": "https://github.com/openai/openai-agents-python",
+      "naail_role": "handoffs, tools and multi-agent orchestration comparison",
+      "integration_status": "reference-target",
+      "recommended_lab": "enterprise-orchestration-comparison"
+    },
+    {
+      "name": "GPT Researcher",
+      "tier": "extended",
+      "repository": "https://github.com/assafelovic/gpt-researcher",
+      "naail_role": "autonomous research workflow experiments and source synthesis",
+      "integration_status": "reference-target",
+      "recommended_lab": "research-coscientist"
+    },
+    {
+      "name": "Browser Use",
+      "tier": "extended",
+      "repository": "https://github.com/browser-use/browser-use",
+      "naail_role": "browser-based evidence collection experiments",
+      "integration_status": "reference-target",
+      "recommended_lab": "research-coscientist"
+    },
+    {
+      "name": "OpenHands",
+      "tier": "extended",
+      "repository": "https://github.com/OpenHands/OpenHands",
+      "naail_role": "coding and data-science agent experiments",
+      "integration_status": "reference-target",
+      "recommended_lab": "reproducible-coding"
+    },
+    {
+      "name": "MetaGPT",
+      "tier": "extended",
+      "repository": "https://github.com/FoundationAgents/MetaGPT",
+      "naail_role": "role-based multi-agent team simulation",
+      "integration_status": "reference-target",
+      "recommended_lab": "audit-digital-twin-simulation"
+    },
+    {
+      "name": "CrewAI",
+      "tier": "extended",
+      "repository": "https://github.com/crewAIInc/crewAI",
+      "naail_role": "accessible role-and-task multi-agent teaching exercises",
+      "integration_status": "reference-target",
+      "recommended_lab": "audit-digital-twin-simulation"
+    }
+  ]
+}
