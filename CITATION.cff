@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use or build on ECONOVA-S™, please cite this repository."
-title: "ECONOVA-S: An FT50- and AJG/ABS 4*/4-Grounded Dual-Core Architecture for Autonomous Scientific Discovery in AI, Data Economy, Finance, and Sustainable Welfare"
+title: "ECONOVA-S: An FT50- and AJG/ABS 4*/4-Grounded Dual-Core Architecture for Governed AI Scientific Discovery in Economics and Finance — Architecture and Proof of Concept"
 type: software
 authors:
   - family-names: "Homayoun"
@@ -10,7 +10,7 @@ version: "2.5"
 date-released: "2026-09-14"
 repository-code: "https://github.com/Saehon/Saeid-Homayoun"
 abstract: >-
-  ECONOVA-S is a dual-core scientific economic intelligence architecture grounded in a systematic, relevance-gated synthesis of current FT50 and AJG/ABS 4*/4 research. It separates a Stable Economic Knowledge Core from a Replaceable Technology Core and integrates systems thinking, causal DAG governance, behavioral experimentation, econometric identification, multi-agent hypothesis generation, ERA-style empirical conversion, AlphaEvolve-inspired evolutionary search, AlphaFold-inspired latent-structure reasoning, independent replication, adversarial review, reproducibility, welfare interpretation, and explicit human approval before scientific-discovery claims.
+  ECONOVA-S is a dual-core scientific economic intelligence architecture grounded in a systematic, relevance-gated synthesis of current FT50 and AJG/ABS 4*/4 research. It separates a Stable Economic Knowledge Core from a Replaceable Technology Core and uses a supporting AI-to-AI Scientific Intelligence Fabric for governed hypothesis generation, empirical conversion, specification search, independent review, replication, falsification, welfare interpretation, Evidence Passport construction, and human approval. POC-001 demonstrates computational and governance feasibility through an executable synthetic firm-year pipeline centered on Data Capability, Green Innovation, Firm Value, and Social Data Value. The POC is demonstration evidence only: results are associational, synthetic estimates are not treated as economic findings, and discovery_claim_allowed remains false pending real-data validation, credible identification, replication, and human scientific judgment.
 keywords:
   - artificial intelligence
   - economics
@@ -21,3 +21,4 @@ keywords:
   - econometrics
   - sustainability
   - welfare
+  - proof of concept
