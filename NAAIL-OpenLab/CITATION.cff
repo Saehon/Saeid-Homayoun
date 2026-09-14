@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use NAAIL OpenLab™ in research, education, benchmarking, or Digital Twin studies, please cite this software."
+title: "NAAIL OpenLab: An Evidence-Governed AI Platform for Business-School Education, Audit Digital Twins, and Reproducible Scientific Discovery"
+type: software
+authors:
+  - family-names: "Homayoun"
+    given-names: "Saeid"
+    orcid: "https://orcid.org/0000-0002-2536-0446"
+version: "0.3.0"
+date-released: "2026-09-14"
+repository-code: "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab"
+url: "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab"
+abstract: >-
+  NAAIL OpenLab is a research-first, human-led artificial intelligence platform for business-school education, audit simulation, and reproducible scientific discovery. It combines a Stable Knowledge Core and Replaceable Technology Core through an Adaptive Intelligence Fabric, with an Audit Digital Twin, governed multi-agent workflows, evidence provenance, FT50 and AJG-informed research intelligence, adversarial review, falsification, replication, and human approval. Auditing is the first deep implementation vertical, using fictional audit-firm archetypes and synthetic client cases for research and education.
+keywords:
+  - accounting
+  - auditing
+  - assurance
+  - finance
+  - economics
+  - artificial intelligence
+  - multi-agent systems
+  - digital twin
+  - audit analytics
+  - professional judgment
+  - scientific discovery
+  - reproducibility
+  - evidence provenance
+  - business education
+  - research software
