@@ -1,0 +1,69 @@
+name: Free Digital Twin Simulations
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/simulations/free-stack/**'
+      - 'NAAIL-OpenLab/agents/ifrs/**'
+      - 'NAAIL-OpenLab/agents/pcaob/**'
+      - '.github/workflows/free_digital_twin_simulations.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/simulations/free-stack/**'
+      - 'NAAIL-OpenLab/agents/ifrs/**'
+      - 'NAAIL-OpenLab/agents/pcaob/**'
+      - '.github/workflows/free_digital_twin_simulations.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-free-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run IFRS synthetic Digital Twin
+        run: |
+          python NAAIL-OpenLab/simulations/free-stack/run_simulation.py \
+            --agent ifrs \
+            --input NAAIL-OpenLab/simulations/free-stack/examples/ifrs_synthetic_case.json \
+            --output /tmp/ifrs_result.json
+      - name: Run PCAOB synthetic Digital Twin
+        run: |
+          python NAAIL-OpenLab/simulations/free-stack/run_simulation.py \
+            --agent pcaob \
+            --input NAAIL-OpenLab/simulations/free-stack/examples/pcaob_synthetic_case.json \
+            --output /tmp/pcaob_result.json
+      - name: Enforce governance invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for path in [Path('/tmp/ifrs_result.json'), Path('/tmp/pcaob_result.json')]:
+              result = json.loads(path.read_text())
+              assert result['simulation_mode'] == 'deterministic_free_core'
+              assert result['human_gate'] == 'PENDING_HUMAN_APPROVAL'
+              assert result['decision_dag_status'] == 'REVIEW_REQUIRED'
+              assert result['discovery_claim_allowed'] is False
+              assert result['evidence_class'] in {'synthetic', 'public', 'licensed'}
+              assert result['findings']
+          print('Free Digital Twin governance invariants passed.')
+          PY
+      - name: Validate source registry policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          registry = json.loads(Path('NAAIL-OpenLab/simulations/free-stack/source_registry.json').read_text())
+          policy = registry['policy']
+          assert policy['authoritative_sources_override_convenience_sources'] is True
+          assert policy['license_review_required_before_redistribution'] is True
+          assert policy['model_output_is_authoritative_evidence'] is False
+          assert policy['ifrs_full_standard_text_bundled'] is False
+          assert policy['nonpublic_pcaob_data_assumed_available'] is False
+          print('Source registry policy passed.')
+          PY
