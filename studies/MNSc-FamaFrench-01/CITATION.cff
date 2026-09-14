@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this study or replication package, please cite Saeid Homayoun and the MNSc–FamaFrench–01 GitHub study page."
+title: "When Data Construction Changes Asset Pricing: The FIZ–CIZ Transition and the Stability of Fama–French Factors"
+type: software
+authors:
+  - family-names: "Homayoun"
+    given-names: "Saeid"
+    orcid: "https://orcid.org/0000-0002-2536-0446"
+repository-code: "https://github.com/Saehon/Saeid-Homayoun"
+url: "https://github.com/Saehon/Saeid-Homayoun/tree/main/studies/MNSc-FamaFrench-01"
+abstract: >-
+  MNSc–FamaFrench–01 is an ECONOVA-S research study and replication package examining the stability of Fama–French factors, benchmark portfolios, asset-pricing alphas, and statistical conclusions across official July 2024 FIZ-era and July 2025 CIZ-era Kenneth R. French archive snapshots. The study is governed as a reproducibility and measurement-change project and does not treat the two-vintage comparison as identifying the pure causal effect of the FIZ-to-CIZ transition.
+keywords:
+  - asset pricing
+  - Fama-French
+  - FIZ
+  - CIZ
+  - data construction
+  - reproducibility
+  - replication
+  - measurement
+  - econometrics
+  - research software
+preferred-citation:
+  type: software
+  authors:
+    - family-names: "Homayoun"
+      given-names: "Saeid"
+      orcid: "https://orcid.org/0000-0002-2536-0446"
+  title: "When Data Construction Changes Asset Pricing: The FIZ–CIZ Transition and the Stability of Fama–French Factors"
+  repository-code: "https://github.com/Saehon/Saeid-Homayoun"
+  url: "https://github.com/Saehon/Saeid-Homayoun/tree/main/studies/MNSc-FamaFrench-01"
