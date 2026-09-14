@@ -106,4 +106,12 @@ Before runtime use: verify exact repository/ref, license, dependencies, security
 - **ERP Digital Twin Lab™:** transaction/process generation for synthetic Client XYZ.
 - **POMELO™ / VERA™:** evidence verification and professional judgment.
 
+## Publication synchronization
+
+**GitHub:** public canonical research/documentation source.  
+**Google Drive:** working mirror maintained in the `NAAIL OpenLab` folder.  
+**Sync recorded:** 2026-09-14.
+
+The Google Drive mirror is a working copy and does not change the repository's licensing, provenance, or Knowledge/RAG Core governance rules.
+
 NAAIL OpenLab™ is independent. References to Audit Analytics, universities, regulators and GitHub projects do not imply affiliation, endorsement, certification or ownership transfer.
