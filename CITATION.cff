@@ -1,12 +1,23 @@
 cff-version: 1.2.0
 message: "If you use or build on ECONOVA-S™, please cite this repository."
-title: "ECONOVA-S: A Dual-Core Scientific Economic Intelligence Architecture for Autonomous AI, Data Economy, Finance, and Sustainable Welfare Discovery"
+title: "ECONOVA-S: An FT50- and AJG/ABS 4*/4-Grounded Dual-Core Architecture for Autonomous Scientific Discovery in AI, Data Economy, Finance, and Sustainable Welfare"
 type: software
 authors:
   - family-names: "Homayoun"
     given-names: "Saeid"
+    orcid: "https://orcid.org/0000-0002-2536-0446"
 version: "2.5"
 date-released: "2026-09-14"
 repository-code: "https://github.com/Saehon/Saeid-Homayoun"
 abstract: >-
-  ECONOVA-S is a dual-core scientific economic intelligence architecture that separates a stable economic knowledge core from a replaceable technology core. It integrates systems thinking, causal DAGs, FT50/AJG4* evidence, behavioral experimentation, econometric identification, multi-agent hypothesis generation, evolutionary model search, latent-structure reasoning, independent replication, adversarial review, reproducibility, welfare interpretation, and human approval before scientific-discovery claims.
+  ECONOVA-S is a dual-core scientific economic intelligence architecture grounded in a systematic, relevance-gated synthesis of current FT50 and AJG/ABS 4*/4 research. It separates a Stable Economic Knowledge Core from a Replaceable Technology Core and integrates systems thinking, causal DAG governance, behavioral experimentation, econometric identification, multi-agent hypothesis generation, ERA-style empirical conversion, AlphaEvolve-inspired evolutionary search, AlphaFold-inspired latent-structure reasoning, independent replication, adversarial review, reproducibility, welfare interpretation, and explicit human approval before scientific-discovery claims.
+keywords:
+  - artificial intelligence
+  - economics
+  - finance
+  - data economy
+  - scientific discovery
+  - multi-agent systems
+  - econometrics
+  - sustainability
+  - welfare
