@@ -55,6 +55,18 @@ Permitted architecture inputs include public PCAOB materials, SEC/public filings
 
 The system must never imply access to non-public PCAOB inspection files, confidential firm methodologies, protected client information, or restricted regulator data unless a separately authorized environment explicitly provides lawful access.
 
+## Free simulation edition
+
+A **zero-paid-API deterministic simulation** is available at [`../../simulations/free-stack/`](../../simulations/free-stack/). It uses a synthetic Audit Engagement XYZ fixture and can run with standard Python locally or in GitHub Actions.
+
+For empirical extensions, the preferred evidence path is public PCAOB inspection-report data plus SEC/public filings. Kaggle datasets and GitHub repositories are optional convenience adapters only after license/provenance review. Hugging Face models may assist similarity, classification, or retrieval, but model output is never treated as PCAOB authority.
+
+Quick start:
+
+```bash
+python NAAIL-OpenLab/simulations/free-stack/run_simulation.py --agent pcaob --input NAAIL-OpenLab/simulations/free-stack/examples/pcaob_synthetic_case.json
+```
+
 ## Scientific governance
 
 The PCAOB family inherits the NAAIL Scientific Discovery Contract, Evidence Passport™, Chain-of-Evidence, adversarial review, falsification, independent replication/OOS validation, Failure Memory™, Decision DAG™, and mandatory Human Gate.
