@@ -1,0 +1,29 @@
+name: NAAIL ERP Digital Twin Lab
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/ERP_DIGITAL_TWIN_LAB.md'
+      - 'NAAIL-OpenLab/architecture/erp_open_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_erp_open_source_registry.py'
+      - '.github/workflows/naail_erp_digital_twin_lab.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/ERP_DIGITAL_TWIN_LAB.md'
+      - 'NAAIL-OpenLab/architecture/erp_open_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_erp_open_source_registry.py'
+      - '.github/workflows/naail_erp_digital_twin_lab.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-erp-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip pytest
+      - run: pytest -q NAAIL-OpenLab/tests/test_erp_open_source_registry.py
