@@ -1,166 +1,227 @@
 # ECONOVA-S™
-## A Dual-Core Scientific Economic Intelligence Architecture for Autonomous AI, Data Economy, Finance, and Sustainable Welfare Discovery
 
-**Author:** Saeid Homayoun  
-**Version:** 2.5 — Canonical Research Architecture  
-**Status:** Research architecture / implementation roadmap  
+### Governed scientific economic intelligence for AI, data economy, finance and sustainable welfare research
 
-## Abstract
+ECONOVA-S™ is an independent research-software platform for **AI-assisted scientific discovery with explicit economic theory, real-data provenance, econometric identification, replication, adversarial review and human scientific governance**.
 
-Artificial intelligence is increasingly capable of generating hypotheses, executing analytical workflows, and coordinating specialized agents, yet scientific and economic research still lacks a durable architecture that separates stable domain knowledge from rapidly changing technological infrastructure. **ECONOVA-S™** proposes a dual-core scientific economic intelligence architecture for studying how data and AI affect information, beliefs, decisions, resource allocation, innovation, productivity, financial markets, sustainability, and social welfare. The architecture contains exactly two permanent cores. The **Stable Economic Knowledge Core™** maintains economic theory, FT50 and AJG/ABS 4*/4 evidence, causal directed acyclic graphs, construct and Variable DNA specifications, econometric identification rules, behavioral and experimental economics protocols, finance and asset-pricing knowledge, climate and sustainability mechanisms, replication benchmarks, falsification standards, and private-versus-social value functions. The **Replaceable Technology Core™** contains interchangeable large language models, agent runtimes, Stata/EViews/R/Python adapters, Qualtrics, retrieval systems, graph/vector databases, model routers, simulators, and emerging AI protocols, allowing technological upgrades without silently changing scientific meaning.
+> **AI explores. Economics constrains. Evidence verifies. Humans approve.**
 
-Between the two cores, an **AI-to-AI Scientific Intelligence Fabric™** coordinates a Mirendil-inspired autonomous R&D loop, Google Co-Scientist-style hypothesis generation and critique, ERA-style empirical conversion, AlphaEvolve-inspired evolutionary search, Computational Discovery, and AlphaFold-inspired latent-structure reasoning. The framework requires a systems map and causal DAG before testing, replication of established results before extension, chronology-safe and out-of-sample evaluation where appropriate, independent adversarial review, robustness and falsification, reproducibility, economic-significance assessment, welfare interpretation, and explicit human approval before any finding is treated as a scientific discovery. ECONOVA-S therefore treats AI not as an autonomous authority but as a governed scientific search and execution system. Its central research question is: **When does data become information, and when does information become economic and social value?**
+## Project status
 
-## Research Foundation: FT50 and AJG/ABS 4*/4
+| Layer | Status |
+|---|---|
+| Canonical architecture | **V2.5** |
+| Latest citable software version | **v0.2.0** |
+| Active development | **v0.3 — official public data + first real empirical study** |
+| Flagship real-data study | **MNSc–FamaFrench–01: FIZ→CIZ measurement transition** |
+| Scientific claim status | `discovery_claim_allowed = false` |
 
-ECONOVA-S™ was designed through a **systematic, relevance-gated synthesis of current research from FT50 and AJG/ABS 4*/4 journals and closely related top-tier research streams** in economics, finance, accounting, information systems, strategy, organization science, operations, sustainability, behavioral economics, and AI-enabled decision making.
+**Maintainer:** Saeid Homayoun  
+**ORCID:** [0000-0002-2536-0446](https://orcid.org/0000-0002-2536-0446)
 
-The architecture therefore does not treat frontier AI methods as substitutes for established scholarship. Economic mechanisms, construct definitions, causal assumptions, variable design, identification strategies, empirical benchmarks, robustness standards, and welfare interpretation are grounded in the relevant top-journal literature before they are exposed to AI-assisted search, model evolution, or autonomous experimentation.
+---
 
-The evidence layer is intentionally **living rather than frozen**: new relevant FT50 and AJG/ABS 4*/4 research is incorporated into the Knowledge Core through literature validation and benchmark updates without changing the two-core architecture itself. ECONOVA-S uses this literature to support theory formation, hypothesis design, measurement, econometrics, causal reasoning, replication, falsification, out-of-sample validation, and scientific acceptance criteria.
+## Why ECONOVA-S?
 
-For academic accuracy, this statement means the architecture is systematically benchmarked against the **relevant current literature across these leading journal sets**; it does not claim that every article ever published in every FT50 or AJG/ABS 4*/4 journal has been individually reviewed.
+Modern AI can generate hypotheses, search large design spaces and execute analytical workflows, but scientific research requires more than model capability. ECONOVA-S separates **stable scientific meaning** from **replaceable technology** and places explicit verification gates between hypothesis generation and scientific claims.
 
-## Architectural Principle
-
-> **Stable Economic Meaning + Living Evidence + Replaceable Technology + Independent Scientific Verification**
-
-```text
-┌──────────────────────────────────────────────────────────────┐
-│            STABLE ECONOMIC KNOWLEDGE CORE™                  │
-│ Economics • Finance • Data Economy • Behavioral Economics   │
-│ FT50/AJG4* Evidence • Causal DAGs • Variable DNA™           │
-│ Identification • Replication • Sustainability • Welfare     │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-                   Economic Intelligence Contract™
-                               │
-═══════════════════════════════╪════════════════════════════════
-             AI-to-AI SCIENTIFIC INTELLIGENCE FABRIC™
-                               │
- Co-Scientist → ERA → AlphaEvolve → Computational Discovery
- → Latent Structure Discovery → Econometrics → Replication
- → Scientific Red Team → FT50 Benchmark → Welfare Analysis
- → Evidence Passport™ → Human Gate
-═══════════════════════════════╪════════════════════════════════
-                               │
-┌──────────────────────────────▼───────────────────────────────┐
-│              REPLACEABLE TECHNOLOGY CORE™                   │
-│ Current/Future LLMs • Stata • EViews • R • Python           │
-│ Qualtrics • GraphRAG/Vector RAG • MCP/A2A • Simulators      │
-│ Model/Agent Router • Databases • Evaluation • Compute       │
-└──────────────────────────────────────────────────────────────┘
-```
-
-## Canonical Scientific Discovery Protocol
-
-1. **Systems Thinking and Causal DAG** — define mechanisms, feedback loops, constraints, externalities, and causal assumptions before estimation.
-2. **FT50/AJG4* Evidence Prior** — establish theory, constructs, established empirical regularities, measurement conventions, and benchmark results.
-3. **Co-Scientist Hypothesis Tournament** — generate, critique, rank, debate, and improve competing hypotheses.
-4. **Replication Before Extension** — follow *Known Fact → Replicate → Extend → Discover*.
-5. **ERA-Style Empirical Conversion** — translate hypotheses into real-data designs with variables, identification, code, metrics, robustness tests, and replication artifacts.
-6. **AlphaEvolve / Computational Discovery** — compare and evolve admissible constructs, algorithms, measures, estimators, and specifications using scientific fitness criteria rather than p-values.
-7. **AlphaFold-Inspired Latent-Structure Reasoning** — search for hidden economic representations, factors, and mechanisms, followed by economic interpretation and external validation.
-8. **Econometrics / Experimentation** — descriptive statistics, correlations, regression or treatment effects, identification, diagnostics, uncertainty, and economic magnitude.
-9. **Independent AI-to-AI Review** — separate generator, econometrician, critic, replicator, benchmarker, and welfare roles where feasible.
-10. **Falsification and OOS Validation** — placebo tests, alternative measures, temporal holdouts, chronology controls, replication, and out-of-sample evaluation where appropriate.
-11. **Chain-of-Evidence and Evidence Passport™** — preserve a traceable path from question to theory, data, code, result, robustness, replication, and interpretation.
-12. **Human Gate** — no scientific-discovery claim without explicit human judgment and approval.
-
-## Discovery Acceptance Rule
-
-A result is **not** a scientific discovery merely because it is novel, statistically significant, or predictively accurate.
-
-A discovery candidate must survive:
-
-- literature validation;
-- construct and measurement validation;
-- data-quality and provenance checks;
-- identification classification;
-- replication where feasible;
-- independent adversarial review;
-- robustness and falsification;
-- temporal/out-of-sample validation where relevant;
-- reproducibility;
-- economic significance;
-- welfare interpretation; and
-- human approval.
-
-## Core Economic System
-
-```text
-Data
-  ↓
-Information
-  ↓
-Beliefs / Mental Models
-  ↓
-Human / AI Decisions
-  ↓
-Resource Allocation
-  ↓
-Innovation / Productivity
-  ↓
-Firm and Market Outcomes
-  ↓
-Environmental / Privacy / Market-Power Externalities
-  ↓
-Social Welfare
-  ↺
-New Data and Learning
-```
-
-The framework distinguishes **Private Data Value**, **Sustainable Data Value**, and **Social Data Value** rather than assuming that private profitability equals social value.
-
-## Permanent Scientific Capabilities
-
-- Systems & Causal DAG Agent™
-- FT50/AJG4* Evidence Graph Agent™
-- Variable DNA & Construct Agent™
-- Econometrics & Identification Agent™
-- Behavioral/Qualtrics Experiment Agent™
-- Replication & FT50 Benchmark Agent™
-- Scientific Red-Team Agent™
-- Discovery & Evolution Agent™
-- Welfare & Economic Value Agent™
-
-All other specialized agents are treated as sub-agents, tools, adapters, or replaceable implementations rather than permanent cores.
-
-## Empirical Output Standard
-
-A standard ECONOVA-S empirical study targets:
-
-- **Table 1:** Variable definitions and construction
-- **Table 2:** Descriptive statistics
-- **Table 3:** Correlations
-- **Table 4:** Main regressions / primary treatment effects
-- **Table 5:** Robustness and falsification
-- **Table 6:** FT50/AJG4* replication and benchmark comparison
-
-Supporting artifacts include a causal DAG, Variable DNA, data-provenance manifest, analysis code, model/tool versions, replication package, red-team report, benchmark report, Evidence Passport, and human-decision record.
-
-## Initial Implementation Sequence
-
-1. **Data Value Engine**
-2. **Empirical Discovery & FT50 Benchmark Engine**
-3. **AI Productivity & Human–AI Complementarity Engine**
-4. **Green Innovation & Climate-Finance Transmission Engine**
-5. **Resource Allocation & Market Design Engine**
-6. **Externalities Engine**
-7. **Welfare Engine**
-
-## Methodological Positioning
-
-ECONOVA-S draws methodological inspiration from frontier work on AI-assisted scientific discovery, multi-agent reasoning, computational experimentation, human–AI complementarity, behavioral information experiments, data economics, AI in finance, and sustainability economics. These technological and methodological components are embedded within a scientific foundation that is continuously validated against relevant current FT50 and AJG/ABS 4*/4 research. References to Co-Scientist, AlphaEvolve, AlphaFold/DeepMind Science, Mirendil, and related systems describe **architectural inspiration unless the corresponding system is actually executed**.
-
-## Canonical Research Question
+The central question is:
 
 > **When does data become information, and when does information become economic and social value?**
 
-## Governing Rule
+ECONOVA-S is designed around exactly two permanent cores:
 
-> **AI explores broadly. Economics constrains. Data tests. Adversaries challenge. Replication verifies. Welfare interprets. Humans decide.**
+1. **Stable Economic Knowledge Core™** — theory, causal DAGs, Variable DNA™, identification, replication, welfare and scientific acceptance criteria.
+2. **Replaceable Technology Core™** — LLMs, retrieval, Python/R/Stata/EViews, databases, tools, model routers and emerging AI infrastructure.
 
-## Repository Development Status
+A supporting **AI-to-AI Scientific Intelligence Fabric™** connects the cores; it is not a third core.
 
-This repository currently documents the canonical research architecture. The next development stage is implementation of the first reproducible empirical engine using real economic, financial, climate, and sustainability data.
+[Read the canonical architecture →](ARCHITECTURE.md)
+
+---
+
+## What is implemented now
+
+The public repository currently includes:
+
+- GPT-5.6 Sol as a **replaceable** model backend in supported deployments;
+- Co-Scientist-style hypothesis generation and critique;
+- ERA-style empirical conversion;
+- AlphaEvolve-inspired scientific specification search;
+- evidence-grounded metadata RAG;
+- real-data ingestion and provenance controls;
+- official **Fama–French** data adapters;
+- official **Damodaran / NYU Stern** industry-data adapters;
+- **SEC EDGAR XBRL CompanyFacts** ingestion with filing-date chronology safeguards;
+- six-table econometric reporting;
+- fixed-effects and clustered/HC3 inference where specified;
+- temporal/out-of-sample checks;
+- Stata `.do` export;
+- independent scientific red-team review;
+- Evidence Passport™;
+- explicit Human Gate™.
+
+See the [Research Software Card](RESEARCH_SOFTWARE_CARD.md) for intended use, limitations and governance.
+
+---
+
+## Flagship v0.3 real-data study
+
+### MNSc–FamaFrench–01
+**When Data Construction Changes Asset Pricing: The FIZ–CIZ Transition and the Stability of Fama–French Factors**
+
+The study compares official Kenneth R. French historical archive snapshots across the CRSP **FIZ → CIZ** return-construction transition using a common monthly sample.
+
+It implements:
+
+- **Data Construction Sensitivity (DCS)**;
+- factor-premium stability with HAC/Newey–West inference;
+- CAPM, FF3 and FF5 alpha comparison;
+- sign/significance **Conclusion Reversal** detection;
+- subperiod robustness;
+- six publication-style output tables;
+- source SHA-256 fingerprints;
+- `RUN_SUMMARY.md`;
+- `evidence_passport.json`.
+
+[Open the study →](studies/MNSc-FamaFrench-01/)  
+[Run engine →](studies/MNSc-FamaFrench-01/run_study.py)
+
+### Run locally
+
+```bash
+git clone https://github.com/Saehon/Saeid-Homayoun.git
+cd Saeid-Homayoun/studies/MNSc-FamaFrench-01
+
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS/Linux
+# source .venv/bin/activate
+
+pip install -r requirements.txt
+pytest -q
+python run_study.py --old 2024 --new 2025 --output artifacts
+```
+
+Expected artifacts include Tables 1–6, DCS measures, alpha comparisons, Conclusion Reversal flags, source hashes and an Evidence Passport.
+
+---
+
+## Scientific workflow
+
+```text
+Economic Question
+→ Systems Map / Causal DAG
+→ Top-journal Evidence Prior
+→ Competing Hypothesis Tournament
+→ Replicate Known Fact
+→ ERA-style Empirical Design
+→ Variable DNA™
+→ Real Data + Provenance
+→ Econometrics / Experimentation
+→ Scientific Search
+→ OOS / Independent Replication
+→ Scientific Red Team
+→ Falsification
+→ Economic Magnitude
+→ Welfare Interpretation
+→ Evidence Passport™
+→ Human Gate
+```
+
+References to Co-Scientist, AlphaEvolve, AlphaFold/DeepMind Science, Mirendil and related systems describe **architectural inspiration unless the external system is actually executed**.
+
+---
+
+## Scientific assurance
+
+ECONOVA-S does **not** treat novelty, statistical significance, predictive accuracy or LLM confidence as sufficient evidence of scientific discovery.
+
+Every serious claim is expected to pass the relevant gates for:
+
+- literature validity;
+- construct/measurement validity;
+- data provenance;
+- identification;
+- robustness and falsification;
+- chronology/leakage control;
+- replication or OOS validation;
+- economic significance;
+- welfare interpretation;
+- explicit human approval.
+
+[Read the Scientific Assurance Standard →](SCIENTIFIC_ASSURANCE.md)
+
+---
+
+## Data-source policy
+
+ECONOVA-S prefers **authoritative primary sources** over mirrors.
+
+Current public-data stack:
+
+| Source | Primary role |
+|---|---|
+| Kenneth R. French Data Library | factor structure, asset-pricing portfolios, historical archives |
+| SEC EDGAR / XBRL CompanyFacts | chronology-aware firm fundamentals |
+| Aswath Damodaran / NYU Stern | industry valuation, growth and cost-of-capital benchmarks |
+| Climate TRACE / verified user data | climate and emissions extensions |
+
+GitHub and Kaggle may be used for replication examples or frozen mirrors, but should not silently replace an available authoritative source.
+
+[Read the data-source and provenance policy →](DATA_SOURCES.md)
+
+---
+
+## Repository map
+
+```text
+README.md                         Project landing page
+ARCHITECTURE.md                   Canonical V2.5 scientific architecture
+SCIENTIFIC_ASSURANCE.md           Claim classes and scientific gates
+RESEARCH_SOFTWARE_CARD.md         Intended use, limitations and governance
+DATA_SOURCES.md                   Authoritative data/provenance policy
+PROJECT_STATUS.md                 Current implementation status
+ROADMAP.md                        Software and science roadmap
+CITATION.cff                      Machine-readable citation metadata
+LICENSE                           Research/non-commercial license
+prototype/                        v0.1 GPT-backed prototype
+prototype_v02/                    v0.2 real-data + evidence-RAG workbench
+prototype_v03/                    v0.3 official public-data ingestion layer
+studies/MNSc-FamaFrench-01/       First frozen real-data empirical study
+.github/                          CI, issue forms, PR template and ownership
+```
+
+---
+
+## Citation
+
+If you use or build on ECONOVA-S™, cite the repository using [`CITATION.cff`](CITATION.cff).
+
+**Software versioning note:** Canonical Architecture **V2.5** and software release **v0.2.0** are separate version tracks. v0.3 is active development until formally released.
+
+---
+
+## License and commercial use
+
+This repository is available for research, teaching, personal study and permitted non-commercial experimentation under the repository license. Commercial products, SaaS/API services, client delivery, for-profit internal deployment or other commercial exploitation require prior written permission.
+
+See:
+
+- [`LICENSE`](LICENSE)
+- [`COMMERCIAL_LICENSE.md`](COMMERCIAL_LICENSE.md)
+- [`IP_NOTICE.md`](IP_NOTICE.md)
+- [`TRADEMARK_NOTICE.md`](TRADEMARK_NOTICE.md)
+
+---
+
+## Independence
+
+ECONOVA-S™ is an **independent research project**. References to OpenAI, Microsoft, Google, DeepMind or other organizations, models or research systems identify technologies, inspiration or interoperability targets only and do not imply sponsorship, endorsement or organizational affiliation unless explicitly documented.
+
+---
+
+## Current priority
+
+The immediate research priority is to complete and archive the official **FIZ→CIZ real-data run**, then extend the study with reduced-rank factor-dimension analysis, multiplicity/FDR reliability analysis, independent replication, and chronology-safe SEC/Damodaran firm-level extensions.
