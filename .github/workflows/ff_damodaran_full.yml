@@ -1,0 +1,56 @@
+name: FF-Damodaran Full Baseline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install study dependencies
+        run: pip install -r studies/FF-Damodaran-Discovery-01/requirements-study.txt
+      - name: Verify reviewed crosswalk is non-empty
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          p = Path('crosswalk/reviewed_crosswalk.csv')
+          rows = list(csv.DictReader(p.open()))
+          approved = [r for r in rows if str(r.get('approved','')).strip().lower() in {'true','1','yes','y'}]
+          if not approved:
+              raise SystemExit('No approved mappings in reviewed_crosswalk.csv. Run Prepare Crosswalk and complete human review first.')
+          print(f'Approved crosswalk rows: {len(approved)}')
+          PY
+      - name: Download authoritative provider data
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/download_sources.py
+      - name: Build market and fundamental panels
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: |
+          python src/build_ff49_annual.py
+          python src/build_factor_exposures.py
+          python src/build_damodaran_panel.py
+          python src/merge_panel.py
+      - name: Produce Tables 1-5
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/baseline_tables.py
+      - name: Generate Data Passport
+        working-directory: studies/FF-Damodaran-Discovery-01
+        run: python src/make_data_passport.py
+      - name: Run scientific contract
+        run: python studies/FF-Damodaran-Discovery-01/tests/test_contract.py
+      - name: Upload reproducible baseline package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ff-damodaran-baseline-results
+          retention-days: 30
+          path: |
+            studies/FF-Damodaran-Discovery-01/results/baseline/*.csv
+            studies/FF-Damodaran-Discovery-01/evidence/download_manifest.json
+            studies/FF-Damodaran-Discovery-01/evidence/data_passport.json
