@@ -1,22 +1,14 @@
-import importlib.util
 from pathlib import Path
+import sys
 import unittest
 
 RUNTIME_DIR = Path(__file__).resolve().parents[1]
 CASE_PATH = RUNTIME_DIR / "data" / "revenue_case.json"
+sys.path.insert(0, str(RUNTIME_DIR))
 
-
-def load(name, filename):
-    spec = importlib.util.spec_from_file_location(name, RUNTIME_DIR / filename)
-    module = importlib.util.module_from_spec(spec)
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
-
-
-p003 = load("prototype003", "prototype003.py")
-providers = load("providers", "providers.py")
-runner = load("provider_runner", "provider_runner.py")
+import prototype003 as p003
+import providers
+import provider_runner as runner
 
 
 class FakeProvider(providers.BaseProvider):
@@ -46,7 +38,6 @@ class ProviderContractTests(unittest.TestCase):
     def test_public_case_withholds_gold(self):
         public = runner.public_case(self.case)
         self.assertNotIn("gold", public)
-        self.assertNotIn("TX-002", str(public.get("gold", "")))
 
     def test_prompt_does_not_include_gold_object(self):
         prompt = runner._prompt(self.case, "test")
