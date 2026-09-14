@@ -1,0 +1,25 @@
+name: NAAIL ESG Sustainability Intelligence Guard
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/ESG_SUSTAINABILITY_INTELLIGENCE_LAB.md'
+      - 'NAAIL-OpenLab/architecture/esg_sustainability_open_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_esg_sustainability_open_source_registry.py'
+      - '.github/workflows/naail_esg_sustainability_intelligence.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/ESG_SUSTAINABILITY_INTELLIGENCE_LAB.md'
+      - 'NAAIL-OpenLab/architecture/esg_sustainability_open_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_esg_sustainability_open_source_registry.py'
+
+jobs:
+  validate-esg-governance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate ESG sustainability registry
+        run: python -m pytest -q NAAIL-OpenLab/tests/test_esg_sustainability_open_source_registry.py
