@@ -3,7 +3,7 @@
 
 **Evidence-governed AI for business-school education, audit Digital Twins, and reproducible scientific discovery.**
 
-[![Version](https://img.shields.io/badge/version-0.2.1-blue)](./VERSION)
+[![Version](https://img.shields.io/badge/version-0.2.2-blue)](./VERSION)
 [![Use](https://img.shields.io/badge/use-research%20%26%20education-green)](./LICENSE.md)
 [![Commercial](https://img.shields.io/badge/commercial%20use-not%20licensed-red)](./COMMERCIAL_USE.md)
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--2536--0446-brightgreen)](https://orcid.org/0000-0002-2536-0446)
@@ -13,6 +13,30 @@
 **GitHub:** https://github.com/Saehon
 
 > NAAIL OpenLab is an independent research initiative. It is not affiliated with, endorsed by, sponsored by, or certified by OpenAI, Google, Microsoft, Deloitte, EY, KPMG, PwC, the IFRS Foundation, PCAOB, or any other referenced organization.
+
+---
+
+## Current executable milestone — Audit Workspace V0.4 / Prototype 002
+
+NAAIL has moved beyond architecture-only documentation into a validated **synthetic Audit Digital Twin research baseline** for **Client XYZ — Revenue Recognition & Cut-off**.
+
+Prototype 002 adds explicit Materiality and Risk roles, evidence-linked testing, **Evidence Passport™**, a persistent **Professional Decision DAG™**, provider-neutral model adapters, regression tests, and a mandatory **Human Gate**.
+
+Frozen deterministic baseline:
+
+- planted exceptions: `TX-002`, `TX-003`;
+- proposed adjustment: **EUR 190,000**;
+- planning materiality: **EUR 120,000**;
+- precision: **1.00**;
+- recall: **1.00**;
+- false positives / false negatives: **0 / 0**;
+- final status: **`PENDING_HUMAN_APPROVAL`**.
+
+These figures apply only to the frozen synthetic benchmark and are not claims of real-world audit effectiveness.
+
+See: **[Prototype Status V0.4](./PROTOTYPE_STATUS_V0.4.md)**
+
+The detailed executable implementation remains in the private R&D master pending IP review.
 
 ---
 
@@ -27,8 +51,6 @@ The platform combines:
 - **Adaptive Intelligence Fabric™** — governed routing of tasks, evidence, models, tools, policies, and approvals;
 - **Audit Digital Twin** — synthetic clients, fictional audit-firm architectures, specialist agents, and human-review gates;
 - **Scientific Discovery** — competing hypotheses, ERA-style empirical design, computational discovery, adversarial review, falsification, replication, and Chain-of-Evidence.
-
-The governing principle is:
 
 > **Knowledge and evidence remain governed; technology may evolve, compete, and be replaced.**
 
@@ -70,11 +92,12 @@ NAAIL is moving toward a production-quality research engineering discipline info
 | [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, audit-quality metrics, regression gates |
 | [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, data/privacy rules, threat controls, Failure Memory |
 | [ROADMAP.md](./ROADMAP.md) | V0.2 → V1.0 product/research roadmap |
-| [docs/AI_ENGINEERING_BENCHMARK.md](./docs/AI_ENGINEERING_BENCHMARK.md) | Current Microsoft/Google/OpenAI public engineering benchmark |
+| [docs/AI_ENGINEERING_BENCHMARK.md](./docs/AI_ENGINEERING_BENCHMARK.md) | Microsoft/Google/OpenAI public engineering benchmark |
+| [PROTOTYPE_STATUS_V0.4.md](./PROTOTYPE_STATUS_V0.4.md) | Current Audit Digital Twin executable milestone |
 | [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) | Research, rights, privacy, IP, eval, and human-approval release gate |
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | Contribution and contributor-IP rules |
 
-The private R&D master contains deeper runtime, observability, security, evaluation, orchestration, and promotion contracts that are intentionally not published.
+The private R&D master contains deeper runtime, observability, security, evaluation, orchestration, agent implementation and promotion contracts that are intentionally not published.
 
 ---
 
@@ -172,7 +195,7 @@ Substantial outside code or patent-sensitive contributions should **not** be acc
 
 ## Citation
 
-> **Homayoun, S. (2026).** *NAAIL OpenLab: An Evidence-Governed AI Platform for Business-School Education, Audit Digital Twins, and Reproducible Scientific Discovery* (Version 0.2.1) [Computer software]. GitHub. https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
+> **Homayoun, S. (2026).** *NAAIL OpenLab: An Evidence-Governed AI Platform for Business-School Education, Audit Digital Twins, and Reproducible Scientific Discovery* (Version 0.2.2) [Computer software]. GitHub. https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
 
 ORCID: **https://orcid.org/0000-0002-2536-0446**
 
@@ -186,6 +209,6 @@ Citation formats:
 
 ## Current release
 
-**NAAIL OpenLab v0.2.1 — governance and engineering hardening release, 14 September 2026.**
+**NAAIL OpenLab v0.2.2 — Audit Digital Twin Prototype 002 release, 14 September 2026.**
 
-The next public milestone is an interactive **Audit Workspace** backed by frozen synthetic Digital Twin cases, evidence-linked agent outputs, auditable traces, explicit Human Gates, and reproducible run manifests.
+The next milestone is **Prototype 003**: add frozen Goodwill Impairment and ICFR Deficiency cases, then compare deterministic, single-agent, sequential-agent and governed multi-agent architectures under identical evidence and evaluation gates.
