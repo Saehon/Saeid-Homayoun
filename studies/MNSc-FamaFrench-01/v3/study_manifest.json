@@ -1,0 +1,49 @@
+{
+  "study_id": "MNSc-FamaFrench-01-v3",
+  "research_goal": "Quantify measurement and empirical-conclusion sensitivity across the official July-2024 FIZ-era and July-2025 CIZ-era Fama-French archive snapshots on a fixed common monthly calendar, without attributing all archive differences causally to the FIZ-to-CIZ methodology change.",
+  "evidence_class": "associational",
+  "methods": [
+    "co_scientist_style",
+    "era_style",
+    "alphaevolve_inspired",
+    "computational_discovery",
+    "alphafold_inspired_latent_structure",
+    "science_one_chain_of_evidence",
+    "coe_audit",
+    "mirendil_inspired_closed_loop",
+    "ai_to_ai_review",
+    "dag_governance"
+  ],
+  "gates": {
+    "literature_validation": true,
+    "hypothesis_tournament": true,
+    "dag_governance": true,
+    "empirical_conversion": true,
+    "search_integrity": true,
+    "latent_structure_validation": false,
+    "provenance": false,
+    "identification": false,
+    "replication_or_oos": false,
+    "adversarial_review": false,
+    "falsification": false,
+    "chain_of_evidence": false,
+    "coe_audit": false,
+    "economic_significance": false,
+    "welfare_interpretation": false,
+    "reproducibility": false
+  },
+  "artifacts": {
+    "evidence_passport": "studies/MNSc-FamaFrench-01/v3/protocol/14_EVIDENCE_PASSPORT.json",
+    "human_gate_record": "studies/MNSc-FamaFrench-01/v3/protocol/15_HUMAN_GATE.md",
+    "chain_of_evidence": "studies/MNSc-FamaFrench-01/v3/protocol/12_CHAIN_OF_EVIDENCE.json",
+    "coe_audit": "studies/MNSc-FamaFrench-01/v3/protocol/13_COE_AUDIT.json",
+    "replication_report": "studies/MNSc-FamaFrench-01/v3/protocol/09_REPLICATION_REPORT.md",
+    "red_team_report": "studies/MNSc-FamaFrench-01/v3/protocol/10_RED_TEAM_REPORT.md"
+  },
+  "human_gate": {
+    "approved": false,
+    "reviewer": "",
+    "decision_date": null
+  },
+  "discovery_claim_allowed": false
+}
