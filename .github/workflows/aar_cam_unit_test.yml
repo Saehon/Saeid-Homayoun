@@ -1,0 +1,41 @@
+name: KIWI AAR CAM Unit Test
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/demos/aar-cam-unit-test/**'
+      - '.github/workflows/aar_cam_unit_test.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/demos/aar-cam-unit-test/**'
+      - '.github/workflows/aar_cam_unit_test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  aar-cam-unit-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run AAR CAM regression tests
+        working-directory: NAAIL-OpenLab/demos/aar-cam-unit-test
+        run: python -m unittest test_aar_cam_unit_test.py
+
+      - name: Run benchmark artifact
+        working-directory: NAAIL-OpenLab/demos/aar-cam-unit-test
+        run: python aar_cam_unit_test.py --output aar_cam_unit_test_results.json --draws 10000 --seed 20260914
+
+      - name: Verify machine-readable output exists
+        working-directory: NAAIL-OpenLab/demos/aar-cam-unit-test
+        run: test -s aar_cam_unit_test_results.json
