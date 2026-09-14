@@ -4,6 +4,15 @@ All notable public changes to ECONOVA-S™ are documented here.
 
 ## [Unreleased]
 
+### Documentation and research-software publication layer
+- Redesigned the root `README.md` as a professional research-software landing page with explicit version semantics, quick start, flagship study, implemented capabilities, provenance policy, scientific limits and repository map.
+- Added `ARCHITECTURE.md` as the canonical public description of the two-core V2.5 architecture.
+- Added `SCIENTIFIC_ASSURANCE.md` with evidence classes, scientific gates, anti-p-hacking rules, adversarial review and Evidence Passport requirements.
+- Added `RESEARCH_SOFTWARE_CARD.md` documenting intended use, users, inputs, outputs, known limitations, independence and data governance.
+- Added `REPRODUCIBILITY.md` with provenance, chronology, environment, commit and validation requirements.
+- Added `docs/QUICKSTART.md` and synchronized the public `/docs` landing page.
+- Added explicit independence language so references to OpenAI, Microsoft, Google, DeepMind and related systems do not imply sponsorship or affiliation.
+
 ### In progress
 - Execute and archive the first official FIZ→CIZ real-data workflow artifacts.
 - Replicate on FF3 and additional archived portfolio families.
