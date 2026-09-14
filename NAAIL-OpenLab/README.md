@@ -54,7 +54,7 @@ Prototype 003 defines four comparison conditions:
 
 Unconfigured AI modes are recorded as `NOT_EXECUTED_PROVIDER_REQUIRED`. NAAIL does not replace missing provider runs with simulated AI results.
 
-The detailed executable implementation remains private pending IP review.
+The detailed executable implementation remains private pending IP review. A research-safe public checkpoint is available at **[Prototype 003 Public Runtime](./Prototype_003/runtime/README.md)**. It reproduces the public Revenue deterministic benchmark, exposes a three-case registry, enforces the Human Gate, and explicitly blocks fabricated AI comparison results until a real provider/model adapter is run.
 
 ---
 
@@ -109,6 +109,7 @@ Non-commercial research and teaching support for bachelor, master, doctoral, and
 | [AGENTS.md](./AGENTS.md) | Agent cards, risk classes, lifecycle, Human Gates |
 | [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md) | Frozen evals, Blind Gold, regression gates, audit-quality metrics |
 | [SECURITY_AND_GOVERNANCE.md](./SECURITY_AND_GOVERNANCE.md) | Least privilege, privacy, threat controls, Failure Memory |
+| [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md) | Research-safe executable checkpoint, frozen input hashes, no-fabricated-AI gate, CI contract |
 | [docs/AI_ENGINEERING_BENCHMARK.md](./docs/AI_ENGINEERING_BENCHMARK.md) | Public Microsoft/Google/OpenAI engineering benchmark |
 | [PROTOTYPE_STATUS_V0.4.md](./PROTOTYPE_STATUS_V0.4.md) | Current executable research milestone |
 | [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) | Research, rights, privacy, IP, eval and human-approval gates |
