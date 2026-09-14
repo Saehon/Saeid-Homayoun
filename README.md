@@ -12,6 +12,7 @@ My flagship project is **ECONOVA-S™**, a governed Research Co-Scientist that t
 [![Scientific Discovery Protocol](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific_discovery_protocol.yml/badge.svg)](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific_discovery_protocol.yml)
 [![Architecture V2.5](https://img.shields.io/badge/Architecture-V2.5-555555)](ARCHITECTURE.md)
 [![NAAIL V2026.3](https://img.shields.io/badge/NAAIL-V2026.3-4c6ef5)](NAAIL-OpenLab/versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
+[![NAAIL Release](https://img.shields.io/badge/NAAIL-v0.2.3-blue)](NAAIL-OpenLab/README.md)
 [![Reproducible Research](https://img.shields.io/badge/Research-Reproducible-2f855a)](REPRODUCIBILITY.md)
 
 ---
@@ -27,9 +28,12 @@ The frozen next-generation NAAIL architecture combines **Google + Microsoft mult
 The architecture is provider-neutral and distinguishes reusable open-source foundations from optional managed cloud services. It is designed to benchmark advanced professional-services capability classes without copying proprietary Big Four systems, confidential workflows, client data, or protected code.
 
 - **Architecture snapshot:** [NAAIL OpenLab V2026.3](NAAIL-OpenLab/versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
-- **Current validated executable release:** [NAAIL OpenLab v0.2.2 / Prototype 002](NAAIL-OpenLab/README.md)
+- **Current validated executable release:** [NAAIL OpenLab v0.2.3 / Prototype 003](NAAIL-OpenLab/README.md)
+- **Public Prototype 003 runtime:** [deterministic checkpoint + provider-required AI gates](NAAIL-OpenLab/Prototype_003/runtime/README.md)
 - **Companion multi-agent engineering repository:** [Google-Antigravity-using-a-multi-agent-BERT-architecture](https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture)
 - **Current project state:** [NAAIL OpenLab Current Project State](NAAIL-OpenLab/CURRENT_PROJECT_STATE.md)
+
+Prototype 003 has a validated three-case synthetic deterministic benchmark. The registered single-agent, sequential-agent and governed multi-agent comparison conditions remain `NOT_EXECUTED_PROVIDER_REQUIRED` until real provider/model adapters are configured; NAAIL does not replace missing model runs with simulated AI outputs.
 
 V2026.3 is an architecture target for the next implementation cycle; it does **not** imply that every component is already executable or validated.
 
