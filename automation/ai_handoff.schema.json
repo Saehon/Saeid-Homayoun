@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Saehon/Saeid-Homayoun/automation/ai_handoff.schema.json",
+  "title": "ECONOVA-S AI-to-AI Scientific Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "run_id",
+    "sender",
+    "receiver",
+    "claim",
+    "evidence",
+    "method",
+    "assumptions",
+    "confidence",
+    "contradictions",
+    "failure_status",
+    "provenance",
+    "required_next_action",
+    "content_sha256"
+  ],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "sender": {"type": "string", "minLength": 1},
+    "receiver": {"type": "string", "minLength": 1},
+    "claim": {"type": "string"},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "role"],
+        "properties": {
+          "source": {"type": "string"},
+          "role": {"type": "string"},
+          "sha256": {"type": ["string", "null"]},
+          "retrieved_at": {"type": ["string", "null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "method": {"type": "string"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "contradictions": {"type": "array", "items": {"type": "string"}},
+    "failure_status": {
+      "type": "object",
+      "required": ["failed", "reasons"],
+      "properties": {
+        "failed": {"type": "boolean"},
+        "reasons": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["model_or_tool", "version", "timestamp_utc"],
+      "properties": {
+        "model_or_tool": {"type": "string"},
+        "version": {"type": "string"},
+        "timestamp_utc": {"type": "string"},
+        "prompt_or_config_sha256": {"type": ["string", "null"]},
+        "code_commit": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "required_next_action": {"type": "string"},
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    }
+  }
+}
