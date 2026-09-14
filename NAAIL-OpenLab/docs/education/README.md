@@ -10,13 +10,17 @@ University–industry education architecture using synthetic Digital Twins, educ
 - [Student Agent Academy](./NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md)
 - [Digital Twin Student Simulation](./DIGITAL_TWIN_STUDENT_SIMULATION.md)
 
-### NAAIL SEC EDGAR Education Lab™
+### NAAIL SEC EDGAR Education Lab™ — integrated
 A first-party SEC evidence environment for teaching and research with EDGAR, XBRL, CompanyFacts, financial statements, disclosure analytics, audit-risk mapping, forensic analysis, LLM/RAG, and governed multi-agent workflows.
 
 - [SEC EDGAR Education Lab](../../education/sec-edgar-lab/README.md)
+- [Project-level SEC Lab entry](../../SEC_EDGAR_EDUCATION_LAB.md)
+- [Integration Manifest](../../education/sec-edgar-lab/INTEGRATION_MANIFEST.md)
 - [Assignment Bank](../../education/sec-edgar-lab/ASSIGNMENTS.md)
 - [Governed Agent Specification](../../education/sec-edgar-lab/AGENT_SPEC.md)
 - [SEC CompanyFacts Starter](../../education/sec-edgar-lab/sec_companyfacts_starter.py)
+
+The SEC module uses official SEC EDGAR/data.sec.gov resources as the authoritative evidence layer. Third-party GitHub libraries are tooling or teaching adapters; they do not replace the original regulatory source.
 
 ## Canonical education workflow
 
@@ -29,11 +33,11 @@ Accounting / audit analytics
         ↓
 AI / agent recommendation
         ↓
-Critic + Replicator
+Critic + Defender + Replicator
         ↓
 Student challenge and revision
         ↓
-Evidence Passport™ + Decision DAG™
+Evidence Passport™ + Professional Decision DAG™
         ↓
 Human Gate™
 ```
@@ -46,3 +50,7 @@ Human Gate™
 4. Synthetic client/Digital Twin evidence must be clearly labeled as synthetic.
 5. Reproducibility, professional skepticism, evidence citation, and human judgment are part of the learning objective—not optional extras.
 6. NAAIL education modules do not imply endorsement, sponsorship, certification, or partnership by referenced regulators, firms, universities, software vendors, or professional bodies unless explicitly documented.
+
+## Synchronization
+
+GitHub is the canonical public implementation location. Education-module documentation is also mirrored to the connected **NAAIL OpenLab** Google Drive workspace for continuity, teaching preparation, and version handoff.
