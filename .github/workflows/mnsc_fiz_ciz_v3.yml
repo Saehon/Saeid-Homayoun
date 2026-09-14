@@ -5,10 +5,12 @@ on:
   push:
     paths:
       - 'studies/MNSc-FamaFrench-01/v3/**'
+      - 'discovery/**'
       - '.github/workflows/mnsc_fiz_ciz_v3.yml'
   pull_request:
     paths:
       - 'studies/MNSc-FamaFrench-01/v3/**'
+      - 'discovery/**'
       - '.github/workflows/mnsc_fiz_ciz_v3.yml'
 
 permissions:
@@ -21,15 +23,71 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
       - name: Install dependencies
-        run: pip install -r studies/MNSc-FamaFrench-01/v3/requirements.txt
+        run: |
+          pip install -r studies/MNSc-FamaFrench-01/v3/requirements.txt
+          pip install jsonschema
+
+      - name: Validate frozen scientific-discovery manifest
+        run: python discovery/validate_study_manifest.py studies/MNSc-FamaFrench-01/v3/study_manifest.json
+
+      - name: Verify frozen pre-result protocol package
+        shell: bash
+        run: |
+          set -euo pipefail
+          P=studies/MNSc-FamaFrench-01/v3/protocol
+          test -s "$P/ATTRIBUTION_FIREWALL.md"
+          test -s "$P/01_RESEARCH_GOAL.md"
+          test -s "$P/02_LITERATURE_GROUNDING.md"
+          test -s "$P/03_HYPOTHESIS_TOURNAMENT.json"
+          test -s "$P/04_CAUSAL_DAG.md"
+          test -s "$P/05_VARIABLE_DNA.csv"
+          test -s "$P/06_EMPIRICAL_MANIFEST.json"
+          test -s "$P/07_DISCOVERY_SEARCH.json"
+          test -s "$P/08_LATENT_STRUCTURE.md"
+          test -s "$P/09_REPLICATION_REPORT.md"
+          test -s "$P/10_RED_TEAM_REPORT.md"
+          test -s "$P/11_FALSIFICATION_REPORT.md"
+          test -s "$P/12_CHAIN_OF_EVIDENCE.json"
+          test -s "$P/13_COE_AUDIT.json"
+          test -s "$P/14_EVIDENCE_PASSPORT.json"
+          test -s "$P/15_HUMAN_GATE.md"
+
+      - name: Enforce attribution firewall
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('studies/MNSc-FamaFrench-01/v3/protocol/06_EMPIRICAL_MANIFEST.json')
+          m = json.loads(p.read_text(encoding='utf-8'))
+          assert m['secondary_data']['role'] == 'complementary_benchmark_not_transition_validation'
+          assert m['scientific_status']['identification_gate'] is False
+          assert m['scientific_status']['discovery_claim_allowed'] is False
+          s = json.loads(Path('studies/MNSc-FamaFrench-01/v3/study_manifest.json').read_text(encoding='utf-8'))
+          assert s['discovery_claim_allowed'] is False
+          assert s['human_gate']['approved'] is False
+          print('Attribution firewall and pre-discovery state enforced.')
+          PY
+
       - name: Build official-data empirical package
         run: python studies/MNSc-FamaFrench-01/v3/build_v3.py --output studies/MNSc-FamaFrench-01/v3/artifact
-      - name: Validate five canonical tables
+
+      - name: Bind frozen protocol to empirical artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p studies/MNSc-FamaFrench-01/v3/artifact/00_Protocol
+          cp -R studies/MNSc-FamaFrench-01/v3/protocol/. studies/MNSc-FamaFrench-01/v3/artifact/00_Protocol/
+          cp studies/MNSc-FamaFrench-01/v3/study_manifest.json studies/MNSc-FamaFrench-01/v3/artifact/00_Protocol/study_manifest.json
+          git rev-parse HEAD > studies/MNSc-FamaFrench-01/v3/artifact/00_Protocol/git_commit.txt
+
+      - name: Validate five canonical empirical tables
         shell: bash
         run: |
           set -euo pipefail
@@ -40,37 +98,50 @@ jobs:
           test -s studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/table5_robustness_fdr_subperiods.csv
           test -s studies/MNSc-FamaFrench-01/v3/artifact/01_Data_Raw/source_manifest.csv
           cat studies/MNSc-FamaFrench-01/v3/artifact/RUN_SUMMARY.json
+
       - name: Upload full replication package
         uses: actions/upload-artifact@v4
         with:
           name: MNSc_FIZ_CIZ_V3_real_data_package
           path: studies/MNSc-FamaFrench-01/v3/artifact/
           if-no-files-found: error
+
+      - name: Upload frozen scientific protocol
+        uses: actions/upload-artifact@v4
+        with:
+          name: 00_Protocol
+          path: studies/MNSc-FamaFrench-01/v3/artifact/00_Protocol/
+
       - name: Upload raw data
         uses: actions/upload-artifact@v4
         with:
           name: 01_Data_Raw
           path: studies/MNSc-FamaFrench-01/v3/artifact/01_Data_Raw/
+
       - name: Upload clean data
         uses: actions/upload-artifact@v4
         with:
           name: 02_Data_Clean
           path: studies/MNSc-FamaFrench-01/v3/artifact/02_Data_Clean/
+
       - name: Upload Stata code
         uses: actions/upload-artifact@v4
         with:
           name: 03_Stata_Code
           path: studies/MNSc-FamaFrench-01/v3/artifact/03_Stata_Code/
+
       - name: Upload five-table outputs
         uses: actions/upload-artifact@v4
         with:
           name: 04_Output_5_Tables
           path: studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/
+
       - name: Upload empirical results document
         uses: actions/upload-artifact@v4
         with:
           name: 05_Manuscript
           path: studies/MNSc-FamaFrench-01/v3/artifact/05_Manuscript/
+
       - name: Upload literature anchors
         uses: actions/upload-artifact@v4
         with:
