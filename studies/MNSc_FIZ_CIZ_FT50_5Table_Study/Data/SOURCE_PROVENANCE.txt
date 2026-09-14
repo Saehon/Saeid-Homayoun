@@ -1,0 +1,13 @@
+DATA PROVENANCE
+
+Fama-French GitHub mirror:
+https://github.com/QuantConnect/Tutorials/blob/master/Data/F-F_Research_Data_5_Factors_2x3.CSV
+Frozen analysis sample stored here: 2010-01 to 2020-07.
+The GitHub file states it was created using the 202007 CRSP database.
+
+Damodaran GitHub mirror:
+https://github.com/GTSF-Quantitative-Sector/sec_parser/blob/master/sec/data/wacc/2024.csv
+Frozen analysis subset stored here: first 45 industry rows of the 2024 file.
+Repository README identifies the original source as Aswath Damodaran / NYU Stern industry cost-of-capital data.
+
+For final journal submission, refresh against the authoritative Kenneth R. French Data Library and Damodaran/NYU Stern archive, preserve hashes, and rerun.
