@@ -8,12 +8,13 @@ For a fast review of this portfolio:
 4. **V2026.3 architecture:** [Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
 5. **Open-source agent education stack:** [ADK + Agent Framework + CAMEL + smolagents + Haystack + MCP + Ollama and extended ecosystem](./OPEN_SOURCE_AGENT_STACK.md)
 6. **Student Open-Source Agent Lab:** [framework-comparison and Digital Twin teaching design](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
-7. **Current platform overview:** [README.md](./README.md)
-8. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
-9. **Executable demos index:** [demos/README.md](./demos/README.md)
-10. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
-11. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
-12. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
+7. **SEC EDGAR Education Lab™:** [official SEC EDGAR/XBRL/CompanyFacts education and research module](./SEC_EDGAR_EDUCATION_LAB.md)
+8. **Current platform overview:** [README.md](./README.md)
+9. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
+10. **Executable demos index:** [demos/README.md](./demos/README.md)
+11. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
+12. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
+13. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
 
 ## Current release checkpoint
 
@@ -28,6 +29,46 @@ Prototype 003 contains a frozen three-domain synthetic Audit Digital Twin benchm
 Only the deterministic comparison condition has been executed. Single-agent, sequential-agent and governed multi-agent modes remain `NOT_EXECUTED_PROVIDER_REQUIRED` until real provider/model adapters are configured. NAAIL does not substitute simulated AI outputs for empirical model runs.
 
 The research-safe public runtime reproduces the Revenue deterministic checkpoint and exposes the scientific-integrity gates without publishing private provider adapters, patent-sensitive orchestration, or detailed private benchmark internals.
+
+## SEC EDGAR Education Lab™ — published public module
+
+NAAIL OpenLab now includes a public SEC-data education and research layer built around **SEC EDGAR, XBRL, CompanyFacts, CompanyConcept, Frames, and filing-level evidence**.
+
+Canonical flow:
+
+```text
+SEC EDGAR / XBRL / CompanyFacts
+        ↓
+Evidence acquisition + provenance
+        ↓
+Python / pandas / open-source adapters
+        ↓
+Accounting and disclosure analytics
+        ↓
+Audit / ICFR / forensic reasoning
+        ↓
+NLP / RAG / LLM / governed agents
+        ↓
+Critic + Defender + Replicator
+        ↓
+Evidence Passport™ + Decision DAG™
+        ↓
+Student professional judgment
+        ↓
+Human Gate™
+```
+
+The authoritative evidence layer remains the U.S. Securities and Exchange Commission. Third-party GitHub libraries are treated as software adapters or teaching tools and retain their own licenses.
+
+Canonical resources:
+
+- [SEC EDGAR Education Lab landing page](./SEC_EDGAR_EDUCATION_LAB.md)
+- [Full SEC Lab module](./education/sec-edgar-lab/README.md)
+- [Assignment Bank](./education/sec-edgar-lab/ASSIGNMENTS.md)
+- [Governed Agent Specification](./education/sec-edgar-lab/AGENT_SPEC.md)
+- [SEC CompanyFacts Python Starter](./education/sec-edgar-lab/sec_companyfacts_starter.py)
+- [Integration Manifest](./education/sec-edgar-lab/INTEGRATION_MANIFEST.md)
+- [NAAIL Education Hub](./docs/education/README.md)
 
 ## V2026.3 architecture snapshot
 
