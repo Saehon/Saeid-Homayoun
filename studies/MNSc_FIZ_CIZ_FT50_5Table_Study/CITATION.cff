@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this study, data, or code, please cite it as below."
+title: "MNSc FIZ-CIZ FT50 Five-Table Study: Fama-French and Damodaran Empirical Replication Package"
+type: software
+authors:
+  - family-names: "Homayoun"
+    given-names: "Saeid"
+    orcid: "https://orcid.org/0000-0002-2536-0446"
+version: "1.0"
+date-released: "2026-09-14"
+repository-code: "https://github.com/Saehon/Saeid-Homayoun"
+url: "https://github.com/Saehon/Saeid-Homayoun/tree/mnsc-fiz-ciz-ft50-5table-study-v1/studies/MNSc_FIZ_CIZ_FT50_5Table_Study"
+abstract: "Reproducible Management Science-oriented empirical study package combining Fama-French factor data, Damodaran industry validation data, Stata and Python replication code, and five core empirical tables."
+keywords:
+  - "Fama-French"
+  - "FIZ-CIZ"
+  - "asset pricing"
+  - "replication"
+  - "Management Science"
+  - "Damodaran"
+license: "CC-BY-NC-4.0"
