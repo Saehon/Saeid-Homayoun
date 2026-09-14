@@ -19,12 +19,13 @@ Core inputs:
 - Fama/French 5 Factors (monthly)
 - Momentum factor (monthly)
 - 49 Industry Portfolios (monthly)
+- rolling 60-month FF5+Momentum exposures estimated separately for each FF49 industry
 - Damodaran US industry Betas
 - Damodaran US industry Cost of Capital / WACC
 - Damodaran US industry EVA / ROC / ROE
-- Annual archived Damodaran vintages, with year-specific industry classification
+- annual archived Damodaran vintages, with year-specific industry classification
 
-Damodaran notes that industry categories can vary over time because underlying raw data sources changed. Therefore this study uses a **year-specific FF49 ↔ Damodaran crosswalk** with explicit confidence and manual-review fields.
+Damodaran notes that industry categories can vary over time because underlying raw data sources changed. Therefore this study uses a **year-specific FF49 ↔ Damodaran crosswalk** with explicit confidence, weights, and manual-review fields.
 
 ## Reproducible pipeline
 
@@ -33,11 +34,12 @@ Official provider URLs
   -> immutable raw downloads
   -> SHA-256 manifest / Data Passport
   -> FF49 monthly-to-year construction
+  -> rolling industry-specific FF5+Momentum exposures
   -> Damodaran vintage panel
   -> year-specific industry mapping suggestions
-  -> human-reviewed crosswalk
+  -> human-reviewed many-to-many crosswalk
   -> merged industry-year panel
-  -> baseline econometrics
+  -> publication-style Tables 1-5
   -> Co-Scientist hypothesis tournament
   -> ERA empirical objects
   -> ResearchEvolve / Computational Discovery
@@ -50,23 +52,42 @@ Official provider URLs
 ## Run order
 
 ```bash
+pip install -r requirements-study.txt
 python src/download_sources.py
 python src/build_ff49_annual.py
+python src/build_factor_exposures.py
 python src/build_damodaran_panel.py
 python src/suggest_crosswalk.py
+```
+
+At this point review `crosswalk/candidate_crosswalk.csv`. Copy only economically defensible mappings into `crosswalk/reviewed_crosswalk.csv`, set `approved=true`, and make mapping weights sum to 1 for every year × FF49 industry. Then run:
+
+```bash
 python src/merge_panel.py
+python src/baseline_tables.py
+python src/make_data_passport.py
 python tests/test_contract.py
 ```
 
-Install study dependencies with:
+## Baseline outputs
 
-```bash
-pip install -r requirements-study.txt
-```
+The baseline creates:
+
+1. `table1_variable_definitions.csv`
+2. `table2_descriptive_statistics.csv`
+3. `table3_correlations.csv`
+4. `table4_main_regressions.csv`
+5. `table5_temporal_oos_and_data_value.csv`
+
+Table 5 directly evaluates the ECONOVA-S **Data Economic Value™** question by comparing factor-exposure-only, fundamentals-only, and combined models in expanding-window temporal prediction. P-values are reported descriptively in Table 4 but are never an optimization or evolutionary fitness target.
+
+## Timing rule
+
+Predictors are dated year `t`. The strict forecasting outcome is FF49 industry return in `t+1`. Rolling factor exposures use up to 60 monthly observations ending in year `t` and require at least 36 observations.
 
 ## Data handling
 
-Raw provider files are intentionally excluded from version control. The downloader records provider URL, retrieval timestamp, local path, size, and SHA-256. Processed files can be regenerated from the raw files and reviewed crosswalk.
+Raw provider files are intentionally excluded from version control. The downloader records provider URL, retrieval timestamp, local path, size, and SHA-256. Processed files can be regenerated from raw files and the reviewed crosswalk.
 
 ## Scientific status
 
@@ -76,4 +97,4 @@ verified_candidate_discovery = false
 human_gate_approved = false
 ```
 
-This repository must be able to retain null results and classification-artifact findings. No agent is permitted to force a positive result.
+This repository must retain null results, failed specifications, and classification-artifact findings. No agent is permitted to force a positive result.
