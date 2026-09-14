@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "naail_target": "v0.2.4",
+  "validated_release_unchanged": "v0.2.3",
+  "policy": {
+    "vendor_upstream_code_by_default": false,
+    "pin_versions_for_research_runs": true,
+    "human_gate_required": true,
+    "confidential_client_data_in_public_examples": false,
+    "affiliation_claims_without_written_authorization": false
+  },
+  "sources": [
+    {
+      "id": "stanford-dspy",
+      "name": "DSPy",
+      "organization": "Stanford NLP",
+      "url": "https://github.com/stanfordnlp/dspy",
+      "license": "MIT",
+      "integration_mode": "OPTIONAL_RUNTIME_DEPENDENCY",
+      "naail_role": [
+        "LM program optimization",
+        "RAG/evidence pipeline optimization",
+        "evaluation-driven module comparison"
+      ],
+      "status": "ADAPTER_READY"
+    },
+    {
+      "id": "stanford-storm",
+      "name": "STORM / Co-STORM",
+      "organization": "Stanford OVAL",
+      "url": "https://github.com/stanford-oval/storm",
+      "license": "MIT",
+      "integration_mode": "OPTIONAL_RUNTIME_DEPENDENCY",
+      "naail_role": [
+        "multi-perspective knowledge curation",
+        "expert-agent discussion",
+        "human-in-the-loop research synthesis"
+      ],
+      "status": "ADAPTER_READY"
+    },
+    {
+      "id": "huggingface-smolagents",
+      "name": "smolagents",
+      "organization": "Hugging Face",
+      "url": "https://github.com/huggingface/smolagents",
+      "license": "Apache-2.0",
+      "integration_mode": "PRIMARY_EXECUTABLE_SWARM_CANDIDATE",
+      "naail_role": [
+        "tool-calling agents",
+        "code agents",
+        "managed multi-agent orchestration"
+      ],
+      "status": "ADAPTER_READY"
+    },
+    {
+      "id": "mit-scenesmith",
+      "name": "SceneSmith",
+      "organization": "MIT / Toyota Research Institute authors",
+      "url": "https://github.com/nepfaff/scenesmith",
+      "license": "MIT",
+      "integration_mode": "RESEARCH_INSPIRATION",
+      "naail_role": [
+        "compositional Digital Twin design",
+        "simulation-ready environment design principles"
+      ],
+      "status": "CONCEPT_ONLY"
+    },
+    {
+      "id": "mit-murakkab",
+      "name": "Murakkab",
+      "organization": "MIT / Microsoft Research authors",
+      "url": "https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625",
+      "license": "VERIFY_UPSTREAM_ARTIFACT_BEFORE_CODE_USE",
+      "integration_mode": "RESEARCH_INSPIRATION",
+      "naail_role": [
+        "resource-aware agentic workflow orchestration",
+        "parallel/sequential execution optimization",
+        "latency/cost/energy trade-off research"
+      ],
+      "status": "CONCEPT_ONLY"
+    }
+  ]
+}
