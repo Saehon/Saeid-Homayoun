@@ -1,0 +1,110 @@
+{
+  "registry_name": "NAAIL Digital Twin to Scientific Discovery Link Registry",
+  "platform": "NAAIL OpenLab V2026.3 Multi-Agent Digital Twin",
+  "knowledge_rag_core": "KRG2026.3",
+  "rule": "Each selected Digital Twin must resolve to existing NAAIL GitHub paths and inherit the scientific-discovery gates without allowing external systems to rewrite canonical knowledge.",
+  "digital_twins": [
+    {
+      "id": "AUDIT_XYZ",
+      "name": "Audit Digital Twin / Client XYZ",
+      "specialist_agents": ["KIWI", "POMELO", "GAA"],
+      "github_paths": [
+        "NAAIL-OpenLab/Prototype_003/runtime/README.md",
+        "NAAIL-OpenLab/demos/aar-cam-unit-test/README.md",
+        "NAAIL-OpenLab/AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P06", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "IFRS_XYZ",
+      "name": "IFRS Reporting Digital Twin",
+      "specialist_agents": ["IFRS Intelligence", "POMELO", "GAA"],
+      "github_paths": [
+        "NAAIL-OpenLab/agents/ifrs/",
+        "NAAIL-OpenLab/simulations/free-stack/README.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "PCAOB_XYZ",
+      "name": "PCAOB Inspection and Regulatory Digital Twin",
+      "specialist_agents": ["PCAOB Intelligence", "KIWI", "GAA"],
+      "github_paths": [
+        "NAAIL-OpenLab/agents/pcaob/",
+        "NAAIL-OpenLab/simulations/free-stack/README.md",
+        "NAAIL-OpenLab/FREE_DATA_FABRIC.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "ERP_XYZ",
+      "name": "ERP Process Digital Twin",
+      "specialist_agents": ["POMELO", "ICFR Intelligence", "GAA"],
+      "github_paths": [
+        "NAAIL-OpenLab/ERP_DIGITAL_TWIN_LAB.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P06", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "FINANCE_XYZ",
+      "name": "Finance and Data-Economy Digital Twin",
+      "specialist_agents": ["ECONOVA-S"],
+      "github_paths": [
+        "NAAIL-OpenLab/agents/econova-s/",
+        "NAAIL-OpenLab/FINANCE_MARKET_INTELLIGENCE_LAB.md",
+        "NAAIL-OpenLab/FREE_DATA_FABRIC.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "ESG_XYZ",
+      "name": "ESG and Sustainability Digital Twin",
+      "specialist_agents": ["ESG Intelligence", "POMELO", "ECONOVA-S", "GAA"],
+      "github_paths": [
+        "NAAIL-OpenLab/agents/esg/",
+        "NAAIL-OpenLab/ESG_SUSTAINABILITY_INTELLIGENCE_LAB.md",
+        "NAAIL-OpenLab/FREE_DATA_FABRIC.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "ICFR_XYZ",
+      "name": "ICFR and Controls Digital Twin",
+      "specialist_agents": ["ICFR Intelligence", "POMELO", "GAA"],
+      "github_paths": [
+        "NAAIL-OpenLab/agents/icfr/",
+        "NAAIL-OpenLab/AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md",
+        "NAAIL-OpenLab/ERP_DIGITAL_TWIN_LAB.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "FORENSIC_XYZ",
+      "name": "Forensic Digital Twin",
+      "specialist_agents": ["Forensic Intelligence", "POMELO", "GAA"],
+      "github_paths": [
+        "NAAIL-OpenLab/agents/forensic/",
+        "NAAIL-OpenLab/AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md",
+        "NAAIL-OpenLab/ERP_DIGITAL_TWIN_LAB.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P06", "P08", "P09", "P10", "P11"]
+    },
+    {
+      "id": "SEC_EDGAR_XYZ",
+      "name": "SEC EDGAR / XBRL Evidence Digital Twin",
+      "specialist_agents": ["POMELO", "KIWI", "ICFR Intelligence", "ECONOVA-S"],
+      "github_paths": [
+        "NAAIL-OpenLab/SEC_EDGAR_EDUCATION_LAB.md",
+        "NAAIL-OpenLab/FREE_DATA_FABRIC.md"
+      ],
+      "science_phases": ["P00", "P01", "P02", "P03", "P04", "P05", "P08", "P09", "P10", "P11"]
+    }
+  ],
+  "invariants": {
+    "all_paths_must_be_repository_local": true,
+    "external_system_name_implies_execution": false,
+    "technology_core_may_rewrite_knowledge_core": false,
+    "digital_twin_output_is_authoritative_without_validation": false,
+    "human_gate_required": true
+  }
+}
