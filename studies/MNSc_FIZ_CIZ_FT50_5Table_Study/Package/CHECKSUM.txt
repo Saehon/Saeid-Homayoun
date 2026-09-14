@@ -1,0 +1,8 @@
+Latest package verification
+
+File: MNSc_FIZ_CIZ_FT50_5Table_Study.zip
+Size: 159545 bytes
+SHA-256: 1d5ef2e44c17e6bf320c761fd145a5ce84f2f55d80590d16480b37994503d5cd
+Updated: 2026-09-14
+
+This checksum corresponds to the latest package stored in Google Drive and GitHub.
