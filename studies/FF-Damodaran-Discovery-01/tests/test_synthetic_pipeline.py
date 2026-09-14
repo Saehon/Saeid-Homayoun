@@ -129,9 +129,11 @@ class SyntheticPipelineTests(unittest.TestCase):
         self.assertTrue({"ff_beta_mkt_rf", "beta_d_e_ratio", "future_industry_return_1y"}.issubset(panel.columns))
 
         # Verify the t -> t+1 construction within each industry and no cross-industry shift.
-        for industry, g in panel.groupby("ff49_industry"):
+        for _, g in panel.groupby("ff49_industry"):
             g = g.sort_values("year").reset_index(drop=True)
-            self.assertTrue(np.allclose(g.loc[:-2, "future_industry_return_1y"], g.loc[1:, "industry_return"], equal_nan=True))
+            lhs = g["future_industry_return_1y"].iloc[:-1].to_numpy()
+            rhs = g["industry_return"].iloc[1:].to_numpy()
+            self.assertTrue(np.allclose(lhs, rhs, equal_nan=True))
             self.assertTrue(pd.isna(g.iloc[-1]["future_industry_return_1y"]))
 
         baseline = load_module("baseline_tables_test", SRC / "baseline_tables.py")
@@ -154,6 +156,8 @@ class SyntheticPipelineTests(unittest.TestCase):
         t4 = pd.read_csv(self.results / "table4_main_regressions.csv")
         self.assertTrue({"Factor-exposure-only", "Fundamentals-only", "Combined"}.issubset(set(t4["model"])))
         self.assertIn("p_value_descriptive_not_fitness", t4.columns)
+        self.assertTrue(t4["industry_fe"].all())
+        self.assertTrue(t4["year_fe"].all())
 
         t5 = pd.read_csv(self.results / "table5_temporal_oos_and_data_value.csv")
         self.assertEqual(set(t5["model"]), {"Factor-exposure-only", "Fundamentals-only", "Combined"})
@@ -171,7 +175,9 @@ class SyntheticPipelineTests(unittest.TestCase):
         self.assertTrue(p["authoritative_source_policy"])
         self.assertTrue(p["scientific_controls"]["future_outcome_constructed_after_time_sort"])
         self.assertTrue(p["scientific_controls"]["human_gate_required"])
-        self.assertGreaterEqual(len(p["processed_artifacts"]), 4)
+        artifact_names = {x["path"].split("/")[-1] for x in p["processed_artifacts"]}
+        self.assertIn("ff49_factor_exposures_year.csv", artifact_names)
+        self.assertIn("econova_ff_damodaran_panel.csv", artifact_names)
 
     def test_crosswalk_weights_must_sum_to_one(self) -> None:
         cw_path = self.crosswalk / "reviewed_crosswalk.csv"
