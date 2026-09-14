@@ -1,0 +1,80 @@
+[
+  {
+    "id": "bergemann_bonatti_2024",
+    "authors": "Dirk Bergemann; Alessandro Bonatti",
+    "year": 2024,
+    "title": "Data, Competition, and Digital Platforms",
+    "journal": "American Economic Review",
+    "volume_issue_pages": "114(8):2553–2595",
+    "doi": "10.1257/aer.20230478",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20230478",
+    "domains": ["data economy","platforms","competition","privacy","welfare","information"],
+    "evidence_role": "theory/welfare benchmark",
+    "note": "Platform data, information advantage, competition, privacy and consumer-welfare mechanisms."
+  },
+  {
+    "id": "dekok_2025",
+    "authors": "Ties de Kok",
+    "year": 2025,
+    "title": "ChatGPT for Textual Analysis? How to Use Generative LLMs in Accounting Research",
+    "journal": "Management Science",
+    "volume_issue_pages": "71(9):7888–7906",
+    "doi": "10.1287/mnsc.2023.03253",
+    "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2023.03253",
+    "domains": ["LLM","textual analysis","construct validity","replicability","AI research"],
+    "evidence_role": "LLM measurement/validation benchmark",
+    "note": "Model selection, prompt design, construct validity, bias, replicability and data-sharing discipline."
+  },
+  {
+    "id": "haaland_roth_wohlfahrt_2023",
+    "authors": "Ingar Haaland; Christopher Roth; Johannes Wohlfart",
+    "year": 2023,
+    "title": "Designing Information Provision Experiments",
+    "journal": "Journal of Economic Literature",
+    "volume_issue_pages": "61(1):3–40",
+    "doi": "10.1257/jel.20211658",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/jel.20211658",
+    "domains": ["behavioral economics","experiments","beliefs","information","survey"],
+    "evidence_role": "experimental-design benchmark",
+    "note": "Belief measurement, information interventions, updating, demand effects and online-panel design."
+  },
+  {
+    "id": "haaland_roth_stantcheva_wohlfahrt_2025",
+    "authors": "Ingar Haaland; Christopher Roth; Stefanie Stantcheva; Johannes Wohlfart",
+    "year": 2025,
+    "title": "Understanding Economic Behavior Using Open-Ended Survey Data",
+    "journal": "Journal of Economic Literature",
+    "volume_issue_pages": "63(4):1244–1280",
+    "doi": "10.1257/jel.20251780",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/jel.20251780",
+    "domains": ["open-ended surveys","mental models","narratives","LLM annotation","behavioral economics"],
+    "evidence_role": "qualitative/LLM evidence benchmark",
+    "note": "Open-ended evidence, AI-powered qualitative interviews and LLM-assisted annotation."
+  },
+  {
+    "id": "cohen_gurun_nguyen_2026",
+    "authors": "Lauren H. Cohen; Umit G. Gurun; Quoc H. Nguyen",
+    "year": 2026,
+    "title": "The ESG-Innovation Disconnect: Evidence from Green Patenting",
+    "journal": "Management Science",
+    "volume_issue_pages": "Articles in Advance",
+    "doi": "10.1287/mnsc.2024.09124",
+    "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2024.09124",
+    "domains": ["green innovation","green patents","ESG","sustainable investing","energy"],
+    "evidence_role": "green-innovation empirical benchmark",
+    "note": "Distinguishes real green innovation from ESG perceptions/ratings."
+  },
+  {
+    "id": "fedyk_et_al_2022",
+    "authors": "Anastassia Fedyk; James Hodson; Natalya Khimich; Tatiana Fedyk",
+    "year": 2022,
+    "title": "Is artificial intelligence improving the audit process?",
+    "journal": "Review of Accounting Studies",
+    "volume_issue_pages": "27:938–985",
+    "doi": "10.1007/s11142-022-09697-x",
+    "url": "https://link.springer.com/article/10.1007/s11142-022-09697-x",
+    "domains": ["AI adoption","labor","quality","productivity","professional services"],
+    "evidence_role": "AI adoption/outcomes benchmark",
+    "note": "Large-scale AI-workforce measure linked to quality, fees and labor outcomes."
+  }
+]
