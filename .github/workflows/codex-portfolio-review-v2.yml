@@ -1,0 +1,154 @@
+name: Codex Portfolio Review v2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/CODEX_PORTFOLIO_REVIEW_REQUEST.md"
+      - ".github/workflows/codex-portfolio-review-v2.yml"
+
+# Read-only portfolio audit. Public repositories are prefetched before Codex
+# enters the :read-only permission profile. Private repositories are excluded.
+
+jobs:
+  portfolio_review:
+    name: Codex Review — Saehon Public Portfolio
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      final_message: ${{ steps.codex.outputs.final-message }}
+
+    steps:
+      - name: Checkout canonical NAAIL repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Prefetch public portfolio
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p portfolio
+          repos=(
+            "Saeid-Homayoun"
+            "AAA"
+            "IFRS-AI-Inspector"
+            "Google-Antigravity-using-a-multi-agent-BERT-architecture"
+            "AuditData-API"
+            "timesfm"
+            "yfinance"
+            "Financial-Sentiment-Analysis-and-Classification-Deep-Learning-Models"
+            "fg-data-synthetic"
+            "artificial-analysis-intelligence-index"
+            "agent-openai-python-banking-assistant"
+            "robosystems"
+            "ganlab"
+          )
+          for repo in "${repos[@]}"; do
+            echo "Cloning Saehon/${repo}"
+            git clone --depth 1 "https://github.com/Saehon/${repo}.git" "portfolio/${repo}"
+          done
+          printf '%s\n' "${repos[@]}" > portfolio/REPOSITORIES_REVIEWED.txt
+
+      - name: Preflight — verify OpenAI API key
+        shell: bash
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY repository secret is not configured. Add it in Settings > Secrets and variables > Actions, then run this workflow again."
+            exit 1
+          fi
+          echo "OPENAI_API_KEY is configured."
+
+      - name: Run Codex portfolio audit
+        id: codex
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          working-directory: portfolio
+          permission-profile: ":read-only"
+          safety-strategy: "drop-sudo"
+          allow-users: "Saehon"
+          prompt: |
+            Perform a read-only portfolio audit of every repository directory
+            under the current workspace. Base findings on repository evidence.
+
+            NAAIL GOVERNANCE
+            - NAAIL OpenLab is the umbrella architecture.
+            - KIWI, POMELO, VERA, ECONOVA-S, IFRS Agent, PCAOB Agent,
+              ICFR/TimesFM, Research Lab, Audit Agent Lab, and Student Lab are
+              specialist modules, not competing umbrella platforms.
+            - Distinguish original/custom NAAIL work from upstream forks,
+              imported examples, and external dependencies.
+            - Treat yfinance and timesfm as upstream forks unless repository
+              evidence establishes a separate custom component.
+            - Do not infer ownership, endorsement, partnership, patent status,
+              empirical success, or real-company audit findings without evidence.
+
+            REVIEW EACH REPOSITORY FOR
+            1. purpose and relationship to NAAIL;
+            2. README/license/citation/contributing/changelog/AGENTS hygiene;
+            3. code structure and maintainability;
+            4. tests and CI coverage;
+            5. secrets, unsafe examples, dependency and data-governance risks;
+            6. reproducibility, seeds, environments and data provenance;
+            7. temporal leakage, train/test contamination and unsupported causality;
+            8. IFRS/PCAOB/SEC provenance, CAM/KAM fiscal alignment, ICFR labels,
+               XBRL mapping and evidence traceability where applicable;
+            9. Codex/CI readiness;
+            10. classification as CORE PRODUCT, RESEARCH PROJECT,
+                EDUCATION/DEMO, DATA/DEPENDENCY, UPSTREAM FORK, ARCHIVE,
+                or CONSOLIDATE/RETIRE.
+
+            PORTFOLIO-WIDE CHECKS
+            - duplicate/conflicting NAAIL documentation and product names;
+            - canonical source-of-truth clarity;
+            - stale/duplicate repositories;
+            - licensing, citation, attribution and IP inconsistencies;
+            - missing tests/CI and inconsistent default branches;
+            - reusable components that should be consolidated;
+            - Prototype 003/003-C/004 naming and release-state consistency;
+            - Evidence Passport, Professional Decision DAG and Human Gate claims
+              must match executable evidence.
+
+            Produce exactly:
+            # Codex Portfolio Review — Saehon / NAAIL
+            ## Executive verdict
+            ## Critical findings
+            ## Repository-by-repository matrix
+            ## Security and data-governance findings
+            ## Reproducibility and research-integrity findings
+            ## Architecture and product-governance findings
+            ## Fork/provenance and licensing findings
+            ## Codex/CI readiness
+            ## Top 10 prioritized actions
+            ## Repositories to keep, consolidate, archive, or treat as dependencies
+            ## Final verdict
+
+            Cite concrete repository paths where possible. Do not edit files.
+
+  publish_review:
+    name: Publish Codex Portfolio Review
+    runs-on: ubuntu-latest
+    needs: portfolio_review
+    if: needs.portfolio_review.outputs.final_message != ''
+    permissions:
+      issues: write
+    steps:
+      - name: Publish review as GitHub issue
+        uses: actions/github-script@v7
+        env:
+          CODEX_REVIEW: ${{ needs.portfolio_review.outputs.final_message }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const body = process.env.CODEX_REVIEW || 'Codex returned no review text.';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Codex Portfolio Review — ${new Date().toISOString().slice(0, 10)}`,
+              body: body.slice(0, 65000)
+            });
