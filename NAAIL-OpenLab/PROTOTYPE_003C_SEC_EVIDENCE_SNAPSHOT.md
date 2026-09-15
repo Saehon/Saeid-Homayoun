@@ -1,9 +1,10 @@
 # NAAIL OpenLab™ — Prototype 003-C SEC Evidence Snapshot
 
 **Status:** Public research-safe evidence checkpoint  
-**Current public release:** v0.2.2  
-**Development milestone:** Prototype 003-C  
-**Verified:** 2026-09-14
+**Current public release:** v0.2.3  
+**Development milestone:** Prototype 003-C SEC evidence layer  
+**Verified:** 2026-09-14  
+**Repository sync:** 2026-09-15
 
 ## Scope
 
@@ -68,20 +69,50 @@ The project must not infer or claim, without direct authoritative evidence:
 
 ## Engineering status
 
-The private R&D implementation now includes:
+The private R&D implementation includes:
 
 - frozen three-company configuration;
-- SEC CompanyFacts/filing ingestion scaffold;
+- SEC CompanyFacts / filing-ingestion scaffold;
 - SHA-256 evidence hashing;
 - tests that reject any fourth issuer;
 - tests that preserve the real-evidence / controlled-scenario boundary;
-- `source_manifest_v1.json` with pinned accessions and public accounting observations;
-- GitHub Actions CI for the P003-C scope and firewall tests.
+- `source_manifest_v1.json` with pinned accessions and filing metadata;
+- GitHub Actions CI for P003-C scope and firewall tests.
 
-This checkpoint does **not** mean that the full Prototype 003-C benchmark has been completed. The next gate is to execute the live SEC ingestion, persist reproducible raw-source hashes and normalized evidence records, then construct the controlled scenarios and frozen gold labels.
+### Repository integration state
+
+```text
+three-company scope lock           = IMPLEMENTED
+pinned SEC accessions              = IMPLEMENTED
+public evidence snapshot           = IMPLEMENTED
+private source manifest            = IMPLEMENTED
+SEC ingestion scaffold             = IMPLEMENTED
+source hashing contract            = IMPLEMENTED
+fourth-issuer rejection test       = IMPLEMENTED
+interpretation firewall tests      = IMPLEMENTED
+GitHub Actions scope/CI contract   = IMPLEMENTED
+live raw-source ingestion          = PENDING
+persisted raw-source SHA-256       = PENDING
+normalized evidence tables         = PENDING
+controlled scenarios               = PENDING
+frozen scenario gold labels        = PENDING
+four-architecture P003-C runs      = PENDING
+```
+
+This checkpoint does **not** mean that the full Prototype 003-C empirical benchmark has been completed. The next gate is to execute the live SEC ingestion with a compliant SEC User-Agent, persist reproducible raw-source hashes and normalized evidence records, then construct controlled scenarios and frozen gold labels.
 
 ## Scientific invariant
 
 **Same source evidence. Same scenario. Same gold labels. Same evaluator. Different execution architecture.**
 
 Real-company evidence remains immutable; benchmark perturbations remain explicitly synthetic or controlled.
+
+## Canonical related records
+
+- Current project state: `CURRENT_PROJECT_STATE.md`
+- Prototype 003 execution specification: `PROTOTYPE_003_EXECUTION_SPEC.md`
+- Three-company SEC scope: `PROTOTYPE_003C_SEC_SCOPE.md`
+- Public runtime: `Prototype_003/runtime/README.md`
+- Prototype 004 provider execution: `PROTOTYPE_004_PROVIDER_EXECUTION.md`
+
+GitHub remains the canonical source of truth for the version-controlled NAAIL research/software state.
