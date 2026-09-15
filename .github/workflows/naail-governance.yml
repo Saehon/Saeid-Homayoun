@@ -1,0 +1,31 @@
+name: NAAIL Governance Validation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "NAAIL-OpenLab/**"
+      - ".github/workflows/naail-governance.yml"
+  pull_request:
+    paths:
+      - "NAAIL-OpenLab/**"
+      - ".github/workflows/naail-governance.yml"
+
+jobs:
+  validate-governance:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Validate NAAIL governance invariants
+        run: python NAAIL-OpenLab/tools/validate_governance.py
