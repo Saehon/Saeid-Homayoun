@@ -153,18 +153,56 @@ cross-dataset/Digital Twin tests  = NOT_YET_EXECUTED
 
 Benchmark lab: [`benchmarks/ft50_abs4/`](./benchmarks/ft50_abs4/)
 
-## 8. Education and simulation
+## 8. Global AI business education and professional simulation
 
-The public education layer includes:
+The education layer is now governed by a common NAAIL contract rather than a set of disconnected teaching modules:
 
-- SEC EDGAR Education Lab™;
-- Student Open-Source Agent Lab;
-- Student Agent Academy;
+```text
+Business-School Learning Purpose
+→ FT50 / Chartered ABS AJG Research
+→ Authoritative Standard / Regulation
+→ Professional-Body Competency
+→ Public / Licensed / Synthetic Evidence
+→ NAAIL Digital Twin
+→ AI / Agent Condition
+→ Student / Professional Challenge
+→ Evaluation + Evidence Passport™
+→ People × Planet × Society × Sustainable Profit™
+→ Human Gate™
+```
+
+Current education capabilities include:
+
+- **Global AI Business Education & Professional Simulation Platform**;
+- **NAAIL Simulation Evidence Standard™ / Research Evidence Card™**;
+- **Professional Swarm Academy™**;
+- **Student Agent Academy™**;
+- **SEC EDGAR Education Lab™**;
+- **Student Open-Source Agent Lab**;
 - free/open-source simulation stack;
 - synthetic Client XYZ Audit Digital Twins;
 - reproducibility and scientific-discovery teaching workflows.
 
-No Big Four, technology-provider, regulator, university or standards-setter partnership/endorsement is implied unless separately documented in writing.
+Every material simulation promoted as **Research-Backed™**, **Standards-Grounded™** or **Profession-Aligned™** must record a learning objective, FT50/AJG support or explicit evidence gap, applicable standards/regulation, professional competency mapping, data provenance, Digital Twin version, actual AI execution status, assessment design, sustainability/value reflection when material, and Human Gate responsibility.
+
+Research-grounding states are:
+
+- `FT50_AJG4_RESEARCH_BACKED`
+- `PEER_REVIEWED_EVIDENCE_BACKED`
+- `STANDARDS_PROFESSIONAL_BACKED`
+- `EVIDENCE_GAP_DECLARED`
+
+Education-quality references may include AACSB and, where appropriate, EFMD/EQUIS or AMBA. Standards/professional mappings may include IFRS Foundation/IASB/ISSB, PCAOB, IAASB, IFAC/IESBA, EFRAG/ESRS, GRI/GSSB, SEC, AICPA/CPA, CIMA/CGMA, ACCA, IMA/CMA/SMA, IIA/CIA/CRMA, ACFE/CFE, CFA Institute/CFA, ISACA/CISA, GARP/FRM and COSO. These are alignment/evidence contexts only and do not imply accreditation, certification, endorsement or partnership.
+
+Canonical assets:
+
+- [`GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md`](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)
+- [`docs/education/SIMULATION_EVIDENCE_STANDARD.md`](./docs/education/SIMULATION_EVIDENCE_STANDARD.md)
+- [`architecture/simulation_evidence_card.schema.json`](./architecture/simulation_evidence_card.schema.json)
+- [`docs/education/simulation_evidence_card.example.json`](./docs/education/simulation_evidence_card.example.json)
+- [`docs/education/EDUCATION_PLATFORM_SYNC_2026_09_16.md`](./docs/education/EDUCATION_PLATFORM_SYNC_2026_09_16.md)
+
+Google Drive contains synchronized teaching/planning mirrors for the global education platform and Simulation Evidence Standard. GitHub remains the canonical public implementation and governance surface.
 
 ## 9. Permanent architecture boundary
 
@@ -179,6 +217,10 @@ external_system_name_implies_execution = false
 agent_consensus_is_scientific_truth = false
 statistical_significance_is_discovery = false
 prediction_equals_causality = false
+simulation_may_invent_ft50_ajg_support = false
+professional_body_alignment_equals_certification = false
+research_overrides_authoritative_standard = false
+student_score_equals_employability_truth = false
 optimize_for_p_value = false
 failed_tests_are_deleted = false
 human_gate_required = true
@@ -194,6 +236,10 @@ Run blinded, repeated provider × architecture comparisons under identical froze
 
 Pin exact external commits/environments, reproduce original results, run independent implementations, test alternative specifications/estimators, conduct temporal/OOS/placebo/falsification checks, retain null/failed replications and build Chain-of-Evidence records.
 
+### Education-validation track
+
+Convert selected course simulations into complete Research Evidence Cards, verify FT50/AJG anchors at article level, map authoritative standards and professional competencies, preregister learning comparisons where research is intended, and validate educational measures before any high-stakes use.
+
 ### Specialist research track
 
 Advance bounded empirical studies through KIWI™, ECONOVA-S™, ESG, ICFR and Forensic families using the common scientific contract rather than family-specific scientific rules.
@@ -202,7 +248,7 @@ Advance bounded empirical studies through KIWI™, ECONOVA-S™, ESG, ICFR and F
 
 **Public:** research-safe architecture, synthetic benchmark descriptions, selected reproducibility code, provider-harness documentation/code, integration registries, public-data governance, education assets, scientific contracts, maturity maps and citation metadata.
 
-**Private/IP-sensitive:** provider credentials, restricted/licensed datasets, patent-sensitive orchestration, unpublished agent specifications/prompts, private benchmark extensions, partner-confidential materials, and unreleased experimental results.
+**Private/IP-sensitive:** provider credentials, restricted/licensed datasets, patent-sensitive orchestration, unpublished agent specifications/prompts, private benchmark extensions, partner-confidential materials, individual recruitment data, and unreleased experimental results.
 
 Third-party software, standards, models, data and replication packages retain their original ownership and terms.
 
@@ -210,6 +256,9 @@ Third-party software, standards, models, data and replication packages retain th
 
 - [Start Here](./00_START_HERE.md)
 - [Global Brand Identity](./BRAND_IDENTITY.md)
+- [Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)
+- [Simulation Evidence Standard](./docs/education/SIMULATION_EVIDENCE_STANDARD.md)
+- [Education Platform Sync](./docs/education/EDUCATION_PLATFORM_SYNC_2026_09_16.md)
 - [September 2026 Upgrade Summary](./UPGRADE_2026_09_16.md)
 - [Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
 - [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
@@ -217,6 +266,6 @@ Third-party software, standards, models, data and replication packages retain th
 - [Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
 - [V2026.3 Architecture](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
 
-> **Models generate. Agents debate. Code tests. Evidence decides. Students challenge. Humans approve.**
+> **Models generate. Agents debate. Research grounds. Standards govern. Professional bodies define competence. Code tests. Evidence decides. Students challenge. Humans approve. Society benefits.**
 
-GitHub remains the public source of truth. Google Drive is a mirror/archive unless explicitly designated otherwise.
+GitHub remains the public source of truth. Google Drive is a teaching/planning mirror unless explicitly designated otherwise.
