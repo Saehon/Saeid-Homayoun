@@ -15,6 +15,7 @@ Primary synchronized artifacts:
 - `MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md`
 - `prototype_v1_results.md`
 - `VALIDATION_MATRIX_15_TESTS.md`
+- `VALIDATION_RUN_15_TESTS_2026_09_16.md`
 - `FALSIFICATION_ROBUSTNESS_REGISTER.md`
 - `PACKAGE_README_FY2026.md`
 - `dashboard.html`
@@ -23,34 +24,52 @@ Primary synchronized artifacts:
 - `microsoft_evidence_passport_schema.json`
 - `microsoft_digital_twin.json`
 - `human_ai_experiment_design.md`
-- `tests/`
+- `tests/test_microsoft_poc_v1_15_contract.py`
 - `code/`
 - `src/`
 
+Dedicated CI workflow:
+
+`.github/workflows/microsoft_poc_v1_15_test.yml`
+
+## Executed validation state
+
+The new dedicated unified artifact-validation harness executed successfully on 2026-09-16:
+
+```text
+...............                                                          [100%]
+15 passed in 0.08s
+```
+
+This includes execution of the previously open:
+
+- TEST 03 — Variable dictionary validation; and
+- TEST 14 — Dashboard data-load/reconciliation validation.
+
+The prior historical 12/12 harness remains a valid earlier execution record. The new 15/15 result supersedes the earlier **coverage-only** 13/15 classification for the current artifact-validation contract.
+
+## Scientific boundary
+
+The 15/15 artifact result does **not** mean the broader Microsoft V1 scientific success gate is passed.
+
+Still open:
+
+- actual T0–T3 participant experiment;
+- MSFT Fama–French factor regression;
+- aggregate PatentsView analysis;
+- NAAIL-specific professional-task model benchmark / Cost per Verified Professional Output™;
+- remaining falsification/robustness challenges;
+- independent cross-source and reviewer replication.
+
+Production approval remains **NO**. Scientific validation remains **PENDING INDEPENDENT REPLICATION**.
+
 ## Google Drive synchronized records
 
-NAAIL OpenLab folder contains:
-
-1. **NAAIL Microsoft POC V1 — Build & Validation Contract — 15-Test Upgrade — 2026-09-16**
-2. **NAAIL Microsoft POC V1 — 15-Test Validation & Falsification Results — 2026-09-16**
-3. **NAAIL Microsoft POC V1 — Governance & Results Mirror**
-
-## Current validation boundary
-
-- Historical offline automated harness: **12/12 PASS**.
-- New 15-test contract coverage classification: **13 PASS / 2 NOT EXECUTED / 0 FAIL / 0 BLOCKED**.
-- TEST 03 — Variable dictionary validation: **NOT EXECUTED**.
-- TEST 14 — Dashboard data-load validation: **NOT EXECUTED**.
-- T0–T3 Human–AI participant experiment: **DESIGN COMPLETE / NOT EXECUTED**.
-- Fama–French MSFT regression: **NOT EXECUTED**.
-- Aggregate PatentsView analysis: **NOT EXECUTED**.
-- Independent replication: **NOT YET**.
-- Production approval: **NO**.
-- Scientific validation: **PENDING INDEPENDENT REPLICATION**.
+The canonical NAAIL OpenLab Google Drive folder contains the Microsoft build contract, validation/falsification results, governance/results mirror, synchronization manifest, and the executed 15-test validation run record.
 
 ## Governance rule
 
-Do not convert `NOT EXECUTED` into `PASS`. Preserve contradictory or failed evidence in the falsification record. Do not expand to SAP, Walmart, Intuit, Shopify, JPMorgan Chase, ExxonMobil, Fluor, or Boeing until the Microsoft V1 validation gate is documented as passed.
+Do not convert separately unexecuted scientific work into PASS merely because the artifact-integrity harness passed. Preserve contradictory or failed evidence in the falsification record. Do not expand to SAP, Walmart, Intuit, Shopify, JPMorgan Chase, ExxonMobil, Fluor, or Boeing until the remaining Microsoft V1 scientific validation gates are completed.
 
 ## Patent/public-disclosure boundary
 
@@ -62,14 +81,21 @@ Do not use “Patent Pending” unless an actual patent filing is confirmed.
 
 ## Latest publication commits incorporated in this synchronized state
 
-- `97d0d4ebd0189c137529dff5934a9889d1023fb2` — upgraded build/validation contract
-- `296e776f94aa477d5d9029e96fb70fa15d3562b4` — 15-test validation matrix
-- `9ad7500822e1cca1180f6c151111de87d372183c` — falsification & robustness register
-- `613204a37b3db43222fa6e664f01a353a991c022` — updated results boundary
-- `6d4ccf36ee798b7f7314262a095dccb4e47dd78c` — updated package README
-- `00f1de7cf216a7088a639579a89e26b7a43dab56` — upgraded dashboard
-- `fe6556bf0379928d6394b4a11ae3dc134ea8f68c` — upgraded Microsoft V1 status page
+- `2f5b3e6a9aa4bf5fbe4bab60ff2468fbb76efdd4` — unified Microsoft 15-test harness
+- `7ccf03fd5eec6237774671f825e33ca0278e4967` — dedicated GitHub Actions workflow
+- `9551c02e37635f667afa46f00deb822a1d70a515` — timestamped 15-test validation run
+- `af07188e9badaae664e5dde1d7e233e7eea93d3e` — executed 15/15 validation matrix
+- `a6a1acb3bac1867ad8f0100616ab01663749cf7b` — executed results update
+- `47de88d96d96412a8871152596b82a13e59a9d9c` — dashboard update
+- `fd645fb61565ccd6f5b360a83ac38a1c3d67a1b3` — package index update
+- `932102b8f991163365c22f62b5983b0845ac2ded` — Microsoft V1 canonical status update
+- `d56ac961818a977bf1a2c7a01d968920a8ac21ba` — Current Project State update
+- `6074455f5a5c4cbe5df9b7fb6d262da901d5fced` — main NAAIL README publication
+
+## CI boundary
+
+The GitHub Actions workflow is published for future push/PR execution. **A successful GitHub Actions run is not claimed here unless a completed workflow run is separately verified.**
 
 ## Final synchronized status
 
-GitHub and Google Drive are aligned to the same Microsoft V1 governance state. The project remains `RESEARCH_PROTOTYPE` and Microsoft remains the single Golden Anchor until the open validation and replication gates are completed.
+GitHub is updated to the executed 15/15 artifact-validation state. Google Drive is the mirror target for the same result. The project remains `RESEARCH_PROTOTYPE` and Microsoft remains the single Golden Anchor until the open scientific validation and replication gates are completed.
