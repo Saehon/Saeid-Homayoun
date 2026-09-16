@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.9",
-  "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16-PATENT-FIRST",
+  "schema_version": "2.0",
+  "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16-PATENT-FIRST-PUBLIC-CONSOLIDATED",
   "platform": {
     "master_brand": "NAAIL OpenLab™",
     "lab_name": "Next-Generation Accounting, Audit & Assurance Intelligence Lab",
@@ -24,11 +24,12 @@
   ],
   "capabilities": [
     {"id":"brand_identity","name":"Global NAAIL identity","path":"NAAIL-OpenLab/BRAND_IDENTITY.md","status":"ARCHITECTURE_ADOPTED"},
+    {"id":"public_platform_overview","name":"NAAIL Public Platform Overview","path":"NAAIL-OpenLab/PUBLIC_PLATFORM_OVERVIEW.md","status":"ARCHITECTURE_ADOPTED","scope":"consolidated public non-enabling reviewer overview of the two-core platform, agents, cross-cutting layers, scientific standard, public data/technology policy, patent-first boundary and validated checkpoint"},
     {"id":"master_hierarchy","name":"Two-core canonical master hierarchy","path":"NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md","status":"PATENT_HOLD_NON_ENABLING","scope":"public high-level two-core hierarchy; enabling interactions withheld"},
+    {"id":"nobel_theory_to_evidence_ai_experiment_engine","name":"NAAIL Nobel Theory-to-Evidence & AI Experiment Engine","path":"NAAIL-OpenLab/NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md","status":"PATENT_HOLD_NON_ENABLING","scope":"cross-cutting theory-to-construct-to-variable-to-data-to-experiment-to-digital-twin-to-causal-test-to-replication pipeline serving all NAAIL domains; not a core and not CCCMP-specific; detailed machine-readable theory objects, treatment orchestration, connector contracts and provenance internals private"},
     {"id":"value_expansion_fabric","name":"NAAIL Value Expansion Fabric","path":"NAAIL-OpenLab/VALUE_EXPANSION_FABRIC.md","status":"PATENT_HOLD_NON_ENABLING","scope":"modular data, knowledge, professional education, ERP, research and business-school Digital Twin expansion; no third core"},
     {"id":"behavioral_decision_science_human_ai","name":"NAAIL Behavioral Decision Science & Human–AI Experimentation Layer","path":"NAAIL-OpenLab/BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md","status":"PATENT_HOLD_NON_ENABLING","scope":"behavioral economics/finance/accounting/auditing/management and human-AI experimentation; detailed treatment and orchestration mechanics private"},
     {"id":"behavioral_human_ai_research_governance","name":"Behavioral Human–AI Research Governance","path":"NAAIL-OpenLab/docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md","status":"ARCHITECTURE_ADOPTED","scope":"public methodological governance for construct validity, causal identification, preregistration, power, reproducibility, replication/falsification, current FT50/AJG verification, and non-diagnostic interpretation of behavioral proxies"},
-    {"id":"nobel_theory_to_evidence_ai_experiment_engine","name":"NAAIL Nobel Theory-to-Evidence & AI Experiment Engine","path":"NAAIL-OpenLab/NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md","status":"PATENT_HOLD_NON_ENABLING","scope":"cross-cutting theory-to-construct-to-variable-to-data-to-experiment-to-digital-twin-to-causal-test-to-replication pipeline serving all NAAIL domains; not a core and not CCCMP-specific; detailed machine-readable theory objects, treatment orchestration, connector contracts and provenance internals private"},
     {"id":"cccmp","name":"CCCMP — Project Cost, Contract & Claims Management Programme","path":"NAAIL-OpenLab/CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md","status":"PATENT_HOLD_NON_ENABLING","scope":"specialist programme within NAAIL for project cost, contracts, claims, delay, procurement, project finance/accounting, behavioral research and Digital Twins; not a core"},
     {"id":"cccmp_research_governance","name":"CCCMP Research, Education & Evidence Governance","path":"NAAIL-OpenLab/docs/research/CCCMP_RESEARCH_GOVERNANCE.md","status":"ARCHITECTURE_ADOPTED"},
     {"id":"global_ai_business_education","name":"Global AI Business Education & Professional Simulation Platform","path":"NAAIL-OpenLab/GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md","status":"PUBLIC_EDUCATION_DESIGN"},
@@ -61,10 +62,12 @@
   },
   "invariants": {
     "permanent_core_count": 2,
+    "public_platform_overview_is_non_enabling": true,
     "value_expansion_fabric_is_core": false,
     "behavioral_decision_science_layer_is_core": false,
     "nobel_theory_engine_is_core": false,
     "nobel_theory_engine_is_cccmp_specific": false,
+    "nobel_theory_engine_serves_all_naail_domains": true,
     "cccmp_is_core": false,
     "behavioral_proxies_are_personality_diagnosis": false,
     "theory_name_equals_valid_measurement": false,
