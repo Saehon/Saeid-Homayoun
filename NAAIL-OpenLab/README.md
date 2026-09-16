@@ -9,7 +9,7 @@
 
 NAAIL OpenLab™ is an independent research and education platform for evidence-governed multi-agent Digital Twins, theory-to-evidence research, professional simulation, behavioral experimentation, innovation/entrepreneurship research, **management-accounting and AI-cost intelligence**, scientific discovery and verifiable human–AI judgment.
 
-**Public reviewer entry:** [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md) · [Microsoft POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md) · [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md) · [Start Here](./00_START_HERE.md) · [Current Project State](./CURRENT_PROJECT_STATE.md)
+**Public reviewer entry:** [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md) · [Microsoft POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md) · [15-Test Validation](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md) · [Falsification Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md) · [Current Project State](./CURRENT_PROJECT_STATE.md)
 
 ## Frozen architecture constitution
 
@@ -30,9 +30,20 @@ NAAIL permanently preserves exactly two cores:
 
 **Microsoft public evidence → Data & Evidence Mesh™ → Evidence Passport™ → accounting/audit/finance/text/innovation modules → Microsoft Digital Twin → synthetic management-accounting AI-cost microcase → Human–AI experiment design → Human Gate™.**
 
-Executed in V1: SEC interactive-XBRL R2/R4/R6/R107 facts, accounting/finance calculations, 251 FY2026 MSFT IEX daily bars, FY-end DGS10, two CAMs plus the ICFR opinion, bounded text features, R&D + public GitHub innovation proxies, synthetic ABC/TDABC/AI-cost arithmetic, a current LiveBench external quality/cost snapshot, Evidence Passport instantiation, **12/12 offline unit tests**, and a publication-only Human Gate decision.
+Executed in V1: SEC interactive-XBRL R2/R4/R6/R107 facts, accounting/finance calculations, 251 FY2026 MSFT IEX daily bars, FY-end DGS10, two CAMs plus the ICFR opinion, bounded text features, R&D + public GitHub innovation proxies, synthetic ABC/TDABC/AI-cost arithmetic, a current LiveBench external quality/cost snapshot, Evidence Passport instantiation, **12/12 historical offline unit tests**, and a publication-only Human Gate decision.
 
-Not yet executed: participant experiment, MSFT Fama–French regression, PatentsView aggregate patent/citation analysis, NAAIL-specific professional model pass-rate validation, Decision–Consequence execution, Professional Judgment Passport execution, and independent replication. The LiveBench cost-per-successful-task metric is an external benchmark and is not treated as a NAAIL professional-verification rate.
+The upgraded 15-test governance contract currently has **13/15 evidence-backed PASS classifications** and **2 NOT EXECUTED items**: dedicated variable-dictionary validation and dedicated dashboard data-load validation. This is a coverage assessment, not a claim that a new 15-test automated harness has already been executed.
+
+Not yet executed: participant experiment, MSFT Fama–French regression, aggregate PatentsView patent/citation analysis, NAAIL-specific professional model pass-rate validation, dedicated TEST 03/TEST 14 execution, and independent replication. The LiveBench cost-per-successful-task metric is an external benchmark and is not treated as a NAAIL professional-verification rate.
+
+### Microsoft V1 governance package
+
+- [Build & Validation Contract](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)
+- [Executed Results](./prototypes/microsoft-poc-v1/prototype_v1_results.md)
+- [15-Test Validation Matrix](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md)
+- [Falsification & Robustness Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
+- [GitHub / Google Drive Sync Manifest](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
+- [Prototype Dashboard](./prototypes/microsoft-poc-v1/dashboard.html)
 
 **Important:** Prototype 003 remains the only `EXECUTED_VALIDATED` public checkpoint. Microsoft POC V1 is a newer bounded `RESEARCH_PROTOTYPE`, not a replacement validation release.
 
@@ -126,20 +137,23 @@ No patent application is represented as filed as of 2026-09-16. Do not use **Pat
 
 1. [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md)
 2. [Microsoft POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md)
-3. [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
-4. [Management Accounting & AI Cost Intelligence Layer](./MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
-5. [Open Model Benchmark & Cost Intelligence Layer](./OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
-6. [Visualization & Decision Intelligence Layer](./VISUALIZATION_DECISION_INTELLIGENCE_LAYER.md)
-7. [Start Here](./00_START_HERE.md)
-8. [Canonical hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-9. [Capability registry](./architecture/platform_capability_registry.json)
-10. [Capability & maturity matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
-11. [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
-12. [Nobel Theory-to-Evidence Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
-13. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-14. [CCCMP](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
-15. [Patent Notice](./PATENT_NOTICE.md)
-16. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
+3. [15-Test Validation Matrix](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md)
+4. [Falsification & Robustness Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
+5. [GitHub / Google Drive Sync Manifest](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
+6. [Current Project State](./CURRENT_PROJECT_STATE.md)
+7. [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
+8. [Management Accounting & AI Cost Intelligence Layer](./MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
+9. [Open Model Benchmark & Cost Intelligence Layer](./OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
+10. [Visualization & Decision Intelligence Layer](./VISUALIZATION_DECISION_INTELLIGENCE_LAYER.md)
+11. [Canonical hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+12. [Capability registry](./architecture/platform_capability_registry.json)
+13. [Capability & maturity matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
+14. [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
+15. [Nobel Theory-to-Evidence Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
+16. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
+17. [CCCMP](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+18. [Patent Notice](./PATENT_NOTICE.md)
+19. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
 
 ## Citation
 
