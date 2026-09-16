@@ -2,7 +2,7 @@
 
 **Canonical version:** V2026.3 Multi-Agent Digital Twin  
 **Status:** Master branding and architecture hierarchy  
-**Applies to:** README files, architecture documents, agent families, studies, education assets, simulations, benchmarks, public product descriptions, and future releases.
+**Applies to:** README files, architecture documents, agent families, studies, education assets, simulations, evidence/data connectors, benchmarks, public product descriptions, and future releases.
 
 ## Canonical brand relationship
 
@@ -77,6 +77,19 @@ V2026.3 Multi-Agent Digital Twin
 │   ├── Sandboxes / Code Execution
 │   └── Replaceable Provider Integrations
 │
+├── NAAIL Data & Evidence Mesh™                       [SUPPORTING]
+│   ├── SEC EDGAR / XBRL connectors
+│   ├── FRED / ALFRED connectors
+│   ├── Fama–French references
+│   ├── World Bank Indicators API
+│   ├── OWID CO₂ / Energy references
+│   ├── OpenAlex scholarly metadata
+│   ├── OpenSanctions research connector
+│   ├── Optional OpenBB provider connectors
+│   ├── Rights / License / Version Gate
+│   ├── Evidence Passport™ Builder
+│   └── Validation / Reconciliation / Agent Routing
+│
 ├── Scientific Discovery & Governance Layer
 │   ├── AI Co-Scientist / Hypothesis Arena
 │   ├── ERA-style Empirical Design
@@ -141,6 +154,37 @@ V2026.3 Multi-Agent Digital Twin
     ├── Governance / Risk Simulations
     ├── Professional Swarm Academy
     └── Reproducible Research Laboratories
+```
+
+## NAAIL Data & Evidence Mesh™
+
+Canonical specification: [`../DATA_EVIDENCE_MESH.md`](../DATA_EVIDENCE_MESH.md)  
+Machine-readable registry: [`data_evidence_mesh_registry.json`](./data_evidence_mesh_registry.json)
+
+The Mesh is a **supporting data/evidence routing layer**, not a permanent core. It uses APIs/connectors, source IDs, retrieval timestamps, periods/vintages, rights/license metadata, hashes/checksums where feasible, transformation lineage and Evidence Passport™ instead of committing large third-party datasets to GitHub.
+
+Primary source families are:
+
+- SEC EDGAR / XBRL;
+- FRED / ALFRED;
+- Fama–French;
+- World Bank;
+- Our World in Data CO₂ / Energy;
+- OpenAlex;
+- OpenSanctions for non-commercial/academic forensic/governance research under applicable terms;
+- optional OpenBB provider connectors as Technology-Core adapters.
+
+The Mesh inherits the existing **NAAIL Free Data Fabric™** source-governance rules. Free Data Fabric governs source discovery/admission; Data & Evidence Mesh governs runtime retrieval/reference, Evidence Passport generation, validation/reconciliation and agent/Digital Twin routing.
+
+```text
+Real Data
+→ Evidence Passport™
+→ Multi-Agent Analysis
+→ Digital Twin Simulation
+→ Decision
+→ Consequence
+→ Verification
+→ Human Approval Gate™
 ```
 
 ## Business School Simulation & Digital Twin Layer
@@ -222,12 +266,12 @@ PCAOB public auditing standards/rules/inspection/enforcement evidence; deficienc
 Sustainability reporting, ESG measurement, ESRS/ISSB/GRI-oriented analysis, climate/carbon, assurance, materiality and sustainability research.
 
 ### ECONOVA-S™
-Economics, finance, data economy, asset pricing, Fama–French, Damodaran, SEC/XBRL economic evidence, economic Digital Twins and empirical research.
+Economics, finance, data economy, asset pricing, Fama–French, SEC/XBRL/FRED/World Bank/OWID economic evidence, economic Digital Twins and empirical research.
 
 ### ICFR & Forensic capabilities
 Internal controls/material weaknesses and fraud/anomaly/investigative analytics remain specialist capabilities under the same NAAIL architecture.
 
-## Technology Core simulation adapters
+## Technology Core simulation and data adapters
 
 The Technology Core may evaluate and admit replaceable adapters such as:
 
@@ -239,11 +283,12 @@ The Technology Core may evaluate and admit replaceable adapters such as:
 - **HARK / Econ-ARK** — heterogeneous-agent economics;
 - **ABIDES** — capital-market/exchange-agent simulation;
 - **FinRL** — financial reinforcement-learning education/research;
-- **RD-Agent** — R&D automation/model-data iteration experiments.
+- **RD-Agent** — R&D automation/model-data iteration experiments;
+- **OpenBB provider extensions** — optional finance-data provider abstraction while preserving original-provider provenance/terms.
 
-Canonical registry: [`business_school_simulation_technology_registry.json`](./business_school_simulation_technology_registry.json)
+Canonical simulation registry: [`business_school_simulation_technology_registry.json`](./business_school_simulation_technology_registry.json)
 
-Framework inclusion does **not** mean installation, execution, validation, professional authority or admission to the Knowledge Core.
+Framework/connector inclusion does **not** mean installation, execution, validation, professional authority or admission to the Knowledge Core.
 
 ## First dynamic prototype
 
@@ -251,13 +296,13 @@ The first dynamic prototype is **NAAIL Audit & Accounting Digital Twin™**:
 
 [`../digital-twins/audit-accounting/README.md`](../digital-twins/audit-accounting/README.md)
 
-It combines realistic synthetic/public evidence, IFRS issues, internal-control weaknesses, management pressure, CAM/KAM decisions, PCAOB-style public-standards challenge, multi-agent interaction, dynamic decision consequences, student defense, Professional Judgment Passport™ and Human Approval Gate™.
+It combines realistic synthetic/public evidence, SEC/XBRL context, macro/market/context evidence through the Data & Evidence Mesh, IFRS issues, internal-control weaknesses, management pressure, CAM/KAM decisions, PCAOB-style public-standards challenge, multi-agent interaction, dynamic decision consequences, student defense, Professional Judgment Passport™ and Human Approval Gate™.
 
-It may reuse validated patterns from Prototype 003, but dynamic provider-backed execution remains a separate validation milestone.
+It may reuse validated patterns from Prototype 003, but live-connector and provider-backed dynamic execution remain separate validation milestones.
 
-## Free / open-source simulation rule
+## Free / open-source simulation and data rule
 
-The deterministic core must remain runnable without a paid model API where feasible. Optional external frameworks/providers are admitted only after version pinning, license review, security review, reproducibility testing, data-rights review where applicable and benchmark comparison.
+The deterministic core must remain runnable without a paid model API where feasible. External data should be accessed through source references/APIs/connectors rather than mirrored wholesale into GitHub. Optional external frameworks/providers are admitted only after version pinning, license review, security review, reproducibility testing, data-rights review where applicable and benchmark comparison.
 
 Convenience tools never outrank authoritative evidence. Protected standards text is not bundled merely for convenience. Free/open tooling never implies access to restricted regulator or firm data.
 
@@ -294,8 +339,10 @@ human_gate_required = true
 ```text
 NAAIL-OpenLab/
 ├── README.md
+├── DATA_EVIDENCE_MESH.md
 ├── architecture/
 │   ├── MASTER_PLATFORM_HIERARCHY.md
+│   ├── data_evidence_mesh_registry.json
 │   ├── professional_judgment_passport.schema.json
 │   └── business_school_simulation_technology_registry.json
 ├── agents/
@@ -315,7 +362,7 @@ NAAIL-OpenLab/
 │   └── free-stack/
 ├── scientific-discovery/
 ├── education/
-├── datasets/
+├── datasets/              # small/synthetic/rights-cleared assets only by default
 ├── benchmarks/
 ├── examples/
 └── docs/
@@ -327,12 +374,13 @@ This is a navigation target. Existing links/history/CI paths should be preserved
 
 1. Public pages introduce **NAAIL OpenLab™** before specialist agents.
 2. The architecture always preserves **exactly two permanent cores**: Knowledge Core™ and Technology Core™.
-3. The Business School Simulation & Digital Twin Layer, Decision–Consequence Engine™ and Professional Judgment Passport™ are supporting capabilities, not cores.
+3. The Data & Evidence Mesh™, Business School Simulation & Digital Twin Layer, Decision–Consequence Engine™ and Professional Judgment Passport™ are supporting capabilities, not cores.
 4. KIWI™, POMELO™, VERA™, IFRS Agent™, PCAOB Agent™, ESG Agent and ECONOVA-S™ remain under the NAAIL umbrella.
 5. `V2026.3 Multi-Agent Digital Twin` identifies architecture; semantic versions such as `v0.2.3` identify executable releases.
-6. External AI systems, simulation frameworks, regulators, standard setters and firms remain evidence sources, tools, methodological inspirations, providers or benchmarks unless a documented relationship exists.
-7. Shared scientific governance cannot be weakened locally.
-8. Human approval remains mandatory for consequential professional, educational-promotion or scientific claims.
+6. External AI systems, simulation frameworks, data providers, regulators, standard setters and firms remain evidence sources, tools, methodological inspirations, providers or benchmarks unless a documented relationship exists.
+7. Large third-party datasets should not be committed to GitHub by default; preserve connector/query/version/rights/provenance metadata instead.
+8. Shared scientific governance cannot be weakened locally.
+9. Human approval remains mandatory for consequential professional, educational-promotion or scientific claims.
 
 ## Governance priority
 
