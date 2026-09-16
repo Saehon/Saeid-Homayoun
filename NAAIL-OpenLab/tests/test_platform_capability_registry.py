@@ -62,6 +62,14 @@ def test_execution_claim_is_narrow():
     assert "synthetic" in executed[0].get("scope", "").lower()
 
 
+def test_education_governance_is_registered():
+    data = load_registry()
+    by_id = {item["id"]: item for item in data["capabilities"]}
+    assert by_id["global_ai_business_education"]["status"] == "PUBLIC_EDUCATION_DESIGN"
+    assert by_id["simulation_evidence_standard"]["status"] == "ARCHITECTURE_ADOPTED"
+    assert by_id["simulation_evidence_standard"]["schema"].endswith("simulation_evidence_card.schema.json")
+
+
 def test_permanent_invariants():
     inv = load_registry()["invariants"]
     assert inv["architecture_documented_equals_runtime_executed"] is False
@@ -70,5 +78,9 @@ def test_permanent_invariants():
     assert inv["external_repo_is_authoritative_truth"] is False
     assert inv["technology_core_may_rewrite_knowledge_core"] is False
     assert inv["agent_consensus_is_scientific_truth"] is False
+    assert inv["simulation_may_invent_ft50_ajg_support"] is False
+    assert inv["professional_body_alignment_equals_certification"] is False
+    assert inv["research_overrides_authoritative_standard"] is False
+    assert inv["student_score_equals_employability_truth"] is False
     assert inv["optimize_for_p_value"] is False
     assert inv["human_gate_required"] is True
