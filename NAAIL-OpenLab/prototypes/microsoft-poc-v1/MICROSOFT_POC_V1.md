@@ -5,45 +5,46 @@
 **Maturity:** `RESEARCH_PROTOTYPE`  
 **Canonical architecture:** exactly **Stable Knowledge Core™ + Replaceable Technology Core™**. **No third core.**
 
-**Canonical upgraded build-and-validation contract:** [MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md](./MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)  
+**Canonical build-and-validation contract:** [MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md](./MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)  
 **Executed results:** [prototype_v1_results.md](./prototype_v1_results.md)  
-**15-test coverage matrix:** [VALIDATION_MATRIX_15_TESTS.md](./VALIDATION_MATRIX_15_TESTS.md)  
-**Falsification & robustness register:** [FALSIFICATION_ROBUSTNESS_REGISTER.md](./FALSIFICATION_ROBUSTNESS_REGISTER.md)
+**15-test run:** [VALIDATION_RUN_15_TESTS_2026_09_16.md](./VALIDATION_RUN_15_TESTS_2026_09_16.md)
 
-> Bounded proof of concept only. It is not production-ready and does not claim scientific validation beyond executed evidence. The upgraded 15-test contract must not convert `NOT EXECUTED` work into PASS.
+> Bounded proof of concept only. It is not production-ready and does not claim scientific validation beyond the executed tests described here.
 
 ## End-to-end objective
 
-**Microsoft real public evidence → Data & Evidence Mesh™ → SEC/XBRL + CAM + ICFR + textual analytics → Accounting/Audit/Finance/Innovation → Microsoft Digital Twin → BSC/ABC/TDABC/AI Costing → Open AI Model Benchmark → Human–AI Experiment → Evidence Passport™ → Robustness/Replication/Falsification → Human Approval Gate™**
+**Microsoft public evidence → Data & Evidence Mesh™ → Evidence Passport™ → Accounting/Audit/Finance/Text/Innovation modules → Microsoft Digital Twin → AI benchmark / synthetic costing / experiment design → Human Gate™**
 
 ## What V1 actually executes
 
-- SEC interactive-XBRL facts from **R2 (income statement), R4 (balance sheet), R6 (cash flows), and R107 (segments)**.
+- SEC interactive-XBRL facts from **R2, R4, R6 and R107**.
 - Derived accounting/finance features.
 - FY2026 MSFT market-price snapshot: **251 IEX daily bars**, FY start/last close proxy **$492.10 → $372.92**, simple price return **-24.22%** (not dividend-adjusted).
 - FY-end U.S. 10-year Treasury snapshot **4.44%**.
 - FY2026 CAM/ICFR mapping.
-- Two bounded filing-text samples transformed into numerical text features without redistributing the underlying text.
+- Two bounded filing-text samples transformed into numerical features without redistributing underlying raw text.
 - Innovation proxies: R&D intensity and Microsoft GitHub public metadata.
 - Synthetic ABC/TDABC/AI-cost microcase.
-- Current LiveBench external model-quality/cost snapshot.
+- LiveBench external model-quality/cost snapshot.
 - Evidence Passport instance and Human Gate publication decision.
 - Human–AI experiment **structure/design only**.
+- Dedicated unified **15-test artifact-validation harness: 15/15 PASS**.
 
-## Validation state after contract upgrade
+## Unified 15-test result
 
-The historical reproducibility harness passed **12/12 offline unit tests** on 2026-09-16. The upgraded contract now defines **15 explicit tests** and a formal falsification program.
+`tests/test_microsoft_poc_v1_15_contract.py` executed successfully on 2026-09-16:
 
-Mapping existing evidence to that new contract currently yields:
+```text
+...............                                                          [100%]
+15 passed in 0.08s
+```
 
-- **13 PASS**
-- **2 NOT EXECUTED** — dedicated variable-dictionary validation and explicit dashboard data-load/integrity validation
-- **0 FAIL**
-- **0 BLOCKED**
+This includes dedicated execution of:
 
-This is a coverage mapping, **not** a claim that a new dedicated 15-test automated harness has already been executed.
+- **TEST 03 — Variable dictionary validation**; and
+- **TEST 14 — Dashboard data-load/reconciliation validation**.
 
-The separate Human–AI Experiment success gate remains **NOT EXECUTED** because no participant run has occurred. TEST 13 verifies only the T0–T3 experimental structure.
+See [VALIDATION_MATRIX_15_TESTS.md](./VALIDATION_MATRIX_15_TESTS.md) for exact test boundaries.
 
 ## Core FY2026 financial state (USD millions)
 
@@ -66,50 +67,47 @@ The mapping follows:
 
 ## Finance
 
-Executed: profitability, liquidity, leverage, cash-flow measures, FY2026 simple MSFT price return, FY-end DGS10, and a clearly labeled risk-free-plus-mature-ERP illustration.  
-Not executed: Fama–French regression and a Microsoft-specific WACC. The **8.64%** RF+ERP figure is a teaching proxy, **not** Microsoft WACC.
+Executed: profitability, liquidity, leverage, cash-flow measures, FY2026 simple MSFT price return, FY-end DGS10, and a labeled risk-free-plus-mature-ERP illustration.  
+Not executed: **Fama–French regression** and a Microsoft-specific WACC. The **8.64%** RF+ERP figure is a teaching proxy, **not** Microsoft WACC.
 
 ## Innovation
 
 Executed: R&D intensity and public GitHub metadata snapshot.  
-Registered, not executed: aggregate PatentsView assignee/citation measures.
+Registered, not executed: aggregate PatentsView assignee/citation/technology-diversity measures.
 
 ## Management accounting
 
-The public package uses a **NAAIL synthetic Microsoft-like management-accounting Digital Twin** to demonstrate BSC/ABC/TDABC/AI-ABC/TTD-AIC logic:
+A synthetic Microsoft-like AI analysis workflow demonstrates BSC/ABC/TDABC/AI-ABC/TTD-AIC logic:
+`RESOURCE → ACTIVITY → TIME → TOKENS → COST → OUTPUT → QUALITY → VALUE`.
 
-`RESOURCE → COST POOL → ACTIVITY → COST DRIVER → TIME → TOKENS → COMPUTE → TOOL CALLS → HUMAN REVIEW → OUTPUT → QUALITY → COST → VALUE`.
-
-No Microsoft internal cost or capacity data are inferred, and no claim is made that Microsoft uses this costing model.
+No Microsoft internal cost or capacity data are inferred.
 
 ## AI model benchmark
 
-`ai_cost_benchmark.csv` uses the LiveBench 2026-06-25 release. The cost field is **LiveBench cost per successful task**—an external objective benchmark—not a NAAIL professional-verification rate.
+`ai_cost_benchmark.csv` uses the LiveBench 2026-06-25 release. The cost field is **external cost per successful benchmark task**, not a NAAIL professional-verification rate.
 
 ## Human–AI experiment
 
-T0 Human only; T1 Human+AI; T2 Human+AI+explanation; T3 Human+AI+contradictory evidence. Design complete, participant run not executed.
+T0 Human only; T1 Human+AI; T2 Human+AI+explanation; T3 Human+AI+contradictory evidence. The 15-test harness validates the **structure only**. Participant execution remains `DESIGN_COMPLETE_NOT_EXECUTED`.
 
-Measures planned include accuracy, confidence, confidence–accuracy gap, AI reliance, override, evidence requested, contradictory-evidence recognition, professional skepticism, decision revision, decision time and final judgment quality.
+## CI status
 
-## Falsification / robustness boundary
+A dedicated GitHub Actions workflow is published at `.github/workflows/microsoft_poc_v1_15_test.yml` for future push/PR validation. **CI success is not claimed until a completed GitHub Actions run is separately verified.**
 
-The upgraded contract requires explicit challenges to each major result. Open work includes cross-source financial replication, independent CAM coding, alternative text models/specifications, Fama–French sensitivity, PatentsView construct corroboration, AI-cost sensitivity, professional-task benchmark comparison, leakage review, Evidence Passport replay, dashboard reconciliation, participant execution and independent Human Gate review.
+## Scientific success boundary
 
-Contradictory evidence must be retained and documented rather than silently removed.
+The 15/15 automated artifact-validation result does **not** complete the broader scientific success gate.
 
-## Current FT50 research design anchors
-
-Current FT50 membership is checked dynamically. V1 uses a small design benchmark set: Loughran & McDonald (financial text, *JF*); Burke et al. (CAMs, *TAR*); Fama & French (factor models, *JFE*); Roach & Cohen (patent citations, *Management Science*); plus current *Management Science* human–AI experiment designs. Article text is not copied.
-
-## Success boundary
-
-V1 demonstrates **REAL DATA + REPRODUCIBLE ANALYSIS + MULTIPLE NAAIL ENGINES + ONE COMPANY DIGITAL TWIN + AI COST MEASUREMENT + BEHAVIORAL EXPERIMENT DESIGN + EVIDENCE PROVENANCE + HUMAN REVIEW**.
-
-It does **not** yet demonstrate a fully executed 15-test harness, participant results, live Fama–French exposure, aggregate patent citations, production deployment, completed falsification, or independent replication.
-
-**Overall success gate: NOT PASSED.**
+Still open:
+- actual participant T0–T3 experiment;
+- MSFT Fama–French regression;
+- aggregate PatentsView analysis;
+- NAAIL-specific professional-task model benchmark / Cost per Verified Professional Output™;
+- remaining falsification/robustness challenges;
+- independent replication.
 
 ## Next gate
 
-Finish Microsoft V1 first. Do not advance to SAP/Walmart/Intuit/Shopify/JPMorgan/ExxonMobil/Fluor/Boeing until the upgraded Microsoft V1 validation contract is satisfied and independently replicated.
+Do not advance to SAP/Walmart/Intuit/Shopify/JPMorgan/ExxonMobil/Fluor until Microsoft V1 is independently replicated and the remaining scientific gates are completed.
+
+**Production approval: NO. Scientific validation: PENDING INDEPENDENT REPLICATION. Final maturity: `RESEARCH_PROTOTYPE`.**
