@@ -25,7 +25,9 @@ This public matrix separates validated execution from gated infrastructure, publ
 | Capability | Public asset | Status | Public boundary |
 |---|---|---|---|
 | Global NAAIL identity | [`../BRAND_IDENTITY.md`](../BRAND_IDENTITY.md) | `ARCHITECTURE_ADOPTED` | Brand / identity only. |
-| Two permanent cores | [`MASTER_PLATFORM_HIERARCHY.md`](./MASTER_PLATFORM_HIERARCHY.md) | `PATENT_HOLD_NON_ENABLING` | Knowledge Core™ + Technology Core™ named; detailed interactions withheld. |
+| Public Platform Overview | [`../PUBLIC_PLATFORM_OVERVIEW.md`](../PUBLIC_PLATFORM_OVERVIEW.md) | `ARCHITECTURE_ADOPTED` | Consolidated public, non-enabling reviewer overview. |
+| Two permanent cores | [`MASTER_PLATFORM_HIERARCHY.md`](./MASTER_PLATFORM_HIERARCHY.md) | `PATENT_HOLD_NON_ENABLING` | Stable Knowledge Core™ + Replaceable Technology Core™ named; detailed interactions withheld. |
+| NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™ | [`../NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md`](../NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md) | `PATENT_HOLD_NON_ENABLING` | Cross-cutting theory-to-evidence research engine serving all domains; detailed theory schemas, experiment orchestration, connector/provenance contracts and unpublished implementation remain private. |
 | NAAIL Value Expansion Fabric™ | [`../VALUE_EXPANSION_FABRIC.md`](../VALUE_EXPANSION_FABRIC.md) | `PATENT_HOLD_NON_ENABLING` | High-level expansion families public; detailed connector/graph/provenance/simulation mechanics private. |
 | Behavioral Decision Science & Human–AI Experimentation Layer™ | [`../BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md`](../BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md) | `PATENT_HOLD_NON_ENABLING` | High-level behavioral/human–AI research scope public; treatment/outcome/orchestration mechanics private. |
 | Behavioral Human–AI Research Governance | [`../docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md`](../docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md) | `ARCHITECTURE_ADOPTED` | Public methodology and integrity rules. |
@@ -54,16 +56,33 @@ patent_application_preparation != patent_pending
 architecture_documented != runtime_executed
 registry_entry != dependency_installed
 public_data != unrestricted_redistribution
+nobel_theory_engine_is_core = false
+nobel_theory_engine_is_cccmp_specific = false
 cccmp_is_core = false
 behavioral_decision_science_layer_is_core = false
 value_expansion_fabric_is_core = false
 cccmp_simulation != real_world_causal_effect
+behavioral_proxy != psychological_diagnosis
+predictive_accuracy != causality
 human_gate_required = true
 ```
 
 ## Fixed two-core boundary
 
-The architecture continues to preserve exactly two permanent cores: **Knowledge Core™** and **Technology Core™**. No Data Mesh, Value Expansion Fabric, Behavioral Decision Science layer, CCCMP programme, Digital Twin, agent, evaluation, simulation, or education capability becomes a third permanent core.
+The architecture continues to preserve exactly two permanent cores: **Stable Knowledge Core™** and **Replaceable Technology Core™**. No Data Mesh, Nobel Theory-to-Evidence Engine, Value Expansion Fabric, Behavioral Decision Science layer, CCCMP programme, Digital Twin, agent, evaluation, simulation, or education capability becomes a third permanent core.
+
+## Research-quality boundary
+
+For Nobel/behavioral/causal research, public governance requires, where applicable:
+
+- explicit theory and construct definitions;
+- lawful data provenance and license/access review;
+- Variable DNA™ / reproducible variable definitions;
+- preregistration and power/sample-size rationale for confirmatory experiments;
+- credible randomization or causal identification when causal claims are made;
+- robustness, falsification, replication/OOS and external validation;
+- dynamic verification of current FT50/AJG status when journal ranking is invoked;
+- Evidence Passport™ and Human Gate™ for consequential research promotion/release decisions.
 
 ## IP / disclosure references
 
