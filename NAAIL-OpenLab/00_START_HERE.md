@@ -20,39 +20,59 @@ No NAAIL patent application is represented as filed as of 2026-09-16. **Do not u
 1. **Knowledge Core™**
 2. **Technology Core™**
 
-All other capabilities are supporting agents, layers, services, Digital Twins, evaluations, experiments, or interfaces—not new permanent cores.
+All other capabilities are supporting agents, programmes, layers, services, Digital Twins, evaluations, experiments, or interfaces—not new permanent cores.
 
 Public component names include:
 
 **KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · Evidence Passport™ · Professional Decision DAG™ · DAG Watch™ · Agent Arena™ · Failure Memory™ · Controlled Agent Evolution · Decision–Consequence Engine™ · Professional Judgment Passport™ · Human Approval Gate™ · NAAIL Data & Evidence Mesh™**.
 
-The **NAAIL Value Expansion Fabric™** and **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™** are supporting layers only. They expand research, data, professional education, experimental, and Digital Twin capability without changing the two-core architecture, canonical agent set, or validated checkpoint.
+The **NAAIL Value Expansion Fabric™**, **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™**, and **CCCMP™ — Project Cost, Contract & Claims Management Programme** are supporting capabilities only. They expand research, data, professional education, experimental, project/capital-programme, and Digital Twin capability without changing the two-core architecture, canonical agent set, or validated checkpoint.
 
-Detailed algorithms, dependency behavior, state transitions, containment, evaluation isolation, promotion/revocation logic, connector internals, graph/provenance mechanics, unpublished experiment-control logic, claim concepts, technical diagrams, and unpublished embodiments are maintained privately pending filing review.
+Detailed algorithms, dependency behavior, state transitions, containment, evaluation isolation, promotion/revocation logic, connector internals, graph/provenance mechanics, contract/claims logic, unpublished experiment-control logic, claim concepts, technical diagrams, and unpublished embodiments are maintained privately pending filing review.
 
 ## Fast reviewer path
 
 1. **Patent status:** [`PATENT_NOTICE.md`](./PATENT_NOTICE.md)
 2. **IP boundary:** [`IP_NOTICE.md`](./IP_NOTICE.md)
-3. **Value Expansion Fabric:** [`VALUE_EXPANSION_FABRIC.md`](./VALUE_EXPANSION_FABRIC.md)
-4. **Behavioral Decision Science Layer:** [`BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md`](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-5. **Behavioral Human–AI Research Governance:** [`docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md`](./docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md)
-6. **Public-disclosure history:** [`PUBLIC_DISCLOSURE_LOG.md`](./PUBLIC_DISCLOSURE_LOG.md)
-7. **Canonical license:** [`LICENSE`](./LICENSE)
-8. **Commercial-use policy:** [`COMMERCIAL_USE_POLICY.md`](./COMMERCIAL_USE_POLICY.md)
-9. **Two-core hierarchy:** [`architecture/MASTER_PLATFORM_HIERARCHY.md`](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-10. **Capability/status registry:** [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
-11. **Current project state:** [`CURRENT_PROJECT_STATE.md`](./CURRENT_PROJECT_STATE.md)
-12. **Global AI Business Education Platform:** [`GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md`](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)
-13. **Scientific Discovery Start Here:** [`00_SCIENTIFIC_DISCOVERY_START_HERE.md`](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
-14. **Prototype 003 public checkpoint:** [`Prototype_003/runtime/`](./Prototype_003/runtime/)
-15. **Main overview:** [`README.md`](./README.md)
+3. **CCCMP specialist programme:** [`CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md`](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+4. **CCCMP research/evidence governance:** [`docs/research/CCCMP_RESEARCH_GOVERNANCE.md`](./docs/research/CCCMP_RESEARCH_GOVERNANCE.md)
+5. **Value Expansion Fabric:** [`VALUE_EXPANSION_FABRIC.md`](./VALUE_EXPANSION_FABRIC.md)
+6. **Behavioral Decision Science Layer:** [`BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md`](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
+7. **Behavioral Human–AI Research Governance:** [`docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md`](./docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md)
+8. **Public-disclosure history:** [`PUBLIC_DISCLOSURE_LOG.md`](./PUBLIC_DISCLOSURE_LOG.md)
+9. **Canonical license:** [`LICENSE`](./LICENSE)
+10. **Commercial-use policy:** [`COMMERCIAL_USE_POLICY.md`](./COMMERCIAL_USE_POLICY.md)
+11. **Two-core hierarchy:** [`architecture/MASTER_PLATFORM_HIERARCHY.md`](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+12. **Capability/status registry:** [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
+13. **Current project state:** [`CURRENT_PROJECT_STATE.md`](./CURRENT_PROJECT_STATE.md)
+14. **Global AI Business Education Platform:** [`GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md`](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)
+15. **Scientific Discovery Start Here:** [`00_SCIENTIFIC_DISCOVERY_START_HERE.md`](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
+16. **Prototype 003 public checkpoint:** [`Prototype_003/runtime/`](./Prototype_003/runtime/)
+17. **Main overview:** [`README.md`](./README.md)
 
 ## What is NAAIL?
 
-NAAIL is an independent evidence-governed research and education platform connecting **business-school learning, research, professional standards, public/rights-cleared evidence, Digital Twins, behavioral experiments, AI agents, sustainability, verification, and accountable human judgment**.
+NAAIL is an independent evidence-governed research and education platform connecting **business-school learning, research, professional standards, public/rights-cleared evidence, Digital Twins, behavioral experiments, specialist project/capital-programme research, AI agents, sustainability, verification, and accountable human judgment**.
 
 It is not positioned merely as an AI tutor or chatbot.
+
+## CCCMP — specialist programme without architecture drift
+
+CCCMP™ adds a governed specialist programme for **construction, infrastructure, energy, oil & gas, mining, EPC/EPCM, PPP, major capital projects and megaprojects**.
+
+Public CCCMP scope includes, at a high level:
+
+- cost engineering, estimating, project controls and EVM;
+- contract, procurement and commercial management;
+- claims, delay, quantum and dispute analysis;
+- project finance, accounting and IFRS-related project issues;
+- behavioral project decision science and human–AI judgment;
+- public/rights-cleared project, procurement, macro, energy, commodity and legal evidence;
+- research, education and Digital Twin simulation.
+
+CCCMP remains a **specialist programme, not a third core**. Professional/project knowledge is governed through the Knowledge Core; replaceable analytics, connectors, simulation technology and execution infrastructure remain in the Technology Core.
+
+Detailed contract/claims graphs, entitlement logic, source-to-agent routing, behavioral treatment designs, automated rights controls, event/state transitions and Digital Twin execution mechanics remain private under patent hold.
 
 ## Behavioral research — without architecture drift
 
@@ -93,8 +113,8 @@ Source names are **targets/references, not proof of integration**. Public access
 ### Public
 
 - global NAAIL identity and high-level architecture;
-- non-enabling descriptions of professional agents, the Value Expansion Fabric, Behavioral Decision Science layer, and Digital Twins;
-- public research-governance requirements;
+- non-enabling descriptions of professional agents, the Value Expansion Fabric, Behavioral Decision Science layer, CCCMP specialist programme, and Digital Twins;
+- public behavioral and CCCMP research-governance requirements;
 - selected research/education assets;
 - approved public data/source references;
 - public disclosure/IP notices;
@@ -103,8 +123,9 @@ Source names are **targets/references, not proof of integration**. Public access
 
 ### Private / patent-sensitive
 
-- complete Value Expansion and Behavioral Decision Science implementation plans;
+- complete Value Expansion, Behavioral Decision Science and CCCMP implementation plans;
 - detailed treatment arms, outcome vectors, experimental-control logic, and unpublished measures;
+- contract/claims graph schemas, entitlement logic, source-to-agent routing and detailed project-state transitions;
 - new enabling algorithms and technical workflows;
 - detailed Evidence Passport and dependency-graph internals;
 - connector/provenance schemas and automated access-control logic;
@@ -124,6 +145,8 @@ Source names are **targets/references, not proof of integration**. Public access
 | `v0.2.3 / Prototype 003` | `EXECUTED_VALIDATED` for its frozen synthetic scope |
 | V2026.3 architecture | high-level public architecture |
 | Knowledge Core + Technology Core | exactly two permanent cores |
+| CCCMP™ specialist programme | `PATENT_HOLD_NON_ENABLING` |
+| CCCMP Research, Education & Evidence Governance | `ARCHITECTURE_ADOPTED` |
 | Value Expansion Fabric™ | `PATENT_HOLD_NON_ENABLING` |
 | Behavioral Decision Science & Human–AI Experimentation Layer™ | `PATENT_HOLD_NON_ENABLING` |
 | Behavioral Human–AI Research Governance | `ARCHITECTURE_ADOPTED` |
@@ -138,13 +161,13 @@ Machine-readable status: [`architecture/platform_capability_registry.json`](./ar
 
 ## Public-data and third-party boundary
 
-At a high level, NAAIL research may reference public/rights-cleared data, scholarly metadata, standards/guidance, professional-body materials, open-source software, and legally accessible publications.
+At a high level, NAAIL research may reference public/rights-cleared data, scholarly metadata, standards/guidance, professional-body materials, open-source software, public procurement/project data and legally accessible publications.
 
 Public access does not equal unrestricted redistribution. Third-party software, data, standards, papers, examination materials, trademarks, and models retain their own rights and licenses. NAAIL ownership never overrides third-party rights.
 
 ## Research, standards, and professional education
 
-NAAIL may connect FT50/AJG research, authoritative standards/regulatory sources, professional competency frameworks, original NAAIL educational content, behavioral research designs, and governed simulations. Such alignment does **not** imply accreditation, certification, endorsement, partnership, or access to proprietary professional systems.
+NAAIL may connect FT50/AJG research, authoritative standards/regulatory sources, professional competency frameworks, original NAAIL educational content, behavioral research designs, project/capital-programme research, and governed simulations. Such alignment does **not** imply accreditation, certification, endorsement, partnership, or access to proprietary professional systems.
 
 ## Disclosure history warning
 
