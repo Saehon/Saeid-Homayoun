@@ -1,0 +1,38 @@
+name: NAAIL Innovation Entrepreneurship Layer Guard
+
+on:
+  push:
+    paths:
+      - 'README.md'
+      - 'NAAIL-OpenLab/README.md'
+      - 'NAAIL-OpenLab/00_START_HERE.md'
+      - 'NAAIL-OpenLab/PUBLIC_PLATFORM_OVERVIEW.md'
+      - 'NAAIL-OpenLab/INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md'
+      - 'NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/PLATFORM_CAPABILITY_MATRIX.md'
+      - 'NAAIL-OpenLab/tests/test_innovation_entrepreneurship_layer.py'
+      - '.github/workflows/naail_innovation_entrepreneurship_layer_guard.yml'
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'NAAIL-OpenLab/README.md'
+      - 'NAAIL-OpenLab/00_START_HERE.md'
+      - 'NAAIL-OpenLab/PUBLIC_PLATFORM_OVERVIEW.md'
+      - 'NAAIL-OpenLab/INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md'
+      - 'NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/PLATFORM_CAPABILITY_MATRIX.md'
+      - 'NAAIL-OpenLab/tests/test_innovation_entrepreneurship_layer.py'
+  workflow_dispatch:
+
+jobs:
+  innovation-entrepreneurship-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Innovation and Entrepreneurship layer guard
+        run: python -m pytest NAAIL-OpenLab/tests/test_innovation_entrepreneurship_layer.py -q
