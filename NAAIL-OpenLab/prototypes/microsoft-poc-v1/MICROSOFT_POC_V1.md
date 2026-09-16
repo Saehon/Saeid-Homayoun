@@ -5,6 +5,9 @@
 **Maturity:** `RESEARCH_PROTOTYPE`  
 **Canonical architecture:** exactly **Stable Knowledge Core™ + Replaceable Technology Core™**. **No third core.**
 
+**Canonical build-and-validation contract:** [MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md](./MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)  
+**Executed results:** [prototype_v1_results.md](./prototype_v1_results.md)
+
 > Bounded proof of concept only. It is not production-ready and does not claim scientific validation beyond the executed tests described here.
 
 ## End-to-end objective
