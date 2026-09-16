@@ -1,0 +1,15 @@
+# NAAIL patent-first public-repository exclusions
+# Enabling patent materials belong only in the separate private patent-readiness repository.
+private/patent/
+patent-drafts/
+patent_private/
+*.patent-draft.md
+*.claim-draft.md
+
+# Credentials / secrets
+.env
+.env.*
+*.pem
+*.key
+secrets/
+credentials/
