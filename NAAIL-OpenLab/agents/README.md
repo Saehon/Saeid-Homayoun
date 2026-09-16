@@ -1,5 +1,8 @@
 # NAAIL OpenLab™ — Specialist Agent Families
 
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+
 This directory is the canonical navigation layer for specialist agent families under **NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin**.
 
 **NAAIL OpenLab™ is the master platform.** These agent families inherit the common NAAIL scientific-discovery, evidence, reproducibility, security, and Human Gate requirements.
@@ -31,7 +34,7 @@ The specialist families are supported by a governed cross-platform integration l
 
 All external repositories, datasets and standards retain their original licenses, data rights and authoritative-source status. External software belongs to replaceable Technology/Simulation layers unless a separate governed process admits validated evidence into the frozen Knowledge & RAG Core™.
 
-See the [Canonical Master Platform Hierarchy](../architecture/MASTER_PLATFORM_HIERARCHY.md), the [Open-Source Integration Hub](../OPEN_SOURCE_INTEGRATION_HUB.md), and the [Open-Source Academic Agent Foundry architecture](../OPEN_SOURCE_AGENT_FOUNDRY.md).
+See the [Global Brand Identity](../BRAND_IDENTITY.md), the [Canonical Master Platform Hierarchy](../architecture/MASTER_PLATFORM_HIERARCHY.md), the [Open-Source Integration Hub](../OPEN_SOURCE_INTEGRATION_HUB.md), and the [Open-Source Academic Agent Foundry architecture](../OPEN_SOURCE_AGENT_FOUNDRY.md).
 
 ## Free simulation path
 
