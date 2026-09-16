@@ -11,7 +11,9 @@
 
 NAAIL OpenLab™ / ECONOVA-S™ keeps the same two-core architecture. New capabilities are added only as governed supporting layers, engines, programmes or Digital Twins.
 
-The **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™** is now registered as a cross-cutting supporting capability. It is **not a third core** and is **not CCCMP-specific**.
+The **NAAIL Innovation & Entrepreneurship Evidence Layer™** is now registered as a cross-cutting supporting capability. It is **not a third core** and is **not CCCMP-specific**.
+
+The **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™** remains a separate cross-cutting supporting research engine.
 
 ## Current public maturity boundary
 
@@ -21,34 +23,46 @@ The **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™** is now register
 | Prototype 004 provider harness | `IMPLEMENTED_EXECUTION_GATED` |
 | V2026.3 master architecture | high-level public architecture |
 | Stable Knowledge Core™ + Replaceable Technology Core™ | exactly two permanent cores |
+| Innovation & Entrepreneurship Evidence Layer™ | `PATENT_HOLD_NON_ENABLING` |
 | Nobel Theory-to-Evidence & AI Experiment Engine™ | `PATENT_HOLD_NON_ENABLING` |
 | Behavioral Decision Science & Human–AI Experimentation Layer™ | `PATENT_HOLD_NON_ENABLING` |
 | CCCMP™ | `PATENT_HOLD_NON_ENABLING` specialist programme |
-| NAAIL Value Expansion Fabric™ | `PATENT_HOLD_NON_ENABLING` |
-| NAAIL Data & Evidence Mesh™ | `PATENT_HOLD_NON_ENABLING` |
+| Value Expansion Fabric™ | `PATENT_HOLD_NON_ENABLING` |
+| Data & Evidence Mesh™ | `PATENT_HOLD_NON_ENABLING` |
 | Business School Simulation & Digital Twin Layer | `PATENT_HOLD_NON_ENABLING` |
-| Decision–Consequence Engine™ | public non-enabling stub |
-| Professional Judgment Passport™ | public non-enabling metadata stub |
-| VERA™ detailed verification mechanics | private pending filing review |
 
 Machine-readable state: [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
 
-## Nobel Theory-to-Evidence research objective
+## Innovation & Entrepreneurship research objective
 
-The Engine converts foundational theory into governed empirical research objects:
+The new layer serves **Accounting, Auditing, Finance, Economics, Management, Entrepreneurship, Innovation, Strategy, Sustainability, AI/Data Economy, Business Education and Scientific Research**.
 
-**Theory → Construct → Variable → Rights-cleared Data → AI Experiment → Digital Twin → Causal Test → Replication → FT50/AJG Benchmark → Evidence Passport™ → Human Gate™.**
+Its public research objective is:
 
-Public theory families include behavioral judgment, experimental economics, behavioral economics, asset pricing, portfolio/corporate finance, risk/options, information asymmetry, contracts/incentives, transaction costs/governance, mechanism design, auctions, causal inference, institutions/development, and innovation/growth/AI productivity.
+**Scientific Discovery → Invention → Patent → Entrepreneurship → Financing → Commercialization → Innovation → Scaling → Productivity → Firm / Market / Social Value**
 
-The Engine serves all NAAIL domains: **Accounting, Auditing, Finance, Economics, Management, Governance, Sustainability, Behavioral Science, Education and Research.**
+High-level capability families include:
+
+- patent/IP and technological-innovation evidence;
+- entrepreneurship and firm dynamics;
+- science-to-innovation/commercialization research;
+- digital/open-source innovation indicators;
+- economic complexity and opportunity research;
+- startup/founder evidence;
+- innovation and entrepreneurial networks;
+- behavioral entrepreneurship and human–AI decisions;
+- Startup Digital Twins;
+- entrepreneurial finance;
+- innovation theory and measurement;
+- FT50/AJG benchmarking and open-research discovery.
 
 ## Scientific safeguards
 
 - theory names do not substitute for valid constructs or measurement;
-- behavioral/text proxies are empirical constructs, not diagnoses;
-- predictive accuracy does not establish causality;
+- opportunity measures are research variables, not deterministic founder/investor/policy recommendations;
+- behavioral/text proxies are empirical constructs, not psychological diagnoses;
 - GitHub repositories are technology/replication resources, not automatically authoritative data sources;
+- public access does not imply unrestricted redistribution rights;
 - every source must pass license/access/provenance controls;
 - current FT50/AJG status must be verified dynamically when used;
 - confirmatory experiments should document power/sample-size rationale, preregistration, randomization/identification and treatment integrity where applicable;
@@ -57,28 +71,29 @@ The Engine serves all NAAIL domains: **Accounting, Auditing, Finance, Economics,
 
 ## Patent-first boundary
 
-Detailed machine-readable theory schemas, treatment orchestration, connector contracts, provenance internals, unpublished measurement algorithms, Digital Twin state-transition logic, dependency/revocation mechanisms and claim concepts remain private pending filing review.
+Detailed innovation/startup graph schemas, source-to-agent routing, connector/provenance contracts, opportunity-score mechanics, startup state-transition logic, unpublished behavioral treatment orchestration, Evidence Passport internals, claim concepts and technical embodiments remain private pending filing review.
 
 No patent application is represented as filed as of 2026-09-16, and the project does not claim **Patent Pending** status.
 
 ## Immediate priorities
 
 1. preserve the two-core invariant;
-2. maintain a governed theory registry without biography-only objects;
-3. verify licenses and current maintenance before promoting data/technology references;
-4. build research-safe theory-to-evidence experiments under causal/reproducibility standards;
-5. verify FT50/AJG dynamically at study time;
-6. retain null/failed/falsified results in the scientific record;
-7. continue patent-first review before publishing enabling implementation details.
+2. validate innovation/entrepreneurship data-source rights and provenance before ingestion;
+3. operationalize theory through construct-valid, reproducible Variable DNA™;
+4. use opportunity scores only as falsifiable empirical variables;
+5. develop research-safe patent/startup/science-to-innovation studies and Startup Digital Twins;
+6. verify FT50/AJG dynamically at study time;
+7. retain null/failed/falsified results in the scientific record;
+8. continue patent-first review before publishing enabling implementation detail.
 
 ## Canonical links
 
-- [Start Here](./00_START_HERE.md)
+- [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
+- [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
 - [Nobel Theory-to-Evidence Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
+- [Start Here](./00_START_HERE.md)
 - [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
 - [Capability Registry](./architecture/platform_capability_registry.json)
-- [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-- [CCCMP](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
 - [Patent Notice](./PATENT_NOTICE.md)
 - [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md)
 
