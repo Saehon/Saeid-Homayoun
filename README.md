@@ -6,6 +6,9 @@ I build **evidence-grounded AI research systems for business science**—with a 
 
 ## NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin
 
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+
 **NAAIL OpenLab™ is the flagship umbrella platform.** It is an evidence-governed multi-agent platform for accounting, auditing, economics, sustainability, forensic analytics, education, and reproducible scientific discovery.
 
 **Specialist Agent Families:** **POMELO™ · KIWI™ · ECONOVA-S™ · ESG Intelligence · ICFR Intelligence · Forensic Intelligence**
@@ -20,6 +23,8 @@ I build **evidence-grounded AI research systems for business science**—with a 
 [![NAAIL V2026.3](https://img.shields.io/badge/NAAIL-V2026.3-4c6ef5)](NAAIL-OpenLab/versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
 [![NAAIL Release](https://img.shields.io/badge/NAAIL-v0.2.3-blue)](NAAIL-OpenLab/README.md)
 [![Reproducible Research](https://img.shields.io/badge/Research-Reproducible-2f855a)](REPRODUCIBILITY.md)
+
+[Canonical global brand identity →](NAAIL-OpenLab/BRAND_IDENTITY.md)
 
 ---
 
@@ -117,7 +122,6 @@ Its scope includes:
 - **FT50 / Management Science Research Engine** — reproducible empirical designs, model evolution, robustness, replication, and publication-grade evidence.
 
 ECONOVA-S inherits the common NAAIL scientific-governance layer rather than maintaining a separate scientific constitution.
-
 ### Canonical discovery workflow
 
 ```mermaid
@@ -237,7 +241,6 @@ A failed hypothesis, rejected specification, data-mapping problem, or replicatio
 ---
 
 ## Platform architecture
-
 NAAIL OpenLab™ separates durable professional/scientific meaning from replaceable technology.
 
 ### 1. Stable Knowledge Core™
