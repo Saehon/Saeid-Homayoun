@@ -1,0 +1,93 @@
+name: NAAIL Global Brand Migration
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/naail_brand_migration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-brand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply global NAAIL brand migration
+        shell: python
+        run: |
+          from pathlib import Path
+
+          root = Path('.')
+          old_amp = 'Nordic ' + 'Accounting, Audit & Assurance Intelligence Lab'
+          old_and = 'Nordic ' + 'Accounting, Audit and Assurance Intelligence Lab'
+          new = 'Next-Generation Accounting, Audit & Assurance Intelligence Lab'
+          tagline = 'A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery'
+
+          text_suffixes = {
+              '.md', '.txt', '.json', '.yml', '.yaml', '.py', '.toml', '.cff',
+              '.html', '.htm', '.rst', '.csv', '.tsv', '.ini', '.cfg'
+          }
+
+          changed = []
+          for path in root.rglob('*'):
+              if not path.is_file() or '.git' in path.parts:
+                  continue
+              if path.suffix.lower() not in text_suffixes and path.name not in {'README', 'LICENSE'}:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              updated = text.replace(old_amp, new).replace(old_and, new)
+              if updated != text:
+                  path.write_text(updated, encoding='utf-8')
+                  changed.append(str(path))
+
+          brand_block = f'**{new}**  \n*{tagline}*\n'
+          canonical = [
+              Path('README.md'),
+              Path('NAAIL-OpenLab/README.md'),
+              Path('NAAIL-OpenLab/00_START_HERE.md'),
+              Path('NAAIL-OpenLab/00_SCIENTIFIC_DISCOVERY_START_HERE.md'),
+              Path('NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'),
+              Path('NAAIL-OpenLab/versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md'),
+              Path('NAAIL-OpenLab/OPEN_SOURCE_INTEGRATION_HUB.md'),
+              Path('NAAIL-OpenLab/GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md'),
+          ]
+
+          for path in canonical:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding='utf-8')
+              if new in text and tagline in text:
+                  continue
+              lines = text.splitlines(keepends=True)
+              insert_at = 1 if lines and lines[0].lstrip().startswith('#') else 0
+              lines.insert(insert_at, '\n' + brand_block + '\n')
+              updated = ''.join(lines)
+              path.write_text(updated, encoding='utf-8')
+              changed.append(str(path))
+
+          print('Brand migration changed files:')
+          for item in sorted(set(changed)):
+              print(' -', item)
+
+      - name: Commit migration changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No migration changes required."
+            exit 0
+          fi
+          git config user.name "NAAIL Brand Migration"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Migrate NAAIL identity to global Next-Generation brand"
+          git push
