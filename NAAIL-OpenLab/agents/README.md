@@ -11,6 +11,7 @@ This directory is the canonical navigation layer for specialist agent families u
 |---|---|---|
 | **POMELO™** | Accounting & Assurance Intelligence | [pomelo/](./pomelo/) |
 | **KIWI™** | Audit / CAM / KAM Intelligence | [kiwi/](./kiwi/) |
+| **VERA™** | Verifiable Accounting & Auditing Intelligence; evidence verification, Decision DAG, evaluation and Human Gate | [vera/](./vera/) |
 | **IFRS Intelligence Agent™** | IFRS Reporting, Standards & Financial-Reporting Digital Twin | [ifrs/](./ifrs/) |
 | **PCAOB Intelligence Agent™** | Audit Inspection, Regulatory Evidence & Inspection Digital Twin | [pcaob/](./pcaob/) |
 | **ECONOVA-S™** | Data Economy & Economic Intelligence | [econova-s/](./econova-s/) |
@@ -34,15 +35,15 @@ The specialist families are supported by a governed cross-platform integration l
 
 All external repositories, datasets and standards retain their original licenses, data rights and authoritative-source status. External software belongs to replaceable Technology/Simulation layers unless a separate governed process admits validated evidence into the frozen Knowledge & RAG Core™.
 
-See the [Global Brand Identity](../BRAND_IDENTITY.md), the [Canonical Master Platform Hierarchy](../architecture/MASTER_PLATFORM_HIERARCHY.md), the [Open-Source Integration Hub](../OPEN_SOURCE_INTEGRATION_HUB.md), and the [Open-Source Academic Agent Foundry architecture](../OPEN_SOURCE_AGENT_FOUNDRY.md).
+See the [Global Brand Identity](../BRAND_IDENTITY.md), the [Canonical Master Platform Hierarchy](../architecture/MASTER_PLATFORM_HIERARCHY.md), the [Business School Simulation & Digital Twin Layer](../BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md), the [Open-Source Integration Hub](../OPEN_SOURCE_INTEGRATION_HUB.md), and the [Open-Source Academic Agent Foundry architecture](../OPEN_SOURCE_AGENT_FOUNDRY.md).
 
 ## Free simulation path
 
-The IFRS and PCAOB families now share a **free/open-source Digital Twin simulation stack** at [`../simulations/free-stack/`](../simulations/free-stack/). The deterministic core runs with standard Python and synthetic/public evidence, while Hugging Face, Kaggle, and GitHub integrations are optional adapters behind provenance and license gates.
+The IFRS and PCAOB families share a **free/open-source Digital Twin simulation stack** at [`../simulations/free-stack/`](../simulations/free-stack/). The deterministic core runs with standard Python and synthetic/public evidence, while external models, datasets and frameworks remain optional adapters behind provenance, license and evaluation gates.
 
 ## Digital-Twin principle
 
-Every specialist family may operate through a research-safe NAAIL Digital Twin. For IFRS and PCAOB workflows, the Digital Twin must clearly separate authoritative/public evidence from simulation, academic evidence, model-generated reasoning, and human judgment.
+Every specialist family may operate through a research-safe NAAIL Digital Twin. The Digital Twin must clearly separate authoritative/public evidence from simulation, academic evidence, model-generated reasoning, and human judgment.
 
 The Open-Source Academic Agent Foundry does not replace any specialist family. It is an execution/interoperability layer that may provide reusable orchestration, LM-program optimization, knowledge-curation, and managed-agent capabilities while NAAIL retains its own evidence, evaluation, Digital Twin, and Human Gate contracts.
 
@@ -52,4 +53,4 @@ All publication-grade specialist-agent studies inherit:
 
 `literature validation → hypothesis competition → DAG governance → ERA empirical conversion → real data/code → robustness → replication/OOS → adversarial review → falsification → Chain-of-Evidence → CoE Audit → Human Gate`
 
-No specialist agent may authorize its own scientific or material professional conclusion. NAAIL is independent; references to the IFRS Foundation/IASB, PCAOB, Stanford University, MIT, Hugging Face, professional firms, banks, technology vendors, open-source projects, public datasets, or standards bodies do not imply affiliation, endorsement, sponsorship, certification, or authorization.
+No specialist agent may authorize its own scientific or material professional conclusion. NAAIL is independent; references to standard setters, regulators, universities, professional firms, banks, technology vendors, open-source projects, public datasets, or professional bodies do not imply affiliation, endorsement, sponsorship, certification, or authorization.
