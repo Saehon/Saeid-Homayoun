@@ -1,26 +1,26 @@
 variable,value,unit,source,status
-revenue_usd_m,331839.0,USD millions,SEC 10-K FY2026,EXECUTED
-operating_income_usd_m,155237.0,USD millions,SEC 10-K FY2026,EXECUTED
-net_income_usd_m,133749.0,USD millions,SEC 10-K FY2026,EXECUTED
-total_assets_usd_m,758376.0,USD millions,SEC 10-K FY2026,EXECUTED
-total_liabilities_usd_m,315989.0,USD millions,SEC 10-K FY2026,EXECUTED
-stockholders_equity_usd_m,442387.0,USD millions,SEC 10-K FY2026,EXECUTED
-current_assets_usd_m,207710.0,USD millions,SEC 10-K FY2026,EXECUTED
-current_liabilities_usd_m,168825.0,USD millions,SEC 10-K FY2026,EXECUTED
-cash_and_cash_equivalents_usd_m,20935.0,USD millions,SEC 10-K FY2026,EXECUTED
-operating_cash_flow_usd_m,182935.0,USD millions,Microsoft FY26 Q4/10-K,EXECUTED
-capex_usd_m,115948.0,USD millions,SEC CompanyFacts / 10-K,EXECUTED
-free_cash_flow_usd_m,66987.0,USD millions,derived CFO-capex,EXECUTED
-research_development_usd_m,35562.0,USD millions,SEC 10-K FY2026,EXECUTED
-operating_margin,0.4678081840892722,ratio,derived,EXECUTED
-net_margin,0.4030538905915218,ratio,derived,EXECUTED
-current_ratio,1.2303272619576484,ratio,derived,EXECUTED
-liabilities_to_assets,0.41666534805953775,ratio,derived,EXECUTED
-roa_end_assets,0.17636238488559763,ratio,"derived, end assets denominator",EXECUTED
-roe_end_equity,0.30233483352811,ratio,"derived, end equity denominator",EXECUTED
-rd_intensity,0.10716642709265638,ratio,derived,EXECUTED
-fcf_margin,0.20186596512164032,ratio,derived,EXECUTED
-fred_dgs10_2026_09_14,4.97,percent,FRED DGS10,EXECUTED_SNAPSHOT
-p_and_bp_revenue_usd_m,139996.0,USD millions,Microsoft FY26 Q4/10-K,EXECUTED
-intelligent_cloud_revenue_usd_m,137791.0,USD millions,Microsoft FY26 Q4/10-K,EXECUTED
-more_personal_computing_revenue_usd_m,54052.0,USD millions,Microsoft FY26 Q4/10-K,EXECUTED
+revenue_usd_m,331839.0,USD millions,SEC XBRL R2,EXECUTED_REAL_XBRL
+revenue_growth,0.17752985219370785,ratio,SEC XBRL R2,DERIVED_EXECUTED
+gross_margin_usd_m,225465.0,USD millions,SEC XBRL R2,EXECUTED_REAL_XBRL
+operating_income_usd_m,155237.0,USD millions,SEC XBRL R2,EXECUTED_REAL_XBRL
+net_income_usd_m,133749.0,USD millions,SEC XBRL R2,EXECUTED_REAL_XBRL
+operating_margin,0.4678081840892722,ratio,derived from SEC XBRL R2,DERIVED_EXECUTED
+net_margin,0.4030538905915218,ratio,derived from SEC XBRL R2,DERIVED_EXECUTED
+total_assets_usd_m,758376.0,USD millions,SEC XBRL R4,EXECUTED_REAL_XBRL
+total_liabilities_usd_m,315989.0,USD millions,SEC XBRL R4,EXECUTED_REAL_XBRL
+stockholders_equity_usd_m,442387.0,USD millions,SEC XBRL R4,EXECUTED_REAL_XBRL
+current_ratio,1.2303272619576484,ratio,derived from SEC XBRL R4,DERIVED_EXECUTED
+liabilities_to_assets,0.41666534805953775,ratio,derived from SEC XBRL R4,DERIVED_EXECUTED
+operating_cash_flow_usd_m,182935.0,USD millions,SEC XBRL R6,EXECUTED_REAL_XBRL
+capex_usd_m,115948.0,USD millions,SEC XBRL R6,EXECUTED_REAL_XBRL
+free_cash_flow_proxy_usd_m,66987.0,USD millions,CFO minus capex,DERIVED_EXECUTED
+fcf_margin,0.20186596512164032,ratio,derived,DERIVED_EXECUTED
+research_development_usd_m,35562.0,USD millions,SEC XBRL R2,EXECUTED_REAL_XBRL
+rd_intensity,0.10716642709265638,ratio,derived,DERIVED_EXECUTED
+p_and_bp_revenue_usd_m,139996.0,USD millions,SEC XBRL R107,EXECUTED_REAL_XBRL
+intelligent_cloud_revenue_usd_m,137791.0,USD millions,SEC XBRL R107,EXECUTED_REAL_XBRL
+more_personal_computing_revenue_usd_m,54052.0,USD millions,SEC XBRL R107,EXECUTED_REAL_XBRL
+msft_fy2026_simple_price_return,-0.24218654744970536,ratio,Alpaca IEX 2025-07-01 to 2026-06-30,EXECUTED_REAL_MARKET_DATA
+fred_dgs10_2026_06_30,4.44,percent,FRED DGS10,EXECUTED_PUBLIC_MACRO_SNAPSHOT
+damodaran_mature_market_erp_2026_07_01,4.2,percent,Damodaran July 2026,EXECUTED_PUBLIC_REFERENCE_SNAPSHOT
+illustrative_rf_plus_erp_proxy,8.64,percent,DGS10 + mature ERP; NOT MSFT WACC,DERIVED_PROXY_NOT_WACC
