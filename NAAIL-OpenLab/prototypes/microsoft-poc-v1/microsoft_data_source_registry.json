@@ -1,0 +1,22 @@
+{
+  "prototype_id": "NAAIL-MSFT-POC-V1",
+  "as_of": "2026-09-16",
+  "company": {
+    "name": "Microsoft Corporation",
+    "ticker": "MSFT",
+    "cik": "0000789019",
+    "fiscal_year_end": "2026-06-30"
+  },
+  "license_gate_rule": "No source is ingested or redistributed unless access, license, provenance and permitted-use status are recorded.",
+  "sources": [
+    {"id":"SEC_10K_2026","name":"Microsoft FY2026 Form 10-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm","authority":"SEC","access":"public","reuse":"facts/metadata extracted; filing text not republished wholesale","status":"EXECUTED"},
+    {"id":"SEC_COMPANYFACTS","name":"SEC CompanyFacts/XBRL","url":"https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json","authority":"SEC","access":"public API","reuse":"facts with SEC fair-access requirements","status":"EXECUTED_VIA_VERIFIED_PUBLIC_XBRL_VALUES"},
+    {"id":"MSFT_IR_FY26","name":"Microsoft FY26 Q4 earnings tables","url":"https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast","authority":"issuer","access":"public","reuse":"facts/metadata only","status":"EXECUTED"},
+    {"id":"FRED_DGS10","name":"FRED DGS10","url":"https://fred.stlouisfed.org/series/DGS10","authority":"Federal Reserve/FRED","access":"public","reuse":"series-specific terms apply","status":"EXECUTED_SNAPSHOT"},
+    {"id":"FAMA_FRENCH","name":"Kenneth French Data Library","url":"https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html","authority":"academic data library","access":"public","reuse":"source terms apply","status":"REGISTERED_NOT_REGRESSED"},
+    {"id":"MICROSOFT_GITHUB","name":"Microsoft GitHub organization","url":"https://github.com/microsoft","authority":"GitHub/Microsoft","access":"public metadata","reuse":"GitHub terms and repository licenses apply","status":"EXECUTED_SNAPSHOT"},
+    {"id":"PATENTSVIEW","name":"PatentsView","url":"https://patentsview.org/","authority":"USPTO-linked public patent data","access":"public service","reuse":"verify current terms/API","status":"REGISTERED_NOT_EXECUTED"},
+    {"id":"MSFT_SUSTAINABILITY","name":"Microsoft Reports Hub","url":"https://www.microsoft.com/en-us/corporate-responsibility/reports-hub","authority":"issuer","access":"public","reuse":"issuer terms apply","status":"REGISTERED"},
+    {"id":"LITELLM_COST_MAP","name":"LiteLLM model cost metadata","url":"https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json","authority":"open-source metadata","access":"public GitHub","reuse":"code/data license and freshness must be verified per snapshot","status":"EXECUTED_PRICE_SNAPSHOT"}
+  ]
+}
