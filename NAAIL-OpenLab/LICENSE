@@ -1,0 +1,73 @@
+NAAIL OPENLAB™ RESEARCH, EDUCATION & NON-COMMERCIAL EVALUATION LICENSE — 2026
+
+Copyright © 2026 Saeid Homayoun. All Rights Reserved.
+ORCID: 0000-0002-2536-0446
+
+1. SCOPE
+
+This license applies only to original NAAIL OpenLab™ material for which Saeid Homayoun is authorized to grant rights. Third-party software, datasets, standards, papers, trademarks, models, and other materials remain governed by their own licenses and rights.
+
+2. EXPRESSLY AUTHORIZED PURPOSES
+
+Subject to all terms below, permission is granted to access, study, reproduce, and modify applicable original NAAIL material solely for expressly authorized:
+
+- academic research;
+- education;
+- teaching; and
+- non-commercial evaluation.
+
+Attribution to NAAIL OpenLab™ and Saeid Homayoun must be preserved, together with applicable copyright and license notices.
+
+3. COMMERCIAL USE PROHIBITED
+
+No commercial-use right is granted. Without a separate written agreement signed by the rights holder, prohibited uses include, without limitation:
+
+- commercial deployment;
+- paid or monetized SaaS or hosted offerings;
+- paid consulting or professional-service deliverables;
+- enterprise integration for commercial exploitation;
+- resale, sublicensing, white-labeling, or commercial redistribution;
+- monetized training products or services;
+- incorporation into a commercial AI, accounting, audit, finance, ESG, compliance, or analytics system;
+- commercial derivative products; and
+- use primarily intended to generate commercial revenue or commercial competitive advantage outside the expressly authorized non-commercial purposes.
+
+4. NO PATENT OR OTHER IMPLIED IP LICENSE
+
+Except for the limited copyright permissions expressly stated in this license, no license is granted, expressly or by implication, estoppel, exhaustion, or otherwise, to any patent, patent application, trademark, trade secret, confidential know-how, or other intellectual-property right.
+
+Public access to source code or documentation does not transfer ownership of NAAIL intellectual property and does not authorize practice of any patent claim that may later issue.
+
+5. PATENT-FIRST / CONFIDENTIAL MATERIAL
+
+This public license does not authorize access to, disclosure of, or use of confidential unpublished NAAIL material maintained outside the public repository. Patent-sensitive, trade-secret, or confidential information remains excluded unless separately disclosed under written terms.
+
+6. TRADEMARKS
+
+No trademark license is granted for NAAIL™, NAAIL OpenLab™, KIWI™, POMELO™, VERA™, ECONOVA-S™, or other NAAIL product names, logos, or source identifiers, except nominative reference reasonably necessary for attribution.
+
+7. THIRD-PARTY MATERIAL
+
+A NAAIL repository may reference or interoperate with third-party open-source software and public datasets. Those materials remain subject to their original licenses, source terms, attribution requirements, data-use restrictions, and other rights. Nothing in this license overrides third-party terms.
+
+8. NO PROFESSIONAL RELIANCE
+
+NAAIL OpenLab™ is provided for research, education, teaching, and non-commercial evaluation. It is not a substitute for professional accounting, audit, legal, tax, investment, regulatory, cybersecurity, or other professional advice.
+
+9. NO WARRANTY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ORIGINAL NAAIL MATERIAL IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, OR FITNESS FOR PROFESSIONAL RELIANCE.
+
+10. TERMINATION
+
+Permission under this license terminates automatically upon material breach. After termination, the user must cease use of original NAAIL material except to the extent a separate applicable third-party license independently permits use of third-party material.
+
+11. SEPARATE COMMERCIAL LICENSE
+
+Commercial rights, enterprise deployment rights, patent rights, or other expanded rights may be granted only by a separate written agreement.
+
+12. STATUS
+
+This is a source-available non-commercial research/education license, not an OSI-approved open-source license.
+
+For public patent-status language, see PATENT_NOTICE.md.
