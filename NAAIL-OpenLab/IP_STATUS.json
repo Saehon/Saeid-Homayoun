@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "project": "NAAIL OpenLab™",
+  "architecture": "V2026.3 Multi-Agent Digital Twin",
+  "rights_holder_record": "Saeid Homayoun",
+  "orcid": "0000-0002-2536-0446",
+  "copyright": "© 2026 Saeid Homayoun. All Rights Reserved.",
+  "status_date": "2026-09-16",
+  "patent_status": "PATENT_APPLICATION_PREPARATION",
+  "public_notice": "PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS",
+  "patent_application_confirmed_filed": false,
+  "patent_pending_claim_allowed": false,
+  "public_disclosure_mode": "NON_ENABLING_HIGH_LEVEL_ONLY",
+  "private_patent_readiness_workspace": true,
+  "public_private_patent_directory_allowed": false,
+  "commercial_use_requires_written_authorization": true,
+  "permitted_public_use_categories": [
+    "academic research",
+    "education",
+    "teaching",
+    "non-commercial evaluation"
+  ],
+  "permanent_core_count": 2,
+  "permanent_cores": [
+    "Knowledge Core™",
+    "Technology Core™"
+  ],
+  "sensitive_capabilities_public_status": {
+    "Decision–Consequence Engine™": "PATENT_HOLD_NON_ENABLING",
+    "Professional Judgment Passport™": "PATENT_HOLD_NON_ENABLING",
+    "NAAIL Data & Evidence Mesh™": "PATENT_HOLD_NON_ENABLING",
+    "VERA™ detailed verification mechanics": "PATENT_HOLD_NON_ENABLING",
+    "dependency-aware revocation": "PRIVATE_PATENT_READINESS",
+    "controlled agent evolution": "PRIVATE_PATENT_READINESS",
+    "agent containment": "PRIVATE_PATENT_READINESS",
+    "claim concepts and technical figures": "PRIVATE_PATENT_READINESS"
+  },
+  "validated_public_executable_checkpoint": "v0.2.3 / Audit Workspace V0.4 / Prototype 003",
+  "governance": {
+    "patent_first_public_disclosure_second": true,
+    "historical_public_commits_are_not_erased_by_sanitization": true,
+    "new_enabling_details_require_filing_review_before_publication": true,
+    "human_approval_required": true
+  },
+  "canonical_public_files": [
+    "PATENT_NOTICE.md",
+    "IP_NOTICE.md",
+    "LICENSE",
+    "COMMERCIAL_USE_POLICY.md",
+    "INVENTION_DISCLOSURE.md",
+    "PUBLIC_DISCLOSURE_LOG.md",
+    "PRIOR_ART_LOG.md",
+    "PATENT_FILING_CHECKLIST.md",
+    "CITATION.cff"
+  ],
+  "disclaimer": "This repository does not represent NAAIL OpenLab™ as patented or patent pending. Filing status must be independently confirmed before any Patent Pending statement is used."
+}
