@@ -1,5 +1,9 @@
 # NAAIL Google-Inspired Scientific Discovery Orchestration™
 
+**NAAIL OpenLab™**  
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+
 **Platform:** NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin  
 **Knowledge & RAG Core:** `KRG2026.3` — frozen and governed  
 **Scope:** Cross-phase scientific-discovery orchestration for all NAAIL specialist Digital Twins  
