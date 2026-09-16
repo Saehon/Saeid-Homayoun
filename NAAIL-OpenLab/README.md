@@ -15,16 +15,17 @@
 
 > **NAAIL OpenLab™ is an Evidence-Governed Multi-Agent Business School Digital Twin for Education, Research, Professional Simulation, and Verifiable Human–AI Judgment.**
 
-NAAIL is not positioned as a generic AI tutor or chatbot. It connects **research, authoritative standards, professional competencies, public/licensed evidence, Digital Twins, AI agents, reproducibility, sustainability, and accountable human judgment**.
+NAAIL is not positioned as a generic AI tutor or chatbot. It connects **research, authoritative standards, professional competencies, real/public/licensed evidence, Digital Twins, AI agents, reproducibility, sustainability, and accountable human judgment**.
 
 ## Start in one minute
 
 1. **[Start Here](./00_START_HERE.md)** — reviewer path and current maturity boundary.
-2. **[Business School Simulation & Digital Twin Layer](./BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md)** — dynamic company, audit, regulator, market, accounting, finance, economics, sustainability and governance simulations.
-3. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)** — FT50/AJG research + standards + professional competencies + experiential learning.
-4. **[Simulation Evidence Standard](./docs/education/SIMULATION_EVIDENCE_STANDARD.md)** — mandatory Research Evidence Card™ governance.
-5. **[Current Project State](./CURRENT_PROJECT_STATE.md)** — what is executed, gated, architecture-only, registry-only or research-prototype status.
-6. **[Platform Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)** — machine-readable maturity discipline.
+2. **[Data & Evidence Mesh™](./DATA_EVIDENCE_MESH.md)** — SEC/XBRL, FRED/ALFRED, Fama–French, World Bank, OWID, OpenAlex, OpenSanctions and optional OpenBB connectors with Evidence Passport™ governance.
+3. **[Business School Simulation & Digital Twin Layer](./BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md)** — dynamic company, audit, regulator, market, accounting, finance, economics, sustainability and governance simulations.
+4. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)** — FT50/AJG research + standards + professional competencies + experiential learning.
+5. **[Simulation Evidence Standard](./docs/education/SIMULATION_EVIDENCE_STANDARD.md)** — mandatory Research Evidence Card™ governance.
+6. **[Current Project State](./CURRENT_PROJECT_STATE.md)** — what is executed, gated, architecture-only, registry-only or research-prototype status.
+7. **[Platform Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)** — machine-readable maturity discipline.
 
 ---
 
@@ -35,7 +36,7 @@ NAAIL is not positioned as a generic AI tutor or chatbot. It connects **research
 1. **Knowledge Core™** — governed standards, research evidence, professional knowledge, ontologies, evidence semantics, jurisdiction packs and authoritative-source mappings.
 2. **Technology Core™** — replaceable models, agent frameworks, simulation engines, retrieval infrastructure, tools, sandboxes, orchestration and adapters.
 
-No Business School, Digital Twin, agent, simulation, data or scientific-discovery capability becomes a third permanent core.
+No Business School, Digital Twin, data/evidence mesh, agent, simulation or scientific-discovery capability becomes a third permanent core.
 
 ```text
 NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin
@@ -43,6 +44,7 @@ NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin
 ├── PERMANENT CORE 1 — Knowledge Core™
 ├── PERMANENT CORE 2 — Technology Core™
 │
+├── NAAIL Data & Evidence Mesh™
 ├── Scientific Discovery & Governance Layer
 ├── Professional Agent Layer
 │   ├── KIWI™
@@ -60,6 +62,40 @@ NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin
 ```
 
 Canonical hierarchy: **[architecture/MASTER_PLATFORM_HIERARCHY.md](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
+
+---
+
+## NAAIL Data & Evidence Mesh™
+
+The Mesh is a **governed supporting layer**, not a third core. It connects real/public/rights-cleared evidence to professional agents and Digital Twins through APIs/connectors, source/version metadata, license/rights controls, hashes/checksums where feasible, reproducible transformations and **Evidence Passport™** records.
+
+Priority source families:
+
+- **SEC EDGAR / XBRL** — filings, submissions and Company Facts evidence;
+- **FRED / ALFRED** — macro/financial series with vintage/realtime context;
+- **Fama–French** — factor and portfolio research data;
+- **World Bank** — macro/development/context indicators;
+- **Our World in Data CO₂ / Energy** — climate, emissions and energy context with source-level attribution;
+- **OpenAlex** — scholarly metadata, citation/topic graphs and evidence-gap discovery;
+- **OpenSanctions** — optional non-commercial/academic sanctions/PEP/entity-risk research;
+- **OpenBB** — optional Technology-Core provider abstraction while preserving original-provider terms and provenance.
+
+Large third-party datasets are **not** committed to GitHub by default. NAAIL stores source/connector manifests, IDs, query parameters, versions/vintages, retrieval timestamps, rights metadata, hashes and small rights-cleared/synthetic fixtures instead.
+
+```text
+Real Data
+→ Evidence Passport™
+→ Multi-Agent Analysis
+→ Digital Twin Simulation
+→ Decision
+→ Consequence
+→ Verification
+→ Human Approval Gate™
+```
+
+- [Data & Evidence Mesh specification](./DATA_EVIDENCE_MESH.md)
+- [Machine-readable Mesh registry](./architecture/data_evidence_mesh_registry.json)
+- [Broader Free Data Fabric](./FREE_DATA_FABRIC.md)
 
 ---
 
@@ -97,7 +133,7 @@ The supporting simulation layer covers:
 
 ```text
 Research-backed learning objective
-→ Authoritative / governed evidence
+→ Real / governed evidence
 → Evidence Passport™
 → Digital Twin state t
 → Student + Professional Agents
@@ -142,22 +178,25 @@ It is an **educational/research construct**, not an automated hiring score or ex
 
 The first dynamic Business School prototype combines:
 
-- realistic synthetic/public company evidence;
+- realistic synthetic company evidence plus reproducibly referenced **SEC/XBRL** patterns/context;
+- versioned **macro evidence from FRED/ALFRED** where material;
+- **market/factor context from Fama–French** where relevant;
+- World Bank / OWID sustainability or country context when material;
 - IFRS accounting issues;
 - internal-control weaknesses;
 - management pressure and incentives;
 - audit-risk and evidence decisions;
 - CAM/KAM reasoning;
 - PCAOB-style public-standards challenge;
-- AI-agent recommendations and disagreement;
+- KIWI™, POMELO™, VERA™, IFRS/PCAOB/ESG/ECONOVA-S™ interaction;
 - Decision–Consequence Engine™ state changes;
-- student defense of professional judgment;
+- student/researcher defense of professional judgment;
 - Professional Judgment Passport™;
 - mandatory Human Approval Gate™.
 
 Read: **[digital-twins/audit-accounting/README.md](./digital-twins/audit-accounting/README.md)**
 
-This prototype is distinct from the validated public executable checkpoint described below; it is a dynamic education/research prototype under the V2026.3 architecture.
+This prototype is distinct from the validated public executable checkpoint described below; live connector/provider execution requires actual run provenance and Evidence Passports.
 
 ---
 
@@ -180,7 +219,7 @@ For these deliberately constructed frozen synthetic cases, the deterministic con
 - [Prototype 003 public runtime](./Prototype_003/runtime/README.md)
 - [Prototype status](./PROTOTYPE_STATUS_V0.4.md)
 
-Provider/model conditions remain `NOT_EXECUTED_PROVIDER_REQUIRED` unless a real run artifact and Evidence Passport prove otherwise.
+Provider/model/live-connector conditions remain non-executed unless a real run artifact and Evidence Passport prove otherwise.
 
 ---
 
@@ -192,9 +231,9 @@ Every material simulation promoted as **Research-Backed™**, **Standards-Ground
 2. directly relevant FT50/AJG evidence or explicit evidence gap;
 3. authoritative standard/regulation;
 4. professional-body competency mapping;
-5. data provenance and rights status;
+5. data provenance, version/vintage and rights status;
 6. frozen Digital Twin/version;
-7. actual AI execution status;
+7. actual AI/connector execution status;
 8. assessment criteria;
 9. **People × Planet × Society × Sustainable Profit™** reflection where material;
 10. **Human Gate™** responsibility.
@@ -229,7 +268,7 @@ Question
 → Human Gate™
 ```
 
-No agent consensus, p-value, benchmark score, provider name or model output is automatically treated as scientific truth.
+No agent consensus, p-value, benchmark score, provider name, connector name or model output is automatically treated as scientific truth.
 
 - [Scientific Discovery Contract](./SCIENTIFIC_DISCOVERY_CONTRACT.md)
 - [Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
@@ -243,6 +282,7 @@ External tools are admitted only as governed **Technology Core adapters**, data/
 
 Current integration families include:
 
+- [Data & Evidence Mesh™](./DATA_EVIDENCE_MESH.md)
 - [Free Data Fabric™](./FREE_DATA_FABRIC.md)
 - [ERP Digital Twin Lab™](./ERP_DIGITAL_TWIN_LAB.md)
 - [Audit Analytics Open-Source Pack™](./AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md)
@@ -251,9 +291,10 @@ Current integration families include:
 - [Accounting & Audit Open-Source Pack™](./OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md)
 - [Adversarial Intelligence Fabric™](./ADVERSARIAL_INTELLIGENCE_FABRIC.md)
 
-The Business School Technology Core registry includes governed references for **Mesa, AgentTorch, SimPy, OpenAI Agents SDK, Microsoft Agent Framework, HARK, ABIDES, FinRL and RD-Agent** where they add measurable value.
+The Business School Technology Core registry includes governed references for **Mesa, AgentTorch, SimPy, OpenAI Agents SDK, Microsoft Agent Framework, HARK, ABIDES, FinRL and RD-Agent** where they add measurable value. OpenBB provider extensions may be evaluated as optional data connectors while preserving original-provider identity and rights.
 
 - [Technology Core simulation registry](./architecture/business_school_simulation_technology_registry.json)
+- [Data & Evidence Mesh registry](./architecture/data_evidence_mesh_registry.json)
 - [Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)
 
 ---
@@ -264,9 +305,12 @@ The Business School Technology Core registry includes governed references for **
 permanent_core_count = 2
 knowledge_core_is_permanent = true
 technology_core_is_permanent = true
+data_evidence_mesh_is_core = false
 business_school_simulation_layer_is_core = false
 decision_consequence_engine_is_core = false
 professional_judgment_passport_is_core = false
+large_third_party_dataset_should_be_committed_to_github = false
+connector_name_implies_execution = false
 technology_core_may_rewrite_knowledge_core = false
 external_repo_is_authoritative_truth = false
 external_framework_is_authoritative_professional_truth = false
@@ -285,9 +329,9 @@ human_gate_required = true
 
 ## Public / private boundary
 
-**Public:** research-safe architecture, synthetic benchmarks, education assets, selected reproducibility code, registries, evidence/governance schemas, maturity maps and citation metadata.
+**Public:** research-safe architecture, synthetic benchmarks, education assets, selected reproducibility code, connector/source registries, evidence/governance schemas, maturity maps and citation metadata.
 
-**Private/IP-sensitive:** provider credentials, restricted/licensed datasets, unpublished prompts/agent specifications, patent-sensitive orchestration, partner-confidential material and unreleased experimental results.
+**Private/IP-sensitive:** provider/API credentials, restricted/licensed datasets, unpublished prompts/agent specifications, patent-sensitive orchestration, partner-confidential material and unreleased experimental results.
 
 Third-party software, standards, papers, models, datasets and professional frameworks retain their original ownership and terms.
 
@@ -297,6 +341,7 @@ Third-party software, standards, papers, models, datasets and professional frame
 
 - [Start Here](./00_START_HERE.md)
 - [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+- [Data & Evidence Mesh](./DATA_EVIDENCE_MESH.md)
 - [Business School Simulation & Digital Twin Layer](./BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md)
 - [Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)
 - [Current Project State](./CURRENT_PROJECT_STATE.md)
@@ -322,4 +367,4 @@ Third-party software, standards, papers, models, datasets and professional frame
 
 NAAIL OpenLab™ is independent. References to universities, technology providers, Big Four firms, standard setters, regulators, professional bodies, journals, datasets or open-source projects identify public evidence, standards, competencies, methodological inspiration, upstream software or comparison contexts only. They do not imply affiliation, endorsement, sponsorship, accreditation, certification or partnership unless separately documented in writing.
 
-> **Models generate. Agents debate. Research grounds. Standards govern. Professional bodies define competence. Code tests. Evidence decides. Students challenge. Humans approve. Society benefits.**
+> **Models generate. Agents debate. Real evidence enters through provenance. Research grounds. Standards govern. Professional bodies define competence. Decisions change the Digital Twin. Code tests. VERA verifies. Humans approve. Society benefits.**
