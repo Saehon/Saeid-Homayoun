@@ -48,6 +48,20 @@ The CCCMP public overview intentionally omits detailed contract/claims graph sch
 
 The Nobel Engine public overview intentionally omits unpublished machine-readable theory schemas, detailed connector/provenance contracts, treatment orchestration, unpublished measurement/control algorithms, internal Digital Twin state-transition logic and other potentially enabling embodiments.
 
+## 2026-09-16 — Public GitHub consolidation
+
+The following commits consolidated the public reviewer-facing architecture while preserving the patent-first/non-enabling boundary:
+
+- `21dda3b2894dab5bcf8b3a7aeb2b7fdd38cc2d5c` — added `PUBLIC_PLATFORM_OVERVIEW.md` as the consolidated public architecture page.
+- `37ca79f956130b369821e5706020099892485e52` — added the Nobel Engine and current two-core research safeguards to the public capability/maturity matrix.
+- `5a1bc4264cc4b3916cc644eba5609d81114a6b15` — upgraded the NAAIL public README with the Nobel Engine and consolidated supporting-layer architecture.
+- `d164cde66016a26b7ca1674cd406ed7f283a9fab` — upgraded the repository root README to present the current two-core architecture, agents and cross-cutting research layers.
+- `235f5f304b7f378d4509e8d8de1cb3af0c0cc58f` — made the consolidated Public Platform Overview the first reviewer path in `00_START_HERE.md`.
+- `3ea5aaf369d67ee5ae9b79e9889302de77983095` — added the dated Public GitHub Consolidation record.
+- `66f40b306bb37826079b8931847936af40d7a1c8` — promoted the public capability registry to schema v2.0 and registered the Public Platform Overview as an official public governance surface.
+
+These consolidation commits are intended to make the current public state clearer, not to expand the enabling technical disclosure beyond the non-enabling descriptions already authorized under the patent-first policy.
+
 ## Additional disclosure sources to audit
 
 Before filing, the project should review whether NAAIL technical material was disclosed through:
