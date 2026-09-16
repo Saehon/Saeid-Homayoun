@@ -2,7 +2,7 @@
 
 **Copyright © 2026 Saeid Homayoun. All Rights Reserved.**
 
-The names and source-identifying designations **NAAIL™**, **NAAIL OpenLab™**, **POMELO™**, **KIWI™**, **VERA™**, **ECONOVA-S™**, **Evidence Passport™**, **Professional Decision DAG™**, **DAG Watch™**, **Agent Arena™**, **Failure Memory™**, **Decision–Consequence Engine™**, **Professional Judgment Passport™**, **NAAIL Data & Evidence Mesh™**, **NAAIL Value Expansion Fabric™**, **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™**, **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™**, **NAAIL Innovation & Entrepreneurship Evidence Layer™**, **NAAIL Entrepreneurial Opportunity Engine™**, and **CCCMP™**, together with associated logos, badges and branding, are reserved by the project owner to the extent protectable under applicable law.
+The names and source-identifying designations **NAAIL™**, **NAAIL OpenLab™**, **POMELO™**, **KIWI™**, **VERA™**, **ECONOVA-S™**, **Evidence Passport™**, **Professional Decision DAG™**, **DAG Watch™**, **Agent Arena™**, **Failure Memory™**, **Decision–Consequence Engine™**, **Professional Judgment Passport™**, **NAAIL Data & Evidence Mesh™**, **NAAIL Value Expansion Fabric™**, **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™**, **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™**, **NAAIL Innovation & Entrepreneurship Evidence Layer™**, **NAAIL Entrepreneurial Opportunity Engine™**, **NAAIL Management Accounting & AI Cost Intelligence Layer™**, **NAAIL AI Activity-Based Costing™**, **Token- and Time-Driven AI Costing™ / TTD-AIC**, **NAAIL Open Model Benchmark & Cost Intelligence Layer™**, **NAAIL Cost-to-Value Frontier™**, **NAAIL Visualization & Decision Intelligence Layer™**, and **CCCMP™**, together with associated logos, badges and branding, are reserved by the project owner to the extent protectable under applicable law.
 
 The **™** symbol identifies claimed brand/source identifiers. This repository does **not** use **®** and does not represent that any mark is registered unless a registration is separately documented.
 
@@ -12,6 +12,6 @@ Permitted descriptive/nominative references should make clear that third-party w
 
 Commercial brand licensing requires a separate written agreement.
 
-Third-party names—including Nobel laureates' names, journals, product names, standards-body names, professional-body names, university names and company names—remain the property of their respective owners. Their appearance is descriptive and does not imply affiliation or endorsement.
+Third-party names—including researchers' names, journals, benchmark projects, product names, standards-body names, professional-body names, university names and company names—remain the property of their respective owners. Their appearance is descriptive and does not imply affiliation or endorsement.
 
 Before filing trademark applications, the project should conduct professional clearance searches and select appropriate jurisdictions/classes. This notice does not itself create a trademark registration.
