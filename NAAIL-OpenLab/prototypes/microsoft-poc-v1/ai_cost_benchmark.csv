@@ -1,4 +1,5 @@
-model,provider,input_usd_per_m_tokens,output_usd_per_m_tokens,task_input_tokens,task_output_tokens,raw_task_cost_usd,synthetic_verification_rate,cost_per_verified_output_usd,price_source,benchmark_status
-gpt-5,OpenAI,1.25,10.0,8000,2000,0.03,0.94,0.0319148936,LiteLLM metadata/issues,PRICE_SNAPSHOT + SYNTHETIC_VERIFICATION_RATE
-claude-sonnet-4-5,Anthropic,3.0,15.0,8000,2000,0.054,0.93,0.0580645161,LiteLLM model cost map,PRICE_SNAPSHOT + SYNTHETIC_VERIFICATION_RATE
-gpt-4o,OpenAI,5.0,15.0,8000,2000,0.07,0.9,0.0777777778,LiteLLM model cost map,PRICE_SNAPSHOT + SYNTHETIC_VERIFICATION_RATE
+model,weights,overall_score,cost_per_successful_task_usd,benchmark_release,latency,throughput,context,task_fit,cost_metric_status
+DeepSeek V4.1 Flash Max Effort,open,81.1,0.029,LiveBench-2026-06-25,NOT_EXECUTED,NOT_EXECUTED,NOT_REPORTED_HERE,general objective benchmark,EXTERNAL_COST_PER_SUCCESSFUL_TASK
+GPT-5.6 Sol Max Effort,closed,81.0,0.515,LiveBench-2026-06-25,NOT_EXECUTED,NOT_EXECUTED,NOT_REPORTED_HERE,general objective benchmark,EXTERNAL_COST_PER_SUCCESSFUL_TASK
+GPT-5.5 Thinking xHigh Effort,closed,80.2,0.435,LiveBench-2026-06-25,NOT_EXECUTED,NOT_EXECUTED,NOT_REPORTED_HERE,general objective benchmark,EXTERNAL_COST_PER_SUCCESSFUL_TASK
+Claude 5 Opus Thinking Max Effort,closed,80.1,0.699,LiveBench-2026-06-25,NOT_EXECUTED,NOT_EXECUTED,NOT_REPORTED_HERE,general objective benchmark,EXTERNAL_COST_PER_SUCCESSFUL_TASK
