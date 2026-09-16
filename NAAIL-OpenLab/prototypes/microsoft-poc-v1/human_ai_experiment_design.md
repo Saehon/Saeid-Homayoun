@@ -1,14 +1,13 @@
-# Microsoft POC V1 — Human–AI Experiment Design
+# NAAIL Microsoft POC V1 — Human–AI Experiment Design
 
-**Status:** DESIGN_COMPLETE_NOT_RUN_WITH_PARTICIPANTS  
-**Maturity:** RESEARCH_PROTOTYPE  
-**Architecture:** Stable Knowledge Core™ + Replaceable Technology Core™ only.
+**Maturity:** `RESEARCH_PROTOTYPE`  
+**Execution:** `DESIGN_COMPLETE_NOT_EXECUTED`
 
 ## Research question
-Does an AI recommendation change professional judgment quality in a revenue-recognition case derived from the structure of Microsoft's FY2026 revenue-recognition CAM?
+How does AI advice, explanation and contradictory evidence affect professional revenue-recognition judgment?
 
-## Case boundary
-The experimental case is **synthetic**. It is inspired by the kinds of judgments described in Microsoft's public FY2026 CAM—performance obligations, timing, variable consideration, contract terms, and stand-alone selling prices—but it is not a reconstruction of a Microsoft customer contract.
+## Case
+A synthetic Microsoft-like cloud/software contract inspired by public revenue-recognition issues. It is **not** an actual Microsoft customer contract.
 
 ## Randomized conditions
 - **T0 Human only**
@@ -16,25 +15,20 @@ The experimental case is **synthetic**. It is inspired by the kinds of judgments
 - **T2 Human + AI recommendation + explanation**
 - **T3 Human + AI recommendation + contradictory evidence**
 
-## Manipulations
-Anchor strength, information order, AI confidence, contradictory evidence, task complexity and time pressure may be varied in preregistered extensions.
+## Manipulated factors
+AI advice availability; explanation availability; contradictory evidence. A later preregistered extension may manipulate AI confidence, anchor strength, information order, time pressure and management pressure.
 
-## Primary measures
-Accuracy; confidence; calibration; AI reliance; AI override; evidence requests; professional skepticism; decision revision; completion time.
+## Outcomes
+Accuracy; confidence; calibration; AI reliance; AI override; evidence requests; professional skepticism; decision revision; advice taking; completion time.
 
-## Primary hypotheses
-H1: AI assistance may improve mean accuracy relative to human-only judgment.  
-H2: Explanation may improve calibration only when the explanation is evidence-grounded.  
-H3: Contradictory evidence should reveal whether participants appropriately revise AI-assisted judgments rather than anchoring on the AI recommendation.
+## Primary confirmatory design
+Random assignment at participant level. Pre-specify one primary accuracy outcome and one reliance/calibration outcome. Conduct power analysis before recruitment. Log treatment delivery and completion time. Retain null results.
 
-## Identification
-Random assignment at the participant level. Confirmatory analyses require preregistration, power analysis, treatment-integrity checks and prespecified exclusion rules.
+## Analysis
+Difference-in-means/OLS with treatment indicators; heteroskedasticity-robust standard errors; preregistered contrasts T1–T0, T2–T1, T3–T2. Exploratory heterogeneity must be labeled exploratory.
 
-## Planned analysis
-Difference in means / OLS with treatment indicators; calibration error; revision probability; evidence-request count; heterogeneous effects by experience only if powered and preregistered.
+## oTree implementation
+`code/otree_experiment_stub.py` provides a minimal implementation skeleton. No participant data have been collected.
 
-## Ethics and interpretation
-Behavioral measures are empirical decision proxies, not psychological diagnoses. No causal result is claimed until participants are randomized and the experiment is executed.
-
-## Human Gate
-No participant study begins without ethics/institutional review where applicable and explicit Human Gate approval.
+## Safeguards
+Behavioral measures are empirical proxies, not psychological diagnoses. No causal conclusion is made before randomization, manipulation checks and completed analysis. Human approval is required before confirmatory launch.
