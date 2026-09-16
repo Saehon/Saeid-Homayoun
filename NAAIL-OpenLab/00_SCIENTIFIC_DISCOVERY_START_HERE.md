@@ -1,7 +1,11 @@
 # NAAIL OpenLab™ — Scientific Discovery Start Here
 
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+
 The canonical scientific-discovery architecture for NAAIL OpenLab™ is maintained here:
 
+- **[Global Brand Identity](./BRAND_IDENTITY.md)** — canonical international NAAIL identity and naming governance.
 - **[Google-Inspired Scientific Discovery Orchestration](./GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md)** — cross-phase mapping for Gemini for Science, Co-Scientist, ERA, Computational Discovery, AlphaEvolve, AlphaFold-inspired latent structure, Science One / Chain-of-Evidence and Human Gate.
 - **[Digital Twin → Scientific Discovery Link Registry](./architecture/digital_twin_science_link_registry.json)** — machine-readable links from selected NAAIL Digital Twins to existing GitHub modules and applicable discovery phases.
 - **[Google Science Phase Registry](./architecture/google_science_phase_registry.json)** — machine-readable phase/gate/status map.
