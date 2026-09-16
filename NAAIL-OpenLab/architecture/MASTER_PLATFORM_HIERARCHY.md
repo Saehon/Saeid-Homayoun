@@ -4,103 +4,103 @@
 
 **Canonical version:** V2026.3 Multi-Agent Digital Twin
 
-## Fixed public architecture
+## Frozen constitutional architecture
 
-**NAAIL OpenLab™** is the umbrella platform. It preserves exactly two permanent cores:
+The governing document is **[NAAIL Two-Core Constitution](../TWO_CORE_CONSTITUTION.md)**.
 
-1. **Stable Knowledge Core™** — governed professional/scientific knowledge, theory, evidence semantics, standards, constructs and research meaning.
-2. **Replaceable Technology Core™** — replaceable models, tools, simulation technologies, experimental tooling, data connectors and execution infrastructure.
+NAAIL OpenLab™ permanently preserves exactly two cores:
 
-All other NAAIL elements remain governed supporting agents, layers, engines, programmes, services, Digital Twins, evaluations or interfaces. **No third permanent core is created.**
+1. **Stable Knowledge Core™** — governed scientific/professional meaning: accounting, auditing, finance, economics, management, behavioral science, innovation/entrepreneurship theory, Nobel-inspired theory, IFRS/assurance knowledge, sustainability, causal inference, research design, construct definitions, professional judgment, replication, falsification and scientific governance.
+2. **Replaceable Technology Core™** — replaceable implementations: LLMs, AI agents, model routers, RAG/GraphRAG/KAG technology, vector/graph databases, Python/R/Stata, simulation engines, APIs, connectors, GitHub packages, MCP/A2A, observability and evaluation tools.
 
-## Public professional-agent set
+**No third permanent core is permitted.** New domains, datasets, vendors, models or technologies extend NAAIL only through modular layers, specialist programmes/agents or replaceable implementations.
 
-- **KIWI™** — Audit / CAM / KAM Intelligence
-- **POMELO™** — Accounting & Assurance Intelligence
-- **VERA™** — Verifiable Accounting & Auditing Intelligence
-- **IFRS Agent™** — Financial Reporting & Standards
-- **PCAOB Agent™** — Audit / Regulatory Intelligence
-- **ESG Agent** — Sustainability / Climate / Assurance
-- **ECONOVA-S™** — Finance / Economics / Data Economy
+## Cross-cutting governed supporting layers
 
-ICFR and Forensic Intelligence remain specialist capabilities under the same umbrella.
+The following connect the two permanent cores but never become new cores:
 
-## Cross-cutting governed supporting capabilities
-
-The public platform may identify these supporting capabilities at a high level:
-
-- Scientific Discovery & Governance Layer;
-- NAAIL Value Expansion Fabric™;
-- NAAIL Data & Evidence Mesh™;
-- Business School Simulation & Digital Twin Layer;
-- Behavioral Decision Science & Human–AI Experimentation Layer™;
-- **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™**;
+- **NAAIL Data & Evidence Mesh™**;
+- **FT50 / AJG Evidence Graph™**;
+- **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™** — cross-cutting layer;
+- **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™**;
 - **NAAIL Innovation & Entrepreneurship Evidence Layer™**;
-- Evidence Passport™;
-- Professional Decision DAG™;
-- DAG Watch™;
-- Agent Arena™;
-- Blind Gold / Evaluation;
-- Failure Memory™;
-- Controlled Agent Evolution;
-- Decision–Consequence Engine™;
-- Professional Judgment Passport™;
-- Human Approval Gate™.
+- **Business School Simulation & Digital Twin Layer™**;
+- **Knowledge RAG / GraphRAG / KAG Layer™**;
+- **Professional Education & Question Bank Layer™**;
+- **Decision–Consequence Engine™**;
+- **Professional Judgment Passport™**.
 
-The **Nobel Theory-to-Evidence & AI Experiment Engine™** is cross-cutting and serves Accounting, Auditing, Finance, Economics, Management, Governance, Sustainability, Behavioral Science, Education and Research. It is **not a core** and is **not CCCMP-specific**.
+### Stable meaning vs replaceable implementation
 
-The **Innovation & Entrepreneurship Evidence Layer™** is also cross-cutting and serves Accounting, Auditing, Finance, Economics, Management, Entrepreneurship, Innovation, Strategy, Sustainability, AI/Data Economy, Business Education and Scientific Research. It is **not a core** and is **not CCCMP-specific**.
+Governed theory, standards, evidence semantics, source authority, construct definitions, ontologies and approved knowledge objects remain under Stable Knowledge Core governance. Retrieval/simulation implementations—embedding models, vector databases, graph engines, RAG/GraphRAG/KAG frameworks, LLMs and agent runtimes—remain replaceable Technology Core infrastructure.
 
-At a public high level, the Innovation & Entrepreneurship Evidence Layer™ connects innovation/entrepreneurship theory with governed patent, startup, firm-dynamics, science-to-innovation, digital-innovation, economic-complexity, entrepreneurial-finance, behavioral-experiment, causal-inference and Digital Twin research.
+## Specialist programmes and agents
 
-Its public research objective is:
+Domain-specific systems remain modular under the two-core constitution:
 
-**Scientific Discovery → Invention → Patent → Entrepreneurship → Financing → Commercialization → Innovation → Scaling → Productivity → Firm / Market / Social Value.**
+- **KIWI™**;
+- **POMELO™**;
+- **VERA™**;
+- **IFRS Agent™**;
+- **PCAOB Agent™**;
+- **ESG Agent**;
+- **ECONOVA-S™**;
+- **CCCMP™**;
+- ICFR Intelligence;
+- Forensic Intelligence.
 
-Detailed connector contracts, network/graph schemas, opportunity-score mechanics, startup state transitions, treatment orchestration and Evidence Passport internals remain private under patent hold.
+Future specialist domains must follow the same rule and cannot create a new permanent core.
 
-## Specialist programmes
+## Architecture principle
 
-**CCCMP™ — Project Cost, Contract & Claims Management Programme** remains a specialist NAAIL programme. It is not a permanent core and does not own the Nobel Theory-to-Evidence Engine or the Innovation & Entrepreneurship Evidence Layer.
+**Stable Theory / Knowledge**  
+→ **Evidence / Data**  
+→ **Replaceable Technology**  
+→ **Agents / Simulations**  
+→ **Decision**  
+→ **Verification**  
+→ **Evidence Passport™**  
+→ **Human Approval Gate™**
 
-## Patent hold
+## Governance inherited by every layer/programme
 
-Detailed technical interactions among NAAIL components—including unpublished machine-readable theory schemas, innovation/startup graph structures, experimental orchestration, opportunity-scoring logic, dependency propagation, containment controls, promotion/revocation mechanisms, state-transition logic, authorization behavior, evaluation isolation, internal interfaces, provenance contracts, implementation code and unpublished embodiments—are withheld from the current public repository pending patent filing review.
+Where applicable, every layer and programme must use provenance, license controls, Evidence Passport™, causal/decision DAGs, versioning, reproducibility, replication, falsification, red-team/adversarial review and Human Approval Gate™.
 
-Some implementation-level material was publicly committed before the patent-first rule was adopted. See [`../PUBLIC_DISCLOSURE_LOG.md`](../PUBLIC_DISCLOSURE_LOG.md). Current sanitization does not erase historical Git disclosures.
-
-## Permanent public invariants
+## Permanent invariants
 
 ```text
 permanent_core_count = 2
+two_core_constitution_frozen = true
+third_permanent_core_allowed = false
+new_domain_creates_new_core = false
+new_dataset_creates_new_core = false
+new_model_creates_new_core = false
+new_vendor_creates_new_core = false
+supporting_layer_may_become_third_core = false
+specialist_programme_may_become_third_core = false
 stable_knowledge_core_is_permanent = true
 replaceable_technology_core_is_permanent = true
-supporting_layer_may_become_third_core = false
-nobel_theory_engine_is_core = false
-nobel_theory_engine_is_cccmp_specific = false
-innovation_entrepreneurship_layer_is_core = false
-innovation_entrepreneurship_layer_is_cccmp_specific = false
-technology_core_may_rewrite_knowledge_core = false
-theory_name_equals_valid_measurement = false
-behavioral_proxy_equals_psychological_diagnosis = false
-entrepreneurial_opportunity_score_is_deterministic_recommendation = false
-predictive_accuracy_equals_causality = false
+technology_change_redefines_scientific_meaning = false
+technology_core_may_silently_rewrite_knowledge_core = false
 human_gate_required = true
 ```
 
+## Patent-first boundary
+
+This public hierarchy is intentionally high-level and non-enabling. Detailed unpublished algorithms, graph/provenance schemas, connector contracts, state-transition logic, dependency/revocation mechanisms, experimental orchestration, evaluation isolation and patent-sensitive embodiments remain private pending filing review.
+
 ## Public navigation
 
-- [`../PUBLIC_PLATFORM_OVERVIEW.md`](../PUBLIC_PLATFORM_OVERVIEW.md)
-- [`../README.md`](../README.md)
-- [`../NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md`](../NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
-- [`../INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md`](../INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
-- [`../CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md`](../CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
-- [`../PATENT_NOTICE.md`](../PATENT_NOTICE.md)
-- [`../IP_NOTICE.md`](../IP_NOTICE.md)
-- [`../BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md`](../BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-- [`../DATA_EVIDENCE_MESH.md`](../DATA_EVIDENCE_MESH.md)
-- [`../agents/README.md`](../agents/README.md)
+- [Two-Core Constitution](../TWO_CORE_CONSTITUTION.md)
+- [Public Platform Overview](../PUBLIC_PLATFORM_OVERVIEW.md)
+- [Main NAAIL README](../README.md)
+- [Start Here](../00_START_HERE.md)
+- [Innovation & Entrepreneurship Evidence Layer](../INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
+- [Nobel Theory-to-Evidence Engine](../NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
+- [Behavioral Decision Science Layer](../BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
+- [CCCMP](../CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+- [Patent Notice](../PATENT_NOTICE.md)
 
 ## Independence
 
-NAAIL OpenLab™ is independent. References to Nobel laureates, external regulators, standard setters, professional bodies, universities, firms, technology providers, datasets, journals or open-source projects do not imply affiliation, endorsement, certification, accreditation or partnership.
+NAAIL OpenLab™ is independent. References to external researchers, regulators, standard setters, professional bodies, universities, firms, technology providers, datasets, journals or open-source projects do not imply affiliation, endorsement, certification, accreditation or partnership.
