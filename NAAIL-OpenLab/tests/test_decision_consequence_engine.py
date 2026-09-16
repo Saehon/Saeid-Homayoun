@@ -1,4 +1,5 @@
 import importlib.util
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -6,9 +7,11 @@ ENGINE = ROOT / "NAAIL-OpenLab" / "simulations" / "business-school" / "decision_
 
 
 def load_engine():
-    spec = importlib.util.spec_from_file_location("decision_consequence_engine", ENGINE)
+    module_name = "decision_consequence_engine"
+    spec = importlib.util.spec_from_file_location(module_name, ENGINE)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
+    sys.modules[module_name] = module
     spec.loader.exec_module(module)
     return module
 
