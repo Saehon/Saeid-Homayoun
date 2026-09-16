@@ -1,5 +1,8 @@
 # NAAIL OpenLab™ — Open-Source Integration Hub
 
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+
 **Platform:** NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin  
 **Knowledge & RAG Core:** `KRG2026.3` — frozen and governed  
 **Purpose:** Canonical navigation for NAAIL open-source software, public-data, simulation, analytics, finance, ERP, audit, and ESG integrations.
