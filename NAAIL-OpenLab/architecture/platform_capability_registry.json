@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.6",
+  "schema_version": "1.7",
   "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16-PATENT-FIRST",
   "platform": {
     "master_brand": "NAAIL OpenLab™",
@@ -27,6 +27,7 @@
     {"id":"master_hierarchy","name":"Two-core canonical master hierarchy","path":"NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md","status":"PATENT_HOLD_NON_ENABLING","scope":"public high-level two-core hierarchy; enabling interactions withheld"},
     {"id":"value_expansion_fabric","name":"NAAIL Value Expansion Fabric","path":"NAAIL-OpenLab/VALUE_EXPANSION_FABRIC.md","status":"PATENT_HOLD_NON_ENABLING","scope":"modular data, knowledge, professional education, ERP, research and business-school Digital Twin expansion; no third core; detailed connector, graph, provenance, rights-automation and simulation-routing mechanics private"},
     {"id":"behavioral_decision_science_human_ai","name":"NAAIL Behavioral Decision Science & Human–AI Experimentation Layer","path":"NAAIL-OpenLab/BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md","status":"PATENT_HOLD_NON_ENABLING","scope":"behavioral economics/finance/accounting/auditing/management and human-AI experimentation; Knowledge Core governs theory/evidence/measures; Technology Core provides replaceable experiment and analytics tooling; detailed treatment, outcome and orchestration mechanics private"},
+    {"id":"behavioral_human_ai_research_governance","name":"Behavioral Human–AI Research Governance","path":"NAAIL-OpenLab/docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md","status":"ARCHITECTURE_ADOPTED","scope":"public methodological governance for construct validity, causal identification, preregistration, power, reproducibility, replication/falsification, current FT50/AJG verification, and non-diagnostic interpretation of behavioral proxies"},
     {"id":"global_ai_business_education","name":"Global AI Business Education & Professional Simulation Platform","path":"NAAIL-OpenLab/GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md","status":"PUBLIC_EDUCATION_DESIGN"},
     {"id":"data_evidence_mesh","name":"NAAIL Data & Evidence Mesh","path":"NAAIL-OpenLab/DATA_EVIDENCE_MESH.md","status":"PATENT_HOLD_NON_ENABLING","scope":"public source families and high-level objective only; detailed connector/provenance logic private"},
     {"id":"business_school_simulation_layer","name":"Business School Simulation & Digital Twin Layer","path":"NAAIL-OpenLab/BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md","status":"PATENT_HOLD_NON_ENABLING","scope":"public high-level simulation scope only; technical workflow private"},
@@ -54,6 +55,11 @@
     "value_expansion_fabric_is_core": false,
     "behavioral_decision_science_layer_is_core": false,
     "behavioral_proxies_are_personality_diagnosis": false,
+    "predictive_accuracy_is_causality": false,
+    "agent_consensus_is_truth": false,
+    "current_ft50_ajg_verification_required_when_used": true,
+    "reproducibility_required_for_behavioral_research": true,
+    "falsification_required_for_behavioral_research": true,
     "canonical_agent_set_changed_by_behavioral_layer": false,
     "validated_checkpoint_changed_by_behavioral_layer": false,
     "canonical_agent_set_changed_by_value_expansion": false,
