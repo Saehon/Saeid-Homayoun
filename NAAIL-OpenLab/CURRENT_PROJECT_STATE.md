@@ -24,6 +24,8 @@ No NAAIL patent application is represented as filed as of 2026-09-16, and the pr
 | Prototype 004 provider harness | `IMPLEMENTED_EXECUTION_GATED` |
 | V2026.3 master architecture | high-level public architecture |
 | Knowledge Core™ + Technology Core™ | exactly two permanent cores |
+| CCCMP™ — Project Cost, Contract & Claims Management Programme | `PATENT_HOLD_NON_ENABLING` |
+| CCCMP Research, Education & Evidence Governance | `ARCHITECTURE_ADOPTED` |
 | NAAIL Value Expansion Fabric™ | `PATENT_HOLD_NON_ENABLING` |
 | Behavioral Decision Science & Human–AI Experimentation Layer™ | `PATENT_HOLD_NON_ENABLING` |
 | NAAIL Data & Evidence Mesh™ | `PATENT_HOLD_NON_ENABLING` |
@@ -42,11 +44,29 @@ NAAIL retains the named components:
 
 **KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · Evidence Passport™ · Professional Decision DAG™ · DAG Watch™ · Agent Arena™ · Failure Memory™ · Controlled Agent Evolution · Decision–Consequence Engine™ · Professional Judgment Passport™ · Human Approval Gate™ · NAAIL Data & Evidence Mesh™**.
 
-The **Value Expansion Fabric™** and **Behavioral Decision Science & Human–AI Experimentation Layer™** are governed supporting layers only. Neither changes the canonical agent set, creates a new core, or changes the validated checkpoint.
+The **Value Expansion Fabric™**, **Behavioral Decision Science & Human–AI Experimentation Layer™**, and **CCCMP™** are governed supporting capabilities only. None changes the canonical agent set, creates a new core, or changes the validated checkpoint.
+
+## CCCMP specialist programme
+
+NAAIL now includes a public high-level **CCCMP™ — Project Cost, Contract & Claims Management Programme** for research and education in construction, infrastructure, energy, oil & gas, mining, EPC/EPCM, PPP, major capital projects and megaprojects.
+
+Public CCCMP scope covers, at a high level:
+
+- cost engineering, estimating, EVM and project controls;
+- contract, procurement and commercial management;
+- claims, delay, quantum and dispute analysis;
+- project finance, accounting and IFRS-related project issues;
+- behavioral project decision science and human–AI judgment;
+- rights-controlled public/reference project, procurement, macro, energy, commodity and legal data families;
+- research, education and Digital Twin simulation.
+
+CCCMP is a specialist programme—not a third core. Knowledge remains governed through the Knowledge Core; replaceable tools/connectors/simulation infrastructure remain in the Technology Core.
+
+Detailed contract/claims graph structures, entitlement logic, source-to-agent routing, automated rights controls, treatment designs, project-state transitions and Digital Twin execution mechanics remain private under patent hold.
 
 ## Behavioral research capability
 
-NAAIL now includes a public high-level behavioral research capability spanning behavioral economics, finance, accounting, auditing, management decision-making, consumer/organizational behavior, professional judgment, and human–AI interaction.
+NAAIL includes a public high-level behavioral research capability spanning behavioral economics, finance, accounting, auditing, management decision-making, consumer/organizational behavior, professional judgment, and human–AI interaction.
 
 Publicly stated methodological requirements include:
 
@@ -63,11 +83,15 @@ Detailed treatment-arm logic, behavioral-outcome schemas, unpublished measures, 
 
 ## Public evidence / data boundary
 
-NAAIL may reference rights-cleared/public sources such as SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, OWID CO₂/Energy, OpenAlex, OpenSanctions, and optional OpenBB connectors, together with lawful behavioral/textual/research sources. Third-party rights and source terms remain controlling; large datasets and credentials are not stored in the public repository by default.
+NAAIL may reference rights-cleared/public sources such as SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, OWID CO₂/Energy, OpenAlex, OpenSanctions, optional OpenBB connectors, and public/reference project/procurement/energy/commodity/legal source families. Third-party rights and source terms remain controlling; large datasets and credentials are not stored in the public repository by default.
 
-## Research objective added
+Source names identify candidate/reference evidence families and do not prove integration, redistribution rights or execution.
 
-The behavioral research objective is not merely to show that AI changes decisions. It is to study, with appropriate experimental and archival designs, **when, why, and for whom AI reduces, preserves, or amplifies behavioral biases and professional-judgment errors** in business-school and professional domains.
+## Research objectives added
+
+Behavioral research asks **when, why, and for whom AI reduces, preserves, or amplifies behavioral biases and professional-judgment errors**.
+
+CCCMP research adds project/capital-programme questions spanning cost overruns, project controls, contracts, procurement, claims/disputes, project finance, behavioral project decisions, human–AI judgment and Digital Twin simulation, subject to appropriate causal/reproducibility standards.
 
 ## Disclosure history
 
@@ -84,21 +108,26 @@ See:
 
 Current original NAAIL material is governed by [`LICENSE`](./LICENSE) for academic research, education, teaching, and non-commercial evaluation. Commercial use requires separate written authorization. No implied patent, trademark, or trade-secret license is granted.
 
+CCCMP industry/commercial use is not licensed by the public repository and requires separate written authorization.
+
 ## Immediate priorities
 
 1. complete professional patent/inventorship/ownership review;
 2. avoid further enabling public disclosure before filing decisions;
 3. preserve public-disclosure chronology and private technical records;
-4. build a research-safe behavioral experimentation roadmap using public/non-enabling governance;
-5. verify FT50/AJG status dynamically rather than hard-coding journal rankings;
-6. validate behavioral experiments with preregistration, power, replication/falsification, and external evidence;
-7. continue research validation using public-safe artifacts;
-8. after any confirmed filing, update public patent status accurately and decide which private technical materials may be released.
+4. design research-safe CCCMP project/capital-programme studies using public/non-enabling governance;
+5. build a research-safe behavioral experimentation roadmap;
+6. verify FT50/AJG status dynamically rather than hard-coding journal rankings;
+7. validate behavioral and project-simulation studies with appropriate identification, robustness, replication/falsification and external evidence;
+8. continue research validation using public-safe artifacts;
+9. after any confirmed filing, update public patent status accurately and decide which private technical materials may be released.
 
 ## Canonical links
 
 - [Start Here](./00_START_HERE.md)
 - [Main README](./README.md)
+- [CCCMP specialist programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+- [CCCMP research/evidence governance](./docs/research/CCCMP_RESEARCH_GOVERNANCE.md)
 - [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
 - [Patent Notice](./PATENT_NOTICE.md)
 - [IP Notice](./IP_NOTICE.md)
