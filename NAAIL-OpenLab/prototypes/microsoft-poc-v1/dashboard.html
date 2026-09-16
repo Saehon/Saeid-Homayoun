@@ -2,11 +2,11 @@
 <html><head><meta charset="utf-8"><title>NAAIL Microsoft POC V1</title>
 <style>
 body{font-family:system-ui,Arial;margin:28px;max-width:1200px;background:#fafafa;color:#151515}
-h1{margin-bottom:4px}.tag{display:inline-block;background:#eee;border-radius:999px;padding:5px 10px;margin-right:6px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:20px 0}.card{background:white;border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 1px 2px #0001}.big{font-size:26px;font-weight:700}table{border-collapse:collapse;width:100%;background:white}td,th{border:1px solid #ddd;padding:9px;text-align:left}th{background:#f1f1f1}.warn{background:#fff5d6;border:1px solid #f2d275;padding:12px;border-radius:10px}
+h1{margin-bottom:4px}.tag{display:inline-block;background:#eee;border-radius:999px;padding:5px 10px;margin-right:6px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:20px 0}.card{background:white;border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 1px 2px #0001}.big{font-size:26px;font-weight:700}table{border-collapse:collapse;width:100%;background:white;margin-bottom:22px}td,th{border:1px solid #ddd;padding:9px;text-align:left}th{background:#f1f1f1}.warn{background:#fff5d6;border:1px solid #f2d275;padding:12px;border-radius:10px}.open{font-weight:700}.small{font-size:13px;color:#555}
 </style></head><body>
 <h1>NAAIL Microsoft POC V1</h1>
-<div><span class="tag">RESEARCH_PROTOTYPE</span><span class="tag">FY2026</span><span class="tag">2 permanent cores</span></div>
-<p class="warn"><b>Boundary:</b> public-company evidence is real; internal management accounting is synthetic; participant experiment is not executed; production approval is NO.</p>
+<div><span class="tag">RESEARCH_PROTOTYPE</span><span class="tag">FY2026</span><span class="tag">2 permanent cores</span><span class="tag">15-test contract</span></div>
+<p class="warn"><b>Boundary:</b> public-company evidence is real; internal management accounting is synthetic; the participant experiment is not executed; production approval is NO; independent replication is pending.</p>
 <div class="grid">
 <div class="card"><small>Revenue</small><div class="big">$331,839m</div></div>
 <div class="card"><small>Operating margin</small><div class="big">46.8%</div></div>
@@ -20,10 +20,35 @@ h1{margin-bottom:4px}.tag{display:inline-block;background:#eee;border-radius:999
 <tr><td>Accounting/XBRL</td><td>PASS</td><td>SEC R2/R4/R6/R107</td></tr>
 <tr><td>Audit/CAM/ICFR</td><td>PASS</td><td>2 CAMs; unqualified ICFR opinion</td></tr>
 <tr><td>Text analytics</td><td>PASS bounded</td><td>2 source samples → features only</td></tr>
-<tr><td>Finance</td><td>PASS selected</td><td>Ratios + IEX price return + DGS10</td></tr>
+<tr><td>Finance</td><td>PASS selected</td><td>Ratios + IEX price return + DGS10; Fama–French open</td></tr>
 <tr><td>Innovation</td><td>PASS partial</td><td>R&D + GitHub metadata; patents pending execution</td></tr>
 <tr><td>Management accounting</td><td>PASS synthetic</td><td>ABC/TDABC/AI-cost microcase</td></tr>
 <tr><td>AI benchmark</td><td>PASS external</td><td>LiveBench 2026-06-25</td></tr>
-<tr><td>Human–AI experiment</td><td>DESIGN ONLY</td><td>T0–T3; not run</td></tr></table>
+<tr><td>Human–AI experiment</td><td>NOT EXECUTED</td><td>T0–T3 structure exists; participants not run</td></tr></table>
+
+<h2>Upgraded 15-test contract</h2>
+<p><b>Coverage mapping:</b> 13 PASS / 2 NOT EXECUTED. This is a mapping of existing evidence, <b>not</b> a claim that a new 15-test automated harness has already been rerun.</p>
+<table><tr><th>Test</th><th>Status</th></tr>
+<tr><td>01 SEC/XBRL ingestion</td><td>PASS</td></tr>
+<tr><td>02 Financial statement extraction</td><td>PASS</td></tr>
+<tr><td>03 Variable dictionary validation</td><td class="open">NOT EXECUTED</td></tr>
+<tr><td>04 Evidence Passport generation</td><td>PASS</td></tr>
+<tr><td>05 CAM/audit-risk mapping</td><td>PASS</td></tr>
+<tr><td>06 Text analytics</td><td>PASS</td></tr>
+<tr><td>07 Finance calculation</td><td>PASS</td></tr>
+<tr><td>08 Innovation measure</td><td>PASS</td></tr>
+<tr><td>09 ABC calculation</td><td>PASS</td></tr>
+<tr><td>10 TDABC calculation</td><td>PASS</td></tr>
+<tr><td>11 AI token/cost calculation</td><td>PASS</td></tr>
+<tr><td>12 Model benchmark</td><td>PASS</td></tr>
+<tr><td>13 Human–AI experiment structure</td><td>PASS</td></tr>
+<tr><td>14 Dashboard data load</td><td class="open">NOT EXECUTED</td></tr>
+<tr><td>15 Human Gate decision</td><td>PASS</td></tr></table>
+<p class="small">Historical reproducibility result: 12/12 offline unit tests passed under the earlier harness. The full dedicated 15-test harness must still be executed and timestamped.</p>
+
+<h2>Falsification / robustness</h2>
+<p>Open challenges include independent cross-source financial reconciliation, independent CAM coding, alternative text specifications, Fama–French exposure, PatentsView corroboration, AI-cost sensitivity, professional-task benchmark comparison, evaluation-leakage review, Evidence Passport replay, dashboard reconciliation, participant execution, and independent Human Gate review.</p>
+
 <h2>Human Gate</h2><p><b>APPROVE RESEARCH PROTOTYPE FOR PUBLICATION WITH LIMITATIONS.</b> Scientific validation awaits independent replication. Production approval: <b>NO</b>.</p>
+<p><b>Overall success gate: NOT PASSED.</b> Finish Microsoft V1 before expanding to additional Golden Anchor companies.</p>
 </body></html>
