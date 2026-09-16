@@ -123,10 +123,13 @@ Fama–French reproducibility wave:
 - `72b4281e9268cb3b046f8681559ea5600957ecec` — factor execution/publishing workflow
 - `0c80dac14f20d3af34e80123b57d030093e6dfc8` — factor execution-status record
 - `42ed220de4ed4ff2513828e1c0cb0afba3f059f5` — package index update
+- `c81d045b425697a7551ffde2ed8d2d6398f0859d` — GitHub/Drive sync update
+- `f61428897f51b09197b5d843b2c6b0b6c5138fc9` — canonical Microsoft V1 status update
+- `350f1bf2ce32a71b3ed0d3c6c2aa8c820628beb7` — added retrieval provenance to the frozen market input and retriggered the workflow path
 
 ## CI / execution boundary
 
-The GitHub workflows are published, but **a successful run is not claimed unless a completed workflow run is separately verified**. The dedicated 15-test result above is a locally executed, timestamped artifact-validation run. The Fama–French regression itself remains unexecuted in the verified GitHub state.
+The GitHub workflows are published, but **a successful run is not claimed unless a completed workflow run is separately verified**. The dedicated 15-test result above is a locally executed, timestamped artifact-validation run. After the provenance-trigger push, GitHub's visible Actions run list still did not show a new Fama–French execution. The Fama–French regression therefore remains unexecuted in the verified GitHub state.
 
 ## Final synchronized status
 
