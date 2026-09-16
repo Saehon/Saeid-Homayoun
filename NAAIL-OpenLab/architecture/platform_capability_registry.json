@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16",
   "platform": {
     "master_brand": "NAAIL OpenLab™",
@@ -24,11 +24,12 @@
     {"id":"brand_identity","name":"Global NAAIL identity","path":"NAAIL-OpenLab/BRAND_IDENTITY.md","status":"ARCHITECTURE_ADOPTED"},
     {"id":"master_hierarchy","name":"Two-core canonical master hierarchy","path":"NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md","status":"ARCHITECTURE_ADOPTED","scope":"exactly two permanent cores: Knowledge Core and Technology Core"},
     {"id":"global_ai_business_education","name":"Global AI Business Education & Professional Simulation Platform","path":"NAAIL-OpenLab/GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md","status":"PUBLIC_EDUCATION_DESIGN","scope":"business schools + research + standards + professional competencies + employers + sustainability + Human Gate"},
+    {"id":"data_evidence_mesh","name":"NAAIL Data & Evidence Mesh","path":"NAAIL-OpenLab/DATA_EVIDENCE_MESH.md","status":"ARCHITECTURE_ADOPTED","registry":"NAAIL-OpenLab/architecture/data_evidence_mesh_registry.json","scope":"SEC EDGAR/XBRL + FRED/ALFRED + Fama-French + World Bank + OWID CO2/Energy + OpenAlex + OpenSanctions + optional OpenBB connectors; supporting layer not core; connector execution requires Evidence Passport"},
     {"id":"business_school_simulation_layer","name":"Business School Simulation & Digital Twin Layer","path":"NAAIL-OpenLab/BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md","status":"ARCHITECTURE_ADOPTED","scope":"company, audit firm, regulator, capital market, sustainability, accounting, finance, economics and governance simulations; supporting layer not core"},
     {"id":"simulation_technology_registry","name":"Business School Simulation Technology Registry","path":"NAAIL-OpenLab/architecture/business_school_simulation_technology_registry.json","status":"REGISTRY_ADOPTED"},
     {"id":"decision_consequence_engine","name":"Decision–Consequence Engine","path":"NAAIL-OpenLab/simulations/business-school/decision_consequence_engine.py","status":"RESEARCH_PROTOTYPE","scope":"deterministic synthetic pedagogical state-transition engine; effects are not real-world causal estimates"},
     {"id":"professional_judgment_passport","name":"Professional Judgment Passport","path":"NAAIL-OpenLab/architecture/professional_judgment_passport.schema.json","status":"ARCHITECTURE_ADOPTED","scope":"educational/research judgment record; not certification or automated hiring score"},
-    {"id":"audit_accounting_dynamic_twin","name":"NAAIL Audit & Accounting Digital Twin Prototype 001","path":"NAAIL-OpenLab/digital-twins/audit-accounting/README.md","status":"RESEARCH_PROTOTYPE","scope":"dynamic professional-simulation specification; provider-backed dynamic execution not yet validated"},
+    {"id":"audit_accounting_dynamic_twin","name":"NAAIL Audit & Accounting Digital Twin Prototype 001","path":"NAAIL-OpenLab/digital-twins/audit-accounting/README.md","status":"RESEARCH_PROTOTYPE","scope":"dynamic professional-simulation specification with Data & Evidence Mesh binding; live-connector/provider-backed dynamic execution not yet validated"},
     {"id":"simulation_evidence_standard","name":"NAAIL Simulation Evidence Standard","path":"NAAIL-OpenLab/docs/education/SIMULATION_EVIDENCE_STANDARD.md","status":"ARCHITECTURE_ADOPTED","schema":"NAAIL-OpenLab/architecture/simulation_evidence_card.schema.json"},
     {"id":"prototype_003","name":"Audit Digital Twin Prototype 003","path":"NAAIL-OpenLab/Prototype_003/runtime/README.md","status":"EXECUTED_VALIDATED","scope":"deterministic frozen synthetic checkpoint"},
     {"id":"prototype_004","name":"Prototype 004 provider harness","path":"NAAIL-OpenLab/PROTOTYPE_004_PROVIDER_EXECUTION.md","status":"IMPLEMENTED_EXECUTION_GATED"},
@@ -59,9 +60,12 @@
   ],
   "invariants": {
     "permanent_core_count": 2,
+    "data_evidence_mesh_is_core": false,
     "business_school_simulation_layer_is_core": false,
     "decision_consequence_engine_is_core": false,
     "professional_judgment_passport_is_core": false,
+    "large_third_party_dataset_should_be_committed_to_github": false,
+    "connector_name_implies_execution": false,
     "architecture_documented_equals_runtime_executed": false,
     "registry_entry_equals_dependency_installed": false,
     "provider_name_equals_provider_run": false,
