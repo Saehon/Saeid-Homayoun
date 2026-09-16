@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/architecture/professional_judgment_passport.schema.json",
+  "title": "NAAIL Professional Judgment Passport™",
+  "description": "Educational/research record of evidence-linked professional judgment. Not a certification or automated employment score.",
+  "type": "object",
+  "required": [
+    "passport_id",
+    "simulation_id",
+    "learner_role",
+    "dimensions",
+    "human_gate",
+    "evidence_references",
+    "limitations"
+  ],
+  "properties": {
+    "passport_id": {"type": "string"},
+    "simulation_id": {"type": "string"},
+    "learner_role": {"type": "string"},
+    "course_or_context": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "dimensions": {
+      "type": "object",
+      "required": ["EQ", "PS", "RI", "AJ", "AUJ", "CKR", "AIV", "ETH", "HOR"],
+      "properties": {
+        "EQ": {"$ref": "#/$defs/dimension"},
+        "PS": {"$ref": "#/$defs/dimension"},
+        "RI": {"$ref": "#/$defs/dimension"},
+        "AJ": {"$ref": "#/$defs/dimension"},
+        "AUJ": {"$ref": "#/$defs/dimension"},
+        "CKR": {"$ref": "#/$defs/dimension"},
+        "AIV": {"$ref": "#/$defs/dimension"},
+        "ETH": {"$ref": "#/$defs/dimension"},
+        "HOR": {"$ref": "#/$defs/dimension"}
+      },
+      "additionalProperties": false
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "decision_dag_reference": {"type": "string"},
+    "evidence_passport_reference": {"type": "string"},
+    "ai_condition": {
+      "type": "string",
+      "enum": ["HUMAN_ONLY", "AI_ASSISTANT", "SINGLE_AGENT", "SEQUENTIAL_AGENTS", "GOVERNED_MULTI_AGENT"]
+    },
+    "human_gate": {
+      "type": "object",
+      "required": ["decision", "responsible_human_role", "rationale"],
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": ["APPROVE", "MODIFY", "REJECT", "REQUEST_MORE_EVIDENCE", "ESCALATE"]
+        },
+        "responsible_human_role": {"type": "string"},
+        "rationale": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "employment_use_prohibited_without_validation_and_consent": {"const": true},
+    "external_certification_claimed": {"const": false}
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object",
+      "required": ["label", "rating", "rationale", "evidence_refs"],
+      "properties": {
+        "label": {"type": "string"},
+        "rating": {"type": "integer", "minimum": 0, "maximum": 4},
+        "rationale": {"type": "string", "minLength": 1},
+        "evidence_refs": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
