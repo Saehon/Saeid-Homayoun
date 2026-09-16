@@ -1,0 +1,38 @@
+name: NAAIL Two-Core Constitution Guard
+
+on:
+  push:
+    paths:
+      - 'README.md'
+      - 'NAAIL-OpenLab/TWO_CORE_CONSTITUTION.md'
+      - 'NAAIL-OpenLab/README.md'
+      - 'NAAIL-OpenLab/00_START_HERE.md'
+      - 'NAAIL-OpenLab/PUBLIC_PLATFORM_OVERVIEW.md'
+      - 'NAAIL-OpenLab/CURRENT_PROJECT_STATE.md'
+      - 'NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/PLATFORM_CAPABILITY_MATRIX.md'
+      - 'NAAIL-OpenLab/tests/test_two_core_constitution.py'
+      - 'NAAIL-OpenLab/tests/test_platform_capability_registry.py'
+      - '.github/workflows/naail_two_core_constitution_guard.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/TWO_CORE_CONSTITUTION.md'
+      - 'NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/tests/test_two_core_constitution.py'
+      - 'NAAIL-OpenLab/tests/test_platform_capability_registry.py'
+  workflow_dispatch:
+
+jobs:
+  two-core-constitution-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run two-core constitution guards
+        run: |
+          python -m pytest NAAIL-OpenLab/tests/test_two_core_constitution.py -q
+          python -m pytest NAAIL-OpenLab/tests/test_platform_capability_registry.py -q
