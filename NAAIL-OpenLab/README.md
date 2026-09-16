@@ -1,8 +1,8 @@
 # NAAIL OpenLab™
-## V2026.3 Multi-Agent Digital Twin
-### Nordic Accounting, Audit & Assurance Intelligence Lab
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
-**An evidence-governed multi-agent platform for accounting, auditing, economics, sustainability, forensic analytics, education, and reproducible scientific discovery.**
+## V2026.3 Multi-Agent Digital Twin
 
 **Specialist Agent Families:** **POMELO™ · KIWI™ · ECONOVA-S™ · ESG Intelligence · ICFR Intelligence · Forensic Intelligence**
 
@@ -44,6 +44,7 @@ V2026.3 Multi-Agent Digital Twin
 ```
 
 Canonical references:
+- **[Global Brand Identity](./BRAND_IDENTITY.md)**
 - **[Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
 - **[Specialist Agent Families](./agents/README.md)**
 - **[Scientific Discovery Contract](./SCIENTIFIC_DISCOVERY_CONTRACT.md)**
@@ -117,7 +118,6 @@ Human Gate
     ↓
 Student feedback + aggregate anonymized partner insight
 ```
-
 Initial student simulations reuse the existing three-case benchmark family: Revenue Recognition & Cut-off, Goodwill Impairment, and ICFR / Control Deficiency.
 
 Read:
@@ -238,6 +238,7 @@ See **[Marketplace Edition](./MARKETPLACE_EDITION.md)** and **[marketplace/](./m
 
 | Standard | Purpose |
 |---|---|
+| [Global Brand Identity](./BRAND_IDENTITY.md) | Canonical international expansion of NAAIL and global platform descriptor |
 | [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md) | Canonical master-brand relationship, specialist-agent boundaries, and target repository navigation |
 | [Specialist Agent Families](./agents/README.md) | Entry points for POMELO, KIWI, ECONOVA-S, ESG, ICFR, and Forensic Intelligence |
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Public seven-layer reference architecture + Industry–Education Partnership Fabric |
