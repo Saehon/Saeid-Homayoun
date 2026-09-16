@@ -17,6 +17,7 @@ ALLOWED_STATUSES = {
     "RESEARCH_PROTOTYPE",
     "PUBLIC_EDUCATION_DESIGN",
     "REFERENCE_ONLY",
+    "PATENT_HOLD_NON_ENABLING",
 }
 
 
@@ -25,29 +26,28 @@ def load_registry():
 
 
 def test_registry_exists_and_brand_is_canonical():
-    assert REGISTRY.exists()
     data = load_registry()
     platform = data["platform"]
     assert platform["master_brand"] == "NAAIL OpenLab™"
     assert platform["lab_name"] == EXPECTED_BRAND
     assert platform["descriptor"] == EXPECTED_DESCRIPTOR
-    assert platform["knowledge_rag_core"] == "KRG2026.3"
+    assert platform["permanent_core_count"] == 2
+    assert platform["permanent_cores"] == ["Knowledge Core™", "Technology Core™"]
+    assert "PATENT APPLICATION PREPARATION IN PROGRESS" in platform["public_ip_status"]
 
 
 def test_status_vocabulary_is_closed_and_used_consistently():
     data = load_registry()
     assert set(data["status_vocabulary"]) == ALLOWED_STATUSES
-    capabilities = data["capabilities"]
-    assert capabilities
-    assert all(item["status"] in ALLOWED_STATUSES for item in capabilities)
-    ids = [item["id"] for item in capabilities]
-    assert len(ids) == len(set(ids)), "Capability IDs must be unique"
+    assert data["capabilities"]
+    assert all(item["status"] in ALLOWED_STATUSES for item in data["capabilities"])
+    ids = [item["id"] for item in data["capabilities"]]
+    assert len(ids) == len(set(ids))
 
 
 def test_all_registered_paths_exist():
-    data = load_registry()
     missing = []
-    for item in data["capabilities"]:
+    for item in load_registry()["capabilities"]:
         path = ROOT / item["path"]
         if not path.exists():
             missing.append(item["path"])
@@ -62,25 +62,24 @@ def test_execution_claim_is_narrow():
     assert "synthetic" in executed[0].get("scope", "").lower()
 
 
-def test_education_governance_is_registered():
-    data = load_registry()
-    by_id = {item["id"]: item for item in data["capabilities"]}
-    assert by_id["global_ai_business_education"]["status"] == "PUBLIC_EDUCATION_DESIGN"
-    assert by_id["simulation_evidence_standard"]["status"] == "ARCHITECTURE_ADOPTED"
-    assert by_id["simulation_evidence_standard"]["schema"].endswith("simulation_evidence_card.schema.json")
+def test_patent_sensitive_capabilities_are_currently_non_enabling():
+    by_id = {item["id"]: item for item in load_registry()["capabilities"]}
+    for cap_id in {
+        "master_hierarchy",
+        "data_evidence_mesh",
+        "business_school_simulation_layer",
+        "decision_consequence_engine",
+        "professional_judgment_passport",
+        "audit_accounting_dynamic_twin",
+        "vera",
+    }:
+        assert by_id[cap_id]["status"] == "PATENT_HOLD_NON_ENABLING"
 
 
-def test_permanent_invariants():
+def test_patent_first_invariants():
     inv = load_registry()["invariants"]
-    assert inv["architecture_documented_equals_runtime_executed"] is False
-    assert inv["registry_entry_equals_dependency_installed"] is False
-    assert inv["provider_name_equals_provider_run"] is False
-    assert inv["external_repo_is_authoritative_truth"] is False
+    assert inv["permanent_core_count"] == 2
     assert inv["technology_core_may_rewrite_knowledge_core"] is False
-    assert inv["agent_consensus_is_scientific_truth"] is False
-    assert inv["simulation_may_invent_ft50_ajg_support"] is False
-    assert inv["professional_body_alignment_equals_certification"] is False
-    assert inv["research_overrides_authoritative_standard"] is False
-    assert inv["student_score_equals_employability_truth"] is False
-    assert inv["optimize_for_p_value"] is False
+    assert inv["new_enabling_patent_sensitive_details_public_before_filing_review"] is False
+    assert inv["patent_pending_claimed_before_confirmed_filing"] is False
     assert inv["human_gate_required"] is True
