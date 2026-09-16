@@ -2,15 +2,57 @@
 
 **Canonical version:** V2026.3 Multi-Agent Digital Twin  
 **Status:** Master branding and architecture hierarchy  
-**Applies to:** README files, architecture documents, agent families, studies, education assets, benchmarks, public product descriptions, and future releases.
+**Applies to:** README files, architecture documents, agent families, studies, education assets, simulations, benchmarks, public product descriptions, and future releases.
 
 ## Canonical brand relationship
 
-**NAAIL OpenLab™ → master platform**  
-**NAAIL Multi-Agent Digital Twin → core architecture**  
-**POMELO™ · KIWI™ · ECONOVA-S™ · IFRS Intelligence · PCAOB Intelligence · ESG Intelligence · ICFR Intelligence · Forensic Intelligence → specialist agent families**
+**NAAIL OpenLab™ → fixed umbrella platform**  
+**V2026.3 Multi-Agent Digital Twin → canonical architecture**  
+**Knowledge Core™ + Technology Core™ → exactly two permanent cores**  
+**All other capabilities → governed supporting layers, agents, services, Digital Twins, registries, evaluations or interfaces**
 
-ECONOVA-S™, IFRS Intelligence, PCAOB Intelligence, KIWI™, POMELO™, ESG Intelligence, ICFR Intelligence, and Forensic Intelligence are **specialist agent families within NAAIL OpenLab™**, not competing umbrella platforms.
+Professional agent set:
+
+**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™**
+
+ICFR and Forensic Intelligence remain specialist capabilities under the same umbrella. No specialist family is a competing umbrella platform.
+
+## Two permanent cores — fixed
+
+### Core 1 — Knowledge Core™
+
+Stable, governed, versioned professional/scientific knowledge:
+
+- authoritative standards and regulation references;
+- accounting, audit, sustainability, finance and economics ontologies;
+- evidence semantics and provenance rules;
+- governed GraphRAG / retrieval semantics;
+- research evidence and jurisdiction mappings;
+- professional judgment concepts and validated knowledge objects.
+
+### Core 2 — Technology Core™
+
+Replaceable implementation technology:
+
+- foundation models and local models;
+- agent runtimes and orchestrators;
+- vector databases / graph databases;
+- simulation frameworks;
+- ERP adapters;
+- code execution / sandboxes;
+- provider APIs;
+- evaluation tooling;
+- data connectors and transformation tools.
+
+Technology may consume governed knowledge but cannot silently change canonical evidence meaning, ontology, standards interpretation, causal DAGs or RAG semantics.
+
+```text
+permanent_core_count = 2
+knowledge_core_is_permanent = true
+technology_core_is_permanent = true
+supporting_layer_may_become_third_core = false
+technology_core_may_rewrite_knowledge_core = false
+```
 
 ## Master hierarchy
 
@@ -18,161 +60,232 @@ ECONOVA-S™, IFRS Intelligence, PCAOB Intelligence, KIWI™, POMELO™, ESG Int
 NAAIL OpenLab™
 V2026.3 Multi-Agent Digital Twin
 │
-├── NAAIL Scientific Discovery & Governance Layer
-│   ├── AI Co-Scientist
-│   ├── Hypothesis Generator / Critic / Ranker
-│   ├── ERA Empirical Research Agent
-│   ├── AlphaEvolve-style Model Evolution
+├── PERMANENT CORE 1 — Knowledge Core™
+│   ├── Standards / Regulation Knowledge
+│   ├── Accounting / Audit / ESG / Finance Ontologies
+│   ├── Evidence Semantics + Provenance
+│   ├── Governed GraphRAG
+│   ├── Research Evidence
+│   └── Jurisdiction / Sector / Language Packs
+│
+├── PERMANENT CORE 2 — Technology Core™
+│   ├── Models / Embeddings
+│   ├── Agent Runtimes / Orchestration
+│   ├── Simulation Engines
+│   ├── Vector / Graph Infrastructure
+│   ├── ERP / Data / Tool Adapters
+│   ├── Sandboxes / Code Execution
+│   └── Replaceable Provider Integrations
+│
+├── Scientific Discovery & Governance Layer
+│   ├── AI Co-Scientist / Hypothesis Arena
+│   ├── ERA-style Empirical Design
+│   ├── AlphaEvolve-style Model / Specification Search
 │   ├── Computational Discovery
 │   ├── Chain-of-Evidence
 │   ├── Adversarial Review
-│   ├── Reproducibility & Falsification
-│   └── Human Approval Gate
+│   ├── Reproducibility / Falsification
+│   ├── Blind Gold / Evaluation
+│   └── Human Approval Gate™
 │
-├── Professional Digital-Twin Agents
+├── Professional Agent Layer
 │   ├── KIWI™ — Audit / CAM / KAM Intelligence
 │   ├── POMELO™ — Accounting & Assurance Intelligence
-│   ├── IFRS Intelligence Agent™ — IFRS Reporting & Standards Digital Twin
-│   ├── PCAOB Intelligence Agent™ — Audit Inspection & Regulatory Digital Twin
-│   ├── ESG / Sustainability Intelligence Agent
-│   ├── ICFR & Controls Intelligence Agent
-│   ├── Forensic Intelligence Agent
-│   └── ECONOVA-S™ — Data Economy & Economic Intelligence Agent
+│   ├── VERA™ — Verifiable Accounting & Auditing Intelligence
+│   ├── IFRS Agent™ — Reporting & Standards Digital Twin
+│   ├── PCAOB Agent™ — Inspection / Regulatory Digital Twin
+│   ├── ESG Agent — Sustainability / Climate / Assurance
+│   ├── ECONOVA-S™ — Finance / Economics / Data Economy
+│   ├── ICFR & Controls Intelligence
+│   └── Forensic Intelligence
 │
-├── IFRS Intelligence Agent™
-│   ├── IFRS Standards Knowledge Twin
-│   ├── Financial Reporting Digital Twin
-│   ├── Accounting Policy & Judgment Agent
-│   ├── Disclosure Compliance Agent
-│   ├── IFRS Evidence & Citation Agent
-│   ├── IFRS Scenario Simulation Agent
-│   ├── IFRS Assurance Handoff
-│   └── Human Professional Judgment Gate
+├── Business School Simulation & Digital Twin Layer      [SUPPORTING]
+│   ├── Company Digital Twin
+│   ├── Audit Firm Digital Twin
+│   ├── Regulator Digital Twin
+│   ├── Capital-Market Digital Twin
+│   ├── Sustainability Digital Twin
+│   ├── Accounting Digital Twin
+│   ├── Finance Digital Twin
+│   ├── Economics Digital Twin
+│   └── Governance / Board Digital Twin
 │
-├── PCAOB Intelligence Agent™
-│   ├── PCAOB Standards & Rules Knowledge Twin
-│   ├── Inspection Findings Digital Twin
-│   ├── Audit Deficiency Classification Agent
-│   ├── Remediation & Recurrence Agent
-│   ├── ICFR / Audit Quality Linkage Agent
-│   ├── Inspection Risk & Supervisory Attention Agent
-│   ├── PCAOB Evidence & Provenance Agent
-│   └── Human Regulatory / Research Gate
+├── Decision–Consequence Engine™                         [SUPPORTING SERVICE]
+│   └── Decision at state t → transparent consequence ledger → state t+1
 │
-├── ECONOVA-S™
-│   ├── Economic Digital Twin
-│   ├── Data-Economy Agent
-│   ├── Asset-Pricing Agent
-│   ├── Fama–French Research Agent
-│   ├── Damodaran Data Agent
-│   ├── SEC / XBRL Economic Evidence Agent
-│   ├── LLM Economic Research Agent
-│   ├── Multi-Agent Hypothesis Discovery
-│   └── FT50 / Management Science Research Engine
+├── Assessment / Learning Governance Layer               [SUPPORTING]
+│   ├── Evidence Passport™
+│   ├── Professional Decision DAG™
+│   ├── Agent Arena™
+│   ├── Professional Judgment Passport™
+│   ├── Reproducibility / Falsification
+│   └── Human Approval Gate™
 │
-├── Data & Evidence Layer
-│   ├── IFRS Foundation / IASB authoritative materials
+├── Data & Evidence Layer                                [SUPPORTING]
+│   ├── IFRS Foundation / IASB / ISSB references
 │   ├── SEC / EDGAR / XBRL
-│   ├── PCAOB standards, rules, inspection and enforcement evidence
-│   ├── AAER
-│   ├── CAM / KAM
-│   ├── Fama–French
-│   ├── Damodaran
-│   ├── ESG
-│   ├── Corporate Financial Data
-│   └── Open Research / Replication Repositories
+│   ├── PCAOB public standards / inspections / enforcement
+│   ├── EFRAG / ESRS / sustainability evidence
+│   ├── AAER / CAM / KAM
+│   ├── Fama–French / Damodaran / FRED / World Bank
+│   ├── ESG / climate / carbon sources
+│   └── Open research / replication repositories
 │
-└── Education & Simulation Layer
-    ├── Free / Open-Source Simulation Stack
-    │   ├── Standard-Python deterministic core
-    │   ├── GitHub code / replication adapters
-    │   ├── Hugging Face local-model adapters
-    │   ├── Kaggle dataset adapter with license gate
-    │   ├── PCAOB public inspection datasets
-    │   └── SEC EDGAR / XBRL public evidence
+└── Education & Professional Simulation Layer            [SUPPORTING]
     ├── Student Digital Twins
-    ├── Audit Simulations
-    ├── Accounting Simulations
-    ├── IFRS Judgment Simulations
-    ├── PCAOB Inspection Simulations
-    ├── Economic Simulations
-    ├── Big Four-style Agent Exercises
+    ├── Audit / Accounting Simulations
+    ├── IFRS / PCAOB Simulations
+    ├── Finance / Economics Simulations
+    ├── ESG / Sustainability Simulations
+    ├── ERP / Business Process Simulations
+    ├── Governance / Risk Simulations
+    ├── Professional Swarm Academy
     └── Reproducible Research Laboratories
 ```
 
-## Canonical public positioning
+## Business School Simulation & Digital Twin Layer
 
-> **NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin**  
-> An evidence-governed multi-agent platform for accounting, auditing, IFRS reporting, PCAOB inspection research, economics, sustainability, forensic analytics, education, and reproducible scientific discovery.
->
-> **Specialist Agent Families:** POMELO™ · KIWI™ · ECONOVA-S™ · IFRS Intelligence · PCAOB Intelligence · ESG Intelligence · ICFR Intelligence · Forensic Intelligence
->
-> **IFRS Intelligence Agent™** is the dedicated IFRS reporting and standards Digital Twin within NAAIL OpenLab™, supporting standards-grounded accounting judgments, disclosure analysis, scenario simulation, and evidence-linked professional review.
->
-> **PCAOB Intelligence Agent™** is the dedicated PCAOB audit-inspection and regulatory Digital Twin within NAAIL OpenLab™, supporting inspection-finding analysis, deficiency classification, remediation research, audit-quality analytics, and evidence-linked supervisory research.
+Canonical specification: [`../BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md`](../BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md)
 
-## Specialist agent-family boundaries
+The layer supports dynamic simulations across company, audit firm, regulator, capital market, sustainability, accounting, finance, economics and governance contexts.
+
+It inherits the canonical simulation loop:
+
+```text
+Research-backed learning objective
+→ Governed evidence
+→ Evidence Passport™
+→ Digital Twin state t
+→ Student + professional agents
+→ Professional Decision DAG™
+→ Decision–Consequence Engine™
+→ Digital Twin state t+1
+→ Agent Arena™ / Critic / Defender / Falsifier
+→ Blind Gold / Evaluation
+→ Reproducibility / Falsification
+→ Professional Judgment Passport™
+→ Human Approval Gate™
+```
+
+## Decision–Consequence Engine™
+
+The engine is a supporting service, not a core. It records explicit state transitions caused by learner/professional decisions across business, accounting, controls, audit, market, regulatory and ESG dimensions.
+
+All consequence rules must state whether they are:
+
+- `SYNTHETIC_PEDAGOGICAL_TRANSITION`;
+- `EMPIRICALLY_CALIBRATED_TRANSITION`; or
+- `POLICY_OR_STANDARD_CONSTRAINT`.
+
+Synthetic transitions must never be presented as real-world causal estimates.
+
+Reference implementation: [`../simulations/business-school/decision_consequence_engine.py`](../simulations/business-school/decision_consequence_engine.py)
+
+## Professional Judgment Passport™
+
+The Passport is a governed educational/research assessment record measuring:
+
+- **EQ** — Evidence Quality;
+- **PS** — Professional Skepticism;
+- **RI** — Risk Identification;
+- **AJ** — Accounting Judgment;
+- **AUJ** — Audit Judgment;
+- **CKR** — CAM/KAM Reasoning;
+- **AIV** — AI Verification;
+- **ETH** — Ethics & Public Interest;
+- **HOR** — Human Override Quality.
+
+Machine-readable schema: [`professional_judgment_passport.schema.json`](./professional_judgment_passport.schema.json)
+
+The Passport is not a professional certification and is not validated for automated employment decisions.
+
+## Professional agent boundaries
 
 ### POMELO™
-Accounting, assurance, professional intelligence, evidence verification, accounting judgment, standards-aware reasoning, and related professional workflows.
+Accounting, assurance, professional intelligence, evidence verification, accounting judgment, standards-aware reasoning and related workflows.
 
 ### KIWI™
-Audit intelligence focused on Critical Audit Matters, Key Audit Matters, audit evidence, assertions, risk–procedure alignment, audit-quality measurement, and CAM/KAM research.
+Audit intelligence focused on Critical Audit Matters, Key Audit Matters, evidence, assertions, risk–procedure alignment, audit quality and CAM/KAM research.
 
-### IFRS Intelligence Agent™
-IFRS Accounting Standards, standards-grounded financial reporting, accounting-policy analysis, recognition and measurement judgments, presentation and disclosure analysis, cross-standard reasoning, financial-reporting Digital Twins, evidence provenance, and human-reviewed professional decision support. It must distinguish authoritative IFRS material from research commentary and model-generated suggestions.
+### VERA™
+Verifiable Accounting & Auditing Intelligence. Evidence verification, Judgment Graph / GraphRAG validation, Evidence Passport™, Professional Decision DAG™, DAG Watch™, Blind Gold / evaluation, Failure Memory™ and Human Gate verification.
 
-### PCAOB Intelligence Agent™
-PCAOB auditing standards, rules, inspection findings, enforcement and public regulatory evidence; audit-deficiency classification; recurrence and remediation; inspection-risk analytics; supervisory-attention research; ICFR/audit-quality linkage; and governed inspection Digital-Twin simulation. It is a research and professional-support agent and does not represent or act on behalf of the PCAOB.
+Canonical path: [`../agents/vera/README.md`](../agents/vera/README.md)
+
+### IFRS Agent™
+IFRS Accounting Standards, financial reporting, policy/estimate/disclosure judgments, cross-standard reasoning, evidence provenance and human-reviewed decision support.
+
+### PCAOB Agent™
+PCAOB public auditing standards/rules/inspection/enforcement evidence; deficiency classification; remediation research; ICFR/audit-quality linkage; governed inspection simulation. It does not represent the PCAOB or imply non-public access.
+
+### ESG Agent
+Sustainability reporting, ESG measurement, ESRS/ISSB/GRI-oriented analysis, climate/carbon, assurance, materiality and sustainability research.
 
 ### ECONOVA-S™
-Economics, finance, data economy, asset pricing, financial/economic data science, Fama–French, Damodaran, SEC/XBRL economic evidence, economic digital twins, LLM economic research, and FT50/Management Science empirical research workflows.
+Economics, finance, data economy, asset pricing, Fama–French, Damodaran, SEC/XBRL economic evidence, economic Digital Twins and empirical research.
 
-### ESG / Sustainability Intelligence
-Sustainability reporting, ESG measurement, sustainable value, assurance, regulation, materiality, and sustainability-related empirical research.
+### ICFR & Forensic capabilities
+Internal controls/material weaknesses and fraud/anomaly/investigative analytics remain specialist capabilities under the same NAAIL architecture.
 
-### ICFR & Controls Intelligence
-Internal control over financial reporting, material weaknesses, control risk, remediation, controls testing, forecasting, and supervisory-attention research.
+## Technology Core simulation adapters
 
-### Forensic Intelligence
-Fraud risk, anomalies, investigative analytics, forensic evidence graphs, professional skepticism, and governed forensic simulation.
+The Technology Core may evaluate and admit replaceable adapters such as:
 
-## Digital-Twin rule for IFRS and PCAOB agents
+- **Mesa** — general Python agent-based modeling;
+- **AgentTorch** — large-population/differentiable agent simulations;
+- **SimPy** — discrete-event business-process/workflow simulation;
+- **OpenAI Agents SDK** — optional agent orchestration/guardrails/handoffs/tracing;
+- **Microsoft Agent Framework** — optional multi-agent workflow/provider abstraction;
+- **HARK / Econ-ARK** — heterogeneous-agent economics;
+- **ABIDES** — capital-market/exchange-agent simulation;
+- **FinRL** — financial reinforcement-learning education/research;
+- **RD-Agent** — R&D automation/model-data iteration experiments.
 
-Both new families use the NAAIL Digital Twin pattern:
+Canonical registry: [`business_school_simulation_technology_registry.json`](./business_school_simulation_technology_registry.json)
 
-`authoritative evidence → evidence passport → domain resolver → structured professional issue → specialist agents → critic/defender → scenario or empirical test → Decision DAG → falsification/replication where applicable → Human Gate`
+Framework inclusion does **not** mean installation, execution, validation, professional authority or admission to the Knowledge Core.
 
-For **IFRS Intelligence**, the Digital Twin represents a synthetic or research-safe reporting entity, accounting event, policy choice, estimate, disclosure problem, or cross-standard interaction. It must preserve the difference between authoritative IFRS requirements, interpretive guidance, academic evidence, and model-generated reasoning.
+## First dynamic prototype
 
-For **PCAOB Intelligence**, the Digital Twin represents a synthetic or public-evidence-based audit engagement, inspection finding, deficiency pattern, remediation trajectory, or supervisory-risk scenario. It must not imply access to confidential PCAOB inspection information or non-public firm data.
+The first dynamic prototype is **NAAIL Audit & Accounting Digital Twin™**:
+
+[`../digital-twins/audit-accounting/README.md`](../digital-twins/audit-accounting/README.md)
+
+It combines realistic synthetic/public evidence, IFRS issues, internal-control weaknesses, management pressure, CAM/KAM decisions, PCAOB-style public-standards challenge, multi-agent interaction, dynamic decision consequences, student defense, Professional Judgment Passport™ and Human Approval Gate™.
+
+It may reuse validated patterns from Prototype 003, but dynamic provider-backed execution remains a separate validation milestone.
 
 ## Free / open-source simulation rule
 
-The canonical free simulation path is [`../simulations/free-stack/`](../simulations/free-stack/). Its **deterministic core requires no paid model API** and is intended to run with standard Python, synthetic fixtures, and public evidence.
+The deterministic core must remain runnable without a paid model API where feasible. Optional external frameworks/providers are admitted only after version pinning, license review, security review, reproducibility testing, data-rights review where applicable and benchmark comparison.
 
-Optional extensions may use:
-
-- **GitHub** for pinned open-source tools, replication packages, CI, and code provenance;
-- **Hugging Face** for locally runnable models/embeddings after model-card and license review;
-- **Kaggle** for dataset discovery/acquisition after dataset-specific license, provenance, and leakage review;
-- **PCAOB public inspection datasets** and public reports as preferred primary evidence for PCAOB research;
-- **SEC EDGAR/XBRL** as preferred primary evidence for issuer and filing data.
-
-Convenience sources never outrank authoritative evidence. The repository does not bundle full copyrighted IFRS Standards text, and free/open tooling does not imply access to non-public PCAOB data. Every simulation remains subject to the Evidence Passport, Decision DAG, reproducibility, adversarial review, and Human Gate.
+Convenience tools never outrank authoritative evidence. Protected standards text is not bundled merely for convenience. Free/open tooling never implies access to restricted regulator or firm data.
 
 ## Shared scientific-discovery layer
 
-Specialist agents do not maintain separate scientific constitutions. Publication-grade work inherits the common NAAIL scientific contract:
-
-`literature grounding → competing hypotheses → DAG governance → ERA empirical conversion → real data/code → evaluator-guided search → replication/OOS → adversarial review → falsification → Chain-of-Evidence → CoE Audit → Human Gate`
-
-The default remains:
+All publication-grade work inherits one scientific constitution:
 
 ```text
-discovery_claim_allowed = false
+literature grounding
+→ competing hypotheses
+→ DAG governance
+→ ERA empirical conversion
+→ real/rights-cleared data + code
+→ evaluator-guided model/specification search
+→ robustness / OOS
+→ adversarial review
+→ falsification
+→ independent replication
+→ Chain-of-Evidence / CoE Audit
+→ Human Approval Gate™
+```
+
+```text
+discovery_claim_allowed_by_agent_alone = false
 agent_consensus_is_scientific_truth = false
+statistical_significance_is_discovery = false
 optimize_for_p_value = false
+failed_tests_are_deleted = false
 human_gate_required = true
 ```
 
@@ -182,9 +295,13 @@ human_gate_required = true
 NAAIL-OpenLab/
 ├── README.md
 ├── architecture/
+│   ├── MASTER_PLATFORM_HIERARCHY.md
+│   ├── professional_judgment_passport.schema.json
+│   └── business_school_simulation_technology_registry.json
 ├── agents/
 │   ├── pomelo/
 │   ├── kiwi/
+│   ├── vera/
 │   ├── ifrs/
 │   ├── pcaob/
 │   ├── econova-s/
@@ -192,7 +309,9 @@ NAAIL-OpenLab/
 │   ├── icfr/
 │   └── forensic/
 ├── digital-twins/
+│   └── audit-accounting/
 ├── simulations/
+│   ├── business-school/
 │   └── free-stack/
 ├── scientific-discovery/
 ├── education/
@@ -202,19 +321,19 @@ NAAIL-OpenLab/
 └── docs/
 ```
 
-This is a **navigation target**, not permission to move existing files without preserving links, history, release references, and CI paths. Existing assets should migrate incrementally.
+This is a navigation target. Existing links/history/CI paths should be preserved during incremental migration.
 
-## Naming rules
+## Naming and governance rules
 
-1. Public pages should introduce **NAAIL OpenLab™** before any specialist agent family.
-2. Do not describe ECONOVA-S™, KIWI™, POMELO™, IFRS Intelligence, or PCAOB Intelligence as a platform competing with NAAIL OpenLab™.
-3. Use **“within NAAIL OpenLab™”**, **“specialist agent family”**, or equivalent language for subsystem descriptions.
-4. `V2026.3 Multi-Agent Digital Twin` identifies the canonical architecture, while semantic versions such as `v0.2.3` identify executable releases.
-5. External AI systems, regulators, standard setters, and firms remain evidence sources, methodological inspirations, providers, benchmarks, or comparison targets unless a documented relationship exists.
-6. IFRS Foundation/IASB and PCAOB names identify authoritative/public evidence domains; their use does not imply affiliation, endorsement, sponsorship, certification, or authorization.
-7. Scientific-discovery governance is shared across all agent families and cannot be weakened locally.
-8. Human approval remains mandatory for material professional or scientific claims.
+1. Public pages introduce **NAAIL OpenLab™** before specialist agents.
+2. The architecture always preserves **exactly two permanent cores**: Knowledge Core™ and Technology Core™.
+3. The Business School Simulation & Digital Twin Layer, Decision–Consequence Engine™ and Professional Judgment Passport™ are supporting capabilities, not cores.
+4. KIWI™, POMELO™, VERA™, IFRS Agent™, PCAOB Agent™, ESG Agent and ECONOVA-S™ remain under the NAAIL umbrella.
+5. `V2026.3 Multi-Agent Digital Twin` identifies architecture; semantic versions such as `v0.2.3` identify executable releases.
+6. External AI systems, simulation frameworks, regulators, standard setters and firms remain evidence sources, tools, methodological inspirations, providers or benchmarks unless a documented relationship exists.
+7. Shared scientific governance cannot be weakened locally.
+8. Human approval remains mandatory for consequential professional, educational-promotion or scientific claims.
 
 ## Governance priority
 
-If older repository text conflicts with this document, this hierarchy is the preferred architecture/branding interpretation for future edits. Historical release records should remain historically accurate rather than being silently rewritten.
+If older repository text conflicts with this document, this hierarchy is the preferred architecture interpretation for future edits. Historical release records should remain historically accurate rather than being silently rewritten.
