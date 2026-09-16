@@ -1,41 +1,57 @@
-# Patent and Confidentiality Notice
+# NAAIL OpenLab™ — Patent Notice
 
-## Current status
+> **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
 
-This repository does **not** state that NAAIL OpenLab™ is patented or patent pending. No patent-application number is recorded here.
+**Inventor/project record:** Saeid Homayoun  
+**ORCID:** 0000-0002-2536-0446  
+**Year:** 2026  
+**Project:** NAAIL OpenLab™  
+**Copyright:** © 2026 Saeid Homayoun. All Rights Reserved.
 
-The public NAAIL OpenLab release was published on GitHub on **14 September 2026**. This date should be preserved as part of the project's disclosure history for patent counsel.
+## Current patent status
 
-## Important patent warning
+No NAAIL OpenLab™ patent application is represented by this repository as filed as of **2026-09-16**. This repository therefore does **not** use the phrase **“Patent Pending.”**
 
-Public disclosure can affect patentability. Before publishing additional technical implementation details, architecture, algorithms, model-routing mechanisms, Digital Twin execution logic, agent-governance mechanisms, evaluation systems, or other potentially inventive features, obtain advice from qualified patent counsel.
+The phrase **“PATENT PENDING”** may be added only after an actual patent filing has been independently confirmed and the applicable patent office, application number, filing date, priority date, and inventor information have been recorded.
 
-Potentially patent-relevant technical subject matter should remain confidential until counsel determines whether and where to file.
+## Patent-first disclosure rule
 
-## Candidate invention families for professional review
+**Patent first → public disclosure second.**
 
-The following are research topics for patentability assessment, not claims that patents are available or valid:
+New enabling technical details relating to candidate NAAIL inventions must not be added to the public repository before patent filing review. Patent-sensitive algorithms, detailed architectures, technical flowcharts, implementation specifications, claim concepts, unpublished embodiments, agent-containment logic, dependency/revocation mechanisms, controlled-evolution logic, and similar enabling material are maintained in a private patent-readiness workspace.
 
-1. Technical orchestration architecture linking a stable Knowledge Core and replaceable Technology Core through an Adaptive Intelligence Fabric.
-2. Computer-implemented audit Digital Twin with coordinated specialist agents, synthetic evidence streams, and controlled human-gate execution.
-3. Technical evidence-provenance and Research Decision DAG system linking model outputs, source provenance, evaluation results, failures, and downstream claim validity.
-4. AI-to-AI critic/defender/replicator execution architecture with automated regression, falsification, and evidence gates.
-5. Technical mechanisms for model/agent replacement while preserving validated professional knowledge and reproducibility state.
+Public NAAIL materials should remain at a non-enabling, high-level research/product-description level until the relevant filing strategy has been completed.
 
-Patent counsel should determine whether any implementation has the required novelty, inventive step/non-obviousness, industrial applicability, and technical character.
+## Candidate technical subject matter
 
-## Disclosure-control rule
+NAAIL is evaluating patent protection for qualifying computer-implemented mechanisms concerning evidence-governed multi-agent systems, verifiable provenance and dependency control, Digital Twin execution, controlled agent/model change, reproducibility/evaluation, and human-machine approval governance.
 
-Until patent review is completed:
+This high-level description is not a claim that any particular subject matter is novel, patentable, patented, or patent pending.
 
-- keep new technical details in the private development repository;
-- use confidentiality agreements for external technical discussions where appropriate;
-- do not publish new enabling implementation details merely to establish priority;
-- maintain dated invention records, architecture versions, authorship/inventorship notes, and commit history;
-- identify all actual inventors based on contribution to the claimed inventive concepts, not title or seniority.
+## Existing public-disclosure history
 
-## Ownership
+NAAIL material was publicly released on GitHub beginning no later than **14 September 2026**, and additional technical materials were published on **16 September 2026** before adoption of the current patent-first hardening rule. Editing a current file does not erase prior Git history.
 
-Before filing, confirm ownership and inventor obligations under employment agreements, university policies, collaboration agreements, grants, and third-party contribution terms.
+See:
 
-This notice is an internal IP-management aid and is not legal advice.
+- [`PUBLIC_DISCLOSURE_LOG.md`](./PUBLIC_DISCLOSURE_LOG.md)
+- [`PRIOR_ART_LOG.md`](./PRIOR_ART_LOG.md)
+- [`PATENT_FILING_CHECKLIST.md`](./PATENT_FILING_CHECKLIST.md)
+
+Patent counsel should assess the effect of all prior public disclosures on U.S. and foreign filing strategy.
+
+## Rights reservation
+
+Nothing in this repository constitutes a waiver, dedication, abandonment, or implied license of patent, patent-application, trademark, trade-secret, or other intellectual-property rights except where a written license expressly says otherwise.
+
+Access to public source code or documentation does not transfer ownership of NAAIL intellectual property.
+
+Third-party software, standards, papers, and datasets remain subject to their original rights and licenses.
+
+## Inventorship / ownership caution
+
+Project records currently identify Saeid Homayoun as the asserted inventor and rights holder. Final legal inventorship and ownership must be confirmed before filing, including review of actual technical contributions and any applicable employment, university, collaboration, grant, assignment, or contributor obligations.
+
+## Legal review
+
+This notice is an IP-management statement for the project and is not a substitute for advice from a registered patent attorney or patent agent.
