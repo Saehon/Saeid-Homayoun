@@ -30,9 +30,9 @@ NAAIL permanently preserves exactly two cores:
 
 **Microsoft public evidence → Data & Evidence Mesh™ → Evidence Passport™ → accounting/audit/finance/text/innovation modules → Microsoft Digital Twin → synthetic management-accounting AI-cost microcase → Human–AI experiment design → Human Gate™.**
 
-Executed in V1: SEC/inline-XBRL facts, accounting/finance ratios, CAM mapping, bounded text features, R&D + public GitHub innovation snapshot, synthetic ABC/TDABC/AI-cost arithmetic, Evidence Passport instantiation, unit tests and publication-only Human Gate decision.
+Executed in V1: SEC interactive-XBRL R2/R4/R6/R107 facts, accounting/finance calculations, 251 FY2026 MSFT IEX daily bars, FY-end DGS10, two CAMs plus the ICFR opinion, bounded text features, R&D + public GitHub innovation proxies, synthetic ABC/TDABC/AI-cost arithmetic, a current LiveBench external quality/cost snapshot, Evidence Passport instantiation, **12/12 offline unit tests**, and a publication-only Human Gate decision.
 
-Not yet executed: participant experiment, MSFT Fama–French regression, PatentsView aggregate patent/citation analysis, and live HELM/LiveBench/Arena model-quality comparison. AI benchmark verification rates in V1 are synthetic and do not constitute comparative model validation.
+Not yet executed: participant experiment, MSFT Fama–French regression, PatentsView aggregate patent/citation analysis, NAAIL-specific professional model pass-rate validation, Decision–Consequence execution, Professional Judgment Passport execution, and independent replication. The LiveBench cost-per-successful-task metric is an external benchmark and is not treated as a NAAIL professional-verification rate.
 
 **Important:** Prototype 003 remains the only `EXECUTED_VALIDATED` public checkpoint. Microsoft POC V1 is a newer bounded `RESEARCH_PROTOTYPE`, not a replacement validation release.
 
