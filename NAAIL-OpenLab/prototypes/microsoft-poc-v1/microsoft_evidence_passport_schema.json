@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Microsoft POC V1 Evidence Passport",
+  "type": "object",
+  "required": ["passport_id","source_id","source_url","retrieved_at","evidence_class","license_gate","provenance","transformation","claim_scope","human_review_status"],
+  "properties": {
+    "passport_id": {"type":"string"},
+    "source_id": {"type":"string"},
+    "source_url": {"type":"string","format":"uri"},
+    "retrieved_at": {"type":"string"},
+    "evidence_class": {"enum":["PRIMARY_REGULATORY","ISSUER_PUBLIC","MACRO_PUBLIC","ACADEMIC_PUBLIC","OPEN_SOURCE_METADATA","SYNTHETIC"]},
+    "license_gate": {"enum":["PASS","PASS_WITH_ATTRIBUTION","REVIEW_REQUIRED","FAIL"]},
+    "provenance": {"type":"object","required":["issuer_or_provider","period_or_snapshot"],"properties":{"issuer_or_provider":{"type":"string"},"period_or_snapshot":{"type":"string"},"locator":{"type":"string"}}},
+    "transformation": {"type":"object","required":["method","code_path"],"properties":{"method":{"type":"string"},"code_path":{"type":"string"},"derived":{"type":"boolean"}}},
+    "claim_scope": {"type":"string"},
+    "hash": {"type":["string","null"]},
+    "human_review_status": {"enum":["APPROVE_RESEARCH_PROTOTYPE","APPROVE_WITH_LIMITATIONS","REQUEST_MORE_EVIDENCE","REJECT","PENDING"]}
+  }
+}
