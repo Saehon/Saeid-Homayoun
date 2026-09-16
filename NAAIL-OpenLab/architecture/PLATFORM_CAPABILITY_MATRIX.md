@@ -18,7 +18,7 @@ This public matrix separates validated execution from gated infrastructure, publ
 | `RESEARCH_PROTOTYPE` | A bounded research prototype exists. |
 | `PUBLIC_EDUCATION_DESIGN` | Public teaching/research design, not a production professional system. |
 | `REFERENCE_ONLY` | External methodological or technology reference. |
-| `PATENT_HOLD_NON_ENABLING` | Component name/high-level role is public; enabling technical implementation is withheld pending patent filing review. |
+| `PATENT_HOLD_NON_ENABLING` | Component/programme name and high-level role are public; enabling technical implementation is withheld pending patent filing review. |
 
 ## Capability matrix
 
@@ -26,6 +26,11 @@ This public matrix separates validated execution from gated infrastructure, publ
 |---|---|---|---|
 | Global NAAIL identity | [`../BRAND_IDENTITY.md`](../BRAND_IDENTITY.md) | `ARCHITECTURE_ADOPTED` | Brand / identity only. |
 | Two permanent cores | [`MASTER_PLATFORM_HIERARCHY.md`](./MASTER_PLATFORM_HIERARCHY.md) | `PATENT_HOLD_NON_ENABLING` | Knowledge Core™ + Technology Core™ named; detailed interactions withheld. |
+| NAAIL Value Expansion Fabric™ | [`../VALUE_EXPANSION_FABRIC.md`](../VALUE_EXPANSION_FABRIC.md) | `PATENT_HOLD_NON_ENABLING` | High-level expansion families public; detailed connector/graph/provenance/simulation mechanics private. |
+| Behavioral Decision Science & Human–AI Experimentation Layer™ | [`../BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md`](../BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md) | `PATENT_HOLD_NON_ENABLING` | High-level behavioral/human–AI research scope public; treatment/outcome/orchestration mechanics private. |
+| Behavioral Human–AI Research Governance | [`../docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md`](../docs/research/BEHAVIORAL_HUMAN_AI_RESEARCH_GOVERNANCE.md) | `ARCHITECTURE_ADOPTED` | Public methodology and integrity rules. |
+| CCCMP™ — Project Cost, Contract & Claims Management Programme | [`../CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md`](../CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md) | `PATENT_HOLD_NON_ENABLING` | Programme purpose, sectors and high-level specialist domains public; contract/claims graph, entitlement, routing, rights automation and Digital Twin mechanics private. |
+| CCCMP Research, Education & Evidence Governance | [`../docs/research/CCCMP_RESEARCH_GOVERNANCE.md`](../docs/research/CCCMP_RESEARCH_GOVERNANCE.md) | `ARCHITECTURE_ADOPTED` | Research/education/industry separation, rights and research-quality governance. |
 | Global AI Business Education Platform | [`../GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md`](../GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md) | `PUBLIC_EDUCATION_DESIGN` | Strategic education/research platform, no accreditation claim. |
 | Data & Evidence Mesh™ | [`../DATA_EVIDENCE_MESH.md`](../DATA_EVIDENCE_MESH.md) | `PATENT_HOLD_NON_ENABLING` | Source families/high-level objective public; detailed provenance/routing private. |
 | Business School Simulation & Digital Twin Layer | [`../BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md`](../BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md) | `PATENT_HOLD_NON_ENABLING` | High-level simulation scope only. |
@@ -49,12 +54,16 @@ patent_application_preparation != patent_pending
 architecture_documented != runtime_executed
 registry_entry != dependency_installed
 public_data != unrestricted_redistribution
+cccmp_is_core = false
+behavioral_decision_science_layer_is_core = false
+value_expansion_fabric_is_core = false
+cccmp_simulation != real_world_causal_effect
 human_gate_required = true
 ```
 
 ## Fixed two-core boundary
 
-The architecture continues to preserve exactly two permanent cores: **Knowledge Core™** and **Technology Core™**. No Data Mesh, Digital Twin, agent, evaluation, simulation, or education capability becomes a third permanent core.
+The architecture continues to preserve exactly two permanent cores: **Knowledge Core™** and **Technology Core™**. No Data Mesh, Value Expansion Fabric, Behavioral Decision Science layer, CCCMP programme, Digital Twin, agent, evaluation, simulation, or education capability becomes a third permanent core.
 
 ## IP / disclosure references
 
