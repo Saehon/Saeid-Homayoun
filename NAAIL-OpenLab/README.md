@@ -23,7 +23,7 @@ NAAIL OpenLab™ is an independent research and education platform for **evidenc
 
 **Patent first → public disclosure second.**
 
-The public repository now contains only non-enabling high-level descriptions of patent-sensitive mechanisms. New technical algorithms, detailed architecture interactions, dependency/revocation logic, state-transition implementations, containment controls, claim concepts, technical flowcharts, and unpublished embodiments are maintained in a **private patent-readiness repository** until filing review.
+The public repository contains only non-enabling high-level descriptions of patent-sensitive mechanisms. New technical algorithms, detailed architecture interactions, dependency/revocation logic, state-transition implementations, containment controls, claim concepts, technical flowcharts, unpublished graph/provenance mechanics, and unpublished embodiments are maintained in a **private patent-readiness repository** until filing review.
 
 Some implementation-level NAAIL material was publicly committed on 14–16 September 2026 before this hardening rule was adopted. Current sanitization does not erase historical Git disclosures. See:
 
@@ -44,7 +44,26 @@ All other elements remain supporting capabilities, including:
 
 **KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · Evidence Passport™ · Professional Decision DAG™ · DAG Watch™ · Agent Arena™ · Failure Memory™ · Controlled Agent Evolution · Decision–Consequence Engine™ · Professional Judgment Passport™ · Human Approval Gate™ · NAAIL Data & Evidence Mesh™**.
 
+The new **NAAIL Value Expansion Fabric** also remains a modular governed supporting layer. It does **not** create a third core, alter the canonical agent set, or change the validated public checkpoint.
+
 Detailed technical interactions among these components are intentionally withheld from the current public branch pending patent filing review.
+
+## NAAIL Value Expansion Fabric
+
+The **[Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)** increases NAAIL's research, education, professional-simulation, and evidence value without changing the V2026.3 model.
+
+At a high level it expands six connected capability families:
+
+1. **Data & Evidence** — accounting/SEC, macro/finance, ESG/climate, misconduct/litigation/forensic, scholarly and benchmarking source families.
+2. **Professional Knowledge** — IFRS/accounting, audit/assurance, sustainability, governance, controls, fraud, finance, risk and professional-body knowledge.
+3. **ERP & Synthetic Companies** — open-source ERP evaluation plus rights-cleared synthetic business-school company environments.
+4. **Research Co-Scientist Evidence** — lawful open-research discovery, metadata, citations and reproducible evidence workflows.
+5. **Professional Education** — original NAAIL question banks, competency-aligned scenarios and evidence-grounded professional-judgment exercises.
+6. **Business-School Digital Twins** — accounting, audit, IFRS, internal audit, ICFR, forensic/fraud, ERP, management accounting, finance, capital markets, ESG/sustainability, governance, economics and professional education.
+
+All source use is subject to **license/access classification, provenance, citation, Evidence Passport™ governance, reproducibility, and human approval**. Free access is not treated as permission to copy or redistribute.
+
+The detailed connector maps, graph relationships, Evidence Passport fields, automated rights controls, simulation routing and other potentially enabling mechanisms remain private under patent hold.
 
 ## What is public now?
 
@@ -54,7 +73,7 @@ NAAIL connects business-school education, FT50/AJG research, authoritative profe
 
 ### Data & evidence
 
-At a high level, NAAIL may use governed public/reference sources such as **SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, Our World in Data CO₂/Energy, OpenAlex, OpenSanctions, and optional OpenBB connectors**. Large third-party datasets and credentials are not stored in the public repository by default.
+At a high level, NAAIL may use governed public/reference sources such as **SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, Our World in Data CO₂/Energy, OpenAlex, OpenSanctions, lawful accounting/audit textual-analysis resources, public corporate-misconduct/regulatory sources, and optional OpenBB connectors**. Large third-party datasets and credentials are not stored in the public repository by default.
 
 ### Professional agents
 
@@ -68,7 +87,7 @@ At a high level, NAAIL may use governed public/reference sources such as **SEC E
 
 ### Business School Digital Twins
 
-Public descriptions cover company, audit, regulator, capital-market, sustainability, accounting, finance, economics, and governance simulations at a high level. Implementation-level mechanisms are under patent hold.
+Public descriptions cover company, audit, regulator, capital-market, sustainability, accounting, finance, economics, governance and professional-education simulations at a high level. Implementation-level mechanisms are under patent hold.
 
 ## Current validated public executable checkpoint
 
@@ -86,13 +105,14 @@ New patent-sensitive mechanisms should not be inferred to be publicly executable
 ## Start here
 
 1. **[Start Here](./00_START_HERE.md)**
-2. **[Patent Notice](./PATENT_NOTICE.md)**
-3. **[IP Notice](./IP_NOTICE.md)**
-4. **[Canonical two-core hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
-5. **[Platform capability registry](./architecture/platform_capability_registry.json)**
-6. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)**
-7. **[Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)**
-8. **[Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)**
+2. **[Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)**
+3. **[Patent Notice](./PATENT_NOTICE.md)**
+4. **[IP Notice](./IP_NOTICE.md)**
+5. **[Canonical two-core hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
+6. **[Platform capability registry](./architecture/platform_capability_registry.json)**
+7. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)**
+8. **[Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)**
+9. **[Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)**
 
 ## License and commercial-use boundary
 
