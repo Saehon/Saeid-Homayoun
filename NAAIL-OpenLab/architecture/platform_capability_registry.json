@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16-PATENT-FIRST",
   "platform": {
     "master_brand": "NAAIL OpenLab™",
@@ -25,6 +25,7 @@
   "capabilities": [
     {"id":"brand_identity","name":"Global NAAIL identity","path":"NAAIL-OpenLab/BRAND_IDENTITY.md","status":"ARCHITECTURE_ADOPTED"},
     {"id":"master_hierarchy","name":"Two-core canonical master hierarchy","path":"NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md","status":"PATENT_HOLD_NON_ENABLING","scope":"public high-level two-core hierarchy; enabling interactions withheld"},
+    {"id":"value_expansion_fabric","name":"NAAIL Value Expansion Fabric","path":"NAAIL-OpenLab/VALUE_EXPANSION_FABRIC.md","status":"PATENT_HOLD_NON_ENABLING","scope":"modular data, knowledge, professional education, ERP, research and business-school Digital Twin expansion; no third core; detailed connector, graph, provenance, rights-automation and simulation-routing mechanics private"},
     {"id":"global_ai_business_education","name":"Global AI Business Education & Professional Simulation Platform","path":"NAAIL-OpenLab/GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md","status":"PUBLIC_EDUCATION_DESIGN"},
     {"id":"data_evidence_mesh","name":"NAAIL Data & Evidence Mesh","path":"NAAIL-OpenLab/DATA_EVIDENCE_MESH.md","status":"PATENT_HOLD_NON_ENABLING","scope":"public source families and high-level objective only; detailed connector/provenance logic private"},
     {"id":"business_school_simulation_layer","name":"Business School Simulation & Digital Twin Layer","path":"NAAIL-OpenLab/BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md","status":"PATENT_HOLD_NON_ENABLING","scope":"public high-level simulation scope only; technical workflow private"},
@@ -49,6 +50,9 @@
   ],
   "invariants": {
     "permanent_core_count": 2,
+    "value_expansion_fabric_is_core": false,
+    "canonical_agent_set_changed_by_value_expansion": false,
+    "validated_checkpoint_changed_by_value_expansion": false,
     "data_evidence_mesh_is_core": false,
     "business_school_simulation_layer_is_core": false,
     "decision_consequence_engine_is_core": false,
@@ -59,6 +63,7 @@
     "provider_name_equals_provider_run": false,
     "public_access_equals_unrestricted_redistribution": false,
     "external_repo_is_authoritative_truth": false,
+    "third_party_rights_are_overridden_by_naail": false,
     "new_enabling_patent_sensitive_details_public_before_filing_review": false,
     "patent_pending_claimed_before_confirmed_filing": false,
     "human_gate_required": true
