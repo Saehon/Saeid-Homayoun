@@ -23,7 +23,7 @@ NAAIL OpenLab™ is an independent research and education platform for **evidenc
 
 **Patent first → public disclosure second.**
 
-The public repository contains only non-enabling high-level descriptions of patent-sensitive mechanisms. New technical algorithms, detailed architecture interactions, dependency/revocation logic, state-transition implementations, containment controls, claim concepts, technical flowcharts, unpublished graph/provenance mechanics, and unpublished embodiments are maintained in a **private patent-readiness repository** until filing review.
+The public repository contains only non-enabling high-level descriptions of patent-sensitive mechanisms. New technical algorithms, detailed architecture interactions, dependency/revocation logic, state-transition implementations, containment controls, claim concepts, technical flowcharts, unpublished graph/provenance mechanics, experimental orchestration, and unpublished embodiments are maintained in a **private patent-readiness repository** until filing review.
 
 Some implementation-level NAAIL material was publicly committed on 14–16 September 2026 before this hardening rule was adopted. Current sanitization does not erase historical Git disclosures. See:
 
@@ -37,14 +37,14 @@ Some implementation-level NAAIL material was publicly committed on 14–16 Septe
 
 NAAIL preserves exactly two permanent cores:
 
-1. **Knowledge Core™** — governed knowledge, standards, evidence semantics, ontologies, and research knowledge.
-2. **Technology Core™** — replaceable models, tools, agent runtimes, simulation technology, connectors, and execution infrastructure.
+1. **Knowledge Core™** — governed knowledge, standards, evidence semantics, ontologies, research knowledge, behavioral theory and validated research constructs.
+2. **Technology Core™** — replaceable models, tools, agent runtimes, simulation technology, experimental tooling, analytics, connectors, and execution infrastructure.
 
 All other elements remain supporting capabilities, including:
 
 **KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · Evidence Passport™ · Professional Decision DAG™ · DAG Watch™ · Agent Arena™ · Failure Memory™ · Controlled Agent Evolution · Decision–Consequence Engine™ · Professional Judgment Passport™ · Human Approval Gate™ · NAAIL Data & Evidence Mesh™**.
 
-The new **NAAIL Value Expansion Fabric** also remains a modular governed supporting layer. It does **not** create a third core, alter the canonical agent set, or change the validated public checkpoint.
+The **NAAIL Value Expansion Fabric** and **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™** are modular governed supporting layers. They do **not** create a third core, alter the canonical agent set, or change the validated public checkpoint.
 
 Detailed technical interactions among these components are intentionally withheld from the current public branch pending patent filing review.
 
@@ -65,11 +65,29 @@ All source use is subject to **license/access classification, provenance, citati
 
 The detailed connector maps, graph relationships, Evidence Passport fields, automated rights controls, simulation routing and other potentially enabling mechanisms remain private under patent hold.
 
+## Behavioral Decision Science & Human–AI Experimentation
+
+The **[Behavioral Decision Science & Human–AI Experimentation Layer™](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)** adds a governed experimental-research capability without changing the main NAAIL model.
+
+At a high level it connects:
+
+- behavioral economics, finance, accounting and auditing;
+- professional skepticism, evidence search and judgment revision;
+- human–AI trust, reliance, override and calibration;
+- management, organizational and consumer decision research;
+- behavioral text analytics;
+- controlled experiments, causal inference, Digital Twin replication, external validation and reproducibility;
+- current FT50/AJG research-design verification rather than hard-coded journal rankings.
+
+The **Knowledge Core™** governs theory, literature, construct definitions, research evidence and validated measures. The **Technology Core™** provides replaceable experimental execution, randomization, analytics, agent treatments, simulation and logging. Behavioral variables are research proxies—not permanent psychological classifications.
+
+Detailed treatment structures, behavioral outcome schemas, experimental orchestration and unpublished measurement/control mechanics remain private under patent hold.
+
 ## What is public now?
 
 ### Research and education
 
-NAAIL connects business-school education, FT50/AJG research, authoritative professional standards, professional competencies, public/rights-cleared evidence, Digital Twins, sustainability, and accountable human judgment.
+NAAIL connects business-school education, FT50/AJG research, authoritative professional standards, professional competencies, public/rights-cleared evidence, Digital Twins, behavioral experimentation, sustainability, and accountable human judgment.
 
 ### Data & evidence
 
@@ -87,7 +105,7 @@ At a high level, NAAIL may use governed public/reference sources such as **SEC E
 
 ### Business School Digital Twins
 
-Public descriptions cover company, audit, regulator, capital-market, sustainability, accounting, finance, economics, governance and professional-education simulations at a high level. Implementation-level mechanisms are under patent hold.
+Public descriptions cover company, audit, regulator, capital-market, sustainability, accounting, finance, economics, governance, professional-education and behavioral human–AI simulations at a high level. Implementation-level mechanisms are under patent hold.
 
 ## Current validated public executable checkpoint
 
@@ -105,14 +123,15 @@ New patent-sensitive mechanisms should not be inferred to be publicly executable
 ## Start here
 
 1. **[Start Here](./00_START_HERE.md)**
-2. **[Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)**
-3. **[Patent Notice](./PATENT_NOTICE.md)**
-4. **[IP Notice](./IP_NOTICE.md)**
-5. **[Canonical two-core hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
-6. **[Platform capability registry](./architecture/platform_capability_registry.json)**
-7. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)**
-8. **[Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)**
-9. **[Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)**
+2. **[Behavioral Decision Science & Human–AI Experimentation Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)**
+3. **[Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)**
+4. **[Patent Notice](./PATENT_NOTICE.md)**
+5. **[IP Notice](./IP_NOTICE.md)**
+6. **[Canonical two-core hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
+7. **[Platform capability registry](./architecture/platform_capability_registry.json)**
+8. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)**
+9. **[Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)**
+10. **[Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)**
 
 ## License and commercial-use boundary
 
