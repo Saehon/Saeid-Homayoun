@@ -1,188 +1,121 @@
-# Start Here — NAAIL OpenLab
+# Start Here — NAAIL OpenLab™
 
-For a fast review of this portfolio:
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
-1. **Prototype 003 public runtime:** [Revenue deterministic checkpoint + no-fabricated-AI provider gate](./Prototype_003/runtime/)
-2. **Executable audit proof-of-work:** [KIWI™ AAR Corp CAM Unit Test](./demos/aar-cam-unit-test/)
-3. **IFRS Intelligence Agent™:** [IFRS Reporting, Standards & Financial-Reporting Digital Twin](./agents/ifrs/)
-4. **PCAOB Intelligence Agent™:** [Audit Inspection, Regulatory Evidence & Supervisory Research Digital Twin](./agents/pcaob/)
-5. **Specialist agent families:** [POMELO · KIWI · IFRS · PCAOB · ECONOVA-S · ESG · ICFR · Forensic](./agents/)
-6. **Recruiter / research-engineering view:** [RECRUITER_PORTFOLIO.md](./RECRUITER_PORTFOLIO.md)
-7. **V2026.3 architecture:** [Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
-8. **Canonical master hierarchy:** [NAAIL master platform and specialist Digital-Twin agents](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-9. **Machine-enforced Scientific Discovery Contract:** [Co-Scientist + ERA + AlphaEvolve + latent structure + Chain-of-Evidence + Mirendil-style R&D + Human Gate](./SCIENTIFIC_DISCOVERY_CONTRACT.md)
-10. **Open-source agent education stack:** [ADK + Agent Framework + CAMEL + smolagents + Haystack + MCP + Ollama and extended ecosystem](./OPEN_SOURCE_AGENT_STACK.md)
-11. **Student Open-Source Agent Lab:** [framework-comparison and Digital Twin teaching design](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
-12. **SEC EDGAR Education Lab™:** [official SEC EDGAR/XBRL/CompanyFacts education and research module](./SEC_EDGAR_EDUCATION_LAB.md)
-13. **NAAIL Free Data Fabric™:** [governed free/public data for accounting, audit, governance, Nordic research, ESG, finance/economics and scientific discovery](./FREE_DATA_FABRIC.md)
-14. **Current platform overview:** [README.md](./README.md)
-15. **Current project state:** [CURRENT_PROJECT_STATE.md](./CURRENT_PROJECT_STATE.md)
-16. **Executable demos index:** [demos/README.md](./demos/README.md)
-17. **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md)
-18. **Evaluation standard:** [EVALUATION_STANDARD.md](./EVALUATION_STANDARD.md)
-19. **Research standard:** [ACCOUNT_WIDE_RESEARCH_STANDARD.md](./ACCOUNT_WIDE_RESEARCH_STANDARD.md)
+## Fast reviewer path
 
-## Current release checkpoint
+1. **Global identity:** [`BRAND_IDENTITY.md`](./BRAND_IDENTITY.md)
+2. **September 2026 upgrade summary:** [`UPGRADE_2026_09_16.md`](./UPGRADE_2026_09_16.md)
+3. **Platform capability & maturity matrix:** [`architecture/PLATFORM_CAPABILITY_MATRIX.md`](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
+4. **Current project state:** [`CURRENT_PROJECT_STATE.md`](./CURRENT_PROJECT_STATE.md)
+5. **Main platform overview:** [`README.md`](./README.md)
+6. **Canonical master hierarchy:** [`architecture/MASTER_PLATFORM_HIERARCHY.md`](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+7. **Scientific Discovery Start Here:** [`00_SCIENTIFIC_DISCOVERY_START_HERE.md`](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
+8. **Open-Source Integration Hub:** [`OPEN_SOURCE_INTEGRATION_HUB.md`](./OPEN_SOURCE_INTEGRATION_HUB.md)
+9. **Prototype 003 public runtime:** [`Prototype_003/runtime/`](./Prototype_003/runtime/)
+10. **KIWI™ AAR Corp CAM unit test:** [`demos/aar-cam-unit-test/`](./demos/aar-cam-unit-test/)
 
-The current public release is **NAAIL OpenLab v0.2.3 / Audit Workspace V0.4 / Prototype 003**.
+## Current evidence boundary
 
-Prototype 003 contains a frozen three-domain synthetic Audit Digital Twin benchmark:
+| Item | Current public status |
+|---|---|
+| **Validated executable checkpoint** | `v0.2.3 / Audit Workspace V0.4 / Prototype 003` |
+| **Prototype 004 provider harness** | implemented; real provider execution remains credential/evidence gated |
+| **Architecture target** | `V2026.3 Multi-Agent Digital Twin` |
+| **Frozen Knowledge & RAG Core** | `KRG2026.3` |
+| **Global brand** | Next-Generation Accounting, Audit & Assurance Intelligence Lab |
+| **Scientific-discovery stack** | architecture/governance adopted; external systems require real run evidence |
+| **Open-source/data integrations** | registries and governance adopted; registration is not execution |
 
-- Revenue Recognition & Cut-off;
-- Goodwill Impairment;
-- ICFR Deficiency.
+Prototype 003 contains a frozen three-domain synthetic Audit Digital Twin benchmark covering Revenue Recognition & Cut-off, Goodwill Impairment, and ICFR Deficiency. The deterministic condition is the validated public execution checkpoint. Provider/model comparisons remain non-executed unless a real artifact and Evidence Passport prove otherwise.
 
-Only the deterministic comparison condition has been executed. Single-agent, sequential-agent and governed multi-agent modes remain `NOT_EXECUTED_PROVIDER_REQUIRED` until real provider/model adapters are configured. NAAIL does not substitute simulated AI outputs for empirical model runs.
+## Specialist agent families
 
-The research-safe public runtime reproduces the Revenue deterministic checkpoint and exposes the scientific-integrity gates without publishing private provider adapters, patent-sensitive orchestration, or detailed private benchmark internals.
+- **POMELO™** — accounting, assurance and professional intelligence
+- **KIWI™** — audit / CAM / KAM intelligence
+- **IFRS Intelligence Agent™** — IFRS reporting and standards Digital Twin
+- **PCAOB Intelligence Agent™** — inspection/regulatory Digital Twin
+- **ECONOVA-S™** — finance, economics, asset pricing and data-economy intelligence
+- **ESG Intelligence** — sustainability, ESRS/CSRD, climate, carbon and assurance
+- **ICFR Intelligence** — internal controls and material-weakness research
+- **Forensic Intelligence** — fraud/anomaly/evidence-graph research
 
-## IFRS and PCAOB Digital-Twin specialist agents
+Canonical index: [`agents/README.md`](./agents/README.md)
 
-NAAIL V2026.3 now includes two additional specialist agent families under the master platform:
+## Scientific discovery
 
-- **IFRS Intelligence Agent™** — a research-safe financial-reporting and standards Digital Twin for IFRS-grounded accounting issues, recognition/measurement, presentation/disclosure, cross-standard reasoning, evidence provenance, scenario analysis, and Human Gate review.
-- **PCAOB Intelligence Agent™** — a research-safe audit-inspection and regulatory Digital Twin for public PCAOB standards/rules, inspection findings, deficiency classification, remediation/recurrence, ICFR/audit-quality linkages, supervisory-attention research, and Human Gate review.
-
-Both agents inherit the common NAAIL Evidence Passport™, Professional Decision DAG™, adversarial review, reproducibility/falsification, Chain-of-Evidence, CoE Audit, Failure Memory™, and Human Gate architecture.
-
-The IFRS agent must distinguish authoritative IFRS material from professional guidance, academic evidence, entity evidence, synthetic evidence, and model-generated reasoning. The PCAOB agent is restricted to public, licensed, or synthetic evidence unless a separately authorized environment lawfully provides additional data; it must not imply access to confidential inspection information.
-
-NAAIL is independent. Use of IFRS Foundation/IASB or PCAOB names identifies standards/regulatory evidence domains and does not imply affiliation, endorsement, sponsorship, certification, or authorization.
-
-## SEC EDGAR Education Lab™ — published public module
-
-NAAIL OpenLab now includes a public SEC-data education and research layer built around **SEC EDGAR, XBRL, CompanyFacts, CompanyConcept, Frames, and filing-level evidence**.
-
-Canonical flow:
+Canonical workflow:
 
 ```text
-SEC EDGAR / XBRL / CompanyFacts
-        ↓
-Evidence acquisition + provenance
-        ↓
-Python / pandas / open-source adapters
-        ↓
-Accounting and disclosure analytics
-        ↓
-Audit / ICFR / forensic reasoning
-        ↓
-NLP / RAG / LLM / governed agents
-        ↓
-Critic + Defender + Replicator
-        ↓
-Evidence Passport™ + Decision DAG™
-        ↓
-Student professional judgment
-        ↓
-Human Gate™
+Research Problem
+→ Literature Validation
+→ Co-Scientist Hypothesis Arena
+→ DAG / Identification Governance
+→ ERA-style Empirical Design
+→ Rights-Cleared Data or Digital Twin
+→ Computational Discovery + AlphaEvolve-style Search
+→ Latent-Structure Analysis
+→ Robustness / OOS
+→ Critic / Defender / Falsifier
+→ Independent Replication
+→ Chain-of-Evidence + CoE Audit
+→ Evidence Passport™
+→ Human Gate™
 ```
 
-The authoritative evidence layer remains the U.S. Securities and Exchange Commission. Third-party GitHub libraries are treated as software adapters or teaching tools and retain their own licenses.
+Key resources:
 
-Canonical resources:
+- [`SCIENTIFIC_DISCOVERY_CONTRACT.md`](./SCIENTIFIC_DISCOVERY_CONTRACT.md)
+- [`GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md`](./GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md)
+- [`architecture/digital_twin_science_link_registry.json`](./architecture/digital_twin_science_link_registry.json)
+- [`architecture/google_science_phase_registry.json`](./architecture/google_science_phase_registry.json)
 
-- [SEC EDGAR Education Lab landing page](./SEC_EDGAR_EDUCATION_LAB.md)
-- [Full SEC Lab module](./education/sec-edgar-lab/README.md)
-- [Assignment Bank](./education/sec-edgar-lab/ASSIGNMENTS.md)
-- [Governed Agent Specification](./education/sec-edgar-lab/AGENT_SPEC.md)
-- [SEC CompanyFacts Python Starter](./education/sec-edgar-lab/sec_companyfacts_starter.py)
-- [Integration Manifest](./education/sec-edgar-lab/INTEGRATION_MANIFEST.md)
-- [NAAIL Education Hub](./docs/education/README.md)
+External Google/DeepMind/OpenAI/Microsoft system names are methodological references or optional provider targets unless an Evidence Passport records a real run.
 
-## NAAIL Free Data Fabric™ — governed evidence expansion
+## Open-source and public-data integration layer
 
-NAAIL now maintains a cross-domain registry for free/public data that can support accounting, audit, governance, Nordic research, ESG, finance/economics, forensics, and scientific discovery while preserving the frozen `KRG2026.3` Knowledge & RAG Core boundary.
+The canonical integration hub links the following governed modules:
 
-Current source families include:
+- **NAAIL Free Data Fabric™** — [`FREE_DATA_FABRIC.md`](./FREE_DATA_FABRIC.md)
+- **ERP Digital Twin Lab™** — [`ERP_DIGITAL_TWIN_LAB.md`](./ERP_DIGITAL_TWIN_LAB.md)
+- **Audit Analytics Open-Source Pack™** — [`AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md`](./AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md)
+- **Finance Market Intelligence Lab™** — [`FINANCE_MARKET_INTELLIGENCE_LAB.md`](./FINANCE_MARKET_INTELLIGENCE_LAB.md)
+- **ESG & Sustainability Intelligence Lab™** — [`ESG_SUSTAINABILITY_INTELLIGENCE_LAB.md`](./ESG_SUSTAINABILITY_INTELLIGENCE_LAB.md)
+- **Accounting & Audit Open-Source Pack™** — [`OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md`](./OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md)
+- **Adversarial Intelligence Fabric™** — [`ADVERSARIAL_INTELLIGENCE_FABRIC.md`](./ADVERSARIAL_INTELLIGENCE_FABRIC.md)
 
-- SEC Financial Statement Data Sets and Financial Statement & Notes;
-- SEC AAER, insider transactions, Form 13F, and Form ADV/IAPD;
-- PCAOB AuditorSearch / Form AP and public inspection data;
-- filings.xbrl.org for ESEF/UKSEF/Inline XBRL evidence;
-- GLEIF LEI and parent-relationship data;
-- Statistics Sweden, Sveriges Riksbank, and Brønnøysundregistrene;
-- World Bank and Climate TRACE;
-- OpenAlex and Crossref;
-- Fama–French, Damodaran, and series-level-rights-filtered FRED;
-- Stanford Rock Center public governance research as an index/link research source rather than a bulk authoritative company dataset.
+External repositories, standards and datasets retain their original ownership, licenses, data rights and authoritative-source status. Public/free access never means unrestricted redistribution or automatic admission to the Knowledge & RAG Core.
 
-Every source must pass rights review, provenance verification, validation, and Evidence Passport™ capture before admission to the Knowledge & RAG Core. Free access is never treated as proof of authority or unrestricted redistribution rights.
+## Education and reproducibility
 
-Canonical resources:
+- **SEC EDGAR Education Lab™:** [`SEC_EDGAR_EDUCATION_LAB.md`](./SEC_EDGAR_EDUCATION_LAB.md)
+- **Student Open-Source Agent Lab:** [`docs/education/OPEN_SOURCE_AGENT_LAB.md`](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
+- **Student Agent Academy:** [`docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md`](./docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md)
+- **FT50/AJG Replication Arena:** [`benchmarks/ft50_abs4/`](./benchmarks/ft50_abs4/)
+- **Open-source agent stack:** [`OPEN_SOURCE_AGENT_STACK.md`](./OPEN_SOURCE_AGENT_STACK.md)
 
-- [NAAIL Free Data Fabric™](./FREE_DATA_FABRIC.md)
-- [Machine-readable Free Data Source Registry](./architecture/free_data_source_registry.json)
-- [Free Data Registry Tests](./tests/test_free_data_source_registry.py)
-- [Accounting/Audit Free Evidence Registry](./knowledge/accounting_audit_free_evidence_registry.json)
-- [Open-Source Accounting & Audit Pack](./OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md)
+No industry partnership, endorsement, certification or production equivalence is implied unless separately documented in writing.
 
-## V2026.3 architecture snapshot
-
-V2026.3 is the frozen next-generation architecture target. It combines Google ADK / Antigravity-style agent development, Microsoft Agent Framework orchestration, A2A + MCP interoperability, GraphRAG, NAAIL Digital Twins, Co-Scientist-style hypothesis generation and critique, ERA-style empirical conversion, AlphaEvolve-inspired evaluator-guided search, AlphaFold/DeepMind-inspired latent-structure reasoning, Computational Discovery, Science One-style Chain-of-Evidence, AI-to-AI Critic / Defender / Replicator / Falsifier roles, Professional Decision DAG™ governance, rights/licensing gates, temporal/OOS validation, clean-room replication, and a mandatory Human Gate.
-
-The professional Digital-Twin layer includes POMELO™, KIWI™, IFRS Intelligence, PCAOB Intelligence, ESG Intelligence, ICFR Intelligence, Forensic Intelligence, and ECONOVA-S™.
-
-V2026.3 is an architecture target, not evidence that all components are already implemented or validated.
-
-Companion multi-agent engineering repository: [Google-Antigravity-using-a-multi-agent-BERT-architecture](https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture).
-
-## Machine-enforced scientific discovery contract
-
-The public scientific-discovery layer separates **Generator → Evaluator → Validation → Human Authority** and treats external system names as methodological inspiration unless actual execution is evidenced.
-
-Before any discovery claim can pass, the contract requires:
-
-- literature validation and competing-hypothesis review;
-- executable empirical conversion;
-- frozen protocol and evaluator rules;
-- holdout isolation and anti-leakage controls;
-- code/data lineage and provenance;
-- retained failed/null candidates through Failure Memory™;
-- replication or OOS evidence;
-- AI-to-AI adversarial review with independence beyond role-only prompting;
-- falsification;
-- Chain-of-Evidence + CoE Audit;
-- explicit Human Gate approval.
-
-Canonical files:
-
-- [Scientific Discovery Contract](./SCIENTIFIC_DISCOVERY_CONTRACT.md)
-- [`discovery/scientific_constitution.json`](../discovery/scientific_constitution.json)
-- [`discovery/study_manifest.schema.json`](../discovery/study_manifest.schema.json)
-- [`discovery/validate_study_manifest.py`](../discovery/validate_study_manifest.py)
-- [`discovery/test_discovery_manifest.py`](../discovery/test_discovery_manifest.py)
-- [Scientific Discovery CI workflow](../.github/workflows/scientific_discovery_protocol.yml)
-
-## Open-source agent education stack — v0.2.4 target
-
-NAAIL now maintains a provider-neutral public registry and education design for open-source agent frameworks. The **core educational stack** is Google ADK, Microsoft Agent Framework, CAMEL-AI, Hugging Face smolagents, Haystack, the MCP Python SDK, and Ollama. The **extended comparison ecosystem** includes LlamaIndex, OpenAI Agents SDK, GPT Researcher, Browser Use, OpenHands, MetaGPT, and CrewAI.
-
-The integration is deliberately adapter-based: upstream code is not presented as NAAIL-owned software, framework and model terms remain separate, and registry inclusion does not mean that a framework has already been installed, executed, benchmarked, security-reviewed, or validated.
-
-Canonical resources:
-
-- [Open-Source Agent Education Stack](./OPEN_SOURCE_AGENT_STACK.md)
-- [Machine-readable upstream registry](./integrations/open_source_agents/registry.json)
-- [Open-Source Student Agent Lab](./docs/education/OPEN_SOURCE_AGENT_LAB.md)
-
-A recommended low-cost classroom profile is **Ollama + a compatible local model + smolagents + MCP + synthetic Client XYZ evidence**, subject to model-license, hardware, and institutional IT requirements. Comparative framework claims require frozen tasks, equivalent evidence access, declared versions, reproducible runs, retained failures, prespecified metrics, and Human Gate review.
-
-## Fastest additional technical review
-
-The **AAR Corp CAM unit test** remains a narrow reproducible measurement-development example: one company, 10 CAM observations, 2020–2024, two CAMs per year.
-
-The frozen 2024 transition is:
+## Permanent invariants
 
 ```text
-Revenue -> EXIT
-Acquired Intangibles / Business Combination -> ENTRY
-Inventory -> PERSIST
-CAM_COUNT -> unchanged at 2
-CARS -> 0.667
+technology_core_may_rewrite_knowledge_core = false
+external_repo_is_authoritative_truth = false
+architecture_documented_equals_runtime_executed = false
+registry_entry_equals_dependency_installed = false
+external_system_name_implies_execution = false
+agent_consensus_is_scientific_truth = false
+statistical_significance_is_discovery = false
+optimize_for_p_value = false
+human_gate_required = true
 ```
 
-The case is used for measurement development and falsification—not population inference.
+Machine-readable maturity map: [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
 
-**Research identity:** Accounting & Audit AI · Agentic AI · Scientific Discovery · Financial/Economic Data Science.
+## Research identity
 
-The public repository contains research-safe material. Proprietary POMELO/VERA implementation details, restricted data, private benchmarks, provider credentials/adapters and patent-sensitive mechanisms remain outside the public release.
+**Saeid Homayoun**  
+ORCID: `0000-0002-2536-0446`
+
+> **Models generate. Agents debate. Code tests. Evidence decides. Students challenge. Humans approve.**
