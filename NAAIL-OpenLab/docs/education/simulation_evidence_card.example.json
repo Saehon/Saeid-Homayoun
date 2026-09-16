@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "simulation": {
+    "id": "NAAIL-EDU-AUDIT-REVENUE-001",
+    "title": "Revenue Recognition & Cut-off Audit Digital Twin",
+    "version": "draft-1",
+    "domain": "Audit and Financial Reporting",
+    "target_learner": "Master-level accounting/audit student",
+    "course_module": "Auditing with AI",
+    "status": "DRAFT"
+  },
+  "learning_contract": {
+    "learning_outcomes": [
+      "Identify revenue and cut-off risks from a frozen evidence pack",
+      "Map risks to assertions and design responsive audit procedures",
+      "Challenge AI recommendations using contradictory evidence",
+      "Document a human-approved professional judgment"
+    ],
+    "prerequisite_knowledge": ["Revenue recognition", "Audit assertions", "Audit evidence"],
+    "professional_judgment_expected": "Accept, modify, reject, request more evidence, or escalate an AI-supported audit conclusion.",
+    "aacsb_or_institutional_alignment": ["Experiential learning", "Responsible technology use", "Professional judgment"]
+  },
+  "research_grounding": {
+    "state": "EVIDENCE_GAP_DECLARED",
+    "anchors": [],
+    "evidence_gap_note": "Template example only. Before promotion to Research-Backed status, add verified directly relevant FT50/AJG 4*/4 research anchors or retain the evidence-gap label."
+  },
+  "standards_regulation": [
+    {
+      "jurisdiction": "Simulation-dependent",
+      "organization": "Applicable accounting/auditing standard setter",
+      "identifier": "TO_BE_RESOLVED_BY_JURISDICTION_PACK",
+      "authority_class": "AUTHORITATIVE_STANDARD",
+      "official_source_url": "https://example.invalid/resolve-before-pilot",
+      "version_or_effective_period": "TO_BE_RESOLVED",
+      "rights_note": "Do not reproduce protected standards text; link to the applicable official source."
+    }
+  ],
+  "professional_competencies": [
+    {
+      "body": "Applicable professional body",
+      "credential_or_framework": "CPA/ACCA/other applicable framework",
+      "competency": "Audit evidence and professional judgment",
+      "learner_level": "Pre-professional",
+      "alignment_only": true,
+      "source_url": "https://example.invalid/resolve-before-pilot"
+    }
+  ],
+  "evidence_data": [
+    {
+      "source_name": "Synthetic Client XYZ frozen revenue evidence pack",
+      "source_url_or_path": "NAAIL-OpenLab/Prototype_003/runtime/",
+      "period_or_version": "Prototype 003 public checkpoint",
+      "classification": "SYNTHETIC",
+      "raw_or_derived": "SYNTHETIC",
+      "rights_status": "NAAIL research-safe synthetic fixture",
+      "sha256_or_hash": "RECORDED_BY_RUNTIME_WHEN_EXECUTED",
+      "transformation_chain": ["Frozen synthetic fixture", "Approved simulation adapter"],
+      "leakage_check": "Gold labels must not be exposed to provider/model generation.",
+      "authoritative_status": "Synthetic teaching evidence; not external authoritative evidence."
+    }
+  ],
+  "digital_twin": {
+    "id": "CLIENT-XYZ-REVENUE",
+    "repository_path": "NAAIL-OpenLab/Prototype_003/runtime/",
+    "basis": "SYNTHETIC",
+    "frozen_version": "Prototype 003",
+    "evidence_boundary": "Only the frozen evidence pack and explicitly approved contextual sources may be used.",
+    "gold_label_visibility_rule": "Blind Gold is evaluator-only during AI generation."
+  },
+  "ai_condition": {
+    "condition": "GOVERNED_MULTI_AGENT",
+    "execution_status": "NOT_EXECUTED_PROVIDER_REQUIRED",
+    "provider_model": "TO_BE_RECORDED_ON_ACTUAL_RUN",
+    "model_version": "TO_BE_RECORDED_ON_ACTUAL_RUN",
+    "run_artifact": "NONE_YET",
+    "tool_permissions": ["Read approved evidence", "No autonomous external professional action"],
+    "evidence_access_boundary": "Approved evidence only; no Blind Gold access.",
+    "human_gate_bypass_allowed": false
+  },
+  "assessment": {
+    "measures": ["RPA", "AA", "EG", "PS", "DS", "AIV", "CER", "HOR", "ESC"],
+    "construct_validity_note": "Educational/research measures require documented validity evidence before high-stakes interpretation.",
+    "high_stakes_use_allowed": false,
+    "learning_retention_plan": "Use pre/post or delayed assessment when the simulation is used for empirical education research."
+  },
+  "sustainability_value": {
+    "people": "Consider effects on employees, investors, customers and professional accountability where material.",
+    "planet": "NOT_MATERIAL unless the revenue scenario has material environmental consequences; document the rationale.",
+    "society": "Consider reporting trust, market integrity and public-interest implications.",
+    "sustainable_profit": "Consider whether revenue judgments reflect durable economic value rather than short-term reporting incentives."
+  },
+  "human_gate": {
+    "responsible_role": "Student judgment reviewed by instructor/human reviewer",
+    "allowed_decisions": ["APPROVE", "MODIFY", "REJECT", "REQUEST_MORE_EVIDENCE", "ESCALATE"],
+    "status": "PENDING_HUMAN_APPROVAL",
+    "rationale_reference": "TO_BE_RECORDED",
+    "model_self_approval_allowed": false
+  }
+}
