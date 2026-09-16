@@ -7,7 +7,8 @@
 
 **Canonical build-and-validation contract:** [MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md](./MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)  
 **Executed results:** [prototype_v1_results.md](./prototype_v1_results.md)  
-**15-test run:** [VALIDATION_RUN_15_TESTS_2026_09_16.md](./VALIDATION_RUN_15_TESTS_2026_09_16.md)
+**15-test run:** [VALIDATION_RUN_15_TESTS_2026_09_16.md](./VALIDATION_RUN_15_TESTS_2026_09_16.md)  
+**Fama–French reproducibility status:** [MICROSOFT_FAMA_FRENCH_EXECUTION_STATUS_2026_09_16.md](./MICROSOFT_FAMA_FRENCH_EXECUTION_STATUS_2026_09_16.md)
 
 > Bounded proof of concept only. It is not production-ready and does not claim scientific validation beyond the executed tests described here.
 
@@ -67,8 +68,13 @@ The mapping follows:
 
 ## Finance
 
-Executed: profitability, liquidity, leverage, cash-flow measures, FY2026 simple MSFT price return, FY-end DGS10, and a labeled risk-free-plus-mature-ERP illustration.  
-Not executed: **Fama–French regression** and a Microsoft-specific WACC. The **8.64%** RF+ERP figure is a teaching proxy, **not** Microsoft WACC.
+Executed: profitability, liquidity, leverage, cash-flow measures, FY2026 simple MSFT price return, FY-end DGS10, and a labeled risk-free-plus-mature-ERP illustration.
+
+**Fama–French implementation milestone:** a reproducible CAPM/FF3/FF5 package is now published using frozen FY2026 MSFT month-end IEX inputs plus the official Kenneth R. French monthly U.S. five-factor archive. The package includes `microsoft_fama_french_fy2026_input.csv`, `code/msft_fama_french_fy2026.py`, and `.github/workflows/microsoft_poc_v1_fama_french.yml`.
+
+**Verified status remains `REGISTERED_NOT_EXECUTED`.** No completed run or generated coefficient/provenance outputs have yet been verified, so no alpha, beta, factor loading, p-value or R² is claimed. The planned FY2026 regression uses 12 close-to-close monthly **price returns**, excludes dividends, and will remain exploratory even after execution because n=12 is small for FF5.
+
+A Microsoft-specific WACC also remains unexecuted. The **8.64%** RF+ERP figure is a teaching proxy, **not** Microsoft WACC.
 
 ## Innovation
 
@@ -92,15 +98,15 @@ T0 Human only; T1 Human+AI; T2 Human+AI+explanation; T3 Human+AI+contradictory e
 
 ## CI status
 
-A dedicated GitHub Actions workflow is published at `.github/workflows/microsoft_poc_v1_15_test.yml` for future push/PR validation. **CI success is not claimed until a completed GitHub Actions run is separately verified.**
+A dedicated 15-test GitHub Actions workflow is published at `.github/workflows/microsoft_poc_v1_15_test.yml`. A separate Fama–French execution workflow is published at `.github/workflows/microsoft_poc_v1_fama_french.yml`. **CI or factor-execution success is not claimed until a completed GitHub Actions run is separately verified.**
 
 ## Scientific success boundary
 
 The 15/15 automated artifact-validation result does **not** complete the broader scientific success gate.
 
 Still open:
+- completed/verified MSFT Fama–French execution, plus total-return/longer-window robustness;
 - actual participant T0–T3 experiment;
-- MSFT Fama–French regression;
 - aggregate PatentsView analysis;
 - NAAIL-specific professional-task model benchmark / Cost per Verified Professional Output™;
 - remaining falsification/robustness challenges;
