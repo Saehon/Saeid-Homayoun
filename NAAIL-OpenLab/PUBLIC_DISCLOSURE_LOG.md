@@ -79,6 +79,25 @@ The following commits add the management-accounting/AI-cost direction under the 
 
 The public release identifies BSC/Strategy Maps, ABC and TDABC as stable management-accounting knowledge and names NAAIL-developed AI Activity-Based Costing™, TTD-AIC and Cost-to-Value research. It intentionally omits unpublished AI-cost allocation schemas, benchmark aggregation/routing algorithms, telemetry contracts, optimization internals, detailed cost-record schemas and other potentially enabling embodiments, which remain private pending filing review.
 
+## 2026-09-16 — Microsoft Golden Anchor POC V1 public release
+
+The bounded Microsoft proof of concept is publicly available under `NAAIL-OpenLab/prototypes/microsoft-poc-v1/` and is governed by the frozen Two-Core Constitution.
+
+Public release characteristics:
+
+- maturity label: `RESEARCH_PROTOTYPE`;
+- Golden Anchor Company: Microsoft Corporation;
+- fiscal anchor: FY ended 30 June 2026;
+- real public SEC/inline-XBRL financial evidence and bounded issuer evidence;
+- accounting/finance calculations, CAM mapping, bounded text features and innovation proxies;
+- synthetic Microsoft-like management-accounting/AI-cost microcase clearly separated from Microsoft internal data;
+- Evidence Passport and Digital Twin artifacts;
+- Human–AI experiment design only, not participant execution;
+- Human Gate decision: `APPROVE_RESEARCH_PROTOTYPE_FOR_PUBLICATION_WITH_LIMITATIONS`;
+- no production-readiness or independent scientific-validation claim.
+
+The canonical public release record is [`MICROSOFT_POC_V1_PUBLIC_RELEASE_2026_09_16.md`](./MICROSOFT_POC_V1_PUBLIC_RELEASE_2026_09_16.md). The capability registry records Microsoft POC V1 as `RESEARCH_PROTOTYPE`, `core=false`, and explicitly preserves Prototype 003 as the only `EXECUTED_VALIDATED` public checkpoint.
+
 ## Additional disclosure sources to audit
 
 Before filing, review whether NAAIL technical material was disclosed through public Google Drive links, conference/seminar slides, manuscripts/preprints, teaching material, other repositories, social/professional posts, videos/demos, public email lists or non-confidential file sharing.
