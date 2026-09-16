@@ -35,6 +35,7 @@ The public platform may identify these supporting capabilities at a high level:
 - Business School Simulation & Digital Twin Layer;
 - Behavioral Decision Science & Human–AI Experimentation Layer™;
 - **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™**;
+- **NAAIL Innovation & Entrepreneurship Evidence Layer™**;
 - Evidence Passport™;
 - Professional Decision DAG™;
 - DAG Watch™;
@@ -48,17 +49,23 @@ The public platform may identify these supporting capabilities at a high level:
 
 The **Nobel Theory-to-Evidence & AI Experiment Engine™** is cross-cutting and serves Accounting, Auditing, Finance, Economics, Management, Governance, Sustainability, Behavioral Science, Education and Research. It is **not a core** and is **not CCCMP-specific**.
 
-At a public high level, the Engine maps foundational theory into governed research objects and follows the scientific path:
+The **Innovation & Entrepreneurship Evidence Layer™** is also cross-cutting and serves Accounting, Auditing, Finance, Economics, Management, Entrepreneurship, Innovation, Strategy, Sustainability, AI/Data Economy, Business Education and Scientific Research. It is **not a core** and is **not CCCMP-specific**.
 
-**Theory → Construct → Variable → Rights-cleared Data → AI Experiment → Digital Twin → Causal Test → Replication → FT50/AJG Benchmark → Evidence Passport™ → Human Gate™.**
+At a public high level, the Innovation & Entrepreneurship Evidence Layer™ connects innovation/entrepreneurship theory with governed patent, startup, firm-dynamics, science-to-innovation, digital-innovation, economic-complexity, entrepreneurial-finance, behavioral-experiment, causal-inference and Digital Twin research.
+
+Its public research objective is:
+
+**Scientific Discovery → Invention → Patent → Entrepreneurship → Financing → Commercialization → Innovation → Scaling → Productivity → Firm / Market / Social Value.**
+
+Detailed connector contracts, network/graph schemas, opportunity-score mechanics, startup state transitions, treatment orchestration and Evidence Passport internals remain private under patent hold.
 
 ## Specialist programmes
 
-**CCCMP™ — Project Cost, Contract & Claims Management Programme** remains a specialist NAAIL programme. It is not a permanent core and does not own the Nobel Theory-to-Evidence Engine.
+**CCCMP™ — Project Cost, Contract & Claims Management Programme** remains a specialist NAAIL programme. It is not a permanent core and does not own the Nobel Theory-to-Evidence Engine or the Innovation & Entrepreneurship Evidence Layer.
 
 ## Patent hold
 
-Detailed technical interactions among NAAIL components—including unpublished machine-readable theory schemas, graph structures, experimental orchestration, dependency propagation, containment controls, promotion/revocation mechanisms, state-transition logic, authorization behavior, evaluation isolation, internal interfaces, provenance contracts, implementation code and unpublished embodiments—are withheld from the current public repository pending patent filing review.
+Detailed technical interactions among NAAIL components—including unpublished machine-readable theory schemas, innovation/startup graph structures, experimental orchestration, opportunity-scoring logic, dependency propagation, containment controls, promotion/revocation mechanisms, state-transition logic, authorization behavior, evaluation isolation, internal interfaces, provenance contracts, implementation code and unpublished embodiments—are withheld from the current public repository pending patent filing review.
 
 Some implementation-level material was publicly committed before the patent-first rule was adopted. See [`../PUBLIC_DISCLOSURE_LOG.md`](../PUBLIC_DISCLOSURE_LOG.md). Current sanitization does not erase historical Git disclosures.
 
@@ -71,17 +78,22 @@ replaceable_technology_core_is_permanent = true
 supporting_layer_may_become_third_core = false
 nobel_theory_engine_is_core = false
 nobel_theory_engine_is_cccmp_specific = false
+innovation_entrepreneurship_layer_is_core = false
+innovation_entrepreneurship_layer_is_cccmp_specific = false
 technology_core_may_rewrite_knowledge_core = false
 theory_name_equals_valid_measurement = false
 behavioral_proxy_equals_psychological_diagnosis = false
+entrepreneurial_opportunity_score_is_deterministic_recommendation = false
 predictive_accuracy_equals_causality = false
 human_gate_required = true
 ```
 
 ## Public navigation
 
+- [`../PUBLIC_PLATFORM_OVERVIEW.md`](../PUBLIC_PLATFORM_OVERVIEW.md)
 - [`../README.md`](../README.md)
 - [`../NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md`](../NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
+- [`../INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md`](../INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
 - [`../CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md`](../CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
 - [`../PATENT_NOTICE.md`](../PATENT_NOTICE.md)
 - [`../IP_NOTICE.md`](../IP_NOTICE.md)
