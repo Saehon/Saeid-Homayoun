@@ -3,17 +3,29 @@ name: NAAIL Nobel Theory Engine Guard
 on:
   push:
     paths:
+      - 'README.md'
+      - 'NAAIL-OpenLab/README.md'
+      - 'NAAIL-OpenLab/00_START_HERE.md'
+      - 'NAAIL-OpenLab/PUBLIC_PLATFORM_OVERVIEW.md'
       - 'NAAIL-OpenLab/NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md'
       - 'NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'
       - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/PLATFORM_CAPABILITY_MATRIX.md'
       - 'NAAIL-OpenLab/tests/test_nobel_theory_engine.py'
+      - 'NAAIL-OpenLab/tests/test_public_platform_overview.py'
       - '.github/workflows/naail_nobel_theory_engine_guard.yml'
   pull_request:
     paths:
+      - 'README.md'
+      - 'NAAIL-OpenLab/README.md'
+      - 'NAAIL-OpenLab/00_START_HERE.md'
+      - 'NAAIL-OpenLab/PUBLIC_PLATFORM_OVERVIEW.md'
       - 'NAAIL-OpenLab/NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md'
       - 'NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'
       - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/PLATFORM_CAPABILITY_MATRIX.md'
       - 'NAAIL-OpenLab/tests/test_nobel_theory_engine.py'
+      - 'NAAIL-OpenLab/tests/test_public_platform_overview.py'
   workflow_dispatch:
 
 jobs:
@@ -24,5 +36,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run Nobel Theory Engine architecture guard
-        run: python -m pytest NAAIL-OpenLab/tests/test_nobel_theory_engine.py -q
+      - name: Run Nobel Theory Engine and public-platform guards
+        run: |
+          python -m pytest NAAIL-OpenLab/tests/test_nobel_theory_engine.py -q
+          python -m pytest NAAIL-OpenLab/tests/test_public_platform_overview.py -q
