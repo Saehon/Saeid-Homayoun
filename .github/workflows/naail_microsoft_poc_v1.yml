@@ -1,0 +1,39 @@
+name: NAAIL Microsoft POC V1 Guard
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/prototypes/microsoft-poc-v1/**'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/PLATFORM_CAPABILITY_MATRIX.md'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/prototypes/microsoft-poc-v1/**'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+  workflow_dispatch:
+
+jobs:
+  microsoft-poc-v1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pytest
+        run: python -m pip install pytest
+      - name: Run Microsoft POC V1 tests
+        run: python -m pytest -q NAAIL-OpenLab/prototypes/microsoft-poc-v1/tests/test_microsoft_poc_v1.py
+      - name: Enforce maturity boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('NAAIL-OpenLab/architecture/platform_capability_registry.json').read_text())
+          by={x['id']:x for x in r['capabilities']}
+          assert r['platform']['permanent_core_count']==2
+          assert by['prototype_003']['status']=='EXECUTED_VALIDATED'
+          assert by['microsoft_poc_v1']['status']=='RESEARCH_PROTOTYPE'
+          assert by['microsoft_poc_v1']['core'] is False
+          print('Microsoft POC V1 maturity boundary OK')
+          PY
