@@ -1,138 +1,85 @@
 # NAAIL OpenLab™ — Current Project State
 
-**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
-*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
-
 **Canonical public state date:** 2026-09-16  
-**Validated executable checkpoint:** `v0.2.3 / Audit Workspace V0.4 / Prototype 003`  
 **Architecture target:** `V2026.3 Multi-Agent Digital Twin`  
-**Permanent cores:** exactly two — `Knowledge Core™` + `Technology Core™`
+**Permanent cores:** exactly two — **Stable Knowledge Core™** + **Replaceable Technology Core™**  
+**Validated executable checkpoint:** `v0.2.3 / Audit Workspace V0.4 / Prototype 003`
 
 > **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
 
-## Current public-state rule
+## Current architecture rule
 
-NAAIL has adopted a **patent-first** disclosure policy. New enabling technical details are maintained privately until patent filing review. Public pages describe patent-sensitive mechanisms only at a high level.
+NAAIL OpenLab™ / ECONOVA-S™ keeps the same two-core architecture. New capabilities are added only as governed supporting layers, engines, programmes or Digital Twins.
 
-No NAAIL patent application is represented as filed as of 2026-09-16, and the project does not claim **Patent Pending** status.
+The **NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™** is now registered as a cross-cutting supporting capability. It is **not a third core** and is **not CCCMP-specific**.
 
-## Current maturity boundary
+## Current public maturity boundary
 
 | Capability | Current public status |
 |---|---|
-| Prototype 003 | `EXECUTED_VALIDATED` for its frozen synthetic scope |
+| Prototype 003 | `EXECUTED_VALIDATED` for frozen synthetic scope |
 | Prototype 004 provider harness | `IMPLEMENTED_EXECUTION_GATED` |
 | V2026.3 master architecture | high-level public architecture |
-| Knowledge Core™ + Technology Core™ | exactly two permanent cores |
-| CCCMP™ — Project Cost, Contract & Claims Management Programme | `PATENT_HOLD_NON_ENABLING` |
-| CCCMP Research, Education & Evidence Governance | `ARCHITECTURE_ADOPTED` |
-| NAAIL Value Expansion Fabric™ | `PATENT_HOLD_NON_ENABLING` |
+| Stable Knowledge Core™ + Replaceable Technology Core™ | exactly two permanent cores |
+| Nobel Theory-to-Evidence & AI Experiment Engine™ | `PATENT_HOLD_NON_ENABLING` |
 | Behavioral Decision Science & Human–AI Experimentation Layer™ | `PATENT_HOLD_NON_ENABLING` |
+| CCCMP™ | `PATENT_HOLD_NON_ENABLING` specialist programme |
+| NAAIL Value Expansion Fabric™ | `PATENT_HOLD_NON_ENABLING` |
 | NAAIL Data & Evidence Mesh™ | `PATENT_HOLD_NON_ENABLING` |
 | Business School Simulation & Digital Twin Layer | `PATENT_HOLD_NON_ENABLING` |
 | Decision–Consequence Engine™ | public non-enabling stub |
 | Professional Judgment Passport™ | public non-enabling metadata stub |
-| Audit & Accounting Digital Twin™ | public high-level research overview |
 | VERA™ detailed verification mechanics | private pending filing review |
-| Research/education platform | public high-level design |
 
 Machine-readable state: [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
 
-## Preserved public architecture
+## Nobel Theory-to-Evidence research objective
 
-NAAIL retains the named components:
+The Engine converts foundational theory into governed empirical research objects:
 
-**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · Evidence Passport™ · Professional Decision DAG™ · DAG Watch™ · Agent Arena™ · Failure Memory™ · Controlled Agent Evolution · Decision–Consequence Engine™ · Professional Judgment Passport™ · Human Approval Gate™ · NAAIL Data & Evidence Mesh™**.
+**Theory → Construct → Variable → Rights-cleared Data → AI Experiment → Digital Twin → Causal Test → Replication → FT50/AJG Benchmark → Evidence Passport™ → Human Gate™.**
 
-The **Value Expansion Fabric™**, **Behavioral Decision Science & Human–AI Experimentation Layer™**, and **CCCMP™** are governed supporting capabilities only. None changes the canonical agent set, creates a new core, or changes the validated checkpoint.
+Public theory families include behavioral judgment, experimental economics, behavioral economics, asset pricing, portfolio/corporate finance, risk/options, information asymmetry, contracts/incentives, transaction costs/governance, mechanism design, auctions, causal inference, institutions/development, and innovation/growth/AI productivity.
 
-## CCCMP specialist programme
+The Engine serves all NAAIL domains: **Accounting, Auditing, Finance, Economics, Management, Governance, Sustainability, Behavioral Science, Education and Research.**
 
-NAAIL now includes a public high-level **CCCMP™ — Project Cost, Contract & Claims Management Programme** for research and education in construction, infrastructure, energy, oil & gas, mining, EPC/EPCM, PPP, major capital projects and megaprojects.
+## Scientific safeguards
 
-Public CCCMP scope covers, at a high level:
+- theory names do not substitute for valid constructs or measurement;
+- behavioral/text proxies are empirical constructs, not diagnoses;
+- predictive accuracy does not establish causality;
+- GitHub repositories are technology/replication resources, not automatically authoritative data sources;
+- every source must pass license/access/provenance controls;
+- current FT50/AJG status must be verified dynamically when used;
+- confirmatory experiments should document power/sample-size rationale, preregistration, randomization/identification and treatment integrity where applicable;
+- robustness, falsification, replication/OOS and external validation are required where appropriate;
+- consequential research promotion/release remains subject to Human Gate™.
 
-- cost engineering, estimating, EVM and project controls;
-- contract, procurement and commercial management;
-- claims, delay, quantum and dispute analysis;
-- project finance, accounting and IFRS-related project issues;
-- behavioral project decision science and human–AI judgment;
-- rights-controlled public/reference project, procurement, macro, energy, commodity and legal data families;
-- research, education and Digital Twin simulation.
+## Patent-first boundary
 
-CCCMP is a specialist programme—not a third core. Knowledge remains governed through the Knowledge Core; replaceable tools/connectors/simulation infrastructure remain in the Technology Core.
+Detailed machine-readable theory schemas, treatment orchestration, connector contracts, provenance internals, unpublished measurement algorithms, Digital Twin state-transition logic, dependency/revocation mechanisms and claim concepts remain private pending filing review.
 
-Detailed contract/claims graph structures, entitlement logic, source-to-agent routing, automated rights controls, treatment designs, project-state transitions and Digital Twin execution mechanics remain private under patent hold.
-
-## Behavioral research capability
-
-NAAIL includes a public high-level behavioral research capability spanning behavioral economics, finance, accounting, auditing, management decision-making, consumer/organizational behavior, professional judgment, and human–AI interaction.
-
-Publicly stated methodological requirements include:
-
-- behavioral measures are empirical proxies, not personality diagnoses;
-- credible causal identification where appropriate;
-- preregistration and power analysis for confirmatory experiments;
-- random assignment, manipulation/treatment integrity and attention checks where applicable;
-- AI interaction logging and evidence provenance;
-- robustness, replication, falsification, and external validation;
-- current FT50/AJG verification when journal status is used;
-- Human Approval for research release/promotion decisions.
-
-Detailed treatment-arm logic, behavioral-outcome schemas, unpublished measures, experiment-control mechanisms, and implementation detail remain private under patent hold.
-
-## Public evidence / data boundary
-
-NAAIL may reference rights-cleared/public sources such as SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, OWID CO₂/Energy, OpenAlex, OpenSanctions, optional OpenBB connectors, and public/reference project/procurement/energy/commodity/legal source families. Third-party rights and source terms remain controlling; large datasets and credentials are not stored in the public repository by default.
-
-Source names identify candidate/reference evidence families and do not prove integration, redistribution rights or execution.
-
-## Research objectives added
-
-Behavioral research asks **when, why, and for whom AI reduces, preserves, or amplifies behavioral biases and professional-judgment errors**.
-
-CCCMP research adds project/capital-programme questions spanning cost overruns, project controls, contracts, procurement, claims/disputes, project finance, behavioral project decisions, human–AI judgment and Digital Twin simulation, subject to appropriate causal/reproducibility standards.
-
-## Disclosure history
-
-Some implementation-level materials were publicly committed on 14–16 September 2026 before the patent-first hardening rule. Current sanitization does not erase historical Git commits.
-
-See:
-
-- [`PATENT_NOTICE.md`](./PATENT_NOTICE.md)
-- [`PUBLIC_DISCLOSURE_LOG.md`](./PUBLIC_DISCLOSURE_LOG.md)
-- [`PRIOR_ART_LOG.md`](./PRIOR_ART_LOG.md)
-- [`PATENT_FILING_CHECKLIST.md`](./PATENT_FILING_CHECKLIST.md)
-
-## License boundary
-
-Current original NAAIL material is governed by [`LICENSE`](./LICENSE) for academic research, education, teaching, and non-commercial evaluation. Commercial use requires separate written authorization. No implied patent, trademark, or trade-secret license is granted.
-
-CCCMP industry/commercial use is not licensed by the public repository and requires separate written authorization.
+No patent application is represented as filed as of 2026-09-16, and the project does not claim **Patent Pending** status.
 
 ## Immediate priorities
 
-1. complete professional patent/inventorship/ownership review;
-2. avoid further enabling public disclosure before filing decisions;
-3. preserve public-disclosure chronology and private technical records;
-4. design research-safe CCCMP project/capital-programme studies using public/non-enabling governance;
-5. build a research-safe behavioral experimentation roadmap;
-6. verify FT50/AJG status dynamically rather than hard-coding journal rankings;
-7. validate behavioral and project-simulation studies with appropriate identification, robustness, replication/falsification and external evidence;
-8. continue research validation using public-safe artifacts;
-9. after any confirmed filing, update public patent status accurately and decide which private technical materials may be released.
+1. preserve the two-core invariant;
+2. maintain a governed theory registry without biography-only objects;
+3. verify licenses and current maintenance before promoting data/technology references;
+4. build research-safe theory-to-evidence experiments under causal/reproducibility standards;
+5. verify FT50/AJG dynamically at study time;
+6. retain null/failed/falsified results in the scientific record;
+7. continue patent-first review before publishing enabling implementation details.
 
 ## Canonical links
 
 - [Start Here](./00_START_HERE.md)
-- [Main README](./README.md)
-- [CCCMP specialist programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
-- [CCCMP research/evidence governance](./docs/research/CCCMP_RESEARCH_GOVERNANCE.md)
-- [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-- [Patent Notice](./PATENT_NOTICE.md)
-- [IP Notice](./IP_NOTICE.md)
+- [Nobel Theory-to-Evidence Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
 - [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
 - [Capability Registry](./architecture/platform_capability_registry.json)
+- [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
+- [CCCMP](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+- [Patent Notice](./PATENT_NOTICE.md)
 - [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md)
 
 > **Models generate. Agents debate. Research grounds. Standards govern. Evidence decides. Humans remain accountable.**
