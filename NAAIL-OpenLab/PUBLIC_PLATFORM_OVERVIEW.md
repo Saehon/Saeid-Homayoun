@@ -6,145 +6,106 @@
 
 > **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
 
-This page is the consolidated public overview of the current NAAIL architecture. It is intentionally **high-level and non-enabling**. Detailed unpublished algorithms, machine-readable schemas, dependency/revocation logic, state-transition mechanics, connector internals, experiment orchestration, claim concepts, and patent-sensitive implementation details remain private pending filing review.
+This is the consolidated public, intentionally non-enabling overview of NAAIL. Detailed unpublished algorithms, graph schemas, connector contracts, dependency/revocation logic, state-transition mechanics, opportunity-scoring implementation, experiment orchestration, claim concepts and patent-sensitive technical embodiments remain private pending filing review.
 
 ## 1. Fixed architecture — exactly two permanent cores
 
-NAAIL preserves exactly two permanent cores:
+1. **Stable Knowledge Core™** — governed theory, standards, professional knowledge, research evidence, construct definitions, ontologies, causal structures and evidence semantics.
+2. **Replaceable Technology Core™** — replaceable models, agent runtimes, RAG/GraphRAG/KAG technology, simulation/experimental tools, causal/ML tooling, databases, connectors, evaluators and execution infrastructure.
 
-1. **Stable Knowledge Core™** — governed theory, standards, professional knowledge, research evidence, construct definitions, ontologies, causal structures, evidence semantics, and validated knowledge objects.
-2. **Replaceable Technology Core™** — models, agent runtimes, RAG/GraphRAG/KAG technology, simulation tools, causal/experimental tooling, analytics, databases, connectors, evaluators, and execution infrastructure.
-
-**No third core is permitted.** Agents, engines, programmes, Digital Twins, data layers, simulation layers, education layers, and evaluation systems are supporting capabilities under these two cores.
+**No third core is permitted.** Every agent, engine, programme, Digital Twin, data layer, simulation layer, education layer and evaluation system is a supporting capability under these two cores.
 
 ## 2. Canonical professional agents
 
-NAAIL retains the following professional-agent families:
+**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · ICFR Intelligence · Forensic Intelligence**
 
-- **KIWI™** — audit / CAM / KAM intelligence;
-- **POMELO™** — accounting, assurance and forensic intelligence;
-- **VERA™** — verifiable accounting and auditing intelligence;
-- **IFRS Agent™** — financial reporting and standards-aware research;
-- **PCAOB Agent™** — audit/regulatory and inspection-related research;
-- **ESG Agent** — sustainability, climate, materiality and assurance;
-- **ECONOVA-S™** — finance, economics, asset pricing, data economy and economic Digital Twins;
-- **ICFR Intelligence** — internal controls, deficiencies, remediation and risk forecasting;
-- **Forensic Intelligence** — fraud, misconduct, anomalies and forensic evidence research.
-
-All agent families inherit common NAAIL evidence, verification, reproducibility, falsification and Human Approval requirements.
+All inherit NAAIL evidence, verification, reproducibility, falsification and Human Approval requirements.
 
 ## 3. Cross-cutting governed capabilities
 
 ### NAAIL Data & Evidence Mesh™
 
-Provides a governed public/rights-cleared evidence layer using provenance, versioning, source classification, citation, license/access controls and Evidence Passport™ governance. Source families may include SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, Our World in Data, OpenAlex, public regulatory/enforcement sources, public procurement/project sources and other lawful evidence providers.
-
-Public source names are references/targets, not proof of ingestion or execution. Public access is not treated as unrestricted redistribution permission.
+Governed public/rights-cleared evidence using provenance, source classification, license/access controls, versioning, citation and Evidence Passport™ governance. Public source names are targets/references, not proof of ingestion or execution.
 
 ### NAAIL Value Expansion Fabric™
 
-Expands NAAIL across data/evidence, professional knowledge, ERP/synthetic companies, research evidence, professional education and Business-School Digital Twins while preserving the two-core model.
+Expands data/evidence, professional knowledge, ERP/synthetic-company research, open-research discovery, professional education and Business-School Digital Twins without changing the two-core model.
 
 ### NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™
 
-Supports behavioral economics, behavioral finance, behavioral accounting/auditing, management judgment, professional skepticism, human–AI reliance/override, trust calibration, behavioral text analytics, controlled experiments, causal inference, Digital Twin replication and external validation.
-
-Behavioral variables are empirical research proxies—not psychological diagnoses or permanent personality classifications.
+Supports behavioral economics/finance/accounting/auditing, professional skepticism, management judgment, human–AI reliance/override, behavioral text analytics, controlled experiments, causal inference, Digital Twin replication and external validation. Behavioral variables are research proxies—not psychological diagnoses.
 
 ### NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™
 
-A cross-cutting governed research engine serving **all NAAIL domains**, not a third core and not a CCCMP-specific module.
-
-Its public scientific path is:
+Cross-cutting research engine serving all NAAIL domains, not a core and not CCCMP-specific.
 
 **Theory → Construct → Variable → Rights-cleared Data → AI Experiment → Digital Twin → Causal Test → Replication → FT50/AJG Benchmark → Evidence Passport™ → Human Gate™**
 
-The public theory registry spans foundational contributions in:
+### NAAIL Innovation & Entrepreneurship Evidence Layer™
 
-- prospect theory, framing, loss aversion, anchoring and judgment under uncertainty;
-- experimental economics and market experiments;
-- behavioral economics and mental accounting;
-- asset pricing, market efficiency and predictability;
-- portfolio theory, corporate finance and CAPM;
-- risk and option valuation;
-- information asymmetry and signaling;
-- contracts, incentives and agency;
-- transaction costs, institutions and governance;
-- mechanism design, auctions and bidding;
-- causal inference and natural experiments;
-- institutions and economic development;
-- innovation, growth, AI adoption and productivity.
+Cross-cutting supporting layer serving **Accounting, Auditing, Finance, Economics, Management, Entrepreneurship, Innovation, Strategy, Sustainability, AI/Data Economy, Business Education and Scientific Research**.
 
-NAAIL does not treat a famous theory name as a measured variable. Each research object should define constructs, measurable variables, hypotheses, identification/randomization, falsification and replication.
+It connects innovation/entrepreneurship theory with governed patent/IP evidence, entrepreneurship and firm-dynamics data, science-to-innovation research, digital/open-source activity, economic complexity, startup/founder evidence, innovation networks, behavioral entrepreneurship, entrepreneurial finance, causal inference and Startup Digital Twins.
+
+Its public research objective is:
+
+**Scientific Discovery → Invention → Patent → Entrepreneurship → Financing → Commercialization → Innovation → Scaling → Productivity → Firm / Market / Social Value**
+
+Public source/technology families may include patent/IP statistics, government entrepreneurship/business-dynamics sources, science/patent linkages, public digital-activity indicators, economic-complexity evidence, rights-cleared startup/founder evidence, open research metadata, HARK, Mesa, oTree, SNAP, DoWhy, EconML, FinRL, ABIDES, Transformers, NetworkX, Statsmodels and pandas-datareader—always subject to current license, provenance, maintenance, security, quality and execution verification.
+
+An entrepreneurial-opportunity measure is a **research variable**, not a deterministic recommendation. GitHub repositories are technology/reference resources, not automatically authoritative datasets. Detailed network/graph schemas, opportunity-score mechanics, connector contracts, Startup Digital Twin state transitions, treatment orchestration and Evidence Passport internals remain private.
 
 ### CCCMP™ — Project Cost, Contract & Claims Management Programme
 
-CCCMP™ is a **specialist programme**, not a core and not the parent of the Nobel Engine. It extends NAAIL into construction, infrastructure, energy, oil & gas, mining, EPC/EPCM, PPP, major capital projects and megaproject research/education.
+CCCMP™ remains a specialist programme, not a core and not the parent of the Nobel Engine or Innovation & Entrepreneurship Evidence Layer. Public scope includes project cost, contracts, procurement, claims/delay, quantum, project finance/accounting, behavioral decisions and Digital Twin education/research.
 
-Public CCCMP scope covers cost engineering, project controls, contracts, procurement, claims, delay, quantum/commercial analysis, project finance/accounting, behavioral project decisions and Digital Twin education/research. Enabling contract/claims graph logic, entitlement rules, state-transition mechanics and unpublished implementation remain private.
+## 4. Innovation and entrepreneurship research governance
 
-## 4. Free / public data and technology policy
+The Innovation & Entrepreneurship Evidence Layer may organize foundational theory including Schumpeterian innovation/creative destruction, disruptive innovation, resource-based view, dynamic capabilities, absorptive capacity, open innovation, knowledge spillovers, entrepreneurial ecosystems, real options, agency, information asymmetry, behavioral entrepreneurship, institutional theory, platform/network effects and transaction-cost economics.
 
-NAAIL may evaluate or connect rights-cleared/public sources across accounting/auditing, finance, economics, management, behavioral/consumer research, sustainability and scholarly metadata.
+Public scientific logic:
 
-Candidate public/open technology and replication resources may include HARK, Mesa, ABIDES, FinRL, DoWhy, EconML, verified open financial-language models, Hugging Face Transformers, pandas-datareader, NetworkX and Statsmodels, subject to current license, maintenance, provenance and quality review.
+**Theory → Construct → Hypothesis → Variable DNA™ → Rights-cleared Data → Experiment / Causal Test → Robustness → Replication → Falsification → Evidence Passport™ → Human Gate™**
+
+Theory names do not substitute for construct validity or measurement.
+
+## 5. Rights-cleared data and technology policy
+
+NAAIL may evaluate public/legally reusable accounting, audit, finance, economics, innovation, patent, entrepreneurship, behavioral, sustainability, project/procurement and scholarly metadata sources.
+
+Every source must pass license/access/provenance review. Public access does not imply public-domain status or unrestricted redistribution.
 
 **GitHub repository ≠ authoritative data source.**  
-**Registry entry ≠ dependency installed.**  
+**Registry entry ≠ dependency installed/executed.**  
 **Public access ≠ unrestricted redistribution.**
 
-## 5. Behavioral Text Engine — public research scope
+## 6. FT50 / AJG research gate
 
-Observable textual/decision constructs may include tone, uncertainty, litigiousness, constraining/modal language, readability/complexity, optimism/pessimism, confidence, risk language, causal language, forward-looking language, numerical specificity, self-reference, collective language, semantic similarity, disclosure novelty, managerial-overconfidence proxies, auditor-skepticism proxies, and AI reliance/override language.
+When journal status is used, NAAIL dynamically verifies the current **Financial Times FT50** list and current **Chartered ABS Academic Journal Guide** edition/rating rather than hard-coding historical classifications.
 
-These measures are research constructs only. They are not clinical or psychological diagnoses.
+Lawful open versions may be located through sources such as OpenAlex, SSRN metadata/abstracts, institutional repositories, author pages, CORE, DOAJ and RePEc. Copyrighted material is not reproduced merely because it is publicly viewable.
 
-## 6. Human–AI experimental research
+## 7. Behavioral, causal and Digital Twin research
 
-NAAIL may compare human-only and governed human+AI conditions involving explanation, confidence information, critique, critic–defender review, multi-agent debate, Evidence Passport™, contradictory evidence and Human Approval.
+NAAIL may compare human-only and governed human+AI conditions and study framing, anchors, information order, confidence, uncertainty, contradictory evidence, task complexity, incentives, management pressure and related experimental manipulations.
 
-Research may manipulate framing, anchors, information order, AI confidence/accuracy, uncertainty, contradictory evidence, task complexity, time pressure, incentives and management pressure. Public descriptions identify research classes; detailed unpublished treatment orchestration remains private.
+Innovation/entrepreneurship applications may include founder decisions, pivot/continue choices, venture/financing judgments, investor/VC decisions, technology commercialization, innovation strategy, patent value, ecosystems, scaling, productivity and human–AI collaboration.
 
-Application domains include accounting/audit judgments, portfolio/investment decisions, asset pricing, trading, information asymmetry, incentives, auctions, saving/consumption, institutions, innovation/productivity and professional/business-school decisions.
+Detailed unpublished treatment orchestration and simulation state mechanics remain private.
 
-## 7. Scientific standard
+## 8. Scientific standard
 
-Publication-grade NAAIL research should, where applicable, document:
+Publication-grade studies should, where applicable, document:
 
 **Theory → Literature Evidence → Causal DAG → Hypotheses → Power Analysis → Pre-registration → Data → Variable DNA™ → Randomization/Identification → AI Treatment → Behavioral Measures → Main Test → Robustness → Falsification → Replication/OOS → FT50/AJG Benchmark → Evidence Passport™ → Human Gate™**
 
-When journal status is used, NAAIL verifies the current Financial Times FT50 list and the current Chartered ABS Academic Journal Guide rather than hard-coding historical rankings.
+Statistical significance, predictive accuracy, agent consensus or model confidence alone is not treated as scientific truth.
 
-Research benchmarks may use lawful metadata, abstracts, citations, URLs, open-access papers and licensed versions. Copyrighted material is not reproduced merely because it is publicly viewable.
-
-## 8. Evidence, simulation and professional judgment
-
-At a high level, NAAIL uses:
+## 9. Evidence, simulation and judgment
 
 **Real / rights-cleared evidence → Evidence Passport™ → Multi-Agent Analysis → Digital Twin Simulation → Decision → Consequence → Verification → Human Approval Gate™**
 
-Named supporting mechanisms include:
-
-- Evidence Passport™;
-- Professional Decision DAG™;
-- DAG Watch™;
-- Agent Arena™;
-- Blind Gold / Evaluation;
-- Failure Memory™;
-- Controlled Agent Evolution;
-- Decision–Consequence Engine™;
-- Professional Judgment Passport™;
-- Human Approval Gate™.
-
-Their detailed unpublished implementation remains under patent hold.
-
-## 9. Research, education and professional simulation
-
-NAAIL is positioned as an **Evidence-Governed Multi-Agent Business School Digital Twin for Education, Research, Professional Simulation, and Verifiable Human–AI Judgment**.
-
-It supports accounting, auditing, finance, economics, management, governance, sustainability, behavioral science, professional education and specialist project/capital-programme research.
-
-NAAIL is independent. References to universities, firms, regulators, standard setters, professional bodies, journals, technology providers, datasets or open-source projects do not imply endorsement, partnership, certification, accreditation, ownership or access unless separately documented in writing.
+Supporting mechanisms include Evidence Passport™, Professional Decision DAG™, DAG Watch™, Agent Arena™, Blind Gold/Evaluation, Failure Memory™, Controlled Agent Evolution, Decision–Consequence Engine™, Professional Judgment Passport™ and Human Approval Gate™.
 
 ## 10. Public validation boundary
 
@@ -152,7 +113,7 @@ The validated public executable checkpoint remains:
 
 **NAAIL OpenLab v0.2.3 · Audit Workspace V0.4 · Prototype 003**
 
-Prototype 003 is a frozen synthetic benchmark. Newer named architecture elements are not automatically validated or executed merely because they are documented or registered.
+Prototype 003 is a frozen synthetic benchmark. New named layers are not automatically validated or executed merely because they are documented or registered.
 
 ## 11. Patent-first and commercial-use boundary
 
@@ -160,21 +121,22 @@ Prototype 003 is a frozen synthetic benchmark. Newer named architecture elements
 
 No NAAIL patent application is represented as filed as of 2026-09-16. Do not describe NAAIL as **Patent Pending** unless filing is independently confirmed.
 
-Original NAAIL material is governed by the current NAAIL license for authorized academic research, education, teaching and non-commercial evaluation. Commercial deployment or exploitation requires a separate written agreement. Third-party rights remain controlling.
+Original NAAIL material is governed by the current NAAIL license for authorized academic research, education, teaching and non-commercial evaluation. Commercial deployment or exploitation requires separate written authorization. Third-party rights remain controlling.
 
 ## 12. Public reviewer path
 
 1. [Start Here](./00_START_HERE.md)
-2. [Nobel Theory-to-Evidence & AI Experiment Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
-3. [Canonical Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-4. [Platform Capability Registry](./architecture/platform_capability_registry.json)
-5. [Platform Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
-6. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-7. [CCCMP Programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
-8. [Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)
-9. [Current Project State](./CURRENT_PROJECT_STATE.md)
-10. [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md)
-11. [Patent Notice](./PATENT_NOTICE.md)
-12. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
+2. [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
+3. [Nobel Theory-to-Evidence & AI Experiment Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
+4. [Canonical Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+5. [Platform Capability Registry](./architecture/platform_capability_registry.json)
+6. [Platform Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
+7. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
+8. [CCCMP Programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+9. [Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)
+10. [Current Project State](./CURRENT_PROJECT_STATE.md)
+11. [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md)
+12. [Patent Notice](./PATENT_NOTICE.md)
+13. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
 
 > **Models generate. Agents debate. Research grounds. Standards govern. Evidence decides. Humans remain accountable.**
