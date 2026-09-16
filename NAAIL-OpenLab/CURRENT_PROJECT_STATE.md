@@ -1,19 +1,32 @@
 # NAAIL OpenLab™ — Current Project State
 
-**Canonical public state date:** 2026-09-14  
-**Public release:** v0.2.3  
-**Executable milestone:** Audit Workspace V0.4 / Prototype 003  
-**Prototype 004 state:** real-provider harness implemented; empirical execution remains credential-gated  
-**Architecture snapshot:** V2026.3 — Google + Microsoft Multi-Agent Digital Twin Scientific Discovery Architecture  
-**Research-testing extension:** FT50 / AJG 4* Scientific Replication Arena — registry and protocol integrated; benchmark execution pending exact commit pinning and environment reconstruction
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
-## Purpose
+**Canonical public state date:** 2026-09-16  
+**Validated executable release:** `v0.2.3 / Audit Workspace V0.4 / Prototype 003`  
+**Provider-comparison infrastructure:** Prototype 004 harness implemented; real provider execution remains credential/evidence gated  
+**Architecture target:** `V2026.3 Multi-Agent Digital Twin`  
+**Frozen Knowledge & RAG Core:** `KRG2026.3`
 
-This is the compact public checkpoint for NAAIL. It separates validated deterministic benchmark results, implemented provider infrastructure, architecture targets, external replication infrastructure, and provider/model experiments that have or have not actually executed.
+## Executive state
 
-## Current validated Prototype 003 benchmark
+NAAIL OpenLab™ now operates as a global research-platform architecture spanning accounting, audit, assurance, finance, economics, sustainability, internal controls, forensic intelligence, public/open data, scientific discovery, Digital Twins, reproducibility and AI-enabled business education.
 
-Prototype 003 is a frozen three-domain synthetic Audit Digital Twin benchmark:
+The repository deliberately separates five evidence classes:
+
+1. **executed and validated public checkpoints**;
+2. **implemented infrastructure whose empirical execution is still gated**;
+3. **adopted architecture/governance**;
+4. **open-source/data registries that are not execution claims**;
+5. **methodological/provider references that remain external unless actually run and documented**.
+
+Canonical maturity map: [`architecture/PLATFORM_CAPABILITY_MATRIX.md`](./architecture/PLATFORM_CAPABILITY_MATRIX.md)  
+Machine-readable registry: [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
+
+## 1. Validated executable checkpoint
+
+The current public validated checkpoint remains **Prototype 003**, a frozen three-domain synthetic Audit Digital Twin benchmark:
 
 | Case | Deterministic control finding | Synthetic amount | Human Gate |
 |---|---|---:|---|
@@ -21,25 +34,109 @@ Prototype 003 is a frozen three-domain synthetic Audit Digital Twin benchmark:
 | Goodwill Impairment | `GW-DR`, `GW-MAR` | EUR 440,000 estimated adjustment | `PENDING_HUMAN_APPROVAL` |
 | ICFR Deficiency | `CTRL-JE-02`, `CTRL-IT-03` | EUR 530,000 estimated exposure | `PENDING_HUMAN_APPROVAL` |
 
-For these deliberately constructed frozen synthetic cases, the deterministic control condition has precision/recall of **1.00 / 1.00** with **0 / 0** false positives/false negatives. These values are benchmark properties only and are not claims of real-world audit effectiveness, impairment measurement, ICFR severity, or professional assurance quality.
+For these deliberately constructed frozen synthetic cases, the deterministic condition produces precision/recall of **1.00 / 1.00** with **0 / 0** false positives/false negatives. These are benchmark properties only and are **not claims of real-world audit effectiveness, assurance quality, ICFR severity, or professional accuracy**.
 
-## FT50 / AJG 4* Scientific Replication Arena — integrated
+Public runtime: [`Prototype_003/runtime/`](./Prototype_003/runtime/)
 
-NAAIL now contains a governed external benchmark layer for selected public replication repositories associated with FT50 and AJG/ABS 4/4* research.
+## 2. Prototype 004 provider-comparison state
 
-Current integrated assets:
+The provider harness is implemented for credential-gated real-provider experiments, but provider/model conditions remain non-executed unless a real result artifact and Evidence Passport prove otherwise.
 
-- `benchmarks/ft50_abs4/README.md`;
-- `benchmarks/ft50_abs4/registry.json`;
-- `benchmarks/ft50_abs4/BENCHMARK_PROTOCOL.md`;
-- `benchmarks/ft50_abs4/validate_registry.py`;
-- `tests/SCIENTIFIC_REPLICATION_ARENA.md`;
-- `external/FT50_ABS4_SOURCE_POLICY.md`;
-- formal Layer 7 integration in `EVALUATION_STANDARD.md`.
+Current default scientific status:
 
-Initial benchmark families cover Management Science accounting/reproducibility, Review of Financial Studies reproducibility and machine learning, Journal of Financial Economics staggered-DiD/causal inference, and Journal of Finance end-to-end empirical replication.
+```text
+deterministic baseline              = EXECUTED
+Gemini single-agent                 = NOT_EXECUTED_PROVIDER_REQUIRED
+Gemini sequential-agent             = NOT_EXECUTED_PROVIDER_REQUIRED
+Gemini governed-multi-agent         = NOT_EXECUTED_PROVIDER_REQUIRED
+Microsoft Foundry single-agent      = NOT_EXECUTED_PROVIDER_REQUIRED
+Microsoft Foundry sequential-agent  = NOT_EXECUTED_PROVIDER_REQUIRED
+Microsoft Foundry governed-agent    = NOT_EXECUTED_PROVIDER_REQUIRED
+```
 
-Scientific status:
+Provider execution checkpoint: [`PROTOTYPE_004_PROVIDER_EXECUTION.md`](./PROTOTYPE_004_PROVIDER_EXECUTION.md)
+
+NAAIL does not replace missing provider runs with simulated AI outputs and does not allow model output to approve the Human Gate.
+
+## 3. Global platform identity
+
+The canonical international identity is now:
+
+> **NAAIL OpenLab™**  
+> **Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
+> *A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+
+The former Nordic expansion is historical only. Current public architecture and product pages use the global identity.
+
+Canonical governance: [`BRAND_IDENTITY.md`](./BRAND_IDENTITY.md)
+
+## 4. Scientific-discovery architecture
+
+The shared NAAIL research pipeline is:
+
+```text
+Question
+→ Literature Validation
+→ Competing Hypotheses / Co-Scientist Arena
+→ DAG / Identification Governance
+→ ERA-style Empirical Design
+→ Rights-Cleared Data or Digital Twin
+→ Computational Discovery + AlphaEvolve-style Search
+→ Latent-Structure Analysis
+→ Robustness / Placebo / OOS
+→ Critic / Defender / Falsifier
+→ Independent Replication
+→ Chain-of-Evidence + CoE Audit
+→ Evidence Passport™
+→ Human Gate™
+```
+
+Google/DeepMind/OpenAI/Microsoft names are methodological references or optional provider targets unless an actual run is recorded with model/version/input/output/provenance evidence.
+
+Canonical files:
+
+- [`SCIENTIFIC_DISCOVERY_CONTRACT.md`](./SCIENTIFIC_DISCOVERY_CONTRACT.md)
+- [`GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md`](./GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md)
+- [`00_SCIENTIFIC_DISCOVERY_START_HERE.md`](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
+- [`architecture/digital_twin_science_link_registry.json`](./architecture/digital_twin_science_link_registry.json)
+- [`architecture/google_science_phase_registry.json`](./architecture/google_science_phase_registry.json)
+
+## 5. Specialist agent families
+
+Current canonical specialist families:
+
+- **POMELO™** — accounting, assurance and professional intelligence;
+- **KIWI™** — audit / CAM / KAM intelligence;
+- **IFRS Intelligence Agent™** — IFRS reporting and standards Digital Twin;
+- **PCAOB Intelligence Agent™** — inspection/regulatory Digital Twin;
+- **ECONOVA-S™** — finance, economics, asset pricing and data-economy intelligence;
+- **ESG Intelligence** — sustainability, ESRS/CSRD, climate, carbon and assurance;
+- **ICFR Intelligence** — internal controls and material-weakness research;
+- **Forensic Intelligence** — fraud/anomaly/evidence-graph research.
+
+Canonical index: [`agents/README.md`](./agents/README.md)
+
+## 6. Open-source and public-data expansion
+
+The public integration layer now includes:
+
+- **NAAIL Free Data Fabric™**;
+- **ERP Digital Twin Lab™**;
+- **Audit Analytics Open-Source Pack™**;
+- **Finance Market Intelligence Lab™**;
+- **ESG & Sustainability Intelligence Lab™**;
+- **Accounting & Audit Open-Source Pack™**;
+- **Adversarial Intelligence Fabric™**.
+
+Canonical hub: [`OPEN_SOURCE_INTEGRATION_HUB.md`](./OPEN_SOURCE_INTEGRATION_HUB.md)
+
+Registration/adoption of an upstream repository or dataset does **not** mean it has been installed, executed, validated, endorsed, or admitted into the frozen Knowledge & RAG Core. Software licenses and data rights are treated separately.
+
+## 7. FT50 / AJG replication arena
+
+The external-replication registry, rights/provenance policy, benchmark protocol and validator are integrated. Real replication claims remain pending exact source verification, commit pinning, environment reconstruction and execution.
+
+Current valid status:
 
 ```text
 benchmark registry                = IMPLEMENTED
@@ -54,194 +151,72 @@ temporal/OOS benchmark runs       = NOT_YET_EXECUTED
 cross-dataset/Digital Twin tests  = NOT_YET_EXECUTED
 ```
 
-Top-journal publication status is not treated as evidence of reproducibility by itself. NAAIL requires source verification, rights review, exact commit pinning, environment reconstruction, replication, robustness, falsification, temporal/OOS testing where appropriate, Chain-of-Evidence, and Human Gate.
+Benchmark lab: [`benchmarks/ft50_abs4/`](./benchmarks/ft50_abs4/)
 
-## Prototype 004 provider harness — implemented
+## 8. Education and simulation
 
-The public runtime now contains real-provider adapters for:
+The public education layer includes:
 
-- **Google Gemini** through the official `google-genai` SDK;
-- **Microsoft Foundry model inference** through the official `azure-ai-inference` SDK.
+- SEC EDGAR Education Lab™;
+- Student Open-Source Agent Lab;
+- Student Agent Academy;
+- free/open-source simulation stack;
+- synthetic Client XYZ Audit Digital Twins;
+- reproducibility and scientific-discovery teaching workflows.
 
-For each configured provider, the harness supports:
+No Big Four, technology-provider, regulator, university or standards-setter partnership/endorsement is implied unless separately documented in writing.
 
-1. single-agent AI;
-2. sequential-agent AI — Evidence → Risk/Accounting → Review;
-3. governed multi-agent AI — Evidence → Audit Risk → Accounting/Procedure → Critic/Falsifier → Supervisor.
-
-Canonical implementation:
-
-[Prototype_003/runtime](./Prototype_003/runtime/README.md)
-
-Provider execution checkpoint:
-
-[PROTOTYPE_004_PROVIDER_EXECUTION.md](./PROTOTYPE_004_PROVIDER_EXECUTION.md)
-
-### Scientific-integrity protection
-
-- provider prompts exclude the frozen `gold` object;
-- case/gold objects are separately hashed;
-- identical frozen evidence is used across architecture conditions;
-- invented evidence IDs are explicitly flagged;
-- provider output cannot approve the Human Gate;
-- GitHub Actions records missing credentials as `NOT_EXECUTED_PROVIDER_REQUIRED` rather than generating substitute results;
-- provider result artifacts are uploaded only after a real provider job runs.
-
-## Architecture-comparison empirical state
-
-The deterministic control is executed. The provider harness is implemented, but a model condition is not empirical evidence until the credential-gated provider job completes.
-
-Current scientifically valid status unless a provider artifact proves otherwise:
+## 9. Permanent architecture boundary
 
 ```text
-deterministic baseline              = EXECUTED
-Gemini single-agent                 = NOT_EXECUTED_PROVIDER_REQUIRED
-Gemini sequential-agent             = NOT_EXECUTED_PROVIDER_REQUIRED
-Gemini governed-multi-agent         = NOT_EXECUTED_PROVIDER_REQUIRED
-Microsoft Foundry single-agent      = NOT_EXECUTED_PROVIDER_REQUIRED
-Microsoft Foundry sequential-agent  = NOT_EXECUTED_PROVIDER_REQUIRED
-Microsoft Foundry governed-agent    = NOT_EXECUTED_PROVIDER_REQUIRED
+technology_core_may_rewrite_knowledge_core = false
+technology_core_may_rewrite_rag_semantics = false
+vendor_release_changes_canonical_knowledge = false
+external_repo_is_authoritative_truth = false
+registry_entry_equals_dependency_installed = false
+architecture_documented_equals_runtime_executed = false
+external_system_name_implies_execution = false
+agent_consensus_is_scientific_truth = false
+statistical_significance_is_discovery = false
+prediction_equals_causality = false
+optimize_for_p_value = false
+failed_tests_are_deleted = false
+human_gate_required = true
 ```
 
-NAAIL never substitutes simulated, deterministic, or placeholder outputs for a missing provider/model run.
-
-## GitHub Actions provider gate
-
-Workflow: `.github/workflows/prototype_003_runtime.yml`
-
-The workflow performs:
-
-- frozen deterministic benchmark tests;
-- provider-contract and gold-leakage tests;
-- Gemini execution when `GEMINI_API_KEY` exists;
-- Microsoft Foundry execution when `AZURE_INFERENCE_ENDPOINT`, `AZURE_INFERENCE_CREDENTIAL`, and `AZURE_INFERENCE_MODEL` exist;
-- result validation and artifact upload;
-- mandatory `PENDING_HUMAN_APPROVAL` enforcement.
-
-## V2026.3 architecture checkpoint
-
-V2026.3 remains the frozen next-generation architecture target. It defines a provider-neutral design incorporating, where useful and legally appropriate:
-
-- Google ADK / Antigravity-style agent engineering;
-- Microsoft Agent Framework;
-- A2A + MCP interoperability;
-- GraphRAG + NAAIL Digital Twin integration;
-- Co-Scientist-style hypothesis generation, critique and ranking;
-- ERA-style empirical conversion;
-- AlphaEvolve-inspired evaluator-guided search;
-- AlphaFold/DeepMind-inspired latent-structure reasoning;
-- Computational Discovery;
-- Science One-style Chain-of-Evidence;
-- AI-to-AI Critic / Defender / Replicator / Falsifier roles;
-- Professional Decision DAG™;
-- Rights & License gating;
-- temporal/out-of-sample validation;
-- clean-room replication;
-- mandatory Human Gate.
-
-Architecture snapshot: [versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
-
-## Scientific experimental invariant
-
-**Same case. Same evidence. Same frozen gold labels. Same evaluator. Different execution architecture/provider.**
-
-Provider/model adapters may not change gold labels, bypass Evidence Passport™, bypass the Decision DAG, bypass Human Gate, silently alter the evaluation contract, or access Blind Gold labels during generation.
-
-For external-replication studies, add a second invariant:
-
-**Same published source. Same pinned commit. Same declared environment. Same reconstruction rules. Alternative methods are evaluated against the same frozen empirical target.**
-
-## Evaluation contract
-
-Track at minimum:
-
-- RPA — Risk–Procedure Alignment;
-- AA — Assertion Alignment;
-- EG — Evidence Grounding;
-- PS — Professional Skepticism;
-- DS — Documentation Sufficiency;
-- DIST — Decision/Inference Stability;
-- precision / recall;
-- false positives / false negatives;
-- invalid/hallucinated evidence references;
-- evidence/citation traceability;
-- reproducibility;
-- latency and execution cost;
-- human overrides and reasons;
-- replication fidelity;
-- specification stability;
-- causal/identification robustness where applicable;
-- temporal/OOS stability;
-- falsification survival;
-- provenance completeness.
-
-`DIST` requires repeated blinded provider runs and is not inferred from a single run.
-
-## Next empirical gate
-
-Two empirical tracks now run in parallel.
+## 10. Immediate empirical priorities
 
 ### Provider-comparison track
 
-Once provider credentials are configured and real result artifacts exist:
+Run blinded, repeated provider × architecture comparisons under identical frozen evidence, preserve unsuccessful/unfavorable runs, measure RPA/AA/EG/PS/DS/DIST plus errors/cost/latency, conduct adversarial review and submit interpretation to Human Gate.
 
-1. freeze provider/model/version metadata;
-2. repeat every provider × architecture condition under a predeclared repetition count;
-3. populate DIST and run-to-run variance;
-4. record cost and latency;
-5. conduct adversarial review and falsification;
-6. replicate across the second provider;
-7. retain failed/null/unfavorable runs;
-8. submit results to Human Gate review;
-9. create the first cross-provider empirical comparison table.
+### Replication track
 
-### FT50/AJG replication track
+Pin exact external commits/environments, reproduce original results, run independent implementations, test alternative specifications/estimators, conduct temporal/OOS/placebo/falsification checks, retain null/failed replications and build Chain-of-Evidence records.
 
-1. verify publication/repository association and applicable rights;
-2. pin the exact Git commit for each selected benchmark;
-3. freeze environment and dependency metadata;
-4. reproduce the original published/archived result where technically possible;
-5. run an independent or clean-room implementation;
-6. add alternative specifications and estimators without optimizing for favorable p-values;
-7. run temporal/OOS, placebo, falsification and cross-dataset tests where applicable;
-8. preserve failed and null replications;
-9. produce a NAAIL benchmark card and Chain-of-Evidence;
-10. submit interpretation to Human Gate.
+### Specialist research track
 
-No superiority or reproducibility claim is assumed in advance.
+Advance bounded empirical studies through KIWI™, ECONOVA-S™, ESG, ICFR and Forensic families using the common scientific contract rather than family-specific scientific rules.
 
-## First empirical research questions
+## 11. Public / private boundary
 
-**Provider architecture:** Does governed multi-agent audit orchestration improve evidence grounding and professional judgment relative to single-agent AI?
+**Public:** research-safe architecture, synthetic benchmark descriptions, selected reproducibility code, provider-harness documentation/code, integration registries, public-data governance, education assets, scientific contracts, maturity maps and citation metadata.
 
-**External replication:** Which published empirical conclusions remain stable under exact replication, independent reproduction, alternative specifications, temporal/OOS validation, and adversarial falsification?
+**Private/IP-sensitive:** provider credentials, restricted/licensed datasets, patent-sensitive orchestration, unpublished agent specifications/prompts, private benchmark extensions, partner-confidential materials, and unreleased experimental results.
 
-The benchmark system is designed to test these questions, not prove a preferred architecture, journal, model, or method.
-
-## Public / private boundary
-
-**Public:** research-safe documentation, synthetic benchmark descriptions, deterministic summary results, selected reproducibility code, provider adapter code, external benchmark manifests/metadata, citation metadata, governance/evaluation rules and credential-gated provider harness.
-
-**Private:** provider credentials, patent-sensitive orchestration, detailed Goodwill/ICFR implementation, unpublished prompts/agent specifications, restricted data, private benchmark extensions, pre-commercial logic and unreleased experimental results.
-
-**Third-party external replication assets:** retain their original ownership and licenses; registry inclusion does not transfer rights to NAAIL.
-
-## Scientific rule
-
-**Models generate. Agents debate. Code tests. Evidence decides. Humans approve.**
-
-No model output, agent consensus, statistical significance, journal prestige, or predictive accuracy is automatically treated as a scientific discovery.
+Third-party software, standards, models, data and replication packages retain their original ownership and terms.
 
 ## Canonical links
 
-- NAAIL OpenLab: https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
-- FT50/AJG 4* Benchmark Lab: https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab/benchmarks/ft50_abs4
-- Scientific Replication Arena: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/tests/SCIENTIFIC_REPLICATION_ARENA.md
-- Public runtime: https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab/Prototype_003/runtime
-- Prototype 004 provider execution: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_004_PROVIDER_EXECUTION.md
-- Prototype status: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/PROTOTYPE_STATUS_V0.4.md
-- V2026.3 architecture: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md
-- Companion multi-agent engineering repository: https://github.com/Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture
-- ORCID: https://orcid.org/0000-0002-2536-0446
+- [Start Here](./00_START_HERE.md)
+- [Global Brand Identity](./BRAND_IDENTITY.md)
+- [September 2026 Upgrade Summary](./UPGRADE_2026_09_16.md)
+- [Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
+- [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+- [Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)
+- [Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
+- [V2026.3 Architecture](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
 
-GitHub remains the source of truth. Google Drive is a private mirror/archive unless explicitly changed.
+> **Models generate. Agents debate. Code tests. Evidence decides. Students challenge. Humans approve.**
+
+GitHub remains the public source of truth. Google Drive is a mirror/archive unless explicitly designated otherwise.
