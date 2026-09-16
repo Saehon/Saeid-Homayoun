@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16",
+  "platform": {
+    "master_brand": "NAAIL OpenLab™",
+    "lab_name": "Next-Generation Accounting, Audit & Assurance Intelligence Lab",
+    "descriptor": "A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery",
+    "architecture": "V2026.3 Multi-Agent Digital Twin",
+    "knowledge_rag_core": "KRG2026.3",
+    "validated_executable_checkpoint": "v0.2.3 / Audit Workspace V0.4 / Prototype 003"
+  },
+  "status_vocabulary": [
+    "EXECUTED_VALIDATED",
+    "IMPLEMENTED_EXECUTION_GATED",
+    "ARCHITECTURE_ADOPTED",
+    "REGISTRY_ADOPTED",
+    "RESEARCH_PROTOTYPE",
+    "PUBLIC_EDUCATION_DESIGN",
+    "REFERENCE_ONLY"
+  ],
+  "capabilities": [
+    {"id":"brand_identity","name":"Global NAAIL identity","path":"NAAIL-OpenLab/BRAND_IDENTITY.md","status":"ARCHITECTURE_ADOPTED"},
+    {"id":"prototype_003","name":"Audit Digital Twin Prototype 003","path":"NAAIL-OpenLab/Prototype_003/runtime/README.md","status":"EXECUTED_VALIDATED","scope":"deterministic frozen synthetic checkpoint"},
+    {"id":"prototype_004","name":"Prototype 004 provider harness","path":"NAAIL-OpenLab/PROTOTYPE_004_PROVIDER_EXECUTION.md","status":"IMPLEMENTED_EXECUTION_GATED"},
+    {"id":"scientific_contract","name":"Scientific Discovery Contract","path":"NAAIL-OpenLab/SCIENTIFIC_DISCOVERY_CONTRACT.md","status":"ARCHITECTURE_ADOPTED"},
+    {"id":"google_science","name":"Google-inspired scientific discovery orchestration","path":"NAAIL-OpenLab/GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md","status":"ARCHITECTURE_ADOPTED"},
+    {"id":"digital_twin_science_links","name":"Digital Twin science-link registry","path":"NAAIL-OpenLab/architecture/digital_twin_science_link_registry.json","status":"REGISTRY_ADOPTED"},
+    {"id":"ifrs","name":"IFRS Intelligence Agent","path":"NAAIL-OpenLab/agents/ifrs/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"pcaob","name":"PCAOB Intelligence Agent","path":"NAAIL-OpenLab/agents/pcaob/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"kiwi","name":"KIWI","path":"NAAIL-OpenLab/agents/kiwi/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"pomelo","name":"POMELO","path":"NAAIL-OpenLab/agents/pomelo/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"econova_s","name":"ECONOVA-S","path":"NAAIL-OpenLab/agents/econova-s/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"esg_agent","name":"ESG Intelligence","path":"NAAIL-OpenLab/agents/esg/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"icfr","name":"ICFR Intelligence","path":"NAAIL-OpenLab/agents/icfr/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"forensic","name":"Forensic Intelligence","path":"NAAIL-OpenLab/agents/forensic/README.md","status":"RESEARCH_PROTOTYPE"},
+    {"id":"free_data","name":"Free Data Fabric","path":"NAAIL-OpenLab/FREE_DATA_FABRIC.md","status":"REGISTRY_ADOPTED"},
+    {"id":"erp_lab","name":"ERP Digital Twin Lab","path":"NAAIL-OpenLab/ERP_DIGITAL_TWIN_LAB.md","status":"REGISTRY_ADOPTED"},
+    {"id":"audit_analytics","name":"Audit Analytics Open-Source Pack","path":"NAAIL-OpenLab/AUDIT_ANALYTICS_OPEN_SOURCE_PACK.md","status":"REGISTRY_ADOPTED"},
+    {"id":"finance_lab","name":"Finance Market Intelligence Lab","path":"NAAIL-OpenLab/FINANCE_MARKET_INTELLIGENCE_LAB.md","status":"REGISTRY_ADOPTED"},
+    {"id":"esg_lab","name":"ESG & Sustainability Intelligence Lab","path":"NAAIL-OpenLab/ESG_SUSTAINABILITY_INTELLIGENCE_LAB.md","status":"REGISTRY_ADOPTED"},
+    {"id":"accounting_audit_oss","name":"Accounting & Audit Open-Source Pack","path":"NAAIL-OpenLab/OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md","status":"REGISTRY_ADOPTED"},
+    {"id":"adversarial","name":"Adversarial Intelligence Fabric","path":"NAAIL-OpenLab/ADVERSARIAL_INTELLIGENCE_FABRIC.md","status":"ARCHITECTURE_ADOPTED"},
+    {"id":"replication_arena","name":"FT50/AJG Replication Arena","path":"NAAIL-OpenLab/benchmarks/ft50_abs4/README.md","status":"IMPLEMENTED_EXECUTION_GATED"},
+    {"id":"sec_education","name":"SEC EDGAR Education Lab","path":"NAAIL-OpenLab/SEC_EDGAR_EDUCATION_LAB.md","status":"PUBLIC_EDUCATION_DESIGN"},
+    {"id":"student_academy","name":"Student Agent Academy","path":"NAAIL-OpenLab/docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md","status":"PUBLIC_EDUCATION_DESIGN"},
+    {"id":"open_agent_stack","name":"Open-source agent stack","path":"NAAIL-OpenLab/OPEN_SOURCE_AGENT_STACK.md","status":"REGISTRY_ADOPTED"}
+  ],
+  "invariants": {
+    "architecture_documented_equals_runtime_executed": false,
+    "registry_entry_equals_dependency_installed": false,
+    "provider_name_equals_provider_run": false,
+    "public_access_equals_unrestricted_redistribution": false,
+    "external_repo_is_authoritative_truth": false,
+    "technology_core_may_rewrite_knowledge_core": false,
+    "agent_consensus_is_scientific_truth": false,
+    "optimize_for_p_value": false,
+    "human_gate_required": true
+  }
+}
