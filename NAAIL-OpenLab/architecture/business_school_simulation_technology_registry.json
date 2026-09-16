@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-BUSINESS-SCHOOL-SIM-TECH-2026.09",
+  "umbrella": "NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin",
+  "permanent_cores": ["Knowledge Core™", "Technology Core™"],
+  "supporting_layer": "Business School Simulation & Digital Twin Layer",
+  "rule": "All listed technologies are replaceable Technology Core adapters; none is a permanent core or authoritative professional knowledge source.",
+  "admission_requirements": [
+    "version_pin",
+    "license_review",
+    "security_review",
+    "reproducibility_test",
+    "benchmark_against_deterministic_baseline",
+    "data_rights_review_if_applicable",
+    "human_gate"
+  ],
+  "technologies": [
+    {
+      "name": "Mesa",
+      "upstream": "https://github.com/mesa/mesa",
+      "role": ["agent_based_modeling", "company_simulation", "governance_simulation", "classroom_visualization"],
+      "status": "REFERENCE_ADAPTER_CANDIDATE"
+    },
+    {
+      "name": "AgentTorch",
+      "upstream": "https://github.com/AgentTorch/AgentTorch",
+      "role": ["large_population_models", "differentiable_agent_simulation", "societal_climate_economic_interactions"],
+      "status": "REFERENCE_ADAPTER_CANDIDATE"
+    },
+    {
+      "name": "SimPy",
+      "upstream": "https://gitlab.com/team-simpy/simpy",
+      "role": ["discrete_event_simulation", "business_process_simulation", "audit_workflow_simulation", "queue_resource_simulation"],
+      "status": "REFERENCE_ADAPTER_CANDIDATE",
+      "note": "Official upstream is currently hosted on GitLab; GitHub mirrors are not treated as authoritative upstream by default."
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "upstream": "https://github.com/openai/openai-agents-python",
+      "role": ["agent_orchestration", "tools", "guardrails", "handoffs", "tracing", "human_in_the_loop"],
+      "status": "OPTIONAL_PROVIDER_ADAPTER"
+    },
+    {
+      "name": "Microsoft Agent Framework",
+      "upstream": "https://github.com/microsoft/agent-framework",
+      "role": ["agent_orchestration", "multi_agent_workflows", "provider_abstraction", "enterprise_integration"],
+      "status": "OPTIONAL_PROVIDER_ADAPTER"
+    },
+    {
+      "name": "HARK",
+      "organization": "Econ-ARK",
+      "upstream": "https://github.com/econ-ark/HARK",
+      "role": ["heterogeneous_agent_economics", "household_finance", "structural_modeling", "policy_simulation"],
+      "status": "REFERENCE_ADAPTER_CANDIDATE"
+    },
+    {
+      "name": "ABIDES",
+      "upstream": "https://github.com/abides-sim/abides",
+      "role": ["capital_market_simulation", "exchange_microstructure", "trading_agents", "market_ai_research"],
+      "status": "REFERENCE_ADAPTER_CANDIDATE"
+    },
+    {
+      "name": "FinRL",
+      "upstream": "https://github.com/AI4Finance-Foundation/FinRL",
+      "role": ["financial_reinforcement_learning", "portfolio_research", "trading_simulation", "finance_education"],
+      "status": "REFERENCE_ADAPTER_CANDIDATE",
+      "note": "Original FinRL remains useful for education/benchmarking; current upstream guidance points production-oriented work toward the newer FinRL-X/FinRL-Trading stack."
+    },
+    {
+      "name": "RD-Agent",
+      "upstream": "https://github.com/microsoft/RD-Agent",
+      "role": ["research_automation", "data_model_iteration", "r_and_d_workflow_benchmarking"],
+      "status": "REFERENCE_ADAPTER_CANDIDATE"
+    }
+  ],
+  "invariants": {
+    "permanent_core_count": 2,
+    "new_technology_creates_new_core": false,
+    "external_framework_is_authoritative_professional_truth": false,
+    "technology_core_may_rewrite_knowledge_core": false,
+    "framework_name_implies_installed": false,
+    "framework_name_implies_executed": false,
+    "human_gate_required": true
+  }
+}
