@@ -1,6 +1,6 @@
 {
-  "schema_version": "2.4",
-  "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16-MICROSOFT-POC-V1",
+  "schema_version": "2.5",
+  "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16-MICROSOFT-POC-V1-REPRODUCIBLE",
   "platform": {
     "master_brand": "NAAIL OpenLab™",
     "lab_name": "Next-Generation Accounting, Audit & Assurance Intelligence Lab",
@@ -12,7 +12,7 @@
     "permanent_core_count": 2,
     "knowledge_rag_semantic_governance": "KRG2026.3",
     "validated_executable_checkpoint": "v0.2.3 / Audit Workspace V0.4 / Prototype 003",
-    "newest_bounded_research_prototype": "NAAIL-MSFT-POC-V1",
+    "newest_bounded_research_prototype": "NAAIL-MSFT-POC-V1-FY2026",
     "public_ip_status": "PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS"
   },
   "status_vocabulary": ["EXECUTED_VALIDATED","IMPLEMENTED_EXECUTION_GATED","ARCHITECTURE_ADOPTED","REGISTRY_ADOPTED","RESEARCH_PROTOTYPE","PUBLIC_EDUCATION_DESIGN","REFERENCE_ONLY","PATENT_HOLD_NON_ENABLING"],
@@ -43,7 +43,7 @@
     {"id":"audit_accounting_dynamic_twin","name":"NAAIL Audit & Accounting Digital Twin","path":"NAAIL-OpenLab/digital-twins/audit-accounting/README.md","status":"PATENT_HOLD_NON_ENABLING"},
     {"id":"simulation_evidence_standard","name":"NAAIL Simulation Evidence Standard","path":"NAAIL-OpenLab/docs/education/SIMULATION_EVIDENCE_STANDARD.md","status":"ARCHITECTURE_ADOPTED"},
     {"id":"prototype_003","name":"Audit Digital Twin Prototype 003","path":"NAAIL-OpenLab/Prototype_003/runtime/README.md","status":"EXECUTED_VALIDATED","scope":"deterministic frozen synthetic checkpoint; existing public disclosure retained"},
-    {"id":"microsoft_poc_v1","name":"Microsoft Golden Anchor Proof of Concept V1","path":"NAAIL-OpenLab/prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md","status":"RESEARCH_PROTOTYPE","core":false,"scope":"bounded FY2026 public-evidence prototype; executed SEC/XBRL facts, ratios, CAM mapping, bounded text features, R&D/GitHub innovation snapshot, synthetic management-accounting AI-cost microcase, Evidence Passport, publication-only Human Gate; participant experiment/factor regression/patent aggregation/live model-quality comparison not executed"},
+    {"id":"microsoft_poc_v1","name":"Microsoft Golden Anchor Proof of Concept V1","path":"NAAIL-OpenLab/prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md","status":"RESEARCH_PROTOTYPE","core":false,"scope":"bounded FY2026 reproducible public-evidence prototype: SEC interactive-XBRL R2/R4/R6/R107 facts, selected finance ratios, 251 FY2026 MSFT IEX daily bars, DGS10 snapshot, two CAMs plus ICFR opinion, bounded filing-text features, R&D/GitHub innovation proxies, synthetic management-accounting/AI-cost microcase, current LiveBench external benchmark, Evidence Passport, and publication-only Human Gate. Human participant experiment, Fama-French regression, aggregate PatentsView metrics, Decision–Consequence execution and Professional Judgment Passport execution remain unexecuted."},
     {"id":"prototype_004","name":"Prototype 004 provider harness","path":"NAAIL-OpenLab/PROTOTYPE_004_PROVIDER_EXECUTION.md","status":"IMPLEMENTED_EXECUTION_GATED"},
     {"id":"scientific_contract","name":"Scientific Discovery Contract","path":"NAAIL-OpenLab/SCIENTIFIC_DISCOVERY_CONTRACT.md","status":"ARCHITECTURE_ADOPTED"},
     {"id":"ifrs","name":"IFRS Intelligence Agent","path":"NAAIL-OpenLab/agents/ifrs/README.md","status":"RESEARCH_PROTOTYPE","core":false,"type":"specialist_agent"},
@@ -87,6 +87,11 @@
     "microsoft_poc_v1_is_core":false,
     "microsoft_poc_v1_is_executed_validated":false,
     "microsoft_poc_v1_maturity_is_research_prototype":true,
+    "microsoft_poc_v1_human_experiment_executed":false,
+    "microsoft_poc_v1_fama_french_regression_executed":false,
+    "microsoft_poc_v1_patent_aggregation_executed":false,
+    "microsoft_poc_v1_decision_consequence_executed":false,
+    "microsoft_poc_v1_professional_judgment_passport_executed":false,
     "management_accounting_ai_cost_layer_is_core":false,
     "open_model_benchmark_cost_layer_is_core":false,
     "visualization_decision_intelligence_layer_is_core":false,
