@@ -31,6 +31,17 @@ NAAIL adopted the rule:
 
 From this point, new enabling technical invention detail is directed to a private patent-readiness repository and public documentation is limited to high-level non-enabling descriptions until filing review.
 
+## 2026-09-16 — Post-hardening public programme/layer disclosures
+
+The following later disclosures were intentionally limited to high-level, non-enabling public descriptions while fuller implementation material was preserved privately:
+
+- `a770c53efa76bb0182bc6c8cd835cbcf459e94da` — public Behavioral Decision Science & Human–AI Experimentation Layer™ overview.
+- `22d15daa58a6dc35b51091c591f15110ba212c0d` — public CCCMP™ — Project Cost, Contract & Claims Management Programme overview.
+- `17e3f87a87f942fccb8cf2f86b3e7c461c42c461` — canonical hierarchy updated to place CCCMP™ under the fixed two-core architecture.
+- `cc0b6aa87f6e237399f49ec61c5a315fd3c9eb2e` — capability registry v1.8 registers CCCMP™ as `PATENT_HOLD_NON_ENABLING` and confirms `cccmp_is_core = false`.
+
+The CCCMP public overview intentionally omits detailed contract/claims graph schemas, entitlement logic, source-to-agent routing, behavioral treatment design, detailed Evidence Passport fields, automated rights controls, project state-transition mechanics and unpublished Digital Twin execution logic.
+
 ## Additional disclosure sources to audit
 
 Before filing, the project should review whether NAAIL technical material was disclosed through:
