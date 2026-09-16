@@ -6,103 +6,61 @@ I develop **evidence-governed AI research systems for business science**, with a
 
 ## NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin
 
-**Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
-*A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+**Next-Generation Accounting, Audit & Assurance Intelligence Lab**
 
 > **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
 
-No NAAIL patent application is represented here as filed as of 2026-09-16. Do not describe NAAIL as **Patent Pending** unless an actual filing is independently confirmed.
+NAAIL OpenLab™ is governed by a **frozen Two-Core Constitution**.
 
-NAAIL OpenLab™ is the flagship umbrella platform for **evidence-governed multi-agent Digital Twins, professional simulation, theory-to-evidence research, innovation/entrepreneurship research, behavioral experimentation, scientific discovery and verifiable human–AI judgment**.
+### Exactly two permanent cores
 
+1. **Stable Knowledge Core™** — stable scientific/professional meaning: accounting, auditing, finance, economics, management, behavioral science, innovation/entrepreneurship theory, Nobel-inspired theory, IFRS/assurance, sustainability, causal inference, research design, constructs, professional judgment, replication, falsification and scientific governance.
+2. **Replaceable Technology Core™** — replaceable implementations: LLMs, AI agents, model routers, RAG/GraphRAG/KAG, vector/graph databases, Python/R/Stata, simulation engines, APIs, connectors, GitHub packages, MCP/A2A, observability and evaluation tools.
+
+**No third permanent core is permitted.** New domains, datasets, models, vendors and technologies extend NAAIL only through modular layers, specialist programmes/agents or replaceable implementations.
+
+[Two-Core Constitution →](NAAIL-OpenLab/TWO_CORE_CONSTITUTION.md)  
 [Public Platform Overview →](NAAIL-OpenLab/PUBLIC_PLATFORM_OVERVIEW.md)  
 [NAAIL OpenLab →](NAAIL-OpenLab/README.md)  
 [Start Here →](NAAIL-OpenLab/00_START_HERE.md)
 
-## Fixed architecture: exactly two permanent cores
+## Cross-cutting modular layers
 
-1. **Stable Knowledge Core™** — governed theory, standards, professional/scientific knowledge, research evidence, constructs, ontologies, causal structures and evidence semantics.
-2. **Replaceable Technology Core™** — replaceable models, tools, agent runtimes, RAG/GraphRAG/KAG, simulation/experimental technology, causal/ML tooling, analytics, connectors, databases and evaluators.
+**NAAIL Data & Evidence Mesh™ · FT50/AJG Evidence Graph™ · Nobel Theory-to-Evidence & AI Experiment Engine™ · Behavioral Decision Science Layer™ · Innovation & Entrepreneurship Evidence Layer™ · Business School Simulation & Digital Twin Layer™ · Knowledge RAG/GraphRAG/KAG Layer™ · Professional Education & Question Bank Layer™ · Decision–Consequence Engine™ · Professional Judgment Passport™**
 
-**No third core is permitted.** Every agent, layer, engine, programme, Digital Twin, data mesh, simulation and evaluation mechanism remains a supporting capability.
+These layers connect the two cores but never become permanent cores.
 
-[Canonical Master Platform Hierarchy →](NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md)
+## Specialist agents/programmes
 
-## Professional-agent families
+**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · CCCMP™ · ICFR Intelligence · Forensic Intelligence**
 
-**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · ICFR Intelligence · Forensic Intelligence**
+Future specialist domains follow the same constitutional rule.
 
-All inherit common evidence, verification, reproducibility, falsification and Human Approval requirements.
+## Architecture principle
 
-## Cross-cutting research layers
+**Stable Theory / Knowledge → Evidence / Data → Replaceable Technology → Agents / Simulations → Decision → Verification → Evidence Passport™ → Human Approval Gate™**
 
-### Nobel Theory-to-Evidence & AI Experiment Engine™
+## Governance
 
-[Open Nobel Engine →](NAAIL-OpenLab/NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
-
-**Theory → Construct → Variable → Rights-cleared Data → AI Experiment → Digital Twin → Causal Test → Replication → FT50/AJG Benchmark → Evidence Passport™ → Human Gate™**
-
-### Innovation & Entrepreneurship Evidence Layer™
-
-[Open Innovation & Entrepreneurship Layer →](NAAIL-OpenLab/INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
-
-Cross-cutting governed research on **patents/IP, entrepreneurship and firm dynamics, science-to-innovation, digital/open-source ecosystems, economic complexity, startup/founder evidence, innovation networks, behavioral entrepreneurship, entrepreneurial finance, causal inference and Startup Digital Twins**.
-
-Public research objective:
-
-**Scientific Discovery → Invention → Patent → Entrepreneurship → Financing → Commercialization → Innovation → Scaling → Productivity → Firm / Market / Social Value**
-
-The layer serves **Accounting + Auditing + Finance + Economics + Management + Entrepreneurship + Innovation + Strategy + Sustainability + AI/Data Economy + Business Education + Scientific Research** and is **not a core** and **not CCCMP-specific**.
-
-Opportunity measures are research variables—not deterministic recommendations. Public source/technology references require current license, provenance, maintenance and quality verification. GitHub repositories are not automatically authoritative datasets.
-
-### Behavioral Decision Science & Human–AI Experimentation Layer™
-
-[Open Behavioral Decision Science →](NAAIL-OpenLab/BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-
-Supports behavioral economics/finance/accounting/auditing, professional skepticism, human–AI reliance/override, controlled experiments, causal inference and Digital Twin replication. Behavioral measures are empirical research proxies, not psychological diagnoses.
-
-### Value Expansion Fabric™
-
-[Open Value Expansion Fabric →](NAAIL-OpenLab/VALUE_EXPANSION_FABRIC.md)
-
-Expands data/evidence, professional knowledge, ERP/synthetic companies, research evidence, professional education and Business-School Digital Twins without changing the two-core model.
-
-### CCCMP™
-
-[Open CCCMP →](NAAIL-OpenLab/CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
-
-CCCMP is a specialist project-cost/contract/claims programme under the same two cores; it does not own the Nobel Engine or Innovation & Entrepreneurship Evidence Layer.
-
-## Evidence and scientific standard
-
-**Real / rights-cleared evidence → Evidence Passport™ → Multi-Agent Analysis → Digital Twin Simulation → Decision → Consequence → Verification → Human Approval Gate™**
-
-Publication-grade studies should, where applicable, document:
-
-**Theory → Literature Evidence → Causal DAG → Hypotheses → Power Analysis → Pre-registration → Data → Variable DNA™ → Randomization/Identification → AI Treatment → Behavioral Measures → Main Test → Robustness → Falsification → Replication/OOS → FT50/AJG Benchmark → Evidence Passport™ → Human Gate™**
-
-When journal status is used, NAAIL verifies the current Financial Times FT50 list and current Chartered ABS Academic Journal Guide rather than hard-coding historical rankings.
+Every layer/programme must use, where applicable, **provenance · license controls · Evidence Passport™ · causal/decision DAGs · versioning · reproducibility · replication · falsification · red-team review · Human Approval Gate™**.
 
 ## Current validated public checkpoint
 
-**NAAIL OpenLab v0.2.3 · Audit Workspace V0.4 · Prototype 003** remains the validated public executable checkpoint. New named architecture layers are not automatically executed or validated merely because they are documented or registered.
+**NAAIL OpenLab v0.2.3 · Audit Workspace V0.4 · Prototype 003** remains the validated public executable checkpoint. Architecture updates do not automatically change execution/validation status.
 
 [Prototype 003 Runtime →](NAAIL-OpenLab/Prototype_003/runtime/README.md)
 
 ## Patent-first boundary
 
-**Patent first → public disclosure second.** Public GitHub contains non-enabling high-level descriptions. Detailed unpublished algorithms, graph schemas, connector/provenance contracts, opportunity-scoring mechanics, experiment orchestration, state transitions and patent-sensitive embodiments remain private pending filing review.
+**Patent first → public disclosure second.** Public GitHub contains non-enabling high-level descriptions. Detailed unpublished algorithms, graph/provenance schemas, connector contracts, state transitions, experiment orchestration and patent-sensitive embodiments remain private pending filing review.
+
+No NAAIL patent application is represented as filed as of 2026-09-16. Do not use **Patent Pending** until an actual filing is confirmed.
 
 ## Research identity
 
 **Saeid Homayoun**  
 ORCID: [0000-0002-2536-0446](https://orcid.org/0000-0002-2536-0446)
 
-> **Homayoun, S. (2026).** *NAAIL OpenLab™ — Evidence-Governed Multi-Agent Digital Twin*. ORCID: 0000-0002-2536-0446.
+> **Homayoun, S. (2026).** *NAAIL OpenLab™ — Evidence-Governed Multi-Agent Digital Twin*.
 
-## Independence
-
-NAAIL OpenLab™ is an independent research initiative. References to universities, firms, regulators, standard setters, journals, technology providers, datasets or open-source projects identify research context, evidence, methodological inspiration or interoperability targets only. They do **not** imply endorsement, sponsorship, accreditation, certification, partnership, employment, ownership or access unless separately documented in writing.
-
-> **Models generate. Agents debate. Research grounds. Standards govern. Evidence decides. Humans remain accountable.**
+> **Two Permanent Cores → Cross-Cutting Layers → Specialist Agents/Programmes → Evidence Governance → Human Approval.**
