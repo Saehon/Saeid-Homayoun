@@ -1,0 +1,26 @@
+name: NAAIL Global Brand Identity Guard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'NAAIL-OpenLab/**'
+      - '.github/workflows/naail_brand_identity.yml'
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'NAAIL-OpenLab/**'
+      - '.github/workflows/naail_brand_identity.yml'
+  workflow_dispatch:
+
+jobs:
+  brand-identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run global NAAIL brand regression test
+        run: python -m pytest -q NAAIL-OpenLab/tests/test_brand_identity.py
