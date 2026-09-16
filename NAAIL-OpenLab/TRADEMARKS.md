@@ -1,11 +1,17 @@
-# Trademark and Brand Notice
+# NAAIL OpenLab™ — Trademark and Brand Notice
 
-The names **NAAIL™**, **NAAIL OpenLab™**, **POMELO™**, and **KIWI™**, together with associated logos, names, badges, and source-identifying branding, are reserved by the project owner to the extent protectable under applicable law.
+**Copyright © 2026 Saeid Homayoun. All Rights Reserved.**
 
-The research and software licenses in this repository do **not** grant permission to use these names or marks to brand, market, endorse, certify, or identify a commercial product or service.
+The names and source-identifying designations **NAAIL™**, **NAAIL OpenLab™**, **POMELO™**, **KIWI™**, **VERA™**, **ECONOVA-S™**, **Evidence Passport™**, **Professional Decision DAG™**, **DAG Watch™**, **Agent Arena™**, **Failure Memory™**, **Decision–Consequence Engine™**, **Professional Judgment Passport™**, and **NAAIL Data & Evidence Mesh™**, together with associated logos, badges, and branding, are reserved by the project owner to the extent protectable under applicable law.
 
-Permitted descriptive references should make clear that third-party work is independent and not endorsed by NAAIL OpenLab.
+The use of the **™** symbol identifies claimed brand/source identifiers. This repository does **not** use **®** and does not represent that any mark is registered unless a registration is separately documented.
+
+The NAAIL research/software license does **not** grant permission to use these names or marks to brand, market, endorse, certify, or identify a commercial product or service.
+
+Permitted descriptive/nominative references should make clear that third-party work is independent and is not endorsed, certified, sponsored, or licensed by NAAIL OpenLab™ except where a separate written agreement states otherwise.
 
 Commercial brand licensing requires a separate written agreement.
 
-References in NAAIL research materials to Deloitte, EY, KPMG, PwC, Omnia, Canvas, Clara, Aura, or other third-party names are descriptive only. Their trademarks belong to their respective owners. NAAIL OpenLab is not affiliated with or endorsed by those organizations.
+Third-party names, trademarks, product names, standards-body names, professional-body names, university names, and company names referenced in NAAIL materials remain the property of their respective owners. Their appearance is descriptive and does not imply affiliation or endorsement.
+
+Before filing trademark applications, the project should conduct professional clearance searches and select appropriate jurisdictions/classes. This notice does not itself create a trademark registration.
