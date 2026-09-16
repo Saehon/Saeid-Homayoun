@@ -1,0 +1,23 @@
+variable_id,name,definition,prototype_value,unit,provenance
+FY,fiscal_year,Fiscal year,2026,year,SEC filing
+REV,revenue_usd_m,Revenue,331839,USD millions,SEC XBRL/10-K
+OI,operating_income_usd_m,Operating income,155237,USD millions,SEC XBRL/10-K
+NI,net_income_usd_m,Net income,133749,USD millions,SEC XBRL/10-K
+TA,total_assets_usd_m,Total assets,758376,USD millions,SEC XBRL/10-K
+TL,total_liabilities_usd_m,Total liabilities,315989,USD millions,SEC XBRL/10-K
+EQ,stockholders_equity_usd_m,Stockholders equity,442387,USD millions,SEC XBRL/10-K
+CFO,operating_cash_flow_usd_m,Cash provided by operating activities,182935,USD millions,10-K / IR
+CAPEX,capex_usd_m,Purchases of property and equipment,115948,USD millions,SEC CompanyFacts/10-K
+FCF,free_cash_flow_usd_m,CFO less capex,66987,USD millions,Derived
+RD,research_development_usd_m,R&D expense,35562,USD millions,SEC 10-K
+RDI,rd_intensity,R&D / Revenue,0.10716642709265638,ratio,Derived
+OPM,operating_margin,Operating income / Revenue,0.4678081840892722,ratio,Derived
+NPM,net_margin,Net income / Revenue,0.4030538905915218,ratio,Derived
+CUR,current_ratio,Current assets / Current liabilities,1.2303272619576484,ratio,Derived
+LEV,liabilities_to_assets,Total liabilities / Total assets,0.41666534805953775,ratio,Derived
+TEXT_UNC,uncertainty_per_100_words,Uncertainty dictionary hits /100 words,,count/100 words,Text pipeline
+TEXT_READ,flesch_reading_ease,Flesch reading ease,,score,Text pipeline
+GITHUB_REPOS,microsoft_github_public_repositories_snapshot,Approx public repositories on Microsoft GitHub org,8300,count approx,GitHub snapshot
+DGS10,fred_dgs10_2026_09_14,10-year Treasury constant maturity rate,4.97,percent,FRED
+CAM_REV,cam_revenue_recognition,Revenue recognition CAM,1,indicator,Auditor report
+CAM_TAX,cam_uncertain_tax_positions,Uncertain tax positions CAM,1,indicator,Auditor report
