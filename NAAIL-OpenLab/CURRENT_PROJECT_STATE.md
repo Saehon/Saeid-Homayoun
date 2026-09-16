@@ -4,379 +4,79 @@
 *A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
 **Canonical public state date:** 2026-09-16  
-**Validated executable release:** `v0.2.3 / Audit Workspace V0.4 / Prototype 003`  
-**Provider-comparison infrastructure:** Prototype 004 harness implemented; real provider execution remains credential/evidence gated  
+**Validated executable checkpoint:** `v0.2.3 / Audit Workspace V0.4 / Prototype 003`  
 **Architecture target:** `V2026.3 Multi-Agent Digital Twin`  
-**Permanent cores:** exactly two — `Knowledge Core™` + `Technology Core™`  
-**Frozen Knowledge & RAG Core:** `KRG2026.3`
+**Permanent cores:** exactly two — `Knowledge Core™` + `Technology Core™`
 
-## Executive state
+> **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
 
-NAAIL OpenLab™ now operates as a global research-platform architecture spanning accounting, audit, assurance, finance, economics, sustainability, internal controls, forensic intelligence, governed public/open evidence, scientific discovery, Digital Twins, reproducibility and AI-enabled business education.
+## Current public-state rule
 
-The repository deliberately separates five evidence classes:
+NAAIL has adopted a **patent-first** disclosure policy. New enabling technical details are maintained privately until patent filing review. Public pages now describe patent-sensitive mechanisms only at a high level.
 
-1. **executed and validated public checkpoints**;
-2. **implemented infrastructure whose empirical execution is still gated**;
-3. **adopted architecture/governance**;
-4. **open-source/data/connector registries that are not execution claims**;
-5. **methodological/provider references that remain external unless actually run and documented**.
+No NAAIL patent application is represented as filed as of 2026-09-16, and the project does not claim **Patent Pending** status.
 
-Canonical maturity map: [`architecture/PLATFORM_CAPABILITY_MATRIX.md`](./architecture/PLATFORM_CAPABILITY_MATRIX.md)  
-Machine-readable registry: [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
+## Current maturity boundary
 
-## 1. Validated executable checkpoint
+| Capability | Current public status |
+|---|---|
+| Prototype 003 | `EXECUTED_VALIDATED` for its frozen synthetic scope |
+| Prototype 004 provider harness | `IMPLEMENTED_EXECUTION_GATED` |
+| V2026.3 master architecture | high-level public architecture |
+| Knowledge Core™ + Technology Core™ | exactly two permanent cores |
+| NAAIL Data & Evidence Mesh™ | `PATENT_HOLD_NON_ENABLING` |
+| Business School Simulation & Digital Twin Layer | `PATENT_HOLD_NON_ENABLING` |
+| Decision–Consequence Engine™ | public non-enabling stub |
+| Professional Judgment Passport™ | public non-enabling metadata stub |
+| Audit & Accounting Digital Twin™ | public high-level research overview |
+| VERA™ detailed verification mechanics | private pending filing review |
+| Research/education platform | public high-level design |
 
-The current public validated checkpoint remains **Prototype 003**, a frozen three-domain synthetic Audit Digital Twin benchmark:
+Machine-readable state: [`architecture/platform_capability_registry.json`](./architecture/platform_capability_registry.json)
 
-| Case | Deterministic control finding | Synthetic amount | Human Gate |
-|---|---|---:|---|
-| Revenue Recognition & Cut-off | `TX-002`, `TX-003` | EUR 190,000 proposed adjustment | `PENDING_HUMAN_APPROVAL` |
-| Goodwill Impairment | `GW-DR`, `GW-MAR` | EUR 440,000 estimated adjustment | `PENDING_HUMAN_APPROVAL` |
-| ICFR Deficiency | `CTRL-JE-02`, `CTRL-IT-03` | EUR 530,000 estimated exposure | `PENDING_HUMAN_APPROVAL` |
+## Preserved public architecture
 
-For these deliberately constructed frozen synthetic cases, the deterministic condition produces precision/recall of **1.00 / 1.00** with **0 / 0** false positives/false negatives. These are benchmark properties only and are **not claims of real-world audit effectiveness, assurance quality, ICFR severity, or professional accuracy**.
+NAAIL retains the named components:
 
-Public runtime: [`Prototype_003/runtime/`](./Prototype_003/runtime/)
+**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · Evidence Passport™ · Professional Decision DAG™ · DAG Watch™ · Agent Arena™ · Failure Memory™ · Controlled Agent Evolution · Decision–Consequence Engine™ · Professional Judgment Passport™ · Human Approval Gate™ · NAAIL Data & Evidence Mesh™**.
 
-## 2. Prototype 004 provider-comparison state
+Their detailed patent-sensitive implementation is not described in this current-state page.
 
-The provider harness is implemented for credential-gated real-provider experiments, but provider/model conditions remain non-executed unless a real result artifact and Evidence Passport prove otherwise.
+## Public evidence / data boundary
 
-Current default scientific status:
+NAAIL may reference rights-cleared/public sources such as SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, OWID CO₂/Energy, OpenAlex, OpenSanctions, and optional OpenBB connectors. Third-party rights and source terms remain controlling; large datasets and credentials are not stored in the public repository by default.
 
-```text
-deterministic baseline              = EXECUTED
-Gemini single-agent                 = NOT_EXECUTED_PROVIDER_REQUIRED
-Gemini sequential-agent             = NOT_EXECUTED_PROVIDER_REQUIRED
-Gemini governed-multi-agent         = NOT_EXECUTED_PROVIDER_REQUIRED
-Microsoft Foundry single-agent      = NOT_EXECUTED_PROVIDER_REQUIRED
-Microsoft Foundry sequential-agent  = NOT_EXECUTED_PROVIDER_REQUIRED
-Microsoft Foundry governed-agent    = NOT_EXECUTED_PROVIDER_REQUIRED
-```
+## Disclosure history
 
-Provider execution checkpoint: [`PROTOTYPE_004_PROVIDER_EXECUTION.md`](./PROTOTYPE_004_PROVIDER_EXECUTION.md)
+Some implementation-level materials were publicly committed on 14–16 September 2026 before the patent-first hardening rule. Current sanitization does not erase historical Git commits.
 
-NAAIL does not replace missing provider runs with simulated AI outputs and does not allow model output to approve the Human Gate.
+See:
 
-## 3. Global platform identity and fixed two-core architecture
+- [`PATENT_NOTICE.md`](./PATENT_NOTICE.md)
+- [`PUBLIC_DISCLOSURE_LOG.md`](./PUBLIC_DISCLOSURE_LOG.md)
+- [`PRIOR_ART_LOG.md`](./PRIOR_ART_LOG.md)
+- [`PATENT_FILING_CHECKLIST.md`](./PATENT_FILING_CHECKLIST.md)
 
-The canonical international identity is:
+## License boundary
 
-> **NAAIL OpenLab™**  
-> **Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
-> *A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
+Current original NAAIL material is governed by [`LICENSE`](./LICENSE) for academic research, education, teaching, and non-commercial evaluation. Commercial use requires separate written authorization. No implied patent, trademark, or trade-secret license is granted.
 
-The architecture preserves exactly two permanent cores:
+## Immediate priorities
 
-1. **Knowledge Core™** — governed standards, research evidence, professional knowledge, ontologies, provenance/evidence semantics and governed retrieval/GraphRAG semantics.
-2. **Technology Core™** — replaceable models, agent frameworks, simulation engines, APIs/connectors, retrieval infrastructure, tools, sandboxes and orchestration.
-
-All other capabilities are supporting layers/services/agents/registries. No Data Mesh, Digital Twin, education layer, agent family or simulation capability becomes a third permanent core.
-
-Canonical hierarchy: [`architecture/MASTER_PLATFORM_HIERARCHY.md`](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-
-## 4. NAAIL Data & Evidence Mesh™
-
-The Data & Evidence Mesh™ is now an adopted supporting architecture for connecting real/public/rights-cleared evidence to agents and Digital Twins through source-aware connectors and Evidence Passport™ governance.
-
-Priority evidence families:
-
-- **SEC EDGAR / XBRL** — filings, submissions, Company Facts and public-company evidence;
-- **FRED / ALFRED** — macro/financial series with vintage/realtime context;
-- **Fama–French** — factors and portfolio research data;
-- **World Bank** — country/macro/development/context indicators;
-- **Our World in Data CO₂ / Energy** — climate/emissions/energy context with original-source attribution;
-- **OpenAlex** — scholarly metadata, citation/topic graphs and evidence-gap discovery;
-- **OpenSanctions** — optional non-commercial/academic sanctions/PEP/entity-risk research under applicable terms;
-- **OpenBB** — optional Technology-Core provider abstraction that never replaces original-provider provenance/rights.
-
-Canonical objective:
-
-```text
-Real Data
-→ Evidence Passport™
-→ Multi-Agent Analysis
-→ Digital Twin Simulation
-→ Decision
-→ Consequence
-→ Verification
-→ Human Approval Gate™
-```
-
-Storage policy:
-
-- store connector/source manifests, IDs, query parameters, timestamps, periods/vintages, rights metadata, hashes, transformation code and small rights-cleared/synthetic fixtures;
-- do **not** store large third-party dataset mirrors or credentials in GitHub by default.
-
-Canonical assets:
-
-- [`DATA_EVIDENCE_MESH.md`](./DATA_EVIDENCE_MESH.md)
-- [`architecture/data_evidence_mesh_registry.json`](./architecture/data_evidence_mesh_registry.json)
-- [`FREE_DATA_FABRIC.md`](./FREE_DATA_FABRIC.md)
-
-Current valid status:
-
-```text
-mesh architecture                  = ADOPTED
-source/connector registry          = ADOPTED
-provenance/rights/version contract = ADOPTED
-integrity tests/workflow           = PUBLISHED
-live SEC connector run             = NOT_CLAIMED
-live FRED/ALFRED connector run     = NOT_CLAIMED
-live OpenSanctions connector run   = NOT_CLAIMED
-live OpenBB provider run           = NOT_CLAIMED
-```
-
-A connector/source name never counts as execution evidence. Live use requires an actual Evidence Passport/run artifact.
-
-## 5. Scientific-discovery architecture
-
-The shared NAAIL research pipeline is:
-
-```text
-Question
-→ Literature Validation
-→ Competing Hypotheses / Co-Scientist Arena
-→ DAG / Identification Governance
-→ ERA-style Empirical Design
-→ Rights-Cleared Data or Digital Twin
-→ Computational Discovery + AlphaEvolve-style Search
-→ Latent-Structure Analysis
-→ Robustness / Placebo / OOS
-→ Critic / Defender / Falsifier
-→ Independent Replication
-→ Chain-of-Evidence + CoE Audit
-→ Evidence Passport™
-→ Human Gate™
-```
-
-External system/provider names are methodological references or optional targets unless an actual run is recorded with model/version/input/output/provenance evidence.
-
-Canonical files:
-
-- [`SCIENTIFIC_DISCOVERY_CONTRACT.md`](./SCIENTIFIC_DISCOVERY_CONTRACT.md)
-- [`GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md`](./GOOGLE_SCIENTIFIC_DISCOVERY_ORCHESTRATION.md)
-- [`00_SCIENTIFIC_DISCOVERY_START_HERE.md`](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
-- [`architecture/digital_twin_science_link_registry.json`](./architecture/digital_twin_science_link_registry.json)
-- [`architecture/google_science_phase_registry.json`](./architecture/google_science_phase_registry.json)
-
-## 6. Specialist agent families
-
-Current canonical professional/specialist set:
-
-- **KIWI™** — audit / CAM / KAM intelligence;
-- **POMELO™** — accounting, assurance and professional intelligence;
-- **VERA™** — verifiable accounting/auditing intelligence, Evidence Passport and Decision DAG verification;
-- **IFRS Intelligence Agent™** — IFRS reporting and standards Digital Twin;
-- **PCAOB Intelligence Agent™** — inspection/regulatory Digital Twin;
-- **ESG Intelligence** — sustainability, ESRS/ISSB/GRI, climate, carbon and assurance;
-- **ECONOVA-S™** — finance, economics, asset pricing and data-economy intelligence;
-- **ICFR Intelligence** — internal controls and material-weakness research;
-- **Forensic Intelligence** — fraud/anomaly/evidence-graph research.
-
-Canonical index: [`agents/README.md`](./agents/README.md)
-
-## 7. Business School Simulation & Digital Twin state
-
-The supporting simulation layer covers company, audit firm, regulator, capital market, sustainability, accounting, finance, economics and governance/board Digital Twins.
-
-The first integrated dynamic prototype is **NAAIL Audit & Accounting Digital Twin™**, which now binds its scenario design to the Data & Evidence Mesh for SEC/XBRL, macro, market, ESG and research context while preserving Client XYZ and Firm Alpha as synthetic entities.
-
-Canonical loop:
-
-```text
-Real / governed evidence
-→ Evidence Passport™
-→ KIWI™ + POMELO™ + VERA™ + IFRS/PCAOB/ESG/ECONOVA-S™
-→ Digital Twin state
-→ Student / researcher decision
-→ Professional Decision DAG™
-→ Decision–Consequence Engine™
-→ Updated state
-→ Agent Arena™ / Blind Gold / Falsification
-→ VERA™ verification
-→ Professional Judgment Passport™
-→ Human Approval Gate™
-```
-
-Canonical assets:
-
-- [`BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md`](./BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md)
-- [`digital-twins/audit-accounting/README.md`](./digital-twins/audit-accounting/README.md)
-- [`simulations/business-school/decision_consequence_engine.py`](./simulations/business-school/decision_consequence_engine.py)
-- [`architecture/professional_judgment_passport.schema.json`](./architecture/professional_judgment_passport.schema.json)
-
-Dynamic live-connector/provider-backed execution remains a separate validation milestone.
-
-## 8. Open-source and public-data expansion
-
-The public integration layer now includes:
-
-- **NAAIL Data & Evidence Mesh™**;
-- **NAAIL Free Data Fabric™**;
-- **ERP Digital Twin Lab™**;
-- **Audit Analytics Open-Source Pack™**;
-- **Finance Market Intelligence Lab™**;
-- **ESG & Sustainability Intelligence Lab™**;
-- **Accounting & Audit Open-Source Pack™**;
-- **Adversarial Intelligence Fabric™**.
-
-Canonical hub: [`OPEN_SOURCE_INTEGRATION_HUB.md`](./OPEN_SOURCE_INTEGRATION_HUB.md)
-
-Registration/adoption of an upstream repository, source or connector does **not** mean it has been installed, executed, validated, endorsed, or admitted into the frozen Knowledge Core. Software licenses and data rights are treated separately.
-
-## 9. FT50 / AJG replication arena
-
-The external-replication registry, rights/provenance policy, benchmark protocol and validator are integrated. Real replication claims remain pending exact source verification, commit pinning, environment reconstruction and execution.
-
-Current valid status:
-
-```text
-benchmark registry                = IMPLEMENTED
-rights/provenance policy          = IMPLEMENTED
-replication protocol              = IMPLEMENTED
-registry validator                = IMPLEMENTED
-exact external commit pinning     = PENDING
-reconstructed environments        = PENDING
-original-result replications      = NOT_YET_EXECUTED
-clean-room reproductions          = NOT_YET_EXECUTED
-temporal/OOS benchmark runs       = NOT_YET_EXECUTED
-cross-dataset/Digital Twin tests  = NOT_YET_EXECUTED
-```
-
-Benchmark lab: [`benchmarks/ft50_abs4/`](./benchmarks/ft50_abs4/)
-
-## 10. Global AI business education and professional simulation
-
-The education layer is governed by a common NAAIL contract:
-
-```text
-Business-School Learning Purpose
-→ FT50 / Chartered ABS AJG Research
-→ Authoritative Standard / Regulation
-→ Professional-Body Competency
-→ Public / Licensed / Synthetic Evidence
-→ NAAIL Digital Twin
-→ AI / Agent Condition
-→ Student / Professional Challenge
-→ Evaluation + Evidence Passport™
-→ People × Planet × Society × Sustainable Profit™
-→ Human Gate™
-```
-
-Current education capabilities include:
-
-- **Global AI Business Education & Professional Simulation Platform**;
-- **NAAIL Simulation Evidence Standard™ / Research Evidence Card™**;
-- **Business School Simulation & Digital Twin Layer**;
-- **Data & Evidence Mesh™**;
-- **Professional Swarm Academy™**;
-- **Student Agent Academy™**;
-- **SEC EDGAR Education Lab™**;
-- **Student Open-Source Agent Lab**;
-- free/open-source simulation stack;
-- synthetic Client XYZ Digital Twins;
-- reproducibility and scientific-discovery teaching workflows.
-
-Every material simulation promoted as **Research-Backed™**, **Standards-Grounded™** or **Profession-Aligned™** must record a learning objective, FT50/AJG support or explicit evidence gap, applicable standards/regulation, professional competency mapping, data provenance, Digital Twin version, actual AI/connector execution status, assessment design, sustainability/value reflection when material, and Human Gate responsibility.
-
-Research-grounding states are:
-
-- `FT50_AJG4_RESEARCH_BACKED`
-- `PEER_REVIEWED_EVIDENCE_BACKED`
-- `STANDARDS_PROFESSIONAL_BACKED`
-- `EVIDENCE_GAP_DECLARED`
-
-Education-quality references may include AACSB and, where appropriate, EFMD/EQUIS or AMBA. Standards/professional mappings may include IFRS Foundation/IASB/ISSB, PCAOB, IAASB, IFAC/IESBA, EFRAG/ESRS, GRI/GSSB, SEC, AICPA/CPA, CIMA/CGMA, ACCA, IMA/CMA/SMA, IIA/CIA/CRMA, ACFE/CFE, CFA Institute/CFA, ISACA/CISA, GARP/FRM and COSO. These are alignment/evidence contexts only and do not imply accreditation, certification, endorsement or partnership.
-
-Canonical assets:
-
-- [`GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md`](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)
-- [`docs/education/SIMULATION_EVIDENCE_STANDARD.md`](./docs/education/SIMULATION_EVIDENCE_STANDARD.md)
-- [`architecture/simulation_evidence_card.schema.json`](./architecture/simulation_evidence_card.schema.json)
-- [`docs/education/simulation_evidence_card.example.json`](./docs/education/simulation_evidence_card.example.json)
-- [`docs/education/EDUCATION_PLATFORM_SYNC_2026_09_16.md`](./docs/education/EDUCATION_PLATFORM_SYNC_2026_09_16.md)
-
-Google Drive contains synchronized teaching/planning mirrors for the education platform, Simulation Evidence Standard, Business School Digital Twin architecture and Data & Evidence Mesh. GitHub remains the canonical public implementation and governance surface.
-
-## 11. Permanent architecture boundary
-
-```text
-permanent_core_count = 2
-data_evidence_mesh_is_core = false
-business_school_simulation_layer_is_core = false
-decision_consequence_engine_is_core = false
-professional_judgment_passport_is_core = false
-technology_core_may_rewrite_knowledge_core = false
-technology_core_may_rewrite_rag_semantics = false
-vendor_release_changes_canonical_knowledge = false
-large_third_party_dataset_should_be_committed_to_github = false
-connector_name_implies_execution = false
-public_access_equals_unrestricted_redistribution = false
-external_repo_is_authoritative_truth = false
-registry_entry_equals_dependency_installed = false
-architecture_documented_equals_runtime_executed = false
-external_system_name_implies_execution = false
-agent_consensus_is_scientific_truth = false
-statistical_significance_is_discovery = false
-prediction_equals_causality = false
-simulation_may_invent_ft50_ajg_support = false
-professional_body_alignment_equals_certification = false
-research_overrides_authoritative_standard = false
-student_score_equals_employability_truth = false
-optimize_for_p_value = false
-failed_tests_are_deleted = false
-human_gate_required = true
-```
-
-## 12. Immediate empirical priorities
-
-### Data & Evidence Mesh track
-
-Implement bounded live connectors one at a time, beginning with SEC EDGAR/XBRL and selected FRED/ALFRED series. Freeze source IDs/queries/versions, produce Evidence Passports, test rights/provenance handling, reconcile cross-source contradictions, and retain failed retrieval/validation cases. Add Fama–French, World Bank, OWID, OpenAlex, OpenSanctions and optional OpenBB only where they materially improve a defined simulation/research question.
-
-### Provider-comparison track
-
-Run blinded, repeated provider × architecture comparisons under identical frozen evidence, preserve unsuccessful/unfavorable runs, measure RPA/AA/EG/PS/DS/DIST plus errors/cost/latency, conduct adversarial review and submit interpretation to Human Gate.
-
-### Replication track
-
-Pin exact external commits/environments, reproduce original results, run independent implementations, test alternative specifications/estimators, conduct temporal/OOS/placebo/falsification checks, retain null/failed replications and build Chain-of-Evidence records.
-
-### Education-validation track
-
-Convert selected course simulations into complete Research Evidence Cards, verify FT50/AJG anchors at article level, map authoritative standards and professional competencies, preregister learning comparisons where research is intended, and validate educational measures before any high-stakes use.
-
-### Specialist research track
-
-Advance bounded empirical studies through KIWI™, ECONOVA-S™, ESG, ICFR and Forensic families using the common scientific contract rather than family-specific scientific rules.
-
-## 13. Public / private boundary
-
-**Public:** research-safe architecture, synthetic benchmark descriptions, selected reproducibility code, source/connector registries, public-data governance, education assets, scientific contracts, maturity maps and citation metadata.
-
-**Private/IP-sensitive:** provider/API credentials, restricted/licensed datasets, patent-sensitive orchestration, unpublished agent specifications/prompts, private benchmark extensions, partner-confidential materials, individual recruitment data, and unreleased experimental results.
-
-Third-party software, standards, models, data and replication packages retain their original ownership and terms.
+1. complete professional patent/inventorship/ownership review;
+2. avoid further enabling public disclosure before filing decisions;
+3. preserve public-disclosure chronology and private technical records;
+4. continue research validation using public-safe artifacts;
+5. after any confirmed filing, update public patent status accurately and decide which private technical materials may be released.
 
 ## Canonical links
 
 - [Start Here](./00_START_HERE.md)
-- [Global Brand Identity](./BRAND_IDENTITY.md)
-- [Data & Evidence Mesh](./DATA_EVIDENCE_MESH.md)
-- [Business School Simulation & Digital Twin Layer](./BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md)
-- [Audit & Accounting Digital Twin](./digital-twins/audit-accounting/README.md)
-- [Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)
-- [Simulation Evidence Standard](./docs/education/SIMULATION_EVIDENCE_STANDARD.md)
-- [Education Platform Sync](./docs/education/EDUCATION_PLATFORM_SYNC_2026_09_16.md)
-- [September 2026 Upgrade Summary](./UPGRADE_2026_09_16.md)
-- [Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
+- [Main README](./README.md)
+- [Patent Notice](./PATENT_NOTICE.md)
+- [IP Notice](./IP_NOTICE.md)
 - [Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-- [Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)
-- [Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)
-- [V2026.3 Architecture](./versions/V2026.3_MULTI_AGENT_DIGITAL_TWIN.md)
+- [Capability Registry](./architecture/platform_capability_registry.json)
+- [Prototype 003 Public Runtime](./Prototype_003/runtime/README.md)
 
-> **Models generate. Agents debate. Real evidence enters through provenance. Research grounds. Standards govern. Professional bodies define competence. Decisions change the Digital Twin. Code tests. VERA verifies. Humans approve. Society benefits.**
-
-GitHub remains the public source of truth. Google Drive is a teaching/planning mirror unless explicitly designated otherwise.
+> **Models generate. Agents debate. Research grounds. Standards govern. Evidence decides. Humans remain accountable.**
