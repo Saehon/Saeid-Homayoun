@@ -1,0 +1,42 @@
+name: Microsoft POC V1 — 15-Test Contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'NAAIL-OpenLab/prototypes/microsoft-poc-v1/**'
+      - '.github/workflows/microsoft_poc_v1_15_test.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/prototypes/microsoft-poc-v1/**'
+      - '.github/workflows/microsoft_poc_v1_15_test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-microsoft-poc-v1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Install test dependency
+        run: python -m pip install --upgrade pytest
+
+      - name: Run Microsoft POC V1 unified 15-test harness
+        working-directory: NAAIL-OpenLab/prototypes/microsoft-poc-v1
+        run: python -m pytest -q tests/test_microsoft_poc_v1_15_contract.py
+
+      - name: Preserve scientific boundary
+        run: |
+          echo 'Passing this artifact-integrity harness does not imply participant execution, production readiness, causal validation, or independent replication.'
+          echo 'Maturity remains RESEARCH_PROTOTYPE until the separate scientific gates are completed.'
