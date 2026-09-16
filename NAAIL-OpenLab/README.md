@@ -23,7 +23,7 @@ NAAIL OpenLab™ is an independent research and education platform for **evidenc
 
 **Patent first → public disclosure second.**
 
-The public repository contains only non-enabling high-level descriptions of patent-sensitive mechanisms. New technical algorithms, detailed architecture interactions, dependency/revocation logic, state-transition implementations, containment controls, claim concepts, technical flowcharts, unpublished graph/provenance mechanics, experimental orchestration, and unpublished embodiments are maintained in a **private patent-readiness repository** until filing review.
+The public repository contains only non-enabling high-level descriptions of patent-sensitive mechanisms. New technical algorithms, detailed architecture interactions, dependency/revocation logic, state-transition implementations, containment controls, claim concepts, technical flowcharts, unpublished graph/provenance mechanics, experimental orchestration, contract/claims logic, and unpublished embodiments are maintained in a **private patent-readiness repository** until filing review.
 
 Some implementation-level NAAIL material was publicly committed on 14–16 September 2026 before this hardening rule was adopted. Current sanitization does not erase historical Git disclosures. See:
 
@@ -44,7 +44,7 @@ All other elements remain supporting capabilities, including:
 
 **KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · Evidence Passport™ · Professional Decision DAG™ · DAG Watch™ · Agent Arena™ · Failure Memory™ · Controlled Agent Evolution · Decision–Consequence Engine™ · Professional Judgment Passport™ · Human Approval Gate™ · NAAIL Data & Evidence Mesh™**.
 
-The **NAAIL Value Expansion Fabric** and **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™** are modular governed supporting layers. They do **not** create a third core, alter the canonical agent set, or change the validated public checkpoint.
+The **NAAIL Value Expansion Fabric™**, **NAAIL Behavioral Decision Science & Human–AI Experimentation Layer™**, and **CCCMP™ — Project Cost, Contract & Claims Management Programme** are modular governed supporting capabilities. They do **not** create a third core, alter the canonical agent set, or change the validated public checkpoint.
 
 Detailed technical interactions among these components are intentionally withheld from the current public branch pending patent filing review.
 
@@ -83,15 +83,35 @@ The **Knowledge Core™** governs theory, literature, construct definitions, res
 
 Detailed treatment structures, behavioral outcome schemas, experimental orchestration and unpublished measurement/control mechanics remain private under patent hold.
 
+## CCCMP™ — Project Cost, Contract & Claims Management Programme
+
+The **[CCCMP specialist programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)** extends NAAIL into construction, infrastructure, energy, oil & gas, mining, EPC/EPCM, PPP, major capital projects and megaprojects without changing the two-core architecture.
+
+At a high level CCCMP connects:
+
+- cost engineering, estimating, EVM and project controls;
+- contract, procurement and commercial management;
+- claims, delay, quantum and dispute analysis;
+- project finance, accounting and IFRS-related project issues;
+- behavioral project decision science and human–AI judgment;
+- public/rights-cleared project, procurement, macro, energy, commodity and legal evidence;
+- research, education and Digital Twin simulation.
+
+CCCMP may expose modular specialist intelligence roles for cost, contract, claims, schedule/delay, quantum/commercial, procurement, and project finance/accounting. These roles reuse the existing NAAIL Knowledge and Technology Cores and may interact with VERA™, IFRS Agent™, ECONOVA-S™, KIWI™, POMELO™ and the Behavioral Decision Science layer.
+
+Source names are candidate/reference targets rather than proof of ingestion or execution. Commercial/industry deployment is not licensed by the public repository and requires separate written authorization.
+
+Detailed contract/claims graphs, source-to-agent routing, entitlement logic, automated license controls, behavioral treatments, event/state transitions and Digital Twin execution mechanics remain private under patent hold.
+
 ## What is public now?
 
 ### Research and education
 
-NAAIL connects business-school education, FT50/AJG research, authoritative professional standards, professional competencies, public/rights-cleared evidence, Digital Twins, behavioral experimentation, sustainability, and accountable human judgment.
+NAAIL connects business-school education, FT50/AJG research, authoritative professional standards, professional competencies, public/rights-cleared evidence, Digital Twins, behavioral experimentation, project/capital-programme research, sustainability, and accountable human judgment.
 
 ### Data & evidence
 
-At a high level, NAAIL may use governed public/reference sources such as **SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, Our World in Data CO₂/Energy, OpenAlex, OpenSanctions, lawful accounting/audit textual-analysis resources, public corporate-misconduct/regulatory sources, and optional OpenBB connectors**. Large third-party datasets and credentials are not stored in the public repository by default.
+At a high level, NAAIL may use governed public/reference sources such as **SEC EDGAR/XBRL, FRED/ALFRED, Fama–French, World Bank, Our World in Data CO₂/Energy, OpenAlex, OpenSanctions, lawful accounting/audit textual-analysis resources, public corporate-misconduct/regulatory sources, public procurement/project source families, and optional OpenBB connectors**. Large third-party datasets and credentials are not stored in the public repository by default.
 
 ### Professional agents
 
@@ -103,9 +123,9 @@ At a high level, NAAIL may use governed public/reference sources such as **SEC E
 - **ESG Agent** — Sustainability / Climate / Assurance
 - **ECONOVA-S™** — Finance / Economics / Data Economy
 
-### Business School Digital Twins
+### Business School & Specialist Digital Twins
 
-Public descriptions cover company, audit, regulator, capital-market, sustainability, accounting, finance, economics, governance, professional-education and behavioral human–AI simulations at a high level. Implementation-level mechanisms are under patent hold.
+Public descriptions cover company, audit, regulator, capital-market, sustainability, accounting, finance, economics, governance, professional-education, behavioral human–AI and project/capital-programme simulations at a high level. Implementation-level mechanisms are under patent hold.
 
 ## Current validated public executable checkpoint
 
@@ -123,15 +143,17 @@ New patent-sensitive mechanisms should not be inferred to be publicly executable
 ## Start here
 
 1. **[Start Here](./00_START_HERE.md)**
-2. **[Behavioral Decision Science & Human–AI Experimentation Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)**
-3. **[Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)**
-4. **[Patent Notice](./PATENT_NOTICE.md)**
-5. **[IP Notice](./IP_NOTICE.md)**
-6. **[Canonical two-core hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
-7. **[Platform capability registry](./architecture/platform_capability_registry.json)**
-8. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)**
-9. **[Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)**
-10. **[Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)**
+2. **[CCCMP — Project Cost, Contract & Claims Management Programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)**
+3. **[CCCMP Research, Education & Evidence Governance](./docs/research/CCCMP_RESEARCH_GOVERNANCE.md)**
+4. **[Behavioral Decision Science & Human–AI Experimentation Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)**
+5. **[Value Expansion Fabric](./VALUE_EXPANSION_FABRIC.md)**
+6. **[Patent Notice](./PATENT_NOTICE.md)**
+7. **[IP Notice](./IP_NOTICE.md)**
+8. **[Canonical two-core hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)**
+9. **[Platform capability registry](./architecture/platform_capability_registry.json)**
+10. **[Global AI Business Education Platform](./GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md)**
+11. **[Scientific Discovery Start Here](./00_SCIENTIFIC_DISCOVERY_START_HERE.md)**
+12. **[Open-Source Integration Hub](./OPEN_SOURCE_INTEGRATION_HUB.md)**
 
 ## License and commercial-use boundary
 
@@ -149,6 +171,6 @@ See [`CITATION.cff`](./CITATION.cff).
 
 ## Independence
 
-NAAIL OpenLab™ is independent. References to universities, technology providers, Big Four firms, standard setters, regulators, professional bodies, journals, datasets, or open-source projects identify public evidence, standards, research context, competencies, or technology references only. They do not imply affiliation, endorsement, sponsorship, accreditation, certification, or partnership unless separately documented in writing.
+NAAIL OpenLab™ is independent. References to universities, technology providers, Big Four firms, standard setters, regulators, professional bodies, journals, datasets, procurement portals, or open-source projects identify public evidence, standards, research context, competencies, or technology references only. They do not imply affiliation, endorsement, sponsorship, accreditation, certification, partnership, ownership or execution unless separately documented in writing.
 
 > **Models generate. Agents debate. Research grounds. Standards govern. Evidence decides. Humans remain accountable.**
