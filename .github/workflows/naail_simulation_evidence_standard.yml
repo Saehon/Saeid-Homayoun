@@ -1,0 +1,34 @@
+name: NAAIL Simulation Evidence Standard Guard
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md'
+      - 'NAAIL-OpenLab/docs/education/SIMULATION_EVIDENCE_STANDARD.md'
+      - 'NAAIL-OpenLab/docs/education/simulation_evidence_card.example.json'
+      - 'NAAIL-OpenLab/architecture/simulation_evidence_card.schema.json'
+      - 'NAAIL-OpenLab/tests/test_simulation_evidence_standard.py'
+      - '.github/workflows/naail_simulation_evidence_standard.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md'
+      - 'NAAIL-OpenLab/docs/education/SIMULATION_EVIDENCE_STANDARD.md'
+      - 'NAAIL-OpenLab/docs/education/simulation_evidence_card.example.json'
+      - 'NAAIL-OpenLab/architecture/simulation_evidence_card.schema.json'
+      - 'NAAIL-OpenLab/tests/test_simulation_evidence_standard.py'
+      - '.github/workflows/naail_simulation_evidence_standard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  simulation-evidence-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run NAAIL simulation evidence integrity tests
+        run: python -m pytest -q NAAIL-OpenLab/tests/test_simulation_evidence_standard.py
