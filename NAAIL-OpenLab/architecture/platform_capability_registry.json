@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "registry_id": "NAAIL-PLATFORM-CAPABILITIES-2026.09.16",
   "platform": {
     "master_brand": "NAAIL OpenLab™",
@@ -20,6 +20,8 @@
   ],
   "capabilities": [
     {"id":"brand_identity","name":"Global NAAIL identity","path":"NAAIL-OpenLab/BRAND_IDENTITY.md","status":"ARCHITECTURE_ADOPTED"},
+    {"id":"global_ai_business_education","name":"Global AI Business Education & Professional Simulation Platform","path":"NAAIL-OpenLab/GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md","status":"PUBLIC_EDUCATION_DESIGN","scope":"business schools + research + standards + professional competencies + employers + sustainability + Human Gate"},
+    {"id":"simulation_evidence_standard","name":"NAAIL Simulation Evidence Standard","path":"NAAIL-OpenLab/docs/education/SIMULATION_EVIDENCE_STANDARD.md","status":"ARCHITECTURE_ADOPTED","schema":"NAAIL-OpenLab/architecture/simulation_evidence_card.schema.json"},
     {"id":"prototype_003","name":"Audit Digital Twin Prototype 003","path":"NAAIL-OpenLab/Prototype_003/runtime/README.md","status":"EXECUTED_VALIDATED","scope":"deterministic frozen synthetic checkpoint"},
     {"id":"prototype_004","name":"Prototype 004 provider harness","path":"NAAIL-OpenLab/PROTOTYPE_004_PROVIDER_EXECUTION.md","status":"IMPLEMENTED_EXECUTION_GATED"},
     {"id":"scientific_contract","name":"Scientific Discovery Contract","path":"NAAIL-OpenLab/SCIENTIFIC_DISCOVERY_CONTRACT.md","status":"ARCHITECTURE_ADOPTED"},
@@ -43,6 +45,7 @@
     {"id":"replication_arena","name":"FT50/AJG Replication Arena","path":"NAAIL-OpenLab/benchmarks/ft50_abs4/README.md","status":"IMPLEMENTED_EXECUTION_GATED"},
     {"id":"sec_education","name":"SEC EDGAR Education Lab","path":"NAAIL-OpenLab/SEC_EDGAR_EDUCATION_LAB.md","status":"PUBLIC_EDUCATION_DESIGN"},
     {"id":"student_academy","name":"Student Agent Academy","path":"NAAIL-OpenLab/docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md","status":"PUBLIC_EDUCATION_DESIGN"},
+    {"id":"professional_swarm_academy","name":"Professional Swarm Academy","path":"NAAIL-OpenLab/docs/education/NAAIL_PROFESSIONAL_SWARM_ACADEMY.md","status":"PUBLIC_EDUCATION_DESIGN"},
     {"id":"open_agent_stack","name":"Open-source agent stack","path":"NAAIL-OpenLab/OPEN_SOURCE_AGENT_STACK.md","status":"REGISTRY_ADOPTED"}
   ],
   "invariants": {
@@ -53,6 +56,10 @@
     "external_repo_is_authoritative_truth": false,
     "technology_core_may_rewrite_knowledge_core": false,
     "agent_consensus_is_scientific_truth": false,
+    "simulation_may_invent_ft50_ajg_support": false,
+    "professional_body_alignment_equals_certification": false,
+    "research_overrides_authoritative_standard": false,
+    "student_score_equals_employability_truth": false,
     "optimize_for_p_value": false,
     "human_gate_required": true
   }
