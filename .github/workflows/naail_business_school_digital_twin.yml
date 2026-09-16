@@ -1,0 +1,43 @@
+name: NAAIL Business School Digital Twin Guard
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md'
+      - 'NAAIL-OpenLab/architecture/MASTER_PLATFORM_HIERARCHY.md'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/business_school_simulation_technology_registry.json'
+      - 'NAAIL-OpenLab/architecture/professional_judgment_passport.schema.json'
+      - 'NAAIL-OpenLab/digital-twins/audit-accounting/**'
+      - 'NAAIL-OpenLab/simulations/business-school/**'
+      - 'NAAIL-OpenLab/agents/vera/**'
+      - 'NAAIL-OpenLab/tests/test_business_school_digital_twin_architecture.py'
+      - 'NAAIL-OpenLab/tests/test_decision_consequence_engine.py'
+      - '.github/workflows/naail_business_school_digital_twin.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/BUSINESS_SCHOOL_SIMULATION_DIGITAL_TWIN_LAYER.md'
+      - 'NAAIL-OpenLab/architecture/**'
+      - 'NAAIL-OpenLab/digital-twins/audit-accounting/**'
+      - 'NAAIL-OpenLab/simulations/business-school/**'
+      - 'NAAIL-OpenLab/agents/vera/**'
+      - 'NAAIL-OpenLab/tests/test_business_school_digital_twin_architecture.py'
+      - 'NAAIL-OpenLab/tests/test_decision_consequence_engine.py'
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Validate Business School Digital Twin architecture
+        run: |
+          pytest -q \
+            NAAIL-OpenLab/tests/test_business_school_digital_twin_architecture.py \
+            NAAIL-OpenLab/tests/test_decision_consequence_engine.py \
+            NAAIL-OpenLab/tests/test_platform_capability_registry.py
