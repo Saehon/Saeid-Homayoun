@@ -39,8 +39,14 @@ The following later disclosures were intentionally limited to high-level, non-en
 - `22d15daa58a6dc35b51091c591f15110ba212c0d` — public CCCMP™ — Project Cost, Contract & Claims Management Programme overview.
 - `17e3f87a87f942fccb8cf2f86b3e7c461c42c461` — canonical hierarchy updated to place CCCMP™ under the fixed two-core architecture.
 - `cc0b6aa87f6e237399f49ec61c5a315fd3c9eb2e` — capability registry v1.8 registers CCCMP™ as `PATENT_HOLD_NON_ENABLING` and confirms `cccmp_is_core = false`.
+- `af04affd4d0f256b21c47a99b3e6f1567dfc689c` — public NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™ overview.
+- `991694624f7458dbf1c16af3437dcc6b210d7338` — canonical hierarchy updated to register the Nobel Engine as cross-cutting, not a core and not CCCMP-specific.
+- `f3b9eae86ce4cccfbd891e5fe222bb660eb43eb0` — capability registry v1.9 registers the Nobel Engine and its scientific/data/technology governance invariants.
+- `62ad0e1b20f9881809806ce5363df46befdc1da5` — dated public release record for the Nobel Engine.
 
 The CCCMP public overview intentionally omits detailed contract/claims graph schemas, entitlement logic, source-to-agent routing, behavioral treatment design, detailed Evidence Passport fields, automated rights controls, project state-transition mechanics and unpublished Digital Twin execution logic.
+
+The Nobel Engine public overview intentionally omits unpublished machine-readable theory schemas, detailed connector/provenance contracts, treatment orchestration, unpublished measurement/control algorithms, internal Digital Twin state-transition logic and other potentially enabling embodiments.
 
 ## Additional disclosure sources to audit
 
