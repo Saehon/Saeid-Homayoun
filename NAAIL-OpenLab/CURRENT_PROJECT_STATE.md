@@ -24,6 +24,7 @@ Microsoft Corporation is the first integrated Golden Anchor Company used to test
 - [Build & Validation Contract](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)
 - [Executed Results](./prototypes/microsoft-poc-v1/prototype_v1_results.md)
 - [15-Test Validation Matrix](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md)
+- [Timestamped 15-Test Run](./prototypes/microsoft-poc-v1/VALIDATION_RUN_15_TESTS_2026_09_16.md)
 - [Falsification & Robustness Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
 - [GitHub / Google Drive Sync Manifest](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
 - [Prototype Dashboard](./prototypes/microsoft-poc-v1/dashboard.html)
@@ -40,29 +41,33 @@ Microsoft Corporation is the first integrated Golden Anchor Company used to test
 - external LiveBench 2026-06-25 benchmark snapshot, clearly separated from NAAIL professional-task validation;
 - Evidence Passport schema/instance and research-publication Human Gate boundary;
 - T0–T3 Human–AI experiment structure/design;
-- historical offline reproducibility harness: **12/12 PASS**.
+- historical offline reproducibility harness: **12/12 PASS**;
+- dedicated unified artifact-validation harness: **15/15 PASS**.
 
-### Upgraded 15-test contract coverage
+### Unified 15-test execution
 
-The newer contract requires 15 explicit test categories. Current evidence coverage is:
+The new dedicated harness `tests/test_microsoft_poc_v1_15_contract.py` was executed on 2026-09-16:
 
-- **13 / 15 PASS by documented evidence coverage**;
-- **TEST 03 — Variable dictionary validation: NOT EXECUTED** as a dedicated automated test;
-- **TEST 14 — Dashboard data-load validation: NOT EXECUTED** as a dedicated automated test;
-- **0 FAIL** currently documented;
-- **0 BLOCKED** currently documented.
+```text
+...............                                                          [100%]
+15 passed in 0.08s
+```
 
-This is a contract-coverage classification, not a claim that a new dedicated 15-test harness has already been executed.
+This closes the former dedicated-test gaps for:
 
-### Major open gates
+- **TEST 03 — Variable dictionary validation**; and
+- **TEST 14 — Dashboard data-load/reconciliation validation**.
+
+A dedicated GitHub Actions workflow is published at `.github/workflows/microsoft_poc_v1_15_test.yml`. **CI success is not claimed until a completed GitHub Actions run is separately verified.**
+
+### Major open scientific gates
 
 - actual participant execution of the T0–T3 Human–AI experiment;
 - Microsoft Fama–French factor regression;
 - aggregate PatentsView patent/citation analysis and technology-diversity measures;
-- NAAIL-specific professional-task model verification and cost-per-verified-professional-output;
-- dedicated variable-dictionary validation test;
-- dedicated dashboard-load/data-integrity validation test;
-- independent replication and falsification challenge completion.
+- NAAIL-specific professional-task model verification and Cost per Verified Professional Output™;
+- independent cross-source and reviewer replication;
+- remaining falsification/robustness challenges.
 
 Therefore Microsoft V1 remains **`RESEARCH_PROTOTYPE`**. Production approval remains **NO** and scientific validation remains **PENDING INDEPENDENT REPLICATION**. Microsoft V1 does not change Prototype 003's status as the only `EXECUTED_VALIDATED` checkpoint.
 
@@ -82,7 +87,7 @@ Replaceable implementation includes LLMs, agents, model routers, RAG/GraphRAG/KA
 |---|---|
 | Two-Core Constitution | `ARCHITECTURE_ADOPTED / FROZEN` |
 | Prototype 003 | `EXECUTED_VALIDATED` for frozen synthetic scope |
-| **Microsoft Golden Anchor POC V1** | **`RESEARCH_PROTOTYPE`** — bounded executed modules + upgraded 15-test/falsification governance |
+| **Microsoft Golden Anchor POC V1** | **`RESEARCH_PROTOTYPE`** — 15/15 artifact-validation harness PASS; broader scientific gates still open |
 | Prototype 004 provider harness | `IMPLEMENTED_EXECUTION_GATED` |
 | Management Accounting & AI Cost Intelligence Layer™ | `PATENT_HOLD_NON_ENABLING` |
 | Open Model Benchmark & Cost Intelligence Layer™ | `PATENT_HOLD_NON_ENABLING` |
@@ -98,6 +103,7 @@ Machine-readable state: [`architecture/platform_capability_registry.json`](./arc
 - [`MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md`](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)
 - [`prototype_v1_results.md`](./prototypes/microsoft-poc-v1/prototype_v1_results.md)
 - [`VALIDATION_MATRIX_15_TESTS.md`](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md)
+- [`VALIDATION_RUN_15_TESTS_2026_09_16.md`](./prototypes/microsoft-poc-v1/VALIDATION_RUN_15_TESTS_2026_09_16.md)
 - [`FALSIFICATION_ROBUSTNESS_REGISTER.md`](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
 - [`SYNC_MANIFEST_2026_09_16.md`](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
 - `microsoft_data_source_registry.json`
@@ -121,11 +127,11 @@ Allowed challenge outcomes include:
 
 ## Next company sequence
 
-Only after Microsoft V1 is replicated/validated: **SAP → Walmart → Intuit → Shopify → JPMorgan → ExxonMobil → Fluor → optional Boeing**.
+Only after Microsoft V1 is independently replicated and its remaining scientific gates are completed: **SAP → Walmart → Intuit → Shopify → JPMorgan → ExxonMobil → Fluor → optional Boeing**.
 
 ## Governance requirement
 
-Every prototype/layer/programme must use, where applicable: provenance, license controls, Evidence Passport™, causal/decision DAGs, versioning, reproducibility, replication, falsification, red-team/adversarial review and Human Approval Gate™. Architecture documentation never equals execution or scientific validation.
+Every prototype/layer/programme must use, where applicable: provenance, license controls, Evidence Passport™, causal/decision DAGs, versioning, reproducibility, replication, falsification, red-team/adversarial review and Human Approval Gate™. Architecture documentation and artifact-integrity tests do not equal independent scientific validation.
 
 `NOT EXECUTED` must never be silently converted into `PASS`.
 
@@ -140,6 +146,7 @@ No patent application is represented as filed as of 2026-09-16; **Patent Pending
 - [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md)
 - [Microsoft POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md)
 - [15-Test Validation Matrix](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md)
+- [Timestamped 15-Test Run](./prototypes/microsoft-poc-v1/VALIDATION_RUN_15_TESTS_2026_09_16.md)
 - [Falsification & Robustness Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
 - [GitHub / Google Drive Sync Manifest](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
 - [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
