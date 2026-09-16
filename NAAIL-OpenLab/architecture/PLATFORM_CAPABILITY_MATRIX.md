@@ -3,7 +3,7 @@
 **Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
 *A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
-This matrix is the canonical public maturity map for major NAAIL capabilities. It separates validated execution from implemented infrastructure, architecture, integration registries, and methodological references.
+This matrix is the canonical public maturity map for major NAAIL capabilities. It separates validated execution from implemented infrastructure, architecture, integration registries, public education designs, and methodological references.
 
 ## Status vocabulary
 
@@ -14,7 +14,7 @@ This matrix is the canonical public maturity map for major NAAIL capabilities. I
 | `ARCHITECTURE_ADOPTED` | The design, interfaces, governance and role boundaries are adopted; runtime implementation may be partial or absent. |
 | `REGISTRY_ADOPTED` | Upstream tools/data are catalogued with governance and rights boundaries; registration is not execution. |
 | `RESEARCH_PROTOTYPE` | A bounded research prototype or empirical project exists; scope is narrower than production use. |
-| `PUBLIC_EDUCATION_DESIGN` | Research/teaching design is public; it is not a production professional system. |
+| `PUBLIC_EDUCATION_DESIGN` | Research/teaching design is public; it is not a production professional system or external accreditation. |
 | `REFERENCE_ONLY` | Used as methodological inspiration, benchmark or optional provider/upstream reference. |
 
 ## Capability matrix
@@ -22,6 +22,9 @@ This matrix is the canonical public maturity map for major NAAIL capabilities. I
 | Capability | Canonical asset | Status | Evidence boundary |
 |---|---|---|---|
 | Global NAAIL identity | [`../BRAND_IDENTITY.md`](../BRAND_IDENTITY.md) | `ARCHITECTURE_ADOPTED` | Branding/governance only; no scientific result implied. |
+| Global AI Business Education & Professional Simulation Platform | [`../GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md`](../GLOBAL_AI_BUSINESS_EDUCATION_PLATFORM.md) | `PUBLIC_EDUCATION_DESIGN` | Multi-sided business-school/professional platform architecture; no accreditation, certification or institutional deployment claim. |
+| NAAIL Simulation Evidence Standard™ | [`../docs/education/SIMULATION_EVIDENCE_STANDARD.md`](../docs/education/SIMULATION_EVIDENCE_STANDARD.md) | `ARCHITECTURE_ADOPTED` | Requires research/standard/competency/data/AI/assessment/Human-Gate evidence before Research-Backed promotion. |
+| Professional Swarm Academy™ | [`../docs/education/NAAIL_PROFESSIONAL_SWARM_ACADEMY.md`](../docs/education/NAAIL_PROFESSIONAL_SWARM_ACADEMY.md) | `PUBLIC_EDUCATION_DESIGN` | Cross-domain education target; not equivalent to firm production systems. |
 | Audit Digital Twin Prototype 003 | [`../Prototype_003/runtime/`](../Prototype_003/runtime/) | `EXECUTED_VALIDATED` | Deterministic frozen synthetic checkpoint only. |
 | Prototype 004 provider harness | [`../PROTOTYPE_004_PROVIDER_EXECUTION.md`](../PROTOTYPE_004_PROVIDER_EXECUTION.md) | `IMPLEMENTED_EXECUTION_GATED` | Provider/model comparison requires real credential-gated run artifacts. |
 | Scientific Discovery Contract | [`../SCIENTIFIC_DISCOVERY_CONTRACT.md`](../SCIENTIFIC_DISCOVERY_CONTRACT.md) | `ARCHITECTURE_ADOPTED` | Governance contract; not evidence that external systems executed. |
@@ -47,6 +50,22 @@ This matrix is the canonical public maturity map for major NAAIL capabilities. I
 | Student Agent Academy | [`../docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md`](../docs/education/NAAIL_BIG4_STUDENT_AGENT_ACADEMY.md) | `PUBLIC_EDUCATION_DESIGN` | No Big Four partnership implied without written agreement. |
 | Open-source agent stack | [`../OPEN_SOURCE_AGENT_STACK.md`](../OPEN_SOURCE_AGENT_STACK.md) | `REGISTRY_ADOPTED` | Framework inclusion does not mean installed/benchmarked/validated. |
 
+## Education evidence interpretation
+
+The new education layer follows these additional rules:
+
+```text
+simulation_may_invent_ft50_ajg_support = false
+professional_body_alignment != certification
+standard_setter_reference != endorsement
+student_score != employability_truth
+research_evidence != authoritative_standard
+major_business_case -> People + Planet + Society + Sustainable Profit reflection
+human_gate_required = true
+```
+
+A simulation may be useful without FT50/AJG 4*/4 support, but it must disclose the evidence gap and may not use the `FT50_AJG4_RESEARCH_BACKED` state until directly relevant research is verified.
+
 ## Permanent interpretation rules
 
 ```text
@@ -68,4 +87,7 @@ The matrix inherits the frozen `KRG2026.3` boundary:
 - Replaceable models, frameworks, ERP engines, vector stores, agent runtimes and provider services operate outside the frozen core unless explicitly admitted through governance.
 - Technology changes cannot silently change ontology, evidence meaning, causal DAGs, standards interpretation, or authoritative-source status.
 
-Machine-readable companion: [`platform_capability_registry.json`](./platform_capability_registry.json).
+Machine-readable companions:
+
+- [`platform_capability_registry.json`](./platform_capability_registry.json)
+- [`simulation_evidence_card.schema.json`](./simulation_evidence_card.schema.json)
