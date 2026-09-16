@@ -1,8 +1,8 @@
 # Saeid Homayoun
 
-### Accounting × Auditing × Finance × Economics × Sustainability × Innovation × Entrepreneurship × Agentic AI
+### Accounting × Auditing × Finance × Economics × Management Accounting × Sustainability × Innovation × Entrepreneurship × Agentic AI
 
-I develop **evidence-governed AI research systems for business science**, with a focus on accounting, auditing, finance, economics, sustainability, innovation, entrepreneurship, behavioral decision science, causal inference, reproducible research, Digital Twins and multi-agent scientific discovery.
+I develop **evidence-governed AI research systems for business science**, with a focus on accounting, auditing, finance, economics, management accounting, sustainability, innovation, entrepreneurship, behavioral decision science, causal inference, reproducible research, Digital Twins and multi-agent scientific discovery.
 
 ## NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin
 
@@ -14,8 +14,8 @@ NAAIL OpenLab™ is governed by a **frozen Two-Core Constitution**.
 
 ### Exactly two permanent cores
 
-1. **Stable Knowledge Core™** — stable scientific/professional meaning: accounting, auditing, finance, economics, management, behavioral science, innovation/entrepreneurship theory, Nobel-inspired theory, IFRS/assurance, sustainability, causal inference, research design, constructs, professional judgment, replication, falsification and scientific governance.
-2. **Replaceable Technology Core™** — replaceable implementations: LLMs, AI agents, model routers, RAG/GraphRAG/KAG, vector/graph databases, Python/R/Stata, simulation engines, APIs, connectors, GitHub packages, MCP/A2A, observability and evaluation tools.
+1. **Stable Knowledge Core™** — stable scientific/professional meaning: accounting, auditing, finance, economics, management, **Balanced Scorecard/Strategy Maps, ABC, TDABC and other management-accounting theory**, behavioral science, innovation/entrepreneurship theory, Nobel-inspired theory, IFRS/assurance, sustainability, causal inference, research design, constructs, professional judgment, replication, falsification and scientific governance.
+2. **Replaceable Technology Core™** — replaceable implementations: LLMs, AI agents, model routers, RAG/GraphRAG/KAG, vector/graph databases, Python/R/Stata, simulation engines, APIs, connectors, GitHub packages, MCP/A2A, benchmark/evaluation systems, AI FinOps, observability, telemetry and visualization tools.
 
 **No third permanent core is permitted.** New domains, datasets, models, vendors and technologies extend NAAIL only through modular layers, specialist programmes/agents or replaceable implementations.
 
@@ -24,7 +24,25 @@ NAAIL OpenLab™ is governed by a **frozen Two-Core Constitution**.
 [NAAIL OpenLab →](NAAIL-OpenLab/README.md)  
 [Start Here →](NAAIL-OpenLab/00_START_HERE.md)
 
-## Cross-cutting modular layers
+## New: Management Accounting & AI Cost Intelligence
+
+### [NAAIL Management Accounting & AI Cost Intelligence Layer™](NAAIL-OpenLab/MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
+
+A cross-cutting governed research layer that extends **BSC/Strategy Maps, ABC and TDABC** into AI-enabled operations without creating a new core. NAAIL-developed experimental extensions include **AI Activity-Based Costing™**, **Token- and Time-Driven AI Costing™ (TTD-AIC)** and Cost-to-Value research.
+
+**Resources → Activities → Time → Tokens → Agents → Decisions → Quality → Evidence → Cost → Value**
+
+The operational principle is **minimum defensible AI cost subject to required quality, evidence, reliability, reproducibility and professional judgment—not minimum token cost alone**.
+
+### [Open Model Benchmark & Cost Intelligence Layer™](NAAIL-OpenLab/OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
+
+Supports evidence-governed comparison of model/workflow quality, cost, latency, throughput, reliability and task fit using replaceable benchmark/FinOps evidence. Benchmark rank is decision support, not scientific truth.
+
+### [Visualization & Decision Intelligence Layer™](NAAIL-OpenLab/VISUALIZATION_DECISION_INTELLIGENCE_LAYER.md)
+
+Supports BSC, ABC, TDABC, AI Cost/FinOps and scientific dashboards with replaceable visualization technology.
+
+## Other cross-cutting modular layers
 
 **NAAIL Data & Evidence Mesh™ · FT50/AJG Evidence Graph™ · Nobel Theory-to-Evidence & AI Experiment Engine™ · Behavioral Decision Science Layer™ · Innovation & Entrepreneurship Evidence Layer™ · Business School Simulation & Digital Twin Layer™ · Knowledge RAG/GraphRAG/KAG Layer™ · Professional Education & Question Bank Layer™ · Decision–Consequence Engine™ · Professional Judgment Passport™**
 
@@ -44,6 +62,8 @@ Future specialist domains follow the same constitutional rule.
 
 Every layer/programme must use, where applicable, **provenance · license controls · Evidence Passport™ · causal/decision DAGs · versioning · reproducibility · replication · falsification · red-team review · Human Approval Gate™**.
 
+For model/cost evidence, prices and benchmark values require timestamped provenance. Cost minimization cannot override required quality, evidence or governance.
+
 ## Current validated public checkpoint
 
 **NAAIL OpenLab v0.2.3 · Audit Workspace V0.4 · Prototype 003** remains the validated public executable checkpoint. Architecture updates do not automatically change execution/validation status.
@@ -52,7 +72,7 @@ Every layer/programme must use, where applicable, **provenance · license contro
 
 ## Patent-first boundary
 
-**Patent first → public disclosure second.** Public GitHub contains non-enabling high-level descriptions. Detailed unpublished algorithms, graph/provenance schemas, connector contracts, state transitions, experiment orchestration and patent-sensitive embodiments remain private pending filing review.
+**Patent first → public disclosure second.** Public GitHub contains non-enabling high-level descriptions. Detailed unpublished AI-cost allocation schemas, benchmark aggregation/routing logic, telemetry contracts, optimization logic, graph/provenance schemas, connector contracts, state transitions, experiment orchestration and patent-sensitive embodiments remain private pending filing review.
 
 No NAAIL patent application is represented as filed as of 2026-09-16. Do not use **Patent Pending** until an actual filing is confirmed.
 
