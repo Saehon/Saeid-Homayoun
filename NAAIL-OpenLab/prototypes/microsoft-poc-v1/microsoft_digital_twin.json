@@ -1,0 +1,29 @@
+{
+  "prototype_id": "NAAIL-MSFT-POC-V1",
+  "maturity": "RESEARCH_PROTOTYPE",
+  "architecture": {"permanent_cores":["Stable Knowledge Core™","Replaceable Technology Core™"],"third_core":false},
+  "company": {"name":"Microsoft Corporation","ticker":"MSFT","cik":"0000789019","fiscal_year":2026},
+  "accounting": {
+    "revenue_usd_m":331839,"operating_income_usd_m":155237,"net_income_usd_m":133749,"total_assets_usd_m":758376,"total_liabilities_usd_m":315989,"equity_usd_m":442387,"operating_cash_flow_usd_m":182935,"capex_usd_m":115948,"free_cash_flow_usd_m":66987,
+    "segments":{"Productivity and Business Processes":139996,"Intelligent Cloud":137791,"More Personal Computing":54052}
+  },
+  "audit": {
+    "auditor":"Deloitte & Touche LLP","icfr_management_conclusion":"effective",
+    "cams":[
+      {"topic":"Revenue Recognition","account":"Revenue","assertions":["occurrence","accuracy","cutoff","classification"],"risk":"performance obligations, timing, variable consideration, stand-alone selling prices","procedures":"controls testing; policy evaluation; agreement sampling; contract terms; estimates; mathematical accuracy","evidence":"FY2026 auditor report","judgment":"high auditor judgment"},
+      {"topic":"Income Taxes – Uncertain Tax Positions","account":"Income tax liabilities","assertions":["valuation","completeness","presentation"],"risk":"unresolved transfer-pricing positions and tax-law complexity","procedures":"controls testing; methods/assumptions; new information; tax law; disclosures","evidence":"FY2026 auditor report","judgment":"high auditor judgment with tax specialists"}
+    ]
+  },
+  "text_analytics":{"status":"EXECUTED_ON_BOUNDED_SOURCE_SAMPLE","output":"microsoft_text_features.csv","text_not_redistributed":true},
+  "finance":{"status":"EXECUTED_SELECTED_RATIOS","output":"microsoft_financial_features.csv","factor_regression_status":"NOT_EXECUTED"},
+  "innovation":{"status":"EXECUTED_R_AND_D_AND_GITHUB_SNAPSHOTS","output":"microsoft_innovation_features.csv","patent_aggregate_status":"NOT_EXECUTED"},
+  "management_accounting": {
+    "status":"EXECUTED_SYNTHETIC_MICROSOFT_LIKE_PROCESS","public_anchor":"Microsoft FY2026 scale only; internal cost data are synthetic",
+    "process":{"activity":"AI-assisted annual-report analysis","resources":{"analyst_hour_cost_usd":85,"compute_and_api_budget_usd":3.5},"time_minutes":{"retrieval":4,"analysis":7,"audit_agent":5,"report_generation":3,"human_review":8},"tokens":{"input":8000,"output":2000},"tdabc_practical_capacity_minutes_per_hour":48,"capacity_cost_rate_usd_per_minute":1.7708333333333333,"human_review_cost_usd":11.333333333333334,"illustrative_model_task_cost_usd":0.03,"total_direct_poc_cost_usd":41.78,"quality_gate":"verified output required; cost is not minimized below evidence threshold"}
+  },
+  "ai_cost_benchmark":{"status":"EXECUTED_COST_CALCULATION_WITH_SYNTHETIC_VERIFICATION_RATE","output":"ai_cost_benchmark.csv","quality_claim":"NOT A LIVE MODEL-QUALITY VALIDATION"},
+  "human_ai_experiment":{"status":"DESIGN_COMPLETE_NOT_RUN_WITH_PARTICIPANTS","output":"human_ai_experiment_design.md"},
+  "evidence_passports":[{"passport_id":"EP-MSFT-SEC-10K-2026","source_id":"SEC_10K_2026","source_url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm","retrieved_at":"2026-09-16","evidence_class":"PRIMARY_REGULATORY","license_gate":"PASS_WITH_ATTRIBUTION","provenance":{"issuer_or_provider":"SEC / Microsoft","period_or_snapshot":"FY ended 2026-06-30","locator":"Form 10-K accession 0001193125-26-323660"},"transformation":{"method":"fact extraction and derived ratios","code_path":"src/build_prototype.py","derived":true},"claim_scope":"FY2026 Microsoft accounting, CAM and ICFR facts","hash":null,"human_review_status":"APPROVE_WITH_LIMITATIONS"}],
+  "human_gate":{"decision":"APPROVE_RESEARCH_PROTOTYPE_FOR_PUBLICATION_WITH_LIMITATIONS","basis":"Project owner explicitly requested save/update/publish; approval is limited to RESEARCH_PROTOTYPE publication, not production or scientific validation.","limitations":["No production readiness claim","No causal innovation claim","Human-AI experiment not yet run","Factor exposure regression not yet run","Patent aggregate not yet executed","AI verification rates in cost benchmark are synthetic"]},
+  "next_versions":["V1.1 SAP","V1.2 Walmart","V1.3 Intuit","V1.4 Shopify","V1.5 JPMorgan","V1.6 ExxonMobil","V1.7 Fluor","Optional Boeing"]
+}
