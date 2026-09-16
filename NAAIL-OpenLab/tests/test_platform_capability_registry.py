@@ -32,7 +32,8 @@ def test_registry_exists_and_brand_is_canonical():
     assert platform["lab_name"] == EXPECTED_BRAND
     assert platform["descriptor"] == EXPECTED_DESCRIPTOR
     assert platform["permanent_core_count"] == 2
-    assert platform["permanent_cores"] == ["Knowledge Core™", "Technology Core™"]
+    assert platform["permanent_cores"] == ["Stable Knowledge Core™", "Replaceable Technology Core™"]
+    assert platform["constitutional_status"] == "FROZEN"
     assert "PATENT APPLICATION PREPARATION IN PROGRESS" in platform["public_ip_status"]
 
 
@@ -62,6 +63,20 @@ def test_execution_claim_is_narrow():
     assert "synthetic" in executed[0].get("scope", "").lower()
 
 
+def test_two_core_constitution_is_frozen():
+    data = load_registry()
+    inv = data["invariants"]
+    assert inv["permanent_core_count"] == 2
+    assert inv["two_core_constitution_frozen"] is True
+    assert inv["third_permanent_core_allowed"] is False
+    assert inv["new_domain_creates_new_core"] is False
+    assert inv["new_dataset_creates_new_core"] is False
+    assert inv["new_model_creates_new_core"] is False
+    assert inv["new_vendor_creates_new_core"] is False
+    assert inv["supporting_layer_may_become_third_core"] is False
+    assert inv["specialist_programme_may_become_third_core"] is False
+
+
 def test_patent_sensitive_capabilities_are_currently_non_enabling():
     by_id = {item["id"]: item for item in load_registry()["capabilities"]}
     for cap_id in {
@@ -72,14 +87,18 @@ def test_patent_sensitive_capabilities_are_currently_non_enabling():
         "professional_judgment_passport",
         "audit_accounting_dynamic_twin",
         "vera",
+        "innovation_entrepreneurship_evidence_layer",
+        "nobel_theory_to_evidence_ai_experiment_engine",
     }:
         assert by_id[cap_id]["status"] == "PATENT_HOLD_NON_ENABLING"
 
 
-def test_patent_first_invariants():
+def test_governance_invariants():
     inv = load_registry()["invariants"]
-    assert inv["permanent_core_count"] == 2
     assert inv["technology_core_may_rewrite_knowledge_core"] is False
+    assert inv["technology_core_may_silently_rewrite_knowledge_core"] is False
+    assert inv["source_license_gate_required"] is True
+    assert inv["provenance_required"] is True
     assert inv["new_enabling_patent_sensitive_details_public_before_filing_review"] is False
     assert inv["patent_pending_claimed_before_confirmed_filing"] is False
     assert inv["human_gate_required"] is True
