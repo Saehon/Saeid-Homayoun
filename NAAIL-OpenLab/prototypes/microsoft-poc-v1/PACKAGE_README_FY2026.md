@@ -13,37 +13,52 @@ Canonical architecture remains exactly two permanent cores:
 ## Canonical V1 documents
 
 - [Microsoft POC V1 status and executed scope](./MICROSOFT_POC_V1.md)
-- [Upgraded Microsoft POC V1 build-and-validation contract](./MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)
+- [Microsoft POC V1 build-and-validation contract](./MICROSOFT_POC_V1_BUILD_AND_VALIDATION_SPEC.md)
 - [Prototype V1 executed results](./prototype_v1_results.md)
-- [15-test validation matrix](./VALIDATION_MATRIX_15_TESTS.md)
+- [Unified 15-test validation matrix](./VALIDATION_MATRIX_15_TESTS.md)
+- [Timestamped 15-test run](./VALIDATION_RUN_15_TESTS_2026_09_16.md)
 - [Falsification & robustness register](./FALSIFICATION_ROBUSTNESS_REGISTER.md)
 - [Human–AI experiment design](./human_ai_experiment_design.md)
 - [Prototype dashboard](./dashboard.html)
+- [GitHub / Google Drive sync manifest](./SYNC_MANIFEST_2026_09_16.md)
 
-The package includes SEC/XBRL financial evidence, CAM/ICFR mapping, bounded filing-text features, finance and market features, innovation proxies, a synthetic ABC/TDABC/AI-cost microcase, an external AI benchmark snapshot, Human–AI experiment design, an Evidence Passport schema and instantiated Digital Twin, reproducible Python code, tests, and a simple HTML dashboard.
+## Current executable validation — 2026-09-16
 
-## Upgraded validation contract — 2026-09-16
+The dedicated unified artifact-validation harness now reports:
 
-The canonical contract now requires **15 explicit tests** plus a formal falsification/robustness program. Every test must be classified only as `PASS`, `FAIL`, `NOT EXECUTED`, or `BLOCKED`.
+```text
+15 passed in 0.08s
+```
 
-The historical reproducibility harness still records **12/12 offline unit tests passed**. Mapping the currently available evidence to the new 15-test contract yields **13 PASS and 2 NOT EXECUTED** (dedicated variable-dictionary validation and automated dashboard data-load validation). This is a coverage assessment, not a claim that a new 15-test automated harness has already been rerun.
+This closes the former variable-dictionary and dashboard-reconciliation automation gaps. The harness is published at:
 
-The actual T0–T3 Human–AI participant experiment remains **NOT EXECUTED**. Its structural design test can pass without satisfying the separate Human–AI Experiment success gate.
+`tests/test_microsoft_poc_v1_15_contract.py`
 
-Still open before broader validation/expansion:
-- dedicated variable-dictionary validation test;
-- explicit dashboard data-load/integrity test;
-- full rerun of the dedicated 15-test harness;
+A dedicated CI workflow is also published at:
+
+`.github/workflows/microsoft_poc_v1_15_test.yml`
+
+**GitHub Actions CI success is not claimed until a completed workflow run is separately verified.**
+
+## Package contents
+
+The package includes SEC/XBRL financial evidence, CAM/ICFR mapping, bounded filing-text features, finance and market features, innovation proxies, a synthetic ABC/TDABC/AI-cost microcase, an external AI benchmark snapshot, Human–AI experiment design, Evidence Passport schema/instance, reproducible Python tests, and a simple HTML dashboard.
+
+## Scientific boundary
+
+Despite the 15/15 artifact-validation result, these remain open before broader scientific validation or expansion:
+
+- actual T0–T3 participant experiment;
 - Microsoft Fama–French regression;
-- aggregate PatentsView patent/citation measures;
-- actual participant execution of the T0–T3 experiment;
-- NAAIL-specific professional-task model pass-rate and cost-per-verified-output validation;
-- formal falsification challenges and independent replication.
+- aggregate PatentsView patent/citation/technology-diversity measures;
+- NAAIL-specific professional-task model pass-rate and Cost per Verified Professional Output™;
+- independent cross-source and reviewer replication;
+- remaining falsification/robustness challenges.
 
 Important boundaries:
 - no production-readiness claim;
 - no independent scientific-validation claim;
-- participant experiment is design-only;
+- participant experiment remains design-only;
 - Fama–French regression and aggregate PatentsView measures remain unexecuted;
 - Microsoft internal management-accounting data are not inferred;
 - Human Gate approval is limited to research-prototype publication;
@@ -52,4 +67,4 @@ Important boundaries:
 
 ## Expansion gate
 
-Do not advance the Golden Anchor sequence to SAP, Walmart, Intuit, Shopify, JPMorgan Chase, ExxonMobil, Fluor, or optional Boeing until Microsoft V1 has the documented validation evidence required by the upgraded build-and-validation contract.
+Do not advance the Golden Anchor sequence to SAP, Walmart, Intuit, Shopify, JPMorgan Chase, ExxonMobil, Fluor, or optional Boeing until Microsoft V1 has the remaining scientific validation and replication evidence required by the build-and-validation contract.
