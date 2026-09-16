@@ -1,0 +1,32 @@
+name: NAAIL Data & Evidence Mesh Guard
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/DATA_EVIDENCE_MESH.md'
+      - 'NAAIL-OpenLab/architecture/data_evidence_mesh_registry.json'
+      - 'NAAIL-OpenLab/digital-twins/audit-accounting/README.md'
+      - 'NAAIL-OpenLab/tests/test_data_evidence_mesh_registry.py'
+      - '.github/workflows/naail_data_evidence_mesh.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/DATA_EVIDENCE_MESH.md'
+      - 'NAAIL-OpenLab/architecture/data_evidence_mesh_registry.json'
+      - 'NAAIL-OpenLab/digital-twins/audit-accounting/README.md'
+      - 'NAAIL-OpenLab/tests/test_data_evidence_mesh_registry.py'
+      - '.github/workflows/naail_data_evidence_mesh.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  data-evidence-mesh-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Data & Evidence Mesh integrity tests
+        run: python -m pytest -q NAAIL-OpenLab/tests/test_data_evidence_mesh_registry.py
