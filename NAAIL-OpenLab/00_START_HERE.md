@@ -15,6 +15,20 @@ Exactly two permanent cores are allowed:
 
 **No third permanent core may be created.** New domains, datasets, models, vendors, open-source packages, agents, programmes, simulations and education capabilities must be added as modular supporting layers, specialist systems or replaceable technology.
 
+## Microsoft Golden Anchor POC V1
+
+[Open Microsoft POC V1 →](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md)
+
+Microsoft is the first bounded end-to-end company proof of concept. It is registered as **`RESEARCH_PROTOTYPE`**, not `EXECUTED_VALIDATED`.
+
+V1 demonstrates:
+
+**Microsoft public evidence → Evidence Passport™ → accounting/audit/finance/text/innovation modules → Microsoft Digital Twin → synthetic management-accounting/AI-cost example → Human–AI experiment design → Human Gate™.**
+
+Executed: FY2026 SEC/XBRL facts, ratios, CAM mapping, bounded text features, R&D/GitHub innovation snapshots, synthetic ABC/TDABC/AI-cost arithmetic, Evidence Passport, four local unit tests and publication-only Human Gate approval.
+
+Not executed: human participant experiment, Fama–French regression, aggregate PatentsView analysis, or live comparative model-quality validation.
+
 ## Cross-cutting layers
 
 - NAAIL Data & Evidence Mesh™
@@ -35,7 +49,7 @@ Exactly two permanent cores are allowed:
 
 Stable management-accounting theory remains under **Stable Knowledge Core™** governance, including BSC/Strategy Maps, ABC, TDABC, budgeting, variance analysis, responsibility accounting, cost pools/drivers, profitability, capacity management and performance measurement.
 
-The new cross-cutting layers apply that knowledge to AI-enabled operations without creating new cores:
+The cross-cutting layers apply that knowledge to AI-enabled operations without creating new cores:
 
 - [Management Accounting & AI Cost Intelligence Layer™](./MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
 - [Open Model Benchmark & Cost Intelligence Layer™](./OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
@@ -91,29 +105,30 @@ AI price and benchmark observations require timestamped provenance. A lower cost
 ## Fast reviewer path
 
 1. [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md)
-2. [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
-3. [Management Accounting & AI Cost Intelligence Layer](./MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
-4. [Open Model Benchmark & Cost Intelligence Layer](./OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
-5. [Visualization & Decision Intelligence Layer](./VISUALIZATION_DECISION_INTELLIGENCE_LAYER.md)
-6. [Canonical Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-7. [Platform Capability Registry](./architecture/platform_capability_registry.json)
-8. [Platform Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
-9. [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
-10. [Nobel Theory-to-Evidence & AI Experiment Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
-11. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-12. [CCCMP specialist programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
-13. [Current Project State](./CURRENT_PROJECT_STATE.md)
-14. [Prototype 003 public checkpoint](./Prototype_003/runtime/)
-15. [Patent Notice](./PATENT_NOTICE.md)
-16. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
+2. **[Microsoft Golden Anchor POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md)**
+3. [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
+4. [Management Accounting & AI Cost Intelligence Layer](./MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
+5. [Open Model Benchmark & Cost Intelligence Layer](./OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
+6. [Visualization & Decision Intelligence Layer](./VISUALIZATION_DECISION_INTELLIGENCE_LAYER.md)
+7. [Canonical Master Platform Hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+8. [Platform Capability Registry](./architecture/platform_capability_registry.json)
+9. [Platform Capability & Maturity Matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
+10. [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
+11. [Nobel Theory-to-Evidence & AI Experiment Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
+12. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
+13. [CCCMP specialist programme](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+14. [Current Project State](./CURRENT_PROJECT_STATE.md)
+15. [Prototype 003 validated public checkpoint](./Prototype_003/runtime/)
+16. [Patent Notice](./PATENT_NOTICE.md)
+17. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
 
-## Validated public boundary
+## Validation boundary
 
-The validated public executable checkpoint remains **v0.2.3 / Audit Workspace V0.4 / Prototype 003** for its frozen synthetic scope. Adding the Management Accounting & AI Cost layers does not change execution/validation status.
+**Prototype 003** remains `EXECUTED_VALIDATED` for its frozen synthetic scope. **Microsoft POC V1** is a bounded `RESEARCH_PROTOTYPE`: it contains executed module checks but has not been independently replicated/validated.
 
 ## Patent-first rule
 
-**Patent first → public disclosure second.** Detailed unpublished AI-cost allocation schemas, benchmark aggregation/routing logic, telemetry contracts, optimization logic, graph/provenance schemas, connector contracts, state transitions, experiment orchestration and patent-sensitive embodiments remain private until filing review.
+**Patent first → public disclosure second.** Detailed unpublished core algorithms, dependency/revocation mechanics, connector contracts and patent-sensitive embodiments remain private until filing review.
 
 No NAAIL patent application is represented as filed as of 2026-09-16. Do not use **Patent Pending** until a filing is confirmed.
 
