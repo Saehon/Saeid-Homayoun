@@ -91,3 +91,5 @@ jobs:
           git add -A
           git commit -m "Migrate NAAIL identity to global Next-Generation brand"
           git push
+
+# Trigger revision: 2026-09-16 global rebrand
