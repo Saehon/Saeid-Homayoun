@@ -2,51 +2,42 @@
 
 **Maturity:** `RESEARCH_PROTOTYPE`  
 **Run date:** 2026-09-16  
-**Contract update:** 2026-09-16 — upgraded to 15-test + falsification/robustness specification  
 **Production readiness:** NO  
 **Independent replication:** NOT YET
 
-## Executed validation retained from the prior V1 run
+## Dedicated 15-test validation run
 
-| Requirement | Result |
+The unified Microsoft V1 artifact-validation harness now executes all 15 contract tests:
+
+```text
+pytest -q tests/test_microsoft_poc_v1_15_contract.py
+...............                                                          [100%]
+15 passed in 0.08s
+```
+
+See [`VALIDATION_RUN_15_TESTS_2026_09_16.md`](./VALIDATION_RUN_15_TESTS_2026_09_16.md) and [`VALIDATION_MATRIX_15_TESTS.md`](./VALIDATION_MATRIX_15_TESTS.md).
+
+| Contract test | Result |
 |---|---|
-| SEC/XBRL ingestion | **PASS** — SEC interactive-XBRL R2/R4/R6/R107 facts ingested into the frozen V1 snapshot |
-| Textual-analysis pipeline | **PASS, bounded** — two FY2026 filing samples transformed to numerical features; raw text withheld |
-| Finance calculation | **PASS** — ratios, cash-flow measures, FY2026 price return, DGS10 |
-| CAM/audit mapping | **PASS** — 2 FY2026 CAMs + ICFR opinion |
-| Innovation measure | **PASS** — R&D intensity + GitHub metadata snapshot; patent analysis remains unexecuted |
-| ABC/TDABC/AI-cost | **PASS, synthetic** — internal-process microcase only |
-| AI-model benchmark | **PASS, external benchmark** — LiveBench quality and cost-per-successful-task snapshot |
-| Human–AI experiment design | **PASS DESIGN / NOT RUN** |
-| Evidence Passport | **PASS** — schema + instantiated SEC XBRL passport |
-| Human Gate | **PASS FOR RESEARCH-PROTOTYPE PUBLICATION ONLY** |
+| SEC/XBRL ingestion | **PASS** |
+| Financial statement extraction | **PASS** |
+| Variable dictionary validation | **PASS** |
+| Evidence Passport generation | **PASS** |
+| CAM/audit-risk mapping | **PASS** |
+| Text analytics | **PASS** |
+| Finance calculation | **PASS** |
+| Innovation measure | **PASS** |
+| ABC calculation | **PASS — synthetic** |
+| TDABC calculation | **PASS — synthetic** |
+| AI token/cost calculation | **PASS — synthetic** |
+| Model benchmark | **PASS — external benchmark** |
+| Human–AI experiment structure | **PASS STRUCTURE / PARTICIPANTS NOT RUN** |
+| Dashboard data-load reconciliation | **PASS** |
+| Human Gate decision | **PASS FOR RESEARCH-PROTOTYPE PUBLICATION ONLY** |
 
-## New 15-test contract coverage
+**Unified harness result: 15/15 PASS.**
 
-The upgraded build contract now requires 15 explicit tests using only `PASS`, `FAIL`, `NOT EXECUTED`, or `BLOCKED`.
-
-| Test | Status | Note |
-|---|---|---|
-| TEST 01 — SEC/XBRL ingestion | **PASS** | Existing frozen-XBRL validation evidence |
-| TEST 02 — Financial statement extraction | **PASS** | FY2026 standardized financial artifacts exist and reconcile |
-| TEST 03 — Variable dictionary validation | **NOT EXECUTED** | Dictionary exists; no dedicated validation test in prior 12-test harness |
-| TEST 04 — Evidence Passport generation | **PASS** | Schema + instantiated provenance artifact |
-| TEST 05 — CAM/audit-risk mapping | **PASS** | Two CAMs + ICFR mapping |
-| TEST 06 — Text analytics | **PASS** | Bounded source-sample execution |
-| TEST 07 — Finance calculation | **PASS** | Selected executed finance measures; factor regression still open |
-| TEST 08 — Innovation measure | **PASS** | R&D + GitHub research indicators; PatentsView remains open |
-| TEST 09 — ABC calculation | **PASS** | Synthetic management-accounting microcase only |
-| TEST 10 — TDABC calculation | **PASS** | Existing unit test validates TDABC arithmetic |
-| TEST 11 — AI token/cost calculation | **PASS** | Synthetic AI-cost microcase only |
-| TEST 12 — Model benchmark | **PASS** | External LiveBench snapshot only |
-| TEST 13 — Human–AI experiment structure | **PASS** | T0–T3 design exists; participant experiment not executed |
-| TEST 14 — Dashboard data load | **NOT EXECUTED** | Dashboard exists but explicit automated data-load test is absent |
-| TEST 15 — Human Gate decision | **PASS** | Publication-only approval boundary |
-
-**Coverage classification:** 13 PASS / 2 NOT EXECUTED / 0 FAIL / 0 BLOCKED.  
-**Important:** this is a mapping of existing evidence to the new contract. A dedicated 15-test automated harness has **not** yet been rerun.
-
-See: [`VALIDATION_MATRIX_15_TESTS.md`](./VALIDATION_MATRIX_15_TESTS.md).
+This closes the former TEST 03 and TEST 14 automation gaps. It does not convert the actual participant experiment, Fama–French regression, PatentsView analysis, professional-task model benchmark, falsification program, or independent replication into PASS.
 
 ## Selected numerical results
 
@@ -62,61 +53,34 @@ See: [`VALIDATION_MATRIX_15_TESTS.md`](./VALIDATION_MATRIX_15_TESTS.md).
 - DGS10 at 2026-06-30: **4.44%**
 - Illustrative DGS10 + mature-market ERP proxy: **8.64% (NOT Microsoft WACC)**
 
-## Audit results
+## Audit / CAM / ICFR
 
-- Revenue Recognition CAM mapped to revenue assertions, contract/performance-obligation risk, procedures and high-judgment conclusion.
-- Uncertain Tax Positions CAM mapped to tax-liability valuation/completeness/presentation, transfer-pricing risk, specialist procedures and high-judgment conclusion.
+- Revenue Recognition CAM mapped to assertions, risk, procedures, evidence and judgment.
+- Uncertain Tax Positions CAM mapped to valuation/completeness/presentation, transfer-pricing risk and specialist procedures.
 - FY2026 ICFR auditor opinion: **unqualified**.
 
-## AI benchmark
+## Scientific boundary
 
-LiveBench 2026-06-25 external snapshot includes overall score + cost per successful task. V1 does not infer professional task fitness from leaderboard rank alone.
+The 15/15 result validates the bounded public artifact package. The broader Microsoft V1 scientific success gate remains **NOT PASSED** because these items remain open:
 
-## Historical unit-test execution
+- actual T0–T3 participant experiment;
+- Microsoft Fama–French factor regression;
+- aggregate PatentsView patent/citation/technology-diversity measures;
+- NAAIL-specific professional-task model pass-rate / Cost per Verified Professional Output™;
+- independent cross-source and reviewer replication;
+- remaining falsification/robustness challenges;
+- fuller rights-cleared raw-filing text workflow.
 
-The earlier reproducibility package passed **12/12 offline unit tests** on 2026-09-16. Those tests cover the two-core constitution, frozen XBRL facts, segment reconciliation, finance calculations, real market-data status, CAM/ICFR mapping, bounded text outputs, innovation boundary, external benchmark labeling, TDABC arithmetic, experiment execution status and Human Gate boundary.
+The formal falsification register remains [`FALSIFICATION_ROBUSTNESS_REGISTER.md`](./FALSIFICATION_ROBUSTNESS_REGISTER.md).
 
-This historical 12/12 result remains valid as a record of that harness. It does not imply that the newly expanded 15-test contract has been fully executed.
+## CI boundary
 
-## Falsification and robustness status
-
-A formal falsification register is now part of the public package: [`FALSIFICATION_ROBUSTNESS_REGISTER.md`](./FALSIFICATION_ROBUSTNESS_REGISTER.md).
-
-The following remain open and must not be represented as validated:
-
-- cross-source replication of selected financial facts;
-- independent CAM/judgment coding;
-- alternative text models/specifications;
-- Fama–French regression and period/specification sensitivity;
-- PatentsView corroboration of innovation constructs;
-- sensitivity analysis for synthetic ABC/TDABC/AI-cost assumptions;
-- NAAIL professional-task benchmark versus external leaderboard evidence;
-- participant execution of T0–T3;
-- evaluation-leakage review;
-- independent Evidence Passport replay;
-- automated dashboard-data reconciliation;
-- independent Human Gate reviewer decision.
+A dedicated GitHub Actions workflow has been published at `.github/workflows/microsoft_poc_v1_15_test.yml`. The local bounded run above is executed and documented. **GitHub Actions CI success is not claimed until a completed workflow run is separately verified.**
 
 ## Human Gate
 
 **APPROVE_RESEARCH_PROTOTYPE_FOR_PUBLICATION_WITH_LIMITATIONS**
 
-Not approved for production reliance, professional assurance, causal innovation conclusions, or scientific-validation claims.
-
-## Success-gate status
-
-The overall Microsoft V1 success gate is **NOT PASSED** because the actual Human–AI participant experiment, independent replication, and other open validation work remain incomplete. TEST 13 verifies experiment structure only; it does not count as participant execution.
-
-## Remaining unexecuted gates
-
-- dedicated variable-dictionary validation test;
-- automated dashboard data-load/integrity test;
-- full rerun of the dedicated 15-test harness;
-- Fama–French regression;
-- aggregate PatentsView metrics;
-- full raw-filing text pipeline with reusable/rights-cleared intermediate artifacts;
-- actual participant experiment;
-- NAAIL-specific model pass-rate / cost-per-verified-professional-output;
-- independent replication.
+Production approval remains **NO**. Scientific validation remains **PENDING_INDEPENDENT_REPLICATION**.
 
 **Final maturity status: `RESEARCH_PROTOTYPE`.**
