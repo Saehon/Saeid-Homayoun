@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/architecture/simulation_evidence_card.schema.json",
+  "title": "NAAIL Simulation Research Evidence Card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "simulation",
+    "learning_contract",
+    "research_grounding",
+    "standards_regulation",
+    "professional_competencies",
+    "evidence_data",
+    "digital_twin",
+    "ai_condition",
+    "assessment",
+    "sustainability_value",
+    "human_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "simulation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "version", "domain", "target_learner", "status"],
+      "properties": {
+        "id": {"type": "string", "minLength": 3},
+        "title": {"type": "string", "minLength": 5},
+        "version": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 2},
+        "target_learner": {"type": "string", "minLength": 2},
+        "course_module": {"type": "string"},
+        "status": {"enum": ["DRAFT", "PILOT", "VALIDATED_SYNTHETIC", "EXECUTED", "RETIRED"]}
+      }
+    },
+    "learning_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["learning_outcomes", "professional_judgment_expected"],
+      "properties": {
+        "learning_outcomes": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 5}},
+        "prerequisite_knowledge": {"type": "array", "items": {"type": "string"}},
+        "professional_judgment_expected": {"type": "string", "minLength": 5},
+        "aacsb_or_institutional_alignment": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "research_grounding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "anchors", "evidence_gap_note"],
+      "properties": {
+        "state": {"enum": ["FT50_AJG4_RESEARCH_BACKED", "PEER_REVIEWED_EVIDENCE_BACKED", "STANDARDS_PROFESSIONAL_BACKED", "EVIDENCE_GAP_DECLARED"]},
+        "anchors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "authors_year", "journal", "source_url", "research_design", "supported_construct", "transfer_limitations"],
+            "properties": {
+              "title": {"type": "string"},
+              "authors_year": {"type": "string"},
+              "journal": {"type": "string"},
+              "ft50_verified": {"type": "boolean"},
+              "ajg_rating": {"enum": ["4*", "4", "3", "2", "1", "UNRATED", "NOT_CHECKED"]},
+              "ajg_edition": {"type": "string"},
+              "doi": {"type": "string"},
+              "source_url": {"type": "string", "minLength": 8},
+              "research_design": {"type": "string"},
+              "population_context_period": {"type": "string"},
+              "supported_construct": {"type": "string"},
+              "transfer_limitations": {"type": "string"}
+            }
+          }
+        },
+        "evidence_gap_note": {"type": "string"}
+      }
+    },
+    "standards_regulation": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["jurisdiction", "organization", "identifier", "authority_class", "official_source_url", "version_or_effective_period", "rights_note"],
+        "properties": {
+          "jurisdiction": {"type": "string"},
+          "organization": {"type": "string"},
+          "identifier": {"type": "string"},
+          "authority_class": {"enum": ["LAW_REGULATION", "AUTHORITATIVE_STANDARD", "MANDATORY_PROFESSIONAL_STANDARD", "OFFICIAL_GUIDANCE", "PROFESSIONAL_FRAMEWORK", "REFERENCE"]},
+          "official_source_url": {"type": "string", "minLength": 8},
+          "version_or_effective_period": {"type": "string"},
+          "rights_note": {"type": "string"}
+        }
+      }
+    },
+    "professional_competencies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["body", "credential_or_framework", "competency", "alignment_only"],
+        "properties": {
+          "body": {"type": "string"},
+          "credential_or_framework": {"type": "string"},
+          "competency": {"type": "string"},
+          "learner_level": {"type": "string"},
+          "alignment_only": {"const": true},
+          "source_url": {"type": "string"}
+        }
+      }
+    },
+    "evidence_data": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_name", "classification", "raw_or_derived", "rights_status", "authoritative_status"],
+        "properties": {
+          "source_name": {"type": "string"},
+          "source_url_or_path": {"type": "string"},
+          "period_or_version": {"type": "string"},
+          "classification": {"enum": ["PUBLIC", "LICENSED", "SYNTHETIC"]},
+          "raw_or_derived": {"enum": ["RAW", "DERIVED", "SYNTHETIC"]},
+          "rights_status": {"type": "string"},
+          "sha256_or_hash": {"type": "string"},
+          "transformation_chain": {"type": "array", "items": {"type": "string"}},
+          "leakage_check": {"type": "string"},
+          "authoritative_status": {"type": "string"}
+        }
+      }
+    },
+    "digital_twin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "repository_path", "basis", "frozen_version", "evidence_boundary"],
+      "properties": {
+        "id": {"type": "string"},
+        "repository_path": {"type": "string"},
+        "basis": {"enum": ["SYNTHETIC", "PUBLIC_EVIDENCE_BASED", "LICENSED_EVIDENCE_BASED"]},
+        "frozen_version": {"type": "string"},
+        "evidence_boundary": {"type": "string"},
+        "gold_label_visibility_rule": {"type": "string"}
+      }
+    },
+    "ai_condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "execution_status", "human_gate_bypass_allowed"],
+      "properties": {
+        "condition": {"enum": ["HUMAN_ONLY", "AI_ASSISTANT", "SINGLE_AGENT", "SEQUENTIAL_AGENTS", "GOVERNED_MULTI_AGENT"]},
+        "execution_status": {"enum": ["EXECUTED", "NOT_EXECUTED", "NOT_EXECUTED_PROVIDER_REQUIRED", "SIMULATED_DETERMINISTIC"]},
+        "provider_model": {"type": "string"},
+        "model_version": {"type": "string"},
+        "run_artifact": {"type": "string"},
+        "tool_permissions": {"type": "array", "items": {"type": "string"}},
+        "evidence_access_boundary": {"type": "string"},
+        "human_gate_bypass_allowed": {"const": false}
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["measures", "high_stakes_use_allowed"],
+      "properties": {
+        "measures": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "construct_validity_note": {"type": "string"},
+        "high_stakes_use_allowed": {"const": false},
+        "learning_retention_plan": {"type": "string"}
+      }
+    },
+    "sustainability_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["people", "planet", "society", "sustainable_profit"],
+      "properties": {
+        "people": {"type": "string"},
+        "planet": {"type": "string"},
+        "society": {"type": "string"},
+        "sustainable_profit": {"type": "string"}
+      }
+    },
+    "human_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["responsible_role", "allowed_decisions", "status", "model_self_approval_allowed"],
+      "properties": {
+        "responsible_role": {"type": "string"},
+        "allowed_decisions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["APPROVE", "MODIFY", "REJECT", "REQUEST_MORE_EVIDENCE", "ESCALATE"]}
+        },
+        "status": {"enum": ["PENDING_HUMAN_APPROVAL", "APPROVED", "MODIFIED", "REJECTED", "ESCALATED"]},
+        "rationale_reference": {"type": "string"},
+        "model_self_approval_allowed": {"const": false}
+      }
+    }
+  }
+}
