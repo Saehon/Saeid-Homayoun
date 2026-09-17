@@ -7,6 +7,13 @@ on:
       - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt'
       - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_sdk_provenance.csv'
       - '.github/workflows/naail-stage2b-sdk-lock.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/STAGE2B_SDK_LOCK_VALIDATION_TRIGGER.md'
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt'
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_sdk_provenance.csv'
+      - '.github/workflows/naail-stage2b-sdk-lock.yml'
   workflow_dispatch:
 
 permissions:
