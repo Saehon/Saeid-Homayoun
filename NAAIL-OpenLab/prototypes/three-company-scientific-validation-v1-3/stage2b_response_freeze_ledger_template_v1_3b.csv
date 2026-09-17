@@ -1,0 +1,2 @@
+run_id,candidate_id,response_artifact,response_sha256,frozen_timestamp_utc,freeze_status,run_status,telemetry_complete,scoring_opened,notes
+,,,,,NOT_FROZEN,REGISTERED_NOT_EXECUTED,FALSE,FALSE,
