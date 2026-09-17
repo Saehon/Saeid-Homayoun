@@ -21,7 +21,7 @@ See `PHASED_EXECUTION_PLAN_V1_3.md`.
 ## Executed / prepared in V1.3 readiness package
 
 - factor-model falsification artifacts: HC3 versus HAC(3), influence diagnostics and leave-one-month-out stability;
-- technical clean-replay attempt of the frozen V1.2 factor package, with a discrepancy preserved as `REQUEST_MORE_EVIDENCE` rather than silently passed;
+- technical clean replay of the frozen V1.2 factor package, now reconciled as `SUPPORTED_AFTER_CHALLENGE`: the original coefficients/HC3 standard errors reproduce and the former p-value mismatch is isolated to normal-reference versus Student-t-reference inference;
 - four-arm Human–AI pilot power grid;
 - fresh blind benchmark holdout task packet with gold separation design;
 - verified-output cost telemetry schema;
@@ -29,7 +29,7 @@ See `PHASED_EXECUTION_PLAN_V1_3.md`.
 
 ## Not executed / not promoted
 
-- exact clean replay reconciliation / independent replication;
+- independent reviewer/environment replication (the internal clean-replay discrepancy itself is reconciled);
 - aggregate patent/citation/technology-diversity measures where authenticated USPTO programmatic access is still required;
 - blind independently invoked multi-model benchmark;
 - numeric Cost per Verified Professional Output™ from real telemetry;
@@ -40,6 +40,7 @@ See `PHASED_EXECUTION_PLAN_V1_3.md`.
 
 - `PHASED_EXECUTION_PLAN_V1_3.md`
 - `REPRODUCIBILITY_DISCREPANCY_STATUS_V1_3.md`
+- `PHASE1_REPRODUCIBILITY_RECONCILIATION_V1_3.md`
 - `FACTOR_FALSIFICATION_ROBUSTNESS_V1_3.md`
 - `ff5_robustness_summary_v1_3.csv`
 - `factor_robustness_diagnostics_v1_3.csv`
