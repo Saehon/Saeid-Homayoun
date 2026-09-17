@@ -1,0 +1,24 @@
+{
+  "version": "Prototype V1.1 public bounded twin",
+  "status": "RESEARCH_PROTOTYPE",
+  "twins": {
+    "WMT": {
+      "sector": "Retail / supply chain / operations",
+      "fiscal_period": "2026-01-31",
+      "accounting": {"net_sales_musd":706413,"operating_income_musd":29825,"total_assets_musd":284668},
+      "audit": {"cam_topics":["Contingencies"],"icfr":"effective","auditor":"Ernst & Young LLP"},
+      "market": {"price_return_pct":21.4511,"return_type":"IEX close-to-close, dividends excluded"},
+      "management_accounting": {"status":"SYNTHETIC_EXECUTED","microcase_file":"synthetic_abc_tdabc_microcases_2026_09_17.csv"},
+      "open_gates":["Fama-French","Patents/innovation","Professional AI Benchmark","Cost per Verified Professional Output","Human participant experiment","Human Gate decision","Independent replication"]
+    },
+    "JPM": {
+      "sector": "Banking / financial services",
+      "fiscal_period": "2025-12-31",
+      "accounting": {"total_net_revenue_musd":182447,"net_income_musd":57048,"total_assets_musd":4424900,"cet1_standardized_pct":14.6},
+      "audit": {"cam_topics":["Allowance for Loan Losses — portfolio-based wholesale and credit card","Fair Value of Certain Level 3 Financial Instruments"],"icfr":"effective","auditor":"PricewaterhouseCoopers LLP"},
+      "market": {"price_return_pct":34.3099,"return_type":"IEX close-to-close, dividends excluded"},
+      "management_accounting": {"status":"SYNTHETIC_EXECUTED","microcase_file":"synthetic_abc_tdabc_microcases_2026_09_17.csv"},
+      "open_gates":["Fama-French","Patents/innovation","Professional AI Benchmark","Cost per Verified Professional Output","Human participant experiment","Human Gate decision","Independent replication"]
+    }
+  }
+}
