@@ -1,0 +1,9 @@
+field,rule,public
+task_id,join public task packet to private gold key,True
+response,trim whitespace; uppercase for YES/NO; exact YYYY-MM for month,True
+correct,"1 if normalized response equals private gold answer, else 0",True
+grounding_score,"0-2 reviewer score: 0 unsupported, 1 partly grounded, 2 traceable to evidence packet",True
+contradiction_handling,0-2 reviewer score where task includes contradictory evidence,True
+latency_ms,provider/runtime telemetry,True
+api_cost_usd,provider billing or documented price schedule at run timestamp,True
+reviewer_minutes,human verification time measured prospectively,True
