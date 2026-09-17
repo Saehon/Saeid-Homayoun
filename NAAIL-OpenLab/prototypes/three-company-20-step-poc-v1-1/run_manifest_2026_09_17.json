@@ -1,0 +1,28 @@
+{
+  "run_id": "NAAIL-3C-20STEP-EXEC-2026-09-17-A",
+  "date": "2026-09-17",
+  "scope": [
+    "WMT steps 1-6,9,12-15,17-19 partial/executed as status allows",
+    "JPM steps 1-6,9,12-15,17-19 partial/executed as status allows",
+    "MSFT existing state preserved"
+  ],
+  "data_sources": [
+    "SEC 10-K/iXBRL public filings",
+    "Connected Alpaca IEX monthly bars",
+    "Existing Microsoft POC artifacts"
+  ],
+  "nonexecuted": [
+    "Fama-French coefficients",
+    "PatentsView aggregate metrics",
+    "Professional AI multi-model benchmark",
+    "Cost per Verified Professional Output",
+    "Human participant experiment",
+    "WMT/JPM Human Gate decision",
+    "Independent replication"
+  ],
+  "notes": [
+    "No dividend-adjusted return claimed.",
+    "Synthetic management-accounting cases are explicitly synthetic.",
+    "No unexecuted step is labeled PASS."
+  ]
+}
