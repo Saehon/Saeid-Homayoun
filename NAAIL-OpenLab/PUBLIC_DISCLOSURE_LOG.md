@@ -98,34 +98,73 @@ Public release characteristics:
 
 The canonical public release record is [`MICROSOFT_POC_V1_PUBLIC_RELEASE_2026_09_16.md`](./MICROSOFT_POC_V1_PUBLIC_RELEASE_2026_09_16.md). The capability registry records Microsoft POC V1 as `RESEARCH_PROTOTYPE`, `core=false`, and explicitly preserves Prototype 003 as the only `EXECUTED_VALIDATED` public checkpoint.
 
-## 2026-09-16 — Microsoft V1 15-test, falsification and synchronization publication
+## 2026-09-16 — Microsoft V1 validation/falsification/synchronization publication
 
-The Microsoft V1 public package was further strengthened with a non-enabling validation contract, a 15-test coverage matrix, a falsification/robustness register, a synchronized GitHub/Google Drive manifest, refreshed top-level status pages, and an updated dashboard/results boundary.
+The Microsoft V1 public package was strengthened with a non-enabling validation contract, a 15-test matrix, falsification/robustness register, GitHub/Google Drive synchronization manifest, refreshed status pages, dashboard/results boundary and later a dedicated unified artifact-validation harness.
 
-Published records include:
+Important publication waves include:
 
 - `97d0d4ebd0189c137529dff5934a9889d1023fb2` — upgraded Microsoft V1 build-and-validation contract;
 - `296e776f94aa477d5d9029e96fb70fa15d3562b4` — `VALIDATION_MATRIX_15_TESTS.md`;
 - `9ad7500822e1cca1180f6c151111de87d372183c` — `FALSIFICATION_ROBUSTNESS_REGISTER.md`;
-- `613204a37b3db43222fa6e664f01a353a991c022` — refreshed prototype results boundary;
-- `6d4ccf36ee798b7f7314262a095dccb4e47dd78c` — package README update;
-- `00f1de7cf216a7088a639579a89e26b7a43dab56` — dashboard update;
-- `fe6556bf0379928d6394b4a11ae3dc134ea8f68c` — Microsoft V1 status-page update;
 - `694d5236fe55b9060309d90205415ba81aef94cd` — GitHub/Google Drive synchronization manifest;
-- `4184dbc45d8bff662d5bab3d9c3b0d7821749926` — corrected top-level Current Project State to the latest Microsoft V1 evidence boundary;
-- `a010d769ab43b757a33da3129bcb5227b3a87fd6` — main NAAIL README updated to surface the latest Microsoft V1 validation/falsification records.
+- `2f5b3e6a9aa4bf5fbe4bab60ff2468fbb76efdd4` — unified 15-test harness;
+- `7ccf03fd5eec6237774671f825e33ca0278e4967` — dedicated 15-test GitHub Actions workflow;
+- `9551c02e37635f667afa46f00deb822a1d70a515` — timestamped executed 15-test run;
+- `af07188e9badaae664e5dde1d7e233e7eea93d3e` — current executed 15/15 validation matrix;
+- `36e73558749fd0213395063332d48eba2982b911` — dated executed 15-test public-release record.
 
-Current public validation boundary remains deliberately conservative:
+The earlier **13 PASS / 2 NOT EXECUTED** matrix remains part of the historical chronology only. For the current bounded artifact-validation contract, the dedicated harness subsequently executed **15/15 PASS (`15 passed in 0.08s`)**. This does not mean the broader scientific success gate is complete. Participant execution, verified Fama–French coefficient output, PatentsView analysis, professional-task benchmarking, remaining falsification challenges and independent replication remain separate gates.
 
-- historical offline automated harness: **12/12 PASS**;
-- upgraded 15-test contract coverage classification: **13 PASS / 2 NOT EXECUTED / 0 FAIL / 0 BLOCKED**;
-- the upgraded 15-test matrix is a coverage assessment, not a claim that a new dedicated 15-test harness has been executed;
-- the T0–T3 participant experiment remains `DESIGN_COMPLETE_NOT_EXECUTED`;
-- Fama–French factor regression, aggregate PatentsView analysis, selected falsification challenges and independent replication remain open;
-- production approval remains **NO**;
-- scientific validation remains **PENDING_INDEPENDENT_REPLICATION**.
+## 2026-09-16 — Microsoft Fama–French reproducibility package
 
-The public release remains governed by the patent-first boundary. Patent-sensitive enabling algorithms, orchestration internals, dependency/revocation mechanics and unpublished embodiments remain outside the public GitHub record pending filing review.
+The Microsoft Finance module published a frozen FY2026 market input, CAPM/FF3/FF5 runner, GitHub Actions workflow and execution-status record. Relevant commits include:
+
+- `51f3f3ced00aacd78d817637159e2d1830790758` — frozen FY2026 MSFT monthly IEX inputs;
+- `934401e91997e1d5959b3095ebbb7b7f0087a51c` — CAPM/FF3/FF5 reproducibility runner;
+- `72b4281e9268cb3b046f8681559ea5600957ecec` — factor execution/publishing workflow;
+- `0c80dac14f20d3af34e80123b57d030093e6dfc8` — factor execution-status record;
+- `55cd6549b7d3353aa0f332845ba94af6e69073fd` — final Microsoft sync-manifest update for the implementation-ready factor package.
+
+The verified factor-regression status remains `REGISTERED_NOT_EXECUTED` until a completed execution and generated coefficient/provenance artifacts are verified. No alpha, beta, factor loading, p-value or R² is claimed.
+
+## 2026-09-17 — Multi-Company Free-Data Replication V1 public release
+
+NAAIL publicly selected a nine-company replication cohort based on documented public/free evidence access and controlled comparability requirements while preserving Microsoft as the Golden Anchor.
+
+Official cohort:
+
+- Wave 0: Microsoft (`MSFT`);
+- Wave 1: Walmart (`WMT`), JPMorgan Chase (`JPM`), Intuit (`INTU`), Exxon Mobil (`XOM`), Fluor (`FLR`), Boeing (`BA`);
+- Wave 2: Shopify (`SHOP`), SAP (`SAP`).
+
+Wave 2 is deliberately separated until jurisdiction, GAAP/IFRS, currency, listing/ADR and factor-model adapters are explicit.
+
+Relevant public commits include:
+
+- `dcd65c1de0ff195400cb483b32d05780d9ad7dd5` — free-data company gate;
+- `3c07cadae4943cf06fa6a126278461123379b76b` — company registry;
+- `43e3fc2b87c47ca98bb8326dd3d2d66bfcfc4123` — SEC/public-data probe code;
+- `7f4ff092379af06a08c2f7fb4139a76ef7b90b75` — initial multi-company package README;
+- `74126849287e414954b13390a3434e54c8154e9b` — multi-company GitHub Actions probe workflow;
+- `3cd7a9975886426bfdbd3b09b518c40026a294eb` — final company selection and execution order;
+- `b2f1119a34568572bfd301cdb99ba6160186395b` — package index update for the final cohort;
+- `7a1adb3fa31901808fedb9a06265cada8a476134` — top-level multi-company reviewer entry;
+- `e265e37ddc3d57b133a0b39e53cb0b2d15182f2e` — dated multi-company public-release record;
+- `4126e59e7c1d2bfe7e7f56ab25df1deab2bdb47f` — GitHub publication manifest;
+- `fffcbbd7268d5367784f52de4a6ba0b9a530dda4` — package README publication update;
+- `486a3d43d9f557298ffec4f834383505aff998e0` — main NAAIL README publication;
+- `6c203f2f073f3e9ef740e86798c6a516769da5c3` — Current Project State publication.
+
+The published public/free evidence gate includes SEC EDGAR/iXBRL, SEC CompanyFacts/CompanyConcept, connected IEX market evidence, Fama–French factor data, FRED macro data, issuer materials and public/open patent-data routes subject to source terms and entity-resolution controls.
+
+Execution status at disclosure:
+
+- `MSFT`: `EXECUTED_PARTIAL_GOLDEN_ANCHOR`;
+- `WMT`, `JPM`, `INTU`, `XOM`, `FLR`, `BA`: `REGISTERED_NOT_EXECUTED`;
+- `SHOP`, `SAP`: `REGISTERED_NOT_EXECUTED_CROSS_BORDER`.
+
+The multi-company GitHub Actions probe is public, but successful execution is not claimed until a completed run is separately verified. No empirical company-level results for companies 2–9 are represented as executed merely because public data are accessible.
 
 ## Additional disclosure sources to audit
 
