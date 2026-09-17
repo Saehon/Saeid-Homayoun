@@ -1,57 +1,88 @@
 # NAAIL OpenLab™ — Three-Company 20-Step POC / Prototype V1.1
 
 **Date:** 2026-09-17  
-**Publication status:** `PUBLISHED_IN_GITHUB`  
+**Publication status:** `PUBLISHED_IN_GITHUB_AND_GOOGLE_DRIVE`  
 **Maturity:** `RESEARCH_PROTOTYPE`  
+**Run:** `NAAIL-3C-20STEP-EXEC-2026-09-17-A`  
 **Companies:** Microsoft + Walmart + JPMorgan Chase  
-**Program size:** **3 companies × 20 steps = 60 company-step executions**
+**Program size:** **3 companies × 20 steps = 60 company-step states**
 
-## Why these three companies
+> **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
+
+## Objective
+
+Test whether the same frozen two-core NAAIL architecture operates across three materially different accounting and audit environments without forcing artificial comparability:
 
 - **Microsoft (`MSFT`)** — Golden Anchor; technology/cloud/AI reference implementation.
-- **Walmart (`WMT`)** — retail, inventory, supply chain and operations replication stress test.
-- **JPMorgan Chase (`JPM`)** — banking, credit, capital and financial-instrument replication stress test.
+- **Walmart (`WMT`)** — retail, inventory, supply-chain and operations stress test.
+- **JPMorgan Chase (`JPM`)** — banking, credit, capital and financial-instrument stress test.
 
-The objective is to test whether the same two-core NAAIL architecture works across materially different accounting and audit environments without forcing artificial comparability.
+## Current execution milestone
 
-## Canonical package
+The project has moved beyond a registration-only scaffold. A first bounded Walmart/JPMorgan execution run now includes executed/derived public-evidence modules for data/evidence gating, filing/financial extraction, accounting analytics, audit/CAM/ICFR, bounded CAM text features, market-return analysis, synthetic ABC/TDABC microcases, partial Digital Twins, Evidence Passports, initial falsification checks, T0–T3 experiment designs, automated artifact validation, an interactive Prototype V1.1, and a reproducibility/run manifest.
 
-[Open the Three-Company 20-Step POC package](./prototypes/three-company-20-step-poc-v1-1/README.md)
+Microsoft retains its prior bounded execution state and **15/15 artifact-validation PASS**. No pending Microsoft scientific gate was silently promoted.
+
+## Current status by company
+
+### Microsoft
+Mixed `EXECUTED`, `DERIVED_EXECUTED`, `SYNTHETIC_EXECUTED`, `RESEARCH_PROTOTYPE`, `DESIGN_ONLY`, and `REGISTERED_NOT_EXECUTED` states. The broader scientific gate remains open.
+
+### Walmart
+The following are no longer merely registered: public evidence gate, financial-statement extraction, accounting analytics, CAM/ICFR, bounded text, market return analysis, synthetic management accounting, Evidence Passport, partial Digital Twin, initial falsification, automated validation, interactive prototype and run-manifest/reproducibility artifacts. Remaining hard gates are explicitly protected.
+
+### JPMorgan Chase
+The same bounded execution progression has been completed with a bank-specific adapter for credit-loss, capital, fair-value and balance-sheet interpretation. Remaining hard gates are explicitly protected.
+
+## Selected executed / derived results
+
+**Walmart FY2026:** net sales $706,413m; net-sales growth 4.73%; operating margin 4.22%; total assets $284,668m; one CAM (`Contingencies`); effective ICFR; IEX month-end close-to-close fiscal price return 21.45%, dividends excluded.
+
+**JPMorgan FY2025:** total net revenue $182,447m; net-revenue growth 2.75%; net income $57,048m; total assets $4,424,900m; standardized CET1 14.6%; CAM families covering allowance for loan losses and Level 3 fair value; effective ICFR; IEX month-end close-to-close calendar-year price return 34.31%, dividends excluded.
+
+## Canonical GitHub package
+
+[Open Three-Company 20-Step POC package](./prototypes/three-company-20-step-poc-v1-1/README.md)
 
 Key records:
 
 - [20-Step Execution Contract](./prototypes/three-company-20-step-poc-v1-1/THREE_COMPANY_20_STEP_EXECUTION_CONTRACT_2026_09_17.md)
 - [60-Step Execution Matrix](./prototypes/three-company-20-step-poc-v1-1/three_company_60_step_execution_matrix.csv)
-- [Public Release Record](./prototypes/three-company-20-step-poc-v1-1/THREE_COMPANY_20_STEP_PUBLIC_RELEASE_2026_09_17.md)
-- [GitHub Publication Manifest](./prototypes/three-company-20-step-poc-v1-1/GITHUB_PUBLICATION_MANIFEST_2026_09_17.md)
-- [Contract Integrity Test](./prototypes/three-company-20-step-poc-v1-1/tests/test_three_company_20_step_contract.py)
-- [GitHub Actions Workflow](../.github/workflows/three_company_20_step_contract.yml)
+- [Execution Progress](./prototypes/three-company-20-step-poc-v1-1/EXECUTION_PROGRESS_2026_09_17.md)
+- [Executed Company Features](./prototypes/three-company-20-step-poc-v1-1/executed_company_features_2026_09_17.csv)
+- [Evidence Passports](./prototypes/three-company-20-step-poc-v1-1/evidence_passports_wmt_jpm_2026_09_17.json)
+- [Partial Digital Twins](./prototypes/three-company-20-step-poc-v1-1/partial_digital_twins_wmt_jpm_2026_09_17.json)
+- [Initial Falsification Register](./prototypes/three-company-20-step-poc-v1-1/initial_falsification_register_wmt_jpm_2026_09_17.md)
+- [Human–AI Experiment Extensions — DESIGN ONLY](./prototypes/three-company-20-step-poc-v1-1/human_ai_experiment_extensions_design_only.md)
+- [Interactive Prototype V1.1](./prototypes/three-company-20-step-poc-v1-1/prototype_v1_1_three_company.html)
+- [GitHub / Google Drive Execution Sync Manifest](./prototypes/three-company-20-step-poc-v1-1/EXECUTION_SYNC_MANIFEST_2026_09_17.md)
 
-## Common 20-step sequence
+## Google Drive mirror
 
-**Data/Evidence → XBRL → Accounting → Audit/CAM/ICFR → Text → Market → Fama–French → Innovation/Patents → Management Accounting → Professional AI Benchmark → Cost per Verified Professional Output™ → Digital Twin → Evidence Passport™ → Falsification → Human–AI Experiment → Human Gate™ → Automated Validation → Interactive Prototype → Reproducibility → Independent Replication**
+The execution package is saved inside the canonical **NAAIL OpenLab** Drive folder:
 
-## Current status
+https://drive.google.com/drive/folders/1S6sVuZRDsaI2tz12C0kQu6tQX-bxfoSG
 
-- Microsoft: substantial `RESEARCH_PROTOTYPE` execution with a bounded 15/15 artifact-validation result; scientific gates remain open.
-- Walmart: source access verified; 20-step pipeline `REGISTERED_NOT_EXECUTED`.
-- JPMorgan: source access verified; 20-step pipeline `REGISTERED_NOT_EXECUTED`.
+Drive contains native Google Docs/Sheets mirrors of the execution report, 60-step matrix, company features, CAM/text features, synthetic ABC/TDABC cases, falsification register, Evidence Passports, partial Digital Twins, Human–AI experiment design and run manifest, plus the preserved interactive HTML prototype.
 
-The 60-step contract-integrity workflow is published. GitHub Actions success is not claimed until a completed run is separately verified.
+Drive synchronization record:
 
-## Publication commits
+https://docs.google.com/document/d/1YQmPnMwn7P5sQuYJZBGWaa3gPQD2tpWyItS0vRaEPNE/edit
 
-- `bc9bc933b268f2f7f8078135297d27546d5c8b87` — 20-step execution contract
-- `8f29d5b95da44ca9bd0f1d592139ec7348006843` — 60-step execution matrix
-- `8cf44f4a8a0f47a62db265cedc2507154fe70526` — package README
-- `2d60a021bb4a3068b3eabc204753bcfbb7cb1677` — contract-integrity test
-- `8ed3524c95ae9be96d5e07fa3873bede3d07a02f` — GitHub Actions workflow
-- `8ef4d156b0772a25035f5fc72f7100f22c444eb2` — dated public-release record
-- `701beaa4d204cb7e5f41715e5654424a956e8e8d` — top-level NAAIL reviewer entry
-- `4bc1520968b3d0214ef22d8d926aea754d666ca2` — publication manifest
+## Remaining hard gates
 
-## Scientific boundary
+Still open and **not** promoted to executed results:
 
-`PUBLISHED_IN_GITHUB` means the artifacts are publicly available in the repository. It does **not** mean all 60 company-step analyses have been executed or scientifically validated. No `REGISTERED_NOT_EXECUTED` item may be presented as `PASS`.
+1. CAPM / FF3 / FF5 execution and robustness where applicable;
+2. aggregate patent/citation/technology-diversity analysis;
+3. professional accounting/audit multi-model benchmark;
+4. Cost per Verified Professional Output™;
+5. actual T0–T3 participant execution;
+6. Walmart/JPMorgan Human Gate decisions;
+7. independent replication.
 
-**PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
+## Validation boundary
+
+The bounded artifact run validated the 60-row contract, controlled status vocabulary, formulas and structured artifacts. This does **not** equal independent scientific validation. GitHub Actions success is not claimed until a completed workflow run is separately verified.
+
+**Data access ≠ execution. Code ≠ execution. Agent agreement ≠ verification. Statistical significance ≠ scientific discovery.**
