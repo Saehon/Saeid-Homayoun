@@ -3,6 +3,7 @@
 **Date:** 2026-09-17  
 **Maturity:** `RESEARCH_PROTOTYPE`  
 **Scientific execution:** `REGISTERED_NOT_EXECUTED`  
+**Infrastructure status:** `EXECUTED_VALIDATED`  
 **Provider assignment:** `READY_PROVIDER_CONNECTION_REQUIRED`
 
 ## Public GitHub records
@@ -11,33 +12,36 @@ Repository: `Saehon/Saeid-Homayoun`
 Default branch: `main`  
 Directory: `NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/`
 
-Latest publication commits:
-
-- corrected Stage 2B candidate roster: `318420a3cc02c943d015848981177d2aba8c859f`
-- consolidated Stage 2B current-state publication: `b8c684adf05491b247fb45c27f3beb51056e6791`
-
 Current candidate model IDs:
 
 - C01 OpenAI — `gpt-6-astra`
 - C02 Google — `gemini-3.8-flash`
-- C03 Anthropic — `claude-fable-5-1`
+- C03 Anthropic — `claude-fable-5`
 
-All three remain `READY_PROVIDER_CONNECTION_REQUIRED`. No independent model output has been represented as executed.
+The public Stage 2B runner package now includes:
+
+- `stage2b_runner.py`
+- `STAGE2B_EXECUTION_RUNBOOK_V1_3B.md`
+- `requirements-stage2b.txt`
+- `STAGE2B_RUNNER_VALIDATION_2026_09_17.md`
+- `stage2b_candidate_roster_v1_3b.csv`
+- `stage2b_response_freeze_ledger_template_v1_3b.csv`
+
+The runner is non-secret: it contains no private benchmark prompts, no gold key and no credentials. A 21-task placeholder dry run validated infrastructure only and made no provider API call.
+
+All three candidates remain `READY_PROVIDER_CONNECTION_REQUIRED`. No independent model output has been represented as executed.
 
 ## Google Drive records
 
 Canonical V1.3 folder ID: `1x7BrFxvVJ-j2R_YZ80Tw36vGhjCugUDM`
 
-Current mirrored records:
+Current mirrored records include:
 
 - `NAAIL V1.3 — Stage 2B Current State & Publication Record`
-  - file ID: `1e6W2x1noTj8BSpF_LNFXE5XIymdzqfqEbsqZzrI-Mi4`
 - `Prototype V1.3B — Stage 2B Candidate Roster`
-  - file ID: `1lkRoWU_-nu5pwn8WFJs-DK43HU3dQIcZaK87WXp1dHY`
 - `NAAIL V1.3B — Stage 2B Independent Model Run Gate`
-  - file ID: `1rcoGEIo6rmZC6JJ4my1aEpJMzqppYOFcd2OlGi2dusA`
 - `Prototype V1.3B — Stage 2B Response Freeze Ledger`
-  - file ID: `1g5DIxLy0ZcNmVIt1KPCDc3HLfTUhpah0QcUYawh_QnY`
+- Stage 2B runner/readiness materials mirrored after publication.
 
 ## Public/private integrity boundary
 
@@ -57,4 +61,4 @@ Until independent C01/C02/C03 runs are observed and frozen:
 
 ## Next action
 
-`C01 independent run → freeze/hash → C02 independent run → freeze/hash → C03 independent run → freeze/hash → telemetry verification → Stage 2C blinded scoring`
+`connect provider credentials → C01 independent run → freeze/hash → C02 independent run → freeze/hash → C03 independent run → freeze/hash → telemetry verification → Stage 2C blinded scoring`
