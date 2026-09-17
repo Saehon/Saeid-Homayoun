@@ -46,6 +46,7 @@ The same bounded execution progression has been completed with a bank-specific a
 
 Key records:
 
+- [Executed Public Release — 2026-09-17](./THREE_COMPANY_POC_V1_1_EXECUTED_PUBLIC_RELEASE_2026_09_17.md)
 - [20-Step Execution Contract](./prototypes/three-company-20-step-poc-v1-1/THREE_COMPANY_20_STEP_EXECUTION_CONTRACT_2026_09_17.md)
 - [60-Step Execution Matrix](./prototypes/three-company-20-step-poc-v1-1/three_company_60_step_execution_matrix.csv)
 - [Execution Progress](./prototypes/three-company-20-step-poc-v1-1/EXECUTION_PROGRESS_2026_09_17.md)
@@ -80,6 +81,12 @@ Still open and **not** promoted to executed results:
 5. actual T0–T3 participant execution;
 6. Walmart/JPMorgan Human Gate decisions;
 7. independent replication.
+
+## Publication commits
+
+- `d08d89c999765235b371411a2c9c9a47a3d8c18f` — GitHub / Google Drive execution sync manifest.
+- `9e943ea448cc129e2f8cc203cdb96ddc00575fa2` — synchronized top-level execution status.
+- `89a7e5a691b1a877b95051dadbb8229f9be403d3` — dated executed public-release record.
 
 ## Validation boundary
 
