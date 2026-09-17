@@ -114,10 +114,9 @@ def run_openai(model, prompt):
         reasoning={"effort": "high"},
         max_output_tokens=16000,
         store=False,
-        input=[
-            {"role": "system", "content": SYSTEM_CONTRACT},
-            {"role": "user", "content": prompt},
-        ],
+        tools=[],
+        instructions=SYSTEM_CONTRACT,
+        input=prompt,
     )
     return {
         "text": getattr(response, "output_text", None),
@@ -137,6 +136,7 @@ def run_google(model, prompt):
         system_instruction=SYSTEM_CONTRACT,
         input=prompt,
         store=False,
+        tools=[],
         generation_config={"thinking_level": "high", "max_output_tokens": 16000},
     )
     return {
@@ -157,6 +157,7 @@ def run_anthropic(model, prompt):
         max_tokens=16000,
         system=SYSTEM_CONTRACT,
         output_config={"effort": "high"},
+        tools=[],
         messages=[{"role": "user", "content": prompt}],
     )
     text_parts = [
