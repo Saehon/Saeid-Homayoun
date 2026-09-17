@@ -1,0 +1,22 @@
+field,rule,aggregation,public
+task_id,Join frozen private task packet to private gold key,,True
+response,Preserve raw response and normalized response separately,,True
+response_sha256,SHA-256 of raw response frozen before gold-key scoring,,True
+exact_correct,"0/1 for exact, set-match or structured-exact tasks under the task-specific normalization rule",Per-task,True
+earned_points,Points awarded under exact rule or private rubric,Per-task,True
+max_points,Frozen maximum points for the task,Per-task,True
+normalized_task_score,earned_points / max_points,Per-task,True
+grounding_score,"0-2: 0 unsupported; 1 partly grounded; 2 traceable to supplied evidence",Report separately and by domain,True
+contradiction_handling,"0-2 where applicable: 0 misses/overwrites conflict; 1 identifies conflict incompletely; 2 identifies and preserves conflict correctly",Report on applicable tasks only,True
+explanation_quality,"0-2 where explanation is required: 0 materially wrong/unsupported; 1 partly correct; 2 concise, evidence-grounded and boundary-preserving",Report on applicable tasks only,True
+company_score,Mean normalized_task_score within each company,MSFT/WMT/JPM separately,True
+domain_score,Mean normalized_task_score across companies within each professional domain,Seven domains separately,True
+overall_score,Mean of the seven domain_scores so domains are equally weighted,Overall,True
+latency_ms,Observed provider/runtime latency,Median and distribution; do not mix missing with zero,True
+input_tokens,Observed provider input tokens where exposed,Sum/median by model,True
+output_tokens,Observed provider output tokens where exposed,Sum/median by model,True
+api_cost_usd,Observed billing or documented provider price at run timestamp,Sum and per verified output,True
+reviewer_minutes,Prospectively measured human verification time,Sum and per verified output,True
+rework_cost_usd,Observed or prospectively measured rework cost; never silently imputed,CVPO input,True
+final_verified,"1 only when correctness and required grounding threshold pass after human verification",Count,True
+cvpo_usd,"(AI/API cost + human verification cost + rework cost) / verified correct professional outputs",Only after real telemetry exists,True
