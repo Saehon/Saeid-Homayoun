@@ -1,0 +1,4 @@
+package,version,wheel_filename,wheel_sha256,pypi_release_date,verification_status
+openai,3.14.1,openai-3.14.1-py3-none-any.whl,a6758739282f3b1cafe8df1204f7a2f7b1e9edbbcfa41c0efba687448fbc51cf,2026-09-15,OFFICIAL_PYPI_VERIFIED
+google-genai,2.23.0,google_genai-2.23.0-py3-none-any.whl,1e63211d44d188b8069c2b354d92b9bde25c1e821513fdbe1948b7c0d9f6b922,2026-09-10,OFFICIAL_PYPI_VERIFIED
+anthropic,1.6.0,anthropic-1.6.0-py3-none-any.whl,049434f013d3a874acdfee696ec626e19166d58f4277e8fa34e5d0a5ec250ad0,2026-09-15,OFFICIAL_PYPI_VERIFIED
