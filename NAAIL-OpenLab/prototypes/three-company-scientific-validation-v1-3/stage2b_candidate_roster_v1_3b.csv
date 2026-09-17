@@ -1,4 +1,4 @@
-candidate_id,provider,model,model_version,independent_session_required,browsing_condition,tool_condition,token_telemetry,cost_telemetry,status,notes
-C01,UNASSIGNED,UNASSIGNED,UNASSIGNED,TRUE,FROZEN_PER_RUN,FROZEN_PER_RUN,REQUIRED_OR_UNAVAILABLE_LABEL,REQUIRED_OR_UNAVAILABLE_LABEL,BLOCKED_PROVIDER_ACCESS,Do not substitute same-session assistant output
-C02,UNASSIGNED,UNASSIGNED,UNASSIGNED,TRUE,FROZEN_PER_RUN,FROZEN_PER_RUN,REQUIRED_OR_UNAVAILABLE_LABEL,REQUIRED_OR_UNAVAILABLE_LABEL,BLOCKED_PROVIDER_ACCESS,Do not substitute same-session assistant output
-C03,UNASSIGNED,UNASSIGNED,UNASSIGNED,TRUE,FROZEN_PER_RUN,FROZEN_PER_RUN,REQUIRED_OR_UNAVAILABLE_LABEL,REQUIRED_OR_UNAVAILABLE_LABEL,BLOCKED_PROVIDER_ACCESS,Do not substitute same-session assistant output
+candidate_id,provider,model,model_version,independent_session_required,browsing_condition,tool_condition,reasoning_setting,token_telemetry,cost_telemetry,status,notes
+C01,OpenAI,gpt-6-astra,stable alias as of 2026-09-17,TRUE,DISABLED,DISABLED,HIGH,REQUIRED_OR_UNAVAILABLE_LABEL,REQUIRED_OR_UNAVAILABLE_LABEL,READY_PROVIDER_CONNECTION_REQUIRED,Responses API; frozen packet only; no web/file search/tool use
+C02,Google,gemini-3.8-flash,stable GA as of 2026-09-17,TRUE,DISABLED,DISABLED,HIGH,REQUIRED_OR_UNAVAILABLE_LABEL,REQUIRED_OR_UNAVAILABLE_LABEL,READY_PROVIDER_CONNECTION_REQUIRED,Interactions or GenerateContent API; no grounding/search/tools; frozen packet only
+C03,Anthropic,claude-fable-5,current Fable 5 service / Fable 5.1 offering as of 2026-09-17,TRUE,DISABLED,DISABLED,HIGH,REQUIRED_OR_UNAVAILABLE_LABEL,REQUIRED_OR_UNAVAILABLE_LABEL,READY_PROVIDER_CONNECTION_REQUIRED,Messages API; adaptive thinking with effort high; frozen packet only
