@@ -54,19 +54,34 @@ Public Stage 2A records:
 
 ### Stage 2B — Independent Blind Model Runs
 
-**Status:** `REGISTERED_NOT_EXECUTED`  
-**Current dependency:** independent provider/model invocation is not yet available in the active execution environment.
+**Scientific status:** `REGISTERED_NOT_EXECUTED`  
+**Infrastructure status:** `EXECUTED_VALIDATED`  
+**Provider state:** `READY_PROVIDER_CONNECTION_REQUIRED`
 
-Published Stage 2B controls:
+Frozen candidate set:
+
+- C01 — OpenAI `gpt-6-astra`
+- C02 — Google `gemini-3.8-flash`
+- C03 — Anthropic `claude-fable-5`
+
+All three providers are configured for high reasoning, closed evidence, no browsing/search/tools, no prior candidate responses and no gold-key access.
+
+Published Stage 2B controls and execution scaffold:
 - `STAGE2B_INDEPENDENT_MODEL_RUN_GATE_V1_3B.md`
+- `STAGE2B_EXECUTION_RUNBOOK_V1_3B.md`
+- `stage2b_runner.py`
+- `requirements-stage2b.txt`
+- `STAGE2B_RUNNER_VALIDATION_2026_09_17.md`
 - `stage2b_candidate_roster_v1_3b.csv`
 - `stage2b_response_freeze_ledger_template_v1_3b.csv`
 
-The candidate roster contains three independent slots. They remain `BLOCKED_PROVIDER_ACCESS` until real external model runs are observed. Same-session self-comparisons, simulated provider outputs, copied answers or reconstructed responses are not promotion-eligible evidence.
+The public runner contains no private prompts, no gold key, no credentials and no patent-sensitive enabling material. A 21-task placeholder dry run validated task-count control, SHA-256 construction, manifest creation and the scoring lock without making any provider API call.
+
+Actual candidate execution still requires independently supplied provider access. Same-session self-comparisons, simulated provider outputs, copied answers or reconstructed responses are not promotion-eligible evidence.
 
 ### Stage 2C–2E
 
-Not executed. Stage 2C scoring may begin only after Stage 2B raw responses are frozen. Numeric Cost per Verified Professional Output™ remains `NOT_EXECUTED` until real model cost, reviewer time and rework telemetry exist.
+Not executed. Stage 2C scoring may begin only after Stage 2B raw responses are frozen for C01, C02 and C03. Numeric Cost per Verified Professional Output™ remains `NOT_EXECUTED` until real model cost, reviewer time and rework telemetry exist.
 
 ## Existing executed / derived V1.3 evidence
 
@@ -96,6 +111,10 @@ These do not constitute independent replication or Phase 2 model validation.
 - `blind_benchmark_scoring_schema_v1_3b.csv`
 - `blind_benchmark_run_manifest_template_v1_3b.csv`
 - `STAGE2B_INDEPENDENT_MODEL_RUN_GATE_V1_3B.md`
+- `STAGE2B_EXECUTION_RUNBOOK_V1_3B.md`
+- `stage2b_runner.py`
+- `requirements-stage2b.txt`
+- `STAGE2B_RUNNER_VALIDATION_2026_09_17.md`
 - `stage2b_candidate_roster_v1_3b.csv`
 - `stage2b_response_freeze_ledger_template_v1_3b.csv`
 - `COST_PER_VERIFIED_PROFESSIONAL_OUTPUT_V1_3.md`
