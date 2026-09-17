@@ -1,0 +1,1 @@
+run_id,timestamp_utc,provider,model,model_version,task_id,ticker,input_tokens,output_tokens,api_cost_usd,latency_ms,response,correct,grounding_score,contradiction_handling,reviewer_id_hash,reviewer_minutes,reviewer_hourly_cost_usd,verification_outcome,rework_minutes,verified_professional_output,notes
