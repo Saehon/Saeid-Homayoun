@@ -22,14 +22,16 @@ def load_rows():
         return list(csv.DictReader(f))
 
 
+def status_map(ticker):
+    return {int(r["step_id"]): r["status"] for r in load_rows() if r["ticker"] == ticker}
+
+
 def test_exactly_60_company_step_rows():
-    rows = load_rows()
-    assert len(rows) == 60
+    assert len(load_rows()) == 60
 
 
 def test_exactly_three_companies():
-    rows = load_rows()
-    assert {r["ticker"] for r in rows} == EXPECTED
+    assert {r["ticker"] for r in load_rows()} == EXPECTED
 
 
 def test_each_company_has_steps_1_to_20_once():
@@ -40,33 +42,48 @@ def test_each_company_has_steps_1_to_20_once():
 
 
 def test_status_vocabulary_is_controlled():
-    rows = load_rows()
-    assert all(r["status"] in ALLOWED_STATUSES for r in rows)
+    assert all(r["status"] in ALLOWED_STATUSES for r in load_rows())
 
 
 def test_source_access_is_verified_for_starting_cohort():
-    rows = load_rows()
-    assert all(r["source_access"] == "VERIFIED" for r in rows)
+    assert all(r["source_access"] == "VERIFIED" for r in load_rows())
 
 
-def test_walmart_and_jpm_are_not_falsely_promoted():
-    rows = load_rows()
+def test_walmart_and_jpm_core_bounded_execution_is_recorded():
     for ticker in {"WMT", "JPM"}:
-        statuses = {r["status"] for r in rows if r["ticker"] == ticker}
-        assert statuses == {"REGISTERED_NOT_EXECUTED"}
+        s = status_map(ticker)
+        assert s[1] == "EXECUTED"
+        assert s[2] == "EXECUTED"
+        assert s[3] == "DERIVED_EXECUTED"
+        assert s[4] == "EXECUTED"
+        assert s[5] == "DERIVED_EXECUTED"
+        assert s[6] == "EXECUTED"
+        assert s[9] == "SYNTHETIC_EXECUTED"
+        assert s[12] == "RESEARCH_PROTOTYPE"
+        assert s[13] == "EXECUTED"
+        assert s[14] == "RESEARCH_PROTOTYPE"
+        assert s[15] == "DESIGN_ONLY"
+        assert s[17] == "EXECUTED_VALIDATED"
+        assert s[18] == "RESEARCH_PROTOTYPE"
+        assert s[19] == "RESEARCH_PROTOTYPE"
+
+
+def test_walmart_and_jpm_open_scientific_gates_stay_open():
+    for ticker in {"WMT", "JPM"}:
+        s = status_map(ticker)
+        for step_id in {7, 8, 10, 11, 16, 20}:
+            assert s[step_id] == "REGISTERED_NOT_EXECUTED"
 
 
 def test_microsoft_retains_open_scientific_gates():
-    rows = load_rows()
-    msft = {int(r["step_id"]): r["status"] for r in rows if r["ticker"] == "MSFT"}
-    assert msft[7] == "REGISTERED_NOT_EXECUTED"   # Fama–French
-    assert msft[10] == "REGISTERED_NOT_EXECUTED"  # professional AI benchmark
-    assert msft[11] == "REGISTERED_NOT_EXECUTED"  # cost per verified professional output
-    assert msft[15] == "DESIGN_ONLY"              # participant experiment
-    assert msft[20] == "REGISTERED_NOT_EXECUTED"  # independent replication
+    s = status_map("MSFT")
+    assert s[7] == "REGISTERED_NOT_EXECUTED"
+    assert s[10] == "REGISTERED_NOT_EXECUTED"
+    assert s[11] == "REGISTERED_NOT_EXECUTED"
+    assert s[15] == "DESIGN_ONLY"
+    assert s[20] == "REGISTERED_NOT_EXECUTED"
 
 
-def test_microsoft_bounded_validation_is_preserved():
-    rows = load_rows()
-    msft = {int(r["step_id"]): r["status"] for r in rows if r["ticker"] == "MSFT"}
-    assert msft[17] == "EXECUTED_VALIDATED"
+def test_bounded_validation_is_preserved_for_all_three():
+    for ticker in EXPECTED:
+        assert status_map(ticker)[17] == "EXECUTED_VALIDATED"
