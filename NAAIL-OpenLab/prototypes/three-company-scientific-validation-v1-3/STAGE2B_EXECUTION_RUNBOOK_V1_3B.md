@@ -18,19 +18,30 @@ Execute the frozen V1.3B blind professional benchmark independently on three pro
 | C02 | Google | `gemini-3.8-flash` | `high` |
 | C03 | Anthropic | `claude-fable-5` | `high` / adaptive |
 
-Model IDs were rechecked against provider documentation on 2026-09-17.
+Model IDs were rechecked against official provider documentation on 2026-09-17.
 
-## Public runner
+## Public execution package
 
-`stage2b_runner.py` is a non-secret execution scaffold. It contains no task prompts, no gold key, no API credentials and no patent-sensitive implementation detail.
+- `stage2b_runner.py` — provider-neutral runner and response freezer.
+- `stage2b_preflight.py` — validates blindness, task count, hashes, SDK/key readiness and output location.
+- `stage2b_verify_bundle.py` — verifies the frozen 21-response bundle and manifest hashes before Stage 2C.
+- `test_stage2b_runner.py` — tests 21-task dry-run behavior and rejection of gold-key fields.
+- `.env.example` — names required environment variables without containing secrets.
+- `.gitignore` — blocks common private benchmark, secret and run-output paths.
+- `STAGE2B_SECURE_EXECUTION_CHECKLIST_V1_3B.md` — operating checklist.
 
-Private runtime inputs:
+The public package contains no private prompts, no gold key and no credentials.
 
-- `tasks.jsonl` — exactly 21 private benchmark tasks; each line requires `task_id` and `prompt`.
+## Private runtime inputs
+
+Keep these outside the public Git repository:
+
+- `tasks.jsonl` — exactly 21 private benchmark tasks; each line requires `task_id` and `prompt` only.
 - `evidence.txt` — frozen E1–E8 evidence packet.
-- provider API key supplied only through an environment variable.
+- provider API credential supplied only through a local environment variable.
+- private run-output directory.
 
-The script validates exactly 21 unique task IDs, records SHA-256 for the private task file and evidence packet, runs each task as a stateless request, saves every raw response or failed call, hashes each frozen artifact, writes a response-freeze index and writes a final run manifest with `scoring_opened=false`.
+The runner rejects common answer/gold/rubric fields in `tasks.jsonl`, can require registered SHA-256 values for both private inputs, requires `--confirm-blind` for live calls and refuses a Git-worktree output directory by default.
 
 ## Required environment variables
 
@@ -40,58 +51,112 @@ Use only the key required for the selected candidate:
 - C02: `GEMINI_API_KEY`
 - C03: `ANTHROPIC_API_KEY`
 
-Never commit `.env` files, credentials, private task packets, evidence packet exports containing restricted material, raw candidate outputs before the disclosure gate, or the gold key.
+Never put a real key in `.env.example`, GitHub, ChatGPT messages, issues, pull requests, run manifests or benchmark files.
 
 ## Installation
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements-stage2b.txt
 pip freeze > environment_lock_stage2b.txt
 ```
 
-Record the environment lock with the run package; do not silently update SDK versions between candidates.
+macOS/Linux:
 
-## Preflight dry run
+```bash
+source .venv/bin/activate
+pip install -r requirements-stage2b.txt
+pip freeze > environment_lock_stage2b.txt
+```
+
+Freeze the environment once and do not silently update SDK versions between candidates.
+
+## Step 1 — Preflight
+
+Run preflight before every candidate. Prefer supplying the registered frozen hashes.
+
+```bash
+python stage2b_preflight.py \
+  --candidate C01 \
+  --tasks /PRIVATE/tasks.jsonl \
+  --evidence /PRIVATE/evidence.txt \
+  --output-dir /PRIVATE/runs \
+  --expected-tasks-sha256 <REGISTERED_TASK_HASH> \
+  --expected-evidence-sha256 <REGISTERED_EVIDENCE_HASH> \
+  --require-key
+```
+
+A successful preflight is readiness evidence only; it is not a model observation.
+
+## Step 2 — Dry run
 
 ```bash
 python stage2b_runner.py \
   --candidate C01 \
-  --tasks /private/tasks.jsonl \
-  --evidence /private/evidence.txt \
-  --output-dir /private/runs \
+  --tasks /PRIVATE/tasks.jsonl \
+  --evidence /PRIVATE/evidence.txt \
+  --output-dir /PRIVATE/runs \
+  --expected-tasks-sha256 <REGISTERED_TASK_HASH> \
+  --expected-evidence-sha256 <REGISTERED_EVIDENCE_HASH> \
   --dry-run
 ```
 
-A dry run validates file structure, task count, hashes and manifest construction but does **not** count as a model execution.
+The dry run checks 21 unique tasks, hashes, SDK environment metadata and manifest construction without making a provider API request.
+
+## Step 3 — Live candidate run
+
+```bash
+python stage2b_runner.py \
+  --candidate C01 \
+  --tasks /PRIVATE/tasks.jsonl \
+  --evidence /PRIVATE/evidence.txt \
+  --output-dir /PRIVATE/runs \
+  --expected-tasks-sha256 <REGISTERED_TASK_HASH> \
+  --expected-evidence-sha256 <REGISTERED_EVIDENCE_HASH> \
+  --confirm-blind
+```
+
+The runner requests high reasoning, supplies no external tools, applies a 16,000-token output cap to each provider route, requests non-stored/stateless operation where the provider API exposes that control, records provider/SDK metadata and preserves failed calls rather than replacing them.
+
+## Step 4 — Verify the freeze bundle
+
+```bash
+python stage2b_verify_bundle.py /PRIVATE/runs/<RUN_ID>
+```
+
+A valid bundle must contain 21 indexed response/failure records, matching per-response SHA-256 sidecars, a valid response-freeze-index hash, a valid run-manifest hash, `gold_key_access=NOT_AVAILABLE_TO_RUNNER`, and `scoring_opened=false`.
+
+## Step 5 — Private archival
+
+Copy the verified run directory to the restricted Google Drive folder:
+
+`NAAIL_PRIVATE_STAGE2B_RUNS_V1_3B`
+
+Do not publish raw responses to public GitHub before the disclosure decision.
 
 ## Execution sequence
 
 ```text
-C01 → freeze/hash → verify manifest
-C02 → freeze/hash → verify manifest
-C03 → freeze/hash → verify manifest
+C01 preflight → C01 run → verify/freeze → private archive
+C02 preflight → C02 run → verify/freeze → private archive
+C03 preflight → C03 run → verify/freeze → private archive
+cross-run hash/condition reconciliation → Stage 2C scoring gate
 ```
 
-For each real run:
-
-1. create a fresh process/session;
-2. use the same frozen task and evidence files;
-3. supply no browsing, grounding, web search, file search or external tools;
-4. do not pass prior candidate responses;
-5. do not expose the gold key;
-6. retain failed calls, refusals and null outputs;
-7. record actual SDK version, timestamps, token telemetry and latency;
-8. record price provenance separately and prospectively;
-9. freeze all response artifacts and SHA-256 values before any scoring.
+For comparable runs, the task hash and evidence hash must be identical. SDK/model identifiers, timestamps, failures, token telemetry and latency remain part of the record.
 
 ## Scoring lock
 
-Stage 2C stays closed while any candidate response set is unfrozen. `scoring_opened` must remain `false` through Stage 2B.
+Stage 2C stays closed while any candidate response set is unfrozen. The gold key must not enter the runner environment. `scoring_opened` remains `false` throughout Stage 2B.
 
-Only after C01, C02 and C03 are frozen may the private gold key be opened for blinded Stage 2C scoring.
+Only after C01, C02 and C03 have frozen run/failure records and each bundle passes verification may the private gold key be opened for blinded Stage 2C scoring.
 
 ## Scientific boundary
 
-The runner being present, syntactically valid, or dry-run validated is not benchmark evidence. Scientific execution remains `REGISTERED_NOT_EXECUTED` until actual provider calls occur.
+The runner being present, tested, syntactically valid, dry-run validated or credential-ready is not benchmark performance evidence. Scientific execution remains `REGISTERED_NOT_EXECUTED` until actual independent provider calls occur.
