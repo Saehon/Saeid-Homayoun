@@ -1,0 +1,33 @@
+name: NAAIL Multi-Company Free Data Probe
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/prototypes/multi-company-free-data-v1/**'
+      - '.github/workflows/multi_company_free_data_probe.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  sec-public-data-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe SEC public CompanyFacts and submissions
+        env:
+          SEC_USER_AGENT: 'NAAIL-OpenLab academic research https://github.com/Saehon/Saeid-Homayoun'
+        run: |
+          python NAAIL-OpenLab/prototypes/multi-company-free-data-v1/code/sec_free_public_probe.py
+      - name: Upload machine-readable probe result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: naail-multi-company-sec-free-data-probe
+          path: NAAIL-OpenLab/prototypes/multi-company-free-data-v1/sec_free_public_probe_results.json
+          if-no-files-found: warn
