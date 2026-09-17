@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NAAIL Three-Company Prototype V1.1</title>
+<style>
+body{font-family:system-ui,Arial;margin:0;background:#f6f7f9;color:#111}
+header{padding:24px 28px;background:#fff;border-bottom:1px solid #ddd;position:sticky;top:0}
+main{padding:24px 28px;max-width:1200px;margin:auto}
+.tabs button{margin:4px;padding:9px 14px;border:1px solid #bbb;background:white;border-radius:10px;cursor:pointer}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:18px 0}
+.card{background:white;border:1px solid #ddd;border-radius:12px;padding:14px}
+.big{font-size:24px;font-weight:700}
+table{width:100%;border-collapse:collapse;background:white}
+th,td{border:1px solid #ddd;padding:8px;text-align:left;font-size:13px}
+th{background:#eee}
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#eee;font-size:12px}
+.warn{padding:12px;border:1px solid #d7b65c;background:#fff8dc;border-radius:10px}
+.small{font-size:12px;color:#555}
+</style>
+</head>
+<body>
+<header>
+<h1>NAAIL Three-Company POC / Prototype V1.1</h1>
+<div class="badge">RESEARCH_PROTOTYPE</div>
+<div class="badge">3 companies × 20 steps = 60</div>
+<div class="badge">Two permanent cores</div>
+</header>
+<main>
+<p class="warn"><b>Boundary:</b> this prototype displays executed, derived, synthetic, design-only, and pending states. It does not convert pending work into PASS.</p>
+<div class="tabs">
+<button onclick="showCompany('MSFT')">Microsoft</button>
+<button onclick="showCompany('WMT')">Walmart</button>
+<button onclick="showCompany('JPM')">JPMorgan</button>
+</div>
+<div id="company"></div>
+<h2>20-step execution state</h2>
+<div id="matrix"></div>
+<h2>Scientific gates still open</h2>
+<p>Fama–French verified coefficients, aggregate patent/innovation execution, professional multi-model benchmark, Cost per Verified Professional Output™, participant experiment execution, WMT/JPM Human Gate decisions, and independent replication.</p>
+<p class="small">Generated 2026-09-17. Market returns are IEX close-to-close and exclude dividends. Walmart/JPM management-accounting microcases are synthetic.</p>
+</main>
+<script>
+const matrix=[
+["MSFT",1,"Data & Evidence Gate","EXECUTED"],["MSFT",2,"Financial Statements / XBRL","EXECUTED"],["MSFT",3,"Accounting Analytics","DERIVED_EXECUTED"],["MSFT",4,"Audit / CAM / ICFR","EXECUTED"],["MSFT",5,"Text Analytics","DERIVED_EXECUTED"],["MSFT",6,"Finance / Market","EXECUTED"],["MSFT",7,"Fama–French","REGISTERED_NOT_EXECUTED"],["MSFT",8,"Innovation / Patents","RESEARCH_PROTOTYPE"],["MSFT",9,"Management Accounting","SYNTHETIC_EXECUTED"],["MSFT",10,"Professional AI Benchmark","REGISTERED_NOT_EXECUTED"],["MSFT",11,"Cost per Verified Professional Output","REGISTERED_NOT_EXECUTED"],["MSFT",12,"Digital Twin","RESEARCH_PROTOTYPE"],["MSFT",13,"Evidence Passport","EXECUTED"],["MSFT",14,"Falsification / Robustness","RESEARCH_PROTOTYPE"],["MSFT",15,"Human–AI Experiment","DESIGN_ONLY"],["MSFT",16,"Human Gate","EXECUTED"],["MSFT",17,"Automated Validation","EXECUTED_VALIDATED"],["MSFT",18,"Interactive Prototype V1","RESEARCH_PROTOTYPE"],["MSFT",19,"Reproducibility Package","RESEARCH_PROTOTYPE"],["MSFT",20,"Independent Replication","REGISTERED_NOT_EXECUTED"],
+["WMT",1,"Data & Evidence Gate","EXECUTED"],["WMT",2,"Financial Statements / XBRL","EXECUTED"],["WMT",3,"Accounting Analytics","DERIVED_EXECUTED"],["WMT",4,"Audit / CAM / ICFR","EXECUTED"],["WMT",5,"Text Analytics","DERIVED_EXECUTED"],["WMT",6,"Finance / Market","EXECUTED"],["WMT",7,"Fama–French","REGISTERED_NOT_EXECUTED"],["WMT",8,"Innovation / Patents","REGISTERED_NOT_EXECUTED"],["WMT",9,"Management Accounting","SYNTHETIC_EXECUTED"],["WMT",10,"Professional AI Benchmark","REGISTERED_NOT_EXECUTED"],["WMT",11,"Cost per Verified Professional Output","REGISTERED_NOT_EXECUTED"],["WMT",12,"Digital Twin","RESEARCH_PROTOTYPE"],["WMT",13,"Evidence Passport","EXECUTED"],["WMT",14,"Falsification / Robustness","RESEARCH_PROTOTYPE"],["WMT",15,"Human–AI Experiment","DESIGN_ONLY"],["WMT",16,"Human Gate","REGISTERED_NOT_EXECUTED"],["WMT",17,"Automated Validation","EXECUTED_VALIDATED"],["WMT",18,"Interactive Prototype V1","RESEARCH_PROTOTYPE"],["WMT",19,"Reproducibility Package","RESEARCH_PROTOTYPE"],["WMT",20,"Independent Replication","REGISTERED_NOT_EXECUTED"],
+["JPM",1,"Data & Evidence Gate","EXECUTED"],["JPM",2,"Financial Statements / XBRL","EXECUTED"],["JPM",3,"Accounting Analytics","DERIVED_EXECUTED"],["JPM",4,"Audit / CAM / ICFR","EXECUTED"],["JPM",5,"Text Analytics","DERIVED_EXECUTED"],["JPM",6,"Finance / Market","EXECUTED"],["JPM",7,"Fama–French","REGISTERED_NOT_EXECUTED"],["JPM",8,"Innovation / Patents","REGISTERED_NOT_EXECUTED"],["JPM",9,"Management Accounting","SYNTHETIC_EXECUTED"],["JPM",10,"Professional AI Benchmark","REGISTERED_NOT_EXECUTED"],["JPM",11,"Cost per Verified Professional Output","REGISTERED_NOT_EXECUTED"],["JPM",12,"Digital Twin","RESEARCH_PROTOTYPE"],["JPM",13,"Evidence Passport","EXECUTED"],["JPM",14,"Falsification / Robustness","RESEARCH_PROTOTYPE"],["JPM",15,"Human–AI Experiment","DESIGN_ONLY"],["JPM",16,"Human Gate","REGISTERED_NOT_EXECUTED"],["JPM",17,"Automated Validation","EXECUTED_VALIDATED"],["JPM",18,"Interactive Prototype V1","RESEARCH_PROTOTYPE"],["JPM",19,"Reproducibility Package","RESEARCH_PROTOTYPE"],["JPM",20,"Independent Replication","REGISTERED_NOT_EXECUTED"]
+].map(x=>({ticker:x[0],step_id:x[1],section:x[2],status:x[3]}));
+const features={
+MSFT:{company:"Microsoft Corporation",fiscal_period:"2026-06-30",growth_pct:17.75,operating_margin_pct:46.78,net_metric:40.31,total_assets:null,price_return:-24.22,cam_count:2,cam_topics:"Revenue Recognition | Income Taxes — Uncertain Tax Positions",icfr:"Unqualified/effective"},
+WMT:{company:"Walmart Inc.",fiscal_period:"2026-01-31",growth_pct:4.7255,operating_margin_pct:4.222,net_metric:3.0992,total_assets:284668,price_return:21.4511,cam_count:1,cam_topics:"Contingencies",icfr:"Effective; auditor ICFR opinion unqualified"},
+JPM:{company:"JPMorgan Chase & Co.",fiscal_period:"2025-12-31",growth_pct:2.7546,operating_margin_pct:null,net_metric:31.2683,total_assets:4424900,price_return:34.3099,cam_count:2,cam_topics:"Allowance for Loan Losses — portfolio-based wholesale and credit card | Fair Value of Certain Level 3 Financial Instruments",icfr:"Effective; PwC opinion on ICFR"}
+};
+function fmt(x){return x===null||x===undefined?"—":x}
+function showCompany(t){
+  const f=features[t];
+  const cards=[["Company",f.company],["Fiscal period",f.fiscal_period],["Growth %",f.growth_pct],["Operating margin %",fmt(f.operating_margin_pct)],["Net-income/revenue metric %",f.net_metric],["Total assets (USD m)",fmt(f.total_assets)],["Fiscal price return %",f.price_return],["CAM count",f.cam_count],["ICFR",f.icfr]];
+  document.getElementById("company").innerHTML="<div class='cardgrid'>"+cards.map(c=>`<div class='card'><div class='small'>${c[0]}</div><div class='big'>${c[1]}</div></div>`).join("")+"</div><div class='card'><b>CAM topics:</b> "+f.cam_topics+"</div>";
+  const rows=matrix.filter(x=>x.ticker===t);
+  document.getElementById("matrix").innerHTML="<table><tr><th>#</th><th>Section</th><th>Status</th></tr>"+rows.map(r=>`<tr><td>${r.step_id}</td><td>${r.section}</td><td><span class='badge'>${r.status}</span></td></tr>`).join("")+"</table>";
+}
+showCompany("MSFT");
+</script>
+</body>
+</html>
