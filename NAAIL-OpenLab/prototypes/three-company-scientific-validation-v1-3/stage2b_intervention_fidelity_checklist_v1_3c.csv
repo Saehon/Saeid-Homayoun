@@ -1,0 +1,16 @@
+check_id,control,pass_condition,failure_status,applies_to,status
+F01,Same task objective,Substantive professional question identical across A0/A1/A2,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F02,Same frozen evidence,Identical evidence packet/source IDs available to all conditions,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F03,No external retrieval,No browsing search external tools or extra file retrieval used,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F04,Same provider/model,Provider and model identity identical within triplet,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F05,Independent condition runs,No condition sees another condition response,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F06,Gold blindness,Gold_Key/reference scoring content inaccessible before freeze,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F07,Knowledge parity,Any standards/rules excerpts are common across conditions,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F08,Matched visible-output budget,Same maximum visible-output budget within provider-task triplet,PASS_WITH_DOCUMENTED_DEVIATION,Every provider-task triplet,FROZEN_DESIGN
+F09,No human pre-freeze repair,No human edits hints or corrections before response freeze,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F10,A0 not intentionally weakened,A0 receives full task and evidence and may reason/cite/request more evidence,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
+F11,A1 scope respected,A1 adds Evidence Passport structure but no full falsification/decision-governance intervention,PASS_WITH_DOCUMENTED_DEVIATION,A1,FROZEN_DESIGN
+F12,A2 evidence boundary,A2 governance transforms/challenges supplied evidence without adding substantive facts,CONTAMINATED_EXCLUDE_CONFIRMATORY,A2,FROZEN_DESIGN
+F13,Unresolved contradictions preserved,Architecture does not force certainty or reconciliation when evidence is insufficient,PASS_WITH_DOCUMENTED_DEVIATION,A1/A2,FROZEN_DESIGN
+F14,Failure preservation,Failed calls refusals uncertainty and contradictory evidence retained and not silently replaced,FAILED_CALL or documented substantive response,All conditions,FROZEN_DESIGN
+F15,Fidelity before scoring,Fidelity status completed before interpreting OPQS as architecture effect,CONTAMINATED_EXCLUDE_CONFIRMATORY,Every provider-task triplet,FROZEN_DESIGN
