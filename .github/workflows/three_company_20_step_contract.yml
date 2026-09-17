@@ -1,0 +1,31 @@
+name: Three-Company 20-Step Contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'NAAIL-OpenLab/prototypes/three-company-20-step-poc-v1-1/**'
+      - '.github/workflows/three_company_20_step_contract.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/prototypes/three-company-20-step-poc-v1-1/**'
+      - '.github/workflows/three_company_20_step_contract.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pytest
+        run: python -m pip install pytest
+      - name: Validate 3-company × 20-step contract
+        working-directory: NAAIL-OpenLab/prototypes/three-company-20-step-poc-v1-1
+        run: python -m pytest -q tests/test_three_company_20_step_contract.py
+      - name: Scientific boundary
+        run: |
+          echo 'This workflow validates contract integrity only.'
+          echo 'It does not convert REGISTERED_NOT_EXECUTED scientific work into executed results.'
