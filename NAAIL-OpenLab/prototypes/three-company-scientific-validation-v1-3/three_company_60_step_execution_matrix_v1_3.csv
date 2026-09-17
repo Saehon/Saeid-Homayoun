@@ -1,0 +1,61 @@
+company,ticker,step_id,section,status,source_access,next_action
+Microsoft Corporation,MSFT,1,Data & Evidence Gate,EXECUTED,VERIFIED,Maintain source registry and provenance
+Microsoft Corporation,MSFT,2,Financial Statements / XBRL,EXECUTED,VERIFIED,Expand tag reconciliation and cross-source checks
+Microsoft Corporation,MSFT,3,Accounting Analytics,DERIVED_EXECUTED,VERIFIED,Add sector robustness and longitudinal features
+Microsoft Corporation,MSFT,4,Audit / CAM / ICFR,EXECUTED,VERIFIED,Retain CAM/ICFR traceability and assertion mapping
+Microsoft Corporation,MSFT,5,Text Analytics,DERIVED_EXECUTED,VERIFIED,Expand beyond bounded CAM-title/metadata features
+Microsoft Corporation,MSFT,6,Finance / Market,EXECUTED,VERIFIED,Retain corporate-action and total-return sensitivity
+Microsoft Corporation,MSFT,7,Fama–French,EXECUTED,VERIFIED,Add longer-window and consolidated-feed/CRSP replication
+Microsoft Corporation,MSFT,8,Innovation / Patents,RESEARCH_PROTOTYPE,VERIFIED,USPTO PatentsView source updated through 2025; aggregate execution awaits authenticated ODP/API access and validated aliases
+Microsoft Corporation,MSFT,9,Management Accounting,SYNTHETIC_EXECUTED,VERIFIED,Keep synthetic boundary explicit; do not imply internal company costs
+Microsoft Corporation,MSFT,10,Professional AI Benchmark,RESEARCH_PROTOTYPE,VERIFIED,Execute fresh blind holdout tasks across independently invoked models; public gold from V1.2 is retired for promotion use
+Microsoft Corporation,MSFT,11,Cost per Verified Professional Output,RESEARCH_PROTOTYPE,VERIFIED,"Populate prospective model-cost and human-verification telemetry, then compute verified-output cost"
+Microsoft Corporation,MSFT,12,Digital Twin,RESEARCH_PROTOTYPE,VERIFIED,Integrate remaining scientific modules and provenance links
+Microsoft Corporation,MSFT,13,Evidence Passport,EXECUTED,VERIFIED,Extend passport to every promoted output
+Microsoft Corporation,MSFT,14,Falsification / Robustness,DERIVED_EXECUTED,VERIFIED,"Retain HAC(3), Cook and leave-one-out results; add external-source/longer-window and benchmark adversarial challenges"
+Microsoft Corporation,MSFT,15,Human–AI Experiment,DESIGN_ONLY,VERIFIED,Power grid executed; complete ethics/consent/preregistration and recruit participants before execution
+Microsoft Corporation,MSFT,16,Human Gate,EXECUTED,VERIFIED,Retain current MSFT decision; obtain explicit WMT/JPM human reviewer decisions
+Microsoft Corporation,MSFT,17,Automated Validation,EXECUTED_VALIDATED,VERIFIED,Preserve validation artifacts and rerun after data changes
+Microsoft Corporation,MSFT,18,Interactive Prototype V1,RESEARCH_PROTOTYPE,VERIFIED,Upgrade shared five-view application with V1.2 factor and gate views
+Microsoft Corporation,MSFT,19,Reproducibility Package,EXECUTED,VERIFIED,Technical replay executed; exact V1.2 table mismatch is preserved as REQUEST_MORE_EVIDENCE pending reconciliation; Step 20 remains independent replication
+Microsoft Corporation,MSFT,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent reviewer/environment replication
+Walmart Inc.,WMT,1,Data & Evidence Gate,EXECUTED,VERIFIED,Maintain source registry and provenance
+Walmart Inc.,WMT,2,Financial Statements / XBRL,EXECUTED,VERIFIED,Expand tag reconciliation and cross-source checks
+Walmart Inc.,WMT,3,Accounting Analytics,DERIVED_EXECUTED,VERIFIED,Add sector robustness and longitudinal features
+Walmart Inc.,WMT,4,Audit / CAM / ICFR,EXECUTED,VERIFIED,Retain CAM/ICFR traceability and assertion mapping
+Walmart Inc.,WMT,5,Text Analytics,DERIVED_EXECUTED,VERIFIED,Expand beyond bounded CAM-title/metadata features
+Walmart Inc.,WMT,6,Finance / Market,EXECUTED,VERIFIED,Retain corporate-action and total-return sensitivity
+Walmart Inc.,WMT,7,Fama–French,EXECUTED,VERIFIED,Add longer-window and consolidated-feed/CRSP replication
+Walmart Inc.,WMT,8,Innovation / Patents,RESEARCH_PROTOTYPE,VERIFIED,USPTO PatentsView source updated through 2025; aggregate execution awaits authenticated ODP/API access and validated aliases
+Walmart Inc.,WMT,9,Management Accounting,SYNTHETIC_EXECUTED,VERIFIED,Keep synthetic boundary explicit; do not imply internal company costs
+Walmart Inc.,WMT,10,Professional AI Benchmark,RESEARCH_PROTOTYPE,VERIFIED,Execute fresh blind holdout tasks across independently invoked models; public gold from V1.2 is retired for promotion use
+Walmart Inc.,WMT,11,Cost per Verified Professional Output,RESEARCH_PROTOTYPE,VERIFIED,"Populate prospective model-cost and human-verification telemetry, then compute verified-output cost"
+Walmart Inc.,WMT,12,Digital Twin,RESEARCH_PROTOTYPE,VERIFIED,Integrate remaining scientific modules and provenance links
+Walmart Inc.,WMT,13,Evidence Passport,EXECUTED,VERIFIED,Extend passport to every promoted output
+Walmart Inc.,WMT,14,Falsification / Robustness,DERIVED_EXECUTED,VERIFIED,"Retain HAC(3), Cook and leave-one-out results; add external-source/longer-window and benchmark adversarial challenges"
+Walmart Inc.,WMT,15,Human–AI Experiment,DESIGN_ONLY,VERIFIED,Power grid executed; complete ethics/consent/preregistration and recruit participants before execution
+Walmart Inc.,WMT,16,Human Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Retain current MSFT decision; obtain explicit WMT/JPM human reviewer decisions
+Walmart Inc.,WMT,17,Automated Validation,EXECUTED_VALIDATED,VERIFIED,Preserve validation artifacts and rerun after data changes
+Walmart Inc.,WMT,18,Interactive Prototype V1,RESEARCH_PROTOTYPE,VERIFIED,Upgrade shared five-view application with V1.2 factor and gate views
+Walmart Inc.,WMT,19,Reproducibility Package,EXECUTED,VERIFIED,Technical replay executed; exact V1.2 table mismatch is preserved as REQUEST_MORE_EVIDENCE pending reconciliation; Step 20 remains independent replication
+Walmart Inc.,WMT,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent reviewer/environment replication
+JPMorgan Chase & Co.,JPM,1,Data & Evidence Gate,EXECUTED,VERIFIED,Maintain source registry and provenance
+JPMorgan Chase & Co.,JPM,2,Financial Statements / XBRL,EXECUTED,VERIFIED,Expand tag reconciliation and cross-source checks
+JPMorgan Chase & Co.,JPM,3,Accounting Analytics,DERIVED_EXECUTED,VERIFIED,Add sector robustness and longitudinal features
+JPMorgan Chase & Co.,JPM,4,Audit / CAM / ICFR,EXECUTED,VERIFIED,Retain CAM/ICFR traceability and assertion mapping
+JPMorgan Chase & Co.,JPM,5,Text Analytics,DERIVED_EXECUTED,VERIFIED,Expand beyond bounded CAM-title/metadata features
+JPMorgan Chase & Co.,JPM,6,Finance / Market,EXECUTED,VERIFIED,Retain corporate-action and total-return sensitivity
+JPMorgan Chase & Co.,JPM,7,Fama–French,EXECUTED,VERIFIED,Add longer-window and consolidated-feed/CRSP replication
+JPMorgan Chase & Co.,JPM,8,Innovation / Patents,RESEARCH_PROTOTYPE,VERIFIED,USPTO PatentsView source updated through 2025; aggregate execution awaits authenticated ODP/API access and validated aliases
+JPMorgan Chase & Co.,JPM,9,Management Accounting,SYNTHETIC_EXECUTED,VERIFIED,Keep synthetic boundary explicit; do not imply internal company costs
+JPMorgan Chase & Co.,JPM,10,Professional AI Benchmark,RESEARCH_PROTOTYPE,VERIFIED,Execute fresh blind holdout tasks across independently invoked models; public gold from V1.2 is retired for promotion use
+JPMorgan Chase & Co.,JPM,11,Cost per Verified Professional Output,RESEARCH_PROTOTYPE,VERIFIED,"Populate prospective model-cost and human-verification telemetry, then compute verified-output cost"
+JPMorgan Chase & Co.,JPM,12,Digital Twin,RESEARCH_PROTOTYPE,VERIFIED,Integrate remaining scientific modules and provenance links
+JPMorgan Chase & Co.,JPM,13,Evidence Passport,EXECUTED,VERIFIED,Extend passport to every promoted output
+JPMorgan Chase & Co.,JPM,14,Falsification / Robustness,DERIVED_EXECUTED,VERIFIED,"Retain HAC(3), Cook and leave-one-out results; add external-source/longer-window and benchmark adversarial challenges"
+JPMorgan Chase & Co.,JPM,15,Human–AI Experiment,DESIGN_ONLY,VERIFIED,Power grid executed; complete ethics/consent/preregistration and recruit participants before execution
+JPMorgan Chase & Co.,JPM,16,Human Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Retain current MSFT decision; obtain explicit WMT/JPM human reviewer decisions
+JPMorgan Chase & Co.,JPM,17,Automated Validation,EXECUTED_VALIDATED,VERIFIED,Preserve validation artifacts and rerun after data changes
+JPMorgan Chase & Co.,JPM,18,Interactive Prototype V1,RESEARCH_PROTOTYPE,VERIFIED,Upgrade shared five-view application with V1.2 factor and gate views
+JPMorgan Chase & Co.,JPM,19,Reproducibility Package,EXECUTED,VERIFIED,Technical replay executed; exact V1.2 table mismatch is preserved as REQUEST_MORE_EVIDENCE pending reconciliation; Step 20 remains independent replication
+JPMorgan Chase & Co.,JPM,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent reviewer/environment replication
