@@ -6,6 +6,8 @@ on:
     paths:
       - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt'
       - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_sdk_provenance.csv'
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_runner.py'
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_api_contract_check.py'
       - '.github/workflows/naail-stage2b-sdk-lock.yml'
   pull_request:
     branches: [main]
@@ -13,6 +15,8 @@ on:
       - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/STAGE2B_SDK_LOCK_VALIDATION_TRIGGER.md'
       - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt'
       - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_sdk_provenance.csv'
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_runner.py'
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_api_contract_check.py'
       - '.github/workflows/naail-stage2b-sdk-lock.yml'
   workflow_dispatch:
 
@@ -25,27 +29,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-
       - name: Install pinned provider SDKs
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt
-
       - name: Verify exact provider SDK versions
         run: |
           python - <<'PY'
           import importlib.metadata as md
           import json, platform, sys
-          expected = {
-              'openai': '3.14.1',
-              'google-genai': '2.23.0',
-              'anthropic': '1.6.0',
-          }
+          expected = {'openai': '3.14.1', 'google-genai': '2.23.0', 'anthropic': '1.6.0'}
           actual = {name: md.version(name) for name in expected}
           if actual != expected:
               raise SystemExit(f'Version mismatch: expected={expected} actual={actual}')
@@ -63,16 +60,21 @@ jobs:
           }
           with open('stage2b_sdk_runtime_manifest.json', 'w', encoding='utf-8') as f:
               json.dump(manifest, f, indent=2, sort_keys=True)
-          print(json.dumps(manifest, indent=2, sort_keys=True))
           PY
-
       - name: Compile Stage 2B controls
         run: |
           python -m py_compile \
             NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_runner.py \
             NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_preflight.py \
-            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_verify_bundle.py
+            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_verify_bundle.py \
+            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_api_contract_check.py
 
+      - name: Verify provider API contract lock
+        run: |
+          python NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_api_contract_check.py \
+            --runner NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_runner.py \
+            > stage2b_api_contract_result.json
+          cat stage2b_api_contract_result.json
       - name: Freeze resolved environment
         run: |
           python -m pip freeze --all | LC_ALL=C sort > environment_lock_stage2b.txt
@@ -81,8 +83,8 @@ jobs:
             NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_sdk_provenance.csv \
             environment_lock_stage2b.txt \
             stage2b_sdk_runtime_manifest.json \
+            stage2b_api_contract_result.json \
             > stage2b_sdk_lock_sha256.txt
-
       - name: Upload SDK lock evidence
         uses: actions/upload-artifact@v4
         with:
@@ -93,3 +95,4 @@ jobs:
             environment_lock_stage2b.txt
             stage2b_sdk_runtime_manifest.json
             stage2b_sdk_lock_sha256.txt
+            stage2b_api_contract_result.json
