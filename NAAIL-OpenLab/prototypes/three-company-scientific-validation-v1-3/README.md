@@ -1,4 +1,4 @@
-# NAAIL OpenLab™ — Three-Company Prototype V1.3 Scientific Validation Readiness
+# NAAIL OpenLab™ — Three-Company Prototype V1.3 / V1.3C Scientific Validation
 
 **Date:** 2026-09-17  
 **Maturity:** `RESEARCH_PROTOTYPE`  
@@ -7,154 +7,202 @@
 
 > **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
 
-## Systems-thinking execution rule
+## Scientific objective
 
-Heavy scientific work is divided into auditable stages. Every completed stage must have its own evidence, status decision, GitHub publication and Google Drive mirror before a dependent stage is eligible to proceed. The existence of a design artifact never counts as execution.
+The current V1.3C validation question is not **which LLM provider is best**. It is whether the **NAAIL governance architecture itself improves professional accounting/auditing judgment when the underlying model, task and evidence are held constant**.
 
-Canonical sequence:
-
-`Stage 0 → 2A → 2B → 2C → 2D → 2E → 3A → 3B → 3C → 3D → 3E → 4A → 4B → 4C`
-
-See `SYSTEMS_THINKING_EXECUTION_ROADMAP_V1_3.md`.
+Provider identity is retained as a robustness/blocking factor rather than the scientific outcome.
 
 ## Frozen governance boundary
 
 - exactly two permanent cores;
 - 3 companies × 20 steps = 60 company-step states;
-- controlled scientific-status vocabulary;
 - failed, null, contradictory, blocked and sensitivity-dependent evidence is preserved;
-- patent-sensitive enabling detail remains outside public GitHub until filing review;
-- WMT/JPM Human Gate decisions are not inferred;
-- Step 20 independent replication remains `REGISTERED_NOT_EXECUTED` for MSFT, WMT and JPM until a separate reviewer/environment actually executes it;
-- Phase 3–4 are never promoted merely because design artifacts exist.
+- data availability ≠ execution;
+- code existence ≠ execution;
+- agent agreement ≠ verification;
+- statistical significance ≠ scientific discovery;
+- Human Gate requires real human review;
+- Step 20 independent replication remains `REGISTERED_NOT_EXECUTED` until a separate reviewer/environment executes it;
+- private benchmark prompts and Gold_Key remain outside public GitHub;
+- patent-sensitive enabling internals remain private until filing review.
 
-## Current staged state
+Canonical systems-thinking sequence:
 
-### Stage 0 — State Lock
+`Stage 0 → 2A → 2B → 2C → 2D → 2E → 3A → 3B → 3C → 3D → 3E → 4A → 4B → 4C`
 
-**Status:** complete as execution governance only; no scientific status promoted.
+See `SYSTEMS_THINKING_EXECUTION_ROADMAP_V1_3.md`.
 
-Artifact:
-- `SYSTEMS_THINKING_EXECUTION_ROADMAP_V1_3.md`
+## Stage 0 — Governance lock
 
-### Stage 2A — Blind Benchmark Packet Freeze
+**Status:** complete as governance infrastructure. No scientific execution is inferred from design artifacts.
+
+## Phase 1 — Reproducibility & factor falsification
+
+The earlier V1.2 → V1.3 factor discrepancy was reconciled as `SUPPORTED_AFTER_CHALLENGE`: the V1.2 factor package reproduced, and the discrepancy was isolated to the HC3 p-value reference distribution rather than data, coefficient or standard-error differences.
+
+Existing V1.3 evidence includes HC3/HAC(3) sensitivity, influence diagnostics, leave-one-month-out stability, factor robustness summaries, the reconciled clean replay, Human–AI pilot power grid and the 60-step scientific-status matrix.
+
+These do not constitute independent replication or Phase 2 model validation.
+
+## Stage 2A — Private blind benchmark packet
 
 **Design outcome:** `REVISED_AFTER_CHALLENGE`  
-**Candidate-model execution:** `REGISTERED_NOT_EXECUTED`
+**Scientific execution:** `REGISTERED_NOT_EXECUTED`
 
-The original public 12-task packet is preserved as a **development/calibration set** because its prompts are already public and it is concentrated in factor-robustness retrieval/inference.
+The original public 12-task packet is preserved as development/calibration only. A separate promotion-grade private V1.3B packet is frozen with:
 
-A separate promotion-grade **private V1.3B packet** has been frozen in Google Drive with **21 tasks = 7 professional domains × 3 companies**. The private prompts and gold key are intentionally excluded from public GitHub until candidate responses are frozen.
+- **21 tasks = 7 professional domains × 3 companies**;
+- frozen task SHA-256: `2a0857f94beff1f4c6f25b76621bd0a1f02bb8272e7f1e68eacb6acd39146eaf`;
+- frozen E1–E8 evidence SHA-256: `30cd72360b68d5f62f610e143aad712382edb201e972642c40b43c445061748e`;
+- private prompts and Gold_Key excluded from public GitHub.
 
-Public Stage 2A records:
-- `STAGE2A_BLIND_BENCHMARK_PACKET_FREEZE_V1_3B.md`
-- `STAGE2A_PUBLICATION_MANIFEST_2026_09_17.md`
-- `blind_benchmark_scoring_schema_v1_3b.csv`
-- `blind_benchmark_run_manifest_template_v1_3b.csv`
+## Stage 2B — V1.3C architecture-effect design
 
-### Stage 2B — Independent Blind Model Runs
+**Conceptual design:** `REVISED_AFTER_CHALLENGE`  
+**Architecture-effect design:** `FROZEN_DESIGN`  
+**Scoring rubric:** `FROZEN_DESIGN`  
+**Analysis pre-registration:** `FROZEN_DESIGN`  
+**Scientific execution:** `REGISTERED_NOT_EXECUTED`
 
-**Scientific status:** `REGISTERED_NOT_EXECUTED`  
-**Execution-control infrastructure:** `EXECUTED_VALIDATED`  
-**Cross-candidate input lock:** `EXECUTED_VALIDATED`  
-**C01/C02/C03 structural preflights:** `PASS`  
-**SDK provenance verification:** `EXECUTED_VALIDATED`  
-**SDK CI runtime validation:** `BLOCKED_CI_RUN_NOT_OBSERVED`  
-**Live provider calls:** `BLOCKED_PROVIDER_CREDENTIAL_AND_RUNTIME`
+### Architecture conditions
 
-Frozen candidate set:
+- `A0` — Model + Frozen Evidence
+- `A1` — Evidence Passport™
+- `A2` — Full NAAIL Verify
+
+Primary estimand:
+
+`Δ_NAAIL = mean[OPQS(A2) − OPQS(A0)]`
+
+Secondary estimands:
+
+- `A1 − A0` — structured evidence-governance effect
+- `A2 − A1` — incremental verification/falsification effect
+
+### Provider robustness blocks
 
 - C01 — OpenAI `gpt-6-astra`
 - C02 — Google `gemini-3.8-flash`
 - C03 — Anthropic `claude-fable-5`
 
-All three providers are configured for high reasoning, closed evidence, no browsing/search/tools, no prior candidate responses and no gold-key access.
+Planned design:
 
-The same private V1.3B inputs are registered for all three candidates:
+**3 providers × 3 architecture conditions × 21 tasks = 189 blinded outputs**
 
-- 21-task packet SHA-256: `2a0857f94beff1f4c6f25b76621bd0a1f02bb8272e7f1e68eacb6acd39146eaf`
-- frozen E1–E8 evidence SHA-256: `30cd72360b68d5f62f610e143aad712382edb201e972642c40b43c445061748e`
+Providers are not ranked as the scientific conclusion.
 
-Pinned Stage 2B SDKs:
+## Frozen primary outcome — OPQS
 
-- `openai==3.14.1`
-- `google-genai==2.23.0`
-- `anthropic==1.6.0`
+**Overall Professional Quality Score (OPQS), 0–100**
 
-Official PyPI wheel SHA-256 values are preserved in `stage2b_sdk_provenance.csv`. A non-secret GitHub Actions workflow, `.github/workflows/naail-stage2b-sdk-lock.yml`, is published to install the pinned SDKs, verify imports/versions, compile the public Stage 2B controls, freeze the resolved environment and upload lock evidence. A controlled validation PR was merged, but the connected Actions read endpoint still reported no observable workflow run, so no CI success or runtime lock is claimed.
+- professional correctness — 35%
+- evidence grounding — 20%
+- contradiction handling — 15%
+- calibration / evidence sufficiency — 10%
+- auditability / traceability — 10%
+- professional decision usefulness — 10%
 
-Published Stage 2B controls and readiness records:
-- `STAGE2B_INDEPENDENT_MODEL_RUN_GATE_V1_3B.md`
-- `STAGE2B_EXECUTION_RUNBOOK_V1_3B.md`
-- `stage2b_runner.py`
-- `stage2b_preflight.py`
-- `stage2b_verify_bundle.py`
-- `requirements-stage2b.txt`
-- `stage2b_sdk_provenance.csv`
-- `STAGE2B_RUNNER_VALIDATION_2026_09_17.md`
-- `STAGE2B_HARDENING_VALIDATION_2026_09_17.md`
-- `STAGE2B_C01_INPUT_FREEZE_PREFLIGHT_2026_09_17.md`
-- `STAGE2B_C02_INPUT_FREEZE_PREFLIGHT_2026_09_17.md`
-- `STAGE2B_C03_INPUT_FREEZE_PREFLIGHT_2026_09_17.md`
-- `STAGE2B_CROSS_CANDIDATE_INPUT_LOCK_2026_09_17.md`
-- `STAGE2B_THREE_CANDIDATE_PREFLIGHT_SYNC_2026_09_17.md`
-- `STAGE2B_SDK_LOCK_STATUS_2026_09_17.md`
-- `stage2b_input_hash_registry_v1_3b.csv`
-- `stage2b_cross_candidate_input_lock_v1_3b.csv`
-- `stage2b_candidate_roster_v1_3b.csv`
-- `stage2b_response_freeze_ledger_template_v1_3b.csv`
+Separate verification telemetry is retained for reviewer time, corrections, rework, final verified-output status, escalation and remaining material-error status.
 
-The public runner and public records contain no private prompts, no gold key, no credentials and no patent-sensitive enabling material. Actual candidate execution still requires a runtime-validated pinned SDK environment plus independently supplied private provider credentials. Same-session self-comparisons, simulated provider outputs, copied answers or reconstructed responses are not promotion-eligible evidence.
+## Frozen confirmatory analysis
 
-### Stage 2C–2E
+Primary comparison:
 
-Not executed. Stage 2C scoring may begin only after Stage 2B raw responses are frozen for C01, C02 and C03. Numeric Cost per Verified Professional Output™ remains `NOT_EXECUTED` until real model cost, reviewer time and rework telemetry exist.
+**A2 Full NAAIL Verify vs A0 Model + Frozen Evidence**
 
-## Existing executed / derived V1.3 evidence
+Primary practical-effect threshold:
 
-The V1.3 package already preserves factor robustness and related research-prototype evidence, including:
+`mean A2−A0 ≥ +5.0 OPQS points`
 
-- HC3 versus HAC(3) sensitivity;
-- influence diagnostics;
-- leave-one-month-out stability;
-- factor robustness summaries and diagnostics;
-- reconciled internal clean replay record;
-- Human–AI pilot power grid;
-- 60-step scientific-status matrix.
+Primary uncertainty specification:
 
-These do not constitute independent replication or Phase 2 model validation.
+- task-cluster bootstrap 95% CI;
+- 10,000 replications;
+- fixed seed `20260917`;
+- all provider observations retained within each resampled task cluster.
 
-## Key records
+Only A2 vs A0 on OPQS is confirmatory. A1−A0, A2−A1 and all dimension/provider/company/domain analyses are secondary. Holm adjustment applies within secondary p-value families.
 
-- `PHASED_EXECUTION_PLAN_V1_3.md`
-- `SYSTEMS_THINKING_EXECUTION_ROADMAP_V1_3.md`
-- `REPRODUCIBILITY_DISCREPANCY_STATUS_V1_3.md`
-- `PHASE1_REPRODUCIBILITY_RECONCILIATION_V1_3.md`
-- `FACTOR_FALSIFICATION_ROBUSTNESS_V1_3.md`
-- `ff5_robustness_summary_v1_3.csv`
-- `factor_robustness_diagnostics_v1_3.csv`
-- `STAGE2A_BLIND_BENCHMARK_PACKET_FREEZE_V1_3B.md`
-- `STAGE2A_PUBLICATION_MANIFEST_2026_09_17.md`
-- `blind_benchmark_scoring_schema_v1_3b.csv`
-- `blind_benchmark_run_manifest_template_v1_3b.csv`
-- `STAGE2B_INDEPENDENT_MODEL_RUN_GATE_V1_3B.md`
-- `STAGE2B_EXECUTION_RUNBOOK_V1_3B.md`
-- `stage2b_runner.py`
-- `stage2b_preflight.py`
-- `stage2b_verify_bundle.py`
-- `requirements-stage2b.txt`
-- `stage2b_sdk_provenance.csv`
-- `STAGE2B_SDK_LOCK_STATUS_2026_09_17.md`
-- `stage2b_candidate_roster_v1_3b.csv`
-- `stage2b_response_freeze_ledger_template_v1_3b.csv`
-- `COST_PER_VERIFIED_PROFESSIONAL_OUTPUT_V1_3.md`
-- `HUMAN_AI_POWER_AND_READINESS_V1_3.md`
-- `HUMAN_GATE_STATUS_V1_3.md`
-- `PATENT_INNOVATION_AGGREGATE_GATE_V1_3.md`
-- `three_company_60_step_execution_matrix_v1_3.csv`
+## Promotion guardrails
 
-## Scientific boundary
+`SUPPORTED_AFTER_CHALLENGE` cannot be assigned from statistical significance alone. It requires:
 
-V1.3 is a governed research prototype. It does not claim scientific closure while independent blind-model runs, prospective human verification/cost telemetry, participant execution, WMT/JPM Human Gate decisions and independent replication remain open.
+1. mean A2−A0 OPQS improvement ≥ +5.0;
+2. no >0.20 raw-point deterioration in grounding, contradiction handling or calibration;
+3. positive mean A2−A0 effect in at least 2 of 3 providers;
+4. positive mean A2−A0 effect in at least 2 of 3 companies;
+5. no hidden increase in material professional errors;
+6. prospective human verification evidence;
+7. reviewer reliability/adjudication disclosure.
 
-**Data access is not execution. Code is not execution. Agent agreement is not verification. Statistical significance is not scientific discovery. A blocked dependency is evidence and is not silently bypassed.**
+## Blinded professional review design
+
+- minimum two independent professional reviewers per output;
+- provider and architecture condition masked;
+- opaque response and reviewer IDs;
+- randomized review order;
+- adjudication when OPQS disagreement >10 points or any dimension differs by ≥2 raw points;
+- reliability calculated before condition labels are unblinded;
+- system/API failures remain `FAILED_CALL` and are not imputed as quality scores;
+- substantive model refusals are scored normally.
+
+## Stage 2B execution infrastructure
+
+The public execution controls remain available, but implementation plumbing is not the main scientific contribution.
+
+Current infrastructure state:
+
+- cross-candidate input lock: `EXECUTED_VALIDATED`;
+- C01/C02/C03 structural preflights: `PASS`;
+- SDK provenance: `EXECUTED_VALIDATED`;
+- provider API contract verification: `EXECUTED_VALIDATED`;
+- GitHub CI runtime validation: `BLOCKED_CI_RUN_NOT_OBSERVED`;
+- live provider calls: `BLOCKED_PROVIDER_CREDENTIAL_AND_RUNTIME`.
+
+No candidate response or score is claimed from these controls.
+
+## Stage 2C–2E
+
+Not executed.
+
+Stage 2C scoring remains locked until the required architecture-condition responses are frozen and the blinding protocol is satisfied. Gold_Key scoring access remains `LOCKED`. Numeric Cost per Verified Professional Output™ remains `NOT_EXECUTED` until actual model cost, reviewer time and rework telemetry exist.
+
+## Canonical V1.3C public records
+
+Conceptual redesign:
+
+- `STAGE2B_CONCEPTUAL_REDESIGN_ARCHITECTURE_EFFECT_V1_3C.md`
+- `stage2b_architecture_effect_experiment_matrix_v1_3c.csv`
+- `stage2b_architecture_effect_success_criteria_v1_3c.csv`
+- `STAGE2B_CONCEPTUAL_REDESIGN_DUAL_SAVE_SYNC_2026_09_17.md`
+
+Scoring and pre-registration:
+
+- `STAGE2B_BLINDED_SCORING_RUBRIC_V1_3C.md`
+- `STAGE2B_ARCHITECTURE_EFFECT_PREREGISTRATION_V1_3C.md`
+- `stage2b_blinded_scoring_template_v1_3c.csv`
+- `STAGE2B_SCORING_PREREG_DUAL_SAVE_SYNC_2026_09_17.md`
+
+Consolidated state:
+
+- `V1_3C_CONSOLIDATED_PUBLICATION_RECORD_2026_09_17.md`
+
+Earlier Stage 2 controls and evidence remain preserved in this directory and are not overwritten by the V1.3C conceptual redesign.
+
+## Current scientific state
+
+- two-core architecture: frozen;
+- 3-company × 20-step contract: frozen;
+- architecture-effect design: frozen;
+- OPQS rubric: frozen;
+- primary estimand/inference: frozen;
+- 189 blinded outputs: `REGISTERED_NOT_EXECUTED`;
+- Gold_Key access: `LOCKED`;
+- human verification: `NOT_EXECUTED`;
+- numeric CVPO: `NOT_EXECUTED`;
+- Stage 2C: `LOCKED`.
+
+## Next conceptual gate
+
+Freeze the **professional task-to-architecture intervention protocol**: exactly what A0, A1 and A2 may do in each of the seven professional domains while holding substantive evidence constant. This is required so any measured difference can be attributed to architecture rather than to extra information.
