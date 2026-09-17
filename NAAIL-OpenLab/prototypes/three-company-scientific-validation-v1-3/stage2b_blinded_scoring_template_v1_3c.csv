@@ -1,0 +1,2 @@
+review_id,response_id,provider_masked,architecture_condition_masked,task_id,company,professional_domain,reviewer_id,correctness_0_4,grounding_0_4,contradiction_0_4,calibration_0_4,auditability_0_4,decision_usefulness_0_4,opqs_0_100,verification_minutes,corrections_count,rework_minutes,final_verified_output,escalation_required,material_error_remaining,adjudication_required,review_status,notes
+TEMPLATE,TEMPLATE,TRUE,TRUE,TEMPLATE,TEMPLATE,TEMPLATE,TEMPLATE,,,,,,,,,,,,,,,REGISTERED_NOT_EXECUTED,
