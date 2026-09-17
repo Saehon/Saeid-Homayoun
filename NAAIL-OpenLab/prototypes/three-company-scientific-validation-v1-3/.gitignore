@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+private/
+private_*/
+stage2b_runs/
+run_outputs/
+raw_responses/
+*gold_key*
+*gold-key*
+*.key
+*.pem
+__pycache__/
+.pytest_cache/
