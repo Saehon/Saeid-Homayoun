@@ -1,61 +1,61 @@
 company,ticker,step_id,section,status,source_access,next_action
-Microsoft Corporation,MSFT,1,Data & Evidence Gate,EXECUTED,VERIFIED,Maintain provenance registry
-Microsoft Corporation,MSFT,2,Financial Statements / XBRL,EXECUTED,VERIFIED,Retain reconciliation checks
-Microsoft Corporation,MSFT,3,Accounting Analytics,DERIVED_EXECUTED,VERIFIED,Add robustness where needed
-Microsoft Corporation,MSFT,4,Audit / CAM / ICFR,EXECUTED,VERIFIED,Retain evidence mapping
-Microsoft Corporation,MSFT,5,Text Analytics,DERIVED_EXECUTED,VERIFIED,Expand bounded robustness only
-Microsoft Corporation,MSFT,6,Finance / Market,EXECUTED,VERIFIED,Add total-return sensitivity later
-Microsoft Corporation,MSFT,7,Fama–French,REGISTERED_NOT_EXECUTED,VERIFIED,Execute CAPM FF3 FF5 and longer-window robustness
-Microsoft Corporation,MSFT,8,Innovation / Patents,RESEARCH_PROTOTYPE,VERIFIED,Execute PatentsView entity resolution counts citations diversity
-Microsoft Corporation,MSFT,9,Management Accounting,SYNTHETIC_EXECUTED,VERIFIED,Keep synthetic boundary explicit
-Microsoft Corporation,MSFT,10,Professional AI Benchmark,REGISTERED_NOT_EXECUTED,VERIFIED,Build accounting-audit benchmark tasks
-Microsoft Corporation,MSFT,11,Cost per Verified Professional Output,REGISTERED_NOT_EXECUTED,VERIFIED,Compute only after professional benchmark
-Microsoft Corporation,MSFT,12,Digital Twin,RESEARCH_PROTOTYPE,VERIFIED,Complete missing scientific modules
-Microsoft Corporation,MSFT,13,Evidence Passport,EXECUTED,VERIFIED,Extend to every promoted output
-Microsoft Corporation,MSFT,14,Falsification / Robustness,RESEARCH_PROTOTYPE,VERIFIED,Complete remaining registered challenges
-Microsoft Corporation,MSFT,15,Human–AI Experiment,DESIGN_ONLY,VERIFIED,Run preregistered participant pilot
-Microsoft Corporation,MSFT,16,Human Gate,EXECUTED,VERIFIED,Current approval limited to research-prototype publication
-Microsoft Corporation,MSFT,17,Automated Validation,EXECUTED_VALIDATED,VERIFIED,Preserve 15 of 15 bounded artifact validation
-Microsoft Corporation,MSFT,18,Interactive Prototype V1,RESEARCH_PROTOTYPE,VERIFIED,Upgrade dashboard to five-view traceable application
-Microsoft Corporation,MSFT,19,Reproducibility Package,RESEARCH_PROTOTYPE,VERIFIED,Complete clean-run manifest and environment freeze
+Microsoft Corporation,MSFT,1,Data & Evidence Gate,EXECUTED,VERIFIED,Maintain source registry and provenance
+Microsoft Corporation,MSFT,2,Financial Statements / XBRL,EXECUTED,VERIFIED,Expand tag reconciliation and cross-source checks
+Microsoft Corporation,MSFT,3,Accounting Analytics,DERIVED_EXECUTED,VERIFIED,Add sector robustness and longitudinal features
+Microsoft Corporation,MSFT,4,Audit / CAM / ICFR,EXECUTED,VERIFIED,Retain CAM/ICFR traceability and assertion mapping
+Microsoft Corporation,MSFT,5,Text Analytics,DERIVED_EXECUTED,VERIFIED,Expand beyond bounded CAM-title/metadata features
+Microsoft Corporation,MSFT,6,Finance / Market,EXECUTED,VERIFIED,Add exact-date and total-return sensitivity
+Microsoft Corporation,MSFT,7,Fama–French,REGISTERED_NOT_EXECUTED,VERIFIED,Execute CAPM FF3 FF5 plus longer-window robustness
+Microsoft Corporation,MSFT,8,Innovation / Patents,RESEARCH_PROTOTYPE,VERIFIED,Resolve assignee/entity and execute patent/citation measures
+Microsoft Corporation,MSFT,9,Management Accounting,SYNTHETIC_EXECUTED,VERIFIED,Keep synthetic boundary explicit; do not imply internal company costs
+Microsoft Corporation,MSFT,10,Professional AI Benchmark,REGISTERED_NOT_EXECUTED,VERIFIED,Execute common accounting/audit task benchmark across models
+Microsoft Corporation,MSFT,11,Cost per Verified Professional Output,REGISTERED_NOT_EXECUTED,VERIFIED,Compute only after verified professional benchmark
+Microsoft Corporation,MSFT,12,Digital Twin,RESEARCH_PROTOTYPE,VERIFIED,Complete missing scientific modules and provenance links
+Microsoft Corporation,MSFT,13,Evidence Passport,EXECUTED,VERIFIED,Extend passport to every promoted output
+Microsoft Corporation,MSFT,14,Falsification / Robustness,RESEARCH_PROTOTYPE,VERIFIED,Complete alternate-source/model/period challenges
+Microsoft Corporation,MSFT,15,Human–AI Experiment,DESIGN_ONLY,VERIFIED,Preregister and run participant pilot
+Microsoft Corporation,MSFT,16,Human Gate,EXECUTED,VERIFIED,Obtain explicit reviewer Human Gate decision
+Microsoft Corporation,MSFT,17,Automated Validation,EXECUTED_VALIDATED,VERIFIED,Preserve validation artifacts and rerun after data changes
+Microsoft Corporation,MSFT,18,Interactive Prototype V1,RESEARCH_PROTOTYPE,VERIFIED,Upgrade shared five-view application
+Microsoft Corporation,MSFT,19,Reproducibility Package,RESEARCH_PROTOTYPE,VERIFIED,Perform clean-environment replay and freeze dependencies
 Microsoft Corporation,MSFT,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent reviewer/environment replication
-Walmart Inc.,WMT,1,Data & Evidence Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Execute source registry and provenance capture
-Walmart Inc.,WMT,2,Financial Statements / XBRL,REGISTERED_NOT_EXECUTED,VERIFIED,Extract and reconcile annual filing facts
-Walmart Inc.,WMT,3,Accounting Analytics,REGISTERED_NOT_EXECUTED,VERIFIED,Run retail and common accounting features
-Walmart Inc.,WMT,4,Audit / CAM / ICFR,REGISTERED_NOT_EXECUTED,VERIFIED,Extract public auditor report evidence
-Walmart Inc.,WMT,5,Text Analytics,REGISTERED_NOT_EXECUTED,VERIFIED,Run bounded annual-filing text features
-Walmart Inc.,WMT,6,Finance / Market,REGISTERED_NOT_EXECUTED,VERIFIED,Build return and macro package
-Walmart Inc.,WMT,7,Fama–French,REGISTERED_NOT_EXECUTED,VERIFIED,Execute CAPM FF3 FF5 and robustness
-Walmart Inc.,WMT,8,Innovation / Patents,REGISTERED_NOT_EXECUTED,VERIFIED,Resolve entities and validate patent measures if material
-Walmart Inc.,WMT,9,Management Accounting,REGISTERED_NOT_EXECUTED,VERIFIED,Run synthetic retail BSC ABC TDABC microcase
-Walmart Inc.,WMT,10,Professional AI Benchmark,REGISTERED_NOT_EXECUTED,VERIFIED,Run retail/accounting-audit benchmark tasks
-Walmart Inc.,WMT,11,Cost per Verified Professional Output,REGISTERED_NOT_EXECUTED,VERIFIED,Compute verified professional cost metric
-Walmart Inc.,WMT,12,Digital Twin,REGISTERED_NOT_EXECUTED,VERIFIED,Instantiate retail Digital Twin
-Walmart Inc.,WMT,13,Evidence Passport,REGISTERED_NOT_EXECUTED,VERIFIED,Generate company-specific passports
-Walmart Inc.,WMT,14,Falsification / Robustness,REGISTERED_NOT_EXECUTED,VERIFIED,Challenge sources definitions periods and models
-Walmart Inc.,WMT,15,Human–AI Experiment,REGISTERED_NOT_EXECUTED,VERIFIED,Design then pilot retail/accounting task
-Walmart Inc.,WMT,16,Human Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Create reviewer decision record
-Walmart Inc.,WMT,17,Automated Validation,REGISTERED_NOT_EXECUTED,VERIFIED,Run schema reconciliation and governance tests
-Walmart Inc.,WMT,18,Interactive Prototype V1,REGISTERED_NOT_EXECUTED,VERIFIED,Add Walmart to five-view application
-Walmart Inc.,WMT,19,Reproducibility Package,REGISTERED_NOT_EXECUTED,VERIFIED,Freeze clean-run package
-Walmart Inc.,WMT,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent replication after core completion
-JPMorgan Chase & Co.,JPM,1,Data & Evidence Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Execute source registry and bank-specific provenance
-JPMorgan Chase & Co.,JPM,2,Financial Statements / XBRL,REGISTERED_NOT_EXECUTED,VERIFIED,Extract and reconcile bank filing facts
-JPMorgan Chase & Co.,JPM,3,Accounting Analytics,REGISTERED_NOT_EXECUTED,VERIFIED,Run bank-specific accounting and capital metrics
-JPMorgan Chase & Co.,JPM,4,Audit / CAM / ICFR,REGISTERED_NOT_EXECUTED,VERIFIED,Extract public auditor report evidence
-JPMorgan Chase & Co.,JPM,5,Text Analytics,REGISTERED_NOT_EXECUTED,VERIFIED,Run bounded risk and filing-text features
-JPMorgan Chase & Co.,JPM,6,Finance / Market,REGISTERED_NOT_EXECUTED,VERIFIED,Build return and macro package
-JPMorgan Chase & Co.,JPM,7,Fama–French,REGISTERED_NOT_EXECUTED,VERIFIED,Execute CAPM FF3 FF5 and robustness
-JPMorgan Chase & Co.,JPM,8,Innovation / Patents,REGISTERED_NOT_EXECUTED,VERIFIED,Resolve entities and validate innovation measures where material
-JPMorgan Chase & Co.,JPM,9,Management Accounting,REGISTERED_NOT_EXECUTED,VERIFIED,Run synthetic bank process BSC ABC TDABC microcase
-JPMorgan Chase & Co.,JPM,10,Professional AI Benchmark,REGISTERED_NOT_EXECUTED,VERIFIED,Run banking/accounting-audit benchmark tasks
-JPMorgan Chase & Co.,JPM,11,Cost per Verified Professional Output,REGISTERED_NOT_EXECUTED,VERIFIED,Compute verified professional cost metric
-JPMorgan Chase & Co.,JPM,12,Digital Twin,REGISTERED_NOT_EXECUTED,VERIFIED,Instantiate bank Digital Twin with sector adapter
-JPMorgan Chase & Co.,JPM,13,Evidence Passport,REGISTERED_NOT_EXECUTED,VERIFIED,Generate company-specific passports
-JPMorgan Chase & Co.,JPM,14,Falsification / Robustness,REGISTERED_NOT_EXECUTED,VERIFIED,Challenge bank measures sources periods and models
-JPMorgan Chase & Co.,JPM,15,Human–AI Experiment,REGISTERED_NOT_EXECUTED,VERIFIED,Design then pilot banking judgment task
-JPMorgan Chase & Co.,JPM,16,Human Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Create reviewer decision record
-JPMorgan Chase & Co.,JPM,17,Automated Validation,REGISTERED_NOT_EXECUTED,VERIFIED,Run schema reconciliation and governance tests
-JPMorgan Chase & Co.,JPM,18,Interactive Prototype V1,REGISTERED_NOT_EXECUTED,VERIFIED,Add JPMorgan to five-view application
-JPMorgan Chase & Co.,JPM,19,Reproducibility Package,REGISTERED_NOT_EXECUTED,VERIFIED,Freeze clean-run package
-JPMorgan Chase & Co.,JPM,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent replication after core completion
+Walmart Inc.,WMT,1,Data & Evidence Gate,EXECUTED,VERIFIED,Maintain source registry and provenance
+Walmart Inc.,WMT,2,Financial Statements / XBRL,EXECUTED,VERIFIED,Expand tag reconciliation and cross-source checks
+Walmart Inc.,WMT,3,Accounting Analytics,DERIVED_EXECUTED,VERIFIED,Add sector robustness and longitudinal features
+Walmart Inc.,WMT,4,Audit / CAM / ICFR,EXECUTED,VERIFIED,Retain CAM/ICFR traceability and assertion mapping
+Walmart Inc.,WMT,5,Text Analytics,DERIVED_EXECUTED,VERIFIED,Expand beyond bounded CAM-title/metadata features
+Walmart Inc.,WMT,6,Finance / Market,EXECUTED,VERIFIED,Add exact-date and total-return sensitivity
+Walmart Inc.,WMT,7,Fama–French,REGISTERED_NOT_EXECUTED,VERIFIED,Execute CAPM FF3 FF5 plus longer-window robustness
+Walmart Inc.,WMT,8,Innovation / Patents,REGISTERED_NOT_EXECUTED,VERIFIED,Resolve assignee/entity and execute patent/citation measures
+Walmart Inc.,WMT,9,Management Accounting,SYNTHETIC_EXECUTED,VERIFIED,Keep synthetic boundary explicit; do not imply internal company costs
+Walmart Inc.,WMT,10,Professional AI Benchmark,REGISTERED_NOT_EXECUTED,VERIFIED,Execute common accounting/audit task benchmark across models
+Walmart Inc.,WMT,11,Cost per Verified Professional Output,REGISTERED_NOT_EXECUTED,VERIFIED,Compute only after verified professional benchmark
+Walmart Inc.,WMT,12,Digital Twin,RESEARCH_PROTOTYPE,VERIFIED,Complete missing scientific modules and provenance links
+Walmart Inc.,WMT,13,Evidence Passport,EXECUTED,VERIFIED,Extend passport to every promoted output
+Walmart Inc.,WMT,14,Falsification / Robustness,RESEARCH_PROTOTYPE,VERIFIED,Complete alternate-source/model/period challenges
+Walmart Inc.,WMT,15,Human–AI Experiment,DESIGN_ONLY,VERIFIED,Preregister and run participant pilot
+Walmart Inc.,WMT,16,Human Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Obtain explicit reviewer Human Gate decision
+Walmart Inc.,WMT,17,Automated Validation,EXECUTED_VALIDATED,VERIFIED,Preserve validation artifacts and rerun after data changes
+Walmart Inc.,WMT,18,Interactive Prototype V1,RESEARCH_PROTOTYPE,VERIFIED,Upgrade shared five-view application
+Walmart Inc.,WMT,19,Reproducibility Package,RESEARCH_PROTOTYPE,VERIFIED,Perform clean-environment replay and freeze dependencies
+Walmart Inc.,WMT,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent reviewer/environment replication
+JPMorgan Chase & Co.,JPM,1,Data & Evidence Gate,EXECUTED,VERIFIED,Maintain source registry and provenance
+JPMorgan Chase & Co.,JPM,2,Financial Statements / XBRL,EXECUTED,VERIFIED,Expand tag reconciliation and cross-source checks
+JPMorgan Chase & Co.,JPM,3,Accounting Analytics,DERIVED_EXECUTED,VERIFIED,Add sector robustness and longitudinal features
+JPMorgan Chase & Co.,JPM,4,Audit / CAM / ICFR,EXECUTED,VERIFIED,Retain CAM/ICFR traceability and assertion mapping
+JPMorgan Chase & Co.,JPM,5,Text Analytics,DERIVED_EXECUTED,VERIFIED,Expand beyond bounded CAM-title/metadata features
+JPMorgan Chase & Co.,JPM,6,Finance / Market,EXECUTED,VERIFIED,Add exact-date and total-return sensitivity
+JPMorgan Chase & Co.,JPM,7,Fama–French,REGISTERED_NOT_EXECUTED,VERIFIED,Execute CAPM FF3 FF5 plus longer-window robustness
+JPMorgan Chase & Co.,JPM,8,Innovation / Patents,REGISTERED_NOT_EXECUTED,VERIFIED,Resolve assignee/entity and execute patent/citation measures
+JPMorgan Chase & Co.,JPM,9,Management Accounting,SYNTHETIC_EXECUTED,VERIFIED,Keep synthetic boundary explicit; do not imply internal company costs
+JPMorgan Chase & Co.,JPM,10,Professional AI Benchmark,REGISTERED_NOT_EXECUTED,VERIFIED,Execute common accounting/audit task benchmark across models
+JPMorgan Chase & Co.,JPM,11,Cost per Verified Professional Output,REGISTERED_NOT_EXECUTED,VERIFIED,Compute only after verified professional benchmark
+JPMorgan Chase & Co.,JPM,12,Digital Twin,RESEARCH_PROTOTYPE,VERIFIED,Complete missing scientific modules and provenance links
+JPMorgan Chase & Co.,JPM,13,Evidence Passport,EXECUTED,VERIFIED,Extend passport to every promoted output
+JPMorgan Chase & Co.,JPM,14,Falsification / Robustness,RESEARCH_PROTOTYPE,VERIFIED,Complete alternate-source/model/period challenges
+JPMorgan Chase & Co.,JPM,15,Human–AI Experiment,DESIGN_ONLY,VERIFIED,Preregister and run participant pilot
+JPMorgan Chase & Co.,JPM,16,Human Gate,REGISTERED_NOT_EXECUTED,VERIFIED,Obtain explicit reviewer Human Gate decision
+JPMorgan Chase & Co.,JPM,17,Automated Validation,EXECUTED_VALIDATED,VERIFIED,Preserve validation artifacts and rerun after data changes
+JPMorgan Chase & Co.,JPM,18,Interactive Prototype V1,RESEARCH_PROTOTYPE,VERIFIED,Upgrade shared five-view application
+JPMorgan Chase & Co.,JPM,19,Reproducibility Package,RESEARCH_PROTOTYPE,VERIFIED,Perform clean-environment replay and freeze dependencies
+JPMorgan Chase & Co.,JPM,20,Independent Replication,REGISTERED_NOT_EXECUTED,VERIFIED,Run independent reviewer/environment replication
