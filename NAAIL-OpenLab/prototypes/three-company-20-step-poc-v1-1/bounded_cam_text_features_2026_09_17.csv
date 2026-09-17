@@ -1,0 +1,4 @@
+ticker,cam_count,cam_title_token_total,keywords,bounded_scope,status
+MSFT,2,7,revenue;tax,CAM titles/metadata,DERIVED_EXECUTED
+WMT,1,1,contingencies;legal;regulatory,CAM title/metadata + audit-report classification,DERIVED_EXECUTED
+JPM,2,20,credit losses;wholesale;credit card;fair value;level 3,CAM titles/metadata + audit-report classification,DERIVED_EXECUTED
