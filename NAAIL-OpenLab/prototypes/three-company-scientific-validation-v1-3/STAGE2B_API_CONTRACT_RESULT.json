@@ -1,0 +1,15 @@
+{
+  "runner": "stage2b_runner.py",
+  "runner_sha256": "f14a11a571e94f8988c00a084a7075279c0bcbe15b311c7c9a60be2698f37dd9",
+  "status": "PASS",
+  "checks": [
+    "candidate model IDs match frozen roster",
+    "OpenAI request is stateless, no-tools, store=false, high-reasoning",
+    "Google request is stateless, no-tools, store=false, high-thinking",
+    "Anthropic request is no-tools and uses Fable 5 high effort without manual thinking budget"
+  ],
+  "errors": [],
+  "provider_calls_executed": false,
+  "credentials_loaded": false,
+  "scoring_opened": false
+}
