@@ -1,0 +1,11 @@
+criterion_id,dimension,primary_comparison,success_logic,anti_overclaim_rule,status
+S01,Professional quality,A2 vs A0,Paired improvement under pre-specified scoring model,No promotion from descriptive differences alone,DESIGN_ONLY
+S02,Evidence grounding,A2 vs A0,Grounding/traceability must not deteriorate and should improve materially,Do not infer grounding from answer fluency,DESIGN_ONLY
+S03,Contradiction handling,A2 vs A0,Contradictions and conflicting evidence must be identified and preserved,Do not reward forced certainty,DESIGN_ONLY
+S04,Calibration,A2 vs A0,REQUEST_MORE_EVIDENCE/refusal behavior should be appropriate to evidence sufficiency,Do not treat lower refusal rate as automatically better,DESIGN_ONLY
+S05,Robustness,Architecture effect across providers/companies/domains,Effect should not be attributable to one provider one company or one domain,No provider winner or post-hoc subgroup cherry-picking,DESIGN_ONLY
+S06,Auditability,A2 vs A0,Evidence-to-judgment path should be reproducible by a blinded reviewer,Explanation length alone is not auditability,DESIGN_ONLY
+S07,Human verification,A2 vs A0,Prospective blinded professional review required before promotion,Agent agreement is not human verification,DESIGN_ONLY
+S08,Cost efficiency,A2 vs A0,Report model cost reviewer time rework and final verified-output status,Cheaper output is not better if verification quality falls,DESIGN_ONLY
+S09,Practical significance,A2 vs A0,Minimum practical-effect threshold must be frozen before main scoring,Do not choose threshold after seeing results,DESIGN_ONLY
+S10,Statistical inference,A2 vs A0,Inference specification frozen before gold-key scoring and respects paired task-provider design,Statistical significance alone is not discovery,DESIGN_ONLY
