@@ -1,0 +1,15 @@
+{
+  "run_id": "NAAIL-3C-V1.2-2026-09-17-A",
+  "date": "2026-09-17",
+  "maturity": "RESEARCH_PROTOTYPE",
+  "companies": ["MSFT", "WMT", "JPM"],
+  "architecture": {"permanent_cores": ["Stable Knowledge Core™", "Replaceable Technology Core™"], "third_core_permitted": false},
+  "fama_french": {"status": "EXECUTED", "main_window": "2024-01_to_2026-07", "n_months": 31, "models": ["CAPM", "FF3", "FF5"], "inference": "OLS with HC3 robust covariance", "main_return_basis": "IEX monthly close-to-close; WMT split-consistent", "sensitivity": ["cash-dividend-inclusive monthly approximation", "19-month window 2025-01_to_2026-07"], "factor_source_official": "Kenneth R. French Data Library", "factor_snapshot_provenance": "July-2026 CRSP-vintage mirror; source file states 202607 CRSP database"},
+  "patent_gate": {"status": "RESEARCH_PROTOTYPE", "aggregate_metrics": "REGISTERED_NOT_EXECUTED"},
+  "professional_ai_benchmark": {"status": "RESEARCH_PROTOTYPE", "gold_tasks": 18, "blind_multi_model": "REGISTERED_NOT_EXECUTED", "same_session_self_pilot_promotion_eligible": false},
+  "verified_output_cost": {"status": "REGISTERED_NOT_EXECUTED"},
+  "human_ai_participants": {"status": "DESIGN_ONLY"},
+  "wmt_jpm_human_gate": {"status": "REGISTERED_NOT_EXECUTED"},
+  "independent_replication": {"status": "REGISTERED_NOT_EXECUTED"},
+  "validation": "6 passed in 0.07s; factor runner reproduced 18 specifications"
+}

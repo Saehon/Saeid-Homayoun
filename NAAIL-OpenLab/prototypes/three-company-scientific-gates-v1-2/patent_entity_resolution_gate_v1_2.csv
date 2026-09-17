@@ -1,0 +1,4 @@
+ticker,company,validated_assignee_example,evidence_type,aggregate_entity_resolution_status,aggregate_patent_metrics_status,note
+MSFT,Microsoft Corporation,"Microsoft Technology Licensing, LLC",USPTO Official Gazette / assignment exemplar,INCOMPLETE,REGISTERED_NOT_EXECUTED,Validated exemplar confirms a major Microsoft patent assignee; full parent/subsidiary alias resolution required before aggregate counts.
+WMT,Walmart Inc.,"Walmart Apollo, LLC",USPTO Official Gazette / assignment exemplar,INCOMPLETE,REGISTERED_NOT_EXECUTED,Validated exemplar confirms a major Walmart patent assignee; full historical alias/subsidiary resolution required before aggregate counts.
+JPM,JPMorgan Chase & Co.,"JPMorgan Chase Bank, N.A.",USPTO Official Gazette exemplar,INCOMPLETE,REGISTERED_NOT_EXECUTED,Validated exemplar confirms a major JPMorgan patent assignee; full historical alias/entity resolution required before aggregate counts.

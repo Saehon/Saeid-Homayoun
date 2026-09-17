@@ -1,0 +1,41 @@
+{
+  "run_id": "NAAIL-3C-V1.2-2026-09-17-A",
+  "twins": {
+    "MSFT": {
+      "company": "Microsoft Corporation",
+      "ticker": "MSFT",
+      "prototype_version": "V1.2",
+      "maturity": "RESEARCH_PROTOTYPE",
+      "stable_knowledge_core": {"accounting_audit_finance_interpretation": "ACTIVE", "sector_adapter": "technology"},
+      "replaceable_technology_core": {"public_filing_pipeline": "EXECUTED", "market_data_pipeline": "EXECUTED", "factor_model_pipeline": "EXECUTED", "professional_benchmark_harness": "RESEARCH_PROTOTYPE"},
+      "financial_audit_state": {"fiscal_period": "2026-06-30", "primary_filing": "Microsoft FY2026 public filing package already frozen in NAAIL", "revenue_or_net_revenue_musd": 331839.0, "growth_pct": 17.75, "operating_margin_pct": 46.78, "net_income_margin_or_revenue_pct": 40.31, "total_assets_musd": null, "asset_growth_pct": null, "cam_count": 2, "cam_topics": "Revenue Recognition | Income Taxes — Uncertain Tax Positions", "icfr_status": "Unqualified/effective"},
+      "market_factor_state": {"status": "EXECUTED", "window": "2024-01_to_2026-07", "n_months": 31, "return_basis_main": "IEX monthly close-to-close price return, split-adjusted where required", "dividend_sensitivity": "monthly cash-dividend-inclusive approximation", "ff5_alpha_monthly": -0.0039617659439061, "ff5_alpha_p_hc3": 0.7954833404593715, "ff5_market_beta": 1.348806241485268, "ff5_market_beta_p_hc3": 7.831416462599163e-05, "ff5_smb": -0.4821340244270125, "ff5_hml": -0.9863384367835304, "ff5_rmw": 1.290430406331556, "ff5_cma": -0.1737971843433628, "ff5_r2": 0.6735979062523021, "ff5_adj_r2": 0.6083174875027626, "dividend_inclusive_ff5_alpha_monthly": -0.003460246345575, "dividend_inclusive_ff5_r2": 0.6750095617943072, "recent_19m_ff5_market_beta": 1.023091601572223, "recent_19m_ff5_r2": 0.7984284214491757},
+      "innovation_patent_state": {"status": "RESEARCH_PROTOTYPE", "entity_resolution_exemplars_validated": true, "aggregate_counts_citations_diversity": "REGISTERED_NOT_EXECUTED"},
+      "professional_ai_benchmark_state": {"status": "RESEARCH_PROTOTYPE", "gold_tasks": 6, "same_session_self_pilot": "EXECUTED_NON_PROMOTION_ELIGIBLE", "blind_multi_model_benchmark": "REGISTERED_NOT_EXECUTED"},
+      "cost_per_verified_professional_output": {"status": "REGISTERED_NOT_EXECUTED", "reason": "No blind benchmark cost telemetry plus human verification-time evidence yet."},
+      "human_ai_experiment": {"status": "DESIGN_ONLY"}, "human_gate": {"status": "EXECUTED"}, "independent_replication": {"status": "REGISTERED_NOT_EXECUTED"}, "human_accountability": true
+    },
+    "WMT": {
+      "company": "Walmart Inc.", "ticker": "WMT", "prototype_version": "V1.2", "maturity": "RESEARCH_PROTOTYPE",
+      "stable_knowledge_core": {"accounting_audit_finance_interpretation": "ACTIVE", "sector_adapter": "retail"},
+      "replaceable_technology_core": {"public_filing_pipeline": "EXECUTED", "market_data_pipeline": "EXECUTED", "factor_model_pipeline": "EXECUTED", "professional_benchmark_harness": "RESEARCH_PROTOTYPE"},
+      "financial_audit_state": {"fiscal_period": "2026-01-31", "primary_filing": "SEC 10-K accession 0000104169-26-000055", "revenue_or_net_revenue_musd": 713163.0, "growth_pct": 4.7255, "operating_margin_pct": 4.222, "net_income_margin_or_revenue_pct": 3.0992, "total_assets_musd": 284668.0, "asset_growth_pct": 9.1422, "cam_count": 1, "cam_topics": "Contingencies", "icfr_status": "Effective; auditor ICFR opinion unqualified"},
+      "market_factor_state": {"status": "EXECUTED", "window": "2024-01_to_2026-07", "n_months": 31, "return_basis_main": "IEX monthly close-to-close price return, split-adjusted where required", "dividend_sensitivity": "monthly cash-dividend-inclusive approximation", "ff5_alpha_monthly": 0.0149879012973595, "ff5_alpha_p_hc3": 0.3111720802729143, "ff5_market_beta": 0.7171357053229156, "ff5_market_beta_p_hc3": 0.0816903801247362, "ff5_smb": 0.1331287343167475, "ff5_hml": 0.0763953743617533, "ff5_rmw": 0.5664329755974025, "ff5_cma": -0.4266279842619022, "ff5_r2": 0.2275072826926273, "ff5_adj_r2": 0.0730087392311528, "dividend_inclusive_ff5_alpha_monthly": 0.0157243215618832, "dividend_inclusive_ff5_r2": 0.2296657019349312, "recent_19m_ff5_market_beta": 0.5660500381228862, "recent_19m_ff5_r2": 0.1403579186820754},
+      "innovation_patent_state": {"status": "RESEARCH_PROTOTYPE", "entity_resolution_exemplars_validated": true, "aggregate_counts_citations_diversity": "REGISTERED_NOT_EXECUTED"},
+      "professional_ai_benchmark_state": {"status": "RESEARCH_PROTOTYPE", "gold_tasks": 6, "same_session_self_pilot": "EXECUTED_NON_PROMOTION_ELIGIBLE", "blind_multi_model_benchmark": "REGISTERED_NOT_EXECUTED"},
+      "cost_per_verified_professional_output": {"status": "REGISTERED_NOT_EXECUTED", "reason": "No blind benchmark cost telemetry plus human verification-time evidence yet."},
+      "human_ai_experiment": {"status": "DESIGN_ONLY"}, "human_gate": {"status": "REGISTERED_NOT_EXECUTED"}, "independent_replication": {"status": "REGISTERED_NOT_EXECUTED"}, "human_accountability": true
+    },
+    "JPM": {
+      "company": "JPMorgan Chase & Co.", "ticker": "JPM", "prototype_version": "V1.2", "maturity": "RESEARCH_PROTOTYPE",
+      "stable_knowledge_core": {"accounting_audit_finance_interpretation": "ACTIVE", "sector_adapter": "banking"},
+      "replaceable_technology_core": {"public_filing_pipeline": "EXECUTED", "market_data_pipeline": "EXECUTED", "factor_model_pipeline": "EXECUTED", "professional_benchmark_harness": "RESEARCH_PROTOTYPE"},
+      "financial_audit_state": {"fiscal_period": "2025-12-31", "primary_filing": "SEC 10-K accession 0001628280-26-008131", "revenue_or_net_revenue_musd": 182447.0, "growth_pct": 2.7546, "operating_margin_pct": null, "net_income_margin_or_revenue_pct": 31.2683, "total_assets_musd": 4424900.0, "asset_growth_pct": 10.5447, "cam_count": 2, "cam_topics": "Allowance for Loan Losses — portfolio-based wholesale and credit card | Fair Value of Certain Level 3 Financial Instruments", "icfr_status": "Effective; PwC opinion on ICFR"},
+      "market_factor_state": {"status": "EXECUTED", "window": "2024-01_to_2026-07", "n_months": 31, "return_basis_main": "IEX monthly close-to-close price return, split-adjusted where required", "dividend_sensitivity": "monthly cash-dividend-inclusive approximation", "ff5_alpha_monthly": 0.007541117200408, "ff5_alpha_p_hc3": 0.5073791330897828, "ff5_market_beta": 1.0583001626003945, "ff5_market_beta_p_hc3": 9.46102069967846e-05, "ff5_smb": 0.1003502608907679, "ff5_hml": 0.4652450051847079, "ff5_rmw": 0.1711888712509839, "ff5_cma": 0.0571515000587578, "ff5_r2": 0.4141269861080406, "ff5_adj_r2": 0.2969523833296488, "dividend_inclusive_ff5_alpha_monthly": 0.0095641487208279, "dividend_inclusive_ff5_r2": 0.4081545855321397, "recent_19m_ff5_market_beta": 0.8392708508671086, "recent_19m_ff5_r2": 0.3073695827895685},
+      "innovation_patent_state": {"status": "RESEARCH_PROTOTYPE", "entity_resolution_exemplars_validated": true, "aggregate_counts_citations_diversity": "REGISTERED_NOT_EXECUTED"},
+      "professional_ai_benchmark_state": {"status": "RESEARCH_PROTOTYPE", "gold_tasks": 6, "same_session_self_pilot": "EXECUTED_NON_PROMOTION_ELIGIBLE", "blind_multi_model_benchmark": "REGISTERED_NOT_EXECUTED"},
+      "cost_per_verified_professional_output": {"status": "REGISTERED_NOT_EXECUTED", "reason": "No blind benchmark cost telemetry plus human verification-time evidence yet."},
+      "human_ai_experiment": {"status": "DESIGN_ONLY"}, "human_gate": {"status": "REGISTERED_NOT_EXECUTED"}, "independent_replication": {"status": "REGISTERED_NOT_EXECUTED"}, "human_accountability": true
+    }
+  }
+}
