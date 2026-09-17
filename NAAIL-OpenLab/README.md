@@ -9,7 +9,7 @@
 
 NAAIL OpenLab™ is an independent research and education platform for evidence-governed multi-agent Digital Twins, theory-to-evidence research, professional simulation, behavioral experimentation, innovation/entrepreneurship research, **management-accounting and AI-cost intelligence**, scientific discovery and verifiable human–AI judgment.
 
-**Public reviewer entry:** [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md) · [Microsoft POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md) · [15-Test Validation Run](./prototypes/microsoft-poc-v1/VALIDATION_RUN_15_TESTS_2026_09_16.md) · [Falsification Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md) · [Current Project State](./CURRENT_PROJECT_STATE.md)
+**Public reviewer entry:** [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md) · [Microsoft POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md) · [15-Test Validation Run](./prototypes/microsoft-poc-v1/VALIDATION_RUN_15_TESTS_2026_09_16.md) · [Multi-Company Free-Data Cohort](./MULTI_COMPANY_FREE_DATA_COHORT.md) · [Current Project State](./CURRENT_PROJECT_STATE.md)
 
 ## Frozen architecture constitution
 
@@ -34,7 +34,7 @@ Executed in V1: SEC interactive-XBRL R2/R4/R6/R107 facts, accounting/finance cal
 
 ### Executed unified 15-test validation
 
-A new dedicated artifact-integrity harness has now been executed against the current Microsoft V1 package:
+A dedicated artifact-integrity harness has been executed against the current Microsoft V1 package:
 
 ```text
 ...............                                                          [100%]
@@ -50,7 +50,7 @@ The full run record is [VALIDATION_RUN_15_TESTS_2026_09_16.md](./prototypes/micr
 
 A dedicated GitHub Actions workflow is published at `.github/workflows/microsoft_poc_v1_15_test.yml`. **GitHub Actions CI success is not claimed until a completed workflow run is separately verified.**
 
-Not yet executed or independently validated: participant experiment, MSFT Fama–French regression, aggregate PatentsView patent/citation analysis, NAAIL-specific professional-task model pass-rate / Cost per Verified Professional Output™, remaining falsification challenges, and independent replication. The LiveBench cost-per-successful-task metric is an external benchmark and is not treated as a NAAIL professional-verification rate.
+Not yet executed or independently validated: participant experiment, verified MSFT Fama–French coefficient output, aggregate PatentsView patent/citation analysis, NAAIL-specific professional-task model pass-rate / Cost per Verified Professional Output™, remaining falsification challenges, and independent replication. The Fama–French reproducibility runner/workflow is implemented, but regression coefficients are not claimed until execution is verified.
 
 ### Microsoft V1 governance package
 
@@ -59,10 +59,44 @@ Not yet executed or independently validated: participant experiment, MSFT Fama�
 - [15-Test Validation Matrix](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md)
 - [Timestamped 15-Test Run](./prototypes/microsoft-poc-v1/VALIDATION_RUN_15_TESTS_2026_09_16.md)
 - [Falsification & Robustness Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
+- [Fama–French Reproducibility Status](./prototypes/microsoft-poc-v1/MICROSOFT_FAMA_FRENCH_EXECUTION_STATUS_2026_09_16.md)
 - [GitHub / Google Drive Sync Manifest](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
 - [Prototype Dashboard](./prototypes/microsoft-poc-v1/dashboard.html)
 
 **Important:** Prototype 003 remains the only `EXECUTED_VALIDATED` public checkpoint. Microsoft POC V1 is a newer bounded `RESEARCH_PROTOTYPE`, not a replacement validation release.
+
+## Multi-Company Free-Data Replication V1 — 2026-09-17
+
+[Open the multi-company package →](./prototypes/multi-company-free-data-v1/README.md)
+
+NAAIL has published an official nine-company free-data replication cohort while retaining Microsoft as the Golden Anchor.
+
+**Wave 0:** Microsoft (`MSFT`).  
+**Wave 1:** Walmart (`WMT`), JPMorgan Chase (`JPM`), Intuit (`INTU`), Exxon Mobil (`XOM`), Fluor (`FLR`), Boeing (`BA`).  
+**Wave 2:** Shopify (`SHOP`), SAP (`SAP`).
+
+The selection is based on a documented minimum public/free evidence stack including SEC EDGAR/iXBRL, SEC CompanyFacts/CompanyConcept, connected IEX market evidence, Fama–French factor data, FRED macro data, issuer disclosures and public/open patent-data routes subject to source terms and entity-resolution controls.
+
+The standard contract is:
+
+**Public Filing → XBRL/Financial Evidence → Variable Dictionary → Audit/CAM/ICFR Evidence → Bounded Text → Market Data → Factor Package → Innovation Evidence → Evidence Passport™ → Robustness/Falsification → Human Gate™**
+
+Current status remains deliberately conservative:
+
+- Microsoft: `EXECUTED_PARTIAL_GOLDEN_ANCHOR`;
+- WMT/JPM/INTU/XOM/FLR/BA: `REGISTERED_NOT_EXECUTED`;
+- SHOP/SAP: `REGISTERED_NOT_EXECUTED_CROSS_BORDER`.
+
+No company is promoted merely because its data are accessible. The multi-company GitHub Actions probe is published, but a successful completed run is not claimed until separately verified.
+
+Canonical records:
+
+- [Top-level Multi-Company Cohort](./MULTI_COMPANY_FREE_DATA_COHORT.md)
+- [Final Company Selection & Execution Order](./prototypes/multi-company-free-data-v1/FINAL_COMPANY_SELECTION_AND_EXECUTION_ORDER_2026_09_17.md)
+- [Free-Data Company Gate](./prototypes/multi-company-free-data-v1/FREE_DATA_COMPANY_GATE_2026_09_17.md)
+- [Company Registry CSV](./prototypes/multi-company-free-data-v1/company_registry_free_public_v1.csv)
+- [Public Release Record](./prototypes/multi-company-free-data-v1/MULTI_COMPANY_FREE_DATA_PUBLIC_RELEASE_2026_09_17.md)
+- [GitHub Publication Manifest](./prototypes/multi-company-free-data-v1/GITHUB_PUBLICATION_MANIFEST_2026_09_17.md)
 
 ## Modular cross-cutting layers
 
@@ -142,36 +176,38 @@ The validated public checkpoint remains:
 
 **NAAIL OpenLab v0.2.3 · Audit Workspace V0.4 · Prototype 003**
 
-Microsoft POC V1 is registered separately as `RESEARCH_PROTOTYPE`; it does not change this validation boundary.
+Microsoft POC V1 and Multi-Company Free-Data Replication V1 are registered separately as `RESEARCH_PROTOTYPE`; neither changes this validation boundary.
 
 ## Patent-first public boundary
 
 **Patent first → public disclosure second.** Public GitHub contains high-level architecture plus bounded reproducible POC arithmetic and rights-cleared public facts. Unpublished core algorithms, connector/provenance contracts, dependency/revocation mechanics, experiment orchestration and patent-sensitive embodiments remain private pending filing review.
 
-No patent application is represented as filed as of 2026-09-16. Do not use **Patent Pending** until an actual filing is confirmed.
+No patent application is represented as filed as of 2026-09-17. Do not use **Patent Pending** until an actual filing is confirmed.
 
 ## Start here
 
 1. [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md)
 2. [Microsoft POC V1](./prototypes/microsoft-poc-v1/MICROSOFT_POC_V1.md)
 3. [Timestamped 15-Test Run](./prototypes/microsoft-poc-v1/VALIDATION_RUN_15_TESTS_2026_09_16.md)
-4. [15-Test Validation Matrix](./prototypes/microsoft-poc-v1/VALIDATION_MATRIX_15_TESTS.md)
-5. [Falsification & Robustness Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
-6. [GitHub / Google Drive Sync Manifest](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
+4. [Multi-Company Free-Data Cohort](./MULTI_COMPANY_FREE_DATA_COHORT.md)
+5. [Multi-Company Public Release](./prototypes/multi-company-free-data-v1/MULTI_COMPANY_FREE_DATA_PUBLIC_RELEASE_2026_09_17.md)
+6. [Final Company Selection & Execution Order](./prototypes/multi-company-free-data-v1/FINAL_COMPANY_SELECTION_AND_EXECUTION_ORDER_2026_09_17.md)
 7. [Current Project State](./CURRENT_PROJECT_STATE.md)
-8. [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
-9. [Management Accounting & AI Cost Intelligence Layer](./MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
-10. [Open Model Benchmark & Cost Intelligence Layer](./OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
-11. [Visualization & Decision Intelligence Layer](./VISUALIZATION_DECISION_INTELLIGENCE_LAYER.md)
-12. [Canonical hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
-13. [Capability registry](./architecture/platform_capability_registry.json)
-14. [Capability & maturity matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
-15. [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
-16. [Nobel Theory-to-Evidence Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
-17. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
-18. [CCCMP](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
-19. [Patent Notice](./PATENT_NOTICE.md)
-20. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
+8. [Falsification & Robustness Register](./prototypes/microsoft-poc-v1/FALSIFICATION_ROBUSTNESS_REGISTER.md)
+9. [GitHub / Google Drive Sync Manifest](./prototypes/microsoft-poc-v1/SYNC_MANIFEST_2026_09_16.md)
+10. [Public Platform Overview](./PUBLIC_PLATFORM_OVERVIEW.md)
+11. [Management Accounting & AI Cost Intelligence Layer](./MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md)
+12. [Open Model Benchmark & Cost Intelligence Layer](./OPEN_MODEL_BENCHMARK_COST_INTELLIGENCE_LAYER.md)
+13. [Visualization & Decision Intelligence Layer](./VISUALIZATION_DECISION_INTELLIGENCE_LAYER.md)
+14. [Canonical hierarchy](./architecture/MASTER_PLATFORM_HIERARCHY.md)
+15. [Capability registry](./architecture/platform_capability_registry.json)
+16. [Capability & maturity matrix](./architecture/PLATFORM_CAPABILITY_MATRIX.md)
+17. [Innovation & Entrepreneurship Evidence Layer](./INNOVATION_ENTREPRENEURSHIP_EVIDENCE_LAYER.md)
+18. [Nobel Theory-to-Evidence Engine](./NOBEL_THEORY_TO_EVIDENCE_AI_EXPERIMENT_ENGINE.md)
+19. [Behavioral Decision Science Layer](./BEHAVIORAL_DECISION_SCIENCE_HUMAN_AI_LAYER.md)
+20. [CCCMP](./CCCMP_PROJECT_COST_CONTRACT_CLAIMS_PROGRAMME.md)
+21. [Patent Notice](./PATENT_NOTICE.md)
+22. [Public Disclosure Log](./PUBLIC_DISCLOSURE_LOG.md)
 
 ## Citation
 
