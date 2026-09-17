@@ -1,0 +1,88 @@
+name: NAAIL Stage2B SDK Lock
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt'
+      - 'NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_sdk_provenance.csv'
+      - '.github/workflows/naail-stage2b-sdk-lock.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sdk-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install pinned provider SDKs
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt
+
+      - name: Verify exact provider SDK versions
+        run: |
+          python - <<'PY'
+          import importlib.metadata as md
+          import json, platform, sys
+          expected = {
+              'openai': '3.14.1',
+              'google-genai': '2.23.0',
+              'anthropic': '1.6.0',
+          }
+          actual = {name: md.version(name) for name in expected}
+          if actual != expected:
+              raise SystemExit(f'Version mismatch: expected={expected} actual={actual}')
+          import openai
+          from google import genai
+          import anthropic
+          manifest = {
+              'python_version': sys.version,
+              'platform': platform.platform(),
+              'sdk_versions': actual,
+              'imports': {'openai': True, 'google_genai': True, 'anthropic': True},
+              'network_provider_calls': False,
+              'credentials_loaded': False,
+              'scientific_status': 'INFRASTRUCTURE_ONLY_NO_PROVIDER_CALL',
+          }
+          with open('stage2b_sdk_runtime_manifest.json', 'w', encoding='utf-8') as f:
+              json.dump(manifest, f, indent=2, sort_keys=True)
+          print(json.dumps(manifest, indent=2, sort_keys=True))
+          PY
+
+      - name: Compile Stage 2B controls
+        run: |
+          python -m py_compile \
+            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_runner.py \
+            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_preflight.py \
+            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_verify_bundle.py
+
+      - name: Freeze resolved environment
+        run: |
+          python -m pip freeze --all | LC_ALL=C sort > environment_lock_stage2b.txt
+          sha256sum \
+            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/requirements-stage2b.txt \
+            NAAIL-OpenLab/prototypes/three-company-scientific-validation-v1-3/stage2b_sdk_provenance.csv \
+            environment_lock_stage2b.txt \
+            stage2b_sdk_runtime_manifest.json \
+            > stage2b_sdk_lock_sha256.txt
+
+      - name: Upload SDK lock evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: naail-stage2b-sdk-lock
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            environment_lock_stage2b.txt
+            stage2b_sdk_runtime_manifest.json
+            stage2b_sdk_lock_sha256.txt
