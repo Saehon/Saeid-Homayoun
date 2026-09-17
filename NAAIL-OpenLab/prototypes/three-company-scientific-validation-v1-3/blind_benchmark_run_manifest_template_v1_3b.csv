@@ -1,0 +1,2 @@
+run_id,candidate_id,provider,model,model_version,timestamp_utc,session_id,packet_version,evidence_hash_set,browsing_mode,tool_access,inference_settings,response_artifact,response_sha256,latency_ms,input_tokens,output_tokens,api_cost_usd,price_source,run_status,notes
+,,,,,,,,,,,,,,,,,,,,
