@@ -36,15 +36,23 @@ Human-dependent gates remain protected:
 
 [Open Prototype V1.2 package](./prototypes/three-company-scientific-gates-v1-2/README.md)
 
+[Open final GitHub publication status](./V1_2_GITHUB_PUBLICATION_STATUS_2026_09_17.md)
+
+[Open dated V1.2 public release](./THREE_COMPANY_PROTOTYPE_V1_2_PUBLIC_RELEASE_2026_09_17.md)
+
 ## Google Drive mirror
 
 [Open Prototype V1.2 Drive folder](https://drive.google.com/drive/folders/1SvE55QAwQtzTGkWiz9Y60bfqTypakf16)
 
 [Open GitHub / Google Drive Sync Manifest](https://docs.google.com/document/d/1hoIhAaLE9zpNoIQdcI__AEh4V6itwHox-DSTgodPyuw/edit)
 
-## GitHub publication commit
+## GitHub publication commits
 
-Primary atomic V1.2 package commit: `27cf3cb5a237c9c32779a6749cad9ca437300b13`.
+- `27cf3cb5a237c9c32779a6749cad9ca437300b13` — atomic V1.2 scientific-gates package.
+- `4492bac14647eafd158c3726fef9ee5e1df8aceb` — top-level V1.2 entry.
+- `f1c5fc43b8106ea4b1691e95278028ee9c1472a0` — GitHub / Google Drive synchronization manifest.
+- `5b908210c47b45a87779d67d8f15da59999c2b4d` — dated V1.2 public release.
+- `db5eb1906fac7ece1ac87236dceccf1dadb9d4aa` — final V1.2 GitHub publication-status record.
 
 ## Scientific boundary
 
