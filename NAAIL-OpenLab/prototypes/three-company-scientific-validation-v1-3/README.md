@@ -9,9 +9,7 @@
 
 ## Scientific objective
 
-The current V1.3C validation question is not **which LLM provider is best**. It is whether the **NAAIL governance architecture itself improves professional accounting/auditing judgment when the underlying model, task and evidence are held constant**.
-
-Provider identity is retained as a robustness/blocking factor rather than the scientific outcome.
+V1.3C tests whether the **NAAIL governance architecture itself improves professional accounting/auditing judgment when the underlying model, task and substantive evidence are held constant**. Provider identity is a robustness/blocking factor, not the scientific outcome.
 
 ## Frozen governance boundary
 
@@ -23,39 +21,22 @@ Provider identity is retained as a robustness/blocking factor rather than the sc
 - agent agreement ≠ verification;
 - statistical significance ≠ scientific discovery;
 - Human Gate requires real human review;
-- Step 20 independent replication remains `REGISTERED_NOT_EXECUTED` until a separate reviewer/environment executes it;
 - private benchmark prompts and Gold_Key remain outside public GitHub;
-- patent-sensitive enabling internals remain private until filing review.
+- patent-sensitive enabling internals remain private until filing review;
+- independent replication remains `REGISTERED_NOT_EXECUTED` until a separate reviewer/environment executes it.
 
-Canonical systems-thinking sequence:
+Canonical sequence:
 
 `Stage 0 → 2A → 2B → 2C → 2D → 2E → 3A → 3B → 3C → 3D → 3E → 4A → 4B → 4C`
 
-See `SYSTEMS_THINKING_EXECUTION_ROADMAP_V1_3.md`.
+## Stage 2A — Frozen private benchmark
 
-## Stage 0 — Governance lock
-
-**Status:** complete as governance infrastructure. No scientific execution is inferred from design artifacts.
-
-## Phase 1 — Reproducibility & factor falsification
-
-The earlier V1.2 → V1.3 factor discrepancy was reconciled as `SUPPORTED_AFTER_CHALLENGE`: the V1.2 factor package reproduced, and the discrepancy was isolated to the HC3 p-value reference distribution rather than data, coefficient or standard-error differences.
-
-Existing V1.3 evidence includes HC3/HAC(3) sensitivity, influence diagnostics, leave-one-month-out stability, factor robustness summaries, the reconciled clean replay, Human–AI pilot power grid and the 60-step scientific-status matrix.
-
-These do not constitute independent replication or Phase 2 model validation.
-
-## Stage 2A — Private blind benchmark packet
-
-**Design outcome:** `REVISED_AFTER_CHALLENGE`  
-**Scientific execution:** `REGISTERED_NOT_EXECUTED`
-
-The original public 12-task packet is preserved as development/calibration only. A separate promotion-grade private V1.3B packet is frozen with:
+The public 12-task packet is development/calibration only. The promotion-grade private V1.3B packet remains frozen with:
 
 - **21 tasks = 7 professional domains × 3 companies**;
-- frozen task SHA-256: `2a0857f94beff1f4c6f25b76621bd0a1f02bb8272e7f1e68eacb6acd39146eaf`;
-- frozen E1–E8 evidence SHA-256: `30cd72360b68d5f62f610e143aad712382edb201e972642c40b43c445061748e`;
-- private prompts and Gold_Key excluded from public GitHub.
+- tasks SHA-256: `2a0857f94beff1f4c6f25b76621bd0a1f02bb8272e7f1e68eacb6acd39146eaf`;
+- evidence E1–E8 SHA-256: `30cd72360b68d5f62f610e143aad712382edb201e972642c40b43c445061748e`;
+- Gold_Key protected.
 
 ## Stage 2B — V1.3C architecture-effect design
 
@@ -63,34 +44,47 @@ The original public 12-task packet is preserved as development/calibration only.
 **Architecture-effect design:** `FROZEN_DESIGN`  
 **Scoring rubric:** `FROZEN_DESIGN`  
 **Analysis pre-registration:** `FROZEN_DESIGN`  
+**Task-to-architecture intervention protocol:** `FROZEN_DESIGN`  
 **Scientific execution:** `REGISTERED_NOT_EXECUTED`
 
 ### Architecture conditions
 
-- `A0` — Model + Frozen Evidence
-- `A1` — Evidence Passport™
-- `A2` — Full NAAIL Verify
+- `A0` — Model + Frozen Evidence: best direct answer from the common evidence, without required NAAIL governance structures.
+- `A1` — Evidence Passport™: A0 evidence plus structured provenance/relevance/sufficiency/gap and claim-evidence linkage.
+- `A2` — Full NAAIL Verify: A1 plus public-safe risk/assertion/decision structure, contradiction/alternative challenge, falsification/disconfirming-evidence check, evidence-sufficiency gate and human-review-ready decision path.
 
-Primary estimand:
+**A1/A2 may transform and challenge the same evidence; they may not receive better evidence.**
 
-`Δ_NAAIL = mean[OPQS(A2) − OPQS(A0)]`
+### Frozen intervention parity rules
 
-Secondary estimands:
+Within every provider-task A0/A1/A2 triplet:
 
-- `A1 − A0` — structured evidence-governance effect
-- `A2 − A1` — incremental verification/falsification effect
+1. same substantive task objective;
+2. same frozen evidence and source IDs;
+3. no browsing/search/external retrieval;
+4. same provider/model;
+5. independent condition runs with no cross-response visibility;
+6. Gold_Key remains inaccessible;
+7. same standards/rules knowledge boundary;
+8. matched maximum visible-output budget;
+9. no human hints or repairs before freeze;
+10. failures, refusals, uncertainty and contradictions are preserved.
 
-### Provider robustness blocks
+A triplet contaminated by extra evidence, changed task substance, Gold exposure, cross-condition leakage, human pre-freeze repair, provider/model change or unequal substantive knowledge is preserved but excluded from the confirmatory architecture-effect contrast.
 
-- C01 — OpenAI `gpt-6-astra`
-- C02 — Google `gemini-3.8-flash`
-- C03 — Anthropic `claude-fable-5`
+### Seven professional domains
 
-Planned design:
+The intervention protocol is frozen for:
 
-**3 providers × 3 architecture conditions × 21 tasks = 189 blinded outputs**
+- D1 CAM classification;
+- D2 audit assertion mapping;
+- D3 ICFR reasoning;
+- D4 accounting judgment;
+- D5 evidence retrieval from the frozen packet;
+- D6 contradiction detection;
+- D7 professional explanation quality.
 
-Providers are not ranked as the scientific conclusion.
+Every triplet receives a pre-scoring fidelity status: `PASS`, `PASS_WITH_DOCUMENTED_DEVIATION`, `CONTAMINATED_EXCLUDE_CONFIRMATORY`, or `FAILED_CALL`. OPQS may not be interpreted as an architecture effect until fidelity is established.
 
 ## Frozen primary outcome — OPQS
 
@@ -103,106 +97,64 @@ Providers are not ranked as the scientific conclusion.
 - auditability / traceability — 10%
 - professional decision usefulness — 10%
 
-Separate verification telemetry is retained for reviewer time, corrections, rework, final verified-output status, escalation and remaining material-error status.
+Planned design:
 
-## Frozen confirmatory analysis
+**3 providers × 3 architecture conditions × 21 tasks = 189 blinded outputs**
 
-Primary comparison:
+Primary confirmatory estimand:
 
-**A2 Full NAAIL Verify vs A0 Model + Frozen Evidence**
+`Δ_NAAIL = mean[OPQS(A2) − OPQS(A0)]`
 
 Primary practical-effect threshold:
 
 `mean A2−A0 ≥ +5.0 OPQS points`
 
-Primary uncertainty specification:
+Primary uncertainty specification: task-cluster bootstrap 95% CI, 10,000 replications, seed `20260917`. A1−A0, A2−A1 and dimension/provider/company/domain analyses are secondary.
 
-- task-cluster bootstrap 95% CI;
-- 10,000 replications;
-- fixed seed `20260917`;
-- all provider observations retained within each resampled task cluster.
-
-Only A2 vs A0 on OPQS is confirmatory. A1−A0, A2−A1 and all dimension/provider/company/domain analyses are secondary. Holm adjustment applies within secondary p-value families.
-
-## Promotion guardrails
-
-`SUPPORTED_AFTER_CHALLENGE` cannot be assigned from statistical significance alone. It requires:
-
-1. mean A2−A0 OPQS improvement ≥ +5.0;
-2. no >0.20 raw-point deterioration in grounding, contradiction handling or calibration;
-3. positive mean A2−A0 effect in at least 2 of 3 providers;
-4. positive mean A2−A0 effect in at least 2 of 3 companies;
-5. no hidden increase in material professional errors;
-6. prospective human verification evidence;
-7. reviewer reliability/adjudication disclosure.
-
-## Blinded professional review design
+## Blinded professional review
 
 - minimum two independent professional reviewers per output;
 - provider and architecture condition masked;
-- opaque response and reviewer IDs;
-- randomized review order;
-- adjudication when OPQS disagreement >10 points or any dimension differs by ≥2 raw points;
+- randomized order and opaque IDs;
+- adjudication if OPQS disagreement >10 points or a dimension differs by ≥2 raw points;
 - reliability calculated before condition labels are unblinded;
-- system/API failures remain `FAILED_CALL` and are not imputed as quality scores;
-- substantive model refusals are scored normally.
+- failed calls are not imputed as quality scores;
+- substantive refusals are scored normally.
 
-## Stage 2B execution infrastructure
-
-The public execution controls remain available, but implementation plumbing is not the main scientific contribution.
-
-Current infrastructure state:
+## Current execution state
 
 - cross-candidate input lock: `EXECUTED_VALIDATED`;
-- C01/C02/C03 structural preflights: `PASS`;
-- SDK provenance: `EXECUTED_VALIDATED`;
-- provider API contract verification: `EXECUTED_VALIDATED`;
-- GitHub CI runtime validation: `BLOCKED_CI_RUN_NOT_OBSERVED`;
-- live provider calls: `BLOCKED_PROVIDER_CREDENTIAL_AND_RUNTIME`.
-
-No candidate response or score is claimed from these controls.
-
-## Stage 2C–2E
-
-Not executed.
-
-Stage 2C scoring remains locked until the required architecture-condition responses are frozen and the blinding protocol is satisfied. Gold_Key scoring access remains `LOCKED`. Numeric Cost per Verified Professional Output™ remains `NOT_EXECUTED` until actual model cost, reviewer time and rework telemetry exist.
-
-## Canonical V1.3C public records
-
-Conceptual redesign:
-
-- `STAGE2B_CONCEPTUAL_REDESIGN_ARCHITECTURE_EFFECT_V1_3C.md`
-- `stage2b_architecture_effect_experiment_matrix_v1_3c.csv`
-- `stage2b_architecture_effect_success_criteria_v1_3c.csv`
-- `STAGE2B_CONCEPTUAL_REDESIGN_DUAL_SAVE_SYNC_2026_09_17.md`
-
-Scoring and pre-registration:
-
-- `STAGE2B_BLINDED_SCORING_RUBRIC_V1_3C.md`
-- `STAGE2B_ARCHITECTURE_EFFECT_PREREGISTRATION_V1_3C.md`
-- `stage2b_blinded_scoring_template_v1_3c.csv`
-- `STAGE2B_SCORING_PREREG_DUAL_SAVE_SYNC_2026_09_17.md`
-
-Consolidated state:
-
-- `V1_3C_CONSOLIDATED_PUBLICATION_RECORD_2026_09_17.md`
-
-Earlier Stage 2 controls and evidence remain preserved in this directory and are not overwritten by the V1.3C conceptual redesign.
-
-## Current scientific state
-
-- two-core architecture: frozen;
-- 3-company × 20-step contract: frozen;
-- architecture-effect design: frozen;
-- OPQS rubric: frozen;
-- primary estimand/inference: frozen;
-- 189 blinded outputs: `REGISTERED_NOT_EXECUTED`;
-- Gold_Key access: `LOCKED`;
-- human verification: `NOT_EXECUTED`;
+- structural preflights: `PASS`;
+- SDK/API infrastructure: documented but not the primary scientific contribution;
+- 189 architecture-condition outputs: `REGISTERED_NOT_EXECUTED`;
+- Gold_Key: `LOCKED`;
+- prospective human verification: `NOT_EXECUTED`;
 - numeric CVPO: `NOT_EXECUTED`;
 - Stage 2C: `LOCKED`.
 
+## Canonical V1.3C public records
+
+Architecture-effect design:
+- `STAGE2B_CONCEPTUAL_REDESIGN_ARCHITECTURE_EFFECT_V1_3C.md`
+- `stage2b_architecture_effect_experiment_matrix_v1_3c.csv`
+- `stage2b_architecture_effect_success_criteria_v1_3c.csv`
+
+Scoring and analysis:
+- `STAGE2B_BLINDED_SCORING_RUBRIC_V1_3C.md`
+- `STAGE2B_ARCHITECTURE_EFFECT_PREREGISTRATION_V1_3C.md`
+- `stage2b_blinded_scoring_template_v1_3c.csv`
+
+Intervention identification:
+- `STAGE2B_TASK_TO_ARCHITECTURE_INTERVENTION_PROTOCOL_V1_3C.md`
+- `stage2b_task_architecture_domain_matrix_v1_3c.csv`
+- `stage2b_intervention_fidelity_checklist_v1_3c.csv`
+
+Consolidated publication:
+- `V1_3C_CONSOLIDATED_PUBLICATION_RECORD_2026_09_17.md`
+- `V1_3C_FINAL_DUAL_SAVE_PUBLICATION_CHECKPOINT_2026_09_17.md`
+
+Earlier V1.2/V1.3 scientific and technical records remain preserved in this directory and are not overwritten by V1.3C.
+
 ## Next conceptual gate
 
-Freeze the **professional task-to-architecture intervention protocol**: exactly what A0, A1 and A2 may do in each of the seven professional domains while holding substantive evidence constant. This is required so any measured difference can be attributed to architecture rather than to extra information.
+Freeze the **condition-instruction and manipulation-check protocol**: public-safe A0/A1/A2 instruction shells, randomization/masking rules and an independent manipulation check proving that the conditions differ in governance intensity without differing in substantive evidence. No private benchmark answer should be generated before that gate is frozen.
