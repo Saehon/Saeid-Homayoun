@@ -55,8 +55,12 @@ Public Stage 2A records:
 ### Stage 2B — Independent Blind Model Runs
 
 **Scientific status:** `REGISTERED_NOT_EXECUTED`  
-**Infrastructure status:** `EXECUTED_VALIDATED`  
-**Provider state:** `READY_PROVIDER_CONNECTION_REQUIRED`
+**Execution-control infrastructure:** `EXECUTED_VALIDATED`  
+**Cross-candidate input lock:** `EXECUTED_VALIDATED`  
+**C01/C02/C03 structural preflights:** `PASS`  
+**SDK provenance verification:** `EXECUTED_VALIDATED`  
+**SDK CI runtime validation:** `BLOCKED_CI_RUN_NOT_OBSERVED`  
+**Live provider calls:** `BLOCKED_PROVIDER_CREDENTIAL_AND_RUNTIME`
 
 Frozen candidate set:
 
@@ -66,18 +70,41 @@ Frozen candidate set:
 
 All three providers are configured for high reasoning, closed evidence, no browsing/search/tools, no prior candidate responses and no gold-key access.
 
-Published Stage 2B controls and execution scaffold:
+The same private V1.3B inputs are registered for all three candidates:
+
+- 21-task packet SHA-256: `2a0857f94beff1f4c6f25b76621bd0a1f02bb8272e7f1e68eacb6acd39146eaf`
+- frozen E1–E8 evidence SHA-256: `30cd72360b68d5f62f610e143aad712382edb201e972642c40b43c445061748e`
+
+Pinned Stage 2B SDKs:
+
+- `openai==3.14.1`
+- `google-genai==2.23.0`
+- `anthropic==1.6.0`
+
+Official PyPI wheel SHA-256 values are preserved in `stage2b_sdk_provenance.csv`. A non-secret GitHub Actions workflow, `.github/workflows/naail-stage2b-sdk-lock.yml`, is published to install the pinned SDKs, verify imports/versions, compile the public Stage 2B controls, freeze the resolved environment and upload lock evidence. A controlled validation PR was merged, but the connected Actions read endpoint still reported no observable workflow run, so no CI success or runtime lock is claimed.
+
+Published Stage 2B controls and readiness records:
 - `STAGE2B_INDEPENDENT_MODEL_RUN_GATE_V1_3B.md`
 - `STAGE2B_EXECUTION_RUNBOOK_V1_3B.md`
 - `stage2b_runner.py`
+- `stage2b_preflight.py`
+- `stage2b_verify_bundle.py`
 - `requirements-stage2b.txt`
+- `stage2b_sdk_provenance.csv`
 - `STAGE2B_RUNNER_VALIDATION_2026_09_17.md`
+- `STAGE2B_HARDENING_VALIDATION_2026_09_17.md`
+- `STAGE2B_C01_INPUT_FREEZE_PREFLIGHT_2026_09_17.md`
+- `STAGE2B_C02_INPUT_FREEZE_PREFLIGHT_2026_09_17.md`
+- `STAGE2B_C03_INPUT_FREEZE_PREFLIGHT_2026_09_17.md`
+- `STAGE2B_CROSS_CANDIDATE_INPUT_LOCK_2026_09_17.md`
+- `STAGE2B_THREE_CANDIDATE_PREFLIGHT_SYNC_2026_09_17.md`
+- `STAGE2B_SDK_LOCK_STATUS_2026_09_17.md`
+- `stage2b_input_hash_registry_v1_3b.csv`
+- `stage2b_cross_candidate_input_lock_v1_3b.csv`
 - `stage2b_candidate_roster_v1_3b.csv`
 - `stage2b_response_freeze_ledger_template_v1_3b.csv`
 
-The public runner contains no private prompts, no gold key, no credentials and no patent-sensitive enabling material. A 21-task placeholder dry run validated task-count control, SHA-256 construction, manifest creation and the scoring lock without making any provider API call.
-
-Actual candidate execution still requires independently supplied provider access. Same-session self-comparisons, simulated provider outputs, copied answers or reconstructed responses are not promotion-eligible evidence.
+The public runner and public records contain no private prompts, no gold key, no credentials and no patent-sensitive enabling material. Actual candidate execution still requires a runtime-validated pinned SDK environment plus independently supplied private provider credentials. Same-session self-comparisons, simulated provider outputs, copied answers or reconstructed responses are not promotion-eligible evidence.
 
 ### Stage 2C–2E
 
@@ -113,8 +140,11 @@ These do not constitute independent replication or Phase 2 model validation.
 - `STAGE2B_INDEPENDENT_MODEL_RUN_GATE_V1_3B.md`
 - `STAGE2B_EXECUTION_RUNBOOK_V1_3B.md`
 - `stage2b_runner.py`
+- `stage2b_preflight.py`
+- `stage2b_verify_bundle.py`
 - `requirements-stage2b.txt`
-- `STAGE2B_RUNNER_VALIDATION_2026_09_17.md`
+- `stage2b_sdk_provenance.csv`
+- `STAGE2B_SDK_LOCK_STATUS_2026_09_17.md`
 - `stage2b_candidate_roster_v1_3b.csv`
 - `stage2b_response_freeze_ledger_template_v1_3b.csv`
 - `COST_PER_VERIFIED_PROFESSIONAL_OUTPUT_V1_3.md`
