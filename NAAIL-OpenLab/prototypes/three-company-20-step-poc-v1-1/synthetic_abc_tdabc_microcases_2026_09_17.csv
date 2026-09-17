@@ -1,0 +1,7 @@
+ticker,activity,cost_pool_musd,driver_units_m,driver,rate_per_unit_usd,status
+WMT,Online order pick & pack,120,24.0,orders,5.0,SYNTHETIC_EXECUTED
+WMT,Returns handling,30,6.0,returns,5.0,SYNTHETIC_EXECUTED
+WMT,Compliance case review,10,0.5,cases,20.0,SYNTHETIC_EXECUTED
+JPM,KYC review,90,3.0,reviews,30.0,SYNTHETIC_EXECUTED
+JPM,Credit underwriting,150,1.5,applications,100.0,SYNTHETIC_EXECUTED
+JPM,Fraud alert investigation,120,8.0,alerts,15.0,SYNTHETIC_EXECUTED
