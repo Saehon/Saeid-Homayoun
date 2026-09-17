@@ -6,6 +6,13 @@
 
 This package operationalizes the next NAAIL replication step using only public/free data sources with documented provenance and access conditions.
 
+## Public release
+
+The dated public-release record and publication manifest are:
+
+- [MULTI_COMPANY_FREE_DATA_PUBLIC_RELEASE_2026_09_17.md](./MULTI_COMPANY_FREE_DATA_PUBLIC_RELEASE_2026_09_17.md)
+- [GITHUB_PUBLICATION_MANIFEST_2026_09_17.md](./GITHUB_PUBLICATION_MANIFEST_2026_09_17.md)
+
 ## Final selected cohort
 
 The official nine-company cohort and execution order are published in:
@@ -45,6 +52,8 @@ All nine are retained. Wave 2 is deliberately separated until jurisdiction, GAAP
 
 ## Current package files
 
+- `MULTI_COMPANY_FREE_DATA_PUBLIC_RELEASE_2026_09_17.md` — dated public release and scientific boundary
+- `GITHUB_PUBLICATION_MANIFEST_2026_09_17.md` — publication/synchronization manifest
 - `FINAL_COMPANY_SELECTION_AND_EXECUTION_ORDER_2026_09_17.md` — final cohort, waves, adapters and execution plan
 - `FREE_DATA_COMPANY_GATE_2026_09_17.md` — evidence-access decision and cohort rules
 - `company_registry_free_public_v1.csv` — company/CIK/form/fiscal-period/data-access registry
@@ -73,5 +82,9 @@ No company is labeled executed merely because its public data are accessible. `R
 3. Run Wave 1 cross-company robustness and independent replication.
 4. Activate SHOP and SAP only after cross-border adapters pass review.
 5. Compare all nine companies through common Evidence Passport™, falsification and Human Gate outputs without forcing artificial accounting comparability.
+
+## Publication boundary
+
+The cohort selection, access gate, registry and executable probe infrastructure are public. Company-level results for Wave 1 and Wave 2 are not claimed until actually executed. GitHub Actions success is not claimed without a verified completed run.
 
 **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
