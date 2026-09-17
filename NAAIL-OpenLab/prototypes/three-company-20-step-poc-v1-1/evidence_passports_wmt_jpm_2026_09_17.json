@@ -1,0 +1,45 @@
+{
+  "schema_version": "public-v1.1",
+  "retrieval_date": "2026-09-17",
+  "companies": {
+    "WMT": {
+      "fiscal_period": "2026-01-31",
+      "sources": [
+        {"type":"SEC_10K","url":"https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm","accession":"0000104169-26-000055"},
+        {"type":"IEX_MONTHLY","provider":"Alpaca connected IEX","window":"2025-01 to 2026-01","start_close":98.13,"end_close":119.18}
+      ],
+      "promoted_results": [
+        {"name":"net_sales_growth_pct","value":4.7255,"status":"DERIVED_EXECUTED"},
+        {"name":"operating_margin_pct","value":4.222,"status":"DERIVED_EXECUTED"},
+        {"name":"fiscal_price_return_pct","value":21.4511,"status":"DERIVED_EXECUTED"},
+        {"name":"CAM","value":"Contingencies","status":"EXECUTED"},
+        {"name":"ICFR","value":"Effective / unqualified","status":"EXECUTED"}
+      ],
+      "limitations": [
+        "Market return is close-to-close price return from IEX monthly bars; dividends excluded.",
+        "Text analytics currently bounded to CAM titles/metadata.",
+        "Patent and factor modules not yet executed."
+      ]
+    },
+    "JPM": {
+      "fiscal_period": "2025-12-31",
+      "sources": [
+        {"type":"SEC_10K","url":"https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm","accession":"0001628280-26-008131"},
+        {"type":"IEX_MONTHLY","provider":"Alpaca connected IEX","window":"2024-12 to 2025-12","start_close":239.96,"end_close":322.29}
+      ],
+      "promoted_results": [
+        {"name":"net_revenue_growth_pct","value":2.7546,"status":"DERIVED_EXECUTED"},
+        {"name":"CET1_standardized_pct","value":14.6,"status":"EXECUTED"},
+        {"name":"fiscal_price_return_pct","value":34.3099,"status":"DERIVED_EXECUTED"},
+        {"name":"CAM_count","value":2,"status":"EXECUTED"},
+        {"name":"ICFR","value":"Effective","status":"EXECUTED"}
+      ],
+      "limitations": [
+        "Bank-specific metrics are not mechanically compared with industrial-company margins.",
+        "Market return is close-to-close price return from IEX monthly bars; dividends excluded.",
+        "Text analytics currently bounded to CAM titles/metadata.",
+        "Patent and factor modules not yet executed."
+      ]
+    }
+  }
+}
