@@ -1,0 +1,77 @@
+name: Test Published NAAIL (No Local Install)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/test-published-naail.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  published-container-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download public container without registry login
+        run: |
+          docker pull ghcr.io/saehon/naail-openlab:0.2.3
+          mkdir -p results
+          docker image inspect ghcr.io/saehon/naail-openlab:0.2.3 > results/image-inspect.json
+
+      - name: Run published benchmark without network or credentials
+        run: |
+          IMAGE_ID=$(docker image inspect --format '{{.Id}}' ghcr.io/saehon/naail-openlab:0.2.3)
+          docker run --name naail-check --network none --cap-drop ALL --security-opt no-new-privileges --memory 512m --cpus 1 "$IMAGE_ID"
+          docker cp naail-check:/app/outputs/latest_results.json results/latest_results.json
+
+      - name: Verify results and write readable summary
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          result = json.loads(Path("results/latest_results.json").read_text())
+          image = json.loads(Path("results/image-inspect.json").read_text())[0]
+          row = result["runs"]["deterministic"]
+          artifact, metrics = row["artifact"], row["metrics"]
+          assert result["public_release"] == "0.2.3"
+          assert artifact["execution_status"] == "EXECUTED"
+          assert artifact["human_gate"] == "PENDING_HUMAN_APPROVAL"
+          assert metrics["adjustment_matches_gold"] is True
+          assert metrics["human_gate_enforced"] is True
+          assert metrics["precision"] == 1.0
+          assert metrics["recall"] == 1.0
+          for name in ("single_agent", "sequential_agents", "governed_multi_agent"):
+              assert result["runs"][name]["execution_status"] == "NOT_EXECUTED_PROVIDER_REQUIRED"
+          digest = ", ".join(image.get("RepoDigests", []))
+          summary = (
+              "# NAAIL published container: PASS\n\n"
+              "Downloaded without registry login and executed without network access.\n\n"
+              f"- Image digest: {digest}\n"
+              f"- Case: {result['case_id']}\n"
+              f"- Exceptions: {', '.join(artifact['exceptions'])}\n"
+              f"- Proposed adjustment (case currency): {artifact['proposed_adjustment']:,.2f}\n"
+              f"- Precision: {metrics['precision']:.2f}\n"
+              f"- Recall: {metrics['recall']:.2f}\n"
+              "- Human approval: PENDING_HUMAN_APPROVAL\n"
+              "- AI-provider modes: NOT EXECUTED; provider required\n\n"
+              "Synthetic engineering benchmark only, not an audit opinion or evidence of real-world AI accuracy.\n"
+          )
+          Path("results/SUMMARY.md").write_text(summary)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as handle:
+              handle.write(summary)
+          print(summary)
+          PY
+
+      - name: Save downloadable benchmark results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: naail-published-container-results
+          path: results/
+          if-no-files-found: warn
+          retention-days: 14
