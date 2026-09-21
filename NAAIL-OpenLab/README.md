@@ -43,7 +43,7 @@ NAAIL permanently preserves exactly two cores:
 
 ## Current research and prototype portfolio
 
-NAAIL includes KIWI™, POMELO™, VERA™, IFRS Agent™, PCAOB Agent™, ESG Agent, ECONOVA-S™, CCCMP™, ICFR Intelligence and Forensic Intelligence, plus cross-cutting evidence, management-accounting, AI-cost, behavioral, innovation, scientific-discovery, visualization and professional-education layers.
+NAAIL includes KIWI™, POMELO™, VERA™, IFRS Agent™, PCAOB Agent™, ESG Agent, ECONOVA-S™, CCCMP™, ICFR Intelligence, Forensic Intelligence and the **[FRANKENSTEIN Finance & Operations Audit System](./audit_agents/frankenstein_finops/README.md)**, plus cross-cutting evidence, management-accounting, AI-cost, behavioral, innovation, scientific-discovery, visualization and professional-education layers.
 
 The Microsoft Golden Anchor and multi-company free-data work remain bounded research prototypes. The validated historical public executable checkpoint remains **NAAIL OpenLab v0.2.3 · Audit Workspace V0.4 · Prototype 003** unless and until a later package completes its stated validation gate.
 
