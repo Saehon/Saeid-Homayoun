@@ -1,0 +1,4 @@
+openai-agents
+pandas>=2.2
+pydantic>=2.8
+pytest>=8.0
