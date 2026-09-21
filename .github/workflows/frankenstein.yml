@@ -32,3 +32,29 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run offline tests
         run: pytest -q tests
+
+
+  openai-finops-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: FRANKENSTEIN
+    env:
+      PYTHONPATH: ${{ github.workspace }}/FRANKENSTEIN
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install OpenAI profile dependencies
+        run: pip install -r openai_finops/requirements.txt
+      - name: Compile OpenAI profile
+        run: python -m compileall -q openai_finops
+      - name: Import OpenAI orchestration stack
+        run: python -c "import openai_finops.agent; print('FRANKENSTEIN OpenAI profile import OK')"
+      - name: Run deterministic OpenAI profile smoke test
+        run: python -m openai_finops.cli --deterministic-only > /tmp/frankenstein_openai_report.json
+      - name: Run OpenAI profile unit tests
+        run: python -m pytest -q openai_finops/tests

@@ -1,0 +1,13 @@
+transaction_id,timestamp,vendor,amount,currency,requester,approver,account,cost_center
+TX-1001,2026-09-01T10:15:00Z,CloudCompute AB,1840.25,USD,alice,bob,Cloud Services,FIN
+TX-1002,2026-09-02T11:05:00Z,DataWorks Inc,950.00,USD,carol,david,Data Services,OPS
+TX-1003,2026-09-05T23:42:00Z,Model Hosting Ltd,25000.00,USD,erin,erin,Cloud Services,RND
+TX-1004,2026-09-06T09:10:00Z,Office Supply Co,410.55,USD,frank,grace,Office Expense,GNA
+TX-1005,2026-09-07T14:22:00Z,Travel Partner,1275.80,USD,henry,,Travel,GNA
+TX-1006,2026-09-08T16:45:00Z,Compute Reserve Co,250000.00,USD,irene,james,Prepaid Services,FIN
+TX-1007,2026-09-09T13:17:00Z,Recruiting Services,4300.00,USD,karen,luis,Recruiting,HR
+TX-1008,2026-09-10T08:28:00Z,Legal Advisors,6800.00,USD,maria,nina,Legal,GNA
+TX-1009,2026-09-11T15:31:00Z,Security Testing LLC,11950.35,USD,omar,paul,Security,SEC
+TX-1010,2026-09-12T02:05:00Z,CloudCompute AB,10000.00,USD,quinn,rachel,Cloud Services,OPS
+TX-1002,2026-09-13T12:15:00Z,DataWorks Inc,950.00,USD,carol,david,Data Services,OPS
+TX-1012,2026-09-14T17:40:00Z,Facilities Group,730.20,USD,sam,tina,Facilities,GNA
