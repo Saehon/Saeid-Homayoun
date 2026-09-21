@@ -1,0 +1,115 @@
+{
+  "source_file": "FRANKENSTEIN/openai_finops/sample_data/transactions.csv",
+  "source_sha256": "ab0847e0e68dce878f1453a41d42e5f1ec9ce0023e2e270c6f4481e9a7b9ad78",
+  "row_count": 12,
+  "total_absolute_value": 314207.14999999997,
+  "risk_score": 91,
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "rule_id": "DUPLICATE_ID",
+      "severity": "high",
+      "title": "Duplicate transaction identifiers",
+      "transaction_ids": ["TX-1002"],
+      "evidence": [
+        "row=3; transaction_id=TX-1002; vendor=DataWorks Inc; amount=950.0; currency=USD; timestamp=2026-09-02T11:05:00Z; requester=carol; approver=david; account=Data Services; cost_center=OPS",
+        "row=12; transaction_id=TX-1002; vendor=DataWorks Inc; amount=950.0; currency=USD; timestamp=2026-09-13T12:15:00Z; requester=carol; approver=david; account=Data Services; cost_center=OPS"
+      ],
+      "rationale": "Duplicate transaction identifiers can indicate duplicate processing, resubmission, or data-integrity problems and require source-document validation.",
+      "domains": ["finance_controls", "forensic", "procurement_ap", "icfr"],
+      "control_objectives": ["transaction uniqueness", "completeness", "data integrity"]
+    },
+    {
+      "finding_id": "F-002",
+      "rule_id": "MISSING_APPROVER",
+      "severity": "high",
+      "title": "Missing approval evidence",
+      "transaction_ids": ["TX-1005"],
+      "evidence": [
+        "row=6; transaction_id=TX-1005; vendor=Travel Partner; amount=1275.8; currency=USD; timestamp=2026-09-07T14:22:00Z; requester=henry; approver=; account=Travel; cost_center=GNA"
+      ],
+      "rationale": "Transactions without an identified approver may not satisfy the expected authorization control.",
+      "domains": ["finance_controls", "procurement_ap", "icfr", "operations_risk"],
+      "control_objectives": ["authorization", "management approval", "accountability"]
+    },
+    {
+      "finding_id": "F-003",
+      "rule_id": "SOD_CONFLICT",
+      "severity": "critical",
+      "title": "Requester and approver are the same person",
+      "transaction_ids": ["TX-1003"],
+      "evidence": [
+        "row=4; transaction_id=TX-1003; vendor=Model Hosting Ltd; amount=25000.0; currency=USD; timestamp=2026-09-05T23:42:00Z; requester=erin; approver=erin; account=Cloud Services; cost_center=RND"
+      ],
+      "rationale": "The same requester and approver indicates a segregation-of-duties conflict that can enable control circumvention.",
+      "domains": ["finance_controls", "forensic", "procurement_ap", "icfr", "operations_risk"],
+      "control_objectives": ["segregation of duties", "authorization", "fraud-risk mitigation"]
+    },
+    {
+      "finding_id": "F-004",
+      "rule_id": "WEEKEND_POSTING",
+      "severity": "medium",
+      "title": "Weekend transaction posting",
+      "transaction_ids": ["TX-1002", "TX-1003", "TX-1004", "TX-1010"],
+      "evidence": [
+        "row=4; transaction_id=TX-1003; vendor=Model Hosting Ltd; amount=25000.0; currency=USD; timestamp=2026-09-05T23:42:00Z; requester=erin; approver=erin; account=Cloud Services; cost_center=RND",
+        "row=5; transaction_id=TX-1004; vendor=Office Supply Co; amount=410.55; currency=USD; timestamp=2026-09-06T09:10:00Z; requester=frank; approver=grace; account=Office Expense; cost_center=GNA",
+        "row=11; transaction_id=TX-1010; vendor=CloudCompute AB; amount=10000.0; currency=USD; timestamp=2026-09-12T02:05:00Z; requester=quinn; approver=rachel; account=Cloud Services; cost_center=OPS",
+        "row=12; transaction_id=TX-1002; vendor=DataWorks Inc; amount=950.0; currency=USD; timestamp=2026-09-13T12:15:00Z; requester=carol; approver=david; account=Data Services; cost_center=OPS"
+      ],
+      "rationale": "Weekend activity is not inherently improper, but it can be a useful contextual anomaly for follow-up.",
+      "domains": ["forensic", "operations_risk", "finance_controls"],
+      "control_objectives": ["monitoring", "transaction legitimacy"]
+    },
+    {
+      "finding_id": "F-005",
+      "rule_id": "OUT_OF_HOURS",
+      "severity": "medium",
+      "title": "Out-of-hours transaction posting",
+      "transaction_ids": ["TX-1003", "TX-1010"],
+      "evidence": [
+        "row=4; transaction_id=TX-1003; vendor=Model Hosting Ltd; amount=25000.0; currency=USD; timestamp=2026-09-05T23:42:00Z; requester=erin; approver=erin; account=Cloud Services; cost_center=RND",
+        "row=11; transaction_id=TX-1010; vendor=CloudCompute AB; amount=10000.0; currency=USD; timestamp=2026-09-12T02:05:00Z; requester=quinn; approver=rachel; account=Cloud Services; cost_center=OPS"
+      ],
+      "rationale": "Posting outside ordinary working hours is a contextual anomaly and should be corroborated with business-process evidence.",
+      "domains": ["forensic", "operations_risk", "finance_controls"],
+      "control_objectives": ["monitoring", "transaction legitimacy"]
+    },
+    {
+      "finding_id": "F-006",
+      "rule_id": "ROBUST_AMOUNT_OUTLIER",
+      "severity": "high",
+      "title": "Robust amount outlier",
+      "transaction_ids": ["TX-1003", "TX-1006"],
+      "evidence": [
+        "row=4; transaction_id=TX-1003; vendor=Model Hosting Ltd; amount=25000.0; currency=USD; timestamp=2026-09-05T23:42:00Z; requester=erin; approver=erin; account=Cloud Services; cost_center=RND",
+        "row=7; transaction_id=TX-1006; vendor=Compute Reserve Co; amount=250000.0; currency=USD; timestamp=2026-09-08T16:45:00Z; requester=irene; approver=james; account=Prepaid Services; cost_center=FIN"
+      ],
+      "rationale": "Absolute transaction amount exceeds the robust threshold of 18,068.62, based on median plus 6 median absolute deviations.",
+      "domains": ["forensic", "treasury", "fpna", "finance_controls"],
+      "control_objectives": ["exception monitoring", "liquidity oversight", "budget variance review"]
+    },
+    {
+      "finding_id": "F-007",
+      "rule_id": "LARGE_ROUND_AMOUNT",
+      "severity": "medium",
+      "title": "Large round-value transaction",
+      "transaction_ids": ["TX-1003", "TX-1006", "TX-1010"],
+      "evidence": [
+        "row=4; transaction_id=TX-1003; vendor=Model Hosting Ltd; amount=25000.0; currency=USD; timestamp=2026-09-05T23:42:00Z; requester=erin; approver=erin; account=Cloud Services; cost_center=RND",
+        "row=7; transaction_id=TX-1006; vendor=Compute Reserve Co; amount=250000.0; currency=USD; timestamp=2026-09-08T16:45:00Z; requester=irene; approver=james; account=Prepaid Services; cost_center=FIN",
+        "row=11; transaction_id=TX-1010; vendor=CloudCompute AB; amount=10000.0; currency=USD; timestamp=2026-09-12T02:05:00Z; requester=quinn; approver=rachel; account=Cloud Services; cost_center=OPS"
+      ],
+      "rationale": "Large round-value transactions can be legitimate but are commonly included in journal-entry and fraud-risk screening.",
+      "domains": ["forensic", "treasury", "finance_controls"],
+      "control_objectives": ["journal-entry monitoring", "transaction legitimacy"]
+    }
+  ],
+  "limitations": [
+    "Rule-based flags are risk indicators, not findings of fraud or control failure.",
+    "The prototype does not inspect invoices, contracts, bank evidence, user-access logs, tax records, payroll records, forecasts, or ERP workflow history unless separately supplied.",
+    "Thresholds are configurable research defaults and should be calibrated to entity materiality, process design, and transaction population.",
+    "Domain labels route evidence to specialist agents; they do not establish that a domain-specific control failed.",
+    "All material conclusions require qualified human review and corroborating evidence."
+  ]
+}
