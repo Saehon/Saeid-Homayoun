@@ -1,0 +1,46 @@
+{
+  "case_id": "CASE_001_SYNTHETIC_FINOPS",
+  "system": "FRANKENSTEIN OpenAI Finance & Operations Audit Profile",
+  "architecture_version": "0.2.0",
+  "execution_date": "2026-09-21",
+  "execution_state": "EXECUTED",
+  "validation_state": "NOT_VALIDATED",
+  "evidence_type": "synthetic demonstration transaction population",
+  "execution_mode": "deterministic_only",
+  "model_api_called": false,
+  "human_gate": "PENDING",
+  "objective": "Perform the first reproducible finance and operations audit screening run and preserve evidence-linked risk indicators for qualified human review.",
+  "source": {
+    "repository": "Saehon/Saeid-Homayoun",
+    "main_commit_used_for_execution": "1f7f144797cb3d6c14e699e2df4ad273f0e42876",
+    "analytics_blob_sha": "1d8c3563691e354d5317b6a5a940a76455b8b2fc",
+    "sample_data_blob_sha": "86484bb5fed251442bf51816836c3f0ed843e3f5",
+    "sample_data_sha256": "ab0847e0e68dce878f1453a41d42e5f1ec9ce0023e2e270c6f4481e9a7b9ad78"
+  },
+  "runtime": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "reproduction_note": "Executed against the exact deterministic logic and synthetic CSV content fetched from the cited main commit."
+  },
+  "configuration": {
+    "approval_threshold": 10000,
+    "large_round_threshold": 10000,
+    "mad_multiplier": 6,
+    "working_hour_start": 6,
+    "working_hour_end": 22,
+    "computed_robust_amount_threshold": 18068.625
+  },
+  "result_summary": {
+    "row_count": 12,
+    "total_absolute_value": 314207.15,
+    "finding_count": 7,
+    "deterministic_risk_score": 91,
+    "finding_ids": ["F-001", "F-002", "F-003", "F-004", "F-005", "F-006", "F-007"]
+  },
+  "governance": {
+    "risk_indicators_are_not_proof": true,
+    "professional_conclusion_allowed": false,
+    "qualified_human_review_required": true,
+    "next_gate": "Corroborate findings with source documents, workflow evidence and entity-specific materiality/control design."
+  }
+}
