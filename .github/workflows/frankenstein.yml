@@ -1,6 +1,7 @@
 name: FRANKENSTEIN Tests
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -56,5 +57,10 @@ jobs:
         run: python -c "import openai_finops.agent; print('FRANKENSTEIN OpenAI profile import OK')"
       - name: Run deterministic OpenAI profile smoke test
         run: python -m openai_finops.cli --deterministic-only > /tmp/frankenstein_openai_report.json
+      - name: Upload deterministic OpenAI profile report
+        uses: actions/upload-artifact@v4
+        with:
+          name: frankenstein-openai-finops-deterministic-report
+          path: /tmp/frankenstein_openai_report.json
       - name: Run OpenAI profile unit tests
         run: python -m pytest -q openai_finops/tests
