@@ -50,9 +50,13 @@ These layers connect the two cores but never become permanent cores.
 
 ## Specialist agents/programmes
 
-**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · CCCMP™ · ICFR Intelligence · Forensic Intelligence**
+**FRANKENSTEIN™ · KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · CCCMP™ · ICFR Intelligence · Forensic Intelligence**
 
 Future specialist domains follow the same constitutional rule.
+
+### [FRANKENSTEIN™ — Evidence-Governed Accounting, Audit & Assurance Orchestrator](FRANKENSTEIN/README.md)
+
+FRANKENSTEIN is a **specialist NAAIL programme**, not a third permanent core. It combines deterministic audit tests, an evidence ledger, Claude-enabled specialist agents for finance controls, internal audit, IFRS, ICFR, forensic, ESG assurance, Cost/AI FinOps, operations risk and AI/data governance, followed by a **Human Approval Gate™**. Claude and other model technologies remain replaceable Technology Core components.
 
 ## Architecture principle
 
