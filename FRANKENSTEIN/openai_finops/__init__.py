@@ -1,1 +1,3 @@
-"""OpenAI Finance & Operations Audit profile for NAAIL FRANKENSTEIN."""\n\n__version__ = "0.2.0"\n
+"""OpenAI Finance & Operations Audit profile for NAAIL FRANKENSTEIN."""
+
+__version__ = "0.2.0"
