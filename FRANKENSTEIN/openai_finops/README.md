@@ -93,3 +93,8 @@ See [PROFILE_ARCHITECTURE.md](./PROFILE_ARCHITECTURE.md), [EVALUATION.md](./EVAL
 ## Status
 
 **Version 0.2.0 · IMPLEMENTED research profile · not automatically VALIDATED or an EMPIRICAL_RESULT.**
+
+
+## Preserved execution cases
+
+- [CASE 001 — Synthetic Finance & Operations Audit](./cases/CASE_001_SYNTHETIC_FINOPS/README.md) — first preserved deterministic execution; 12 transactions, 7 risk-indicator groups, illustrative risk score 91/100, Human Gate pending.
