@@ -1,6 +1,6 @@
 # FRANKENSTEIN™ — Evidence-Governed Accounting, Audit & Assurance Orchestrator
 
-**NAAIL OpenLab specialist programme · Claude-enabled · model-replaceable · human-gated**
+**NAAIL OpenLab specialist programme · multi-provider · model-replaceable · human-gated**
 
 FRANKENSTEIN integrates deterministic audit analytics with a society of specialist accounting, audit, assurance, sustainability, cost and AI-governance agents. It is deliberately **not a third NAAIL core**.
 
@@ -28,7 +28,7 @@ FRANKENSTEIN integrates deterministic audit analytics with a society of speciali
 
 ## What is executable now
 
-The public prototype contains its own deterministic transaction engine, synthetic demonstration data, structured evidence IDs, offline-safe specialist scaffolding, Claude API orchestration, Pydantic schemas, tests and GitHub Actions CI.
+The public prototype contains its own deterministic transaction engine, synthetic demonstration data, structured evidence IDs, offline-safe specialist scaffolding, Claude orchestration, an OpenAI Finance & Operations Audit profile, Pydantic schemas, tests and GitHub Actions CI.
 
 Run without any API call:
 
@@ -46,6 +46,19 @@ Run with Claude:
 export ANTHROPIC_API_KEY="YOUR_KEY"
 export CLAUDE_MODEL="claude-sonnet-5"
 PYTHONPATH=. python -m frankenstein.cli
+```
+
+### OpenAI Finance & Operations Audit profile
+
+A second executable profile implements the publicly described finance-and-operations audit capability using the OpenAI Agents SDK, 11 specialist domains, deterministic evidence routing, an independent challenger, programmatic evidence-ID validation and a Human Approval Gate.
+
+[Open the OpenAI Finance & Operations Audit profile →](openai_finops/README.md)
+
+```bash
+pip install -r openai_finops/requirements.txt
+export OPENAI_API_KEY="YOUR_KEY"
+export OPENAI_MODEL="gpt-5.6-sol"
+PYTHONPATH=. python -m openai_finops.cli --domains all
 ```
 
 ## Professional boundaries
