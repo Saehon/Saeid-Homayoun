@@ -82,18 +82,16 @@ Alpha inference uses HAC/Newey-West covariance with six lags. Factor-premium inf
 
 The run also writes `evidence_passport.json` and `RUN_SUMMARY.md`.
 
-## Official source URLs
+## Official sources
 
-Historical archive URL pattern used by the code:
+The code uses the official Kenneth R. French historical archive URL pattern for:
 
-- `.../Historical_Archives/08 2024 Update/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip`
-- `.../Historical_Archives/08 2025 Update/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip`
-- `.../Historical_Archives/08 2024 Update/ftp/6_Portfolios_2x3_CSV.zip`
-- `.../Historical_Archives/08 2025 Update/ftp/6_Portfolios_2x3_CSV.zip`
+- July 2024 and July 2025 `F-F_Research_Data_5_Factors_2x3_CSV.zip`;
+- July 2024 and July 2025 `6_Portfolios_2x3_CSV.zip`.
 
-See the Kenneth R. French Data Library and its Historical Archives pages for the authoritative links and release descriptions.
+The source archive bytes are SHA-256 fingerprinted inside the Evidence Passport so later replications can verify that the exact same source files were used.
 
-## Run
+## Run with live official downloads
 
 ```bash
 python -m venv .venv
@@ -101,6 +99,25 @@ source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python run_study.py --old 2024 --new 2025 --output artifacts
 ```
+
+## Run offline from saved official ZIP archives
+
+For restricted university machines or long-term reproducibility, download the four official ZIP files once from the Kenneth R. French Historical Archives and then run:
+
+```bash
+python run_from_local_archives.py \
+  --old-ff5 F-F_Research_Data_5_Factors_2x3_2024.zip \
+  --new-ff5 F-F_Research_Data_5_Factors_2x3_2025.zip \
+  --old-port6 6_Portfolios_2x3_2024.zip \
+  --new-port6 6_Portfolios_2x3_2025.zip \
+  --output artifacts-local
+```
+
+The offline runner calls the same analysis functions as the live runner and records local-file SHA-256 fingerprints in the Evidence Passport. It does not substitute third-party mirrors for the official archives.
+
+## Validation workflow
+
+The GitHub Actions workflow runs both offline unit tests and the live official-archive comparison in the isolated validation pull request. Empirical artifacts are uploaded as a workflow artifact and should be reviewed before any result is treated as canonical.
 
 ## Scientific status
 
