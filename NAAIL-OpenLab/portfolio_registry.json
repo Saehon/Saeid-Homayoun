@@ -1,6 +1,6 @@
 {
   "schema_version": "naail-portfolio-governance-v1",
-  "updated_on": "2026-09-15",
+  "updated_on": "2026-09-21",
   "canonical_source_of_truth": "Saehon/Saeid-Homayoun/NAAIL-OpenLab",
   "drive_role": "mirror_archive",
   "umbrella_platform": "NAAIL OpenLab",
@@ -16,7 +16,8 @@
     "Audit Agent Lab",
     "Student Lab",
     "ESG Intelligence",
-    "Forensic Intelligence"
+    "Forensic Intelligence",
+    "FRANKENSTEIN Finance & Operations Audit System"
   ],
   "state_definitions": {
     "IMPLEMENTED": "code or infrastructure exists",
@@ -25,23 +26,142 @@
     "EMPIRICAL_RESULT": "preserved inputs, provider/model/version metadata, outputs, evaluator results, provenance, and required human review exist"
   },
   "repositories": [
-    {"repo":"Saehon/Saeid-Homayoun","visibility":"public","default_branch":"main","classification":"CORE_PRODUCT_CANONICAL","provenance":"NAAIL_ORIGINAL_OR_CUSTOM_WITH_EXTERNAL_ASSETS_SEPARATED","role":"NAAIL OpenLab public source of truth"},
-    {"repo":"Saehon/Saeid-Homayoun-","visibility":"private","default_branch":"main","classification":"CORE_RND_STAGING","provenance":"PRIVATE_NAAIL_RND","role":"pre-release and Prototype 003-C engineering"},
-    {"repo":"Saehon/pomelo-core","visibility":"private","default_branch":"main","classification":"CORE_RND","provenance":"PRIVATE_NAAIL_RND","role":"POMELO/VERA implementation"},
-    {"repo":"Saehon/IFRS-PCAOB-AI","visibility":"private","default_branch":"main","classification":"CORE_RND","provenance":"PRIVATE_NAAIL_RND","role":"IFRS/PCAOB agent implementation"},
-    {"repo":"Saehon/AAA","visibility":"public","default_branch":"main","classification":"RESEARCH_PROJECT","provenance":"NAAIL_OR_CUSTOM_RESEARCH_REQUIRES_FILE_LEVEL_ATTRIBUTION","role":"Audit and Accounting AI research"},
-    {"repo":"Saehon/IFRS-AI-Inspector","visibility":"public","default_branch":"main","classification":"RESEARCH_PROJECT","provenance":"NAAIL_OR_CUSTOM_RESEARCH_REQUIRES_STANDARD_PROVENANCE","role":"IFRS assurance/inspection research"},
-    {"repo":"Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture","visibility":"public","default_branch":"main","classification":"RESEARCH_ENGINEERING_PROJECT","provenance":"REQUIRES_FILE_LEVEL_PROVENANCE_REVIEW","role":"multi-agent experimentation and engineering patterns"},
-    {"repo":"Saehon/Financial-Sentiment-Analysis-and-Classification-Deep-Learning-Models","visibility":"public","default_branch":"main","classification":"RESEARCH_PROJECT","provenance":"REQUIRES_DATA_MODEL_PROVENANCE_REVIEW","role":"financial NLP/sentiment research"},
-    {"repo":"Saehon/agent-openai-python-banking-assistant","visibility":"public","default_branch":"main","classification":"EDUCATION_DEMO_REFERENCE","provenance":"REQUIRES_UPSTREAM_EXAMPLE_PROVENANCE_REVIEW","role":"banking/finance multi-agent reference"},
-    {"repo":"Saehon/AuditData-API","visibility":"public","default_branch":"master","classification":"DATA_DEPENDENCY_REFERENCE","provenance":"REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW","role":"audit-data interoperability reference"},
-    {"repo":"Saehon/artificial-analysis-intelligence-index","visibility":"public","default_branch":"main","classification":"DATA_DEPENDENCY_REFERENCE","provenance":"EXTERNAL_SOURCE_ARTIFICIAL_ANALYSIS","role":"model-intelligence reference"},
-    {"repo":"Saehon/robosystems","visibility":"public","default_branch":"main","classification":"DATA_DEPENDENCY_REFERENCE","provenance":"REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW","role":"financial-intelligence/knowledge-graph reference"},
-    {"repo":"Saehon/fg-data-synthetic","visibility":"public","default_branch":"dev","classification":"DATA_DEPENDENCY_REFERENCE","provenance":"REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW","role":"synthetic-data stress-testing reference"},
-    {"repo":"Saehon/ganlab","visibility":"public","default_branch":"master","classification":"EDUCATION_DEMO_REFERENCE","provenance":"REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW","role":"GAN visualization/education reference"},
-    {"repo":"Saehon/yfinance","visibility":"public","default_branch":"main","classification":"UPSTREAM_FORK","provenance":"UPSTREAM_THIRD_PARTY","role":"market-data dependency"},
-    {"repo":"Saehon/timesfm","visibility":"public","default_branch":"master","classification":"UPSTREAM_FORK","provenance":"UPSTREAM_GOOGLE_RESEARCH","role":"time-series foundation-model dependency"},
-    {"repo":"Saehon/desktop-tutorial","visibility":"private","default_branch":"main","classification":"UTILITY_ARCHIVE","provenance":"GITHUB_DESKTOP_TUTORIAL","role":"not NAAIL scientific/product evidence"}
+    {
+      "repo": "Saehon/Saeid-Homayoun",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "CORE_PRODUCT_CANONICAL",
+      "provenance": "NAAIL_ORIGINAL_OR_CUSTOM_WITH_EXTERNAL_ASSETS_SEPARATED",
+      "role": "NAAIL OpenLab public source of truth"
+    },
+    {
+      "repo": "Saehon/Saeid-Homayoun-",
+      "visibility": "private",
+      "default_branch": "main",
+      "classification": "CORE_RND_STAGING",
+      "provenance": "PRIVATE_NAAIL_RND",
+      "role": "pre-release and Prototype 003-C engineering"
+    },
+    {
+      "repo": "Saehon/pomelo-core",
+      "visibility": "private",
+      "default_branch": "main",
+      "classification": "CORE_RND",
+      "provenance": "PRIVATE_NAAIL_RND",
+      "role": "POMELO/VERA implementation"
+    },
+    {
+      "repo": "Saehon/IFRS-PCAOB-AI",
+      "visibility": "private",
+      "default_branch": "main",
+      "classification": "CORE_RND",
+      "provenance": "PRIVATE_NAAIL_RND",
+      "role": "IFRS/PCAOB agent implementation"
+    },
+    {
+      "repo": "Saehon/AAA",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "RESEARCH_PROJECT",
+      "provenance": "NAAIL_OR_CUSTOM_RESEARCH_REQUIRES_FILE_LEVEL_ATTRIBUTION",
+      "role": "Audit and Accounting AI research"
+    },
+    {
+      "repo": "Saehon/IFRS-AI-Inspector",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "RESEARCH_PROJECT",
+      "provenance": "NAAIL_OR_CUSTOM_RESEARCH_REQUIRES_STANDARD_PROVENANCE",
+      "role": "IFRS assurance/inspection research"
+    },
+    {
+      "repo": "Saehon/Google-Antigravity-using-a-multi-agent-BERT-architecture",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "RESEARCH_ENGINEERING_PROJECT",
+      "provenance": "REQUIRES_FILE_LEVEL_PROVENANCE_REVIEW",
+      "role": "multi-agent experimentation and engineering patterns"
+    },
+    {
+      "repo": "Saehon/Financial-Sentiment-Analysis-and-Classification-Deep-Learning-Models",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "RESEARCH_PROJECT",
+      "provenance": "REQUIRES_DATA_MODEL_PROVENANCE_REVIEW",
+      "role": "financial NLP/sentiment research"
+    },
+    {
+      "repo": "Saehon/agent-openai-python-banking-assistant",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "EDUCATION_DEMO_REFERENCE",
+      "provenance": "REQUIRES_UPSTREAM_EXAMPLE_PROVENANCE_REVIEW",
+      "role": "banking/finance multi-agent reference"
+    },
+    {
+      "repo": "Saehon/AuditData-API",
+      "visibility": "public",
+      "default_branch": "master",
+      "classification": "DATA_DEPENDENCY_REFERENCE",
+      "provenance": "REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW",
+      "role": "audit-data interoperability reference"
+    },
+    {
+      "repo": "Saehon/artificial-analysis-intelligence-index",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "DATA_DEPENDENCY_REFERENCE",
+      "provenance": "EXTERNAL_SOURCE_ARTIFICIAL_ANALYSIS",
+      "role": "model-intelligence reference"
+    },
+    {
+      "repo": "Saehon/robosystems",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "DATA_DEPENDENCY_REFERENCE",
+      "provenance": "REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW",
+      "role": "financial-intelligence/knowledge-graph reference"
+    },
+    {
+      "repo": "Saehon/fg-data-synthetic",
+      "visibility": "public",
+      "default_branch": "dev",
+      "classification": "DATA_DEPENDENCY_REFERENCE",
+      "provenance": "REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW",
+      "role": "synthetic-data stress-testing reference"
+    },
+    {
+      "repo": "Saehon/ganlab",
+      "visibility": "public",
+      "default_branch": "master",
+      "classification": "EDUCATION_DEMO_REFERENCE",
+      "provenance": "REQUIRES_UPSTREAM_LICENSE_PROVENANCE_REVIEW",
+      "role": "GAN visualization/education reference"
+    },
+    {
+      "repo": "Saehon/yfinance",
+      "visibility": "public",
+      "default_branch": "main",
+      "classification": "UPSTREAM_FORK",
+      "provenance": "UPSTREAM_THIRD_PARTY",
+      "role": "market-data dependency"
+    },
+    {
+      "repo": "Saehon/timesfm",
+      "visibility": "public",
+      "default_branch": "master",
+      "classification": "UPSTREAM_FORK",
+      "provenance": "UPSTREAM_GOOGLE_RESEARCH",
+      "role": "time-series foundation-model dependency"
+    },
+    {
+      "repo": "Saehon/desktop-tutorial",
+      "visibility": "private",
+      "default_branch": "main",
+      "classification": "UTILITY_ARCHIVE",
+      "provenance": "GITHUB_DESKTOP_TUTORIAL",
+      "role": "not NAAIL scientific/product evidence"
+    }
   ],
   "nonnegotiable_rules": [
     "A repository under the Saehon account does not by itself establish NAAIL authorship or ownership.",
