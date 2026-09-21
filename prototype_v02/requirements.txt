@@ -1,6 +1,6 @@
 streamlit>=1.40
 openai>=1.0.0
-python-dotenv>=1.0
+python-dotenv>=1.2.3
 pandas>=2.1
 numpy>=1.26
 statsmodels>=0.14
