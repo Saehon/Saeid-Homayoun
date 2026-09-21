@@ -1,5 +1,7 @@
 name: FRANKENSTEIN Finance Ops Audit Tests
 
+# NAAIL specialist-programme validation
+
 on:
   push:
     branches:
