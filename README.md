@@ -50,7 +50,7 @@ These layers connect the two cores but never become permanent cores.
 
 ## Specialist agents/programmes
 
-**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · CCCMP™ · ICFR Intelligence · Forensic Intelligence**
+**KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · CCCMP™ · ICFR Intelligence · Forensic Intelligence · [FRANKENSTEIN Finance & Operations Audit](NAAIL-OpenLab/audit_agents/frankenstein_finops/README.md)**
 
 Future specialist domains follow the same constitutional rule.
 
