@@ -1,6 +1,6 @@
 {
   "schema_version": "naail-portfolio-governance-v1",
-  "updated_on": "2026-09-15",
+  "updated_on": "2026-09-21",
   "canonical_source_of_truth": "Saehon/Saeid-Homayoun/NAAIL-OpenLab",
   "drive_role": "mirror_archive",
   "umbrella_platform": "NAAIL OpenLab",
@@ -16,7 +16,8 @@
     "Audit Agent Lab",
     "Student Lab",
     "ESG Intelligence",
-    "Forensic Intelligence"
+    "Forensic Intelligence",
+    "FRANKENSTEIN"
   ],
   "state_definitions": {
     "IMPLEMENTED": "code or infrastructure exists",
