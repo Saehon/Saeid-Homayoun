@@ -61,6 +61,10 @@ export OPENAI_MODEL="gpt-5.6-sol"
 PYTHONPATH=. python -m openai_finops.cli --domains all
 ```
 
+## Presentation pilot
+
+For a presentation-ready walkthrough that connects the repository architecture to the preserved Prototype 003 benchmark, PCAOB-style inspection mapping, live-demo sequence and next empirical milestone, see [PRESENTATION_PILOT.md](PRESENTATION_PILOT.md).
+
 ## Professional boundaries
 
 FRANKENSTEIN does not autonomously issue an audit opinion, conclude fraud, declare IFRS/regulatory compliance, declare a material weakness, post accounting entries, modify controls, or sanction any person or counterparty. Material conclusions require corroborating evidence and qualified human review.
