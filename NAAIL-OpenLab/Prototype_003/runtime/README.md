@@ -5,6 +5,8 @@
 **Current public release:** v0.2.3 / Prototype 003  
 **Next empirical milestone:** Prototype 004 — real-provider blinded architecture comparison
 
+**Interactive evidence artifact:** [Open Prototype 003 evidence artifact](../artifact.html)
+
 This directory preserves the Prototype 003 frozen benchmark and now adds a credential-gated Prototype 004 harness for real Google Gemini and Microsoft Foundry model runs.
 
 > **Same case. Same evidence. Same gold labels. Same evaluator. Different execution architecture.**
