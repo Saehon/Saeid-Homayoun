@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NAAIL OpenLab™ — Prototype 003 Evidence Artifact</title>
+<style>
+:root{
+  --navy:#081426;--navy2:#0d1d34;--panel:#10223d;--panel2:#0b1a30;
+  --line:#27425f;--text:#f4f8fc;--muted:#a8b8ca;--cyan:#43d9ef;
+  --green:#37d67a;--green2:#173d2a;--amber:#f0bd59;--amber2:#3a2c12;
+  --shadow:0 20px 55px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 85% -10%,#153a63 0,var(--navy) 36%,#06101f 100%);color:var(--text)}
+a{color:inherit}
+.shell{max-width:1180px;margin:auto;padding:28px 22px 56px}
+.topbar{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:18px 0 24px;border-bottom:1px solid var(--line)}
+.brand small{display:block;color:var(--cyan);font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.brand h1{margin:6px 0 0;font-size:28px}
+.status{display:inline-flex;align-items:center;gap:8px;background:rgba(55,214,122,.12);border:1px solid rgba(55,214,122,.5);color:#bdf8d3;font-weight:800;padding:9px 13px;border-radius:999px}
+.status::before{content:"✓";display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--green);color:#082012}
+.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:18px;margin-top:24px}
+.panel,.card{background:linear-gradient(180deg,rgba(16,34,61,.97),rgba(8,24,44,.97));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.hero-main{padding:28px}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.hero h2{font-size:40px;line-height:1.08;margin:10px 0 13px}
+.muted{color:var(--muted);line-height:1.65}
+.actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:22px}
+.btn{display:flex;justify-content:center;align-items:center;text-align:center;text-decoration:none;border:1px solid var(--line);background:#122a49;color:var(--text);border-radius:11px;padding:11px 12px;font-weight:750;font-size:13px;cursor:pointer;transition:.16s transform,.16s border-color,.16s background}
+.btn:hover{transform:translateY(-1px);border-color:#5e88ad;background:#173453}
+.btn.primary{background:linear-gradient(135deg,var(--cyan),#70e5f4);color:#041722;border-color:transparent}
+.btn.approval{background:linear-gradient(135deg,#2b9d5e,var(--green));color:#06180d;border-color:transparent}
+.summary{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kpi{padding:17px;background:rgba(5,18,34,.45);border:1px solid var(--line);border-radius:14px}
+.kpi span{display:block;color:var(--muted);font-size:12px}
+.kpi strong{display:block;margin-top:6px;font-size:23px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.card{padding:20px}
+.section{margin-top:24px}
+.section-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:12px}
+.section-title h3{font-size:22px;margin:4px 0 0}
+.section-title p{margin:0;color:var(--muted);font-size:13px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.step{position:relative;padding:18px 14px;border:1px solid var(--line);background:#0c1d34;border-radius:14px;text-align:center}
+.step b{display:block;margin-bottom:4px}
+.step small{color:var(--muted)}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:var(--cyan);font-weight:900}
+.table-wrap{overflow:auto;border-radius:15px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:760px;background:rgba(8,24,44,.8)}
+th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:#cfe2f5;background:#102845;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+td{font-size:13px}
+tr:last-child td{border-bottom:0}
+.code{font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#d8f6ff;overflow-wrap:anywhere}
+.link{color:#8feaf7;text-decoration:none}
+.link:hover{text-decoration:underline}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid var(--line)}
+.badge.ok{background:rgba(55,214,122,.1);border-color:rgba(55,214,122,.4);color:#bdf8d3}
+.badge.wait{background:rgba(240,189,89,.1);border-color:rgba(240,189,89,.35);color:#ffdd9d}
+.digest-card{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.digest-card h4{margin:0 0 8px}
+.copy-group{display:flex;gap:8px;align-items:center}
+.copy{white-space:nowrap}
+.toast{position:fixed;right:20px;bottom:20px;z-index:20;background:#102d21;border:1px solid rgba(55,214,122,.55);color:#cdf9dc;padding:11px 14px;border-radius:10px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s}
+.toast.show{opacity:1;transform:translateY(0)}
+.approval-panel{border-left:4px solid var(--green);background:linear-gradient(90deg,rgba(55,214,122,.09),rgba(8,24,44,.96));padding:22px}
+.approval-quote{margin:13px 0 10px;padding:16px;background:#081827;border:1px solid rgba(55,214,122,.28);border-radius:12px;line-height:1.65}
+.meta{display:flex;flex-wrap:wrap;gap:9px 18px;color:var(--muted);font-size:12px}
+.limit{border:1px solid rgba(240,189,89,.45);background:linear-gradient(180deg,rgba(58,44,18,.85),rgba(28,25,18,.86))}
+.limit h4{color:#ffdda0;margin:0 0 8px}
+.arch{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.arch .card{min-height:150px}
+.arch h4{margin:0 0 8px}
+.arch p{font-size:12px;color:var(--muted);line-height:1.55}
+[data-tooltip]{position:relative;cursor:help;border-bottom:1px dotted #7ba6c6}
+[data-tooltip]:hover::after,[data-tooltip]:focus::after{content:attr(data-tooltip);position:absolute;z-index:30;left:50%;bottom:calc(100% + 9px);transform:translateX(-50%);width:max-content;max-width:280px;padding:8px 10px;border-radius:8px;background:#e9eef3;color:#15202b;font-size:11px;font-weight:600;line-height:1.35;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+[data-tooltip]:hover::before,[data-tooltip]:focus::before{content:"";position:absolute;z-index:31;left:50%;bottom:calc(100% + 3px);transform:translateX(-50%);border:6px solid transparent;border-top-color:#e9eef3}
+footer{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#8294a8;font-size:11px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.actions,.grid4,.arch,.flow{grid-template-columns:1fr 1fr}.step:nth-child(2)::after{display:none}}
+@media(max-width:580px){.shell{padding:20px 14px 42px}.topbar{align-items:flex-start}.hero h2{font-size:32px}.actions,.grid4,.arch,.flow,.summary{grid-template-columns:1fr}.step::after{display:none}.digest-card{grid-template-columns:1fr}.copy-group{align-items:stretch;flex-direction:column}.btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand">
+      <small>NAAIL OpenLab™</small>
+      <h1>Prototype 003 Evidence Artifact</h1>
+    </div>
+    <div class="status">PASS</div>
+  </header>
+
+  <section class="hero">
+    <div class="panel hero-main">
+      <div class="eyebrow">Synthetic deterministic benchmark • research & education</div>
+      <h2>Evidence → Deterministic Test → Results → Human Approval</h2>
+      <p class="muted">A run-specific evidence page for NAAIL Prototype 003. It preserves the verified deterministic benchmark, execution evidence, container identity, and the separate human approval record without implying validation of AI-provider performance.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/Saehon/Saeid-Homayoun/actions/runs/35645012309" target="_blank" rel="noopener">Open GitHub Run ↗</a>
+        <a class="btn" href="https://github.com/Saehon/Saeid-Homayoun" target="_blank" rel="noopener">Open Repository ↗</a>
+        <a class="btn" href="https://github.com/Saehon/Saeid-Homayoun/pkgs/container/naail-openlab" target="_blank" rel="noopener">Open Package ↗</a>
+        <a class="btn approval" href="https://github.com/Saehon/Saeid-Homayoun/blob/main/APPROVAL_PROTOTYPE_003_RUN_35645012309.md" target="_blank" rel="noopener">View Approval Record ↗</a>
+      </div>
+    </div>
+    <div class="panel summary">
+      <div class="kpi"><span>Publication</span><strong>Published</strong></div>
+      <div class="kpi"><span>Benchmark</span><strong>Passed</strong></div>
+      <div class="kpi"><span>Precision / Recall</span><strong><span data-tooltip="Precision 1.00 means all predicted exception items were correct in this synthetic case, with no false positives.">1.00</span> / <span data-tooltip="Recall 1.00 means all relevant exception items were found in this synthetic case, with no false negatives.">1.00</span></strong></div>
+      <div class="kpi"><span>Human Gate</span><strong>Approved</strong></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><div><div class="eyebrow">Workflow</div><h3>Verified benchmark sequence</h3></div><p>Run-specific evidence chain</p></div>
+    <div class="flow">
+      <div class="step"><b>1. Evidence</b><small>Frozen synthetic case</small></div>
+      <div class="step"><b><span data-tooltip="Pre-programmed test run without AI-provider inference.">2. Deterministic</span></b><small>Network-disabled execution</small></div>
+      <div class="step"><b>3. Results</b><small>Exceptions + metrics</small></div>
+      <div class="step"><b>4. Approval</b><small>Separate human record</small></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid4">
+      <div class="card"><div class="eyebrow">Exception 1</div><h3><span data-tooltip="Transaction type exception detected during the Prototype 003 benchmark.">TX-002</span></h3><p class="muted">Detected by the deterministic benchmark.</p></div>
+      <div class="card"><div class="eyebrow">Exception 2</div><h3><span data-tooltip="Transaction type exception detected during the Prototype 003 benchmark.">TX-003</span></h3><p class="muted">Detected by the deterministic benchmark.</p></div>
+      <div class="card"><div class="eyebrow">Adjustment</div><h3>190,000.00</h3><p class="muted">Synthetic case adjustment amount.</p></div>
+      <div class="card"><div class="eyebrow">Execution</div><h3>Network disabled</h3><p class="muted">Public deterministic runtime completed successfully.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><div><div class="eyebrow">Container identity</div><h3>Immutable runtime evidence</h3></div><p>Copyable digest</p></div>
+    <div class="card digest-card">
+      <div>
+        <h4><span data-tooltip="OCI Registry refers to a registry implementing the Open Container Initiative image distribution format; here the image is published through GitHub Container Registry.">OCI Registry</span> digest</h4>
+        <div id="digest" class="code">sha256:a0148316d947b8f1fd8d5e56342a0bb64940c3a9d468ba9faa4c543e77541930</div>
+      </div>
+      <div class="copy-group">
+        <button class="btn copy" id="copyDigest" type="button">Copy Digest</button>
+        <a class="btn" href="https://github.com/Saehon/Saeid-Homayoun/pkgs/container/naail-openlab/versions" target="_blank" rel="noopener">Registry Versions ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><div><div class="eyebrow">Evidence</div><h3>Run and package references</h3></div><p>Direct access</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Evidence</th><th>Reference</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><span data-tooltip="CI/CD Pipeline is the automated GitHub Actions workflow used to build, test, and publish the benchmark runtime.">CI/CD Pipeline</span></td><td><a class="link" href="https://github.com/Saehon/Saeid-Homayoun/actions/runs/35645012309" target="_blank" rel="noopener">Workflow run 35645012309 ↗</a></td><td><span class="badge ok">Verified</span></td></tr>
+          <tr><td>Verified job</td><td><a class="link" href="https://github.com/Saehon/Saeid-Homayoun/actions/runs/35645012309/job/106484440987" target="_blank" rel="noopener">Job 106484440987 ↗</a></td><td><span class="badge ok">Passed</span></td></tr>
+          <tr><td>Result artifact</td><td><a class="link" href="https://github.com/Saehon/Saeid-Homayoun/actions/runs/35645012309/artifacts/10659848088" target="_blank" rel="noopener">Artifact 10659848088 ↗</a></td><td><span class="badge ok">Recorded</span></td></tr>
+          <tr><td>Container image</td><td><a class="link code" href="https://github.com/Saehon/Saeid-Homayoun/pkgs/container/naail-openlab/versions" target="_blank" rel="noopener">ghcr.io/saehon/naail-openlab:0.2.3 ↗</a><br><span class="code">sha256:a0148316d947b8f1fd8d5e56342a0bb64940c3a9d468ba9faa4c543e77541930</span></td><td><span class="badge ok">Published</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><div><div class="eyebrow">Architecture modes</div><h3>Execution status</h3></div><p>No simulated provider outputs</p></div>
+    <div class="arch">
+      <div class="card"><h4>Deterministic baseline</h4><span class="badge ok">Executed</span><p>Frozen non-provider benchmark used for the run-specific evidence above.</p></div>
+      <div class="card"><h4>Single-agent AI</h4><span class="badge wait" data-tooltip="Requires real AI-provider credentials and execution. It was not executed in this demo.">Provider Required</span><p>Status: NOT_EXECUTED_PROVIDER_REQUIRED.</p></div>
+      <div class="card"><h4>Sequential-agent AI</h4><span class="badge wait" data-tooltip="Requires real AI-provider credentials and execution. It was not executed in this demo.">Provider Required</span><p>Status: NOT_EXECUTED_PROVIDER_REQUIRED.</p></div>
+      <div class="card"><h4>Governed multi-agent AI</h4><span class="badge wait" data-tooltip="Requires real AI-provider credentials and execution. It was not executed in this demo.">Provider Required</span><p>Status: NOT_EXECUTED_PROVIDER_REQUIRED.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card approval-panel">
+      <div class="eyebrow">Human approval record</div>
+      <h3 style="margin:7px 0 0">Approved for research and educational use</h3>
+      <div class="approval-quote">“I approve the NAAIL Prototype 003 synthetic benchmark results for research and educational use. This approval does not constitute an audit opinion or validation of AI-provider performance.”</div>
+      <div class="meta">
+        <span><b>Approver:</b> Saeid Homayoun</span>
+        <span><b>Recorded:</b> 2026-09-21</span>
+        <span><b>Decision:</b> APPROVED_FOR_RESEARCH_AND_EDUCATIONAL_USE</span>
+      </div>
+      <div style="margin-top:15px"><a class="btn approval" style="display:inline-flex" href="https://github.com/Saehon/Saeid-Homayoun/blob/main/APPROVAL_PROTOTYPE_003_RUN_35645012309.md" target="_blank" rel="noopener">View Full Approval Record ↗</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card limit">
+      <h4>Limitation notice</h4>
+      <div class="muted">This approval is specific to the synthetic deterministic benchmark from run 35645012309. It does not rewrite the historical machine-generated output, activate an AI provider, authorize API expenditure, approve future runs, certify regulatory compliance, establish real-world audit quality, or validate AI-provider performance. Any changed container, dataset, model output, or subsequent run requires separate review.</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>NAAIL OpenLab™ • Prototype 003 • Synthetic research benchmark</span>
+    <span class="code">sha256:a0148316d947b8f1fd8d5e56342a0bb64940c3a9d468ba9faa4c543e77541930</span>
+  </footer>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite">Digest copied!</div>
+<script>
+(function(){
+  const digest='sha256:a0148316d947b8f1fd8d5e56342a0bb64940c3a9d468ba9faa4c543e77541930';
+  const button=document.getElementById('copyDigest');
+  const toast=document.getElementById('toast');
+  function showToast(){toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1600)}
+  async function copy(){
+    try{
+      if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(digest)}
+      else{
+        const ta=document.createElement('textarea');ta.value=digest;ta.style.position='fixed';ta.style.opacity='0';
+        document.body.appendChild(ta);ta.focus();ta.select();document.execCommand('copy');ta.remove();
+      }
+      button.textContent='Copied ✓';showToast();setTimeout(()=>button.textContent='Copy Digest',1700);
+    }catch(e){button.textContent='Copy failed';setTimeout(()=>button.textContent='Copy Digest',1700)}
+  }
+  button.addEventListener('click',copy);
+})();
+</script>
+</body>
+</html>
