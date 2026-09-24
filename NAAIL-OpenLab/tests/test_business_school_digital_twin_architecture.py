@@ -17,7 +17,7 @@ def load(path):
 def test_exactly_two_permanent_cores():
     data = load(REGISTRY)
     assert data["platform"]["permanent_core_count"] == 2
-    assert data["platform"]["permanent_cores"] == ["Knowledge Core™", "Technology Core™"]
+    assert data["platform"]["permanent_cores"] == ["Stable Knowledge Core™", "Replaceable Technology Core™"]
     assert data["invariants"]["permanent_core_count"] == 2
 
 
@@ -43,12 +43,12 @@ def test_patent_sensitive_public_assets_are_non_enabling():
     assert "def apply_decision" not in engine_text
     hierarchy = HIERARCHY.read_text(encoding="utf-8")
     assert "PATENT APPLICATION PREPARATION IN PROGRESS" in hierarchy
-    assert "exactly two permanent cores" in hierarchy.lower()
+    assert "permanently preserves exactly two cores" in hierarchy.lower()
 
 
 def test_technology_registry_does_not_create_authority_or_core():
     data = load(TECH)
-    assert data["permanent_cores"] == ["Knowledge Core™", "Technology Core™"]
+    assert data["permanent_cores"] == ["Stable Knowledge Core™", "Replaceable Technology Core™"]
     assert data["invariants"]["permanent_core_count"] == 2
     assert data["invariants"]["new_technology_creates_new_core"] is False
     assert data["invariants"]["external_framework_is_authoritative_professional_truth"] is False

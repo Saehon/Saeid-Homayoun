@@ -72,4 +72,4 @@ def test_public_management_accounting_doc_keeps_attribution_boundary():
     text = (NAAIL / "MANAGEMENT_ACCOUNTING_AI_COST_INTELLIGENCE_LAYER.md").read_text(encoding="utf-8")
     assert "NAAIL-developed extension inspired by ABC/TDABC" in text
     assert "not represented as original Kaplan" in text
-    assert "minimum defensible AI cost" in text.lower()
+    assert "minimum defensible ai cost" in text.lower()

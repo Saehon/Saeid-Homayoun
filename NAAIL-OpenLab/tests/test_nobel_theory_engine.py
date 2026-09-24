@@ -38,7 +38,7 @@ def test_public_engine_remains_non_enabling():
     text = ENGINE.read_text(encoding="utf-8")
     assert "PATENT_HOLD_NON_ENABLING" in text
     assert "not a third core" in text.lower()
-    assert "not CCCMP-specific" in text
+    assert "not a cccmp-specific module" in text.lower()
     assert "psychological diagnoses" in text
 
 

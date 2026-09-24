@@ -16,6 +16,7 @@ on:
       - '.github/workflows/naail_nobel_theory_engine_guard.yml'
   pull_request:
     paths:
+      - '.github/workflows/naail_nobel_theory_engine_guard.yml'
       - 'README.md'
       - 'NAAIL-OpenLab/README.md'
       - 'NAAIL-OpenLab/00_START_HERE.md'
@@ -36,6 +37,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install --upgrade pip pytest
       - name: Run Nobel Theory Engine and public-platform guards
         run: |
           python -m pytest NAAIL-OpenLab/tests/test_nobel_theory_engine.py -q

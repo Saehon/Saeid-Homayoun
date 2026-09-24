@@ -2,9 +2,9 @@
   "schema_version": "1.0",
   "registry_id": "NAAIL-BUSINESS-SCHOOL-SIM-TECH-2026.09",
   "umbrella": "NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin",
-  "permanent_cores": ["Knowledge Core™", "Technology Core™"],
+  "permanent_cores": ["Stable Knowledge Core™", "Replaceable Technology Core™"],
   "supporting_layer": "Business School Simulation & Digital Twin Layer",
-  "rule": "All listed technologies are replaceable Technology Core adapters; none is a permanent core or authoritative professional knowledge source.",
+  "rule": "All listed technologies are Replaceable Technology Core adapters; none is a permanent core or authoritative professional knowledge source.",
   "admission_requirements": [
     "version_pin",
     "license_review",
