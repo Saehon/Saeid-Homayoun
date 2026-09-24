@@ -289,6 +289,7 @@ Any future transition to professional or commercial deployment would require a s
 - [Scientific Assurance →](SCIENTIFIC_ASSURANCE.md)
 - [Reproducibility →](REPRODUCIBILITY.md)
 - [Data Sources →](DATA_SOURCES.md)
+- [Kaggle Research Workspace →](kaggle/README.md)
 - [FRANKENSTEIN™ →](FRANKENSTEIN/README.md)
 
 ---
