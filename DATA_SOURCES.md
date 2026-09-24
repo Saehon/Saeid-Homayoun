@@ -84,3 +84,14 @@ Evidence Passport™ + Human Gate
 ## Scientific rule
 
 Data-source convenience never overrides provenance, licensing, chronology, construct validity or identification. Mirrored data must not be treated as more authoritative than their original source.
+
+## IFRS-CPJ / Management Science source integration
+
+A dedicated source registry and licensing plan for the IFRS Computational Professional Judgment study is maintained at:
+
+- [studies/IFRS-CPJ-MNSc/README.md](studies/IFRS-CPJ-MNSc/README.md)
+- [studies/IFRS-CPJ-MNSc/SOURCE_REGISTRY.md](studies/IFRS-CPJ-MNSc/SOURCE_REGISTRY.md)
+- [studies/IFRS-CPJ-MNSc/FORK_AND_LICENSE_PLAN.md](studies/IFRS-CPJ-MNSc/FORK_AND_LICENSE_PLAN.md)
+- [studies/IFRS-CPJ-MNSc/source_registry.json](studies/IFRS-CPJ-MNSc/source_registry.json)
+
+The registry covers ESMA ESEF Toolkit, TRR266 ESEF, Arelle, Open-ESEF, sec-edgar-downloader, TRR266 treat, and the supplementary Kaggle datasets/notebooks used for comparison and stress testing. Third-party software and data remain subject to their upstream licenses and terms.
