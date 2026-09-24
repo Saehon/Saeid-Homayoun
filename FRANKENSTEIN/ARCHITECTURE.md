@@ -72,3 +72,21 @@ See [ROADMAP_5_PHASES.md](ROADMAP_5_PHASES.md).
 5. Missing evidence is surfaced, not invented.
 6. Model-provider choice is replaceable.
 7. Material professional conclusions require human approval.
+
+
+## Phase 3 tool mapping
+
+| Specialist capability | Approved open/research-accessible adapters |
+|---|---|
+| Financial accounting | FinanceSkills, CPA Skills, deterministic Python, authoritative sources |
+| Audit testing | CPA Skills, Docling MCP, deterministic Python |
+| Evidence | Docling MCP, SEC EDGAR MCP |
+| ICFR/internal control | closegate, CPA Skills, deterministic Python |
+| Corporate governance | SEC EDGAR MCP, Docling MCP |
+| CAM | SEC EDGAR MCP, Docling MCP |
+| KAM | Docling MCP |
+| IFRS | FinanceSkills, deterministic Python, permitted authoritative sources |
+| ESG | Docling MCP, AI4SustainableX with license review |
+| Independent reviewer | deterministic checks, Docling MCP, authoritative sources |
+
+The Orchestrator may route tasks but may not bypass evidence requirements, policy gates or Human Approval.
