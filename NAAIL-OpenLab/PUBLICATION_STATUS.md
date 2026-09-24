@@ -2,9 +2,12 @@
 
 **GitHub publication state:** PUBLIC  
 **Public preview published:** 14 September 2026  
+**Cross-platform distribution verified:** 24 September 2026  
 **SEC EDGAR Education Lab:** PUBLISHED  
 **Google Drive working mirror:** SYNCHRONIZED  
-**Latest synchronization checkpoint:** 14 September 2026  
+**Kaggle distribution mirror:** PUBLISHED — https://www.kaggle.com/datasets/sadhon/naail-openlab  
+**Hugging Face distribution mirror:** PUBLISHED — https://huggingface.co/datasets/SADHON/NAAIL-OpenLab  
+**Latest synchronization checkpoint:** 24 September 2026  
 **Repository:** `Saehon/Saeid-Homayoun`  
 **Project path:** `NAAIL-OpenLab/`
 
@@ -24,7 +27,7 @@ The current public GitHub state and the NAAIL Google Drive working mirror are sy
 - Microsoft / Google / OpenAI marketplace-preparation scaffolding;
 - evidence governance, privacy, Human Gate, licensing, citation, and IP safeguards.
 
-GitHub remains the public publication surface. Google Drive is the synchronized working mirror. This synchronization does not imply Microsoft Marketplace, Google Cloud Marketplace, OpenAI App Directory, Big Four, university, regulator, or other third-party approval or endorsement.
+GitHub remains the canonical public source of truth. Kaggle and Hugging Face are synchronized public distribution mirrors, while Google Drive remains the controlled working mirror. This synchronization does not imply Microsoft Marketplace, Google Cloud Marketplace, OpenAI App Directory, Big Four, university, regulator, or other third-party approval or endorsement.
 
 ## Published public-preview state
 
@@ -92,6 +95,10 @@ Published means the material is available in the public GitHub repository. It do
 The public GitHub repository intentionally excludes provider credentials, confidential data, private prompts, proprietary orchestration, unpublished benchmark labels, partner-confidential information, individual recruitment data, licensed/restricted datasets, and patent-sensitive implementation.
 
 ## Canonical links
+
+- Public Distribution Record: `PUBLIC_DISTRIBUTION.md`
+- Kaggle Mirror: https://www.kaggle.com/datasets/sadhon/naail-openlab
+- Hugging Face Mirror: https://huggingface.co/datasets/SADHON/NAAIL-OpenLab
 
 - Public Preview: `PUBLIC_PREVIEW.md`
 - Main README: `README.md`
