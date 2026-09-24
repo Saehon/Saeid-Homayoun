@@ -1,0 +1,32 @@
+{
+  "dataset_id": "microsoft-demo-001",
+  "company": "Microsoft Corporation",
+  "ticker": "MSFT",
+  "cik": "0000789019",
+  "fiscal_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "unit": "USD millions",
+  "source_provider": "Microsoft Investor Relations / Microsoft 2025 Annual Report",
+  "source_url": "https://www.microsoft.com/investor/reports/ar25/",
+  "retrieved_on": "2026-09-24",
+  "fields": {
+    "revenue_musd": "Total revenue",
+    "gross_profit_musd": "Gross margin",
+    "operating_income_musd": "Operating income",
+    "net_income_musd": "Net income"
+  },
+  "xbrl_alignment": {
+    "revenue_musd": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+    "gross_profit_musd": "us-gaap:GrossProfit",
+    "operating_income_musd": "us-gaap:OperatingIncomeLoss",
+    "net_income_musd": "us-gaap:NetIncomeLoss"
+  },
+  "transformations": [
+    "No rescaling of reported values; amounts remain USD millions",
+    "Python demo computes year-over-year revenue growth and gross, operating, and net margins"
+  ],
+  "purpose": "Phase 1 open accounting-data pipeline demonstration for research and education"
+}
