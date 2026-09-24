@@ -1,0 +1,115 @@
+{
+  "version": "0.1",
+  "updated": "2026-09-24",
+  "invariant": {
+    "evidence_before_narrative": true,
+    "orchestrator_may_bypass_gate": false,
+    "preserve_disagreement": true,
+    "material_professional_conclusion_requires_human": true
+  },
+  "agents": {
+    "financial_accounting": {
+      "mission": "Prepare and analyze accounting treatments, reconciliations, journals, close and financial statements.",
+      "tools": [
+        "finance_skills",
+        "cpa_skills",
+        "deterministic_python",
+        "authoritative_sources"
+      ],
+      "evidence_required": true,
+      "human_gate": "material_judgment"
+    },
+    "audit_testing": {
+      "mission": "Execute reproducible audit tests and produce evidence-backed workpaper outputs.",
+      "tools": [
+        "cpa_skills",
+        "deterministic_python",
+        "docling_mcp"
+      ],
+      "evidence_required": true,
+      "human_gate": "material_exception"
+    },
+    "evidence": {
+      "mission": "Retrieve, parse, locate, cite and validate evidence while preserving provenance.",
+      "tools": [
+        "docling_mcp",
+        "sec_edgar_mcp",
+        "deterministic_python"
+      ],
+      "evidence_required": false,
+      "human_gate": "false"
+    },
+    "icfr": {
+      "mission": "Map controls, test segregation-of-duties and policy conditions, and support deficiency analysis.",
+      "tools": [
+        "closegate",
+        "cpa_skills",
+        "deterministic_python"
+      ],
+      "evidence_required": true,
+      "human_gate": "deficiency_severity"
+    },
+    "corporate_governance": {
+      "mission": "Extract board, audit committee, ownership, compensation and risk-oversight evidence.",
+      "tools": [
+        "sec_edgar_mcp",
+        "docling_mcp",
+        "deterministic_python"
+      ],
+      "evidence_required": true,
+      "human_gate": "material_judgment"
+    },
+    "cam": {
+      "mission": "Extract, classify and compare U.S. critical audit matters with filing-level traceability.",
+      "tools": [
+        "sec_edgar_mcp",
+        "docling_mcp",
+        "deterministic_python"
+      ],
+      "evidence_required": true,
+      "human_gate": "final_classification"
+    },
+    "kam": {
+      "mission": "Extract, classify and compare key audit matters across permitted public reports.",
+      "tools": [
+        "docling_mcp",
+        "deterministic_python"
+      ],
+      "evidence_required": true,
+      "human_gate": "final_classification"
+    },
+    "ifrs": {
+      "mission": "Analyze IFRS recognition, measurement, presentation and disclosure issues using permitted authoritative sources.",
+      "tools": [
+        "finance_skills",
+        "deterministic_python",
+        "authoritative_sources"
+      ],
+      "evidence_required": true,
+      "authoritative_source_required": true,
+      "human_gate": "true"
+    },
+    "esg": {
+      "mission": "Map sustainability metrics and claims to evidence and applicable reporting frameworks.",
+      "tools": [
+        "docling_mcp",
+        "ai4sustainablex",
+        "deterministic_python",
+        "authoritative_sources"
+      ],
+      "evidence_required": true,
+      "human_gate": "material_claim"
+    },
+    "reviewer": {
+      "mission": "Independently challenge conclusions, contradictions, failed checks and evidence sufficiency.",
+      "tools": [
+        "deterministic_python",
+        "docling_mcp",
+        "authoritative_sources"
+      ],
+      "evidence_required": true,
+      "prefer_different_model_provider": true,
+      "human_gate": "escalation"
+    }
+  }
+}
