@@ -9,6 +9,14 @@
 
 NAAIL OpenLab™ is an independent research and education platform for evidence-governed multi-agent Digital Twins, theory-to-evidence research, professional simulation, behavioral experimentation, innovation/entrepreneurship research, management-accounting and AI-cost intelligence, scientific discovery and verifiable human–AI judgment.
 
+## Current archival release
+
+**Latest public archival release:** [V2026.4-R3 — Zenodo-Ready Archival Release](https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3)  
+**Release date:** 2026-09-24  
+**Validated historical executable checkpoint:** **v0.2.3 · Audit Workspace V0.4 · Prototype 003**
+
+The V2026.4-R3 GitHub Release includes a NAAIL-scoped archival ZIP, SHA-256 checksum, release-specific `CITATION.cff`, BibTeX, Zenodo metadata, and file-level integrity manifest. The archival release is a frozen research/dissemination package; it does not imply that every registered experiment or integration has completed independent scientific validation.
+
 ## Current public entry points
 
 - [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md)
