@@ -1,7 +1,7 @@
 ---
 pretty_name: NAAIL OpenLab
 license: other
-license_name: NAAIL Research Non-Commercial License
+license_name: naail-research-non-commercial-license
 license_link: https://github.com/Saehon/Saeid-Homayoun/blob/main/NAAIL-OpenLab/NAAIL_RESEARCH_NONCOMMERCIAL_LICENSE.md
 tags:
 - accounting
