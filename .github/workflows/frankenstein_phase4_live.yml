@@ -1,0 +1,55 @@
+name: FRANKENSTEIN Phase 4 - Live Provider Benchmark
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+      OPENAI_CHAT_COMPLETIONS_URL: ${{ vars.OPENAI_CHAT_COMPLETIONS_URL }}
+
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+      ANTHROPIC_MESSAGES_URL: ${{ vars.ANTHROPIC_MESSAGES_URL }}
+      ANTHROPIC_VERSION: ${{ vars.ANTHROPIC_VERSION }}
+
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      GEMINI_GENERATE_CONTENT_URL: ${{ vars.GEMINI_GENERATE_CONTENT_URL }}
+
+      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+      AZURE_OPENAI_MODEL: ${{ vars.AZURE_OPENAI_MODEL }}
+      AZURE_OPENAI_CHAT_COMPLETIONS_URL: ${{ vars.AZURE_OPENAI_CHAT_COMPLETIONS_URL }}
+
+      MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+      MOONSHOT_MODEL: ${{ vars.MOONSHOT_MODEL }}
+      MOONSHOT_CHAT_COMPLETIONS_URL: ${{ vars.MOONSHOT_CHAT_COMPLETIONS_URL }}
+
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL }}
+      DEEPSEEK_CHAT_COMPLETIONS_URL: ${{ vars.DEEPSEEK_CHAT_COMPLETIONS_URL }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run configured providers
+        run: |
+          mkdir -p phase4-results
+          cd FRANKENSTEIN/phase4_benchmark
+          python benchmark.py --mode live --output ../../phase4-results/results.json
+
+      - name: Upload benchmark result
+        uses: actions/upload-artifact@v4
+        with:
+          name: frankenstein-phase4-results
+          path: phase4-results/results.json
+          if-no-files-found: error
