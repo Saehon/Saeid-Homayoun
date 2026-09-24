@@ -290,6 +290,7 @@ Any future transition to professional or commercial deployment would require a s
 - [Reproducibility →](REPRODUCIBILITY.md)
 - [Data Sources →](DATA_SOURCES.md)
 - [Kaggle Research Workspace →](kaggle/README.md)
+- [Phase 1 Microsoft Open Data Bridge →](open-data/microsoft-demo-001/README.md)
 - [FRANKENSTEIN™ →](FRANKENSTEIN/README.md)
 
 ---
