@@ -90,3 +90,16 @@ These repositories already exist under the Saehon account and are relevant resea
 The integrated stack is for **education, academic research, simulation and benchmarking**. A public repository, a passing test, or a successful agent run does not establish audit assurance, regulatory approval, accounting correctness, IFRS authority, commercial readiness or superiority over professional systems.
 
 **Evidence before narrative. Human accountability remains required for material professional conclusions.**
+
+
+## Taming the Modern Prometheus release
+
+The catalogue and benchmark are now connected to the cybernetic-control article package:
+
+- [Free/Open Agent and Tool Catalogue 2026](OPEN_AGENT_CATALOG_2026.md)
+- [Taming the Modern Prometheus paper package](papers/taming-modern-prometheus/README.md)
+- [Agentic Financial Assurance Benchmark](open-data/taming-modern-prometheus/README.md)
+- [Kaggle dataset package](kaggle/datasets/taming-modern-prometheus/)
+- [Hugging Face dataset package](huggingface/datasets/taming-modern-prometheus/)
+
+The benchmark contains three public-derived Microsoft aggregate checks and ten explicitly synthetic gate cases. It is a research and education scaffold, not audit evidence or a professional assurance conclusion.
