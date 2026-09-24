@@ -6,7 +6,7 @@
 **Date:** 24 September 2026  
 **Author:** Saeid Homayoun — [ORCID](https://orcid.org/0000-0002-2536-0446)
 
-> **ArXiv status:** this is a repository manuscript and reproducibility package. It is not an arXiv submission record and does not yet have an arXiv identifier. The arXiv papers listed in [REFERENCES.md](REFERENCES.md) are the external research foundation for the proposal.
+> **ArXiv status:** this is a repository manuscript and reproducibility package. It is not an arXiv submission record and does not yet have an arXiv identifier. The arXiv papers listed in [REFERENCES.md](REFERENCES.md) are the external research foundation for the proposal. The [manuscript draft](manuscript.md) is included for review and future submission preparation.
 
 ## Abstract
 
@@ -65,8 +65,8 @@ Dataset files:
 | Layer | Location | Role |
 |---|---|---|
 | GitHub | [paper and benchmark](.) | Source of truth for text, code, metadata, checksums, and small samples |
-| Kaggle | [dataset package](../../kaggle/datasets/taming-modern-prometheus/) | Benchmark dataset and optional notebook; publication is controlled by the existing Kaggle Action |
-| Hugging Face | [dataset package](../../huggingface/datasets/taming-modern-prometheus/) | Dataset card and upload-ready files; publication is controlled by the dedicated HF Action |
+| Kaggle | [public dataset](https://www.kaggle.com/datasets/sadhon/prometheus-assurance-benchmark-public) and [package](../../kaggle/datasets/taming-modern-prometheus/) | Public benchmark dataset; future new datasets remain private-by-default in the repository workflow |
+| Hugging Face | [public dataset](https://huggingface.co/datasets/SADHON/taming-modern-prometheus-assurance) and [package](../../huggingface/datasets/taming-modern-prometheus/) | Public dataset card and benchmark files |
 | arXiv | [official search](https://arxiv.org/search/?query=agentic+financial+assurance&searchtype=all) | External literature and eventual preprint destination |
 
 ## Run locally
