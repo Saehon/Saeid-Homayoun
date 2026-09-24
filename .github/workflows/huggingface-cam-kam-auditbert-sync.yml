@@ -1,0 +1,76 @@
+name: Hugging Face - CAM KAM AuditBERT Demo Sync
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "open-data/cam-kam-auditbert-demo-001/**"
+      - "huggingface/datasets/cam-kam-auditbert-public-demo/**"
+      - ".github/workflows/huggingface-cam-kam-auditbert-sync.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Hugging Face authentication
+        id: auth
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${HF_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::HF_TOKEN is not configured. Hugging Face publication is skipped."
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Checkout repository
+        if: steps.auth.outputs.configured == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.auth.outputs.configured == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Hugging Face Hub client
+        if: steps.auth.outputs.configured == 'true'
+        run: python -m pip install --upgrade huggingface_hub
+
+      - name: Validate canonical dataset
+        if: steps.auth.outputs.configured == 'true'
+        run: python open-data/cam-kam-auditbert-demo-001/validate.py
+
+      - name: Stage and publish private dataset
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          rm -rf /tmp/cam-kam-auditbert-public-demo
+          mkdir -p /tmp/cam-kam-auditbert-public-demo
+          cp huggingface/datasets/cam-kam-auditbert-public-demo/README.md /tmp/cam-kam-auditbert-public-demo/README.md
+          cp open-data/cam-kam-auditbert-demo-001/synthetic_cam_kam_sample.csv /tmp/cam-kam-auditbert-public-demo/
+          cp open-data/cam-kam-auditbert-demo-001/provenance.json /tmp/cam-kam-auditbert-public-demo/
+          cp open-data/cam-kam-auditbert-demo-001/README.md /tmp/cam-kam-auditbert-public-demo/GITHUB_SOURCE.md
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          repo_id = "SADHON/cam-kam-auditbert-public-demo"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type="dataset", private=True, exist_ok=True)
+          api.upload_folder(
+              repo_id=repo_id,
+              repo_type="dataset",
+              folder_path="/tmp/cam-kam-auditbert-public-demo",
+              commit_message="Sync CAM/KAM AuditBERT demo from GitHub",
+          )
+          print(f"Published private dataset: https://huggingface.co/datasets/{repo_id}")
+          PY
