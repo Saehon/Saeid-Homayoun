@@ -18,7 +18,7 @@ A reproducible annual accounting dataset sourced from the official U.S. SEC Comp
 
 MSFT, AAPL, GOOGL, AMZN, NVDA, META, JPM, WMT, XOM and TSLA.
 
-Each refresh selects the latest three annual 10-K periods available for each company and normalizes reported USD values to millions.
+The current verified snapshot contains the latest three annual 10-K comparative periods used for each company and normalizes reported USD values to millions. Live CompanyFacts refresh code is maintained in the canonical GitHub repository.
 
 ## Files
 
