@@ -2,9 +2,6 @@ name: FRANKENSTEIN Phase 4 - Live Provider Benchmark
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/frankenstein_phase4_live.yml"
 
 permissions:
   contents: read
