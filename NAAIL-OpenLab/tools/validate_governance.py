@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Deterministic governance checks for NAAIL OpenLab.
 
-This validator is intentionally secret-free. It checks public repository state
-that should remain invariant regardless of whether Codex/provider credentials
-are configured.
+This validator is intentionally secret-free. It checks repository governance
+state that should remain invariant regardless of Codex/provider credentials.
 """
 from __future__ import annotations
 
@@ -43,10 +42,17 @@ def main() -> int:
     registry_path = ROOT / "portfolio_registry.json"
     registry = json.loads(read_text(registry_path))
     repos = registry.get("repositories", [])
-    require(len(repos) == 17, f"portfolio registry must contain exactly 17 repositories, found {len(repos)}")
+
+    require(len(repos) == 22, f"portfolio registry must contain exactly 22 repositories, found {len(repos)}")
 
     by_repo = {item.get("repo"): item for item in repos}
-    require(len(by_repo) == 17, "portfolio registry contains duplicate repository names")
+    require(len(by_repo) == 22, "portfolio registry contains duplicate repository names")
+
+    public_repos = [item for item in repos if item.get("visibility") == "public"]
+    private_repos = [item for item in repos if item.get("visibility") == "private"]
+    require(len(public_repos) == 18, f"expected 18 public repositories, found {len(public_repos)}")
+    require(len(private_repos) == 4, f"expected 4 private repositories, found {len(private_repos)}")
+
     require(
         registry.get("canonical_source_of_truth") == "Saehon/Saeid-Homayoun/NAAIL-OpenLab",
         "canonical source of truth changed",
@@ -57,6 +63,15 @@ def main() -> int:
     require(by_repo.get("Saehon/timesfm", {}).get("classification") == "UPSTREAM_FORK", "timesfm must remain classified as UPSTREAM_FORK")
     require(by_repo.get("Saehon/Saeid-Homayoun", {}).get("classification") == "CORE_PRODUCT_CANONICAL", "canonical public repo classification changed")
     require(by_repo.get("Saehon/Saeid-Homayoun-", {}).get("classification") == "CORE_RND_STAGING", "private staging repo classification changed")
+
+    for required_repo in (
+        "Saehon/openai-agents-python",
+        "Saehon/sec-edgar-downloader",
+        "Saehon/openesef",
+        "Saehon/esef-website",
+        "Saehon/Saeid-Homayoun-Test",
+    ):
+        require(required_repo in by_repo, f"portfolio registry missing current repository: {required_repo}")
 
     for module in ("KIWI", "POMELO", "VERA", "ECONOVA-S"):
         require(module in registry.get("specialist_modules", []), f"missing specialist module: {module}")
@@ -83,6 +98,8 @@ def main() -> int:
     print("NAAIL governance validation: PASS")
     print(f"public_version={version}")
     print(f"portfolio_repositories={len(repos)}")
+    print(f"public_repositories={len(public_repos)}")
+    print(f"private_repositories={len(private_repos)}")
     print("p003c_issuer_scope=Microsoft,Alphabet,Amazon")
     print("upstream_forks=yfinance,timesfm")
     return 0
