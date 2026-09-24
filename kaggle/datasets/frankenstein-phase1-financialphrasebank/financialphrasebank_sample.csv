@@ -1,0 +1,4 @@
+sentiment,sentence,label
+neutral,"The shares carry a right to dividend and other shareholder rights as from their registration with the Finnish Trade Register .",1
+positive,"UPM-Kymmene has generated four consecutive quarters of positive Free Cash Flow .",2
+negative,"Pharmaceuticals group Orion Corp reported a fall in its third-quarter earnings that were hit by larger expenditures on R&D and marketing .",0
