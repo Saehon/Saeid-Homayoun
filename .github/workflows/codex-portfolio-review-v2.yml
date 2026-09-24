@@ -1,4 +1,4 @@
-name: Codex Portfolio Review v2
+name: Codex Portfolio Review v3
 
 on:
   workflow_dispatch:
@@ -7,26 +7,29 @@ on:
       - ".github/CODEX_PORTFOLIO_REVIEW_REQUEST.md"
       - ".github/workflows/codex-portfolio-review-v2.yml"
 
-# Read-only portfolio audit. Public repositories are prefetched before Codex
-# enters the :read-only permission profile. Private repositories are excluded.
+# Read-only audit of every public repository currently in the Saehon account.
+# Private repositories are intentionally excluded because a repository-scoped
+# Actions token cannot safely clone unrelated private repositories.
 
 jobs:
   portfolio_review:
     name: Codex Review — Saehon Public Portfolio
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
+
     outputs:
       final_message: ${{ steps.codex.outputs.final-message }}
 
     steps:
-      - name: Checkout canonical NAAIL repository
+      - name: Checkout canonical repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 1
           persist-credentials: false
 
-      - name: Prefetch public portfolio
+      - name: Prefetch complete public portfolio
         shell: bash
         run: |
           set -euo pipefail
@@ -34,23 +37,31 @@ jobs:
           repos=(
             "Saeid-Homayoun"
             "AAA"
-            "IFRS-AI-Inspector"
-            "Google-Antigravity-using-a-multi-agent-BERT-architecture"
-            "AuditData-API"
-            "timesfm"
             "yfinance"
+            "Google-Antigravity-using-a-multi-agent-BERT-architecture"
             "Financial-Sentiment-Analysis-and-Classification-Deep-Learning-Models"
-            "fg-data-synthetic"
-            "artificial-analysis-intelligence-index"
             "agent-openai-python-banking-assistant"
+            "AuditData-API"
+            "artificial-analysis-intelligence-index"
+            "IFRS-AI-Inspector"
             "robosystems"
             "ganlab"
+            "fg-data-synthetic"
+            "timesfm"
+            "openai-agents-python"
+            "sec-edgar-downloader"
+            "openesef"
+            "esef-website"
+            "Saeid-Homayoun-Test"
           )
+
           for repo in "${repos[@]}"; do
             echo "Cloning Saehon/${repo}"
-            git clone --depth 1 "https://github.com/Saehon/${repo}.git" "portfolio/${repo}"
+            git clone --depth 1 --filter=blob:none               "https://github.com/Saehon/${repo}.git"               "portfolio/${repo}"
           done
+
           printf '%s\n' "${repos[@]}" > portfolio/REPOSITORIES_REVIEWED.txt
+          test "$(wc -l < portfolio/REPOSITORIES_REVIEWED.txt)" -eq 18
 
       - name: Preflight — verify OpenAI API key
         shell: bash
@@ -72,24 +83,27 @@ jobs:
           permission-profile: ":read-only"
           safety-strategy: "drop-sudo"
           allow-users: "Saehon"
+          allow-bot-users: "chatgpt-codex-connector"
           prompt: |
-            Perform a read-only portfolio audit of every repository directory
-            under the current workspace. Base findings on repository evidence.
+            Perform a read-only audit of every repository directory under the
+            current workspace. REPOSITORIES_REVIEWED.txt must contain exactly
+            18 public repositories; report any missing directory as a critical
+            coverage failure.
 
-            NAAIL GOVERNANCE
-            - NAAIL OpenLab is the umbrella architecture.
-            - KIWI, POMELO, VERA, ECONOVA-S, IFRS Agent, PCAOB Agent,
-              ICFR/TimesFM, Research Lab, Audit Agent Lab, and Student Lab are
-              specialist modules, not competing umbrella platforms.
-            - Distinguish original/custom NAAIL work from upstream forks,
-              imported examples, and external dependencies.
-            - Treat yfinance and timesfm as upstream forks unless repository
-              evidence establishes a separate custom component.
-            - Do not infer ownership, endorsement, partnership, patent status,
-              empirical success, or real-company audit findings without evidence.
+            Read each repository's AGENTS.md and relevant README/license files.
+
+            GOVERNANCE
+            - Saehon/Saeid-Homayoun is the canonical public research repository.
+            - Do not infer authorship or ownership merely because a repository
+              exists under the Saehon account.
+            - Distinguish original/custom work from upstream forks, imported
+              examples, dependencies and reference repositories.
+            - Preserve upstream licenses and attribution.
+            - Do not infer endorsement, partnership, patent status, empirical
+              success or real-company audit findings without evidence.
 
             REVIEW EACH REPOSITORY FOR
-            1. purpose and relationship to NAAIL;
+            1. purpose and relationship to the canonical repository;
             2. README/license/citation/contributing/changelog/AGENTS hygiene;
             3. code structure and maintainability;
             4. tests and CI coverage;
@@ -100,23 +114,23 @@ jobs:
                XBRL mapping and evidence traceability where applicable;
             9. Codex/CI readiness;
             10. classification as CORE PRODUCT, RESEARCH PROJECT,
-                EDUCATION/DEMO, DATA/DEPENDENCY, UPSTREAM FORK, ARCHIVE,
-                or CONSOLIDATE/RETIRE.
+                EDUCATION/DEMO, DATA/DEPENDENCY, UPSTREAM/REFERENCE, ARCHIVE,
+                TEST/UTILITY or CONSOLIDATE/RETIRE.
 
             PORTFOLIO-WIDE CHECKS
-            - duplicate/conflicting NAAIL documentation and product names;
-            - canonical source-of-truth clarity;
-            - stale/duplicate repositories;
+            - stale or duplicate repositories;
+            - conflicting architecture/product naming;
             - licensing, citation, attribution and IP inconsistencies;
-            - missing tests/CI and inconsistent default branches;
+            - default-branch inconsistency;
+            - missing tests/CI;
             - reusable components that should be consolidated;
-            - Prototype 003/003-C/004 naming and release-state consistency;
-            - Evidence Passport, Professional Decision DAG and Human Gate claims
-              must match executable evidence.
+            - claims that exceed executable evidence;
+            - human-approval boundaries for professional or scientific claims.
 
             Produce exactly:
-            # Codex Portfolio Review — Saehon / NAAIL
-            ## Executive verdict
+            # Codex Portfolio Review — Saehon
+            ## Executive summary
+            ## Coverage check
             ## Critical findings
             ## Repository-by-repository matrix
             ## Security and data-governance findings
@@ -125,8 +139,8 @@ jobs:
             ## Fork/provenance and licensing findings
             ## Codex/CI readiness
             ## Top 10 prioritized actions
-            ## Repositories to keep, consolidate, archive, or treat as dependencies
-            ## Final verdict
+            ## Keep / consolidate / archive / dependency recommendations
+            ## Final status
 
             Cite concrete repository paths where possible. Do not edit files.
 
@@ -135,8 +149,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: portfolio_review
     if: needs.portfolio_review.outputs.final_message != ''
+
     permissions:
       issues: write
+
     steps:
       - name: Publish review as GitHub issue
         uses: actions/github-script@v9
