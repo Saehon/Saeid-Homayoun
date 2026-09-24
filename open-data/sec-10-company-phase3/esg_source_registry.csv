@@ -1,0 +1,11 @@
+ticker,company,primary_public_source,source_locator,target_dimensions,coding_status
+MSFT,Microsoft Corporation,SEC 10-K + issuer sustainability reporting,https://www.microsoft.com/en-us/corporate-responsibility/sustainability,"climate; emissions; energy; water; human_capital; supply_chain; cybersecurity",SOURCE_REGISTERED
+AAPL,Apple Inc.,SEC 10-K + issuer environmental reporting,https://www.apple.com/environment/,"climate; emissions; energy; water; materials; supply_chain; human_capital",SOURCE_REGISTERED
+GOOGL,Alphabet Inc.,SEC 10-K + issuer sustainability reporting,https://sustainability.google/,"climate; emissions; energy; water; circularity; human_capital; responsible_ai",SOURCE_REGISTERED
+AMZN,"Amazon.com, Inc.",SEC 10-K + issuer sustainability reporting,https://sustainability.aboutamazon.com/,"climate; emissions; energy; packaging; water; human_capital; supply_chain",SOURCE_REGISTERED
+NVDA,NVIDIA Corporation,SEC 10-K + issuer sustainability reporting,https://www.nvidia.com/en-us/sustainability/,"climate; emissions; energy; supply_chain; human_capital; responsible_ai",SOURCE_REGISTERED
+META,"Meta Platforms, Inc.",SEC 10-K + issuer sustainability reporting,https://sustainability.atmeta.com/,"climate; emissions; energy; water; human_capital; responsible_ai",SOURCE_REGISTERED
+JPM,JPMorgan Chase & Co.,SEC 10-K + issuer ESG reporting,https://www.jpmorganchase.com/about/our-business/esg,"climate; financed_emissions; sustainable_finance; human_capital; governance; risk",SOURCE_REGISTERED
+WMT,Walmart Inc.,SEC 10-K + issuer ESG reporting,https://corporate.walmart.com/purpose/esgreport,"climate; emissions; energy; waste; supply_chain; human_capital; communities",SOURCE_REGISTERED
+XOM,Exxon Mobil Corporation,SEC 10-K + issuer sustainability reporting,https://corporate.exxonmobil.com/sustainability-and-reports,"climate; emissions; methane; energy_transition; water; safety; human_capital",SOURCE_REGISTERED
+TSLA,"Tesla, Inc.",SEC 10-K + issuer impact reporting,https://www.tesla.com/impact,"climate; avoided_emissions; energy; batteries; safety; human_capital; supply_chain",SOURCE_REGISTERED
