@@ -8,6 +8,14 @@
 
 **NAAIL OpenLab™** is an independent, **non-commercial education and academic research laboratory** for studying how artificial intelligence, multi-agent systems, Digital Twins, scientific-discovery methods, and human professional judgment can shape the next generation of **accounting, auditing, assurance, finance, internal control, sustainability, governance, and business education**.
 
+## Latest Public Release
+
+**NAAIL OpenLab™ V2026.4-R3 — Zenodo-Ready Archival Release**  
+Published: **24 September 2026**  
+GitHub Release: https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3
+
+The release includes a NAAIL-scoped archival ZIP, SHA-256 checksum, release-specific citation metadata, Zenodo metadata, and file-level integrity manifest. The validated historical executable checkpoint remains **v0.2.3 · Audit Workspace V0.4 · Prototype 003**.
+
 NAAIL is built around one central idea:
 
 > **Organizations should learn, simulate, test, challenge, and govern AI before placing it inside consequential professional systems.**
