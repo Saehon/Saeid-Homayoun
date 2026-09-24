@@ -1,5 +1,5 @@
 {
-  "id": "sadhon/sec-edgar-microsoft-10k-simple-example",
+  "id": "sadhon/sec-edgar-microsoft-10-k-simple-example",
   "title": "SEC EDGAR Microsoft 10-K - Simple Example",
   "code_file": "sec_edgar_microsoft_10k.py",
   "language": "python",
