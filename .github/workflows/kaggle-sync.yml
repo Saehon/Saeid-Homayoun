@@ -80,7 +80,7 @@ jobs:
         if: steps.auth.outputs.configured == 'true'
         env:
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
-          KAGGLE_CREATE_PUBLIC: ${{ github.event.inputs.create_public_datasets || 'false' }}
+          KAGGLE_CREATE_PUBLIC: ${{ github.event.inputs.create_public_datasets || (github.event_name == 'push' && 'true' || 'false') }}
           KAGGLE_VERSION_MESSAGE: "GitHub sync ${{ github.sha }}"
         run: bash kaggle/scripts/sync_kaggle.sh kaggle
 
