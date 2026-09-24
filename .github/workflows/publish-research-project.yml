@@ -1,0 +1,40 @@
+name: Publish Research Project
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: Public Saehon repository name
+        required: true
+        default: AAA
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate requested public repository
+        env:
+          PROJECT: ${{ inputs.project }}
+        run: |
+          set -euo pipefail
+          [[ "$PROJECT" =~ ^[A-Za-z0-9._-]+$ ]]
+          curl --fail --silent --show-error "https://api.github.com/repos/Saehon/$PROJECT" >/tmp/repo.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/repo.json'))
+          if d.get('private'): raise SystemExit('Private repositories are not publishable')
+          print('Validated public repository:', d['full_name'])
+          PY
+      - name: Credential readiness
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: |
+          test -n "$HF_TOKEN" || { echo "HF_TOKEN missing"; exit 1; }
+          test -n "$KAGGLE_USERNAME" || { echo "KAGGLE_USERNAME missing"; exit 1; }
+          test -n "$KAGGLE_API_TOKEN" || { echo "KAGGLE_API_TOKEN missing"; exit 1; }
+          echo "Publishing credentials are configured."
