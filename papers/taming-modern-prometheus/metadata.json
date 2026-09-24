@@ -1,0 +1,23 @@
+{
+  "title": "Taming the Modern Prometheus: Cybernetic Control and Falsification Gates for Agentic AI in Financial Assurance",
+  "author": "Saeid Homayoun",
+  "orcid": "0000-0002-2536-0446",
+  "date": "2026-09-24",
+  "status": "conceptual manuscript and reproducibility package",
+  "arxiv_status": "not yet submitted; no arXiv identifier assigned",
+  "abstract": "The rapid integration of autonomous, multi-agent artificial intelligence into enterprise resource planning and corporate reporting introduces a critical alignment crisis analogous to the \"Frankenstein Complex\"—the deployment of highly capable, opaque systems decoupled from continuous oversight. As financial ecosystems transition from passive language models to active multi-agent orchestration paradigms, the opacity of internal reasoning pathways threatens the integrity of continuous auditing, ESG assurance, and internal control evaluations. This paper conceptualizes a closed-loop cybernetic audit architecture designed to eliminate black-box opacity and enforce strict goal alignment in agentic workflows. By anchoring autonomous systems to rule-grounded execution via Standards-as-Code and adaptive Neuro-Fuzzy inference architectures, we propose a systemic discovery and falsification engine that subjects AI agents to non-compensatory gating mechanisms. Leveraging counterfactual Digital Twins and GraphRAG-enabled knowledge graphs, this architecture simulates enterprise reporting environments to proactively stress-test AI-driven workflows and detect latent control deficiencies before execution. Ultimately, this research demonstrates that shifting from a \"deploy and hope\" mentality to a framework of continuous, cybernetic oversight—aligned with PCAOB risk assessment standards and the EU AI Act—mitigates the risks of agentic abandonment, ensuring that autonomous financial ecosystems remain transparent, auditable, and securely governed.",
+  "keywords": [
+    "agentic AI",
+    "continuous auditing",
+    "cybernetic systems",
+    "digital twins",
+    "multi-agent orchestration",
+    "ESG assurance",
+    "GraphRAG",
+    "AI governance",
+    "falsification",
+    "human approval"
+  ],
+  "benchmark": "open-data/taming-modern-prometheus/agentic_assurance_benchmark.csv",
+  "references": "REFERENCES.md"
+}
