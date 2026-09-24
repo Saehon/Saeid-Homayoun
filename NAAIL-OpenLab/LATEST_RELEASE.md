@@ -16,13 +16,14 @@
 
 **Archive SHA-256:** `4e65f14b92b530610540c9406be1e6a7ac1e9acad24050db8c4d3f5838c9ffeb`
 
-## Citation before DOI minting
+## Citation
 
-Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release* [Computer software / research infrastructure]. GitHub. https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3
+Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release* [Computer software / research infrastructure]. Zenodo. https://doi.org/10.5281/zenodo.22942131
 
 ## DOI status
 
-Pending legitimate external Zenodo/DataCite minting. No DOI is claimed until an authoritative registration service issues it.
+**Minted version DOI:** [10.5281/zenodo.22942131](https://doi.org/10.5281/zenodo.22942131)  
+**Concept DOI:** pending separate authoritative verification.
 
 ## Scientific boundary
 
