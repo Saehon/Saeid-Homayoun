@@ -25,7 +25,7 @@ FRANKENSTEIN develops from a simple reproducible public-data connector into a so
 - SEC/EDGAR, PCAOB, ESMA/ESEF and other authoritative public sources.
 - Checksums, source URL, license, retrieval timestamp and dataset version for every asset.
 
-## Phase 3 — Specialist Free/Open Agent Layer
+## Phase 3 — Specialist Free/Open Agent Layer — ACTIVE
 **Goal:** attach reusable domain agents and deterministic tools.
 
 - Financial Accounting Agent.
@@ -39,7 +39,11 @@ FRANKENSTEIN develops from a simple reproducible public-data connector into a so
 - ESG Agent.
 - Reviewer Agent.
 
-External open/research-accessible components may include CPA Skills, FinanceSkills, Docling MCP, closegate, SEC EDGAR MCP, Google ADK, Microsoft Agent Framework and provider-neutral routing.
+Implemented registries now map each specialist agent to approved tools, source/license metadata, evidence requirements and a human-gate rule.
+
+Current external adapters include CPA Skills, FinanceSkills, Docling MCP, closegate, SEC EDGAR MCP, Google ADK, Microsoft Agent Framework, AI4SustainableX (source-available; license review) and LiteLLM as a later provider-routing option.
+
+A standard-library dry-run router and GitHub validation workflow test the registry without requiring paid model APIs.
 
 ## Phase 4 — Cross-Model Scientific Benchmarking
 **Goal:** run the same accounting/audit task across multiple model families while holding the evidence and tools constant.
