@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this CAM/KAM AuditBERT reproducibility package, please cite the associated research project and this software package."
+title: "CAM/KAM AuditBERT Public Reproducibility Package"
+type: software
+authors:
+  - family-names: Homayoun
+    given-names: Saeid
+  - family-names: Rezaee
+    given-names: Zabihollah
+  - family-names: Khosravian
+    given-names: Maryam
+  - family-names: Boumediene
+    given-names: Salma
+  - family-names: Boumediene
+    given-names: Salem L.
+repository-code: "https://github.com/Saehon/Saeid-Homayoun/tree/main/research/cam-kam-auditbert-maryam"
+keywords:
+  - auditing
+  - key audit matters
+  - critical audit matters
+  - AuditBERT
+  - FinBERT
+  - large language models
+license: CC-BY-4.0
