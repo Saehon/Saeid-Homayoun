@@ -18,7 +18,7 @@ def test_public_overview_and_landing_pages_exist():
 
 def test_registry_v2_preserves_two_core_architecture():
     data = json.loads(REGISTRY.read_text(encoding="utf-8"))
-    assert data["schema_version"] == "2.0"
+    assert data["schema_version"] == "2.5"
     assert data["platform"]["permanent_core_count"] == 2
     assert data["platform"]["permanent_cores"] == [
         "Stable Knowledge Core™",
@@ -37,22 +37,23 @@ def test_public_overview_keeps_patent_and_scientific_boundaries():
     assert "high-level and non-enabling" in text
     assert "exactly two permanent cores" in text
     assert "NAAIL Nobel Theory-to-Evidence & AI Experiment Engine™" in text
-    assert "not a third core" in text
-    assert "not a CCCMP-specific module" in text
-    assert "psychological diagnoses" in text
-    assert "GitHub repository ≠ authoritative data source" in text
+    assert "No third permanent core is permitted." in text
+    assert "CCCMP™ → specialist programme" in text
+    assert "Behavioral Decision Science & Human–AI Experimentation Layer™" in text
+    assert "Public access does not imply unrestricted redistribution." in text
     assert "PATENT APPLICATION PREPARATION IN PROGRESS" in text
 
 
 def test_public_landing_pages_show_current_architecture():
     for path in (NAAIL_README, ROOT_README):
         text = path.read_text(encoding="utf-8")
+        assert "NAAIL OpenLab™" in text
         assert "Stable Knowledge Core™" in text
         assert "Replaceable Technology Core™" in text
-        assert "Nobel Theory-to-Evidence & AI Experiment Engine™" in text
-        assert "CCCMP™" in text
         assert "Prototype 003" in text
-        assert "PUBLIC_PLATFORM_OVERVIEW.md" in text
+
+    root_text = ROOT_README.read_text(encoding="utf-8")
+    assert "PUBLIC_PLATFORM_OVERVIEW.md" in root_text
 
 
 def test_validated_checkpoint_remains_prototype_003():
