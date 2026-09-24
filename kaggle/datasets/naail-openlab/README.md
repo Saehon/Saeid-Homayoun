@@ -2,23 +2,47 @@
 
 **Next-Generation Accounting, Audit & Assurance Intelligence Lab**
 
-This Kaggle dataset is a public distribution mirror of the canonical NAAIL OpenLab research and education platform maintained at:
+NAAIL OpenLab is an independent, evidence-governed research and education platform for accounting, auditing, assurance, finance, sustainability, professional simulation and reproducible scientific discovery.
+
+This Kaggle page is the **public reproducibility/distribution mirror**. The canonical source of truth is GitHub:
 
 https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab
 
-## Current archival release
+## Release
 
 **V2026.4-R3 — Zenodo-Ready Archival Release**  
-Published: 24 September 2026
+**Published:** 24 September 2026  
+**DOI:** https://doi.org/10.5281/zenodo.22942131
 
-The distribution package contains the public NAAIL OpenLab snapshot plus integrity metadata. The canonical GitHub repository remains the source of truth.
+## What is included
 
-## Scope
+The mirror package contains:
 
-NAAIL OpenLab is an evidence-governed, human-led research and education platform for accounting, auditing, assurance, finance, sustainability, professional simulation and reproducible scientific discovery.
+- the frozen public NAAIL OpenLab research-safe snapshot;
+- the release archive;
+- SHA-256 integrity metadata;
+- a cross-platform synchronization manifest;
+- citation metadata;
+- public authorship, licensing, IP, patent and trademark notices.
+
+The archive is generated from the canonical GitHub source through an authenticated GitHub Actions publication workflow.
+
+## Recommended use
+
+Use this Kaggle mirror for reproducibility, teaching, inspection, notebook-based exploration and convenient access to the frozen public package. For current source code, governance documents and development history, use the canonical GitHub repository.
+
+## Scientific boundary
+
+Publication of the V2026.4-R3 archive does **not** mean that every NAAIL experiment, benchmark, integration or agent has completed independent scientific validation. The validated historical executable checkpoint remains **v0.2.3 · Audit Workspace V0.4 · Prototype 003** unless a later component explicitly documents completion of its validation gate.
+
+## Citation
+
+Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release* [Computer software / research infrastructure]. Zenodo. https://doi.org/10.5281/zenodo.22942131
 
 ## Licensing and intellectual property
 
-This mirror preserves the project's public licensing, copyright, patent, trademark, authorship and IP notices. Use is governed by the NAAIL Research Non-Commercial License and the notices included in the distribution archive.
+Use is governed by the **NAAIL Research Non-Commercial License** and the copyright, IP, patent and trademark notices included in the package.
 
-Copyright © 2026 Saeid Homayoun. All Rights Reserved.
+**Copyright © 2026 Saeid Homayoun. All Rights Reserved.**
+
+Publication on Kaggle does not imply sponsorship, certification, endorsement or validation by Kaggle or any other third party.
