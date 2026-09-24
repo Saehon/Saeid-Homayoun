@@ -10,6 +10,10 @@ This directory contains small, provenance-first public datasets for reproducible
 
 - [SEC 10-Company Accounting Panel](sec-10-company-phase2/README.md) — automated SEC CompanyFacts refresh, 10 companies × 3 annual periods, validation, provenance, summary analytics, free deterministic accounting agent, and Kaggle/Hugging Face distribution.
 
+## Phase 3 research layer
+
+- [CAM + ICFR + Governance + ESG](sec-10-company-phase3/README.md) — latest-year CAM and ICFR coding, governance/ESG source registries, integrated research agent, and Kaggle/Hugging Face distribution.
+
 ## Design rule
 
 **Authoritative source → canonical GitHub data → provenance → deterministic validation → distribution mirrors → analysis/agents.**
