@@ -1,0 +1,29 @@
+name: Export GitHub Backup to Artifact
+
+on:
+  push:
+    branches:
+      - automation/drive-backup-20260924
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact backup snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: 389f9ee7622caf1c32c350f1a0516bbcc76eedd0
+
+      - name: Package exact repository snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: Saeid-Homayoun-backup-2026-09-24
+          path: |
+            .
+            !.git/**
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
