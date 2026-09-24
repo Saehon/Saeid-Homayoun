@@ -109,3 +109,14 @@ The integrated lab is also indexed from the umbrella repository:
 - [Free & Open-Source Accounting, Audit and Assurance Stack](../../OPEN_SOURCE_ACCOUNTING_AUDIT_STACK.md)
 
 This profile-level catalogue links verified open-source accounting/audit tools, source-available research components, public datasets, provider families, and related Saehon repositories.
+
+
+## New paper and benchmark integration
+
+- [Taming the Modern Prometheus paper package](../papers/taming-modern-prometheus/README.md)
+- [13-row agentic financial assurance benchmark](../open-data/taming-modern-prometheus/README.md)
+- [2026 free/open accounting, audit and ESG agent catalogue](../OPEN_AGENT_CATALOG_2026.md)
+- Kaggle package: [dataset](../kaggle/datasets/taming-modern-prometheus/) and [notebook](../kaggle/notebooks/taming-modern-prometheus/)
+- Hugging Face package: [dataset card and upload files](../huggingface/datasets/taming-modern-prometheus/)
+
+The new benchmark applies the lab's evidence-before-narrative rule to public-derived accounting checks and labelled synthetic falsification cases.
