@@ -3,10 +3,10 @@
 **Product:** NAAIL OpenLab™ — Evidence-Governed Multi-Agent Digital Twin  
 **Author:** Saeid Homayoun  
 **ORCID:** https://orcid.org/0000-0002-2536-0446  
-**Current public research release:** V2026.4-R1 — Open Research Infrastructure Release (2026-09-24)  
+**Current public archival release:** V2026.4-R3 — Zenodo-Ready Archival Release (2026-09-24)  
 **Validated historical executable checkpoint:** v0.2.3 · Audit Workspace V0.4 · Prototype 003  
 **Repository location:** https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab  
-**Release:** https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R1  
+**Release:** https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3  
 **Visibility:** Public research edition
 
 ## Persistent identifiers
@@ -24,18 +24,18 @@ Do not invent DOI or SWHID values. Record identifiers only after the authoritati
 
 NAAIL uses two distinct version concepts:
 
-- **Public research release** — a frozen portfolio/research-infrastructure release such as `V2026.4-R1`.
+- **Public research release** — a frozen portfolio/research-infrastructure release such as `V2026.4-R3`.
 - **Executable software checkpoint** — a validated runnable software/prototype state such as `v0.2.3 · Audit Workspace V0.4 · Prototype 003`.
 
 A public research release must not be interpreted as proof that every included or registered experiment has been empirically validated.
 
 ## Recommended citation before DOI minting
 
-Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R1: Open Research Infrastructure Release* [Computer software / research infrastructure]. GitHub. https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R1
+Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release* [Computer software / research infrastructure]. GitHub. https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3
 
 Release-specific machine-readable metadata are maintained under:
 
-`NAAIL-OpenLab/releases/V2026.4-R1/CITATION.cff`
+`NAAIL-OpenLab/releases/V2026.4-R3/CITATION.cff`
 
 ## Repository-structure note
 
