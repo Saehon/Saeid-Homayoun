@@ -59,6 +59,7 @@ jobs:
           cp huggingface/datasets/microsoft-accounting-demo/README.md /tmp/microsoft-accounting-demo/README.md
           cp open-data/microsoft-demo-001/microsoft_financials.csv /tmp/microsoft-accounting-demo/
           cp open-data/microsoft-demo-001/provenance.json /tmp/microsoft-accounting-demo/
+          cp open-data/microsoft-demo-001/PHASE1_OPEN_DATA_BRIDGE.md /tmp/microsoft-accounting-demo/
           python - <<'PY'
           import os
           from huggingface_hub import HfApi
