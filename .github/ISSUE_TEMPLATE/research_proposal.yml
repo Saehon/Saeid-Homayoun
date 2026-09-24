@@ -1,5 +1,5 @@
 name: Research proposal
-description: Propose a reproducible ECONOVA-S™ research extension
+description: Propose a reproducible NAAIL OpenLab™ research extension
 title: "[Research]: "
 body:
   - type: markdown
@@ -10,14 +10,14 @@ body:
     id: question
     attributes:
       label: Research question
-      description: State one precise economics, finance, data-economy, or sustainability question.
+      description: State one precise accounting, auditing, assurance, finance, governance, sustainability, data-economy, or AI-research question.
     validations:
       required: true
   - type: textarea
     id: mechanism
     attributes:
       label: Theory and mechanism
-      description: Explain the economic mechanism and competing explanation(s).
+      description: Explain the theoretical or professional mechanism and competing explanation(s).
     validations:
       required: true
   - type: textarea
