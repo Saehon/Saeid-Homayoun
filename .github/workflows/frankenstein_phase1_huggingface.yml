@@ -2,6 +2,10 @@ name: FRANKENSTEIN Phase 1 - Hugging Face Public Data
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "FRANKENSTEIN/connectors/huggingface_public_example.py"
+      - ".github/workflows/frankenstein_phase1_huggingface.yml"
 
 permissions:
   contents: write
