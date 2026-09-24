@@ -1,7 +1,9 @@
 # NAAIL OpenLab™ — Current Project State
 
-**Canonical public state date:** 2026-09-17  
+**Canonical public state date:** 2026-09-24  
 **Architecture target:** `V2026.3 Multi-Agent Digital Twin`  
+**Current archival release:** `V2026.4-R3 / ZENODO_READY_ARCHIVAL_RELEASE`  
+**Release URL:** https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3  
 **Constitution:** `FROZEN`  
 **Permanent cores:** exactly two — **Stable Knowledge Core™** + **Replaceable Technology Core™**  
 **Validated executable checkpoint:** `v0.2.3 / Audit Workspace V0.4 / Prototype 003`  
