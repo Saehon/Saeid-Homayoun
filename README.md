@@ -4,6 +4,9 @@
 
 **A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery**
 
+**Researcher:** Dr. Saeid Homayoun  
+**ORCID:** https://orcid.org/0000-0002-2536-0446
+
 ### Learn with AI · Challenge AI · Verify the Evidence · Reduce the Risk · Keep Humans Accountable
 
 **NAAIL OpenLab™** is an independent, **non-commercial education and academic research laboratory** for studying how artificial intelligence, multi-agent systems, Digital Twins, scientific-discovery methods, and human professional judgment can shape the next generation of **accounting, auditing, assurance, finance, internal control, sustainability, governance, and business education**.
