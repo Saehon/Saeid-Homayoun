@@ -16,7 +16,7 @@ permissions:
 
 concurrency:
   group: publish-naail-openlab-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   publish:
