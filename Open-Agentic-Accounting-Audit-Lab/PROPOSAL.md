@@ -225,3 +225,42 @@ The project **does not vendor third-party code by default**. It links to upstrea
 ## 13. Boundary condition
 
 This repository is a research and educational platform. It is not an audit firm, does not issue assurance, and must not be used to automate material accounting judgments without qualified human review.
+
+
+## 14. Implementation Status — Version 0.2
+
+As of 24 September 2026, the integrated research scaffold has been implemented in the GitHub repository and mirrored in Google Drive.
+
+Completed:
+- provider-neutral project structure;
+- specialist-agent catalogue;
+- official/public and benchmark data-source registry;
+- 30-case U.S.–Europe–Asia portfolio;
+- T0–T6 experimental protocol;
+- provider configuration for GPT/Codex, Claude, Gemini, Microsoft/Azure, Kimi, DeepSeek and local models;
+- provider-routing Python scaffold;
+- third-party licensing/reuse guidance;
+- Google Drive proposal mirror.
+
+GitHub project:
+https://github.com/Saehon/Saeid-Homayoun/tree/main/Open-Agentic-Accounting-Audit-Lab
+
+Google Drive project folder:
+https://drive.google.com/drive/folders/1_Zaq6PFJIZUX9O6AzBvmrf-_CRRWw_5s
+
+Google Drive proposal:
+https://docs.google.com/document/d/16Mq0zEZJsTNd73tGzfnE86WhRL2je4fUC92iiVJgINk/edit
+
+### Next executable milestone
+
+The next release should implement one end-to-end pilot case with:
+1. a frozen evidence packet;
+2. expert/gold-standard answer and evidence labels;
+3. deterministic calculation/validation scripts;
+4. T0–T6 run templates;
+5. model/version metadata;
+6. cross-model Reviewer Agent challenge;
+7. policy/human-gate event log; and
+8. exportable results suitable for statistical analysis.
+
+A U.S. CAM + ICFR case is the preferred first pilot because SEC/PCAOB evidence is public and the case combines structured retrieval, accounting judgment, audit evidence and control evaluation.
