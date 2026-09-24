@@ -49,3 +49,21 @@ No provider API keys are included here. No live-provider ranking is claimed from
 ## Research boundary
 
 This is a research and educational benchmark. It does not issue an audit opinion, declare accounting compliance, or establish provider superiority.
+
+
+## Case 002 — MSFT-SEC-2026-001
+
+Real-company benchmark based on Microsoft Corporation's FY2026 SEC Form 10-K.
+
+Authoritative filing:
+https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
+
+Frozen deterministic targets:
+- FY2026 revenue growth vs FY2025: **17.79%**
+- FY2026 gross margin: **67.94%**
+- FY2026 operating margin: **46.78%**
+- FY2026 net margin: **40.31%**
+- Financial-statement audit opinion: **unqualified**
+- ICFR audit opinion: **unqualified**
+
+The case validates evidence-grounded extraction, recalculation, opinion classification, reviewer controls, and human-gate logic. It does not claim that the benchmark system performed an audit.
