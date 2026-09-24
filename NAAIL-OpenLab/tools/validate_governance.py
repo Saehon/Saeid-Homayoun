@@ -83,7 +83,7 @@ def main() -> int:
     approved_companies = ("Microsoft", "Alphabet", "Amazon")
     for company in approved_companies:
         require(company in p003c_scope, f"P003-C scope missing approved company {company}")
-    require("No fourth" in p003c_scope or "fourth" in p003c_scope.lower(), "P003-C scope must explicitly prohibit a fourth issuer without versioned change")
+    require("No additional company" in p003c_scope, "P003-C scope must explicitly prohibit adding another issuer without a versioned scope change")
 
     for filename, text in {
         "PROTOTYPE_003C_IMPLEMENTATION_STATUS.md": p003c_status,
