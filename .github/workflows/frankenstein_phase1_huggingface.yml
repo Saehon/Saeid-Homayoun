@@ -1,0 +1,39 @@
+name: FRANKENSTEIN Phase 1 - Hugging Face Public Data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-public-sample:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch small Hugging Face sample and provenance
+        run: python FRANKENSTEIN/connectors/huggingface_public_example.py
+
+      - name: Show generated manifest
+        run: cat FRANKENSTEIN/data_registry/phase1_huggingface/manifest.json
+
+      - name: Commit generated registry files when changed
+        shell: bash
+        run: |
+          if git diff --quiet -- FRANKENSTEIN/data_registry; then
+            echo "No data-registry changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add FRANKENSTEIN/data_registry
+          git commit -m "FRANKENSTEIN Phase 1: refresh Hugging Face public sample"
+          git push
