@@ -12,7 +12,8 @@
 
 **NAAIL OpenLab™ V2026.4-R3 — Zenodo-Ready Archival Release**  
 Published: **24 September 2026**  
-GitHub Release: https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3
+GitHub Release: https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3  
+Zenodo DOI: https://doi.org/10.5281/zenodo.22942131
 
 The release includes a NAAIL-scoped archival ZIP, SHA-256 checksum, release-specific citation metadata, Zenodo metadata, and file-level integrity manifest. The validated historical executable checkpoint remains **v0.2.3 · Audit Workspace V0.4 · Prototype 003**.
 
