@@ -12,7 +12,7 @@ This registry is the canonical index for NAAIL research-software identity, citat
 
 | Product | Repository / location | Version | Visibility | DOI | Concept DOI | SWHID | ORCID linkage | Release status |
 |---|---|---:|---|---|---|---|---|---|
-| **NAAIL OpenLab™** | https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3 | V2026.4-R3 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | Zenodo-ready archival ZIP + checksum published; validated executable checkpoint remains v0.2.3 |
+| **NAAIL OpenLab™** | https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3 | V2026.4-R3 | Public | **10.5281/zenodo.22942131** | Pending verified concept DOI | Pending Software Heritage capture | ORCID declared; external work-link pending | Zenodo DOI minted; archival ZIP + checksum published; validated executable checkpoint remains v0.2.3 |
 | **ECONOVA-S™ Research Co-Scientist** | https://github.com/Saehon/Saeid-Homayoun | 0.2.0 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | DOI-ready metadata |
 | **AAA — Audit & Accounting AI Laboratory** | https://github.com/Saehon/AAA | 1.0.0 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | DOI-ready metadata |
 | **IFRS-AI Inspector** | https://github.com/Saehon/IFRS-AI-Inspector | 1.0.0 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | DOI-ready metadata |
@@ -101,9 +101,9 @@ A mature NAAIL product should ultimately support this evidence chain:
 
 The GitHub metadata layer is prepared, but the following actions require the respective external services/account permissions:
 
-- create/curate a **NAAIL OpenLab Zenodo Community**;
-- enable or manually deposit the public products in Zenodo;
-- mint real version/concept DOIs;
+- create/curate a **NAAIL OpenLab Zenodo Community** if desired;
+- retrieve and verify the NAAIL **concept DOI**;
+- mint DOI records for other public products only after their own release review;
 - request/verify Software Heritage archival and resolve SWHIDs;
 - add DOI-backed software works to the external ORCID record;
 - update this registry after those identifiers exist.
