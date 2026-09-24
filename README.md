@@ -347,7 +347,9 @@ A functioning agent, successful GitHub Action, benchmark, Digital Twin, simulati
 
 **Dr. Saeid Homayoun**  
 Accounting · Auditing · Assurance · Finance · Sustainability · Agentic AI  
-ORCID: [0000-0002-2536-0446](https://orcid.org/0000-0002-2536-0446)
+ORCID: [0000-0002-2536-0446](https://orcid.org/0000-0002-2536-0446)  
+GitHub: [Saehon](https://github.com/Saehon)  
+Kaggle: [sadhon](https://www.kaggle.com/sadhon)
 
 > **Homayoun, S. (2026).** *NAAIL OpenLab™ — Next-Generation Accounting, Audit & Assurance Education Lab*.
 
