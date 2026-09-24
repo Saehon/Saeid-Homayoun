@@ -1,39 +1,52 @@
 # NAAIL Codex Review Status
 
-**Date:** 2026-09-15  
-**Status:** workflow installed; execution not yet observed
+**Date:** 2026-09-24  
+**Status:** repository-side configuration repaired; secret-free governance PASS; Codex portfolio execution blocked only by missing `OPENAI_API_KEY`.
 
-## Installed governance
+## Current GitHub state
 
-- `.github/workflows/codex-review.yml` — pull-request review for NAAIL changes.
-- `.github/workflows/codex-portfolio-review-v2.yml` — read-only public portfolio review.
-- `AGENTS.md` / NAAIL Codex instructions — repository-level review rules.
-- `NAAIL-OpenLab/PORTFOLIO_GOVERNANCE.md` — canonical attribution/product-governance policy.
-- `NAAIL-OpenLab/portfolio_registry.json` — machine-readable 17-repository registry.
-- `NAAIL-OpenLab/tools/validate_governance.py` — secret-free deterministic governance checks.
-- `.github/workflows/naail-governance.yml` — secret-free governance CI.
+- GitHub Actions is active for `Saehon/Saeid-Homayoun`.
+- `.github/workflows/codex-review.yml` now reviews internal pull requests across the full repository, uses the PR merge ref, prefetches base/head refs safely, disables persisted checkout credentials, and follows the current read-only Codex Action pattern.
+- `.github/workflows/codex-portfolio-review-v2.yml` is now **Codex Portfolio Review v3** and covers all **18 public repositories** currently visible in the account.
+- `NAAIL-OpenLab/portfolio_registry.json` now records all **22 repositories**: **18 public + 4 private**.
+- `NAAIL-OpenLab/tools/validate_governance.py` validates the current 22-repository inventory rather than the obsolete 17-repository count.
+- `.github/workflows/naail-governance.yml` is active and passed after the validator repair.
 
-## Evidence state
+## Verified execution evidence
 
-The GitHub Actions run feed available to the connected GitHub integration currently contains no run for:
+### Secret-free governance
+PASS:
+https://github.com/Saehon/Saeid-Homayoun/actions/runs/35999690837
 
-- `Codex Portfolio Review v2`; or
-- `NAAIL Governance Validation`.
+### Codex portfolio workflow
+The portfolio workflow started successfully and cloned all 18 public repositories. It stopped at the explicit credential preflight because the repository Actions secret `OPENAI_API_KEY` is not configured:
+https://github.com/Saehon/Saeid-Homayoun/actions/runs/35999532700
 
-Therefore NAAIL does **not** claim that Codex has completed a portfolio review yet.
+This isolates the remaining blocker to credential configuration, not GitHub Actions activation, repository coverage, cloning, workflow syntax, or governance validation.
 
-## What this isolates
+## Codex Cloud integration
 
-Because the secret-free governance workflow also has no observed run, the unresolved blocker is upstream of the OpenAI API call. The most likely class of remaining causes is repository Actions/workflow activation or GitHub-side workflow registration/permission state. `OPENAI_API_KEY` may still be required for Codex after Actions execution is active, but it cannot explain the absence of the secret-free workflow run.
+Codex Cloud GitHub review is already active independently of the repository Action. Recent pull requests contain reviews from `chatgpt-codex-connector[bot]`, including PRs #34 and #35.
 
-## Completion condition
+The repository-controlled `openai/codex-action@v1` workflow is an additional deep-review / portfolio-audit layer and requires an OpenAI API key stored as a GitHub Actions secret.
 
-This blocker is closed only when:
+## Remaining completion step
 
-1. `NAAIL Governance Validation` appears in GitHub Actions and passes;
-2. `Codex Portfolio Review v2` appears in GitHub Actions;
-3. Codex reaches the API-key preflight and then the Codex action;
-4. a real `Codex Portfolio Review — YYYY-MM-DD` issue is published;
-5. findings are converted into fixes and verified.
+Add `OPENAI_API_KEY` under:
 
-Until those conditions exist, any portfolio-review findings must be described as repository/human remediation, not as Codex-generated findings.
+**Repository → Settings → Secrets and variables → Actions → New repository secret**
+
+Use the exact name:
+
+`OPENAI_API_KEY`
+
+Do not place the key in a repository file, issue, README, workflow YAML, or chat message.
+
+After the secret exists, run **Codex Portfolio Review v3** from the Actions tab (or update the portfolio-review request file) and confirm that:
+1. the preflight passes;
+2. `openai/codex-action@v1` executes;
+3. the automatically generated `Codex Portfolio Review — YYYY-MM-DD` issue is published.
+
+## Evidence boundary
+
+Until a successful provider-backed portfolio run exists, repository-side remediation and governance checks must not be described as a completed Codex portfolio review.
