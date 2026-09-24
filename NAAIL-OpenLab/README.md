@@ -18,6 +18,21 @@ NAAIL OpenLab™ is an independent research and education platform for evidence-
 
 The V2026.4-R3 GitHub Release includes a NAAIL-scoped archival ZIP, SHA-256 checksum, release-specific `CITATION.cff`, BibTeX, Zenodo metadata, and file-level integrity manifest. The archival release is a frozen research/dissemination package; it does not imply that every registered experiment or integration has completed independent scientific validation.
 
+## Verified public distribution
+
+| Platform | Role | Public location |
+| --- | --- | --- |
+| **GitHub** | Canonical source of truth, code, governance, release history | https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab |
+| **Zenodo** | Citable archival release and DOI | https://doi.org/10.5281/zenodo.22942131 |
+| **Kaggle** | Reproducibility/distribution mirror | https://www.kaggle.com/datasets/sadhon/naail-openlab |
+| **Hugging Face** | AI/research distribution mirror | https://huggingface.co/datasets/SADHON/NAAIL-OpenLab |
+
+**Cross-platform identity:** `NAAIL OpenLab`  
+**Verified distribution release:** `V2026.4-R3`  
+**Verification date:** 2026-09-24
+
+GitHub remains authoritative. Kaggle and Hugging Face are synchronized public distribution mirrors and must not be treated as independent canonical versions. The public mirrors carry only already-public research-safe material and preserve the project license, authorship, citation, IP, patent and trademark notices. See [PUBLIC_DISTRIBUTION.md](./PUBLIC_DISTRIBUTION.md).
+
 ## Current public entry points
 
 - [Two-Core Constitution](./TWO_CORE_CONSTITUTION.md)
