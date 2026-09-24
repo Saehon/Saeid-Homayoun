@@ -25,11 +25,11 @@ Google Drive ─┘                                      ↓
 - **Google Drive:** controlled research files, drafts and larger working documents.
 - **Free/open agents:** reusable accounting, audit, evidence, control, governance and ESG capabilities.
 
-## Today: Phase 1 only
+## Current status: Phase 2 data fabric active
 
-The first live example is intentionally small:
+The first live example has now been extended into a four-platform fabric:
 
-**Hugging Face FinancialPhraseBank → 5-row public sample + provenance manifest → FRANKENSTEIN GitHub data registry.**
+**Hugging Face FinancialPhraseBank → GitHub provenance/sample → Kaggle private dataset → Google Drive controlled registry.**
 
 No paid API and no Hugging Face secret are required.
 
@@ -38,6 +38,7 @@ Files:
 - [architecture](ARCHITECTURE.md)
 - [Phase-1 connector](connectors/huggingface_public_example.py)
 - [data registry](data_registry/README.md)
+- [Phase-2 four-platform registry](data_registry/phase2_data_fabric/README.md)
 - [GitHub Action](../.github/workflows/frankenstein_phase1_huggingface.yml)
 
 Run locally:
