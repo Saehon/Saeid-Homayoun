@@ -1,0 +1,34 @@
+name: FRANKENSTEIN Phase 3 - Validate Agent Registry
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "FRANKENSTEIN/phase3_agents/**"
+      - "FRANKENSTEIN/tests/test_phase3_agents.py"
+      - ".github/workflows/frankenstein_phase3_validate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate registry and dry-run router
+        run: python FRANKENSTEIN/tests/test_phase3_agents.py
+
+      - name: Show example routing plan
+        run: |
+          python FRANKENSTEIN/phase3_agents/router.py \
+            --agent financial_accounting \
+            --task "Reconcile a financial-reporting evidence packet" \
+            --evidence DEMO-EVIDENCE-001
