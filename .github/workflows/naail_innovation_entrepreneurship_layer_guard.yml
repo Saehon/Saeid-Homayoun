@@ -15,6 +15,7 @@ on:
       - '.github/workflows/naail_innovation_entrepreneurship_layer_guard.yml'
   pull_request:
     paths:
+      - '.github/workflows/naail_innovation_entrepreneurship_layer_guard.yml'
       - 'README.md'
       - 'NAAIL-OpenLab/README.md'
       - 'NAAIL-OpenLab/00_START_HERE.md'
