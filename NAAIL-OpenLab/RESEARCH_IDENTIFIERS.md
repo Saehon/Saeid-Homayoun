@@ -13,10 +13,10 @@
 
 | Identifier | Status |
 |---|---|
-| DOI (version) | Pending legitimate external Zenodo/DataCite minting |
+| DOI (version) | **10.5281/zenodo.22942131** — https://doi.org/10.5281/zenodo.22942131 |
 | DOI (concept) | Pending legitimate external Zenodo/DataCite minting |
 | SWHID | Pending verified Software Heritage archival |
-| ORCID work record | Pending external linkage after DOI minting |
+| ORCID work record | Pending external linkage |
 
 Do not invent DOI or SWHID values. Record identifiers only after the authoritative external service has minted/resolved them.
 
@@ -29,9 +29,9 @@ NAAIL uses two distinct version concepts:
 
 A public research release must not be interpreted as proof that every included or registered experiment has been empirically validated.
 
-## Recommended citation before DOI minting
+## Recommended citation
 
-Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release* [Computer software / research infrastructure]. GitHub. https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3
+Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release* [Computer software / research infrastructure]. Zenodo. https://doi.org/10.5281/zenodo.22942131
 
 Release-specific machine-readable metadata are maintained under:
 
@@ -46,3 +46,10 @@ For a fully independent GitHub→Zenodo lifecycle, a dedicated `Saehon/NAAIL-Ope
 ## Release boundary
 
 Archive only the intentionally public research edition. Exclude patent-sensitive orchestration, private implementation, confidential data, restricted standards content, credentials, security-sensitive configuration, personally identifiable information, and third-party proprietary assets.
+
+
+## DOI minting record
+
+Zenodo successfully minted the version DOI **10.5281/zenodo.22942131** for the frozen NAAIL OpenLab™ V2026.4-R3 archival release on 2026-09-24. The DOI was returned by the Zenodo publication API and recorded back into the GitHub release by the automated publication workflow.
+
+The concept DOI remains unrecorded here until it is separately retrieved and verified from the authoritative Zenodo record.
