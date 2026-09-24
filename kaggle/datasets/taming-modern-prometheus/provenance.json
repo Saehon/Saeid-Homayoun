@@ -1,0 +1,38 @@
+{
+  "dataset_id": "taming-modern-prometheus-assurance",
+  "version": "0.1.0",
+  "title": "Taming the Modern Prometheus — Agentic Financial Assurance Benchmark",
+  "created_on": "2026-09-24",
+  "author": "Saeid Homayoun",
+  "repository": "https://github.com/Saehon/Saeid-Homayoun",
+  "rows": 13,
+  "public_derived_rows": 3,
+  "synthetic_rows": 10,
+  "source_priority": "authoritative-first-party where available; synthetic cases explicitly labelled",
+  "data_file": "agentic_assurance_benchmark.csv",
+  "data_sha256": null,
+  "hash_note": "Compute with sha256sum or an equivalent reproducibility tool after checkout.",
+  "license_boundary": "Original schema, synthetic scenarios, code and documentation remain under the repository research/non-commercial license. Third-party source terms remain applicable.",
+  "source_files": [
+    {
+      "path": "open-data/microsoft-demo-001/microsoft_financials.csv",
+      "role": "public-derived Microsoft aggregate financial anchor",
+      "source_url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "provenance_url": "https://github.com/Saehon/Saeid-Homayoun/blob/main/open-data/microsoft-demo-001/provenance.json"
+    },
+    {
+      "path": "open-data/microsoft-demo-001/provenance.json",
+      "role": "SEC accession, companyfacts, unit and checksum metadata",
+      "source_url": "https://github.com/Saehon/Saeid-Homayoun/blob/main/open-data/microsoft-demo-001/provenance.json"
+    }
+  ],
+  "synthetic_case_policy": "Synthetic rows are instructional benchmark cases and must not be represented as actual company control deficiencies, audit evidence, CAMs, governance findings or ESG disclosures.",
+  "external_research_references": [
+    "https://arxiv.org/abs/2506.17282",
+    "https://arxiv.org/abs/2510.08886",
+    "https://arxiv.org/abs/2603.13154",
+    "https://arxiv.org/abs/2601.20727",
+    "https://arxiv.org/abs/2503.16974"
+  ],
+  "validation_command": "python open-data/taming-modern-prometheus/validate.py"
+}
