@@ -1,0 +1,26 @@
+name: FRANKENSTEIN Phase 4 - Hugging Face Publish
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "huggingface/frankenstein-phase4-accounting-audit-benchmark/**"
+      - ".github/workflows/frankenstein_phase4_huggingface.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Hugging Face Hub
+        run: python -m pip install --upgrade huggingface_hub
+      - name: Publish public Phase 4 dataset
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python huggingface/publish_phase4.py
