@@ -1,0 +1,13 @@
+arxiv_id,title,domain,role,official_url,code_or_data_url
+2506.17282,Automating Financial Statement Audits with Large Language Models,financial_audit,five_stage_audit_benchmark,https://arxiv.org/abs/2506.17282,
+2510.08886,FinAuditing: A Financial Taxonomy-Structured Multi-Document Benchmark for Evaluating LLMs,financial_audit,xbrl_semantic_relational_numerical_tasks,https://arxiv.org/abs/2510.08886,https://github.com/The-FinAI/FinAuditing
+2507.16642,Towards Automated Regulatory Compliance Verification in Financial Auditing with Large Language Models,financial_audit,compliance_verification,https://arxiv.org/abs/2507.16642,
+2407.17866,Financial Statement Analysis with Large Language Models,financial_analysis,reasoning_boundary,https://arxiv.org/abs/2407.17866,
+2302.08500,Auditing Large Language Models: A Three-Layered Approach,ai_assurance,layered_oversight,https://arxiv.org/abs/2302.08500,
+2402.09334,AuditLLM: A Tool for Auditing Large Language Models,ai_assurance,model_audit_tool,https://arxiv.org/abs/2402.09334,
+2601.20727,Audit Trails for Accountability in Large Language Models,ai_governance,provenance_and_approval_logs,https://arxiv.org/abs/2601.20727,https://github.com/victorojewale/audit-trail-PoC
+2503.16974,Assessing Consistency and Reproducibility in the Outputs of Large Language Models: Evidence Across Diverse Finance and Accounting Tasks,reproducibility,repeated_run_consistency,https://arxiv.org/abs/2503.16974,
+2603.13154,ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation,esg_sustainability,grounded_qa_and_hallucination,https://arxiv.org/abs/2603.13154,
+2506.01646,ESGenius: Benchmarking LLMs on Environmental Social and Governance Knowledge,esg_sustainability,expert_validated_qa_and_rag,https://arxiv.org/abs/2506.01646,
+2412.10906,SusGen-GPT: A Data-Centric LLM for Financial NLP and Sustainability Report Generation,esg_sustainability,finance_esg_dataset_and_generation,https://arxiv.org/abs/2412.10906,
+2308.06111,Improving Zero-Shot Text Matching for Financial Auditing with Large Language Models,financial_audit,retrieval_and_requirement_matching,https://arxiv.org/abs/2308.06111,
