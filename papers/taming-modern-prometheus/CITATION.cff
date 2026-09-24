@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this conceptual manuscript or benchmark, cite Saeid Homayoun and the repository."
+title: "Taming the Modern Prometheus: Cybernetic Control and Falsification Gates for Agentic AI in Financial Assurance"
+type: article
+authors:
+  - family-names: "Homayoun"
+    given-names: "Saeid"
+    orcid: "https://orcid.org/0000-0002-2536-0446"
+date-released: "2026-09-24"
+repository-code: "https://github.com/Saehon/Saeid-Homayoun"
+url: "https://github.com/Saehon/Saeid-Homayoun/tree/main/papers/taming-modern-prometheus"
+abstract: >-
+  The rapid integration of autonomous, multi-agent artificial intelligence into enterprise resource planning and corporate reporting introduces a critical alignment crisis analogous to the "Frankenstein Complex"—the deployment of highly capable, opaque systems decoupled from continuous oversight. As financial ecosystems transition from passive language models to active multi-agent orchestration paradigms, the opacity of internal reasoning pathways threatens the integrity of continuous auditing, ESG assurance, and internal control evaluations. This paper conceptualizes a closed-loop cybernetic audit architecture designed to eliminate black-box opacity and enforce strict goal alignment in agentic workflows. By anchoring autonomous systems to rule-grounded execution via Standards-as-Code and adaptive Neuro-Fuzzy inference architectures, we propose a systemic discovery and falsification engine that subjects AI agents to non-compensatory gating mechanisms. Leveraging counterfactual Digital Twins and GraphRAG-enabled knowledge graphs, this architecture simulates enterprise reporting environments to proactively stress-test AI-driven workflows and detect latent control deficiencies before execution. Ultimately, this research demonstrates that shifting from a "deploy and hope" mentality to a framework of continuous, cybernetic oversight—aligned with PCAOB risk assessment standards and the EU AI Act—mitigates the risks of agentic abandonment, ensuring that autonomous financial ecosystems remain transparent, auditable, and securely governed.
+keywords:
+  - agentic artificial intelligence
+  - financial assurance
+  - continuous auditing
+  - internal control
+  - ESG assurance
+  - AI governance
+  - falsification
