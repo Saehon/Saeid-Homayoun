@@ -1,0 +1,35 @@
+name: Publish NAAIL V2026.4-R1
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "NAAIL-OpenLab/releases/V2026.4-R1/RELEASE.md"
+
+permissions:
+  contents: write
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Publish GitHub Release if missing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="V2026.4-R1"
+          TITLE="NAAIL OpenLab™ V2026.4-R1 — Open Research Infrastructure Release"
+          NOTES="NAAIL-OpenLab/releases/V2026.4-R1/RELEASE.md"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "GitHub Release $TAG already exists; no duplicate release created."
+          else
+            gh release create "$TAG" \
+              --target "${GITHUB_SHA}" \
+              --title "$TITLE" \
+              --notes-file "$NOTES"
+          fi
