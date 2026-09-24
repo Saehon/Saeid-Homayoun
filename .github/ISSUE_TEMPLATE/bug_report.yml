@@ -1,16 +1,16 @@
 name: Bug report
-description: Report a reproducible software defect in ECONOVA-S™
+description: Report a reproducible software or documentation defect in NAAIL OpenLab™
 title: "[Bug]: "
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for helping improve ECONOVA-S. Do not include secrets, confidential data, restricted manuscripts, or proprietary datasets.
+        Thank you for helping improve NAAIL OpenLab. Do not include secrets, confidential data, restricted manuscripts, or proprietary datasets.
   - type: input
     id: version
     attributes:
       label: Version / commit
-      description: ECONOVA-S release, folder version, or commit SHA.
+      description: NAAIL OpenLab release, component, folder version, or commit SHA.
       placeholder: v0.2.0 / commit SHA
     validations:
       required: true
