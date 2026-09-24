@@ -1,0 +1,27 @@
+name: FRANKENSTEIN Phase 4 - Validate Benchmark
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "FRANKENSTEIN/phase4_benchmark/**"
+      - "FRANKENSTEIN/tests/test_phase4_benchmark.py"
+      - ".github/workflows/frankenstein_phase4_validate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Phase 4 harness
+        run: python FRANKENSTEIN/tests/test_phase4_benchmark.py
+      - name: Show provider readiness without exposing secrets
+        run: |
+          cd FRANKENSTEIN/phase4_benchmark
+          python benchmark.py --mode dry-run
