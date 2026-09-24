@@ -1,3 +1,4 @@
+# Re-triggered after HF_TOKEN setup
 name: Hugging Face - CAM KAM AuditBERT Demo Sync
 
 on:
