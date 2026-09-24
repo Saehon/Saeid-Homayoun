@@ -66,3 +66,11 @@ Providers missing configuration are **skipped**, never silently substituted.
 ## Scientific rule
 
 Do not compare model families unless the case, evidence packet, prompt, temperature, scoring code and run metadata are frozen. Do not claim a provider is superior from one simple case; this first case validates the benchmarking pipeline only.
+
+
+## Public mirrors
+
+- Kaggle: https://www.kaggle.com/datasets/sadhon/frankenstein-phase4-accounting-audit-benchmark
+- Hugging Face: https://huggingface.co/datasets/SADHON/frankenstein-phase4-accounting-audit-benchmark
+
+These mirrors contain the frozen case, evidence table, provider registry, scoring fixture and benchmark status. They do not contain API keys or fabricated provider results.
