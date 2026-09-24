@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 0.3 — 24 September 2026
+
+### Added
+- Root-level `OPEN_SOURCE_ACCOUNTING_AUDIT_STACK.md` catalogue.
+- Verified current GitHub license metadata for core upstream components.
+- Explicit distinction among open-source, source-available and public-source tools.
+- Links to relevant public Saehon repositories: AAA, AuditData-API, IFRS-AI-Inspector, sec-edgar-downloader, openesef, openai-agents-python, timesfm and fg-data-synthetic.
+- Main umbrella README link to the integrated project and open-source catalogue.
+
+### Note
+The account does not currently contain the special GitHub profile repository `Saehon/Saehon`. Therefore the index is published in the main public umbrella repository rather than as a GitHub profile README.
+
 ## Version 0.2 — 24 September 2026
 
 ### Added
