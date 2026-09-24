@@ -1,0 +1,67 @@
+name: Publish NAAIL V2026.4-R3 Zenodo Archive
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "NAAIL-OpenLab/releases/V2026.4-R3/RELEASE.md"
+
+permissions:
+  contents: write
+
+jobs:
+  archive-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build NAAIL-only archival package
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="V2026.4-R3"
+          STAGE="naail-archive-stage"
+          ASSET="NAAIL-OpenLab-${TAG}-Zenodo.zip"
+
+          rm -rf "$STAGE" "$ASSET"
+          mkdir -p "$STAGE"
+
+          cp -a NAAIL-OpenLab/. "$STAGE/"
+
+          # Make the archive root NAAIL-specific even though the source repository
+          # is an umbrella repository.
+          cp "NAAIL-OpenLab/releases/${TAG}/CITATION.cff" "$STAGE/CITATION.cff"
+          cp "NAAIL-OpenLab/releases/${TAG}/CITATION.bib" "$STAGE/CITATION.bib"
+          cp "NAAIL-OpenLab/releases/${TAG}/ZENODO_METADATA.json" "$STAGE/.zenodo.json"
+          cp "NAAIL-OpenLab/releases/${TAG}/ARCHIVE_README.md" "$STAGE/ARCHIVE_README.md"
+
+          (
+            cd "$STAGE"
+            find . -type f ! -name MANIFEST_SHA256.txt -print0 | sort -z | xargs -0 sha256sum > MANIFEST_SHA256.txt
+            zip -q -r "../$ASSET" .
+          )
+
+          sha256sum "$ASSET" > "${ASSET}.sha256"
+
+      - name: Publish GitHub release and archival assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="V2026.4-R3"
+          TITLE="NAAIL OpenLab™ V2026.4-R3 — Zenodo-Ready Archival Release"
+          NOTES="NAAIL-OpenLab/releases/${TAG}/RELEASE.md"
+          ASSET="NAAIL-OpenLab-${TAG}-Zenodo.zip"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$ASSET" "${ASSET}.sha256" --clobber
+          else
+            gh release create "$TAG" \
+              "$ASSET" "${ASSET}.sha256" \
+              --target "${GITHUB_SHA}" \
+              --title "$TITLE" \
+              --notes-file "$NOTES"
+          fi
