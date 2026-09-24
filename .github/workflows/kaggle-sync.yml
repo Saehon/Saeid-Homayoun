@@ -83,3 +83,38 @@ jobs:
           KAGGLE_CREATE_PUBLIC: ${{ github.event.inputs.create_public_datasets || 'false' }}
           KAGGLE_VERSION_MESSAGE: "GitHub sync ${{ github.sha }}"
         run: bash kaggle/scripts/sync_kaggle.sh kaggle
+
+      - name: Verify Kaggle finance model execution
+        if: steps.auth.outputs.configured == 'true'
+        timeout-minutes: 10
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          kernel="sadhon/finance-sentiment-model-microsoft-sec-example"
+          for attempt in {1..45}; do
+            status="$(kaggle kernels status "$kernel")"
+            echo "$status"
+            if grep -Eiq 'complete(d)?' <<< "$status"; then
+              mkdir -p /tmp/kaggle-finance-model-check
+              kaggle kernels output "$kernel" -p /tmp/kaggle-finance-model-check \
+                --file-pattern 'model_metrics.json' -o
+              python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('/tmp/kaggle-finance-model-check/model_metrics.json')
+          result = json.loads(path.read_text())
+          assert result['split_counts']['test']['clean_rows'] > 0
+          print('Kaggle test macro-F1:', result['test']['model']['macro_f1'])
+          PY
+              exit 0
+            fi
+            if grep -Eiq 'error|failed|cancell?ed' <<< "$status"; then
+              echo 'Kaggle model execution failed.' >&2
+              exit 1
+            fi
+            sleep 10
+          done
+          echo 'Kaggle model execution did not finish within 7.5 minutes.' >&2
+          exit 1
