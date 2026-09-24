@@ -45,3 +45,7 @@ Homayoun, S. (2026). *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release
 ## Independence and endorsement boundary
 
 NAAIL OpenLab™ is an independent research and education initiative. Publication on GitHub, Zenodo, Kaggle or Hugging Face does not imply sponsorship, certification, endorsement, validation or adoption by those platforms, a university, regulator, audit firm, standards body, technology provider or other third party.
+
+## Automation policy
+
+Cross-platform publication is configured to coalesce rapid GitHub updates: obsolete in-progress mirror runs are cancelled and the newest eligible main-branch state is published. This prevents intermediate commits from becoming the final Kaggle or Hugging Face mirror state.
