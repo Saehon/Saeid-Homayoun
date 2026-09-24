@@ -91,14 +91,15 @@ The agent reports only deterministic calculations from the validated canonical C
 
 The GitHub Actions workflow `.github/workflows/sec_10_company_phase2.yml`:
 
-- refreshes all 10 companies from SEC;
-- validates the panel;
-- builds the summary;
+- validates the canonical 30-row SEC 10-K snapshot;
+- rebuilds the summary;
 - tests the free accounting agent;
 - publishes/versions the Kaggle dataset when `KAGGLE_API_TOKEN` is configured;
 - publishes/versions the Hugging Face dataset when `HF_TOKEN` is configured;
-- commits refreshed canonical outputs back to GitHub;
+- uploads a reproducibility artifact;
 - runs weekly and supports manual execution.
+
+The live CompanyFacts collector remains in `fetch_sec_panel.py`. On 24 September 2026, SEC returned HTTP 403 from both GitHub-hosted and Kaggle-hosted cloud runners. Therefore live refresh is intentionally separated from the cloud publication workflow and should be run from a permitted/local execution environment, after which GitHub validation and distribution remain automatic.
 
 ## Distribution targets
 
