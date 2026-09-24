@@ -1,78 +1,69 @@
-# FRANKENSTEIN™ — Evidence-Governed Accounting, Audit & Assurance Orchestrator
+# FRANKENSTEIN™ — Evidence-Governed Accounting, Audit & Assurance Research Architecture
 
-**NAAIL OpenLab specialist programme · multi-provider · model-replaceable · human-gated**
+**Professional research scaffold · provider-neutral · open-data aware · human-gated**
 
-FRANKENSTEIN integrates deterministic audit analytics with a society of specialist accounting, audit, assurance, sustainability, cost and AI-governance agents. It is deliberately **not a third NAAIL core**.
+FRANKENSTEIN connects **GitHub, Hugging Face, Kaggle and Google Drive** through a reproducible data registry, then routes evidence into deterministic accounting/audit tools and specialist agents.
 
-- **Stable Knowledge Core™:** accounting, auditing, IFRS/assurance, ICFR, forensic, ESG, management accounting, evidence, professional judgment.
-- **Replaceable Technology Core™:** Claude or other LLMs, Python, BERT, TimesFM, retrieval, graph systems, synthetic data and future tools.
+## Simple view
 
-## End-to-end workflow
-
-**Transactions / ERP / Evidence → Deterministic Tests → Evidence Ledger → Specialist Agent Society → FRANKENSTEIN Leader → Evidence-Grounded Report → Human Approval Gate™**
-
-## Specialist society
-
-| Agent | Primary scope |
-|---|---|
-| Finance Controls | authorization, SoD, transaction integrity |
-| Internal Audit | risk, control design/effectiveness, remediation |
-| IFRS Reporting | reporting judgments and evidence needs |
-| ICFR | financial-reporting controls and deficiency indicators |
-| Forensic | anomalies and possible circumvention indicators |
-| ESG & Sustainability Assurance | provenance, consistency and assurance readiness |
-| Cost & AI FinOps | activity/time/token cost and cost-to-evidence |
-| Operations Risk | resilience, accountability and workflow dependencies |
-| AI & Data Governance | lineage, access, logs, model/agent governance |
-| FRANKENSTEIN Leader | cross-domain synthesis and escalation |
-
-## What is executable now
-
-The public prototype contains its own deterministic transaction engine, synthetic demonstration data, structured evidence IDs, offline-safe specialist scaffolding, Claude orchestration, an OpenAI Finance & Operations Audit profile, Pydantic schemas, tests and GitHub Actions CI.
-
-Run without any API call:
-
-```bash
-cd FRANKENSTEIN
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-PYTHONPATH=. python -m frankenstein.cli --offline
+```text
+Hugging Face ─┐
+Kaggle ───────┼──> Data Registry / Provenance ──> Accounting & Audit Tools
+Google Drive ─┘                                      ↓
+                                                 Specialist Agents
+                                                      ↓
+                                              Independent Review
+                                                      ↓
+                                               Human Approval
 ```
 
-Run with Claude:
+### Platform roles
+
+- **GitHub:** code, architecture, manifests, tests, small samples and reproducible experiments.
+- **Hugging Face:** public datasets and models.
+- **Kaggle:** benchmark datasets and notebooks.
+- **Google Drive:** controlled research files, drafts and larger working documents.
+- **Free/open agents:** reusable accounting, audit, evidence, control, governance and ESG capabilities.
+
+## Today: Phase 1 only
+
+The first live example is intentionally small:
+
+**Hugging Face FinancialPhraseBank → 5-row public sample + provenance manifest → FRANKENSTEIN GitHub data registry.**
+
+No paid API and no Hugging Face secret are required.
+
+Files:
+- [5-phase roadmap](ROADMAP_5_PHASES.md)
+- [architecture](ARCHITECTURE.md)
+- [Phase-1 connector](connectors/huggingface_public_example.py)
+- [data registry](data_registry/README.md)
+- [GitHub Action](../.github/workflows/frankenstein_phase1_huggingface.yml)
+
+Run locally:
 
 ```bash
-export ANTHROPIC_API_KEY="YOUR_KEY"
-export CLAUDE_MODEL="claude-sonnet-5"
-PYTHONPATH=. python -m frankenstein.cli
+python FRANKENSTEIN/connectors/huggingface_public_example.py
 ```
 
-### OpenAI Finance & Operations Audit profile
+Or run the GitHub Action manually from **Actions → FRANKENSTEIN Phase 1 - Hugging Face Public Data**.
 
-A second executable profile implements the publicly described finance-and-operations audit capability using the OpenAI Agents SDK, 11 specialist domains, deterministic evidence routing, an independent challenger, programmatic evidence-ID validation and a Human Approval Gate.
+## Five phases
 
-[Open the OpenAI Finance & Operations Audit profile →](openai_finops/README.md)
+| Phase | Scope | Complexity |
+|---|---|---|
+| 1 | One public Hugging Face connection + provenance | Simple |
+| 2 | Hugging Face + Kaggle + Google Drive registered data fabric | Moderate |
+| 3 | Free/open specialist accounting and audit agents | Advanced |
+| 4 | GPT/Claude/Gemini/Kimi/DeepSeek cross-model benchmark | Hard |
+| 5 | Evidence-governed multi-agent research platform | Sophisticated |
 
-```bash
-pip install -r openai_finops/requirements.txt
-export OPENAI_API_KEY="YOUR_KEY"
-export OPENAI_MODEL="gpt-5.6-sol"
-PYTHONPATH=. python -m openai_finops.cli --domains all
-```
+## Professional design principle
 
-## Presentation pilot
+Do **not** copy every dataset into GitHub. A professional research repository keeps code and provenance in GitHub while the source platforms retain the authoritative/large data. This improves licensing clarity, reproducibility and maintainability.
 
-For a presentation-ready walkthrough that connects the repository architecture to the preserved Prototype 003 benchmark, PCAOB-style inspection mapping, live-demo sequence and next empirical milestone, see [PRESENTATION_PILOT.md](PRESENTATION_PILOT.md).
+## Research boundary
 
-## Professional boundaries
+FRANKENSTEIN is for education and academic research. It does not issue an audit opinion, declare IFRS compliance, conclude fraud, declare a material weakness or replace qualified professional judgment.
 
-FRANKENSTEIN does not autonomously issue an audit opinion, conclude fraud, declare IFRS/regulatory compliance, declare a material weakness, post accounting entries, modify controls, or sanction any person or counterparty. Material conclusions require corroborating evidence and qualified human review.
-
-## NAAIL governance
-
-FRANKENSTEIN follows the repository chain:
-
-**Real Evidence → Evidence Passport → Analysis → Adversarial Review → Reproducibility → Human Approval**
-
-See [ARCHITECTURE.md](ARCHITECTURE.md), [PORTFOLIO_INTEGRATION.md](PORTFOLIO_INTEGRATION.md) and [GOVERNANCE.md](GOVERNANCE.md).
+**Evidence before narrative. Human authority remains final.**
