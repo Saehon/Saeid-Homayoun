@@ -13,6 +13,7 @@ on:
       - main
     paths:
       - "kaggle/**"
+      - "open-data/microsoft-demo-001/**"
       - ".github/workflows/kaggle-sync.yml"
 
 permissions:
@@ -53,6 +54,14 @@ jobs:
       - name: Install Kaggle CLI
         if: steps.auth.outputs.configured == 'true'
         run: python -m pip install --upgrade kaggle
+
+      - name: Stage canonical Microsoft dataset
+        if: steps.auth.outputs.configured == 'true'
+        shell: bash
+        run: |
+          mkdir -p kaggle/datasets/microsoft-accounting-demo
+          cp open-data/microsoft-demo-001/microsoft_financials.csv kaggle/datasets/microsoft-accounting-demo/
+          cp open-data/microsoft-demo-001/provenance.json kaggle/datasets/microsoft-accounting-demo/
 
       - name: Sync notebooks and datasets to Kaggle
         if: steps.auth.outputs.configured == 'true'
