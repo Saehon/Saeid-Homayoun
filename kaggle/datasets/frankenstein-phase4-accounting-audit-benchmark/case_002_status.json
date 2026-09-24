@@ -1,0 +1,16 @@
+{
+  "case_id": "MSFT-SEC-2026-001",
+  "source_verified": "2026-09-24",
+  "deterministic_validation": "pending_github_action",
+  "model_execution": {
+    "openai": "pending_configuration_check",
+    "note": "A real OpenAI call is attempted only if OPENAI_API_KEY and OPENAI_MODEL are configured in GitHub Actions."
+  },
+  "reviewer": "configured",
+  "human_gate": "required_for_material_professional_interpretation",
+  "publication": {
+    "github": "pending commit",
+    "kaggle": "will sync through existing Kaggle dataset",
+    "hugging_face": "will sync through existing Hugging Face dataset workflow"
+  }
+}
