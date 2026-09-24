@@ -1,0 +1,21 @@
+{
+  "project": "FRANKENSTEIN",
+  "phase": 1,
+  "status": "completed_bootstrap",
+  "source_platform": "Hugging Face",
+  "dataset": "lmassaron/FinancialPhraseBank",
+  "dataset_url": "https://huggingface.co/datasets/lmassaron/FinancialPhraseBank",
+  "task": "financial sentiment classification",
+  "language": "English",
+  "upstream_rows": 4840,
+  "upstream_format": "parquet",
+  "license": "cc-by-nc-sa-4.0",
+  "sample_rows": 3,
+  "sample_file": "FRANKENSTEIN/data_registry/phase1_huggingface/financialphrasebank_sample.csv",
+  "sample_sha256": "4600e5a75540f3c3e0ede36f609bf1efcb616fe3315ce72cb241990ee9302891",
+  "retrieval_date": "2026-09-24",
+  "source_verified_via": "Hugging Face dataset metadata and public dataset viewer",
+  "purpose": "Phase-1 public-data connection demonstration for FRANKENSTEIN",
+  "production_note": "The full dataset remains on Hugging Face. GitHub stores only a small reproducible sample and provenance metadata.",
+  "next_step": "Use the committed GitHub Action to refresh the sample automatically, then add Kaggle and Google Drive in Phase 2."
+}
