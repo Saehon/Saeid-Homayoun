@@ -1,0 +1,149 @@
+{
+  "version": "0.1",
+  "updated": "2026-09-24",
+  "policy": "External tools are referenced/adapted, not vendored by default. Freeze exact releases/commits before experiments.",
+  "tools": {
+    "cpa_skills": {
+      "name": "CPA Skills for AI Agents",
+      "source": "https://github.com/adoptai/cpa-skills",
+      "license": "MIT",
+      "status": "open_source",
+      "roles": [
+        "reconciliation",
+        "statement_extraction",
+        "audit_sampling",
+        "journal_entry_anomaly",
+        "cutoff",
+        "workpapers"
+      ],
+      "integration": "Agent Skills / local deterministic workflows"
+    },
+    "finance_skills": {
+      "name": "FinanceSkills",
+      "source": "https://github.com/GAJETOso/financeskills",
+      "license": "MIT",
+      "status": "open_source",
+      "roles": [
+        "financial_accounting",
+        "ifrs_gaap",
+        "consolidation",
+        "ecl",
+        "financial_analysis",
+        "audit_compliance"
+      ],
+      "integration": "Agent Skills / MCP-compatible workflows"
+    },
+    "closegate": {
+      "name": "closegate",
+      "source": "https://github.com/esploro-group/closegate",
+      "license": "Apache-2.0",
+      "status": "open_source",
+      "roles": [
+        "sod",
+        "materiality",
+        "authorization",
+        "human_approval",
+        "audit_log"
+      ],
+      "integration": "policy/control gate"
+    },
+    "docling_mcp": {
+      "name": "Docling MCP",
+      "source": "https://github.com/docling-project/docling-mcp",
+      "license": "MIT",
+      "status": "open_source",
+      "roles": [
+        "pdf_parsing",
+        "table_extraction",
+        "document_evidence",
+        "local_document_conversion"
+      ],
+      "integration": "MCP evidence adapter"
+    },
+    "sec_edgar_mcp": {
+      "name": "SEC EDGAR MCP",
+      "source": "https://github.com/stefanoamorelli/sec-edgar-mcp",
+      "license": "AGPL-3.0",
+      "status": "open_source",
+      "roles": [
+        "sec_filings",
+        "xbrl",
+        "company_facts",
+        "cam_source",
+        "governance_source"
+      ],
+      "integration": "MCP public-evidence adapter"
+    },
+    "google_adk": {
+      "name": "Google Agent Development Kit",
+      "source": "https://github.com/google/adk-python",
+      "license": "Apache-2.0",
+      "status": "open_source",
+      "roles": [
+        "multi_agent_orchestration",
+        "gemini_orchestration"
+      ],
+      "integration": "optional orchestration runtime"
+    },
+    "microsoft_agent_framework": {
+      "name": "Microsoft Agent Framework",
+      "source": "https://github.com/microsoft/agent-framework",
+      "license": "MIT",
+      "status": "open_source",
+      "roles": [
+        "multi_agent_orchestration",
+        "azure_orchestration"
+      ],
+      "integration": "optional orchestration runtime"
+    },
+    "ai4sustainablex": {
+      "name": "AI4SustainableX",
+      "source": "https://github.com/lokeshbohra/ai4sustainablex",
+      "license": "BUSL-1.1 / verify upstream current terms",
+      "status": "source_available",
+      "roles": [
+        "esg",
+        "sustainability_reporting",
+        "evidence_grounding"
+      ],
+      "integration": "optional ESG research adapter; do not relabel as OSI open source"
+    },
+    "litellm": {
+      "name": "LiteLLM",
+      "source": "https://github.com/BerriAI/litellm",
+      "license": "verify upstream current license",
+      "status": "public_source_license_review",
+      "roles": [
+        "provider_gateway",
+        "model_routing",
+        "cost_logging"
+      ],
+      "integration": "optional provider-neutral gateway for Phase 4"
+    },
+    "deterministic_python": {
+      "name": "FRANKENSTEIN deterministic Python checks",
+      "source": "internal",
+      "license": "repository license",
+      "status": "internal",
+      "roles": [
+        "recalculation",
+        "tie_out",
+        "validation",
+        "schema_checks"
+      ],
+      "integration": "local standard-library or pinned Python code"
+    },
+    "authoritative_sources": {
+      "name": "Authoritative accounting/audit sources",
+      "source": "SEC/PCAOB/ESMA/IFRS permitted sources",
+      "license": "source-specific",
+      "status": "external_authoritative",
+      "roles": [
+        "standards",
+        "regulation",
+        "primary_evidence"
+      ],
+      "integration": "link/retrieval only; do not redistribute restricted text"
+    }
+  }
+}
