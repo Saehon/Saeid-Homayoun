@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use or build on ECONOVA-S™, please cite Saeid Homayoun and this repository."
-title: "ECONOVA-S™ Research Co-Scientist: Evidence-Grounded Multi-Agent Scientific Discovery for Accounting, Finance, Economics, Sustainability, and Business"
+message: "If you use or build on NAAIL OpenLab™, please cite Saeid Homayoun and this repository."
+title: "NAAIL OpenLab™: Next-Generation Accounting, Audit & Assurance Intelligence Lab"
 type: software
 authors:
   - family-names: "Homayoun"
     given-names: "Saeid"
     orcid: "https://orcid.org/0000-0002-2536-0446"
-version: "0.2.0"
+version: "0.2.3"
 date-released: "2026-09-14"
 repository-code: "https://github.com/Saehon/Saeid-Homayoun"
 url: "https://github.com/Saehon/Saeid-Homayoun"
@@ -16,24 +16,31 @@ preferred-citation:
     - family-names: "Homayoun"
       given-names: "Saeid"
       orcid: "https://orcid.org/0000-0002-2536-0446"
-  title: "ECONOVA-S™ Research Co-Scientist: Evidence-Grounded Multi-Agent Scientific Discovery for Accounting, Finance, Economics, Sustainability, and Business"
-  version: "0.2.0"
+  title: "NAAIL OpenLab™: Next-Generation Accounting, Audit & Assurance Intelligence Lab"
+  version: "0.2.3"
   date-released: "2026-09-14"
   repository-code: "https://github.com/Saehon/Saeid-Homayoun"
 abstract: >-
-  ECONOVA-S™ Research Co-Scientist is an evidence-grounded, governed multi-agent scientific-discovery platform for accounting, auditing, finance, economics, sustainability, data economy, and business research. It integrates hypothesis generation and critique, ERA-style empirical conversion, AlphaEvolve-inspired model and specification search, AlphaFold-inspired latent-structure reasoning, computational discovery, AI-to-AI adversarial review, falsification, replication, Chain-of-Evidence, DAG governance, Evidence Passports, and an explicit Human Gate before scientific claims.
+  NAAIL OpenLab™ is an independent, non-commercial research and education platform
+  for evidence-governed multi-agent and Digital Twin experimentation in accounting,
+  auditing, assurance, finance, internal control, sustainability, governance and
+  scientific discovery. The platform separates a Stable Knowledge Core™ from a
+  Replaceable Technology Core™, and applies provenance, reproducibility,
+  falsification, adversarial review, Evidence Passport™ governance and explicit
+  human review before material research or professional conclusions. Specialist
+  programmes and agents, including ECONOVA-S™, operate within the NAAIL umbrella.
 keywords:
   - artificial intelligence
   - accounting
   - auditing
-  - economics
+  - assurance
   - finance
+  - internal control
   - sustainability
-  - data economy
+  - corporate governance
   - scientific discovery
   - multi-agent systems
-  - econometrics
+  - digital twins
   - causal inference
-  - retrieval augmented generation
-  - replication
+  - reproducibility
   - research software
