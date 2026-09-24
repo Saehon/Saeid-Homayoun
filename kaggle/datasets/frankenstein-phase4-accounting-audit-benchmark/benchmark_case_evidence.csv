@@ -1,0 +1,7 @@
+evidence_id,fact
+E1,"Unadjusted general-ledger cash balance is 100000."
+E2,"Bank statement ending balance is 108500."
+E3,"Outstanding checks total 12000."
+E4,"Deposit in transit is 4000."
+E5,"Bank service fee of 500 has not been recorded in the books."
+E6,"Bank interest income of 1000 has not been recorded in the books."
