@@ -1,37 +1,9 @@
 {
   "title": "Prometheus Assurance Benchmark",
   "id": "sadhon/taming-modern-prometheus-assurance",
-  "subtitle": "Evidence gates and falsification cases for accounting, audit, ICFR, CAM, governance and ESG",
-  "description": "A small 13-row benchmark: three public-derived Microsoft aggregate financial checks and ten explicitly synthetic assurance scenarios. Designed for reproducible agentic AI research and education.",
   "licenses": [
     {
       "name": "other"
-    }
-  ],
-  "keywords": [
-    "accounting",
-    "auditing",
-    "finance",
-    "internal-control",
-    "corporate-governance",
-    "CAM",
-    "ESG",
-    "sustainability",
-    "agentic-ai",
-    "AI-governance",
-    "falsification"
-  ],
-  "collaborators": [
-    "Saeid Homayoun"
-  ],
-  "resources": [
-    {
-      "name": "GitHub source",
-      "url": "https://github.com/Saehon/Saeid-Homayoun/tree/main/open-data/taming-modern-prometheus"
-    },
-    {
-      "name": "Paper package",
-      "url": "https://github.com/Saehon/Saeid-Homayoun/tree/main/papers/taming-modern-prometheus"
     }
   ]
 }
