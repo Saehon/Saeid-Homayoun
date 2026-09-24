@@ -57,6 +57,7 @@ jobs:
           rm -rf /tmp/cam-kam-auditbert-public-demo
           mkdir -p /tmp/cam-kam-auditbert-public-demo
           cp huggingface/datasets/cam-kam-auditbert-public-demo/README.md /tmp/cam-kam-auditbert-public-demo/README.md
+          cp huggingface/datasets/cam-kam-auditbert-public-demo/PROFESSIONAL_AI_RESEARCH_INFRASTRUCTURE.md /tmp/cam-kam-auditbert-public-demo/
           cp open-data/cam-kam-auditbert-demo-001/synthetic_cam_kam_sample.csv /tmp/cam-kam-auditbert-public-demo/
           cp open-data/cam-kam-auditbert-demo-001/provenance.json /tmp/cam-kam-auditbert-public-demo/
           cp open-data/cam-kam-auditbert-demo-001/README.md /tmp/cam-kam-auditbert-public-demo/GITHUB_SOURCE.md
@@ -70,7 +71,7 @@ jobs:
               repo_id=repo_id,
               repo_type="dataset",
               folder_path="/tmp/cam-kam-auditbert-public-demo",
-              commit_message="Sync CAM/KAM AuditBERT demo from GitHub",
+              commit_message="Sync professional CAM/KAM AuditBERT package from GitHub",
           )
           print(f"Published private dataset: https://huggingface.co/datasets/{repo_id}")
           PY
