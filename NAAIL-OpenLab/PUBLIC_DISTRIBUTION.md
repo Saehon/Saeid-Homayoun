@@ -1,6 +1,8 @@
 # NAAIL OpenLab™ — Public Distribution Record
 
 **Project:** NAAIL OpenLab™  
+**Researcher:** Dr. Saeid Homayoun  
+**ORCID:** https://orcid.org/0000-0002-2536-0446  
 **Canonical source:** `Saehon/Saeid-Homayoun/NAAIL-OpenLab`  
 **Verified archival release:** **V2026.4-R3**  
 **Verification date:** **2026-09-24**  
