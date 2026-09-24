@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use NAAIL OpenLab™ V2026.4-R3 in research, education, benchmarking, or non-commercial evaluation, please cite this archival release."
+title: "NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release"
+type: software
+authors:
+  - family-names: "Homayoun"
+    given-names: "Saeid"
+    orcid: "https://orcid.org/0000-0002-2536-0446"
+version: "V2026.4-R3"
+date-released: "2026-09-24"
+repository-code: "https://github.com/Saehon/Saeid-Homayoun"
+url: "https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3"
+abstract: >-
+  NAAIL OpenLab™ V2026.4-R3 is a Zenodo-ready public archival release of the
+  NAAIL OpenLab research infrastructure for evidence-governed accounting,
+  auditing, assurance, finance, sustainability, CAM/KAM, open-agent tooling,
+  reproducible cross-platform research packaging, provenance, independent
+  review, and human approval. This release does not claim independent
+  scientific validation of all registered experiments or integrations.
+keywords:
+  - accounting
+  - auditing
+  - assurance
+  - artificial intelligence
+  - multi-agent systems
+  - digital twin
+  - CAM
+  - KAM
+  - internal control
+  - sustainability
+  - evidence governance
+  - reproducibility
+  - provenance
+  - research software
+preferred-citation:
+  type: software
+  authors:
+    - family-names: "Homayoun"
+      given-names: "Saeid"
+      orcid: "https://orcid.org/0000-0002-2536-0446"
+  title: "NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release"
+  version: "V2026.4-R3"
+  date-released: "2026-09-24"
+  repository-code: "https://github.com/Saehon/Saeid-Homayoun"
+  url: "https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3"
