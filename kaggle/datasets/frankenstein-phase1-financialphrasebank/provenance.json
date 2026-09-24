@@ -1,0 +1,18 @@
+{
+  "project": "FRANKENSTEIN",
+  "phase": 1,
+  "kaggle_owner": "sadhon",
+  "kaggle_dataset_id": "sadhon/frankenstein-phase1-financialphrasebank",
+  "kaggle_expected_url": "https://www.kaggle.com/datasets/sadhon/frankenstein-phase1-financialphrasebank",
+  "source_platform": "Hugging Face",
+  "source_dataset": "lmassaron/FinancialPhraseBank",
+  "source_url": "https://huggingface.co/datasets/lmassaron/FinancialPhraseBank",
+  "source_license": "CC-BY-NC-SA-4.0",
+  "github_repository": "https://github.com/Saehon/Saeid-Homayoun",
+  "frankenstein_home": "https://github.com/Saehon/Saeid-Homayoun/tree/main/FRANKENSTEIN",
+  "github_source_manifest": "https://github.com/Saehon/Saeid-Homayoun/blob/main/FRANKENSTEIN/data_registry/phase1_huggingface/manifest.json",
+  "sample_rows": 3,
+  "purpose": "Phase-1 reproducible public-data integration demonstration.",
+  "publication_policy": "Create private on ordinary GitHub push; make public only after manual review.",
+  "updated": "2026-09-24"
+}
