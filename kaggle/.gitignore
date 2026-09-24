@@ -1,0 +1,10 @@
+# Never commit Kaggle credentials
+**/kaggle.json
+**/.kaggle/
+.env
+.env.*
+*.token
+
+# Local outputs/caches
+__pycache__/
+.ipynb_checkpoints/
