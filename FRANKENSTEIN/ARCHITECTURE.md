@@ -90,3 +90,36 @@ See [ROADMAP_5_PHASES.md](ROADMAP_5_PHASES.md).
 | Independent reviewer | deterministic checks, Docling MCP, authoritative sources |
 
 The Orchestrator may route tasks but may not bypass evidence requirements, policy gates or Human Approval.
+
+
+## Phase 4 benchmark architecture
+
+```text
+Frozen Case + Frozen Evidence + Frozen Output Schema
+                     |
+                     v
+           Provider-neutral prompt
+                     |
+       +-------------+-------------+
+       |             |             |
+      GPT          Claude        Gemini
+       |             |             |
+ Microsoft/Azure    Kimi        DeepSeek
+       +-------------+-------------+
+                     |
+                     v
+              JSON normalization
+                     |
+                     v
+         Deterministic eight-part scorer
+                     |
+                     v
+      Results artifact + run metadata
+```
+
+The provider layer may change, but the case, evidence packet, temperature, scoring code and evaluation schema remain fixed.
+
+A controlled live workflow attempt completed successfully at:
+https://github.com/Saehon/Saeid-Homayoun/actions/runs/35991057487
+
+No provider-performance result was produced because the required provider credentials/model variables were not configured. Missing providers were skipped explicitly.
