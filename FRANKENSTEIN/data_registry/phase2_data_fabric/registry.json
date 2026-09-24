@@ -1,0 +1,39 @@
+{
+  "project": "FRANKENSTEIN",
+  "phase": 2,
+  "status": "active",
+  "architecture": "registered data fabric",
+  "platforms": {
+    "github": {
+      "role": "code, manifests, checksums, tests and small reproducible samples",
+      "url": "https://github.com/Saehon/Saeid-Homayoun/tree/main/FRANKENSTEIN"
+    },
+    "hugging_face": {
+      "role": "public datasets and models",
+      "dataset": "lmassaron/FinancialPhraseBank",
+      "url": "https://huggingface.co/datasets/lmassaron/FinancialPhraseBank",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    "kaggle": {
+      "role": "benchmark/publication layer",
+      "owner": "sadhon",
+      "dataset": "frankenstein-phase1-financialphrasebank",
+      "url": "https://www.kaggle.com/datasets/sadhon/frankenstein-phase1-financialphrasebank",
+      "current_visibility": "private"
+    },
+    "google_drive": {
+      "role": "controlled research-document and working-file layer",
+      "folder_title": "FRANKENSTEIN Data Fabric",
+      "folder_url": "https://drive.google.com/drive/folders/1lVad4aDLmGAidGn3S34b9t9o_b4lMgEc",
+      "registry_title": "FRANKENSTEIN Phase 2 – Data Fabric Registry",
+      "registry_url": "https://docs.google.com/document/d/1tf4fKoiRWX4bVdG0UMzZsTyOXg1pCZJ42qR0F4AqsKI/edit"
+    }
+  },
+  "policy": {
+    "large_data": "Keep large datasets on native platforms unless mirroring is justified.",
+    "public_github": "Store reproducible code, metadata, checksums, tests and small examples.",
+    "controlled_drive": "Keep restricted/private research files outside public GitHub and Kaggle.",
+    "human_review": "Material accounting/audit conclusions remain human-reviewed."
+  },
+  "next_step": "Register one SEC/EDGAR accounting source and one additional benchmark dataset under the same provenance schema."
+}
