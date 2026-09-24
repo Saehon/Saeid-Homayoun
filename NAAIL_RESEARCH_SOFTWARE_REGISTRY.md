@@ -4,7 +4,7 @@
 **ORCID:** https://orcid.org/0000-0002-2536-0446  
 **Program:** NAAIL OpenLab  
 **Registry status:** Canonical portfolio-level identifier registry  
-**Last updated:** 2026-09-14
+**Last updated:** 2026-09-24
 
 This registry is the canonical index for NAAIL research-software identity, citation, archival status, and persistent identifiers. A DOI or SWHID is recorded here only after it has actually been minted/resolved by the authoritative service. Placeholder or fabricated identifiers are prohibited.
 
@@ -12,7 +12,7 @@ This registry is the canonical index for NAAIL research-software identity, citat
 
 | Product | Repository / location | Version | Visibility | DOI | Concept DOI | SWHID | ORCID linkage | Release status |
 |---|---|---:|---|---|---|---|---|---|
-| **NAAIL OpenLab™** | https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab | 0.2.2 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | DOI-ready metadata; archive only public research edition |
+| **NAAIL OpenLab™** | https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3 | V2026.4-R3 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | Zenodo-ready archival ZIP + checksum published; validated executable checkpoint remains v0.2.3 |
 | **ECONOVA-S™ Research Co-Scientist** | https://github.com/Saehon/Saeid-Homayoun | 0.2.0 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | DOI-ready metadata |
 | **AAA — Audit & Accounting AI Laboratory** | https://github.com/Saehon/AAA | 1.0.0 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | DOI-ready metadata |
 | **IFRS-AI Inspector** | https://github.com/Saehon/IFRS-AI-Inspector | 1.0.0 | Public | Pending Zenodo minting | Pending | Pending Software Heritage capture | ORCID declared; external work-link pending | DOI-ready metadata |
