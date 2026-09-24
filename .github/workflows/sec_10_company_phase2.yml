@@ -47,12 +47,22 @@ jobs:
           python open-data/sec-10-company-phase2/agent.py compare MSFT AAPL
           python open-data/sec-10-company-phase2/agent.py quality
 
+      - name: Check distribution credentials
+        id: dist
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          [[ -n "${KAGGLE_API_TOKEN}" ]] && echo "kaggle=true" >> "${GITHUB_OUTPUT}" || echo "kaggle=false" >> "${GITHUB_OUTPUT}"
+          [[ -n "${HF_TOKEN}" ]] && echo "hf=true" >> "${GITHUB_OUTPUT}" || echo "hf=false" >> "${GITHUB_OUTPUT}"
+
       - name: Install distribution clients
-        if: ${{ secrets.KAGGLE_API_TOKEN != '' || secrets.HF_TOKEN != '' }}
+        if: steps.dist.outputs.kaggle == 'true' || steps.dist.outputs.hf == 'true'
         run: python -m pip install --upgrade kaggle huggingface_hub
 
       - name: Publish or version Kaggle dataset
-        if: ${{ secrets.KAGGLE_API_TOKEN != '' }}
+        if: steps.dist.outputs.kaggle == 'true'
         env:
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
         shell: bash
@@ -76,7 +86,7 @@ jobs:
           fi
 
       - name: Publish or version Hugging Face dataset
-        if: ${{ secrets.HF_TOKEN != '' }}
+        if: steps.dist.outputs.hf == 'true'
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         shell: bash
