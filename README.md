@@ -295,6 +295,24 @@ Any future transition to professional or commercial deployment would require a s
 
 ---
 
+## Contribute & Collaborate
+
+NAAIL OpenLab welcomes focused, reproducible contributions that improve accounting, auditing, assurance, finance, sustainability, AI governance, data provenance, testing, documentation, or research infrastructure.
+
+**Recommended workflow:** **Issue → focused branch/fork → evidence and tests → Pull Request → review → Human Gate**
+
+- [Contribution Guidelines →](CONTRIBUTING.md)
+- [Open Issues →](https://github.com/Saehon/Saeid-Homayoun/issues)
+- [Open Pull Requests →](https://github.com/Saehon/Saeid-Homayoun/pulls)
+- [Code of Conduct →](CODE_OF_CONDUCT.md)
+- [Security Policy →](SECURITY.md)
+
+Researchers and students are especially encouraged to propose **replications, falsification tests, documentation improvements, reproducible examples, and carefully scoped co-authored extensions**. Contributions should preserve provenance, licensing, scientific-integrity, reproducibility, and human-review requirements.
+
+> GitHub activity is treated as a record of genuine research and software collaboration, not as a substitute for scientific validation or professional approval.
+
+---
+
 ## Specialist Education & Research Agents
 
 **FRANKENSTEIN™ · KIWI™ · POMELO™ · VERA™ · IFRS Agent™ · PCAOB Agent™ · ESG Agent · ECONOVA-S™ · ICFR/TimesFM Intelligence · Forensic Intelligence · Research Lab · Audit Agent Lab · Student Lab**
