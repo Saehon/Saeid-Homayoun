@@ -7,15 +7,17 @@ FRANKENSTEIN develops from a simple reproducible public-data connector into a so
 
 - GitHub = code, architecture, manifests, small reproducible samples.
 - Hugging Face = public dataset/model source.
-- Kaggle = registered benchmark source, not yet automated.
-- Google Drive = research-document and controlled-file layer, not yet automated.
+- Kaggle = benchmark publication source; Phase-1 package is now published privately through GitHub Actions.
+- Google Drive = controlled research-document layer; Phase-2 registry is now active.
 - No paid API is required.
 - No secret is required for the first Hugging Face example.
 
 **Implemented example:** Hugging Face FinancialPhraseBank → small sample + provenance manifest → GitHub.
 
-## Phase 2 — Registered Data Fabric
+## Phase 2 — Registered Data Fabric — ACTIVE
 **Goal:** connect multiple data sources without turning GitHub into a data warehouse.
+
+**Current live path:** Hugging Face → GitHub → Kaggle → Google Drive.
 
 - Hugging Face dataset/model registry.
 - Kaggle API connector using a GitHub secret.
