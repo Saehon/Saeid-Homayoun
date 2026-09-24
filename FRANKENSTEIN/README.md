@@ -25,11 +25,11 @@ Google Drive ─┘                                      ↓
 - **Google Drive:** controlled research files, drafts and larger working documents.
 - **Free/open agents:** reusable accounting, audit, evidence, control, governance and ESG capabilities.
 
-## Current status: Phase 2 data fabric active
+## Current status: Phase 3 specialist agent layer active
 
 The first live example has now been extended into a four-platform fabric:
 
-**Hugging Face FinancialPhraseBank → GitHub provenance/sample → Kaggle private dataset → Google Drive controlled registry.**
+**Hugging Face FinancialPhraseBank → GitHub provenance/sample → Kaggle private dataset → Google Drive controlled registry → bounded specialist accounting/audit agents.**
 
 No paid API and no Hugging Face secret are required.
 
@@ -39,6 +39,8 @@ Files:
 - [Phase-1 connector](connectors/huggingface_public_example.py)
 - [data registry](data_registry/README.md)
 - [Phase-2 four-platform registry](data_registry/phase2_data_fabric/README.md)
+- [Phase-3 specialist agent layer](phase3_agents/README.md)
+- [Phase-3 integration map](phase3_agents/INTEGRATIONS.md)
 - [GitHub Action](../.github/workflows/frankenstein_phase1_huggingface.yml)
 
 Run locally:
@@ -55,7 +57,7 @@ Or run the GitHub Action manually from **Actions → FRANKENSTEIN Phase 1 - Hugg
 |---|---|---|
 | 1 | One public Hugging Face connection + provenance | Simple |
 | 2 | Hugging Face + Kaggle + Google Drive registered data fabric | Moderate |
-| 3 | Free/open specialist accounting and audit agents | Advanced |
+| 3 | Free/open specialist accounting and audit agents — **ACTIVE** | Advanced |
 | 4 | GPT/Claude/Gemini/Kimi/DeepSeek cross-model benchmark | Hard |
 | 5 | Evidence-governed multi-agent research platform | Sophisticated |
 
