@@ -10,8 +10,8 @@
   "synthetic_rows": 10,
   "source_priority": "authoritative-first-party where available; synthetic cases explicitly labelled",
   "data_file": "agentic_assurance_benchmark.csv",
-  "data_sha256": null,
-  "hash_note": "Compute with sha256sum or an equivalent reproducibility tool after checkout.",
+  "data_sha256": "64c75691f08a60b773c212184ef16955daf997944b412a149820bb05e63fc152",
+  "hash_note": "SHA-256 computed from agentic_assurance_benchmark.csv in the same package.",
   "license_boundary": "Original schema, synthetic scenarios, code and documentation remain under the repository research/non-commercial license. Third-party source terms remain applicable.",
   "source_files": [
     {
