@@ -1,0 +1,68 @@
+name: Collaboration proposal
+description: Propose a focused research, replication, documentation, or software collaboration
+title: "[Collaboration]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        NAAIL OpenLab welcomes genuine academic and open-source collaboration. Please keep proposals focused, reproducible, and compatible with repository IP, licensing, provenance, and scientific-integrity requirements.
+  - type: input
+    id: contributor
+    attributes:
+      label: Contributor / team
+      description: GitHub username(s), institution or research team where appropriate.
+      placeholder: "@username / institution"
+    validations:
+      required: true
+  - type: dropdown
+    id: collaboration_type
+    attributes:
+      label: Collaboration type
+      options:
+        - Replication or reproducibility
+        - Accounting / auditing / assurance research
+        - CAM / KAM / ICFR research
+        - IFRS / financial reporting
+        - ESG / sustainability
+        - Data / econometrics / statistics
+        - Agentic AI / model evaluation
+        - Documentation / teaching example
+        - Software / testing / CI
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: Define the specific deliverable or research question.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, data and provenance
+      description: Identify intended sources, datasets, permissions and provenance requirements.
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Proposed contribution
+      description: Explain what each collaborator expects to contribute, including code, analysis, documentation, review, or co-authored commits.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation / review plan
+      description: State tests, replication, falsification, review, or other checks that should occur before merge.
+    validations:
+      required: true
+  - type: checkboxes
+    id: governance
+    attributes:
+      label: Governance
+      options:
+        - label: I will not include secrets, confidential data, restricted manuscripts, or data/code I lack permission to contribute.
+          required: true
+        - label: I understand that a merged contribution does not by itself establish scientific validity, professional approval, or authorship entitlement outside the actual contribution record.
+          required: true
