@@ -24,15 +24,81 @@ jobs:
         run: |
           test -n "$ZENODO_TOKEN" || { echo "::error::Missing ZENODO_TOKEN"; exit 1; }
 
-      - name: Install API client
-        run: python -m pip install --disable-pip-version-check requests
-
-      - name: Synchronize ORCID across Zenodo records
+      - name: Synchronize ORCID across owned Zenodo records
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python NAAIL-OpenLab/tools/sync_orcid_to_zenodo.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          API="https://zenodo.org/api"
+          ORCID="0000-0002-2536-0446"
+          AUTH="Authorization: Bearer $ZENODO_TOKEN"
+          : > zenodo-orcid-sync.jsonl
 
-      - name: Attach audit report to canonical NAAIL release
+          curl -fsS -H "$AUTH"             "$API/deposit/depositions?size=100&all_versions=true"             -o depositions.json
+
+          jq -c '.[]' depositions.json | while read -r dep; do
+            id="$(jq -r '.id' <<<"$dep")"
+            title="$(jq -r '.metadata.title // .title // ""' <<<"$dep")"
+            doi="$(jq -r '.doi // ""' <<<"$dep")"
+            published="$(jq -r '(.state == "done") or (.submitted == true)' <<<"$dep")"
+
+            match_count="$(jq '[.metadata.creators[]? | select((.name // "") == "Homayoun, Saeid" or (.name // "") == "Saeid Homayoun" or (.name // "") == "Dr. Saeid Homayoun")] | length' <<<"$dep")"
+            needs_update="$(jq --arg o "$ORCID" '[.metadata.creators[]? | select(((.name // "") == "Homayoun, Saeid" or (.name // "") == "Saeid Homayoun" or (.name // "") == "Dr. Saeid Homayoun") and (((.orcid // "") | sub("^https://orcid.org/"; "")) != $o))] | length' <<<"$dep")"
+
+            if [ "$match_count" -eq 0 ]; then
+              jq -n --arg id "$id" --arg title "$title" --arg doi "$doi"                 '{id:$id,title:$title,doi:$doi,status:"SKIPPED_NO_MATCHING_CREATOR"}'                 >> zenodo-orcid-sync.jsonl
+              continue
+            fi
+
+            if [ "$needs_update" -eq 0 ]; then
+              jq -n --arg id "$id" --arg title "$title" --arg doi "$doi" --arg orcid "$ORCID"                 '{id:$id,title:$title,doi:$doi,status:"ALREADY_CORRECT",orcid:$orcid}'                 >> zenodo-orcid-sync.jsonl
+              continue
+            fi
+
+            current="$dep"
+            if [ "$published" = "true" ]; then
+              curl -fsS -X POST -H "$AUTH"                 "$API/deposit/depositions/$id/actions/edit"                 -o edit.json
+              current="$(cat edit.json)"
+            fi
+
+            jq --arg o "$ORCID" '
+              .metadata.creators |= map(
+                if ((.name // "") == "Homayoun, Saeid" or
+                    (.name // "") == "Saeid Homayoun" or
+                    (.name // "") == "Dr. Saeid Homayoun")
+                then .orcid = $o
+                else .
+                end
+              )
+              | {metadata:.metadata}
+            ' <<<"$current" > update.json
+
+            curl -fsS -X PUT               -H "$AUTH"               -H "Content-Type: application/json"               --data-binary @update.json               "$API/deposit/depositions/$id"               -o updated.json
+
+            status="UPDATED_DRAFT"
+            if [ "$published" = "true" ]; then
+              curl -fsS -X POST -H "$AUTH"                 "$API/deposit/depositions/$id/actions/publish"                 -o published.json
+              doi="$(jq -r '.doi // empty' published.json)"
+              status="UPDATED_PUBLISHED"
+            fi
+
+            jq -n --arg id "$id" --arg title "$title" --arg doi "$doi" --arg status "$status" --arg orcid "$ORCID"               '{id:$id,title:$title,doi:$doi,status:$status,orcid:$orcid}'               >> zenodo-orcid-sync.jsonl
+          done
+
+          jq -s --arg orcid "$ORCID" '
+            {
+              orcid:$orcid,
+              orcid_url:("https://orcid.org/" + $orcid),
+              files_changed:false,
+              dois_changed:false,
+              results:.
+            }
+          ' zenodo-orcid-sync.jsonl > zenodo-orcid-sync.json
+
+          cat zenodo-orcid-sync.json
+
+      - name: Attach ORCID audit report to NAAIL release
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
