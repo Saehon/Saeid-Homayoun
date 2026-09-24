@@ -1,6 +1,6 @@
 # Open Agentic Accounting & Audit Lab
 
-**Version 0.2 — updated 24 September 2026**
+**Version 0.3 — updated 24 September 2026**
 
 A provider-neutral research and teaching project for testing AI agents in **financial accounting, auditing, ICFR/internal control, corporate governance, CAM/KAM, IFRS, and ESG/sustainability reporting**.
 
@@ -100,3 +100,12 @@ Third-party projects are linked rather than copied by default. Their current lic
 **Research scaffold + integrated proposal + provider configuration are complete.** The next implementation milestone is the first executable pilot case with a frozen evidence packet, gold-standard answer, deterministic validators, provider-specific runs and a human-review record.
 
 This project is for research and education. It does not issue audit opinions, assurance conclusions, legal conclusions or authoritative IFRS interpretations.
+
+
+## Profile-level open-source index
+
+The integrated lab is also indexed from the umbrella repository:
+
+- [Free & Open-Source Accounting, Audit and Assurance Stack](../../OPEN_SOURCE_ACCOUNTING_AUDIT_STACK.md)
+
+This profile-level catalogue links verified open-source accounting/audit tools, source-available research components, public datasets, provider families, and related Saehon repositories.
