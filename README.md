@@ -360,3 +360,15 @@ Kaggle: [sadhon](https://www.kaggle.com/sadhon)
 Public GitHub materials are intended for education, academic research, reproducibility, and non-commercial experimentation. Patent-sensitive or confidential implementation details should remain outside the public repository until separately reviewed for disclosure.
 
 No NAAIL patent application is represented here as filed unless an actual filing has been independently confirmed.
+
+
+---
+
+## Free & Open-Source Accounting, Audit and Assurance Stack
+
+A provider-neutral catalogue of reusable research components is now maintained for financial accounting, auditing, ICFR/internal control, corporate governance, CAM/KAM, IFRS and ESG.
+
+- [Free & Open-Source Accounting, Audit and Assurance Stack →](OPEN_SOURCE_ACCOUNTING_AUDIT_STACK.md)
+- [Open Agentic Accounting & Audit Lab →](Open-Agentic-Accounting-Audit-Lab/README.md)
+
+The catalogue distinguishes verified open-source licenses from source-available/public-source projects and links the integrated lab to relevant public repositories under the **Saehon** account.
