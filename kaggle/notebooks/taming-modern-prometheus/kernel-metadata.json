@@ -1,0 +1,15 @@
+{
+  "title": "Taming the Modern Prometheus - Gated Assurance Benchmark",
+  "id": "sadhon/taming-modern-prometheus-assurance-notebook",
+  "code_file": "benchmark.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "sadhon/taming-modern-prometheus-assurance"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
