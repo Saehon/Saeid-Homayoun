@@ -1,0 +1,47 @@
+{
+  "title": "FRANKENSTEIN Phase 1 Financial Phrase Sample",
+  "subtitle": "Small reproducible finance-NLP sample with provenance for agent research",
+  "description": "FRANKENSTEIN Phase 1 research dataset for testing a simple GitHub ↔ Kaggle ↔ Hugging Face data workflow.\n\nThis package contains a three-row demonstration sample derived from the FinancialPhraseBank dataset hosted on Hugging Face.\n\nUpstream dataset: https://huggingface.co/datasets/lmassaron/FinancialPhraseBank\nGitHub project: https://github.com/Saehon/Saeid-Homayoun/tree/main/FRANKENSTEIN\nGitHub provenance manifest: https://github.com/Saehon/Saeid-Homayoun/blob/main/FRANKENSTEIN/data_registry/phase1_huggingface/manifest.json\n\nPurpose: education, academic research, reproducibility, and provider-neutral accounting/audit agent experiments.\n\nThe full upstream dataset remains on Hugging Face. This Kaggle package intentionally contains only a tiny demonstration sample plus provenance metadata.\n\nLicense: CC BY-NC-SA 4.0, matching the upstream Hugging Face dataset metadata. Attribution and non-commercial/share-alike requirements remain applicable.",
+  "id": "sadhon/frankenstein-phase1-financialphrasebank",
+  "licenses": [
+    {
+      "name": "CC-BY-NC-SA-4.0"
+    }
+  ],
+  "keywords": [
+    "finance",
+    "nlp",
+    "sentiment analysis",
+    "accounting",
+    "reproducibility"
+  ],
+  "resources": [
+    {
+      "path": "financialphrasebank_sample.csv",
+      "description": "Three-row demonstration sample for FRANKENSTEIN Phase 1.",
+      "schema": {
+        "fields": [
+          {
+            "name": "sentiment",
+            "title": "Sentiment label as text",
+            "type": "string"
+          },
+          {
+            "name": "sentence",
+            "title": "Financial news sentence",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "title": "Numeric sentiment label",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "path": "provenance.json",
+      "description": "Source, license, GitHub, Hugging Face and research-use provenance."
+    }
+  ]
+}
