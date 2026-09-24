@@ -1,6 +1,6 @@
 """Phase 1 Microsoft accounting demo.
 
-Reads three fiscal years of Microsoft financial statement data and prints
+Reads the latest three Microsoft fiscal years in the canonical CSV and prints
 simple growth and profitability measures. Values are USD millions.
 """
 
@@ -26,12 +26,7 @@ for row in rows:
     gross_margin = 100 * row["gross_profit_musd"] / revenue
     operating_margin = 100 * row["operating_income_musd"] / revenue
     net_margin = 100 * row["net_income_musd"] / revenue
-
-    if previous is None:
-        growth = "n/a"
-    else:
-        growth = f"{100 * (revenue / previous['revenue_musd'] - 1):.2f}%"
-
+    growth = "n/a" if previous is None else f"{100 * (revenue / previous['revenue_musd'] - 1):.2f}%"
     print(
         f"{year}: revenue=${revenue/1000:.3f}bn | "
         f"revenue growth={growth} | "
