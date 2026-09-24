@@ -45,11 +45,18 @@ def test_retired_geographic_expansion_is_not_in_current_naail_sources():
     for path in NAAIL.rglob("*"):
         if not path.is_file() or path in HISTORICAL_EXEMPTIONS:
             continue
+        if path.resolve() == Path(__file__).resolve():
+            continue
         if path.suffix.lower() not in TEXT_SUFFIXES:
             continue
         # Preserve explicitly historical release/change records rather than
         # silently rewriting provenance.
-        if path.name.upper().startswith("CHANGELOG") or "archive" in {p.lower() for p in path.parts}:
+        lower_parts = {p.lower() for p in path.parts}
+        if (
+            path.name.upper().startswith("CHANGELOG")
+            or "archive" in lower_parts
+            or ("docs" in lower_parts and "activity" in lower_parts)
+        ):
             continue
         try:
             text = path.read_text(encoding="utf-8")
