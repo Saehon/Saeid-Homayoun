@@ -111,7 +111,8 @@ jobs:
               exit 0
             fi
             if grep -Eiq 'error|failed|cancell?ed' <<< "$status"; then
-              echo 'Kaggle model execution failed.' >&2
+              echo 'Kaggle model execution failed; fetching run log.' >&2
+              kaggle kernels logs "$kernel" || true
               exit 1
             fi
             sleep 10
