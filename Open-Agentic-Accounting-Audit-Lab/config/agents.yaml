@@ -1,0 +1,60 @@
+version: 0.1
+project: open-agentic-accounting-audit-lab
+
+agents:
+  financial_accounting:
+    mission: "Prepare and analyze accounting treatments, reconciliations, journals, close and statements."
+    tools: [finance_skills, cpa_skills]
+    human_gate: material_judgment
+
+  audit_testing:
+    mission: "Execute reproducible audit tests and assemble evidence-backed workpapers."
+    tools: [cpa_skills, deterministic_python]
+    human_gate: material_exception
+
+  evidence:
+    mission: "Retrieve, parse, locate, cite and validate source evidence."
+    tools: [docling_mcp, sec_edgar_mcp]
+    human_gate: false
+
+  icfr:
+    mission: "Map controls, test SoD/policy conditions, and support deficiency analysis."
+    tools: [closegate, deterministic_rules]
+    human_gate: deficiency_severity
+
+  corporate_governance:
+    mission: "Extract and compare board, audit committee, ownership, compensation and risk-oversight evidence."
+    tools: [sec_edgar_mcp, docling_mcp]
+    human_gate: material_judgment
+
+  cam:
+    mission: "Extract, classify and compare U.S. critical audit matters."
+    tools: [sec_edgar_mcp, docling_mcp]
+    human_gate: final_classification
+
+  kam:
+    mission: "Extract, classify and compare key audit matters."
+    tools: [docling_mcp]
+    human_gate: final_classification
+
+  ifrs:
+    mission: "Analyze IFRS recognition, measurement, presentation and disclosure issues."
+    tools: [finance_skills, deterministic_python]
+    authoritative_source_required: true
+    human_gate: true
+
+  esg:
+    mission: "Map sustainability claims and metrics to evidence and applicable frameworks."
+    tools: [docling_mcp, sustainability_toolkit]
+    human_gate: material_claim
+
+  reviewer:
+    mission: "Independently challenge conclusions, evidence sufficiency, contradictions and failed checks."
+    tools: [evidence, deterministic_python]
+    use_different_provider_when_possible: true
+    human_gate: escalation
+
+orchestrator:
+  may_bypass_policy_gate: false
+  preserve_agent_disagreement: true
+  evidence_before_narrative: true
