@@ -1,19 +1,16 @@
-name: NAAIL Codex Code Review
+name: Codex Deep PR Review
 
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
-    paths:
-      - "NAAIL-OpenLab/**"
-      - "AGENTS.md"
-      - ".github/workflows/codex-review.yml"
 
-# This workflow is intentionally conservative because the repository is public.
-# Codex reviews NAAIL changes but does not modify repository files.
+# Deep read-only review for internal pull requests.
+# Codex Cloud may also provide its own GitHub review; this workflow is the
+# repository-controlled evidence/reproducibility review.
 
 jobs:
   codex_review:
-    name: Codex Review — NAAIL OpenLab
+    name: Codex Deep Review
     if: >-
       github.event.pull_request.draft == false &&
       github.event.pull_request.head.repo.full_name == github.repository
@@ -26,99 +23,81 @@ jobs:
       final_message: ${{ steps.codex.outputs.final-message }}
 
     steps:
-      - name: Checkout pull request
+      - name: Checkout pull request merge ref
         uses: actions/checkout@v5
         with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+          persist-credentials: false
 
-      - name: Review NAAIL with OpenAI Codex
+      - name: Prefetch base and head refs
+        shell: bash
+        env:
+          PR_BASE_REF: ${{ github.event.pull_request.base.ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin             "$PR_BASE_REF"             "+refs/pull/$PR_NUMBER/head"
+
+      - name: Preflight — verify OpenAI API key
+        shell: bash
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY is not configured. Add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - name: Review pull request with OpenAI Codex
         id: codex
         uses: openai/codex-action@v1
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
           permission-profile: ":read-only"
           safety-strategy: "drop-sudo"
-          working-directory: "NAAIL-OpenLab"
+          working-directory: "."
           prompt: |
-            You are the automated code reviewer for NAAIL OpenLab.
+            Perform a deep, read-only review of pull request
+            #${{ github.event.pull_request.number }} in ${{ github.repository }}.
 
-            First read and follow both instruction files when present:
-            - ../AGENTS.md
-            - AGENTS.md
+            Read the root AGENTS.md and any nested AGENTS.md files that govern
+            changed paths.
 
-            This is pull request #${{ github.event.pull_request.number }} in
-            ${{ github.repository }}.
-
-            Review ONLY the changes introduced by this pull request. Use the
-            repository history and diff between these commits:
-
+            Review only changes between:
               Base: ${{ github.event.pull_request.base.sha }}
               Head: ${{ github.event.pull_request.head.sha }}
 
-            Focus on NAAIL OpenLab and its specialist agents, including KIWI,
-            POMELO, VERA, ECONOVA-S, IFRS Agent, PCAOB Agent, ICFR/TimesFM,
-            Research Lab, Audit Agent Lab, and Student Lab.
+            Prioritize:
+            1. correctness and runtime failures;
+            2. exposed secrets, unsafe permissions, prompt/command injection,
+               insecure file handling and dependency risks;
+            3. research validity, reproducibility and provenance;
+            4. look-ahead bias, temporal leakage, train/test contamination,
+               fiscal-period alignment and unsupported causal claims;
+            5. accounting, auditing, IFRS, PCAOB, CAM/KAM, ICFR, ESG, XBRL and
+               SEC-data integrity where applicable;
+            6. tests, CI, maintainability and documentation;
+            7. distinction between evidence, model output, inference and human
+               professional judgment.
 
-            Apply the following review gates:
+            Do not edit files. Do not treat simulated results as real evidence.
 
-            1. Correctness
-               - bugs, broken logic, invalid imports, runtime failures
-               - incorrect paths, schemas, interfaces, or agent contracts
-
-            2. NAAIL architecture governance
-               - NAAIL OpenLab remains the top-level umbrella architecture
-               - specialist agents are modules, not competing top-level systems
-               - preserve the two permanent cores where applicable:
-                 Knowledge Core and Technology Core
-
-            3. Research reproducibility
-               - data provenance and sample construction
-               - deterministic seeds where relevant
-               - documented transformations and variable construction
-               - reproducible empirical outputs
-
-            4. Accounting, auditing, and empirical-method integrity
-               - temporal leakage / look-ahead bias
-               - train/test contamination
-               - incorrect fiscal-period alignment
-               - unsupported causal claims
-               - specification, measurement, or statistical errors
-               - CAM/KAM, ICFR, IFRS, PCAOB, ESG, XBRL, or SEC-data mistakes
-
-            5. Security and data governance
-               - exposed secrets, API keys, credentials, tokens, or private URLs
-               - accidental inclusion of proprietary/confidential datasets
-               - unsafe external commands or untrusted-input handling
-
-            6. Software quality
-               - missing or inadequate tests
-               - fragile error handling
-               - unnecessary duplication
-               - documentation inconsistent with implementation
-
-            7. Scientific governance
-               - evidence before claims
-               - falsification and adversarial review where relevant
-               - human approval before scientific-discovery claims
-
-            Return a concise review organized as:
-
-            ## NAAIL Codex Review
-            ### Critical / High-priority findings
-            ### Medium / Low-priority findings
-            ### Reproducibility & research-integrity checks
-            ### NAAIL architecture checks
+            Return:
+            ## Codex Deep PR Review
+            ### Critical / High
+            ### Medium / Low
+            ### Research & reproducibility
+            ### Security & data governance
+            ### Tests & CI
             ### Recommended fixes
             ### Verdict
 
-            For each finding, identify the relevant file and line/range when
-            possible. Do not edit files. If no material issues are found, say
-            so explicitly and still report the reproducibility, security, and
-            architecture checks performed.
+            Cite file paths and line ranges where possible. If no material
+            issues are found, say so explicitly and list the checks performed.
 
   post_review:
-    name: Publish Codex Review
+    name: Publish Codex Deep Review
     runs-on: ubuntu-latest
     needs: codex_review
     if: needs.codex_review.outputs.final_message != ''
