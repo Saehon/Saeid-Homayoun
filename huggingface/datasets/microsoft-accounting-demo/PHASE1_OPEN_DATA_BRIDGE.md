@@ -160,3 +160,11 @@ This pipeline demonstrates open accounting-data engineering and reproducible res
 After Hugging Face write authorization is enabled, the same architecture can be scaled without redesigning the core pipeline:
 
 **Microsoft → 10 companies → S&P 100 → large SEC universe → CAM / ICFR / ESG / governance / finance modules.**
+
+## Google Drive Record
+
+Native Google Doc mirror of this Phase-1 record:
+
+https://docs.google.com/document/d/1fSARn1BwPYNfNGg1O0jef1jDMgkyUM6t4hiB7Udq9X4/edit?usp=drivesdk
+
+The Google Drive document contains the architecture, five-phase roadmap, Microsoft FY2024–FY2026 accounting data, reproducible metrics, GitHub/Kaggle/Hugging Face status, XBRL alignment, reproducibility controls, scientific boundary, and next-phase scaling plan.
