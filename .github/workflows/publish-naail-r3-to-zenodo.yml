@@ -1,0 +1,66 @@
+name: Publish NAAIL V2026.4-R3 to Zenodo
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "NAAIL-OpenLab/releases/V2026.4-R3/ZENODO_PUBLISH_REQUEST.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Require Zenodo token
+        shell: bash
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          if [ -z "$ZENODO_TOKEN" ]; then
+            echo "::error::Missing repository secret ZENODO_TOKEN. Create a Zenodo token with deposit:write and deposit:actions scopes, then save it as the GitHub Actions secret ZENODO_TOKEN."
+            exit 1
+          fi
+
+      - name: Download frozen R3 archival asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download V2026.4-R3 \
+            --pattern "NAAIL-OpenLab-V2026.4-R3-Zenodo.zip" \
+            --clobber
+
+      - name: Install API client
+        run: python -m pip install --disable-pip-version-check requests
+
+      - name: Publish exact R3 archive to Zenodo
+        id: zenodo
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python NAAIL-OpenLab/releases/V2026.4-R3/publish_to_zenodo.py
+
+      - name: Attach DOI record to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DOI: ${{ steps.zenodo.outputs.doi }}
+          DOI_URL: ${{ steps.zenodo.outputs.doi_url }}
+        shell: bash
+        run: |
+          gh release upload V2026.4-R3 zenodo-published.json --clobber
+
+          gh release view V2026.4-R3 --json body -q .body > release-body.md
+          if ! grep -q "## Zenodo DOI" release-body.md; then
+            {
+              cat release-body.md
+              printf '\n## Zenodo DOI\n\n'
+              printf '**Version DOI:** [%s](%s)\n\n' "$DOI" "$DOI_URL"
+              printf 'This DOI was minted by Zenodo from the frozen NAAIL V2026.4-R3 archival ZIP.\n'
+            } > release-body-updated.md
+            gh release edit V2026.4-R3 --notes-file release-body-updated.md
+          fi
