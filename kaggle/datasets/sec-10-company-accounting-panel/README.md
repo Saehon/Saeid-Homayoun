@@ -1,6 +1,6 @@
 # SEC 10-Company Accounting Panel
 
-A reproducible annual accounting panel built from the U.S. SEC CompanyFacts API.
+A reproducible annual accounting panel bootstrapped from U.S. SEC-filed 10-K comparative statements, with CompanyFacts refresh code maintained in the canonical GitHub repository.
 
 Companies: Microsoft, Apple, Alphabet, Amazon, NVIDIA, Meta, JPMorgan Chase, Walmart, Exxon Mobil and Tesla.
 
