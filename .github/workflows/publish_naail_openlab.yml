@@ -1,0 +1,154 @@
+name: Publish NAAIL OpenLab
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "NAAIL-OpenLab/**"
+      - "kaggle/datasets/naail-openlab/**"
+      - "huggingface/datasets/NAAIL-OpenLab/**"
+      - ".github/workflows/publish_naail_openlab.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-naail-openlab-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify canonical public source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f NAAIL-OpenLab/README.md
+          test -f NAAIL-OpenLab/LATEST_RELEASE.md
+          test -f NAAIL-OpenLab/NAAIL_RESEARCH_NONCOMMERCIAL_LICENSE.md
+          test -f NAAIL-OpenLab/IP_NOTICE.md
+          test -f NAAIL-OpenLab/PATENT_NOTICE.md
+          grep -q "NAAIL OpenLab" NAAIL-OpenLab/README.md
+          grep -q "V2026.4-R3" NAAIL-OpenLab/LATEST_RELEASE.md
+
+      - name: Check distribution credentials
+        id: dist
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          [[ -n "${KAGGLE_API_TOKEN}" ]] && echo "kaggle=true" >> "${GITHUB_OUTPUT}" || echo "kaggle=false" >> "${GITHUB_OUTPUT}"
+          [[ -n "${HF_TOKEN}" ]] && echo "hf=true" >> "${GITHUB_OUTPUT}" || echo "hf=false" >> "${GITHUB_OUTPUT}"
+          if [[ -z "${KAGGLE_API_TOKEN}" && -z "${HF_TOKEN}" ]]; then
+            echo "No distribution credentials are configured."
+            exit 1
+          fi
+
+      - name: Install distribution clients
+        run: python -m pip install --upgrade kaggle huggingface_hub
+
+      - name: Build public NAAIL OpenLab distribution package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/naail-dist
+          mkdir -p /tmp/naail-dist
+          git archive --format=zip --output=/tmp/naail-dist/NAAIL-OpenLab-V2026.4-R3.zip HEAD NAAIL-OpenLab
+          cp NAAIL-OpenLab/README.md /tmp/naail-dist/README_GITHUB.md
+          cp NAAIL-OpenLab/LATEST_RELEASE.md /tmp/naail-dist/
+          cp NAAIL-OpenLab/NAAIL_RESEARCH_NONCOMMERCIAL_LICENSE.md /tmp/naail-dist/
+          cp NAAIL-OpenLab/IP_NOTICE.md /tmp/naail-dist/
+          cp NAAIL-OpenLab/PATENT_NOTICE.md /tmp/naail-dist/
+          cp NAAIL-OpenLab/TRADEMARKS.md /tmp/naail-dist/
+          cp NAAIL-OpenLab/AUTHORS.md /tmp/naail-dist/
+          cp NAAIL-OpenLab/CITATION.cff /tmp/naail-dist/
+          cp NAAIL-OpenLab/CITATION.bib /tmp/naail-dist/
+          (
+            cd /tmp/naail-dist
+            sha256sum NAAIL-OpenLab-V2026.4-R3.zip > NAAIL-OpenLab-V2026.4-R3.zip.sha256
+          )
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          manifest = {
+              "name": "NAAIL OpenLab",
+              "release": "V2026.4-R3",
+              "canonical_source": "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab",
+              "github_sha": os.environ.get("GITHUB_SHA"),
+              "github_run_id": os.environ.get("GITHUB_RUN_ID"),
+              "distribution_targets": [
+                  "https://www.kaggle.com/datasets/sadhon/naail-openlab",
+                  "https://huggingface.co/datasets/SADHON/NAAIL-OpenLab"
+              ],
+              "license": "NAAIL Research Non-Commercial License",
+              "public_snapshot_only": True
+          }
+          Path("/tmp/naail-dist/SYNC_MANIFEST.json").write_text(
+              json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Publish or version Kaggle dataset
+        if: steps.dist.outputs.kaggle == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/naail-kaggle
+          mkdir -p /tmp/naail-kaggle
+          cp kaggle/datasets/naail-openlab/dataset-metadata.json /tmp/naail-kaggle/
+          cp kaggle/datasets/naail-openlab/README.md /tmp/naail-kaggle/
+          cp /tmp/naail-dist/* /tmp/naail-kaggle/
+          dataset="sadhon/naail-openlab"
+          kaggle datasets list -m -p 1 >/dev/null
+          if kaggle datasets files "${dataset}" >/dev/null 2>&1; then
+            kaggle datasets version -p /tmp/naail-kaggle -m "NAAIL OpenLab V2026.4-R3 sync ${GITHUB_SHA}"
+          else
+            kaggle datasets create -p /tmp/naail-kaggle
+          fi
+
+      - name: Publish or version Hugging Face dataset
+        if: steps.dist.outputs.hf == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/naail-hf
+          mkdir -p /tmp/naail-hf
+          cp huggingface/datasets/NAAIL-OpenLab/README.md /tmp/naail-hf/README.md
+          cp /tmp/naail-dist/* /tmp/naail-hf/
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          repo_id = "SADHON/NAAIL-OpenLab"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type="dataset", private=False, exist_ok=True)
+          api.upload_folder(
+              repo_id=repo_id,
+              repo_type="dataset",
+              folder_path="/tmp/naail-hf",
+              commit_message="Publish NAAIL OpenLab V2026.4-R3 from canonical GitHub source",
+          )
+          print(f"Published https://huggingface.co/datasets/{repo_id}")
+          PY
+
+      - name: Upload distribution artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NAAIL-OpenLab-V2026.4-R3-distribution
+          path: /tmp/naail-dist/
+          if-no-files-found: error
