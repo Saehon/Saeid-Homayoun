@@ -1,0 +1,52 @@
+name: AI Tooling Configuration Check
+
+on:
+  push:
+    paths:
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "GEMINI.md"
+      - "AI_TOOLING.md"
+      - ".github/copilot-instructions.md"
+      - ".github/workflows/ai-tooling-check.yml"
+      - "scripts/install-ai-clis.*"
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "GEMINI.md"
+      - "AI_TOOLING.md"
+      - ".github/copilot-instructions.md"
+      - ".github/workflows/ai-tooling-check.yml"
+      - "scripts/install-ai-clis.*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify provider instruction files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s AGENTS.md
+          test -s CLAUDE.md
+          test -s GEMINI.md
+          test -s .github/copilot-instructions.md
+          test -s AI_TOOLING.md
+          test -s scripts/install-ai-clis.ps1
+          test -s scripts/install-ai-clis.sh
+
+      - name: Verify shared-instruction links
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "AGENTS.md" CLAUDE.md
+          grep -q "AGENTS.md" GEMINI.md
+          echo "Codex, Claude, Gemini, and Copilot repository configuration is present."
