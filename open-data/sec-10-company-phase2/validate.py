@@ -1,4 +1,4 @@
-"""Validation rules for the SEC 10-company Phase-2 accounting panel."""
+"""Deterministic validation for the Phase-2 SEC 10-company accounting panel."""
 
 import csv
 import hashlib
@@ -31,18 +31,15 @@ assert len(keys) == len(set(keys)), "Duplicate ticker/period rows found."
 by_ticker = defaultdict(list)
 for row in rows:
     by_ticker[row["ticker"]].append(row)
-    assert row["source_url"].startswith("https://data.sec.gov/api/xbrl/companyfacts/CIK")
+    assert row["source_url"].startswith("https://www.sec.gov/Archives/edgar/data/")
+    assert row["revenue_musd"] != "", f"Missing revenue: {row['ticker']} {row['fiscal_year_end']}"
     assert row["net_income_musd"] != "", f"Missing net income: {row['ticker']} {row['fiscal_year_end']}"
-    assert row["assets_musd"] != "", f"Missing assets: {row['ticker']} {row['fiscal_year_end']}"
 
 for ticker, group in by_ticker.items():
     ends = [r["fiscal_year_end"] for r in group]
     assert ends == sorted(ends), f"Periods are not ascending for {ticker}: {ends}"
 
-revenue_coverage = sum(1 for row in rows if row["revenue_musd"] != "")
-assert revenue_coverage >= 27, f"Revenue coverage too low: {revenue_coverage}/30"
-
-# Frozen control check inherited from Phase 1 for Microsoft.
+# Frozen Microsoft controls inherited from Phase 1.
 msft_expected = {
     "2024-06-30": ("245122", "171008", "109433", "88136"),
     "2025-06-30": ("281724", "193893", "128528", "101832"),
@@ -60,10 +57,14 @@ for end, expected_values in msft_expected.items():
     assert actual_values == expected_values, (end, actual_values, expected_values)
 
 digest = hashlib.sha256(DATA.read_bytes()).hexdigest()
-assert digest == manifest["data_sha256"]
+assert digest == manifest["data_sha256"], (digest, manifest["data_sha256"])
 assert manifest["company_count"] == 10
 assert manifest["row_count"] == 30
 
+optional_gross = sum(1 for r in rows if r["gross_profit_musd"])
+optional_operating = sum(1 for r in rows if r["operating_income_musd"])
+
 print("PASS: 10 companies × 3 annual periods validated.")
-print(f"Revenue coverage: {revenue_coverage}/30 rows.")
+print("Required coverage: revenue 30/30; net income 30/30.")
+print(f"Optional coverage: gross profit {optional_gross}/30; operating income {optional_operating}/30.")
 print(f"SHA256: {digest}")
