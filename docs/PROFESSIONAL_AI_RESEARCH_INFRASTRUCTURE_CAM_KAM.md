@@ -71,6 +71,12 @@ https://github.com/Saehon/Saeid-Homayoun/tree/main/open-data/cam-kam-auditbert-d
 Professional Google Drive master copy:
 https://docs.google.com/document/d/1XaRSI9oTUNZbxOW4ZCsgdHb1Qn4a_T223_oDhymyoM8/edit
 
+Published Hugging Face dataset:
+https://huggingface.co/datasets/SADHON/cam-kam-auditbert-public-demo
+
+Published Kaggle dataset:
+https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo
+
 ## Verified Hugging Face research models
 
 ### CAM/KAM topic classifier
@@ -142,7 +148,10 @@ https://github.com/Saehon/Saeid-Homayoun/actions/runs/35989916956
 
 Kaggle synchronization is authenticated through GitHub Actions and uses `KAGGLE_API_TOKEN`.
 
-The ChatGPT Hugging Face account connection is authenticated as `SADHON` with read-oriented repository scope and Hugging Face Jobs access. Direct repository write scope is not currently granted through the ChatGPT connection. Automated publication from GitHub therefore requires the repository secret `HF_TOKEN`.
+Hugging Face publication is authenticated through GitHub Actions with `HF_TOKEN`. The professional CAM/KAM dataset was successfully published as a private dataset under the `SADHON` account.
+
+Successful Hugging Face publication run:
+https://github.com/Saehon/Saeid-Homayoun/actions/runs/35993093786
 
 ## Recommended professional structure
 
@@ -175,8 +184,9 @@ The ChatGPT Hugging Face account connection is authenticated as `SADHON` with re
 
 - GitHub connection: active.
 - Google Drive connection: active.
-- Hugging Face ChatGPT connection: active as `SADHON` with read-oriented repository access.
-- Kaggle synchronization through GitHub Actions: authenticated and operational.
+- Hugging Face ChatGPT connection: active as `SADHON`.
+- Hugging Face CAM/KAM dataset: **published and verified, private**.
+- Kaggle CAM/KAM dataset: **published through GitHub Actions, private**.
 - CAM/KAM GitHub reproducibility validation: passed.
 - Verified research models: `MaRyAm1295/finBERT-KAM` and `MaRyAm1295/Llama-3.1-8B-KAM`.
 - Private CAM/KAM research data: retained in Google Drive.
