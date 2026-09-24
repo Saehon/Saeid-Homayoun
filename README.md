@@ -300,11 +300,17 @@ Any future transition to professional or commercial deployment would require a s
 
 These are specialist programmes or agents operating within NAAIL OpenLab. They are not separate competing umbrella architectures.
 
-### FRANKENSTEIN™ — Evidence-Governed Accounting, Audit & Assurance Orchestrator
+### FRANKENSTEIN™ — Open Data + Agentic Accounting & Audit Architecture
 
-[FRANKENSTEIN documentation →](FRANKENSTEIN/README.md)
+[FRANKENSTEIN documentation →](FRANKENSTEIN/README.md) · [Architecture →](FRANKENSTEIN/ARCHITECTURE.md) · [5-Phase Roadmap →](FRANKENSTEIN/ROADMAP_5_PHASES.md)
 
-FRANKENSTEIN is a specialist NAAIL research and education programme combining deterministic tests, evidence records, specialist agents, challenge/review stages, and a **Human Approval Gate™**. Model-provider technologies remain replaceable Technology Core components.
+FRANKENSTEIN now uses a professional data-fabric design:
+
+**Hugging Face · Kaggle · Google Drive → Provenance Registry → Deterministic Accounting/Audit Tools → Specialist Agents → Independent Review → Human Approval**
+
+**Phase 1 is intentionally simple:** a free public Hugging Face connection retrieves a five-row FinancialPhraseBank sample plus a provenance manifest into the FRANKENSTEIN data registry. Later phases add Kaggle, Google Drive, free/open agents, cross-model benchmarking and a full evidence-governed research platform.
+
+The large source datasets remain on their native platforms; GitHub stores the code, manifests, checksums, tests and small reproducible examples.
 
 ---
 
