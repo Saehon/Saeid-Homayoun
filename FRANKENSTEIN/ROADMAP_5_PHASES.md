@@ -45,7 +45,7 @@ Current external adapters include CPA Skills, FinanceSkills, Docling MCP, closeg
 
 A standard-library dry-run router and GitHub validation workflow test the registry without requiring paid model APIs.
 
-## Phase 4 — Cross-Model Scientific Benchmarking
+## Phase 4 — Cross-Model Scientific Benchmarking — HARNESS ACTIVE
 **Goal:** run the same accounting/audit task across multiple model families while holding the evidence and tools constant.
 
 Provider families:
@@ -56,6 +56,19 @@ Provider families:
 - Kimi.
 - DeepSeek.
 - local models.
+
+Implemented now:
+- frozen BANK-REC-001 evidence packet;
+- six-provider configuration registry;
+- provider-neutral HTTP adapters;
+- exact deterministic scoring;
+- GitHub validation workflow;
+- manual live-provider workflow with artifact export;
+- safe skipping when credentials/model metadata are missing.
+
+First controlled live attempt: https://github.com/Saehon/Saeid-Homayoun/actions/runs/35991057487
+
+The attempt confirmed that provider credentials/model variables are not configured, so no live provider outputs were generated.
 
 Research outputs:
 - accuracy/F1;
