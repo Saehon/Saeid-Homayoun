@@ -85,7 +85,7 @@ jobs:
         run: bash kaggle/scripts/sync_kaggle.sh kaggle
 
       - name: Verify Kaggle finance model execution
-        if: steps.auth.outputs.configured == 'true'
+        if: steps.auth.outputs.configured == 'true' && github.event_name == 'workflow_dispatch'
         timeout-minutes: 10
         env:
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
