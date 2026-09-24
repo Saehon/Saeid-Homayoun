@@ -13,6 +13,7 @@ NAAIL OpenLab™ is an independent research and education platform for evidence-
 
 **Latest public archival release:** [V2026.4-R3 — Zenodo-Ready Archival Release](https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3)  
 **Release date:** 2026-09-24  
+**Zenodo DOI:** [10.5281/zenodo.22942131](https://doi.org/10.5281/zenodo.22942131)  
 **Validated historical executable checkpoint:** **v0.2.3 · Audit Workspace V0.4 · Prototype 003**
 
 The V2026.4-R3 GitHub Release includes a NAAIL-scoped archival ZIP, SHA-256 checksum, release-specific `CITATION.cff`, BibTeX, Zenodo metadata, and file-level integrity manifest. The archival release is a frozen research/dissemination package; it does not imply that every registered experiment or integration has completed independent scientific validation.
@@ -73,7 +74,7 @@ No patent application is represented as filed as of 2026-09-17. Do not use **Pat
 
 ## Citation
 
-> **Homayoun, S. (2026).** *NAAIL OpenLab™ — Evidence-Governed Multi-Agent Digital Twin*. ORCID: 0000-0002-2536-0446.
+> **Homayoun, S. (2026).** *NAAIL OpenLab™ V2026.4-R3: Zenodo-Ready Archival Release*. Zenodo. DOI: [10.5281/zenodo.22942131](https://doi.org/10.5281/zenodo.22942131). ORCID: 0000-0002-2536-0446.
 
 For the Chapter 2 benchmark before empirical execution:
 
