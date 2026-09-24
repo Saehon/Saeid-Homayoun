@@ -1,0 +1,63 @@
+name: Kaggle Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      create_public_datasets:
+        description: "Allow creation of new public Kaggle datasets"
+        required: false
+        default: false
+        type: boolean
+  push:
+    branches:
+      - main
+    paths:
+      - "kaggle/**"
+      - ".github/workflows/kaggle-sync.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kaggle-sync-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Kaggle authentication
+        id: auth
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${KAGGLE_API_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::KAGGLE_API_TOKEN is not configured. Kaggle sync is skipped until the repository secret is added."
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Check out repository
+        if: steps.auth.outputs.configured == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.auth.outputs.configured == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Kaggle CLI
+        if: steps.auth.outputs.configured == 'true'
+        run: python -m pip install --upgrade kaggle
+
+      - name: Sync notebooks and datasets to Kaggle
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_CREATE_PUBLIC: ${{ github.event.inputs.create_public_datasets || 'false' }}
+          KAGGLE_VERSION_MESSAGE: "GitHub sync ${{ github.sha }}"
+        run: bash kaggle/scripts/sync_kaggle.sh kaggle
