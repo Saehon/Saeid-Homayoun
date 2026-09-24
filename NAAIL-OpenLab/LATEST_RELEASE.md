@@ -5,6 +5,13 @@
 **GitHub Release:** https://github.com/Saehon/Saeid-Homayoun/releases/tag/V2026.4-R3  
 **Validated historical executable checkpoint:** **v0.2.3 · Audit Workspace V0.4 · Prototype 003**
 
+## Public distribution mirrors
+
+- **Kaggle:** https://www.kaggle.com/datasets/sadhon/naail-openlab
+- **Hugging Face:** https://huggingface.co/datasets/SADHON/NAAIL-OpenLab
+
+GitHub remains the canonical source of truth; these are public distribution mirrors of the research-safe package.
+
 ## Archival assets
 
 - `NAAIL-OpenLab-V2026.4-R3-Zenodo.zip`
