@@ -3,6 +3,9 @@
 **Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
 *A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
+**Researcher:** Dr. Saeid Homayoun  
+**ORCID:** https://orcid.org/0000-0002-2536-0446
+
 ## V2026.3 Multi-Agent Digital Twin
 
 > **PATENT RIGHTS RESERVED — PATENT APPLICATION PREPARATION IN PROGRESS**
