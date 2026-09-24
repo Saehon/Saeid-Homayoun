@@ -1,5 +1,5 @@
 {
-  "id": "sadhon/financial-sentiment-microsoft-accounting-demo",
+  "id": "sadhon/finance-sentiment-model-microsoft-sec-example",
   "title": "Finance Sentiment Model + Microsoft SEC Example",
   "code_file": "financial_sentiment_microsoft.py",
   "language": "python",
