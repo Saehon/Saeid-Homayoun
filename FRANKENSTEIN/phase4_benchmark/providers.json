@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "note": "No credentials or exact model IDs are committed. Configure exact model/version and endpoint at run time and preserve them in result metadata.",
+  "providers": {
+    "openai": {
+      "family": "GPT/Codex",
+      "transport": "openai_compatible",
+      "api_key_env": "OPENAI_API_KEY",
+      "model_env": "OPENAI_MODEL",
+      "url_env": "OPENAI_CHAT_COMPLETIONS_URL",
+      "default_url": "https://api.openai.com/v1/chat/completions"
+    },
+    "anthropic": {
+      "family": "Claude",
+      "transport": "anthropic_messages",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "model_env": "ANTHROPIC_MODEL",
+      "url_env": "ANTHROPIC_MESSAGES_URL",
+      "default_url": "https://api.anthropic.com/v1/messages"
+    },
+    "google": {
+      "family": "Gemini",
+      "transport": "gemini_generate_content",
+      "api_key_env": "GEMINI_API_KEY",
+      "model_env": "GEMINI_MODEL",
+      "url_env": "GEMINI_GENERATE_CONTENT_URL",
+      "default_url": null,
+      "note": "Set the full generateContent URL for the exact Gemini model/API version being tested."
+    },
+    "microsoft": {
+      "family": "Microsoft/Azure",
+      "transport": "openai_compatible",
+      "api_key_env": "AZURE_OPENAI_API_KEY",
+      "model_env": "AZURE_OPENAI_MODEL",
+      "url_env": "AZURE_OPENAI_CHAT_COMPLETIONS_URL",
+      "default_url": null,
+      "api_key_header": "api-key",
+      "note": "Set the complete Azure chat-completions URL including deployment/API version."
+    },
+    "moonshot": {
+      "family": "Kimi/Moonshot",
+      "transport": "openai_compatible",
+      "api_key_env": "MOONSHOT_API_KEY",
+      "model_env": "MOONSHOT_MODEL",
+      "url_env": "MOONSHOT_CHAT_COMPLETIONS_URL",
+      "default_url": null,
+      "note": "Set the endpoint appropriate for the Moonshot account/region."
+    },
+    "deepseek": {
+      "family": "DeepSeek",
+      "transport": "openai_compatible",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model_env": "DEEPSEEK_MODEL",
+      "url_env": "DEEPSEEK_CHAT_COMPLETIONS_URL",
+      "default_url": null
+    }
+  }
+}
