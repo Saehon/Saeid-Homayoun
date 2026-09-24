@@ -1,47 +1,74 @@
-# FRANKENSTEIN Architecture
+# FRANKENSTEIN™ Architecture
 
-FRANKENSTEIN is a specialist programme inside NAAIL OpenLab. It does not alter the frozen two-core constitution.
+FRANKENSTEIN is the evidence-governed accounting, audit and assurance research orchestrator in this repository. The architecture is intentionally provider-neutral and separates **data**, **professional knowledge**, **deterministic tests**, **agents**, **verification**, and **human authority**.
+
+## Data fabric
 
 ```mermaid
 flowchart LR
-    A[ERP / GL / Transactions / ESG Evidence] --> B[Deterministic Audit Engine]
-    B --> C[Evidence Ledger]
-    X[IFRS / AuditData / BERT / TimesFM adapters] --> C
-    S[GAN / Synthetic Scenarios] --> R[Adversarial Challenge]
-    C --> D1[Finance Controls]
-    C --> D2[Internal Audit]
-    C --> D3[IFRS Reporting]
-    C --> D4[ICFR]
-    C --> D5[Forensic]
-    C --> D6[ESG Assurance]
-    C --> D7[Cost & AI FinOps]
-    C --> D8[Operations Risk]
-    C --> D9[AI & Data Governance]
-    D1 --> L[FRANKENSTEIN Leader]
-    D2 --> L
-    D3 --> L
-    D4 --> L
-    D5 --> L
-    D6 --> L
-    D7 --> L
-    D8 --> L
-    D9 --> L
-    R --> L
-    L --> P[Evidence Passport / Report]
-    P --> H{Human Approval Gate}
+    HF[Hugging Face\nPublic datasets & models]
+    KG[Kaggle\nBenchmark datasets]
+    GD[Google Drive\nControlled research files]
+    REG[FRANKENSTEIN\nData Registry + Provenance]
+    GH[GitHub\nCode, manifests, tests, small samples]
+
+    HF --> REG
+    KG --> REG
+    GD --> REG
+    REG --> GH
 ```
+
+GitHub is **not** the primary warehouse for large datasets. It stores reproducible code, manifests, checksums, source locations, small demonstration samples and experiment outputs.
+
+## Professional architecture
+
+```mermaid
+flowchart TD
+    A[Data Registry / Evidence Sources] --> B[Deterministic Accounting & Audit Tools]
+    B --> C[Evidence Ledger]
+    C --> D1[Financial Accounting]
+    C --> D2[Audit Testing]
+    C --> D3[ICFR / Internal Control]
+    C --> D4[Corporate Governance]
+    C --> D5[CAM / KAM]
+    C --> D6[IFRS]
+    C --> D7[ESG]
+    C --> D8[Evidence Agent]
+
+    D1 --> R[Reviewer / Cross-Model Challenge]
+    D2 --> R
+    D3 --> R
+    D4 --> R
+    D5 --> R
+    D6 --> R
+    D7 --> R
+    D8 --> R
+
+    R --> P[Evidence Passport / Reproducibility Record]
+    P --> G[Policy & Control Gate]
+    G --> H{Human Approval Gate}
+```
+
+## Replaceable model/provider layer
+
+The same workflow may be tested with GPT/Codex, Claude, Gemini, Microsoft/Azure-hosted models, Kimi, DeepSeek or local models. Changing the model must not silently change the accounting procedure, evidence packet or evaluation metric.
+
+## Five-phase development
+
+1. **Public data connection** — one free Hugging Face example.
+2. **Registered data fabric** — Hugging Face + Kaggle + Google Drive + authoritative public sources.
+3. **Specialist free/open agent layer** — accounting, audit, control, governance, IFRS and ESG.
+4. **Cross-model benchmarking** — same case, multiple providers, frozen tools/evidence.
+5. **Evidence-governed research platform** — provenance, challenge, reproducibility, control gates and human authority.
+
+See [ROADMAP_5_PHASES.md](ROADMAP_5_PHASES.md).
 
 ## Invariants
 
-1. Deterministic tests precede generative interpretation where feasible.
-2. Evidence and inference are stored and described separately.
-3. Specialist consensus is not professional authority.
-4. Missing evidence must be surfaced, not invented.
-5. Model providers and agent SDKs are replaceable; the professional architecture must not depend on one vendor.
-6. Cost optimization cannot override required evidence quality, reproducibility or professional judgment.
-7. Consequential conclusions require a Human Approval Gate.
-
-
-## Replaceable provider profiles
-
-The public FRANKENSTEIN programme may contain multiple technology profiles under the same professional governance. Current examples include the Claude-enabled base implementation and the [OpenAI Finance & Operations Audit profile](openai_finops/README.md). Provider-specific code belongs to the Replaceable Technology Core; professional evidence and Human Gate requirements do not change with provider.
+1. Evidence precedes narrative.
+2. Deterministic calculations precede generative interpretation where feasible.
+3. Data source, license, version and retrieval time are recorded.
+4. Large data stays in its appropriate data platform unless there is a documented reason to mirror it.
+5. Missing evidence is surfaced, not invented.
+6. Model-provider choice is replaceable.
+7. Material professional conclusions require human approval.
