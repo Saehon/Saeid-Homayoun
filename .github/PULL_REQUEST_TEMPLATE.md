@@ -37,6 +37,13 @@ Explain whether this PR changes provenance, evidence classification, scientific 
 - [ ] The contribution is compatible with the repository license and contribution terms.
 - [ ] I have the right to contribute all included code, text, metadata, and data artifacts.
 
+## Collaboration and credit
+
+- List material collaborators and their GitHub usernames where applicable.
+- Preserve genuine co-authorship in the commit history when more than one person materially contributed to a commit.
+- Distinguish code/research contribution credit from manuscript authorship, institutional endorsement, or scientific validation.
+
+
 ## Human review
 
 No pull request, automated test, or model output constitutes scientific approval. Final scientific interpretation remains subject to human review.
