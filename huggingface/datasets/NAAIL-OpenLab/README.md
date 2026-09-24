@@ -20,6 +20,9 @@ tags:
 
 **Next-Generation Accounting, Audit & Assurance Intelligence Lab**
 
+**Researcher:** Dr. Saeid Homayoun  
+**ORCID:** https://orcid.org/0000-0002-2536-0446
+
 NAAIL OpenLab is an independent, evidence-governed research and education platform for accounting, auditing, assurance, finance, sustainability, professional simulation and reproducible scientific discovery.
 
 This Hugging Face repository is the **public AI/research distribution mirror**. The canonical source of truth is GitHub:
