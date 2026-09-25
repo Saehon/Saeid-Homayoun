@@ -14,6 +14,9 @@ https://github.com/Saehon/Saeid-Homayoun/tree/main/open-data/cam-kam-auditbert-d
 Professional architecture document:  
 https://github.com/Saehon/Saeid-Homayoun/blob/main/docs/PROFESSIONAL_AI_RESEARCH_INFRASTRUCTURE_CAM_KAM.md
 
+Cross-platform master integration:  
+https://github.com/Saehon/Saeid-Homayoun/blob/main/docs/CAM_KAM_AUDITBERT_CROSS_PLATFORM_MASTER.md
+
 ### Verified research models
 - CAM/KAM classifier: https://huggingface.co/MaRyAm1295/finBERT-KAM
 - KAM response generator: https://huggingface.co/MaRyAm1295/Llama-3.1-8B-KAM
