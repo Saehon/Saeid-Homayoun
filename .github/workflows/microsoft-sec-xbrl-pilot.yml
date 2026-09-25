@@ -1,0 +1,20 @@
+name: Microsoft SEC XBRL Pilot 001
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 1 * *"
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python external-agent-ecosystems/databricks/01-sec-xbrl/run_public_baseline.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: microsoft-sec-xbrl-pilot-001
+          path: outputs/
