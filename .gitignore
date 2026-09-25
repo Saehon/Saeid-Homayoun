@@ -1,0 +1,13 @@
+# Downloaded research datasets / external upstream clones
+research-data/
+external-open-source/
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Platform credentials
+kaggle.json
+.env
+.env.*
