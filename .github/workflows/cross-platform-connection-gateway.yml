@@ -1,0 +1,178 @@
+name: Cross-Platform Connection Gateway
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * *"
+  push:
+    paths:
+      - ".github/workflows/cross-platform-connection-gateway.yml"
+      - "docs/CROSS_PLATFORM_CONNECTION_GATEWAY.md"
+
+concurrency:
+  group: cross-platform-connection-gateway
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  github:
+    name: GitHub connection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify GitHub token
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "repos/${GITHUB_REPOSITORY}" --jq '.full_name'
+          echo "### GitHub ✅" >> "${GITHUB_STEP_SUMMARY}"
+          echo "Automatic GITHUB_TOKEN is working." >> "${GITHUB_STEP_SUMMARY}"
+
+  openai:
+    name: OpenAI / GPT connection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check OpenAI secret
+        id: auth
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        shell: bash
+        run: |
+          if [[ -z "${OPENAI_API_KEY}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::OPENAI_API_KEY is not configured."
+            echo "### OpenAI / GPT ⚪" >> "${GITHUB_STEP_SUMMARY}"
+            echo "OPENAI_API_KEY is not configured." >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Verify OpenAI API
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error             -H "Authorization: Bearer ${OPENAI_API_KEY}"             https://api.openai.com/v1/models >/dev/null
+          echo "### OpenAI / GPT ✅" >> "${GITHUB_STEP_SUMMARY}"
+          echo "OPENAI_API_KEY authenticated successfully." >> "${GITHUB_STEP_SUMMARY}"
+
+  huggingface:
+    name: Hugging Face connection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Hugging Face secret
+        id: auth
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${HF_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::HF_TOKEN is not configured."
+            echo "### Hugging Face ⚪" >> "${GITHUB_STEP_SUMMARY}"
+            echo "HF_TOKEN is not configured." >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Verify Hugging Face API
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet --upgrade huggingface_hub
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          who = HfApi(token=os.environ["HF_TOKEN"]).whoami()
+          print("Authenticated Hugging Face account:", who.get("name", "unknown"))
+          PY
+          echo "### Hugging Face ✅" >> "${GITHUB_STEP_SUMMARY}"
+          echo "HF_TOKEN authenticated successfully." >> "${GITHUB_STEP_SUMMARY}"
+
+  kaggle:
+    name: Kaggle connection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Kaggle secret
+        id: auth
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${KAGGLE_API_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::KAGGLE_API_TOKEN is not configured."
+            echo "### Kaggle ⚪" >> "${GITHUB_STEP_SUMMARY}"
+            echo "KAGGLE_API_TOKEN is not configured." >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Verify Kaggle API
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet --upgrade kaggle
+          kaggle datasets list --page-size 1 >/dev/null
+          echo "### Kaggle ✅" >> "${GITHUB_STEP_SUMMARY}"
+          echo "KAGGLE_API_TOKEN is available and the Kaggle CLI call succeeded." >> "${GITHUB_STEP_SUMMARY}"
+
+  aws:
+    name: AWS OIDC connection
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check AWS role
+        id: auth
+        env:
+          AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+        shell: bash
+        run: |
+          if [[ -z "${AWS_ROLE_ARN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::AWS_ROLE_ARN is not configured. Use a GitHub OIDC role; do not store long-lived AWS access keys."
+            echo "### AWS ⚪" >> "${GITHUB_STEP_SUMMARY}"
+            echo "AWS_ROLE_ARN is not configured yet." >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Configure AWS credentials with OIDC
+        if: steps.auth.outputs.configured == 'true'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION || 'eu-north-1' }}
+          role-session-name: github-cross-platform-gateway
+
+      - name: Verify AWS identity
+        if: steps.auth.outputs.configured == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          aws sts get-caller-identity
+          echo "### AWS ✅" >> "${GITHUB_STEP_SUMMARY}"
+          echo "GitHub OIDC successfully assumed AWS_ROLE_ARN." >> "${GITHUB_STEP_SUMMARY}"
