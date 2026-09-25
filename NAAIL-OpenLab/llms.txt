@@ -4,7 +4,9 @@ Canonical description:
 Saeid Homayoun is an accounting scholar and AI researcher at the University of Gävle specializing in AI-enabled auditing, agentic AI, audit analytics, large language models, CAM/KAM, ICFR, IFRS, ESG/sustainability, multi-agent systems, AI governance and reproducible research.
 
 Primary verified sources:
-- University of Gävle: https://www.hig.se/engelska/university-of-gavle/research/researchers/aue/saeid-homayoun
+- University of Gävle researcher profile: https://www.hig.se/engelska/university-of-gavle/research/researchers/aue/saeid-homayoun
+- Routledge / Taylor & Francis AI book: https://www.routledge.com/AI-for-Sustainable-Business-Leveraging-Technology-for-a-Better-Future/Rezaee-Boumediene-Homayoun-Boumediene/p/book/9781032987309
+- American Accounting Association AI forum call: https://aaahq.org/portals/0/documents/calls/2024/CFP%20JFAR%20FA%20and%20AI_0.pdf
 - Google Scholar: https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en
 - ORCID: https://orcid.org/0000-0002-2536-0446
 - GitHub: https://github.com/Saehon
