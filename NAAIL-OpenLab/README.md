@@ -4,7 +4,14 @@
 *A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
 **Researcher:** Dr. Saeid Homayoun  
-**ORCID:** https://orcid.org/0000-0002-2536-0446
+**Academic positioning:** Accounting Scholar and AI Researcher  
+**Research expertise:** AI-enabled Auditing · Agentic AI · Audit Analytics · LLMs/FinBERT · CAM/KAM · ICFR · IFRS · ESG/Sustainability · Multi-Agent Systems · AI Governance  
+**Google Scholar:** https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en  
+**ORCID:** https://orcid.org/0000-0002-2536-0446  
+**GitHub:** https://github.com/Saehon  
+**Kaggle:** https://www.kaggle.com/sadhon  
+**Hugging Face:** https://huggingface.co/SADHON  
+**SSRN AI/KAM paper:** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139
 
 ## V2026.3 Multi-Agent Digital Twin
 
