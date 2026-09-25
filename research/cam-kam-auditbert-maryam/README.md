@@ -7,6 +7,16 @@ Collaboration associated with Saeid Homayoun, Zabihollah Rezaee, Maryam Khosravi
 
 This repository folder is a **public-safe reproducibility layer** for the CAM/KAM AuditBERT research project. It intentionally does **not** redistribute the unpublished manuscript or raw licensed/proprietary audit datasets.
 
+## Cross-platform integration
+Master integration record:  
+https://github.com/Saehon/Saeid-Homayoun/blob/main/docs/CAM_KAM_AUDITBERT_CROSS_PLATFORM_MASTER.md
+
+Hugging Face dataset mirror:  
+https://huggingface.co/datasets/SADHON/cam-kam-auditbert-public-demo
+
+Kaggle benchmark dataset:  
+https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo
+
 ## Research objective
 The project studies AI-assisted analysis of **Key Audit Matters (KAMs)** and **Critical Audit Matters (CAMs)**, including:
 - accounting-topic classification,
