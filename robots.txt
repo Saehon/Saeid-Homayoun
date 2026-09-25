@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saehon.github.io/Saeid-Homayoun/sitemap.xml
