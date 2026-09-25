@@ -84,6 +84,8 @@ A license-aware, reproducible registry for **Kimi + DeepSeek models, accounting/
 ➡️ [Kimi + DeepSeek Accounting/Finance/Audit Stack](ai-stacks/kimi-deepseek-accounting-finance-audit/README.md)  
 ➡️ [Hugging Face mirror](https://huggingface.co/datasets/SADHON/kimi-deepseek-accounting-finance-audit)  
 ➡️ [Kaggle mirror](https://www.kaggle.com/datasets/sadhon/kimi-deepseek-accounting-finance-audit)
+➡️ [Kimi + DeepSeek Google Drive control folder](https://drive.google.com/drive/folders/1oEZR1FI4fsJzkN4O5aHEWMZi4fXacqNW)  
+➡️ [Kimi + DeepSeek Google Drive control record](https://docs.google.com/document/d/1Ts1DpE608E5DpOTX5ihfculpkNNUwGwl1v2p3rnkNK8/edit)
 
 The stack keeps large frontier weights outside Git, uses opt-in model downloads, preserves upstream licences/provenance, and prioritizes practical research baselines such as DeepSeek-R1-Distill-Qwen-7B, Kimi-VL-A3B-Instruct, FinQA, FinanceBench, Arelle, and audit-ready evaluation tools.
 
