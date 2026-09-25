@@ -1,0 +1,150 @@
+name: Publish Kimi DeepSeek Accounting Finance Audit Stack
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "ai-stacks/kimi-deepseek-accounting-finance-audit/**"
+      - "huggingface/datasets/kimi-deepseek-accounting-finance-audit/**"
+      - "kaggle/datasets/kimi-deepseek-accounting-finance-audit/**"
+      - ".github/workflows/publish-kimi-deepseek-accounting-finance-audit.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-kimi-deepseek-accounting-finance-audit
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build public registry package
+    runs-on: ubuntu-latest
+    outputs:
+      has_hf: ${{ steps.creds.outputs.hf }}
+      has_kaggle: ${{ steps.creds.outputs.kaggle }}
+    steps:
+      - name: Checkout canonical GitHub repository
+        uses: actions/checkout@v4
+
+      - name: Verify stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f ai-stacks/kimi-deepseek-accounting-finance-audit/README.md
+          test -f ai-stacks/kimi-deepseek-accounting-finance-audit/catalog.csv
+          test -f ai-stacks/kimi-deepseek-accounting-finance-audit/requirements.txt
+          test -f ai-stacks/kimi-deepseek-accounting-finance-audit/download_assets.py
+          test -f ai-stacks/kimi-deepseek-accounting-finance-audit/INTEGRATION_MANIFEST.json
+          python -m py_compile ai-stacks/kimi-deepseek-accounting-finance-audit/download_assets.py
+
+      - name: Check distribution credentials
+        id: creds
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          [[ -n "${HF_TOKEN}" ]] && echo "hf=true" >> "${GITHUB_OUTPUT}" || echo "hf=false" >> "${GITHUB_OUTPUT}"
+          [[ -n "${KAGGLE_API_TOKEN}" ]] && echo "kaggle=true" >> "${GITHUB_OUTPUT}" || echo "kaggle=false" >> "${GITHUB_OUTPUT}"
+
+      - name: Build mirror package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/kimi-deepseek-stack
+          mkdir -p /tmp/kimi-deepseek-stack
+          cp ai-stacks/kimi-deepseek-accounting-finance-audit/README.md /tmp/kimi-deepseek-stack/README_GITHUB.md
+          cp ai-stacks/kimi-deepseek-accounting-finance-audit/catalog.csv /tmp/kimi-deepseek-stack/
+          cp ai-stacks/kimi-deepseek-accounting-finance-audit/requirements.txt /tmp/kimi-deepseek-stack/
+          cp ai-stacks/kimi-deepseek-accounting-finance-audit/download_assets.py /tmp/kimi-deepseek-stack/
+          cp ai-stacks/kimi-deepseek-accounting-finance-audit/setup.ps1 /tmp/kimi-deepseek-stack/
+          cp ai-stacks/kimi-deepseek-accounting-finance-audit/setup.sh /tmp/kimi-deepseek-stack/
+          cp ai-stacks/kimi-deepseek-accounting-finance-audit/INTEGRATION_MANIFEST.json /tmp/kimi-deepseek-stack/
+          printf '%s\n' "${GITHUB_SHA}" > /tmp/kimi-deepseek-stack/GITHUB_SHA.txt
+          (
+            cd /tmp/kimi-deepseek-stack
+            sha256sum catalog.csv README_GITHUB.md requirements.txt download_assets.py setup.ps1 setup.sh INTEGRATION_MANIFEST.json > SHA256SUMS.txt
+          )
+
+      - name: Upload reproducibility artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kimi-deepseek-accounting-finance-audit
+          path: /tmp/kimi-deepseek-stack/
+          if-no-files-found: error
+
+  publish-huggingface:
+    name: Publish Hugging Face registry
+    needs: build
+    if: needs.build.outputs.has_hf == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --quiet --upgrade huggingface_hub
+      - uses: actions/download-artifact@v4
+        with:
+          name: kimi-deepseek-accounting-finance-audit
+          path: /tmp/kimi-deepseek-stack
+      - name: Prepare Hugging Face dataset card
+        shell: bash
+        run: |
+          cp huggingface/datasets/kimi-deepseek-accounting-finance-audit/README.md /tmp/kimi-deepseek-stack/README.md
+      - name: Publish Hugging Face dataset
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          repo_id = "SADHON/kimi-deepseek-accounting-finance-audit"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type="dataset", private=False, exist_ok=True)
+          api.upload_folder(
+              repo_id=repo_id,
+              repo_type="dataset",
+              folder_path="/tmp/kimi-deepseek-stack",
+              commit_message=f"Sync Kimi + DeepSeek accounting/finance/audit registry {os.environ.get('GITHUB_SHA','')}",
+          )
+          print(f"https://huggingface.co/datasets/{repo_id}")
+          PY
+
+  publish-kaggle:
+    name: Publish Kaggle registry
+    needs: build
+    if: needs.build.outputs.has_kaggle == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --quiet --upgrade kaggle
+      - uses: actions/download-artifact@v4
+        with:
+          name: kimi-deepseek-accounting-finance-audit
+          path: /tmp/kimi-deepseek-stack
+      - name: Prepare Kaggle package
+        shell: bash
+        run: |
+          cp kaggle/datasets/kimi-deepseek-accounting-finance-audit/dataset-metadata.json /tmp/kimi-deepseek-stack/
+          cp kaggle/datasets/kimi-deepseek-accounting-finance-audit/README.md /tmp/kimi-deepseek-stack/KAGGLE_README.md
+      - name: Publish or version Kaggle dataset
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          dataset="sadhon/kimi-deepseek-accounting-finance-audit"
+          kaggle datasets list --page-size 1 >/dev/null
+          if kaggle datasets files "${dataset}" >/dev/null 2>&1; then
+            kaggle datasets version -p /tmp/kimi-deepseek-stack -m "Sync Kimi + DeepSeek registry ${GITHUB_SHA}"
+          else
+            kaggle datasets create -p /tmp/kimi-deepseek-stack --public
+          fi
