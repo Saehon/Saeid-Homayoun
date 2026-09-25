@@ -83,7 +83,8 @@ A license-aware, reproducible registry for **Kimi + DeepSeek models, accounting/
 
 ➡️ [Kimi + DeepSeek Accounting/Finance/Audit Stack](ai-stacks/kimi-deepseek-accounting-finance-audit/README.md)  
 ➡️ [Hugging Face mirror](https://huggingface.co/datasets/SADHON/kimi-deepseek-accounting-finance-audit)  
-➡️ [Kaggle mirror](https://www.kaggle.com/datasets/sadhon/kimi-deepseek-accounting-finance-audit)
+➡️ [Kaggle mirror](https://www.kaggle.com/datasets/sadhon/kimi-deepseek-accounting-finance-audit)  
+➡️ [Kimi + DeepSeek Drive record](https://docs.google.com/document/d/1nkP4A2gqCwBA_wq5tC6cBJsLkSxumsMr2WZLtP_xSTo/edit)
 ➡️ [Kimi + DeepSeek Google Drive control folder](https://drive.google.com/drive/folders/1oEZR1FI4fsJzkN4O5aHEWMZi4fXacqNW)  
 ➡️ [Kimi + DeepSeek Google Drive control record](https://docs.google.com/document/d/1Ts1DpE608E5DpOTX5ihfculpkNNUwGwl1v2p3rnkNK8/edit)
 
