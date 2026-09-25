@@ -100,3 +100,14 @@ SEC/XBRL + audit data → local open-source analytics → GPT/Claude/Gemini/Copi
 - `SECURITY_AND_LICENSE.md` — safe-use and licensing rules.
 
 Last curated: 2026-09-25.
+
+## GitHub + Hugging Face + Kaggle Data Hub
+
+The integrated public-data layer is here:
+
+- [Free Data Hub](data/DATA_HUB.md)
+- [Machine-readable data registry](data/data_sources.yml)
+- [Cross-platform downloader](data/download_data.py)
+- [Python requirements](data/requirements-data.txt)
+
+The data hub keeps large files on their native platforms and downloads them into the Git-ignored `research-data/` directory. It currently covers synthetic audit/journal-entry and AML data, SEC/XBRL and SEC-filing corpora, financial NLP, ESG/sustainability, fraud benchmarks, and GitHub-hosted accounting/finance/audit programs.
