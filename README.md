@@ -80,12 +80,18 @@ My research uses AI to strengthen core accounting and auditing concepts rather t
 
 ## 🔗 Open Research Architecture
 
-**GitHub** → code, architecture, provenance, tests, reproducible pipelines  
-**Hugging Face** → public datasets, models, model cards  
-**Kaggle** → benchmark datasets and executable notebooks  
-**Google Drive** → controlled research files, working papers and licensed evidence
+**GitHub** → code, architecture, provenance, tests, workflows and reproducible pipelines  
+**Hugging Face** → public datasets, models and dataset/model cards  
+**Kaggle** → benchmark datasets, executable notebooks and public replication  
+**Google Drive** → controlled research files, working papers and licensed/non-public evidence  
+**AWS** → secure data, Bedrock/AgentCore/SageMaker execution, S3 evidence, CloudTrail/Config/Audit Manager telemetry  
+**Databricks** → scalable lakehouse analytics, Mosaic AI, MLflow, Unity Catalog and experiment tracing  
+**Microsoft** → Foundry/Fabric enterprise agents, data and analytics  
+**Claude / Gemini / OpenAI** → replaceable reasoning, analysis, coding and cross-provider evaluation layers
 
-This separation keeps public research **reproducible and inspectable** while protecting licensed, confidential, or working-stage material.
+**Canonical integration map:** [CROSS_PLATFORM_INTEGRATION.md](CROSS_PLATFORM_INTEGRATION.md)
+
+This separation keeps public research **reproducible and inspectable** while protecting licensed, confidential, or working-stage material and preserving a clear Human Gate™.
 
 ## 📚 Citation
 
@@ -437,6 +443,7 @@ Any future transition to professional or commercial deployment would require a s
 - [Scientific Assurance →](SCIENTIFIC_ASSURANCE.md)
 - [Reproducibility →](REPRODUCIBILITY.md)
 - [Data Sources →](DATA_SOURCES.md)
+- [Cross-Platform Integration →](CROSS_PLATFORM_INTEGRATION.md)
 - [Kaggle Research Workspace →](kaggle/README.md)
 - [Phase 1 Microsoft Open Data Bridge →](open-data/microsoft-demo-001/README.md)
 - [FRANKENSTEIN™ →](FRANKENSTEIN/README.md)
