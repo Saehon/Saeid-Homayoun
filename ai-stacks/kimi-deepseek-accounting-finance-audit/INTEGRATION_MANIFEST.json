@@ -29,5 +29,13 @@
       "INTEGRATION_MANIFEST.json"
     ]
   },
-  "human_review_required": true
+  "human_review_required": true,
+  "google_drive_folder": "https://drive.google.com/drive/folders/1oEZR1FI4fsJzkN4O5aHEWMZi4fXacqNW",
+  "google_drive_master_record": "https://docs.google.com/document/d/1Ts1DpE608E5DpOTX5ihfculpkNNUwGwl1v2p3rnkNK8/edit",
+  "control_layers": {
+    "github": "canonical executable source",
+    "hugging_face": "public dataset/registry mirror",
+    "kaggle": "public benchmark/registry mirror",
+    "google_drive": "controlled documentation and research record"
+  }
 }
