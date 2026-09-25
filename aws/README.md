@@ -70,3 +70,14 @@ No AWS access keys, secret keys, tokens, account identifiers or confidential cli
 - AWS CloudTrail: https://aws.amazon.com/cloudtrail/
 - AWS Config: https://aws.amazon.com/config/
 - Amazon S3: https://aws.amazon.com/s3/
+
+## Free/Open research data registry
+
+A provenance-first registry now connects AWS free/open data to accounting, audit, finance and ESG research:
+
+- [AWS Free/Open Data Registry](FREE_DATA_REGISTRY.md)
+- [Machine-readable CSV](free-data-registry.csv)
+- Hugging Face: https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry
+- Kaggle: https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
+
+Priority domains: SEC/EDGAR/XBRL; macroeconomic stress; carbon accounting; Scope 3; climate risk; ESG assurance.
