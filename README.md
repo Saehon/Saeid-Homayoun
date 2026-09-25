@@ -281,7 +281,7 @@ NAAIL is not built around one AI company.
 
 Its Technology Core can evaluate and connect technologies from:
 
-**OpenAI · Microsoft · Google · Anthropic · Hugging Face · Open-Source Ecosystems · Local Models · Future Providers**
+**OpenAI · Microsoft · Google/Gemini · Anthropic/Claude · AWS · Databricks · Hugging Face · Open-Source Ecosystems · Local Models · Future Providers**
 
 The question is therefore not simply:
 
@@ -290,6 +290,23 @@ The question is therefore not simply:
 The more important question is:
 
 > **Which AI system is appropriate for this professional task, supported by which evidence, operating under which controls, exposed to which risks, and subject to which human-review requirements?**
+
+## Enterprise AI & Data Platform Layer
+
+NAAIL/FRANKENSTEIN keeps provider-specific technology replaceable while comparing major enterprise AI and data platforms for accounting, auditing, assurance and finance research:
+
+| Provider | Products / platform layer | Research role |
+|---|---|---|
+| **Microsoft** | Microsoft Foundry · Microsoft Fabric | governed agents, enterprise data and analytics |
+| **Anthropic / Claude** | Claude Platform · Claude on AWS | reasoning, document analysis and agent workflows |
+| **Google / Gemini** | Gemini Enterprise Agent Platform · BigQuery | agent development, multimodal analysis and scalable financial data analytics |
+| **Databricks** | Mosaic AI / Agent Framework · MLflow · Unity Catalog · Lakehouse | governed data/AI pipelines, experiments, tracing and large-scale research workflows |
+| **AWS** | Amazon Bedrock · Bedrock AgentCore · SageMaker AI · S3 · Glue · Athena/Redshift · CloudTrail · AWS Config · AWS Audit Manager | secure model/agent execution, financial-data lake, audit evidence, control monitoring and traceability |
+
+**Accounting/audit research logic:**  
+**Financial data & evidence → governed data platform → accounting/audit/finance agents → cross-provider comparison → Reviewer/Falsification → Human Gate™**
+
+[AWS research integration →](aws/README.md) · [Databricks research area →](databricks/README.md) · [External agent ecosystems →](external-agent-ecosystems/README.md)
 
 ---
 
