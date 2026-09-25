@@ -106,7 +106,7 @@ Every thesis/research project should create four linked artifacts:
 
 European IFRS/ESG/VSME Evidence
 → versioned research dataset
-→ Databricks/Delta
+→ Versioned Evidence Store
 → Evidence Graph
 → FT50/ABS4 theoretical anchor
 → Co-Scientist competing hypotheses
