@@ -1,0 +1,193 @@
+name: Publish All Public GitHub Data
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/publish-all-public-github-data.yml"
+      - "scripts/build_public_data_snapshot.py"
+      - "docs/GITHUB_PUBLIC_DATA_MIRROR.md"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-all-public-github-data
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build public-safe GitHub data snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout canonical repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Discover public repositories
+        env:
+          GH_TOKEN: \${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "users/Saehon/repos?per_page=100&type=owner&sort=full_name" > /tmp/saehon-repos.json
+          python - <<'PY'
+          import json
+          repos = json.load(open("/tmp/saehon-repos.json", encoding="utf-8"))
+          print(f"Discovered {len(repos)} repositories.")
+          PY
+
+      - name: Build provenance-preserving data snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_public_data_snapshot.py \
+            --repos-json /tmp/saehon-repos.json \
+            --out /tmp/github-public-data \
+            --owner Saehon
+          ls -lah /tmp/github-public-data
+          echo "### Public GitHub data snapshot" >> "\${GITHUB_STEP_SUMMARY}"
+          python - <<'PY' >> "\${GITHUB_STEP_SUMMARY}"
+          import json
+          m = json.load(open("/tmp/github-public-data/SNAPSHOT_METADATA.json", encoding="utf-8"))
+          print(f"- Included files: **{m['included_files']}**")
+          print(f"- Repositories with data: **{len(m['included_repositories'])}**")
+          print(f"- Uncompressed bytes: **{m['total_uncompressed_bytes']:,}**")
+          PY
+
+      - name: Upload snapshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-public-research-data
+          path: /tmp/github-public-data/
+          if-no-files-found: error
+          compression-level: 0
+
+  publish-kaggle:
+    name: Publish Kaggle mirror
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Kaggle credential
+        env:
+          KAGGLE_API_TOKEN: \${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "\${KAGGLE_API_TOKEN}" ]]; then
+            echo "::error::KAGGLE_API_TOKEN is not configured."
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Kaggle CLI
+        run: python -m pip install --quiet --upgrade kaggle
+
+      - name: Download snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: github-public-research-data
+          path: /tmp/github-public-data
+
+      - name: Publish or version Kaggle dataset
+        env:
+          KAGGLE_API_TOKEN: \${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/kaggle-publish
+          mkdir -p /tmp/kaggle-publish
+          cp /tmp/github-public-data/README.md /tmp/kaggle-publish/
+          cp /tmp/github-public-data/DATA_MANIFEST.csv /tmp/kaggle-publish/
+          cp /tmp/github-public-data/EXCLUSIONS.csv /tmp/kaggle-publish/
+          cp /tmp/github-public-data/SOURCE_REPOSITORIES.csv /tmp/kaggle-publish/
+          cp /tmp/github-public-data/SNAPSHOT_METADATA.json /tmp/kaggle-publish/
+          cp /tmp/github-public-data/SNAPSHOT_SHA256.txt /tmp/kaggle-publish/
+          cp /tmp/github-public-data/github-public-research-data.zip /tmp/kaggle-publish/
+          cat > /tmp/kaggle-publish/dataset-metadata.json <<'JSON'
+          {
+            "title": "Saeid Homayoun GitHub Public Research Data",
+            "id": "sadhon/github-public-research-data",
+            "licenses": [
+              {
+                "name": "other"
+              }
+            ]
+          }
+          JSON
+
+          dataset="sadhon/github-public-research-data"
+          kaggle datasets list --page-size 1 >/dev/null
+          if kaggle datasets files "\${dataset}" >/dev/null 2>&1; then
+            kaggle datasets version \
+              -p /tmp/kaggle-publish \
+              -m "Sync GitHub public research data \${GITHUB_SHA}"
+          else
+            kaggle datasets create -p /tmp/kaggle-publish
+          fi
+
+          echo "### Kaggle published" >> "\${GITHUB_STEP_SUMMARY}"
+          echo "https://www.kaggle.com/datasets/sadhon/github-public-research-data" >> "\${GITHUB_STEP_SUMMARY}"
+
+  publish-huggingface:
+    name: Publish Hugging Face mirror
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Hugging Face credential
+        env:
+          HF_TOKEN: \${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "\${HF_TOKEN}" ]]; then
+            echo "::error::HF_TOKEN is not configured."
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Hugging Face client
+        run: python -m pip install --quiet --upgrade huggingface_hub
+
+      - name: Download snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: github-public-research-data
+          path: /tmp/github-public-data
+
+      - name: Publish Hugging Face dataset
+        env:
+          HF_TOKEN: \${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+
+          repo_id = "SADHON/github-public-research-data"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type="dataset", private=False, exist_ok=True)
+          api.upload_folder(
+              repo_id=repo_id,
+              repo_type="dataset",
+              folder_path="/tmp/github-public-data",
+              commit_message=f"Sync GitHub public research data {os.environ.get('GITHUB_SHA', '')}",
+          )
+          print(f"Published https://huggingface.co/datasets/{repo_id}")
+          PY
+
+          echo "### Hugging Face published" >> "\${GITHUB_STEP_SUMMARY}"
+          echo "https://huggingface.co/datasets/SADHON/github-public-research-data" >> "\${GITHUB_STEP_SUMMARY}"
