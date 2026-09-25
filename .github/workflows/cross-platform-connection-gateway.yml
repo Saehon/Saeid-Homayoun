@@ -187,6 +187,7 @@ jobs:
       DATABRICKS_AUTH_TYPE: github-oidc
       DATABRICKS_HOST_RAW: ${{ vars.DATABRICKS_HOST }}
       DATABRICKS_CLIENT_ID_RAW: ${{ vars.DATABRICKS_CLIENT_ID }}
+      DATABRICKS_ACCOUNT_ID_RAW: ${{ vars.DATABRICKS_ACCOUNT_ID }}
     steps:
       - name: Normalize and validate Databricks configuration
         id: auth
@@ -195,12 +196,13 @@ jobs:
           set -euo pipefail
           host="$(printf '%s' "${DATABRICKS_HOST_RAW}" | tr -d '\r\n' | xargs)"
           client_id="$(printf '%s' "${DATABRICKS_CLIENT_ID_RAW}" | tr -d '\r\n' | xargs)"
+          account_id="$(printf '%s' "${DATABRICKS_ACCOUNT_ID_RAW}" | tr -d '\r\n' | xargs)"
 
-          if [[ -z "${host}" || -z "${client_id}" ]]; then
+          if [[ -z "${host}" || -z "${client_id}" || -z "${account_id}" ]]; then
             echo "configured=false" >> "${GITHUB_OUTPUT}"
-            echo "::notice::Databricks OIDC requires DATABRICKS_HOST and DATABRICKS_CLIENT_ID repository variables."
+            echo "::notice::Databricks OIDC requires DATABRICKS_HOST, DATABRICKS_CLIENT_ID, and DATABRICKS_ACCOUNT_ID repository variables."
             echo "### Databricks ⚪" >> "${GITHUB_STEP_SUMMARY}"
-            echo "Add the workspace URL as DATABRICKS_HOST and the service-principal Application ID as DATABRICKS_CLIENT_ID." >> "${GITHUB_STEP_SUMMARY}"
+            echo "Add the workspace URL as DATABRICKS_HOST, service-principal Application ID as DATABRICKS_CLIENT_ID, and Databricks account ID as DATABRICKS_ACCOUNT_ID." >> "${GITHUB_STEP_SUMMARY}"
             exit 0
           fi
 
@@ -215,6 +217,7 @@ jobs:
           echo "configured=true" >> "${GITHUB_OUTPUT}"
           echo "host=${host}" >> "${GITHUB_OUTPUT}"
           echo "client_id=${client_id}" >> "${GITHUB_OUTPUT}"
+          echo "account_id=${account_id}" >> "${GITHUB_OUTPUT}"
 
       - name: Install Databricks CLI
         if: steps.auth.outputs.configured == 'true'
@@ -226,6 +229,7 @@ jobs:
           DATABRICKS_HOST: ${{ steps.auth.outputs.host }}
           DATABRICKS_CLIENT_ID: ${{ steps.auth.outputs.client_id }}
           DATABRICKS_AUTH_TYPE: github-oidc
+          DATABRICKS_TOKEN_AUDIENCE: ${{ steps.auth.outputs.account_id }}
         shell: bash
         run: |
           set -euo pipefail
