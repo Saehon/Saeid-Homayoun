@@ -1,6 +1,10 @@
-# Saeid Homayoun
+# Dr. Saeid Homayoun
 
-**Scholar in Accounting, Auditing & Sustainability | Agentic AI · Financial Reporting · Assurance · ESG**
+**Accounting Scholar and AI Researcher | AI-enabled Auditing · Agentic AI · Audit Analytics · LLMs · CAM/KAM · ICFR · IFRS · ESG**
+
+Research expertise at the intersection of **artificial intelligence, accounting, auditing, assurance, financial reporting, internal control, finance, and sustainability**.
+
+**Academic identity:** [Google Scholar](https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-2536-0446) · [GitHub](https://github.com/Saehon) · [Kaggle](https://www.kaggle.com/sadhon) · [Hugging Face](https://huggingface.co/SADHON) · [SSRN AI/KAM paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139)
 
 I build reproducible research and education infrastructure at the intersection of **accounting, auditing, finance, sustainability, corporate governance, internal control, and artificial intelligence**.
 
