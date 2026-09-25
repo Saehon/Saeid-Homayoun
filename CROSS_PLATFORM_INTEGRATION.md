@@ -13,7 +13,6 @@ This file is the canonical public integration map for the **Saehon/Saeid-Homayou
 | **Kaggle** | benchmark datasets, executable notebooks and public replication/comparison |
 | **Google Drive** | controlled research files, manuscripts, working documents and larger non-public research material |
 | **AWS** | secure data, model/agent execution, evidence storage, audit/control telemetry and governed cloud research |
-| **Databricks** | scalable lakehouse analytics, Mosaic AI, MLflow, Unity Catalog, tracing and reproducible data/ML workflows |
 | **Microsoft** | Foundry/Fabric enterprise agents, finance/data analytics and governance research |
 | **Anthropic / Claude** | reasoning, document analysis and financial-services agent workflows |
 | **Google / Gemini** | multimodal agents, Gemini/ADK development and BigQuery-scale analytics |
@@ -29,7 +28,6 @@ This file is the canonical public integration map for the **Saehon/Saeid-Homayou
 - Hugging Face AWS data registry: https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry
 - Kaggle profile: https://www.kaggle.com/sadhon
 - Kaggle AWS data registry: https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
-- Databricks research area: https://github.com/Saehon/Saeid-Homayoun/tree/main/databricks
 - External agent ecosystems: https://github.com/Saehon/Saeid-Homayoun/tree/main/external-agent-ecosystems
 - Google Drive controlled integration record: https://docs.google.com/document/d/1KI8TfBi49kUH-RVBpypnccUvUD2ZeJDBbU3aqFonnKg/edit
 
@@ -58,7 +56,7 @@ GitHub canonical record
 Hugging   Kaggle   Google Drive
   Face              controlled files
         ↓
-AWS / Databricks / Microsoft data & execution layers
+AWS / Microsoft data & execution layers
         ↓
 OpenAI / Claude / Gemini / AWS / Microsoft / open-source agents
         ↓
