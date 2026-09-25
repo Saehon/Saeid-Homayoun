@@ -19,6 +19,15 @@ I conduct research at the intersection of **artificial intelligence, accounting,
 **Research profile:** [English](SAEID_HOMAYOUN_AI_RESEARCH_PROFILE.md) · [简体中文 / Chinese](SAEID_HOMAYOUN_AI_RESEARCH_PROFILE_ZH.md)
 
 ---
+## Independent academic evidence
+
+This public AI-research identity is supported by external scholarly sources, not only GitHub self-description:
+
+- **University of Gävle:** Senior Lecturer in Business Administration with research/teaching in accounting and auditing — https://www.hig.se/engelska/university-of-gavle/research/researchers/aue/saeid-homayoun
+- **SSRN (2026):** *AI-Enabled Key Audit Matter Disclosures: A Hybrid LLM Approach to Enhancing Audit Report Transparency* — https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139
+- **Routledge / Taylor & Francis:** co-author of *AI for Sustainable Business: Leveraging Technology for a Better Future* — https://www.routledge.com/AI-for-Sustainable-Business-Leveraging-Technology-for-a-Better-Future/Rezaee-Boumediene-Homayoun-Boumediene/p/book/9781032987309
+- **American Accounting Association:** guest-editor contact on the Journal of Forensic Accounting Research Artificial Intelligence special-interest forum — https://aaahq.org/portals/0/documents/calls/2024/CFP%20JFAR%20FA%20and%20AI_0.pdf
+
 
 ## NAAIL OpenLab™
 
