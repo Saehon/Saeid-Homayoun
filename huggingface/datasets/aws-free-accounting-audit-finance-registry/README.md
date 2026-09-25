@@ -27,3 +27,6 @@ This dataset mirrors metadata and links only. It does not redistribute third-par
 Canonical source: https://github.com/Saehon/Saeid-Homayoun/tree/main/aws
 
 Kaggle mirror: https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
+
+Google Drive controlled record:
+https://docs.google.com/document/d/1KI8TfBi49kUH-RVBpypnccUvUD2ZeJDBbU3aqFonnKg/edit
