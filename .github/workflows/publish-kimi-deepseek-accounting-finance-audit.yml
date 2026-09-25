@@ -143,8 +143,25 @@ jobs:
           set -euo pipefail
           dataset="sadhon/kimi-deepseek-accounting-finance-audit"
           kaggle datasets list --page-size 1 >/dev/null
-          if kaggle datasets files "${dataset}" >/dev/null 2>&1; then
-            kaggle datasets version -p /tmp/kimi-deepseek-stack -m "Sync Kimi + DeepSeek registry ${GITHUB_SHA}"
-          else
-            kaggle datasets create -p /tmp/kimi-deepseek-stack --public
-          fi
+          publish_kaggle() {
+            if kaggle datasets files "${dataset}" >/dev/null 2>&1; then
+              kaggle datasets version -p /tmp/kimi-deepseek-stack -m "Sync Kimi + DeepSeek registry ${GITHUB_SHA}"
+            else
+              kaggle datasets create -p /tmp/kimi-deepseek-stack --public
+            fi
+          }
+
+          for attempt in 1 2 3 4; do
+            if publish_kaggle; then
+              echo "Kaggle publish succeeded on attempt ${attempt}."
+              exit 0
+            fi
+            if [[ "${attempt}" -lt 4 ]]; then
+              sleep_seconds=$((attempt * 10))
+              echo "Kaggle publish attempt ${attempt} failed; retrying in ${sleep_seconds}s."
+              sleep "${sleep_seconds}"
+            fi
+          done
+
+          echo "::error::Kaggle publish failed after 4 attempts."
+          exit 1
