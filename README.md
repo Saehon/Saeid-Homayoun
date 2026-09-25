@@ -48,7 +48,6 @@ Detailed empirical tables, p-values, abstracts, current sample status, FT50/AJG 
 - **AWS free/open data registry:** https://github.com/Saehon/Saeid-Homayoun/blob/main/aws/FREE_DATA_REGISTRY.md
 - **Hugging Face AWS accounting/audit/finance/ESG registry:** https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry
 - **Kaggle AWS accounting/audit/finance/ESG registry:** https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
-- **Databricks research area:** https://github.com/Saehon/Saeid-Homayoun/tree/main/databricks
 - **Google Drive controlled integration record:** https://docs.google.com/document/d/1KI8TfBi49kUH-RVBpypnccUvUD2ZeJDBbU3aqFonnKg/edit
 
 **Data flow:** AWS/Open Data → provenance & licence gate → GitHub → Hugging Face + Kaggle → NAAIL/FRANKENSTEIN agents → Reviewer/Falsification → Human Gate™.
@@ -85,7 +84,6 @@ My research uses AI to strengthen core accounting and auditing concepts rather t
 **Kaggle** → benchmark datasets, executable notebooks and public replication  
 **Google Drive** → controlled research files, working papers and licensed/non-public evidence  
 **AWS** → secure data, Bedrock/AgentCore/SageMaker execution, S3 evidence, CloudTrail/Config/Audit Manager telemetry  
-**Databricks** → scalable lakehouse analytics, Mosaic AI, MLflow, Unity Catalog and experiment tracing  
 **Microsoft** → Foundry/Fabric enterprise agents, data and analytics  
 **Claude / Gemini / OpenAI** → replaceable reasoning, analysis, coding and cross-provider evaluation layers
 
@@ -373,7 +371,7 @@ NAAIL is not built around one AI company.
 
 Its Technology Core can evaluate and connect technologies from:
 
-**OpenAI · Microsoft · Google/Gemini · Anthropic/Claude · AWS · Databricks · Hugging Face · Open-Source Ecosystems · Local Models · Future Providers**
+**OpenAI · Microsoft · Google/Gemini · Anthropic/Claude · AWS · Hugging Face · Open-Source Ecosystems · Local Models · Future Providers**
 
 The question is therefore not simply:
 
@@ -392,13 +390,12 @@ NAAIL/FRANKENSTEIN keeps provider-specific technology replaceable while comparin
 | **Microsoft** | Microsoft Foundry · Microsoft Fabric | governed agents, enterprise data and analytics |
 | **Anthropic / Claude** | Claude Platform · Claude on AWS | reasoning, document analysis and agent workflows |
 | **Google / Gemini** | Gemini Enterprise Agent Platform · BigQuery | agent development, multimodal analysis and scalable financial data analytics |
-| **Databricks** | Mosaic AI / Agent Framework · MLflow · Unity Catalog · Lakehouse | governed data/AI pipelines, experiments, tracing and large-scale research workflows |
 | **AWS** | Amazon Bedrock · Bedrock AgentCore · SageMaker AI · S3 · Glue · Athena/Redshift · CloudTrail · AWS Config · AWS Audit Manager | secure model/agent execution, financial-data lake, audit evidence, control monitoring and traceability |
 
 **Accounting/audit research logic:**  
 **Financial data & evidence → governed data platform → accounting/audit/finance agents → cross-provider comparison → Reviewer/Falsification → Human Gate™**
 
-[AWS research integration →](aws/README.md) · [Databricks research area →](databricks/README.md) · [External agent ecosystems →](external-agent-ecosystems/README.md) · [AWS free/open data registry →](aws/FREE_DATA_REGISTRY.md)
+[AWS research integration →](aws/README.md) · [External agent ecosystems →](external-agent-ecosystems/README.md) · [AWS free/open data registry →](aws/FREE_DATA_REGISTRY.md)
 
 ---
 
