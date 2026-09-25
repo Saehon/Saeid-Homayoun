@@ -103,3 +103,15 @@ The catalogue and benchmark are now connected to the cybernetic-control article 
 - [Hugging Face dataset package](huggingface/datasets/taming-modern-prometheus/)
 
 The benchmark contains three public-derived Microsoft aggregate checks and ten explicitly synthetic gate cases. It is a research and education scaffold, not audit evidence or a professional assurance conclusion.
+
+## Microsoft, Copilot & IBM companion registry
+
+A dedicated machine-readable registry and safe clone scripts are maintained here:
+
+- [Microsoft, Copilot & IBM Accounting/Finance/Audit Stack](open-source/accounting-finance-audit/README.md)
+- [Machine-readable repository registry](open-source/accounting-finance-audit/repos.yml)
+- [Linux/macOS/Codespaces clone script](open-source/accounting-finance-audit/bootstrap.sh)
+- [Windows PowerShell clone script](open-source/accounting-finance-audit/bootstrap.ps1)
+- [Security and licence rules](open-source/accounting-finance-audit/SECURITY_AND_LICENSE.md)
+
+The companion registry covers Microsoft FinanceBenchmark, Copilot Studio samples, Microsoft Finance analytics/forecasting/Qlib, IBM AML and fraud datasets/tools, watsonx examples, financial-agent assurance benchmarks, Arelle XBRL, SEC EDGAR download tooling, audit analytics, FinBERT and FinGPT. Third-party source is referenced or cloned from upstream rather than silently copied into this repository.
