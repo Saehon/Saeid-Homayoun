@@ -1,0 +1,25 @@
+platform,name,url,domain,license,download_policy,notes
+GitHub,MoonshotAI/Kimi-K3,https://github.com/MoonshotAI/Kimi-K3,frontier multimodal agentic model,see upstream,reference_only,Very large frontier model; do not mirror weights in Git
+GitHub,MoonshotAI/Kimi-K2.5,https://github.com/MoonshotAI/Kimi-K2.5,multimodal agentic model,Modified MIT,reference_only,Official Moonshot AI source
+GitHub,MoonshotAI/Kimi-K2,https://github.com/MoonshotAI/Kimi-K2,agentic LLM,Modified MIT,reference_only,Official Moonshot AI source
+HuggingFace,moonshotai/Kimi-K2.5,https://huggingface.co/moonshotai/Kimi-K2.5,multimodal agentic model,Modified MIT,manual_large,Approx. 595 GB repository
+HuggingFace,moonshotai/Kimi-VL-A3B-Instruct,https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct,multimodal documents and tables,MIT,opt_in_model,Practical Kimi option for research hardware
+HuggingFace,moonshotai/Kimi-Linear-48B-A3B-Instruct,https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct,long-context finance and filings,MIT,manual_large,48B total / 3B active; long context
+GitHub,deepseek-ai/DeepSeek-R1,https://github.com/deepseek-ai/DeepSeek-R1,reasoning,MIT,reference_only,Official DeepSeek reasoning repository
+GitHub,deepseek-ai/DeepSeek-V3,https://github.com/deepseek-ai/DeepSeek-V3,frontier LLM,MIT,reference_only,671B-class model; high compute
+HuggingFace,deepseek-ai/DeepSeek-V3.2,https://huggingface.co/deepseek-ai/DeepSeek-V3.2,frontier reasoning and tool use,MIT,manual_large,Approx. 685B parameters
+HuggingFace,deepseek-ai/DeepSeek-R1-Distill-Qwen-7B,https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B,local reasoning,MIT,opt_in_model,Recommended DeepSeek baseline
+GitHub,williamjxj/agentic-langgraph-accounting,https://github.com/williamjxj/agentic-langgraph-accounting,accounting audit invoice RAG,MIT,clone_optional,Uses DeepSeek through OpenAI-compatible API
+GitHub,hananedupouy/LLMs-in-Finance,https://github.com/hananedupouy/LLMs-in-Finance,finance agents RAG multimodal,MIT,clone_optional,Strong teaching and experimentation collection
+GitHub,ikarib/FinEvalKit,https://github.com/ikarib/FinEvalKit,audit-ready RAG and agent evaluation,MIT,clone_optional,Useful reviewer/falsification layer
+GitHub,Arelle/Arelle,https://github.com/Arelle/Arelle,XBRL validation,Apache-2.0,clone_optional,Core XBRL infrastructure
+GitHub,OpenBB-finance/OpenBB,https://github.com/OpenBB-finance/OpenBB,finance data platform,AGPL-3.0,clone_optional,Open data/agent integration platform
+GitHub,kai-tran-cs/FinRAG,https://github.com/kai-tran-cs/FinRAG,SEC 10-K financial RAG,MIT,clone_optional,Grounded financial QA example
+GitHub,cv-lee/FinanceRAG,https://github.com/cv-lee/FinanceRAG,finance RAG benchmark,check upstream,reference_only,Research benchmark; confirm license before redistribution
+HuggingFace,bevaya/FinQA,https://huggingface.co/datasets/bevaya/FinQA,financial numerical reasoning,MIT,default_dataset,Parquet-friendly full-fidelity FinQA repackaging
+HuggingFace,ibm-research/finqa,https://huggingface.co/datasets/ibm-research/finqa,financial numerical reasoning,CC-BY-4.0,reference_dataset,Canonical research distribution
+HuggingFace,PatronusAI/financebench,https://huggingface.co/datasets/PatronusAI/financebench,financial open-book QA,CC-BY-NC-4.0,default_dataset,Research/education use; non-commercial restriction
+HuggingFace,takala/financial_phrasebank,https://huggingface.co/datasets/takala/financial_phrasebank,financial sentiment,CC-BY-NC-SA-3.0,reference_dataset,Research/education; non-commercial share-alike
+Kaggle,mlg-ulb/creditcardfraud,https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud,fraud detection,ODbL/database terms,opt_in_dataset,284807 transactions; 492 frauds
+Kaggle,ealaxi/paysim1,https://www.kaggle.com/datasets/ealaxi/paysim1,synthetic financial fraud,CC-BY-SA-4.0,opt_in_dataset,Mobile-money fraud simulation
+Kaggle,nclunaventures/2024-financial-year-8-core-sec-datasets-for-ml,https://www.kaggle.com/datasets/nclunaventures/2024-financial-year-8-core-sec-datasets-for-ml,SEC filing index,verify current terms,reference_dataset,Useful discovery index; preserve SEC provenance
