@@ -14,7 +14,7 @@ Systems Thinking → FT50/ABS4 → Replication → Co-Scientist → AlphaFold-in
 
 **Additive governance:** preserve existing artifacts, registries, benchmarks, pilots and negative results. New architecture layers organize and connect prior work rather than deleting it.
 
-## Gold Research Data\n\n- [Gold Research Datasets Registry](GOLD-RESEARCH-DATASETS.md) — SEFD, SEC/EDGAR/XBRL, PCAOB inspection data, AAER and domain-specific reference-data design.\n\n## Research Registry Index
+## Gold Research Data\n\n- [Gold Research Datasets Registry](GOLD-RESEARCH-DATASETS.md) — SEFD, SEC/EDGAR/XBRL, PCAOB inspection data, AAER and domain-specific reference-data design.\n- [EU IFRS + ESG/ESRS/VSME + Student Research Data Layer](EU-IFRS-ESG-VSME-STUDENT-RESEARCH.md) — ESEF/iXBRL, European sustainability reporting and thesis-ready data/replication standards.\n\n## Research Registry Index
 
 ### Cross-platform research
 - [FT50/ABS4 Replication Registry](FT50-ABS4-REPLICATION.md)
