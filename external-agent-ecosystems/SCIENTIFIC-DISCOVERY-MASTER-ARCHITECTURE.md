@@ -4,7 +4,7 @@
 
 ## 0. Existing Assets — Preserved
 
-GitHub + Hugging Face + Kaggle + Google Drive + arXiv + Databricks/Delta + MLflow  
+GitHub + Hugging Face + Kaggle + Google Drive + arXiv + Versioned Evidence Store + MLflow  
 SEC/XBRL + PCAOB + AAER + CAM/KAM + ICFR + IFRS + ESG/VSME  
 FT50/ABS4 replication registries + external-agent registries + Microsoft SEC/XBRL Pilot 001  
 OpenAI + Anthropic/Claude + Google/Gemini + Microsoft + open-source agents.
@@ -100,7 +100,7 @@ predictive validity + calibration + evidence quality + robustness + reproducibil
 FRANKENSTEIN is the controlled integration layer, not the scientific method itself.
 
 Evidence/Data
-→ Databricks/Delta
+→ Versioned Evidence Store
 → Evidence Graph
 → provider adapters
 → OpenAI / Claude / Gemini / Microsoft / open-source agents
@@ -173,7 +173,7 @@ Hugging Face = public datasets + models + benchmark artifacts.
 Kaggle = executable public notebooks + benchmark comparison.
 Google Drive = controlled research files + manuscripts.
 arXiv = frontier discovery.
-Databricks/Delta = scalable, versioned evidence/data engineering.
+Versioned Evidence Store = scalable, versioned evidence/data engineering.
 MLflow = experiments + traces + metrics + model/prompt/config lineage.
 
 All systems should share:
