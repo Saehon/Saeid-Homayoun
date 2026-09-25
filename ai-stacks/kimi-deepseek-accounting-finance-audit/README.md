@@ -13,6 +13,16 @@ This folder deliberately does **not** copy hundreds of gigabytes of model weight
 - setup.ps1 — Windows setup.
 - setup.sh — Linux/macOS setup.
 
+## Cross-platform control links
+
+- GitHub canonical source: https://github.com/Saehon/Saeid-Homayoun/tree/main/ai-stacks/kimi-deepseek-accounting-finance-audit
+- Hugging Face mirror: https://huggingface.co/datasets/SADHON/kimi-deepseek-accounting-finance-audit
+- Kaggle mirror: https://www.kaggle.com/datasets/sadhon/kimi-deepseek-accounting-finance-audit
+- Google Drive control folder: https://drive.google.com/drive/folders/1oEZR1FI4fsJzkN4O5aHEWMZi4fXacqNW
+- Google Drive master integration record: https://docs.google.com/document/d/1Ts1DpE608E5DpOTX5ihfculpkNNUwGwl1v2p3rnkNK8/edit
+
+**Control logic:** GitHub is the executable source of truth; Hugging Face and Kaggle are synchronized public mirrors; Google Drive is the controlled research/documentation record.
+
 ## Recommended research stack
 
 ### 1. DeepSeek reasoning layer
