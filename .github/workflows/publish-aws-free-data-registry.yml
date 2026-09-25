@@ -1,0 +1,104 @@
+name: Publish AWS Free Data Registry
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "aws/free-data-registry.csv"
+      - "aws/FREE_DATA_REGISTRY.md"
+      - "huggingface/datasets/aws-free-accounting-audit-finance-registry/**"
+      - "kaggle/datasets/aws-free-accounting-audit-finance-registry/**"
+      - ".github/workflows/publish-aws-free-data-registry.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  publish-huggingface:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Hugging Face token
+        id: auth
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${HF_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::HF_TOKEN missing; Hugging Face publication skipped."
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.auth.outputs.configured == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Publish public Hugging Face dataset
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          python -m pip install --upgrade huggingface_hub
+          rm -rf /tmp/aws-free-data-registry
+          mkdir -p /tmp/aws-free-data-registry
+          cp huggingface/datasets/aws-free-accounting-audit-finance-registry/README.md /tmp/aws-free-data-registry/README.md
+          cp aws/free-data-registry.csv /tmp/aws-free-data-registry/aws_free_data_registry.csv
+          cp aws/FREE_DATA_REGISTRY.md /tmp/aws-free-data-registry/SOURCE_REGISTRY.md
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          repo_id = "SADHON/aws-free-accounting-audit-finance-registry"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type='dataset', private=False, exist_ok=True)
+          api.upload_folder(repo_id=repo_id, repo_type='dataset', folder_path='/tmp/aws-free-data-registry', commit_message='Sync AWS free-data registry from GitHub')
+          print(f'Published https://huggingface.co/datasets/{repo_id}')
+          PY
+
+  publish-kaggle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Kaggle token
+        id: auth
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${KAGGLE_API_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::KAGGLE_API_TOKEN missing; Kaggle publication skipped."
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.auth.outputs.configured == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Publish public Kaggle registry dataset
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          python -m pip install --upgrade kaggle
+          DIR="kaggle/datasets/aws-free-accounting-audit-finance-registry"
+          cp aws/free-data-registry.csv "${DIR}/aws_free_data_registry.csv"
+          cp aws/FREE_DATA_REGISTRY.md "${DIR}/SOURCE_REGISTRY.md"
+          REF="sadhon/aws-free-accounting-audit-finance-registry"
+          if kaggle datasets files "${REF}" >/dev/null 2>&1; then
+            kaggle datasets version -p "${DIR}" -m "GitHub sync ${GITHUB_SHA}"
+          else
+            kaggle datasets create -p "${DIR}" --public
+          fi
