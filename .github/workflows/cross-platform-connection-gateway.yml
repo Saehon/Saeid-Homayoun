@@ -185,21 +185,36 @@ jobs:
       id-token: write
     env:
       DATABRICKS_AUTH_TYPE: github-oidc
-      DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
-      DATABRICKS_CLIENT_ID: ${{ vars.DATABRICKS_CLIENT_ID }}
+      DATABRICKS_HOST_RAW: ${{ vars.DATABRICKS_HOST }}
+      DATABRICKS_CLIENT_ID_RAW: ${{ vars.DATABRICKS_CLIENT_ID }}
     steps:
-      - name: Check Databricks federation configuration
+      - name: Normalize and validate Databricks configuration
         id: auth
         shell: bash
         run: |
-          if [[ -z "${DATABRICKS_HOST}" || -z "${DATABRICKS_CLIENT_ID}" ]]; then
+          set -euo pipefail
+          host="$(printf '%s' "${DATABRICKS_HOST_RAW}" | tr -d '\r\n' | xargs)"
+          client_id="$(printf '%s' "${DATABRICKS_CLIENT_ID_RAW}" | tr -d '\r\n' | xargs)"
+
+          if [[ -z "${host}" || -z "${client_id}" ]]; then
             echo "configured=false" >> "${GITHUB_OUTPUT}"
-            echo "::notice::Databricks OIDC is ready in GitHub but requires DATABRICKS_HOST and DATABRICKS_CLIENT_ID repository variables plus a Databricks federation policy."
+            echo "::notice::Databricks OIDC requires DATABRICKS_HOST and DATABRICKS_CLIENT_ID repository variables."
             echo "### Databricks ⚪" >> "${GITHUB_STEP_SUMMARY}"
-            echo "GitHub OIDC workflow is installed. Add DATABRICKS_HOST and DATABRICKS_CLIENT_ID after creating the Databricks service-principal federation policy." >> "${GITHUB_STEP_SUMMARY}"
-          else
-            echo "configured=true" >> "${GITHUB_OUTPUT}"
+            echo "Add the workspace URL as DATABRICKS_HOST and the service-principal Application ID as DATABRICKS_CLIENT_ID." >> "${GITHUB_STEP_SUMMARY}"
+            exit 0
           fi
+
+          if [[ ! "${host}" =~ ^https:// ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::error::DATABRICKS_HOST must be the full Databricks workspace URL beginning with https://, not a workspace/account UUID."
+            echo "### Databricks ❌" >> "${GITHUB_STEP_SUMMARY}"
+            echo "DATABRICKS_HOST is not a valid workspace URL. Replace it with the browser URL for the Databricks workspace." >> "${GITHUB_STEP_SUMMARY}"
+            exit 1
+          fi
+
+          echo "configured=true" >> "${GITHUB_OUTPUT}"
+          echo "host=${host}" >> "${GITHUB_OUTPUT}"
+          echo "client_id=${client_id}" >> "${GITHUB_OUTPUT}"
 
       - name: Install Databricks CLI
         if: steps.auth.outputs.configured == 'true'
@@ -207,6 +222,10 @@ jobs:
 
       - name: Verify Databricks identity
         if: steps.auth.outputs.configured == 'true'
+        env:
+          DATABRICKS_HOST: ${{ steps.auth.outputs.host }}
+          DATABRICKS_CLIENT_ID: ${{ steps.auth.outputs.client_id }}
+          DATABRICKS_AUTH_TYPE: github-oidc
         shell: bash
         run: |
           set -euo pipefail
