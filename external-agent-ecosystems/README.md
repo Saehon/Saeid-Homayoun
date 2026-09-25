@@ -4,6 +4,50 @@ This folder is a curated integration index of external open-source repositories 
 
 **Important:** External projects are referenced as upstream resources; their code is not copied or vendored here. Each upstream project remains subject to its own license, terms, and attribution requirements.
 
+## Master Research Architecture
+
+Start here:
+- [Scientific Discovery Master Architecture](SCIENTIFIC-DISCOVERY-MASTER-ARCHITECTURE.md)
+
+Master logic:
+Systems Thinking → FT50/ABS4 → Replication → Co-Scientist → AlphaFold-inspired Structure → AlphaEvolve-style Experiment Evolution → FRANKENSTEIN Integration → Domain Agents → Evidence Verification → Reviewer/Falsification → Independent Replication → Human Approval → Publication → Learning Loop.
+
+**Additive governance:** preserve existing artifacts, registries, benchmarks, pilots and negative results. New architecture layers organize and connect prior work rather than deleting it.
+
+## Research Registry Index
+
+### Cross-platform research
+- [FT50/ABS4 Replication Registry](FT50-ABS4-REPLICATION.md)
+- [arXiv × GitHub Research Registry](ARXIV-GITHUB-RESEARCH-REGISTRY.md)
+- [Databricks × FT50/ABS4 Research Registry](DATABRICKS-FT50-ABS4-REGISTRY.md)
+
+### Hugging Face
+- [Hugging Face Registry](HUGGINGFACE_REGISTRY.md)
+- [Hugging Face × FT50/ABS4 Registry](HUGGINGFACE-FT50-ABS4-REGISTRY.md)
+
+### Kaggle
+- [Kaggle Registry](KAGGLE_REGISTRY.md)
+- [Kaggle × FT50/ABS4 Registry](KAGGLE-FT50-ABS4-REGISTRY.md)
+
+### Executable pilots
+- [Databricks / SEC-XBRL research area](databricks/01-sec-xbrl/)
+- [Microsoft SEC/XBRL Pilot 001](databricks/01-sec-xbrl/README.md)
+- [Pilot 001 configuration](databricks/01-sec-xbrl/pilot_001_config.yaml)
+- [Evidence-grounded agent contract](databricks/01-sec-xbrl/agent_contract.json)
+
+## Platform Roles
+
+- **GitHub:** code, architecture, provenance and replication manifests.
+- **Hugging Face:** public datasets, models and benchmark artifacts.
+- **Kaggle:** executable public notebooks and benchmark comparison.
+- **Google Drive:** controlled research files, manuscripts and working documents.
+- **arXiv:** frontier research discovery.
+- **Databricks / Delta:** scalable, versioned evidence and data engineering.
+- **MLflow:** experiments, traces, metrics and model/prompt/configuration lineage.
+
+Shared identity across systems should use:
+**Experiment ID + Evidence ID + Dataset Version + Code Commit + Model Version + Human Decision.**
+
 ## Anthropic / Claude
 - https://github.com/anthropics/financial-services — financial-services agents and skills.
 
@@ -34,23 +78,36 @@ This folder is a curated integration index of external open-source repositories 
 - https://github.com/rominirani/financial-audit-agent-tutorial — financial audit agent tutorial; community example.
 - https://github.com/rajanm/retail-enterprise-agents — enterprise agents including vendor recovery/audit examples; community project.
 
+## Domain Research Programs
+
+SEC/XBRL → Audit Assertions → ICFR → CAM/KAM → Fraud/AAER → IFRS Judgment → ESG/VSME Assurance → Evidence/Citation Verification → Cross-Provider Evaluation → Replication/Falsification.
+
 ## Research integration map
 
 External data / SEC-XBRL / ERP / research files
+→ Databricks/Delta + Evidence Graph
 → Accounting & Finance analysis
 → Audit Evidence
 → Assertions / ICFR
-→ CAM/KAM
-→ Independent Reviewer / Falsification
-→ Human approval
+→ CAM/KAM / Fraud / IFRS / ESG
+→ OpenAI / Claude / Gemini / Microsoft / open-source agents
+→ FRANKENSTEIN orchestration
+→ deterministic controls
+→ independent Reviewer / Falsification
+→ replication
+→ human approval
+→ research outputs
+→ learning loop.
 
 ## Recommended use
 
-1. Treat these repositories as upstream references rather than automatically merging their code.
+1. Treat external repositories as upstream references rather than automatically merging their code.
 2. Pin exact versions/commits before a reproducible experiment.
 3. Record licenses and attribution before reusing code.
 4. Keep provider-specific adapters separate from domain logic.
 5. Benchmark providers on identical data, prompts/tasks, evidence, and evaluation criteria.
-6. Require human review for consequential accounting, audit, assurance, or financial conclusions.
+6. Preserve negative results and failed experiments.
+7. Require human review for consequential accounting, audit, assurance, or financial conclusions.
+8. Do not delete existing research artifacts when adding new architecture layers.
 
-_Last curated: 2026-09-25._
+_Last curated and reorganized: 2026-09-25._
