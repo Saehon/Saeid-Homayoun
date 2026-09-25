@@ -1,0 +1,33 @@
+{
+  "name": "Kimi + DeepSeek Open Stack for Accounting, Finance & Auditing",
+  "version": "2026-09-25",
+  "canonical_source": "https://github.com/Saehon/Saeid-Homayoun/tree/main/ai-stacks/kimi-deepseek-accounting-finance-audit",
+  "huggingface_target": "https://huggingface.co/datasets/SADHON/kimi-deepseek-accounting-finance-audit",
+  "kaggle_target": "https://www.kaggle.com/datasets/sadhon/kimi-deepseek-accounting-finance-audit",
+  "scope": [
+    "accounting",
+    "auditing",
+    "assurance",
+    "finance",
+    "SEC",
+    "XBRL",
+    "fraud detection",
+    "financial RAG",
+    "Kimi",
+    "DeepSeek"
+  ],
+  "distribution_policy": {
+    "third_party_model_weights": "reference-only unless explicitly downloaded by the user from the upstream source",
+    "third_party_datasets": "reference/download-from-upstream; do not relicense",
+    "published_mirror_contents": [
+      "README.md",
+      "catalog.csv",
+      "requirements.txt",
+      "download_assets.py",
+      "setup.ps1",
+      "setup.sh",
+      "INTEGRATION_MANIFEST.json"
+    ]
+  },
+  "human_review_required": true
+}
