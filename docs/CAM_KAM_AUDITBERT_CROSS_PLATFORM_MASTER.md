@@ -14,8 +14,8 @@ https://github.com/Saehon/Saeid-Homayoun/tree/main/open-data/cam-kam-auditbert-d
 | Platform | Role | Canonical location |
 |---|---|---|
 | GitHub | Code, reproducibility, provenance, validation, manifests and synchronization | https://github.com/Saehon/Saeid-Homayoun |
-| Hugging Face | CAM/KAM synthetic dataset mirror and model/data discovery | https://huggingface.co/datasets/SADHON/cam-kam-auditbert-public-demo |
-| Kaggle | Discoverable benchmark dataset/notebook layer | https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo |
+| Hugging Face | Controlled CAM/KAM synthetic dataset mirror and model/data discovery | https://huggingface.co/datasets/SADHON/cam-kam-auditbert-public-demo |
+| Kaggle | Controlled benchmark dataset/notebook mirror | https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo |
 | Google Drive | Private manuscript, licensed/raw data archive and cross-platform master record | Managed in the researcher's connected Google Drive |
 
 ## Verified research models
@@ -95,7 +95,14 @@ GitHub workflows:
 - .github/workflows/huggingface-cam-kam-auditbert-sync.yml
 - .github/workflows/kaggle-cam-kam-auditbert-sync.yml
 
-Changes to the platform mirror folders should flow through the existing GitHub Actions synchronization logic when the required platform credentials are configured.
+## Current verified integration status
+
+- **GitHub:** master registry, Hugging Face manifest, Kaggle manifest, and cross-platform links are committed.
+- **Hugging Face:** synchronization completed successfully; dataset updated on 25 Sep 2026 and remains private/controlled. The workflow now stages the cross-platform integration manifest.
+- **Kaggle:** dedicated CAM/KAM publication completed successfully; a new dataset version was created and `INTEGRATION_MANIFEST.md` uploaded. Existing workflow configuration keeps controlled/private publication mode.
+- **Google Drive:** a native Google Doc master record stores the platform links, model registry, metrics, data boundary, governance, and synchronization status.
+
+An unrelated general Kaggle multi-dataset synchronization job can still fail because another AWS registry dataset has an invalid title length; this does not block the dedicated CAM/KAM Kaggle publication.
 
 ## Next benchmark artifact
 
