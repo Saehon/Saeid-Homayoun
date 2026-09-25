@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-Write-Host "NAAIL OpenLab - Kaggle + Hugging Face + Databricks installer"
+Write-Host "NAAIL OpenLab - Kaggle + Hugging Face installer"
 Write-Host ""
 
 if (-not (Get-Command python -ErrorAction SilentlyContinue)) {
@@ -33,7 +33,7 @@ if (Get-Command winget -ErrorAction SilentlyContinue) {
 
 Write-Host ""
 Write-Host "Verification:"
-foreach ($cmd in @("kaggle", "hf", "databricks")) {
+foreach ($cmd in @("kaggle", "hf")) {
     $found = Get-Command $cmd -ErrorAction SilentlyContinue
     if ($found) {
         Write-Host "  [OK] $cmd -> $($found.Source)"
@@ -46,5 +46,4 @@ Write-Host ""
 Write-Host "Authentication is intentionally separate."
 Write-Host "Kaggle: configure Kaggle authentication/API token."
 Write-Host "Hugging Face: run 'hf auth login'."
-Write-Host "Databricks: configure authentication for your Databricks workspace."
 Write-Host "Never commit credentials to GitHub."
