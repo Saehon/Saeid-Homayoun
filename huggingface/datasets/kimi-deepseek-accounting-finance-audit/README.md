@@ -51,6 +51,13 @@ This mirror does **not** re-host third-party model weights or third-party datase
 - `setup.ps1` / `setup.sh` — local setup.
 - `INTEGRATION_MANIFEST.json` — cross-platform provenance.
 
+## Connected research records
+
+- GitHub canonical source: https://github.com/Saehon/Saeid-Homayoun/tree/main/ai-stacks/kimi-deepseek-accounting-finance-audit
+- Kaggle mirror: https://www.kaggle.com/datasets/sadhon/kimi-deepseek-accounting-finance-audit
+- Google Drive control folder: https://drive.google.com/drive/folders/1oEZR1FI4fsJzkN4O5aHEWMZi4fXacqNW
+- Google Drive master integration record: https://docs.google.com/document/d/1Ts1DpE608E5DpOTX5ihfculpkNNUwGwl1v2p3rnkNK8/edit
+
 ## Canonical source
 
 GitHub remains the source of truth. Hugging Face and Kaggle are public mirrors for discovery, reproducibility, and teaching.
