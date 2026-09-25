@@ -4,6 +4,7 @@ datasets>=3.0
 transformers>=4.55
 accelerate>=1.0
 safetensors>=0.5
+torch>=2.4
 kagglehub>=0.3
 
 # Accounting / finance analysis
@@ -12,6 +13,8 @@ pyarrow>=18
 numpy>=2.0
 scikit-learn>=1.5
 requests>=2.32
+edgartools>=5.47
+sec-edgar-downloader
 
 # Retrieval / agent prototypes
 sentence-transformers>=3.0
