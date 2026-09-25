@@ -187,7 +187,7 @@ jobs:
       DATABRICKS_AUTH_TYPE: github-oidc
       DATABRICKS_HOST_RAW: ${{ vars.DATABRICKS_HOST }}
       DATABRICKS_CLIENT_ID_RAW: ${{ vars.DATABRICKS_CLIENT_ID }}
-      DATABRICKS_ACCOUNT_ID_RAW: ${{ vars.DATABRICKS_ACCOUNT_ID }}
+      DATABRICKS_ACCOUNT_ID_RAW: e87da6cf-05f6-4be8-bdaf-489cd01d3790
     steps:
       - name: Normalize and validate Databricks configuration
         id: auth
