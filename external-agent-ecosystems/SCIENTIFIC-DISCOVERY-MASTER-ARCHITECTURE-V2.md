@@ -129,7 +129,7 @@ Evolution/search may use training/development evidence only. Locked holdout evid
 FRANKENSTEIN connects heterogeneous components while preserving scientific controls.
 
 Gold data / SEC / PCAOB / AAER / ESEF / ESRS / VSME
-→ Databricks/Delta
+→ Versioned Evidence Store
 → Evidence Graph
 → provider-neutral task contract
 → OpenAI / Claude / Gemini / Microsoft / open-source agents
@@ -155,7 +155,7 @@ Provider identity is blinded where feasible during comparative evaluation.
 GitHub = code/provenance/replication manifests.
 Hugging Face = public datasets/models/benchmarks.
 Kaggle = executable public notebooks/benchmarks.
-Databricks/Delta = versioned evidence/data engineering.
+Versioned Evidence Store = versioned evidence/data engineering.
 MLflow = experiment/tracing/evaluation lineage.
 Google Drive = controlled research files/manuscripts.
 arXiv = frontier-method discovery.
