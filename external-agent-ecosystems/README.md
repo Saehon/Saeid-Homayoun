@@ -44,6 +44,7 @@ Systems Thinking → FT50/ABS4 → Replication → Co-Scientist → AlphaFold-in
 - **arXiv:** frontier research discovery.
 - **Databricks / Delta:** scalable, versioned evidence and data engineering.
 - **MLflow:** experiments, traces, metrics and model/prompt/configuration lineage.
+- **AWS:** secure cloud execution, model/agent hosting, governed evidence storage and continuous audit/control telemetry through Bedrock/AgentCore, S3, SageMaker, CloudTrail, Config and Audit Manager.
 
 Shared identity across systems should use:
 **Experiment ID + Evidence ID + Dataset Version + Code Commit + Model Version + Human Decision.**
@@ -73,6 +74,16 @@ Shared identity across systems should use:
 - https://github.com/GoogleCloudPlatform/generative-ai — Google Cloud generative-AI samples.
 - https://github.com/GoogleCloudPlatform/agent-starter-pack — production-oriented agent starter templates.
 
+## AWS
+- https://aws.amazon.com/bedrock/ — Amazon Bedrock for governed access to foundation models.
+- https://aws.amazon.com/bedrock/agentcore/ — Amazon Bedrock AgentCore for building and operating AI agents.
+- https://aws.amazon.com/sagemaker/ — SageMaker AI for ML research and model workflows.
+- https://aws.amazon.com/s3/ — S3 as an evidence/data-lake layer for research datasets.
+- https://aws.amazon.com/cloudtrail/ — CloudTrail for execution/activity traceability.
+- https://aws.amazon.com/config/ — AWS Config for configuration/control evidence.
+- https://aws.amazon.com/audit-manager/ — AWS Audit Manager for automated evidence collection and audit assessments.
+- [Repository AWS research integration](../aws/README.md)
+
 ## Community accounting/audit examples
 - https://github.com/openaccountant/skills — accounting/finance skills; community project.
 - https://github.com/rominirani/financial-audit-agent-tutorial — financial audit agent tutorial; community example.
@@ -90,7 +101,7 @@ External data / SEC-XBRL / ERP / research files
 → Audit Evidence
 → Assertions / ICFR
 → CAM/KAM / Fraud / IFRS / ESG
-→ OpenAI / Claude / Gemini / Microsoft / open-source agents
+→ OpenAI / Claude / Gemini / Microsoft / AWS / Databricks / open-source agents
 → FRANKENSTEIN orchestration
 → deterministic controls
 → independent Reviewer / Falsification
