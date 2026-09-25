@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saeid Homayoun",
+  "honorificPrefix": "Dr.",
+  "jobTitle": "Senior Lecturer",
+  "affiliation": {
+    "name": "University of Gävle",
+    "url": "https://www.hig.se/engelska/university-of-gavle/research/researchers/aue/saeid-homayoun"
+  },
+  "researchIdentity": "AI researcher in accounting and auditing",
+  "researchAreas": [
+    "AI-enabled auditing",
+    "Agentic AI",
+    "Audit analytics",
+    "Large language models",
+    "FinBERT/BERT",
+    "CAM/KAM",
+    "ICFR",
+    "IFRS",
+    "ESG and sustainability",
+    "Multi-agent systems",
+    "AI governance",
+    "Reproducible research"
+  ],
+  "sameAs": [
+    "https://github.com/Saehon",
+    "https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en",
+    "https://orcid.org/0000-0002-2536-0446",
+    "https://www.hig.se/engelska/university-of-gavle/research/researchers/aue/saeid-homayoun",
+    "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139",
+    "https://huggingface.co/SADHON",
+    "https://www.kaggle.com/sadhon",
+    "https://www.researchgate.net/profile/Saeid-Homayoun"
+  ]
+}
