@@ -548,6 +548,7 @@ No NAAIL patent application is represented here as filed unless an actual filing
 A provider-neutral catalogue of reusable research components is now maintained for financial accounting, auditing, ICFR/internal control, corporate governance, CAM/KAM, IFRS and ESG.
 
 - [Free & Open-Source Accounting, Audit and Assurance Stack →](OPEN_SOURCE_ACCOUNTING_AUDIT_STACK.md)
+- [Microsoft, Copilot & IBM Accounting/Finance/Audit Stack →](open-source/accounting-finance-audit/README.md)
 - [Open Agentic Accounting & Audit Lab →](Open-Agentic-Accounting-Audit-Lab/README.md)
 
 The catalogue distinguishes verified open-source licenses from source-available/public-source projects and links the integrated lab to relevant public repositories under the **Saehon** account.
