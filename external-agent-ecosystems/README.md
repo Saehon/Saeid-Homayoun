@@ -7,7 +7,7 @@ This folder is a curated integration index of external open-source repositories 
 ## Master Research Architecture
 
 Start here:
-- [Scientific Discovery Master Architecture](SCIENTIFIC-DISCOVERY-MASTER-ARCHITECTURE.md)
+- [Scientific Discovery Master Architecture](SCIENTIFIC-DISCOVERY-MASTER-ARCHITECTURE.md)\n- [Scientific Discovery Master Architecture v2.0](SCIENTIFIC-DISCOVERY-MASTER-ARCHITECTURE-V2.md) — additive systems-thinking redesign with Co-Scientist, structure-first reasoning, evolutionary experiment search and FRANKENSTEIN orchestration.
 
 Master logic:
 Systems Thinking → FT50/ABS4 → Replication → Co-Scientist → AlphaFold-inspired Structure → AlphaEvolve-style Experiment Evolution → FRANKENSTEIN Integration → Domain Agents → Evidence Verification → Reviewer/Falsification → Independent Replication → Human Approval → Publication → Learning Loop.
