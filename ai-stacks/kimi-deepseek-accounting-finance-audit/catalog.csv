@@ -23,3 +23,9 @@ HuggingFace,takala/financial_phrasebank,https://huggingface.co/datasets/takala/f
 Kaggle,mlg-ulb/creditcardfraud,https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud,fraud detection,ODbL/database terms,opt_in_dataset,284807 transactions; 492 frauds
 Kaggle,ealaxi/paysim1,https://www.kaggle.com/datasets/ealaxi/paysim1,synthetic financial fraud,CC-BY-SA-4.0,opt_in_dataset,Mobile-money fraud simulation
 Kaggle,nclunaventures/2024-financial-year-8-core-sec-datasets-for-ml,https://www.kaggle.com/datasets/nclunaventures/2024-financial-year-8-core-sec-datasets-for-ml,SEC filing index,verify current terms,reference_dataset,Useful discovery index; preserve SEC provenance
+GitHub,AI4Finance-Foundation/FinGPT,https://github.com/AI4Finance-Foundation/FinGPT,financial LLM RAG sentiment,MIT,clone_optional,Finance-domain open LLM ecosystem
+GitHub,AI4Finance-Foundation/FinRL,https://github.com/AI4Finance-Foundation/FinRL,financial reinforcement learning,MIT,clone_optional,Research and benchmark environments
+GitHub,ProsusAI/finBERT,https://github.com/ProsusAI/finBERT,financial sentiment NLP,Apache-2.0,clone_optional,Lightweight finance-domain NLP baseline
+GitHub,czyssrs/FinQA,https://github.com/czyssrs/FinQA,financial numerical reasoning,MIT,clone_optional,Original FinQA data and code
+GitHub,dgunning/edgartools,https://github.com/dgunning/edgartools,SEC EDGAR XBRL financial statements,MIT,clone_optional,Primary-source filing and XBRL tooling
+GitHub,jadchaar/sec-edgar-downloader,https://github.com/jadchaar/sec-edgar-downloader,SEC filing download,MIT,clone_optional,Reproducible SEC filing acquisition
