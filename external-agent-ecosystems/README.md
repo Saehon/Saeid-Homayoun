@@ -26,7 +26,6 @@ Systems Thinking → FT50/ABS4 → Replication → Co-Scientist → AlphaFold-in
 ### Cross-platform research
 - [FT50/ABS4 Replication Registry](FT50-ABS4-REPLICATION.md)
 - [arXiv × GitHub Research Registry](ARXIV-GITHUB-RESEARCH-REGISTRY.md)
-- [Databricks × FT50/ABS4 Research Registry](DATABRICKS-FT50-ABS4-REGISTRY.md)
 
 ### Hugging Face
 - [Hugging Face Registry](HUGGINGFACE_REGISTRY.md)
@@ -37,10 +36,9 @@ Systems Thinking → FT50/ABS4 → Replication → Co-Scientist → AlphaFold-in
 - [Kaggle × FT50/ABS4 Registry](KAGGLE-FT50-ABS4-REGISTRY.md)
 
 ### Executable pilots
-- [Databricks / SEC-XBRL research area](databricks/01-sec-xbrl/)
-- [Microsoft SEC/XBRL Pilot 001](databricks/01-sec-xbrl/README.md)
-- [Pilot 001 configuration](databricks/01-sec-xbrl/pilot_001_config.yaml)
-- [Evidence-grounded agent contract](databricks/01-sec-xbrl/agent_contract.json)
+- [Microsoft SEC/XBRL Pilot 001](sec-xbrl/01-public-baseline/README.md)
+- [Pilot 001 configuration](sec-xbrl/01-public-baseline/pilot_001_config.yaml)
+- [Evidence-grounded agent contract](sec-xbrl/01-public-baseline/agent_contract.json)
 
 ## Platform Roles
 
@@ -49,7 +47,7 @@ Systems Thinking → FT50/ABS4 → Replication → Co-Scientist → AlphaFold-in
 - **Kaggle:** executable public notebooks and benchmark comparison.
 - **Google Drive:** controlled research files, manuscripts and working documents.
 - **arXiv:** frontier research discovery.
-- **Databricks / Delta:** scalable, versioned evidence and data engineering.
+- **Versioned evidence layer:** scalable, versioned evidence and data engineering.
 - **MLflow:** experiments, traces, metrics and model/prompt/configuration lineage.
 - **AWS:** secure cloud execution, model/agent hosting, governed evidence storage and continuous audit/control telemetry through Bedrock/AgentCore, S3, SageMaker, CloudTrail, Config and Audit Manager.
 
@@ -103,12 +101,12 @@ SEC/XBRL → Audit Assertions → ICFR → CAM/KAM → Fraud/AAER → IFRS Judgm
 ## Research integration map
 
 External data / SEC-XBRL / ERP / research files
-→ Databricks/Delta + Evidence Graph
+→ Versioned evidence store + Evidence Graph
 → Accounting & Finance analysis
 → Audit Evidence
 → Assertions / ICFR
 → CAM/KAM / Fraud / IFRS / ESG
-→ OpenAI / Claude / Gemini / Microsoft / AWS / Databricks / open-source agents
+→ OpenAI / Claude / Gemini / Microsoft / AWS / open-source agents
 → FRANKENSTEIN orchestration
 → deterministic controls
 → independent Reviewer / Falsification
