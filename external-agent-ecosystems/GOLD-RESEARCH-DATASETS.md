@@ -171,7 +171,7 @@ dataset_id; title; domain; source_owner; source_url; citation/DOI; coverage_star
 ## Integration with Master Architecture
 
 Gold/Reference Data
-→ Databricks/Delta versioning
+→ Versioned Evidence Store versioning
 → Evidence Graph
 → FT50/ABS4 replication baseline
 → Co-Scientist competing hypotheses
@@ -202,11 +202,11 @@ This creates a two-source evidence test: authoritative structured SEC facts vers
 _Last curated: 2026-09-25._
 
 
-## Cross-Platform Dataset Matrix — HF × Kaggle × Databricks
+## Cross-Platform Dataset Matrix — HF × Kaggle × Research execution layer
 
 This matrix distinguishes authoritative/academic evidence from reproducibility and execution resources. A platform listing does not itself make a dataset Gold.
 
-| Domain | Gold / authoritative anchor | Hugging Face candidates | Kaggle / public benchmark candidates | Databricks role/resources | Quality use |
+| Domain | Gold / authoritative anchor | Hugging Face candidates | Kaggle / public benchmark candidates | Research execution layer role/resources | Quality use |
 |---|---|---|---|---|---|
 | SEC/XBRL | SEC EDGAR/CompanyFacts + Stanford SEFD | Existing registry: financial filings/XBRL candidates; re-verify license/revision before promotion | SEC Financial Statement Extracts | Delta ingestion/versioning + MLflow evaluation | Fact reconciliation, filing QA, assertion tests |
 | Audit/ICFR | SEC control disclosures + auditor ICFR opinions + PCAOB inspection data | Audit QA/financial benchmark candidates in HF registry | Enterprise data-quality/audit-agent benchmarks | Evidence tables, temporal labels, model/calibration tracking | MW/ICFR prediction, evidence sufficiency |
@@ -221,7 +221,7 @@ This matrix distinguishes authoritative/academic evidence from reproducibility a
 
 **Kaggle:** use primarily for executable notebooks, benchmark packaging and public reproducibility. SEC Financial Statement Extracts is especially useful as a secondary SEC/XBRL benchmark; authoritative SEC sources remain the verification anchor.
 
-**Databricks:** treat primarily as the scalable research execution/governance layer rather than a substitute for authoritative datasets. Use Delta for immutable/versioned evidence tables and MLflow for runs, traces, metrics and evaluation. Industry solution accelerators/examples may inform implementation but must not be treated as academic ground truth.
+**Research execution layer:** treat primarily as the scalable research execution/governance layer rather than a substitute for authoritative datasets. Use Delta for immutable/versioned evidence tables and MLflow for runs, traces, metrics and evaluation. Industry solution accelerators/examples may inform implementation but must not be treated as academic ground truth.
 
 ### SEC DERA reproducibility resource
 
@@ -246,4 +246,4 @@ Source identity verified
 Every mirrored or derived dataset should retain:
 `dataset_id + source_record_id + source_version + snapshot_hash + transformation_commit + platform_revision + experiment_id`.
 
-This lets the same evidence be traced across GitHub, Hugging Face, Kaggle, Google Drive and Databricks without assuming the copies are automatically identical.
+This lets the same evidence be traced across GitHub, Hugging Face, Kaggle, Google Drive and Research execution layer without assuming the copies are automatically identical.
