@@ -3,15 +3,11 @@ name: Data Platform Tooling Check
 on:
   push:
     paths:
-      - "DATA_PLATFORM_TOOLING.md"
-      - "databricks/**"
-      - "scripts/install-data-platform-clis.*"
+      - "DATA_PLATFORM_TOOLING.md"      - "scripts/install-data-platform-clis.*"
       - ".github/workflows/data-platform-tooling-check.yml"
   pull_request:
     paths:
-      - "DATA_PLATFORM_TOOLING.md"
-      - "databricks/**"
-      - "scripts/install-data-platform-clis.*"
+      - "DATA_PLATFORM_TOOLING.md"      - "scripts/install-data-platform-clis.*"
       - ".github/workflows/data-platform-tooling-check.yml"
   workflow_dispatch:
 
@@ -35,20 +31,13 @@ jobs:
         run: |
           python -m pip install --upgrade kaggle huggingface_hub
 
-      - name: Install Databricks CLI
-        shell: bash
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
-
       - name: Verify platform CLIs
         shell: bash
         run: |
           set -euo pipefail
           kaggle --version
           hf --help >/dev/null
-          databricks -v
           test -s DATA_PLATFORM_TOOLING.md
-          test -s databricks/README.md
           test -s scripts/install-data-platform-clis.ps1
           test -s scripts/install-data-platform-clis.sh
-          echo "Kaggle, Hugging Face, and Databricks tooling is available."
+          echo "Kaggle and Hugging Face tooling is available."
