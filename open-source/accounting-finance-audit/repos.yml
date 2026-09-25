@@ -137,3 +137,53 @@ repositories:
     domains: [finance, LLM, RAG, NLP]
     tier: core
     free_assets: [code, model-links, benchmark-links]
+
+  - provider: Accounting-Agent
+    repo: adoptai/cpa-skills
+    url: https://github.com/adoptai/cpa-skills
+    domains: [accounting, audit, reconciliation, journal-entries, sampling]
+    tier: core
+    free_assets: [code, agent-skills]
+    licence: MIT
+  - provider: Finance-Agent
+    repo: GAJETOso/financeskills
+    url: https://github.com/GAJETOso/financeskills
+    domains: [finance, accounting, IFRS, GAAP, audit, compliance]
+    tier: core
+    free_assets: [code, agent-skills]
+    licence: MIT
+  - provider: Controls
+    repo: esploro-group/closegate
+    url: https://github.com/esploro-group/closegate
+    domains: [SOX, segregation-of-duties, accounting, controls, human-in-the-loop]
+    tier: core
+    free_assets: [code, policy-gates]
+    licence: Apache-2.0
+  - provider: Document-AI
+    repo: docling-project/docling-mcp
+    url: https://github.com/docling-project/docling-mcp
+    domains: [documents, evidence, MCP, accounting, audit]
+    tier: core
+    free_assets: [code, MCP-server]
+    licence: MIT
+  - provider: SEC-MCP
+    repo: stefanoamorelli/sec-edgar-mcp
+    url: https://github.com/stefanoamorelli/sec-edgar-mcp
+    domains: [SEC, EDGAR, XBRL, MCP, accounting, finance]
+    tier: core
+    free_assets: [code, MCP-server]
+    licence: AGPL-3.0
+  - provider: Google
+    repo: google/adk-python
+    url: https://github.com/google/adk-python
+    domains: [agents, multi-agent, orchestration]
+    tier: optional
+    free_assets: [code, agent-framework]
+    licence: Apache-2.0
+  - provider: Microsoft
+    repo: microsoft/agent-framework
+    url: https://github.com/microsoft/agent-framework
+    domains: [agents, multi-agent, orchestration, copilot]
+    tier: core
+    free_assets: [code, agent-framework]
+    licence: MIT
