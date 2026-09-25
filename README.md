@@ -1,8 +1,200 @@
-# Dr. Saeid Homayoun — AI Research & NAAIL OpenLab™
+# 👨‍🏫 Saeid Homayoun
 
-**Accounting Scholar and AI Researcher | AI-enabled Auditing · Agentic AI · Audit Analytics · LLMs · CAM/KAM · ICFR · IFRS · ESG · Financial Reporting**
+**Accounting & Auditing Scholar | Integrating AI into Accounting, Auditing & Assurance Research**
 
-I conduct research at the intersection of **artificial intelligence, accounting, auditing, assurance, finance, internal control, financial reporting, and sustainability**. My current AI research includes **agentic and multi-agent systems, LLM/FinBERT applications in auditing, AI-enabled CAM/KAM analysis, ICFR analytics, IFRS-oriented AI, audit evidence and governance, digital twins, reproducible research, and human-accountable AI**.
+I develop research at the intersection of **accounting, auditing, assurance, financial reporting, internal control, ESG, corporate governance, and artificial intelligence**. My work integrates **LLMs, Claude, GPT, Gemini, BERT/FinBERT, agentic AI, machine learning, SEC EDGAR/XBRL, scientific falsification, reproducible analytics, and human professional judgment** into accounting and auditing research.
+
+## 📚 Cite This Work
+
+If you use the KIWI™ CAM/KAM research architecture, code, datasets, benchmarks, or related materials, please cite:
+
+**APA**
+
+> Homayoun, S. (2026). *Pre-Disclosure Accounting Risk and the Reallocation of Critical Audit Matters: A Prospective KIWI Design with an Earnings-Information Validation Layer*. Working paper, University of Gävle.
+
+**Research Repository**
+
+> Homayoun, S. (2026). *KIWI™ CAM/KAM Research Program: AI-integrated accounting and auditing research, datasets, code, and reproducible benchmarks*. GitHub.  
+> https://github.com/Saehon/Saeid-Homayoun
+
+**BibTeX**
+
+```bibtex
+@unpublished{homayoun2026kiwi,
+  author      = {Homayoun, Saeid},
+  title       = {Pre-Disclosure Accounting Risk and the Reallocation of Critical Audit Matters: A Prospective KIWI Design with an Earnings-Information Validation Layer},
+  year        = {2026},
+  institution = {University of Gävle},
+  note        = {Working paper},
+  url         = {https://github.com/Saehon/Saeid-Homayoun}
+}
+```
+
+**Software / Research Infrastructure Citation**
+
+```bibtex
+@software{homayoun2026kiwi_software,
+  author  = {Homayoun, Saeid},
+  title   = {KIWI CAM/KAM Research Program},
+  year    = {2026},
+  url     = {https://github.com/Saehon/Saeid-Homayoun},
+  note    = {Open research infrastructure integrating artificial intelligence with accounting, auditing, CAM/KAM analysis, SEC/XBRL analytics, and reproducible assurance research}
+}
+```
+
+## 🔬 Featured Research Result — Dynamic CAM Reallocation
+
+The strongest currently executed KIWI™ proof-of-mechanism result comes from **AAR Corp (2020–2024)**.
+
+In 2024:
+
+- **Revenue → EXIT**
+- **Business Combinations / Acquired Intangibles → ENTRY**
+- **Inventory → PERSIST**
+- **CAM count remains unchanged at 2**
+- **CAM Attention Reallocation Score (CARS) = 0.667**
+
+This means that **66.7% of the CAM portfolio composition changed even though the number of CAMs did not change**.
+
+The entering acquisition-related CAM is preceded by an independently measured acquisition shock of approximately **39.6% of prior-year assets**. In the AAR construct-validity test, the correct risk–audit-response alignment dominates the same-year swapped response in all five independent years, producing an exact one-sided sign-test **p = 0.03125**.
+
+> **Interpretation:** Audit attention can change materially even when CAM quantity does not. The evidence is consistent with a capacity-constrained professional-attention mechanism in which relatively more salient risks can enter the CAM portfolio while another recurring matter exits.
+
+**Scientific boundary:** AAR is a permanent unit-test and proof-of-mechanism case, not population-level causal evidence. Confirmatory H1/H2 estimates remain gated until the frozen pre-CAM risk, temporal-integrity, missingness, and falsification requirements pass.
+
+## 🧪 Current 50-Firm Measurement Architecture
+
+The current SEC-verified measurement architecture contains:
+
+| Measure | Current verified status |
+|---|---:|
+| SEC-verified company-years | **87** |
+| Frozen candidate topics per company-year | **7** |
+| Company-year-topic rows | **609** |
+| CAM-present topic-years | **111** |
+| Valid CAM persistence events | **49** |
+| Valid CAM entry events | **5** |
+| Valid CAM exit events | **7** |
+| Exact auditor-report-date coverage | **12 / 87 company-years** |
+| Topic-years with ≥2 frozen MAIN risk features + temporal PASS | **11** |
+| Confirmatory H1/H2 | **BLOCKED pending final measurement gates** |
+
+The seven frozen candidate topics are: **Revenue/Contracts · Inventory · Goodwill/Business Combinations/Intangibles · Pension · Tax/UTP · Contingencies/Litigation · Long-Lived Assets**.
+
+## 📝 Research Abstract
+
+### *Pre-Disclosure Accounting Risk and the Reallocation of Critical Audit Matters*
+
+Critical Audit Matters (CAMs) reveal a subset of the professional attention auditors allocate across competing accounting risks. We develop a capacity-constrained attention framework in which changes in relative accounting risk can induce auditors to reallocate CAM attention across topics without changing the total number of reported CAMs. Our design combines a fixed seven-topic choice set with independently measured pre-disclosure SEC/XBRL risk signals, explicit CAM entry–persistence–exit transitions, and outcome-blind falsification. CAM text is excluded from risk construction, and all risk evidence must precede the auditor-report date.
+
+AAR Corp provides the primary proof of mechanism. Between 2023 and 2024, total CAM count remains unchanged at two, yet Revenue exits, Business Combinations/Acquired Intangibles enters, and Inventory persists, producing a CAM Attention Reallocation Score of 0.667. The entering acquisition-related CAM is preceded by an independently measured acquisition shock of approximately 39.6% of prior-year assets, whereas Revenue exits despite remaining material in absolute risk terms. In construct-validity tests, the correct risk–audit-response alignment dominates a same-year swapped response in all five independent years (exact one-sided p = 0.03125). The broader measurement architecture contains 87 SEC-verified company-years and 609 company-year-topic observations, including 111 CAM-present observations and 61 valid entry, persistence, or exit transitions.
+
+The evidence supports a dynamic view of audit reporting in which professional attention is allocated according to the relative salience of competing risks rather than CAM quantity alone. The study contributes a temporally disciplined and falsifiable framework for examining professional attention allocation and provides a reproducible foundation for AI-assisted accounting and auditing research.
+
+## 🏛️ FT50 / AJG Research Positioning
+
+The research is designed to connect with high-level accounting and management-science research streams rather than treating AI as the theoretical contribution.
+
+- **Management Science** — AI/LLM measurement, reproducibility, construct validity, and decision-allocation methods.  
+  de Kok (2025), *ChatGPT for Textual Analysis? How to Use Generative LLMs in Accounting Research*. https://doi.org/10.1287/mnsc.2023.03253
+- **The Accounting Review** — U.S. Critical Audit Matters, audit effort, investor scrutiny, and consequences of CAM disclosure.  
+  Burke et al. (2023), *The Disclosure and Consequences of U.S. Critical Audit Matters*. https://doi.org/10.2308/TAR-2021-0013
+- **The Accounting Review** — CAM disclosure, audit effort, investor scrutiny, and investment efficiency.  
+  Chan & Liu (2023), *The Effects of Critical Audit Matter Disclosure on Audit Effort, Investor Scrutiny, and Investment Efficiency*.
+- **Contemporary Accounting Research** — accounting textual analysis, financial NLP, construct measurement, and validation.
+
+Under the **Academic Journal Guide 2024**, Management Science and The Accounting Review are positioned at the highest AJG tier, while Contemporary Accounting Research is also a top-tier accounting outlet. The KIWI™ contribution is therefore framed around a substantive accounting/auditing mechanism:
+
+> **Pre-disclosure accounting risk → relative risk → professional audit-attention allocation → CAM entry / persistence / exit**
+
+AI is the **measurement, discovery, falsification, and reproducibility infrastructure**; the theoretical contribution is the allocation of scarce professional audit attention across competing accounting risks.
+
+## 🌐 Research Profiles
+
+- **GitHub:** https://github.com/Saehon/Saeid-Homayoun
+- **Google Scholar:** https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en
+- **ORCID:** https://orcid.org/0000-0002-2536-0446
+- **Hugging Face:** https://huggingface.co/SADHON
+- **Kaggle:** https://www.kaggle.com/sadhon
+- **SSRN AI/KAM paper:** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139
+
+## 🧠 Research Identity
+
+My work integrates **artificial intelligence directly into the concepts, methods, and evidence structures of accounting and auditing research**.
+
+Rather than treating AI as a separate technical layer, I use AI to strengthen core accounting and auditing questions involving:
+
+- financial reporting and accounting judgment;
+- audit risk and professional attention;
+- Critical Audit Matters and Key Audit Matters;
+- internal control and ICFR;
+- audit evidence and assurance;
+- earnings and financial-reporting information;
+- ESG and sustainability reporting;
+- corporate governance;
+- fraud and forensic accounting.
+
+## 🤖 AI Integration in Accounting & Auditing
+
+My research uses:
+
+**Large Language Models** — GPT, Claude, Gemini and open-source LLMs  
+**Financial NLP** — BERT, FinBERT and domain-specific language models  
+**Agentic AI** — multi-agent research, audit and assurance architectures  
+**Scientific AI** — hypothesis generation, falsification and adversarial review  
+**Machine Learning** — prediction, classification and risk measurement  
+**SEC/XBRL Analytics** — structured financial-reporting and audit evidence  
+**Human-AI Validation** — independent review and professional approval
+
+The objective is not simply to “apply AI to accounting.”
+
+The objective is to integrate AI with **accounting theory, auditing judgment, financial evidence, professional standards, and scientific validation**.
+
+## 🔬 Current Research Focus
+
+**AI + Accounting** — financial reporting, accounting measurement, earnings information, disclosure analysis, IFRS, ESG, XBRL and accounting judgment.
+
+**AI + Auditing** — audit risk, audit evidence, CAM/KAM analysis, ICFR, assurance, professional judgment, audit inspection and continuous monitoring.
+
+**CAM/KAM Research** — professional audit attention, risk allocation, CAM entry, persistence, exit, textual evolution and dynamic CAM portfolio reallocation.
+
+**SEC / XBRL Analytics** — linking SEC filings, accounting signals, financial-reporting risks and audit outcomes using reproducible data pipelines.
+
+**Scientific AI for Accounting & Assurance** — multi-agent scientific discovery, Reviewer/Falsification agents, adversarial validation, reproducibility and human approval.
+
+## 🤗 Hugging Face Research
+
+Public datasets, models and AI research artifacts:
+
+- **Profile:** https://huggingface.co/SADHON
+- **CAM/KAM AuditBERT Public Demo:** https://huggingface.co/datasets/SADHON/cam-kam-auditbert-public-demo
+
+Hugging Face is used for **datasets · models · model cards · financial NLP · AI benchmarks · reproducible accounting and auditing research**.
+
+## 📊 Kaggle Research
+
+Public datasets, benchmarks and reproducible notebooks:
+
+- **Profile:** https://www.kaggle.com/sadhon
+- **CAM/KAM AuditBERT Public Demo:** https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo
+- **SEC 10-Company Accounting Panel:** https://www.kaggle.com/datasets/sadhon/sec-10-company-accounting-panel
+
+Kaggle is used for **benchmark datasets · notebooks · empirical validation · SEC/XBRL analytics · reproducible experiments**.
+
+## 🔗 Open Research Architecture
+
+**GitHub** → Code, architecture, provenance, tests and reproducible pipelines  
+**Hugging Face** → Public datasets, models and model cards  
+**Kaggle** → Benchmark datasets and executable notebooks  
+**Google Drive** → Controlled research files, empirical evidence and working papers
+
+## 🎯 Research Mission
+
+My research objective is to advance **AI-integrated accounting and auditing** by connecting artificial intelligence with accounting theory, audit judgment, financial evidence and professional assurance.
+
+I develop transparent, reproducible and scientifically validated AI methods that can support researchers, accountants, auditors, firms, standard setters and regulators while preserving **evidence traceability, professional judgment, falsification and human oversight**.
+
+---
 
 ## Academic & AI research identity
 
