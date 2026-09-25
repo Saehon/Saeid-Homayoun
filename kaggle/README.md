@@ -99,3 +99,13 @@ Recommended Kaggle collections can be organized around:
 - agentic AI and reproducible analytics.
 
 Only data that may lawfully and ethically be published should be placed in Kaggle-facing folders. Confidential, licensed, proprietary, patent-sensitive, or personally identifiable data should remain outside the publication workflow.
+
+## AWS free/open data registry
+
+The cross-platform metadata registry is prepared for public Kaggle publication at:
+
+https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
+
+Canonical GitHub source: ../aws/FREE_DATA_REGISTRY.md
+
+It contains provenance and links, not restricted vendor-delivered data.
