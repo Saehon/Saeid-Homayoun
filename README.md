@@ -77,6 +77,14 @@ My research uses AI to strengthen core accounting and auditing concepts rather t
 **Scientific AI** — hypothesis generation, falsification and adversarial review  
 **Human-AI Validation** — independent review and professional approval
 
+### Kimi + DeepSeek Open Accounting/Finance/Audit Stack
+
+A license-aware, reproducible registry for **Kimi + DeepSeek models, accounting/audit/finance agent repositories, Hugging Face datasets, Kaggle benchmarks, XBRL tooling, and local setup scripts** is available here:
+
+➡️ [Kimi + DeepSeek Accounting/Finance/Audit Stack](ai-stacks/kimi-deepseek-accounting-finance-audit/README.md)
+
+The stack keeps large frontier weights outside Git, uses opt-in model downloads, preserves upstream licences/provenance, and prioritizes practical research baselines such as DeepSeek-R1-Distill-Qwen-7B, Kimi-VL-A3B-Instruct, FinQA, FinanceBench, Arelle, and audit-ready evaluation tools.
+
 ## 🔗 Open Research Architecture
 
 **GitHub** → code, architecture, provenance, tests, workflows and reproducible pipelines  
