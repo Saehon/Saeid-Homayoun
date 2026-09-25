@@ -16,6 +16,8 @@ I conduct research at the intersection of **artificial intelligence, accounting,
 
 **Research expertise:** Artificial Intelligence in Accounting · AI-enabled Auditing · Agentic AI · Multi-Agent Systems · Large Language Models · Audit Analytics · Critical/Key Audit Matters · Internal Control over Financial Reporting · IFRS · ESG/Sustainability · Financial NLP · Digital Twins · AI Governance · Reproducible Research
 
+**Research profile:** [English](SAEID_HOMAYOUN_AI_RESEARCH_PROFILE.md) · [简体中文 / Chinese](SAEID_HOMAYOUN_AI_RESEARCH_PROFILE_ZH.md)
+
 ---
 
 ## NAAIL OpenLab™
