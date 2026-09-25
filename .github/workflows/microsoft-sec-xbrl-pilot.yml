@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python external-agent-ecosystems/databricks/01-sec-xbrl/run_public_baseline.py
+      - run: python external-agent-ecosystems/sec-xbrl/01-public-baseline/run_public_baseline.py
       - uses: actions/upload-artifact@v4
         with:
           name: microsoft-sec-xbrl-pilot-001
