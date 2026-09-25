@@ -44,6 +44,12 @@ Recommended open repositories:
 | OpenBB-finance/OpenBB | Open finance data platform | AGPL-3.0 | Finance data integration and AI-agent back end |
 | kai-tran-cs/FinRAG | SEC 10-K RAG | MIT | Financial-document QA baseline |
 | cv-lee/FinanceRAG | Finance-specific RAG benchmark system | Check upstream license before redistribution | Research comparison / benchmark reference |
+| AI4Finance-Foundation/FinGPT | Open-source financial LLM / RAG / sentiment | MIT | Finance-domain LLM baseline and training ideas |
+| AI4Finance-Foundation/FinRL | Financial reinforcement learning | MIT | Finance research benchmark / agent environments |
+| ProsusAI/finBERT | Financial sentiment NLP | Apache-2.0 | Lightweight financial NLP baseline |
+| czyssrs/FinQA | Original FinQA dataset + code | MIT | Canonical financial numerical-reasoning benchmark |
+| dgunning/edgartools | SEC EDGAR + XBRL Python toolkit | MIT | Primary-source filings, XBRL and financial statements |
+| jadchaar/sec-edgar-downloader | SEC filing downloader | MIT | Reproducible SEC filing acquisition |
 
 ## Official model sources
 
@@ -100,6 +106,9 @@ Links:
 - SEC EDGAR: https://www.sec.gov/edgar
 - SEC XBRL / Company Facts can be used as primary-source evidence.
 - Arelle provides an open-source XBRL validation and processing layer.
+- EdgarTools provides a MIT-licensed Python interface for SEC filings, XBRL financial statements, 10-K/10-Q/8-K and related evidence.
+- sec-edgar-downloader provides a small MIT-licensed downloader for reproducible SEC filing acquisition.
+- FinGPT, FinBERT and FinQA provide useful finance-domain baselines that can be paired with Kimi/DeepSeek rather than treated as competing closed stacks.
 
 For research, prefer primary SEC/XBRL evidence where possible and use Kaggle/Hugging Face copies as benchmark or convenience layers.
 
