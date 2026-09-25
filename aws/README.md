@@ -81,3 +81,9 @@ A provenance-first registry now connects AWS free/open data to accounting, audit
 - Kaggle: https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
 
 Priority domains: SEC/EDGAR/XBRL; macroeconomic stress; carbon accounting; Scope 3; climate risk; ESG assurance.
+
+## Cross-platform controlled record
+
+- Hugging Face public registry: https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry
+- Kaggle public registry: https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
+- Google Drive controlled integration record: https://docs.google.com/document/d/1KI8TfBi49kUH-RVBpypnccUvUD2ZeJDBbU3aqFonnKg/edit
