@@ -498,7 +498,7 @@ NAAIL/FRANKENSTEIN keeps provider-specific technology replaceable while comparin
 **Accounting/audit research logic:**  
 **Financial data & evidence → governed data platform → accounting/audit/finance agents → cross-provider comparison → Reviewer/Falsification → Human Gate™**
 
-[AWS research integration →](aws/README.md) · [Databricks research area →](databricks/README.md) · [External agent ecosystems →](external-agent-ecosystems/README.md)
+[AWS research integration →](aws/README.md) · [Databricks research area →](databricks/README.md) · [External agent ecosystems →](external-agent-ecosystems/README.md) · [AWS free/open data registry →](aws/FREE_DATA_REGISTRY.md)
 
 ---
 
