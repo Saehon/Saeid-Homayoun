@@ -1,0 +1,6 @@
+datasets>=3.0
+huggingface_hub>=0.27
+kagglehub>=0.3
+pandas>=2.2
+pyarrow>=17
+PyYAML>=6.0
