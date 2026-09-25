@@ -42,7 +42,19 @@ Research on **pre-disclosure accounting risk, CAM/KAM entry, persistence, exit, 
 
 Detailed empirical tables, p-values, abstracts, current sample status, FT50/AJG positioning, and scientific boundaries are kept in the dedicated **Empirical Results** folder rather than on the main profile page.
 
-### NAAIL OpenLab™
+### Cross-Platform Data & Research Links
+
+- **GitHub master repository:** https://github.com/Saehon/Saeid-Homayoun
+- **AWS free/open data registry:** https://github.com/Saehon/Saeid-Homayoun/blob/main/aws/FREE_DATA_REGISTRY.md
+- **Hugging Face AWS accounting/audit/finance/ESG registry:** https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry
+- **Kaggle AWS accounting/audit/finance/ESG registry:** https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
+- **Databricks research area:** https://github.com/Saehon/Saeid-Homayoun/tree/main/databricks
+- **Google Drive controlled integration record:** https://docs.google.com/document/d/1KI8TfBi49kUH-RVBpypnccUvUD2ZeJDBbU3aqFonnKg/edit
+
+**Data flow:** AWS/Open Data → provenance & licence gate → GitHub → Hugging Face + Kaggle → NAAIL/FRANKENSTEIN agents → Reviewer/Falsification → Human Gate™.
+
+---
+## NAAIL OpenLab™
 
 Evidence-governed, provider-neutral research infrastructure for **accounting, auditing, assurance, finance, sustainability, scientific discovery, multi-agent systems, and human-accountable AI**.
 
