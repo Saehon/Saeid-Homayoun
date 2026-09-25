@@ -1,49 +1,78 @@
-# Unified Data & ML Platform Tooling
+# Unified Data, AI & Research Platform Tooling
 
-This repository is configured to work with three external research and analytics platforms:
-
-| Platform | Primary role in this repository | CLI |
-|---|---|---|
-| Kaggle | benchmark datasets, notebooks, reproducible public experiments | `kaggle` |
-| Hugging Face | public datasets, models, agents and dataset/model cards | `hf` |
-| Databricks | scalable analytics, notebooks, jobs and reproducible data/ML workflows | `databricks` |
+This repository uses a **provider-neutral, cross-platform research architecture** for accounting, auditing, assurance, finance, ICFR, IFRS and ESG.
 
 GitHub remains the source of truth for code, configuration, documentation, manifests, small reproducible examples and provenance.
 
-## Current repository status
+## Platform roles
+
+| Platform | Primary role | Local/automation interface |
+|---|---|---|
+| GitHub | source code, provenance, releases, workflows and canonical research record | Git / GitHub Actions |
+| Kaggle | benchmark datasets, notebooks and public reproducible experiments | `kaggle` |
+| Hugging Face | public datasets, models, agents and dataset/model cards | `hf` |
+| Databricks | scalable analytics, lakehouse, jobs, MLflow and governed AI workflows | `databricks` |
+| AWS | secure data/evidence storage, model/agent execution and audit/control telemetry | AWS CLI / SDKs when configured |
+| Google Drive | controlled research files, manuscripts and working documents | Google Drive integration |
+| Microsoft | Foundry/Fabric finance/data/agent research | provider-specific APIs/SDKs |
+| Anthropic / Claude | reasoning and financial-services agent workflows | provider-specific API/SDK |
+| Google / Gemini | Gemini/ADK agents and scalable analytics | provider-specific API/SDK |
+| OpenAI | agents, coding, research and cross-provider evaluation | provider-specific API/SDK |
+
+## Canonical cross-platform record
+
+- [Cross-Platform Integration Map](CROSS_PLATFORM_INTEGRATION.md)
+- [AWS Research Integration](aws/README.md)
+- [AWS Free/Open Data Registry](aws/FREE_DATA_REGISTRY.md)
+- Hugging Face registry: https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry
+- Kaggle registry: https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
+- Google Drive controlled record: https://docs.google.com/document/d/1KI8TfBi49kUH-RVBpypnccUvUD2ZeJDBbU3aqFonnKg/edit
+
+## Existing repository integrations
 
 ### Kaggle
 
-Kaggle is already integrated through:
+Kaggle is integrated through:
 
 - `kaggle/`
 - `.github/workflows/kaggle-sync.yml`
-- the repository secret `KAGGLE_API_TOKEN` when publishing is enabled.
+- `KAGGLE_API_TOKEN` as a GitHub Actions secret when publishing is enabled.
 
 ### Hugging Face
 
-Hugging Face is already integrated through:
+Hugging Face is integrated through:
 
 - `huggingface/`
-- Hugging Face publishing scripts
-- GitHub workflows such as `.github/workflows/huggingface-microsoft-data-sync.yml`
-- the repository secret `HF_TOKEN` when publishing is enabled.
+- Hugging Face publishing scripts and GitHub workflows;
+- `HF_TOKEN` as a GitHub Actions secret when publishing is enabled;
+- the public AWS accounting/audit/finance/ESG registry.
 
 ### Databricks
 
-Databricks support is added through:
+Databricks support is integrated through:
 
 - `databricks/README.md`
-- the unified installation scripts
-- `.github/workflows/data-platform-tooling-check.yml`
+- the unified installation scripts;
+- `.github/workflows/data-platform-tooling-check.yml`.
 
-Databricks authentication is intentionally not stored in this public repository.
+Databricks authentication is intentionally not stored in the public repository.
 
-## One-command local installation
+### AWS
+
+AWS is integrated at the architecture, evidence and data-registry layers through:
+
+- `aws/README.md`
+- `aws/FREE_DATA_REGISTRY.md`
+- `aws/free-data-registry.csv`
+- Bedrock / AgentCore / SageMaker research design;
+- S3 / Glue / Athena / Redshift data design;
+- CloudTrail / Config / Audit Manager evidence and control design.
+
+No AWS credential is committed to this repository.
+
+## One-command local CLI installation
 
 ### Windows PowerShell
-
-From the repository root:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\install-data-platform-clis.ps1
@@ -55,7 +84,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install-data-platform-clis.ps
 bash scripts/install-data-platform-clis.sh
 ```
 
-## Verify the three CLIs
+## Verify available data-platform CLIs
 
 ```text
 kaggle --version
@@ -63,65 +92,38 @@ hf --help
 databricks -v
 ```
 
+AWS and model-provider CLIs/SDKs should be configured only when required by a specific experiment.
+
 ## Authentication
 
 Do not commit credentials.
 
-### Kaggle
+- Kaggle: `KAGGLE_API_TOKEN` in GitHub Actions secrets.
+- Hugging Face: `HF_TOKEN` in GitHub Actions secrets.
+- Databricks: workload identity/service principal preferred; otherwise secure `DATABRICKS_HOST` and `DATABRICKS_TOKEN`.
+- AWS: use IAM roles, workload identity or secure GitHub Actions secrets for approved experiments.
+- OpenAI / Anthropic / Google / Microsoft: use provider secrets or workload identity; never tracked files.
 
-Use Kaggle's API/OAuth setup. The existing GitHub workflow expects:
-
-```text
-KAGGLE_API_TOKEN
-```
-
-as a GitHub Actions repository secret.
-
-### Hugging Face
-
-Authenticate locally with:
-
-```bash
-hf auth login
-```
-
-The existing GitHub publication workflows use:
+## Research architecture
 
 ```text
-HF_TOKEN
+                         GitHub
+              code + provenance + workflows
+             /        |         |          \
+            /         |         |           \
+      Hugging Face  Kaggle  Google Drive  AWS / Databricks
+      public data   benchmarks controlled    governed
+      + models      + notebooks research     execution/data
+            \         |         |          /
+             \        |         |         /
+              Provider-neutral agent layer
+          OpenAI · Claude · Gemini · Microsoft · AWS
+                         ↓
+       Accounting · Audit · Finance · ICFR · IFRS · ESG
+                         ↓
+            Reviewer / Falsification / Replication
+                         ↓
+                      Human Gate™
 ```
 
-as a GitHub Actions repository secret.
-
-### Databricks
-
-For local interactive use, configure the Databricks CLI against your Databricks workspace according to the Databricks authentication documentation.
-
-For GitHub Actions, prefer workload identity / service-principal authentication where your Databricks account supports it. If a token-based workflow is used, store the host and token only as GitHub Actions secrets such as:
-
-```text
-DATABRICKS_HOST
-DATABRICKS_TOKEN
-```
-
-Never put these values in tracked files.
-
-## Recommended architecture
-
-```text
-                     GitHub
-          code + provenance + workflows
-              /          |          \
-             /           |           \
-        Kaggle      Hugging Face    Databricks
-     benchmarks      datasets /       scalable
-     notebooks       models / agents  analytics
-```
-
-The same validated source dataset can therefore be prepared once in GitHub and distributed to the appropriate platform without changing the canonical research record.
-
-## Official documentation
-
-- Kaggle CLI: https://github.com/Kaggle/kaggle-cli
-- Hugging Face Hub CLI: https://huggingface.co/docs/huggingface_hub/guides/cli
-- Databricks CLI: https://docs.databricks.com/aws/en/dev-tools/cli/
+The same validated source dataset can therefore be referenced once in GitHub, mirrored only where licensing permits, and reused across public benchmarks and controlled research without changing the canonical provenance record.
