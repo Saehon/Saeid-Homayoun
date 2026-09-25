@@ -1,0 +1,21 @@
+# Core open-source data/model tooling
+huggingface_hub>=0.34
+datasets>=3.0
+transformers>=4.55
+accelerate>=1.0
+safetensors>=0.5
+kagglehub>=0.3
+
+# Accounting / finance analysis
+pandas>=2.2
+pyarrow>=18
+numpy>=2.0
+scikit-learn>=1.5
+requests>=2.32
+
+# Retrieval / agent prototypes
+sentence-transformers>=3.0
+faiss-cpu>=1.8
+chromadb>=0.5
+langchain-core>=0.3
+langgraph>=0.2
