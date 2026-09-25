@@ -3,11 +3,13 @@ name: Data Platform Tooling Check
 on:
   push:
     paths:
-      - "DATA_PLATFORM_TOOLING.md"      - "scripts/install-data-platform-clis.*"
+      - "DATA_PLATFORM_TOOLING.md"
+      - "scripts/install-data-platform-clis.*"
       - ".github/workflows/data-platform-tooling-check.yml"
   pull_request:
     paths:
-      - "DATA_PLATFORM_TOOLING.md"      - "scripts/install-data-platform-clis.*"
+      - "DATA_PLATFORM_TOOLING.md"
+      - "scripts/install-data-platform-clis.*"
       - ".github/workflows/data-platform-tooling-check.yml"
   workflow_dispatch:
 
