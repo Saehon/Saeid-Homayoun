@@ -47,7 +47,6 @@ AWS is evaluated beside:
 - Microsoft Foundry + Fabric
 - Anthropic / Claude
 - Google / Gemini Enterprise Agent Platform
-- Databricks Mosaic AI + MLflow + Unity Catalog
 - OpenAI
 - Hugging Face and open-source models
 
