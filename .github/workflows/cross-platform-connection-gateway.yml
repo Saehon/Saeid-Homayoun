@@ -176,3 +176,42 @@ jobs:
           aws sts get-caller-identity
           echo "### AWS ✅" >> "${GITHUB_STEP_SUMMARY}"
           echo "GitHub OIDC successfully assumed AWS_ROLE_ARN." >> "${GITHUB_STEP_SUMMARY}"
+
+  databricks:
+    name: Databricks OIDC connection
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      DATABRICKS_AUTH_TYPE: github-oidc
+      DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
+      DATABRICKS_CLIENT_ID: ${{ vars.DATABRICKS_CLIENT_ID }}
+    steps:
+      - name: Check Databricks federation configuration
+        id: auth
+        shell: bash
+        run: |
+          if [[ -z "${DATABRICKS_HOST}" || -z "${DATABRICKS_CLIENT_ID}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::Databricks OIDC is ready in GitHub but requires DATABRICKS_HOST and DATABRICKS_CLIENT_ID repository variables plus a Databricks federation policy."
+            echo "### Databricks ⚪" >> "${GITHUB_STEP_SUMMARY}"
+            echo "GitHub OIDC workflow is installed. Add DATABRICKS_HOST and DATABRICKS_CLIENT_ID after creating the Databricks service-principal federation policy." >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Install Databricks CLI
+        if: steps.auth.outputs.configured == 'true'
+        uses: databricks/setup-cli@main
+
+      - name: Verify Databricks identity
+        if: steps.auth.outputs.configured == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          databricks current-user me >/tmp/databricks-current-user.json
+          cat /tmp/databricks-current-user.json
+          echo "### Databricks ✅" >> "${GITHUB_STEP_SUMMARY}"
+          echo "GitHub OIDC authenticated successfully to Databricks." >> "${GITHUB_STEP_SUMMARY}"
+
