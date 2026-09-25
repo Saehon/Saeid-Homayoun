@@ -17,6 +17,12 @@ CORE_REPOS=(
   "https://github.com/westland/auditanalytics.git"
   "https://github.com/ProsusAI/finBERT.git"
   "https://github.com/AI4Finance-Foundation/FinGPT.git"
+  "https://github.com/adoptai/cpa-skills.git"
+  "https://github.com/GAJETOso/financeskills.git"
+  "https://github.com/esploro-group/closegate.git"
+  "https://github.com/docling-project/docling-mcp.git"
+  "https://github.com/stefanoamorelli/sec-edgar-mcp.git"
+  "https://github.com/microsoft/agent-framework.git"
 )
 
 OPTIONAL_REPOS=(
@@ -28,6 +34,7 @@ OPTIONAL_REPOS=(
   "https://github.com/IBM/watsonx-developer-hub.git"
   "https://github.com/IBM/ai-agent-for-loan-risk.git"
   "https://github.com/GitiHubi/deepPaper.git"
+  "https://github.com/google/adk-python.git"
 )
 
 mkdir -p "$ROOT"
