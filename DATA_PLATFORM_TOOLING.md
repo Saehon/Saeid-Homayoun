@@ -11,7 +11,6 @@ GitHub remains the source of truth for code, configuration, documentation, manif
 | GitHub | source code, provenance, releases, workflows and canonical research record | Git / GitHub Actions |
 | Kaggle | benchmark datasets, notebooks and public reproducible experiments | `kaggle` |
 | Hugging Face | public datasets, models, agents and dataset/model cards | `hf` |
-| Databricks | scalable analytics, lakehouse, jobs, MLflow and governed AI workflows | `databricks` |
 | AWS | secure data/evidence storage, model/agent execution and audit/control telemetry | AWS CLI / SDKs when configured |
 | Google Drive | controlled research files, manuscripts and working documents | Google Drive integration |
 | Microsoft | Foundry/Fabric finance/data/agent research | provider-specific APIs/SDKs |
@@ -47,15 +46,6 @@ Hugging Face is integrated through:
 - `HF_TOKEN` as a GitHub Actions secret when publishing is enabled;
 - the public AWS accounting/audit/finance/ESG registry.
 
-### Databricks
-
-Databricks support is integrated through:
-
-- `databricks/README.md`
-- the unified installation scripts;
-- `.github/workflows/data-platform-tooling-check.yml`.
-
-Databricks authentication is intentionally not stored in the public repository.
 
 ### AWS
 
@@ -89,7 +79,6 @@ bash scripts/install-data-platform-clis.sh
 ```text
 kaggle --version
 hf --help
-databricks -v
 ```
 
 AWS and model-provider CLIs/SDKs should be configured only when required by a specific experiment.
@@ -100,7 +89,6 @@ Do not commit credentials.
 
 - Kaggle: `KAGGLE_API_TOKEN` in GitHub Actions secrets.
 - Hugging Face: `HF_TOKEN` in GitHub Actions secrets.
-- Databricks: workload identity/service principal preferred; otherwise secure `DATABRICKS_HOST` and `DATABRICKS_TOKEN`.
 - AWS: use IAM roles, workload identity or secure GitHub Actions secrets for approved experiments.
 - OpenAI / Anthropic / Google / Microsoft: use provider secrets or workload identity; never tracked files.
 
@@ -111,7 +99,7 @@ Do not commit credentials.
               code + provenance + workflows
              /        |         |          \
             /         |         |           \
-      Hugging Face  Kaggle  Google Drive  AWS / Databricks
+      Hugging Face  Kaggle  Google Drive  AWS
       public data   benchmarks controlled    governed
       + models      + notebooks research     execution/data
             \         |         |          /
