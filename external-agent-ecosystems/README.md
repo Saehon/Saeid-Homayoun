@@ -4,6 +4,13 @@ This folder is a curated integration index of external open-source repositories 
 
 **Important:** External projects are referenced as upstream resources; their code is not copied or vendored here. Each upstream project remains subject to its own license, terms, and attribution requirements.
 
+## Canonical Platform Map
+
+- [Canonical Cross-Platform Integration Map](../CROSS_PLATFORM_INTEGRATION.md)
+- [AWS Free/Open Data Registry](../aws/FREE_DATA_REGISTRY.md)
+- Hugging Face registry: https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry
+- Kaggle registry: https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registry
+
 ## Master Research Architecture
 
 Start here:
