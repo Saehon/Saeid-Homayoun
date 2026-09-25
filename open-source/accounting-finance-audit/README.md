@@ -111,3 +111,13 @@ The integrated public-data layer is here:
 - [Python requirements](data/requirements-data.txt)
 
 The data hub keeps large files on their native platforms and downloads them into the Git-ignored `research-data/` directory. It currently covers synthetic audit/journal-entry and AML data, SEC/XBRL and SEC-filing corpora, financial NLP, ESG/sustainability, fraud benchmarks, and GitHub-hosted accounting/finance/audit programs.
+
+## Three-platform mirror
+
+This stack is synchronized from one canonical source into three public research surfaces:
+
+- **GitHub (canonical):** https://github.com/Saehon/Saeid-Homayoun/tree/main/open-source/accounting-finance-audit
+- **Hugging Face target:** https://huggingface.co/datasets/SADHON/accounting-finance-audit-open-registry
+- **Kaggle target:** https://www.kaggle.com/datasets/sadhon/accounting-finance-audit-open-registry
+
+Publication is handled by `.github/workflows/publish-accounting-finance-audit-open-registry.yml`. GitHub remains the source of truth; Hugging Face and Kaggle receive generated CSV catalogues, the canonical YAML registries, provenance metadata and checksums. Third-party repositories and large upstream datasets are linked rather than republished.
