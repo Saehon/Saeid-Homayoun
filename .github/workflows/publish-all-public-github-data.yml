@@ -128,12 +128,10 @@ jobs:
           dataset="sadhon/github-public-research-data"
           kaggle datasets list --page-size 1 >/dev/null
           if kaggle datasets files "${dataset}" >/dev/null 2>&1; then
-            kaggle datasets version \
-              -p /tmp/kaggle-publish \
-              -m "Sync GitHub public research data ${GITHUB_SHA}"
-          else
-            kaggle datasets create -p /tmp/kaggle-publish
+            echo "Recreating the newly created mirror as public."
+            kaggle datasets delete "${dataset}" --yes
           fi
+          kaggle datasets create -p /tmp/kaggle-publish --public
 
           echo "### Kaggle published" >> "${GITHUB_STEP_SUMMARY}"
           echo "https://www.kaggle.com/datasets/sadhon/github-public-research-data" >> "${GITHUB_STEP_SUMMARY}"
