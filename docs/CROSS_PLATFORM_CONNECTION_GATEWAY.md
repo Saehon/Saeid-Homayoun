@@ -1,6 +1,6 @@
 # Cross-Platform Connection Gateway
 
-This repository uses **GitHub as the permanent integration hub** for OpenAI/GPT, Kaggle, Hugging Face, and AWS.
+This repository uses **GitHub as the permanent integration hub** for OpenAI/GPT, Kaggle, Hugging Face, AWS, and Databricks.
 
 ## Architecture
 
@@ -10,10 +10,11 @@ ChatGPT / OpenAI API
         | OPENAI_API_KEY
         v
 GitHub Actions  <---- canonical automation hub
-   |     |     |
-   |     |     +---- AWS (GitHub OIDC -> IAM role)
-   |     +---------- Hugging Face (HF_TOKEN)
-   +---------------- Kaggle (KAGGLE_API_TOKEN)
+   |     |     |     |
+   |     |     |     +---- Databricks (GitHub OIDC -> service principal)
+   |     |     +---------- AWS (GitHub OIDC -> IAM role)
+   |     +---------------- Hugging Face (HF_TOKEN)
+   +---------------------- Kaggle (KAGGLE_API_TOKEN)
 
 GitHub itself uses the automatic GITHUB_TOKEN.
 ```
@@ -37,6 +38,11 @@ Configure these under:
 | Kaggle | `KAGGLE_API_TOKEN` | Kaggle API token |
 | AWS | `AWS_ROLE_ARN` | ARN of an IAM role trusted by GitHub OIDC |
 
+Databricks does **not** require a PAT or client secret in this design. Configure these repository variables instead:
+
+- `DATABRICKS_HOST` — your Databricks workspace URL.
+- `DATABRICKS_CLIENT_ID` — the Databricks service-principal application ID.
+
 Optional repository variable:
 
 - `AWS_REGION` — defaults to `eu-north-1` in the gateway.
@@ -54,6 +60,19 @@ repo:Saehon/Saeid-Homayoun:*
 Then store only the role ARN as the GitHub secret `AWS_ROLE_ARN`.
 
 For production, narrow the trust condition further to the exact branch or GitHub environment and attach only the minimum AWS permissions required.
+
+## Databricks one-time OIDC setup
+
+Create or choose a Databricks service principal and add a workload identity federation policy for GitHub Actions.
+
+Use:
+
+- GitHub organization: `Saehon`
+- Repository: `Saeid-Homayoun`
+- Issuer: `https://token.actions.githubusercontent.com`
+- Authentication type used by the workflow: `github-oidc`
+
+Databricks recommends an Environment-scoped subject for production. After the federation policy exists, add `DATABRICKS_HOST` and `DATABRICKS_CLIENT_ID` as GitHub repository or environment variables. No Databricks client secret or personal access token is required.
 
 ## Gateway workflow
 
@@ -75,7 +94,8 @@ The jobs verify:
 2. OpenAI API authentication;
 3. Hugging Face authentication;
 4. Kaggle CLI connectivity;
-5. AWS STS identity through GitHub OIDC.
+5. AWS STS identity through GitHub OIDC;
+6. Databricks identity through GitHub OIDC.
 
 Missing credentials do not expose secrets. They generate a visible setup notice. Invalid configured credentials fail their service job, making the broken connection easy to identify.
 
