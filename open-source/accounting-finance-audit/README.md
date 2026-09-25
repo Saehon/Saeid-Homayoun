@@ -32,6 +32,13 @@ This folder **does not vendor or re-publish third-party source code**. It preser
 | Audit research | GitiHubi/deepPaper | Financial audit data-analytics research collection | Paper/project index | Reference-only; follow each linked project's licence |
 | Financial NLP | ProsusAI/finBERT | Financial-text sentiment/NLP | Model code + public model access | Older repo dependencies; modern HF model may be easier |
 | Financial LLM | AI4Finance-Foundation/FinGPT | Open financial LLM/RAG/benchmark experimentation | Code + HF-linked models/datasets | Local/cloud; some models need GPU or separate model access |
+| Accounting Agent | adoptai/cpa-skills | Reconciliation, statement extraction, tie-outs, audit sampling, JE anomaly tests | MIT code/skills | Local open-source component |
+| Finance Agent | GAJETOso/financeskills | Finance, accounting, IFRS/GAAP, audit and compliance skills | MIT code/skills | Local open-source component |
+| Controls | esploro-group/closegate | SOX/SoD, materiality routing, finance-agent policy gates and HITL approvals | Apache-2.0 code | Local open-source component |
+| Document AI | docling-project/docling-mcp | Evidence/document parsing through MCP | MIT code/MCP server | Local open-source component |
+| SEC MCP | stefanoamorelli/sec-edgar-mcp | SEC filing/XBRL evidence through MCP | AGPL-3.0 code | Local; respect SEC access rules |
+| Microsoft | microsoft/agent-framework | Python/.NET agent and multi-agent orchestration | MIT code | Provider-neutral orchestration |
+| Google | google/adk-python | Open-source multi-agent orchestration | Apache-2.0 code | Optional framework |
 
 ## Best free data for your research
 
