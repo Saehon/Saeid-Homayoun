@@ -1,6 +1,26 @@
-# NAAIL OpenLab™
+# Dr. Saeid Homayoun — AI Research & NAAIL OpenLab™
 
-## Next-Generation Accounting, Audit & Assurance Intelligence Lab
+**Accounting Scholar and AI Researcher | AI-enabled Auditing · Agentic AI · Audit Analytics · LLMs · CAM/KAM · ICFR · IFRS · ESG · Financial Reporting**
+
+I conduct research at the intersection of **artificial intelligence, accounting, auditing, assurance, finance, internal control, financial reporting, and sustainability**. My current AI research includes **agentic and multi-agent systems, LLM/FinBERT applications in auditing, AI-enabled CAM/KAM analysis, ICFR analytics, IFRS-oriented AI, audit evidence and governance, digital twins, reproducible research, and human-accountable AI**.
+
+## Academic & AI research identity
+
+- **Google Scholar:** https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en
+- **ORCID:** https://orcid.org/0000-0002-2536-0446
+- **GitHub:** https://github.com/Saehon
+- **Kaggle:** https://www.kaggle.com/sadhon
+- **Hugging Face:** https://huggingface.co/SADHON
+- **SSRN AI/KAM paper:** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139
+- **NAAIL OpenLab public release:** https://github.com/Saehon/Saeid-Homayoun
+
+**Research expertise:** Artificial Intelligence in Accounting · AI-enabled Auditing · Agentic AI · Multi-Agent Systems · Large Language Models · Audit Analytics · Critical/Key Audit Matters · Internal Control over Financial Reporting · IFRS · ESG/Sustainability · Financial NLP · Digital Twins · AI Governance · Reproducible Research
+
+---
+
+## NAAIL OpenLab™
+
+### Next-Generation Accounting, Audit & Assurance Intelligence Lab
 
 **A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery**
 
