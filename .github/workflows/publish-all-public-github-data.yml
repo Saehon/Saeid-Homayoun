@@ -32,7 +32,7 @@ jobs:
 
       - name: Discover public repositories
         env:
-          GH_TOKEN: \${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
@@ -52,8 +52,8 @@ jobs:
             --out /tmp/github-public-data \
             --owner Saehon
           ls -lah /tmp/github-public-data
-          echo "### Public GitHub data snapshot" >> "\${GITHUB_STEP_SUMMARY}"
-          python - <<'PY' >> "\${GITHUB_STEP_SUMMARY}"
+          echo "### Public GitHub data snapshot" >> "${GITHUB_STEP_SUMMARY}"
+          python - <<'PY' >> "${GITHUB_STEP_SUMMARY}"
           import json
           m = json.load(open("/tmp/github-public-data/SNAPSHOT_METADATA.json", encoding="utf-8"))
           print(f"- Included files: **{m['included_files']}**")
@@ -76,11 +76,11 @@ jobs:
     steps:
       - name: Check Kaggle credential
         env:
-          KAGGLE_API_TOKEN: \${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
-          if [[ -z "\${KAGGLE_API_TOKEN}" ]]; then
+          if [[ -z "${KAGGLE_API_TOKEN}" ]]; then
             echo "::error::KAGGLE_API_TOKEN is not configured."
             exit 1
           fi
@@ -100,7 +100,7 @@ jobs:
 
       - name: Publish or version Kaggle dataset
         env:
-          KAGGLE_API_TOKEN: \${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
@@ -127,16 +127,16 @@ jobs:
 
           dataset="sadhon/github-public-research-data"
           kaggle datasets list --page-size 1 >/dev/null
-          if kaggle datasets files "\${dataset}" >/dev/null 2>&1; then
+          if kaggle datasets files "${dataset}" >/dev/null 2>&1; then
             kaggle datasets version \
               -p /tmp/kaggle-publish \
-              -m "Sync GitHub public research data \${GITHUB_SHA}"
+              -m "Sync GitHub public research data ${GITHUB_SHA}"
           else
             kaggle datasets create -p /tmp/kaggle-publish
           fi
 
-          echo "### Kaggle published" >> "\${GITHUB_STEP_SUMMARY}"
-          echo "https://www.kaggle.com/datasets/sadhon/github-public-research-data" >> "\${GITHUB_STEP_SUMMARY}"
+          echo "### Kaggle published" >> "${GITHUB_STEP_SUMMARY}"
+          echo "https://www.kaggle.com/datasets/sadhon/github-public-research-data" >> "${GITHUB_STEP_SUMMARY}"
 
   publish-huggingface:
     name: Publish Hugging Face mirror
@@ -145,11 +145,11 @@ jobs:
     steps:
       - name: Check Hugging Face credential
         env:
-          HF_TOKEN: \${{ secrets.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
-          if [[ -z "\${HF_TOKEN}" ]]; then
+          if [[ -z "${HF_TOKEN}" ]]; then
             echo "::error::HF_TOKEN is not configured."
             exit 1
           fi
@@ -169,7 +169,7 @@ jobs:
 
       - name: Publish Hugging Face dataset
         env:
-          HF_TOKEN: \${{ secrets.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
@@ -189,5 +189,5 @@ jobs:
           print(f"Published https://huggingface.co/datasets/{repo_id}")
           PY
 
-          echo "### Hugging Face published" >> "\${GITHUB_STEP_SUMMARY}"
-          echo "https://huggingface.co/datasets/SADHON/github-public-research-data" >> "\${GITHUB_STEP_SUMMARY}"
+          echo "### Hugging Face published" >> "${GITHUB_STEP_SUMMARY}"
+          echo "https://huggingface.co/datasets/SADHON/github-public-research-data" >> "${GITHUB_STEP_SUMMARY}"
