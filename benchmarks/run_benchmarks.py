@@ -34,5 +34,18 @@ fin=numeric(load("financial_reasoning.json"))
 result={"status":"smoke-test","generated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "cam_kam":cam,"icfr":icfr,"financial_reasoning":fin,
         "note":"Synthetic fixtures only; not research results."}
+# Fixed-fixture assertions: CI must fail if metric implementations regress.
+expected = {
+    "cam_kam": {"precision": 2/3, "recall": 1.0, "f1": 0.8},
+    "icfr": {"precision": 1.0, "recall": 1.0, "f1": 1.0, "brier_score": 0.04625},
+    "financial_reasoning": {"numeric_tolerance_accuracy": 2/3},
+}
+for family, metrics in expected.items():
+    for metric, value in metrics.items():
+        actual = result[family][metric]
+        assert math.isclose(actual, value, rel_tol=1e-12, abs_tol=1e-12), (
+            f"{family}.{metric}: expected {value}, got {actual}"
+        )
+
 (OUT/"smoke-results.json").write_text(json.dumps(result,indent=2))
 print(json.dumps(result,indent=2))
