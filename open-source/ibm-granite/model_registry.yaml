@@ -1,0 +1,38 @@
+version: 1
+provider: IBM
+family: Granite
+license_note: "Granite 4.0 models listed here are published as Apache-2.0; verify each upstream model card before use."
+huggingface_owner: ibm-granite
+user_huggingface_profile: SADHON
+
+models:
+  default:
+    id: ibm-granite/granite-4.0-h-tiny
+    role: practical_default
+    tasks:
+      - text-generation
+      - instruction-following
+      - rag
+      - tool-calling
+      - agent-workflows
+  flagship:
+    id: ibm-granite/granite-4.0-h-small
+    role: high_quality_reference
+    tasks:
+      - text-generation
+      - rag
+      - tool-calling
+      - multi-agent
+  vision:
+    id: ibm-granite/granite-4.0-3b-vision
+    role: document_vision
+    tasks:
+      - table-extraction
+      - chart-extraction
+      - document-understanding
+  speech:
+    id: ibm-granite/granite-4.0-1b-speech
+    role: speech
+    tasks:
+      - speech-to-text
+      - multilingual-transcription
