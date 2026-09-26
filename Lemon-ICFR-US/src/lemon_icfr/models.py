@@ -12,6 +12,8 @@ class EvidenceItem:
     rights_status: str
     content: str
     version: str | None = None
+    evidence_class: str = "real"
+    chronology_status: str = "known"
 
 
 @dataclass
