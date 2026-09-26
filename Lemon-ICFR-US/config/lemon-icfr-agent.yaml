@@ -1,13 +1,58 @@
 product: Lemon-ICFR-US
-version: "0.1-scientific-agent-architecture"
+version: "0.2-mother-inherited-scientific-agent"
 mode: research-and-education
+
+constitution:
+  permanent_cores_exactly: 2
+  cores:
+    stable_knowledge_core:
+      includes:
+        - SEC
+        - SOX_404
+        - PCAOB
+        - COSO
+        - ICFR_ontology
+        - evidence_semantics
+        - professional_decision_DAG
+        - variable_DNA
+        - chain_of_evidence
+        - failure_memory
+        - scientific_governance
+    replaceable_technology_core:
+      includes:
+        - frontier_models
+        - agent_runtimes
+        - provider_adapters
+        - MCP
+        - A2A
+        - RAG_GraphRAG_KAG
+        - digital_twin_engines
+        - GAN_synthetic_generators
+        - observability
+        - evaluation_tooling
+
+layers:
+  - knowledge_evidence_plane
+  - agentic_mesh
+  - scientific_discovery_plane
+  - digital_twin_scenario_lab
+  - GAN_synthetic_adversarial_layer
+  - governance_observability_plane
+  - experience_workflow_layer
+
+fabric:
+  adaptive_intelligence: true
+  ai_to_ai_scientific_contract: true
+  hashed_handoffs: true
+  preserve_disagreement: true
 
 domain:
   jurisdiction: US
   focus: Internal Control over Financial Reporting
   frameworks:
     - SOX-404
-    - COSO
+    - COSO-2013
+    - COSO-GenAI-2026
     - PCAOB-AS-2201
     - SEC-ICFR
 
@@ -16,12 +61,19 @@ evidence_priority:
   - PCAOB
   - COSO
   - company_primary_filings
+  - company_primary_evidence
   - reproducible_public_datasets
   - peer_reviewed_research
   - vendor_material
 
 technology:
   provider_strategy: replaceable
+  promotion_states:
+    - WATCH
+    - EVALUATE
+    - SANDBOX
+    - ADOPT
+    - REPLACE_RETIRE
   preferred_execution_layer:
     - claude_for_financial_services
     - financial_analysis_solution
@@ -32,16 +84,33 @@ technology:
 intelligence:
   systems_thinking: true
   co_scientist: true
+  ERA_empirical_conversion: true
   structure_discovery:
     inspiration: AlphaFold
     mode: hypothesis_only_until_validated
   evolutionary_improvement:
     inspiration: AlphaEvolve
+    frozen_fitness_required: true
     benchmark_gated: true
     autonomous_production_mutation: false
   scientific_discovery: true
+  chain_of_evidence: true
+  CoE_audit: true
+  failure_memory: true
   digital_twin: true
   causal_verification: true
+  blind_holdout_benchmark: true
+
+synthetic_adversarial:
+  status: SANDBOX
+  methods:
+    - GAN
+    - diffusion
+    - tabular_generator
+    - deterministic_rules
+  label_synthetic_data: true
+  synthetic_data_is_real_evidence: false
+  real_evidence_anchor_required: true
 
 agents:
   - lemon_orchestrator
@@ -55,23 +124,32 @@ agents:
   - co_scientist_panel
   - structure_discovery_agent
   - reviewer_agent
+  - replication_agent
   - falsification_agent
 
 required_gates:
   - provenance
   - rights_license
+  - chronology
   - icfr_coso_grounding
+  - real_evidence_anchor
   - evidence_sufficiency
   - independent_review
   - falsification
+  - chain_of_evidence
   - reproducibility
   - human_approval
 
 outputs:
   - evidence_passport
-  - icfr_case_graph
+  - variable_DNA
+  - professional_decision_DAG
+  - chain_of_evidence
+  - CoE_audit
+  - ICFR_case_graph
   - test_results
   - contradiction_log
+  - failure_memory
   - deficiency_candidate
   - human_disposition
   - model_lineage
@@ -82,3 +160,4 @@ governance:
   no_ai_audit_opinion: true
   no_uncontrolled_self_improvement: true
   secrets_in_repository: false
+  generator_evaluator_validator_separation: true
