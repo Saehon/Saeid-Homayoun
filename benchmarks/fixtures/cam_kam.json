@@ -1,0 +1,6 @@
+[
+  {"id":"synthetic-cam-1","gold":1,"pred":1},
+  {"id":"synthetic-cam-2","gold":0,"pred":0},
+  {"id":"synthetic-cam-3","gold":1,"pred":1},
+  {"id":"synthetic-cam-4","gold":0,"pred":1}
+]
