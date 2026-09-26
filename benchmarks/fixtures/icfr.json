@@ -1,0 +1,6 @@
+[
+  {"id":"synthetic-icfr-1","gold":1,"pred":1,"prob":0.80},
+  {"id":"synthetic-icfr-2","gold":0,"pred":0,"prob":0.15},
+  {"id":"synthetic-icfr-3","gold":1,"pred":1,"prob":0.70},
+  {"id":"synthetic-icfr-4","gold":0,"pred":0,"prob":0.20}
+]
