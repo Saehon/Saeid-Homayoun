@@ -1,0 +1,41 @@
+name: Microsoft Open Data Phase 1
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "open-data/microsoft-demo-001/**"
+      - ".github/workflows/microsoft_open_data_phase1.yml"
+  pull_request:
+    paths:
+      - "open-data/microsoft-demo-001/**"
+      - ".github/workflows/microsoft_open_data_phase1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate frozen SEC control totals
+        run: python open-data/microsoft-demo-001/validate.py
+      - name: Run accounting calculations
+        run: python open-data/microsoft-demo-001/analysis.py
+      - name: Upload reproducibility package
+        uses: actions/upload-artifact@v4
+        with:
+          name: microsoft-accounting-demo-001
+          path: |
+            open-data/microsoft-demo-001/microsoft_financials.csv
+            open-data/microsoft-demo-001/provenance.json
+            open-data/microsoft-demo-001/README.md
+          if-no-files-found: error

@@ -1,0 +1,28 @@
+{
+  "prototype_id": "NAAIL-MSFT-POC-V1-FY2026",
+  "maturity": "RESEARCH_PROTOTYPE",
+  "architecture": {"permanent_cores":["Stable Knowledge Core™","Replaceable Technology Core™"],"third_core":false},
+  "company": {"name":"Microsoft Corporation","ticker":"MSFT","cik":"0000789019","fiscal_year":2026},
+  "accounting": {
+    "facts": {"revenue":331839,"revenue_2025":281724,"cost_revenue":106374,"gross_margin":225465,"rd":35562,"operating_income":155237,"net_income":133749,"cash":20935,"short_investments":55908,"current_assets":207710,"ppe_net":313076,"total_assets":758376,"current_liabilities":168825,"long_debt":31067,"total_liabilities":315989,"equity":442387,"operating_cf":182935,"capex":115948,"investing_cf":-139500,"financing_cf":-52546,"segment_pbp_revenue":139996,"segment_ic_revenue":137791,"segment_mpc_revenue":54052,"fcf":66987},
+    "xbrl_reports":["R2","R4","R6","R107"]
+  },
+  "audit": {
+    "auditor":"Deloitte & Touche LLP","icfr_opinion":"UNQUALIFIED",
+    "cams":[
+      {"topic":"Revenue Recognition","account":"Revenue","assertions":["occurrence","accuracy","cutoff","classification"],"risk":"judgment over performance obligations, recognition timing, contract terms, variable consideration and stand-alone selling prices","procedures":["test relevant controls","evaluate accounting policy","sample customer agreements","assess contract terms/performance obligations","evaluate stand-alone selling-price estimates","test mathematical accuracy and recognition timing"],"evidence":"FY2026 Deloitte CAM disclosure","judgment":"HIGH"},
+      {"topic":"Income Taxes — Uncertain Tax Positions","account":"Income tax liabilities","assertions":["valuation","completeness","presentation"],"risk":"unresolved transfer-pricing positions and complex tax-law judgments","procedures":["test related controls","evaluate methods and assumptions","inspect management/tax-specialist support","assess new information","consider tax law/case law","evaluate disclosures"],"evidence":"FY2026 Deloitte CAM disclosure","judgment":"HIGH_WITH_TAX_SPECIALISTS"}
+    ]
+  },
+  "text_analytics":{"status":"EXECUTED_ON_BOUNDED_SOURCE_SAMPLES","output":"microsoft_text_features.csv","raw_text_redistributed":false},
+  "finance":{"status":"EXECUTED_SELECTED_FEATURES","market_data":{"source":"Alpaca IEX market-data connector","period_start":"2025-07-01","period_end":"2026-06-30","bar_count":251,"first_close":492.10,"last_close":372.92,"simple_price_return":-0.24218654744970536},"macro":{"fred_dgs10_2026_06_30_pct":4.44,"damodaran_us_implied_erp_2026_07_01_pct":4.42,"damodaran_mature_market_erp_2026_07_01_pct":4.20,"illustrative_rf_plus_mature_erp_pct":8.64},"factor_regression":"REGISTERED_NOT_EXECUTED"},
+  "innovation":{"status":"EXECUTED_R_AND_D_AND_GITHUB_METADATA","patents":"REGISTERED_NOT_EXECUTED"},
+  "management_accounting":{"status":"SYNTHETIC_EXECUTED","boundary":"Microsoft-like AI process; no Microsoft internal cost data","capacity_cost_rate_usd_per_min":1.7708333333333333,"activities":[{"activity":"document_retrieval","human_minutes":2,"agent_minutes":2,"input_tokens":2500,"output_tokens":250,"tool_cost_usd":0.02,"tdabc_human_cost_usd":3.5417},{"activity":"financial_analysis","human_minutes":3,"agent_minutes":5,"input_tokens":6000,"output_tokens":700,"tool_cost_usd":0.0,"tdabc_human_cost_usd":5.3125},{"activity":"audit_agent_analysis","human_minutes":3,"agent_minutes":5,"input_tokens":7500,"output_tokens":900,"tool_cost_usd":0.03,"tdabc_human_cost_usd":5.3125},{"activity":"report_generation","human_minutes":2,"agent_minutes":3,"input_tokens":4500,"output_tokens":1200,"tool_cost_usd":0.0,"tdabc_human_cost_usd":3.5417},{"activity":"human_review","human_minutes":12,"agent_minutes":0,"input_tokens":0,"output_tokens":0,"tool_cost_usd":0.0,"tdabc_human_cost_usd":21.25}],"total_human_tdabc_cost_usd":38.9584,"total_tokens":23550,"tool_cost_usd":0.05},
+  "ai_benchmark":{"status":"EXECUTED_EXTERNAL_REFERENCE_SNAPSHOT","source":"LiveBench 2026-06-25","output":"ai_cost_benchmark.csv","limitation":"LiveBench cost per successful task is an external benchmark, not a NAAIL professional verification rate."},
+  "human_ai_experiment":{"status":"DESIGN_COMPLETE_NOT_EXECUTED","output":"human_ai_experiment_design.md"},
+  "evidence_passports":[{"passport_id":"EP-MSFT-XBRL-FY2026","source_id":"SEC_XBRL_R2_R4_R6_R107","source_url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/","retrieved_at":"2026-09-16","evidence_class":"PRIMARY_REGULATORY_XBRL","rights_gate":"PASS_WITH_ATTRIBUTION","provenance":{"provider":"U.S. SEC EDGAR","period":"FY ended 2026-06-30","locator":"Accession 0001193125-26-323660; R2/R4/R6/R107"},"transformation":{"method":"structured fact extraction + derived ratios","derived":true,"code_path":"code/sec_xbrl_ingest.py"},"claim_scope":"Microsoft FY2026 income statement, balance sheet, cash flow and segment facts","content_hash":null,"execution_status":"EXECUTED","human_review_status":"APPROVE_WITH_LIMITATIONS"}],
+  "decision_consequence_interface":{"status":"INTERFACE_ONLY_PATENT_HOLD","execution":"NOT_EXECUTED"},
+  "professional_judgment_passport_interface":{"status":"INTERFACE_ONLY_PATENT_HOLD","execution":"NOT_EXECUTED"},
+  "human_gate":{"decision":"APPROVE_RESEARCH_PROTOTYPE_FOR_PUBLICATION_WITH_LIMITATIONS","scientific_validation":"PENDING_INDEPENDENT_REPLICATION","production_approval":"NO","limitations":["No production readiness claim","No participant experiment results","No Fama-French regression","No aggregate PatentsView execution","No causal innovation claim"]},
+  "next_validation_sequence":["V1.1 SAP","V1.2 Walmart","V1.3 Intuit","V1.4 Shopify","V1.5 JPMorgan","V1.6 ExxonMobil","V1.7 Fluor","Optional Boeing"]
+}

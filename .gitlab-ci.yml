@@ -62,3 +62,18 @@ ibm-granite-registry:
   rules:
     - if: '$CI_COMMIT_BRANCH'
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+icfr-evidence-review-agent:
+  stage: test
+  script:
+    - python -m pip install -r ICFR-Evidence-Review-Agent/prototype/requirements.txt
+    - cd ICFR-Evidence-Review-Agent/prototype
+    - python -m compileall -q .
+    - python -m pytest -q
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      changes:
+        - ICFR-Evidence-Review-Agent/**/*
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+        - ICFR-Evidence-Review-Agent/**/*

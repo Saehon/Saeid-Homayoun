@@ -1,0 +1,15 @@
+{
+  "id": "sadhon/sec-edgar-microsoft-10-k-simple-example",
+  "title": "SEC EDGAR Microsoft 10-K - Simple Example",
+  "code_file": "sec_edgar_microsoft_10k.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "sadhon/pcaob-ai-inspector-multi-agent-audit-simulation",
+  "title": "PCAOB AI Inspector - Multi-Agent Audit Simulation",
+  "code_file": "PCAOB_AI_Inspector_Kaggle.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

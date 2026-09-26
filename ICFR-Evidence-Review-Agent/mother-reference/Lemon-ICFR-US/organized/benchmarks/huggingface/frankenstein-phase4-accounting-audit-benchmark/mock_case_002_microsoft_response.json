@@ -1,0 +1,18 @@
+{
+  "revenue_growth_pct": 17.79,
+  "gross_margin_pct": 67.94,
+  "operating_margin_pct": 46.78,
+  "net_margin_pct": 40.31,
+  "financial_statement_opinion": "unqualified",
+  "icfr_opinion": "unqualified",
+  "evidence_ids_used": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+  ],
+  "unsupported_claims": []
+}
