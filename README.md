@@ -16,6 +16,15 @@ I conduct research at the intersection of **accounting, auditing, assurance, fin
 - **SSRN AI/KAM paper:** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139
 - **Citation metadata:** [CITATION.cff](CITATION.cff)
 
+## 🚀 Start Here — Accounting & Audit AI Portfolio Hub
+
+For a compact view of the strongest public datasets, benchmarks, open-source tools and reproducible demonstrations:
+
+- **Hugging Face:** https://huggingface.co/datasets/SADHON/accounting-audit-ai-portfolio
+- **Kaggle dataset:** https://www.kaggle.com/datasets/sadhon/accounting-audit-ai-portfolio
+- **Kaggle notebook:** https://www.kaggle.com/code/sadhon/accounting-audit-ai-portfolio-start-here
+- **GitHub canonical index:** [portfolio/accounting-audit-ai-portfolio](portfolio/accounting-audit-ai-portfolio/README.md)
+
 ## 🗂️ Academic Portfolio Navigation
 
 ➡️ **[Academic Research & AI Portfolio Index](ACADEMIC_PORTFOLIO_INDEX.md)** — structured navigation across the existing research, data, AI, audit, IFRS, finance, and development repositories. This is an organizational index only; the underlying projects remain unchanged.
