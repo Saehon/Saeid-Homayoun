@@ -21,6 +21,13 @@ Accounting & Auditing Scholar | Integrating AI into Accounting, Auditing & Assur
 - ORCID: https://orcid.org/0000-0002-2536-0446
 - Google Scholar: https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en
 
+## Public portfolio hubs
+
+- Hugging Face portfolio hub: https://huggingface.co/datasets/SADHON/accounting-audit-ai-portfolio
+- Kaggle portfolio dataset: https://www.kaggle.com/datasets/sadhon/accounting-audit-ai-portfolio
+- Kaggle “Start Here” notebook: https://www.kaggle.com/code/sadhon/accounting-audit-ai-portfolio-start-here
+- GitHub canonical portfolio: https://github.com/Saehon/Saeid-Homayoun/tree/main/portfolio/accounting-audit-ai-portfolio
+
 ## Portfolio design
 
 GitHub is the canonical source for code, provenance, tests and workflows. Hugging Face is used for dataset/model discovery and reproducible AI artifacts. Kaggle is used for data exploration, notebooks and benchmark execution. Google Drive is the controlled documentation archive.
