@@ -1,0 +1,121 @@
+name: SEC 10-Company Research Phase 3
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "37 6 * * 1"
+  push:
+    branches:
+      - main
+    paths:
+      - "open-data/sec-10-company-phase3/**"
+      - "open-data/sec-10-company-phase2/phase2_summary.csv"
+      - "kaggle/datasets/sec-10-company-cam-icfr-governance-esg/**"
+      - "huggingface/datasets/sec-10-company-cam-icfr-governance-esg/**"
+      - ".github/workflows/sec_10_company_phase3.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sec-10-company-phase3-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Phase-3 modules
+        run: python open-data/sec-10-company-phase3/validate.py
+
+      - name: Test integrated research agent
+        run: |
+          python open-data/sec-10-company-phase3/research_agent.py profile MSFT
+          python open-data/sec-10-company-phase3/research_agent.py cam TSLA
+          python open-data/sec-10-company-phase3/research_agent.py icfr AAPL
+          python open-data/sec-10-company-phase3/research_agent.py sources META
+
+      - name: Check distribution credentials
+        id: dist
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          [[ -n "${KAGGLE_API_TOKEN}" ]] && echo "kaggle=true" >> "${GITHUB_OUTPUT}" || echo "kaggle=false" >> "${GITHUB_OUTPUT}"
+          [[ -n "${HF_TOKEN}" ]] && echo "hf=true" >> "${GITHUB_OUTPUT}" || echo "hf=false" >> "${GITHUB_OUTPUT}"
+
+      - name: Install distribution clients
+        if: steps.dist.outputs.kaggle == 'true' || steps.dist.outputs.hf == 'true'
+        run: python -m pip install --upgrade kaggle huggingface_hub
+
+      - name: Publish or version Kaggle Phase-3 dataset
+        if: steps.dist.outputs.kaggle == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/kaggle-phase3
+          mkdir -p /tmp/kaggle-phase3
+          cp kaggle/datasets/sec-10-company-cam-icfr-governance-esg/dataset-metadata.json /tmp/kaggle-phase3/
+          cp kaggle/datasets/sec-10-company-cam-icfr-governance-esg/README.md /tmp/kaggle-phase3/
+          cp open-data/sec-10-company-phase3/cam_latest.csv /tmp/kaggle-phase3/
+          cp open-data/sec-10-company-phase3/icfr_latest.csv /tmp/kaggle-phase3/
+          cp open-data/sec-10-company-phase3/governance_source_registry.csv /tmp/kaggle-phase3/
+          cp open-data/sec-10-company-phase3/esg_source_registry.csv /tmp/kaggle-phase3/
+          cp open-data/sec-10-company-phase2/phase2_summary.csv /tmp/kaggle-phase3/financial_summary.csv
+          dataset="sadhon/sec-10-company-cam-icfr-governance-esg"
+          kaggle datasets list -m -p 1 >/dev/null
+          if kaggle datasets files "${dataset}" >/dev/null 2>&1; then
+            kaggle datasets version -p /tmp/kaggle-phase3 -m "Validated Phase 3 sync ${GITHUB_SHA}"
+          else
+            kaggle datasets create -p /tmp/kaggle-phase3
+          fi
+
+      - name: Publish or version Hugging Face Phase-3 dataset
+        if: steps.dist.outputs.hf == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/hf-phase3
+          mkdir -p /tmp/hf-phase3
+          cp huggingface/datasets/sec-10-company-cam-icfr-governance-esg/README.md /tmp/hf-phase3/README.md
+          cp open-data/sec-10-company-phase3/cam_latest.csv /tmp/hf-phase3/
+          cp open-data/sec-10-company-phase3/icfr_latest.csv /tmp/hf-phase3/
+          cp open-data/sec-10-company-phase3/governance_source_registry.csv /tmp/hf-phase3/
+          cp open-data/sec-10-company-phase3/esg_source_registry.csv /tmp/hf-phase3/
+          cp open-data/sec-10-company-phase2/phase2_summary.csv /tmp/hf-phase3/financial_summary.csv
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          repo_id = "SADHON/sec-10-company-cam-icfr-governance-esg"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type="dataset", private=False, exist_ok=True)
+          api.upload_folder(
+              repo_id=repo_id,
+              repo_type="dataset",
+              folder_path="/tmp/hf-phase3",
+              commit_message="Validated GitHub sync for Phase 3 research modules",
+          )
+          print(f"Published https://huggingface.co/datasets/{repo_id}")
+          PY
+
+      - name: Upload Phase-3 reproducibility package
+        uses: actions/upload-artifact@v4
+        with:
+          name: sec-10-company-research-phase3
+          path: |
+            open-data/sec-10-company-phase3/**
+            open-data/sec-10-company-phase2/phase2_summary.csv
+          if-no-files-found: error

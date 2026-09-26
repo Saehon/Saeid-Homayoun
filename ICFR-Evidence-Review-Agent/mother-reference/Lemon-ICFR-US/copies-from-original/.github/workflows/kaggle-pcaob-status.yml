@@ -1,0 +1,48 @@
+name: Kaggle PCAOB Status Check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/kaggle-pcaob-status.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Kaggle CLI
+        run: python -m pip install --upgrade kaggle
+
+      - name: Verify PCAOB Kaggle notebook
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          kernel="sadhon/pcaob-ai-inspector-multi-agent-audit-simulation"
+          for attempt in {1..24}; do
+            echo "Status check attempt ${attempt}: ${kernel}"
+            output="$(kaggle kernels status "${kernel}" 2>&1 || true)"
+            echo "${output}"
+            normalized="$(printf '%s' "${output}" | tr '[:upper:]' '[:lower:]')"
+            if [[ "${normalized}" == *"complete"* ]]; then
+              echo "PCAOB Kaggle notebook completed successfully."
+              exit 0
+            fi
+            if [[ "${normalized}" == *"error"* ]] || [[ "${normalized}" == *"failed"* ]] || [[ "${normalized}" == *"cancel"* ]]; then
+              echo "PCAOB Kaggle notebook did not complete successfully."
+              kaggle kernels logs "${kernel}" || true
+              exit 1
+            fi
+            sleep 10
+          done
+          echo "PCAOB Kaggle notebook did not reach a terminal state during the check window."
+          exit 1

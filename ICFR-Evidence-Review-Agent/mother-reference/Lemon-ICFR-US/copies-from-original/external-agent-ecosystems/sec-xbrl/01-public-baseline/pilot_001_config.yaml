@@ -1,0 +1,24 @@
+pilot_id: microsoft-sec-xbrl-pilot-001
+entity:
+  name: Microsoft Corporation
+  cik: "0000789019"
+source:
+  type: SEC CompanyFacts
+  pin_snapshot: true
+concepts:
+  - Assets
+  - Liabilities
+  - StockholdersEquity
+  - Revenues
+  - NetIncomeLoss
+  - CashAndCashEquivalentsAtCarryingValue
+  - NetCashProvidedByUsedInOperatingActivities
+providers:
+  - openai
+  - anthropic
+  - google
+  - microsoft
+evaluation:
+  blind_provider_identity: true
+  require_evidence_ids: true
+  human_gate: true

@@ -1,0 +1,11 @@
+ticker,company,fiscal_year_end,auditor,cam_count,cam_topics,source_url,review_status
+MSFT,Microsoft Corporation,2026-06-30,Deloitte & Touche LLP,2,"Revenue Recognition; Income Taxes - Uncertain Tax Positions",https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm,CURATED_FROM_10K
+AAPL,Apple Inc.,2025-09-27,Ernst & Young LLP,1,"Uncertain Tax Positions",https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm,CURATED_FROM_10K
+GOOGL,Alphabet Inc.,2025-12-31,Ernst & Young LLP,1,"Loss Contingencies",https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm,CURATED_FROM_10K
+AMZN,"Amazon.com, Inc.",2025-12-31,Ernst & Young LLP,1,"Uncertain Tax Positions",https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm,CURATED_FROM_10K
+NVDA,NVIDIA Corporation,2026-01-25,PricewaterhouseCoopers LLP,1,"Valuation of Inventories - Excess or Obsolete Inventories and Excess Product Purchase Commitments",https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm,CURATED_FROM_10K
+META,"Meta Platforms, Inc.",2025-12-31,Ernst & Young LLP,2,"Loss Contingencies; Uncertain Tax Positions",https://www.sec.gov/Archives/edgar/data/1326801/000162828026025534/meta-12312025x10kars.htm,CURATED_FROM_10K
+JPM,JPMorgan Chase & Co.,2025-12-31,PricewaterhouseCoopers LLP,2,"Allowance for Loan Losses - Portfolio-Based Wholesale and Credit Card Retained Loan Portfolios; Fair Value of Certain Level 3 Financial Instruments",https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm,CURATED_FROM_10K
+WMT,Walmart Inc.,2026-01-31,Ernst & Young LLP,1,"Contingencies",https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm,CURATED_FROM_10K
+XOM,Exxon Mobil Corporation,2025-12-31,PricewaterhouseCoopers LLP,1,"Impact of Proved Developed Oil and Natural Gas Reserves on Upstream PP&E, Net",https://www.sec.gov/Archives/edgar/data/34088/000003408826000045/xom-20251231.htm,CURATED_FROM_10K
+TSLA,"Tesla, Inc.",2025-12-31,PricewaterhouseCoopers LLP,2,"Automotive Warranty Reserve; 2025 CEO Performance Award",https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm,CURATED_FROM_10K

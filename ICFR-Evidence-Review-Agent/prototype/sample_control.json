@@ -1,0 +1,11 @@
+{
+  "control_id": "REV-01",
+  "objective": "Revenue reconciliations are prepared and independently reviewed each month.",
+  "required_evidence": [
+    "reconciliation",
+    "reviewer sign-off",
+    "period"
+  ],
+  "evidence_text": "Monthly revenue reconciliation for period FY2026. Reviewer sign-off completed.",
+  "period": "FY2026"
+}

@@ -1,0 +1,6 @@
+measure,value,unit,definition,source,status
+rd_intensity,0.10716642709265638,ratio,FY2026 R&D / revenue,SEC FY2026 XBRL R2,EXECUTED_REAL_PUBLIC
+rd_spend_usd_m,35562.0,USD millions,FY2026 R&D expense,SEC FY2026 XBRL R2,EXECUTED_REAL_PUBLIC
+microsoft_github_public_repositories_snapshot,8300.0,approx repositories,Microsoft GitHub org public snapshot,https://github.com/microsoft,EXECUTED_PUBLIC_METADATA_SNAPSHOT
+microsoft_major_public_repo_examples,3.0,repositories,vscode; microsoft-ui-xaml; AI,GitHub connector search,EXECUTED_PUBLIC_METADATA_SNAPSHOT
+patent_activity,,count,PatentsView connector registered; aggregate assignee count not executed,https://patentsview.org/,REGISTERED_NOT_EXECUTED

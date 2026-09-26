@@ -1,0 +1,15 @@
+{
+  "id": "sadhon/sec-10-company-accounting-refresh",
+  "title": "SEC 10-Company Accounting Refresh",
+  "code_file": "sec_10_company_accounting_refresh.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

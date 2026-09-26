@@ -1,0 +1,56 @@
+{
+  "title": "EvidenceGroundedAccountingClaim",
+  "type": "object",
+  "required": [
+    "claim",
+    "concept",
+    "period",
+    "value",
+    "unit",
+    "assertion",
+    "evidence_ids",
+    "confidence",
+    "limitations"
+  ],
+  "properties": {
+    "claim": {
+      "type": "string"
+    },
+    "concept": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string"
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "assertion": {
+      "type": "string"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
