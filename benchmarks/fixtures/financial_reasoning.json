@@ -1,0 +1,5 @@
+[
+  {"id":"synthetic-fin-1","gold":100.0,"pred":100.0,"tolerance":0.01},
+  {"id":"synthetic-fin-2","gold":0.25,"pred":0.25,"tolerance":0.0001},
+  {"id":"synthetic-fin-3","gold":42.0,"pred":41.0,"tolerance":0.01}
+]
