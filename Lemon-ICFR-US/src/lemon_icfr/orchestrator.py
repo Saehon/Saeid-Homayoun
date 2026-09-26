@@ -7,7 +7,9 @@ from lemon_icfr.providers.base import ModelProvider
 _REQUIRED_GATES = (
     "provenance",
     "rights_license",
+    "chronology",
     "icfr_coso_grounding",
+    "real_evidence_anchor",
     "evidence_sufficiency",
     "independent_review",
     "falsification",
@@ -22,9 +24,19 @@ class LemonOrchestrator:
     def _evidence_gates(self, evidence: list[EvidenceItem]) -> list[GateResult]:
         provenance_ok = bool(evidence) and all(e.provenance.strip() for e in evidence)
         rights_ok = bool(evidence) and all(e.rights_status.strip() for e in evidence)
+        chronology_ok = bool(evidence) and all(
+            e.chronology_status.strip().lower() not in {"", "unknown", "invalid"} for e in evidence
+        )
+        real_anchor_ok = any(e.evidence_class.lower() != "synthetic" for e in evidence)
         return [
             GateResult("provenance", provenance_ok, [] if provenance_ok else ["Missing evidence provenance."]),
             GateResult("rights_license", rights_ok, [] if rights_ok else ["Missing rights/license status."]),
+            GateResult("chronology", chronology_ok, [] if chronology_ok else ["Evidence chronology/information availability is unresolved."]),
+            GateResult(
+                "real_evidence_anchor",
+                real_anchor_ok,
+                [] if real_anchor_ok else ["Synthetic evidence cannot be the sole anchor for a real ICFR conclusion."],
+            ),
         ]
 
     def run(
@@ -84,7 +96,6 @@ class LemonOrchestrator:
                     bool(reproducibility_ref),
                     [] if reproducibility_ref else ["Missing reproducibility reference."],
                 ),
-                # A machine run can never pass this gate by itself.
                 GateResult("human_approval", False, ["Authorized human disposition required."]),
             ]
         )
