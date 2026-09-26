@@ -162,7 +162,7 @@
     "objective": "Journal entry approval must be unambiguous.",
     "period": "FY2026",
     "required_evidence": ["journal entry", "approval", "period"],
-    "evidence_text": "Journal entry JE-9911 for period FY2026. Approval completed; final status says not approved.",
+    "evidence_text": "Journal entry JE-9911 for period FY2026. Approval record states approved by reviewer; final status says not approved.",
     "expected_status": "EXCEPTION_REVIEW_REQUIRED",
     "expected_missing": [],
     "expected_flags": ["CONFLICTING_EVIDENCE"],
