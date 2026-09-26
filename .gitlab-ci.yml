@@ -1,0 +1,64 @@
+stages:
+  - validate
+  - test
+  - audit
+
+default:
+  image: python:3.12-slim
+  before_script:
+    - python --version
+    - python -m pip install --upgrade pip
+  cache:
+    key: "$CI_COMMIT_REF_SLUG-pip"
+    paths:
+      - .cache/pip
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+    PYTHONDONTWRITEBYTECODE: "1"
+    PYTHONUNBUFFERED: "1"
+
+python-syntax:
+  stage: validate
+  script:
+    - python -m compileall -q automation discovery open-source/ibm-granite scripts
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+governance-tests:
+  stage: test
+  script:
+    - python -m pip install "pytest>=8,<9" "jsonschema>=4,<5"
+    - python -m pytest -q automation/test_orchestrator.py discovery/test_discovery_manifest.py
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+microsoft-poc-contract:
+  stage: test
+  script:
+    - python -m pip install "pytest>=8,<9"
+    - python -m pytest -q NAAIL-OpenLab/prototypes/microsoft-poc-v1/tests/test_microsoft_poc_v1_15_contract.py
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+ibm-granite-registry:
+  stage: audit
+  script:
+    - python -m pip install "PyYAML>=6,<7"
+    - |
+      python - <<'PY'
+      from pathlib import Path
+      import yaml
+      p = Path("open-source/ibm-granite/model_registry.yaml")
+      data = yaml.safe_load(p.read_text(encoding="utf-8"))
+      assert data["provider"] == "IBM"
+      assert data["family"] == "Granite"
+      assert data["models"]["default"]["id"].startswith("ibm-granite/")
+      assert data["models"]["flagship"]["id"].startswith("ibm-granite/")
+      print("IBM Granite registry validation: PASS")
+      PY
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
