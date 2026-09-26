@@ -1,0 +1,34 @@
+name: ICFR Evidence Review Agent
+
+on:
+  pull_request:
+    paths:
+      - "ICFR-Evidence-Review-Agent/**"
+      - ".github/workflows/icfr-evidence-review-agent.yml"
+  push:
+    branches: [main]
+    paths:
+      - "ICFR-Evidence-Review-Agent/**"
+      - ".github/workflows/icfr-evidence-review-agent.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prototype-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ICFR-Evidence-Review-Agent/prototype
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install prototype dependencies
+        run: pip install -r requirements.txt
+      - name: Compile
+        run: python -m compileall -q .
+      - name: Test
+        run: pytest -q
