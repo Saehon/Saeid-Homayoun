@@ -1,0 +1,56 @@
+stack:
+  name: ibm-accounting-audit-ai
+  principle: open-source-first
+  default_components:
+    llm:
+      provider: ibm-granite
+      use:
+        - extraction
+        - classification
+        - structured-output
+        - tool-use
+        - research-reasoning
+    embeddings:
+      provider: ibm-granite-embedding
+      use:
+        - rag
+        - semantic-search
+        - evidence-retrieval
+    document_ai:
+      provider: docling
+      use:
+        - pdf-parsing
+        - table-extraction
+        - xbrl-oriented-ingestion
+    agents:
+      provider: beeai-framework
+      use:
+        - auditor-agent
+        - reviewer-agent
+        - falsification-agent
+
+  optional_enterprise:
+    watsonx_ai:
+      enabled: false
+      role: managed-ai-runtime
+    watsonx_governance:
+      enabled: false
+      role: ai-governance
+    openpages_internal_audit:
+      enabled: false
+      role: audit-grc
+    openpages_financial_controls:
+      enabled: false
+      role: icfr-sox-grc
+    openpages_esg:
+      enabled: false
+      role: esg-risk-governance
+
+routing:
+  accounting-ai: [docling, ibm-granite, ibm-granite-embedding]
+  audit-ai: [docling, ibm-granite, beeai-framework]
+  icfr-ai: [docling, ibm-granite, openpages_financial_controls, watsonx_governance]
+  cam-ai: [docling, ibm-granite, ibm-granite-embedding]
+  kam-ai: [docling, ibm-granite, ibm-granite-embedding]
+  ifrs-ai: [docling, ibm-granite, ibm-granite-embedding]
+  esg-ai: [docling, ibm-granite, ibm-granite-embedding, openpages_esg]
