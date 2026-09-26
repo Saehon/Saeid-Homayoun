@@ -1,0 +1,78 @@
+# HF write-token verification 2026-09-24
+# HF_TOKEN verification trigger
+name: Hugging Face - Microsoft Accounting Data Sync
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "open-data/microsoft-demo-001/**"
+      - "huggingface/datasets/microsoft-accounting-demo/**"
+      - ".github/workflows/huggingface-microsoft-data-sync.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Hugging Face authentication
+        id: auth
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${HF_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::HF_TOKEN is not configured. Hugging Face publication is skipped."
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Checkout repository
+        if: steps.auth.outputs.configured == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.auth.outputs.configured == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Hugging Face Hub client
+        if: steps.auth.outputs.configured == 'true'
+        run: python -m pip install --upgrade huggingface_hub
+
+      - name: Validate canonical dataset
+        if: steps.auth.outputs.configured == 'true'
+        run: python open-data/microsoft-demo-001/validate.py
+
+      - name: Stage and publish dataset
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          rm -rf /tmp/microsoft-accounting-demo
+          mkdir -p /tmp/microsoft-accounting-demo
+          cp huggingface/datasets/microsoft-accounting-demo/README.md /tmp/microsoft-accounting-demo/README.md
+          cp open-data/microsoft-demo-001/microsoft_financials.csv /tmp/microsoft-accounting-demo/
+          cp open-data/microsoft-demo-001/provenance.json /tmp/microsoft-accounting-demo/
+          cp open-data/microsoft-demo-001/PHASE1_OPEN_DATA_BRIDGE.md /tmp/microsoft-accounting-demo/
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          repo_id = "SADHON/microsoft-accounting-demo"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type="dataset", private=False, exist_ok=True)
+          api.upload_folder(
+              repo_id=repo_id,
+              repo_type="dataset",
+              folder_path="/tmp/microsoft-accounting-demo",
+              commit_message="Sync Microsoft accounting demo from GitHub",
+          )
+          print(f"Published https://huggingface.co/datasets/{repo_id}")
+          PY

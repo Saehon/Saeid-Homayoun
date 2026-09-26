@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "NAAIL-AUDIT-ANALYTICS-OSS-2026.09",
+  "status": "CURATED_REFERENCES_ADOPTED_RUNTIME_GATED",
+  "knowledge_rag_core_version": "KRG2026.3",
+  "boundary": {
+    "external_repo_is_authoritative_audit_truth": false,
+    "external_repo_may_modify_knowledge_rag_core": false,
+    "proprietary_audit_analytics_data_is_included": false,
+    "adapter_first_required": true,
+    "human_gate_required": true
+  },
+  "projects": [
+    {
+      "name": "Westland Audit Analytics",
+      "repository": "https://github.com/westland/auditanalytics",
+      "license": "UNVERIFIED_NO_REPOSITORY_LICENSE_FILE",
+      "state": "REFERENCE_ONLY_NO_CODE_COPY",
+      "naail_role": "audit_analytics_research_and_education_reference",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "Internal Control & Audit Analytics",
+      "repository": "https://github.com/cpahyungnamkim/internal-control-audit-analytics",
+      "license": "MIT",
+      "license_verified": true,
+      "state": "ADOPT_TECHNOLOGY_REFERENCE",
+      "naail_role": "icfr_journal_entry_benford_sod_duplicate_test_reference",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "AuditAgent Bench",
+      "repository": "https://github.com/ajrngn/auditagent-bench",
+      "license": "MIT",
+      "license_verified": true,
+      "state": "ADOPT_BENCHMARK_REFERENCE",
+      "naail_role": "icfr_control_evaluation_llm_benchmark",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "Applying Data Analysis in Internal Audit",
+      "repository": "https://github.com/busera/applying_data_analysis_in_internal_audit",
+      "license": "MIT",
+      "license_verified": true,
+      "state": "ADOPT_METHODOLOGY_REFERENCE",
+      "naail_role": "internal_audit_analytics_methodology_and_evidence_quality_gate",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "xbrlkit",
+      "repository": "https://github.com/EffortlessMetrics/xbrlkit",
+      "license": "AGPL-3.0",
+      "license_verified": true,
+      "state": "REFERENCE_ISOLATED_AGPL",
+      "naail_role": "xbrl_ixbrl_sec_validation_and_deterministic_receipts_reference",
+      "third_party_code_vendored": false
+    },
+    {
+      "name": "Audit Analytics with R",
+      "repository": "https://github.com/jonlinca/auditanalytics",
+      "license": "GPL-3.0",
+      "license_verified_from_public_repo": true,
+      "archived": true,
+      "state": "REFERENCE_ARCHIVED_GPL",
+      "naail_role": "audit_analytics_r_education_reference",
+      "third_party_code_vendored": false
+    }
+  ],
+  "audit_analytics_domains": [
+    "journal_entry_testing",
+    "benford_diagnostics",
+    "duplicate_transaction_detection",
+    "segregation_of_duties",
+    "manual_entry_and_period_end_risk",
+    "revenue_cutoff",
+    "ap_controls",
+    "ar_controls",
+    "icfr_deficiency_classification",
+    "xbrl_validation",
+    "cam_kam_alignment",
+    "evidence_coverage_and_traceability"
+  ],
+  "promotion_gates": [
+    "exact_repository_and_ref_verification",
+    "license_and_notice_review",
+    "version_or_commit_pinning",
+    "dependency_security_review",
+    "privacy_and_data_rights_review",
+    "synthetic_client_xyz_execution",
+    "frozen_benchmark_evaluation",
+    "reproducibility_test",
+    "failure_memory_logging",
+    "knowledge_rag_core_boundary_test",
+    "human_architecture_gate"
+  ]
+}

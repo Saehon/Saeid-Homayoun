@@ -1,0 +1,36 @@
+name: NAAIL GAA Accounting Audit Registry
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/GAA_ACCOUNTING_AUDIT_AGENT.md'
+      - 'NAAIL-OpenLab/knowledge/accounting_audit_free_evidence_registry.json'
+      - 'NAAIL-OpenLab/tests/test_gaa_accounting_audit_registry.py'
+      - '.github/workflows/naail_gaa_accounting_audit.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/GAA_ACCOUNTING_AUDIT_AGENT.md'
+      - 'NAAIL-OpenLab/knowledge/accounting_audit_free_evidence_registry.json'
+      - 'NAAIL-OpenLab/tests/test_gaa_accounting_audit_registry.py'
+      - '.github/workflows/naail_gaa_accounting_audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  gaa-registry-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install pytest
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Validate GAA accounting and audit evidence boundary
+        run: pytest -q NAAIL-OpenLab/tests/test_gaa_accounting_audit_registry.py

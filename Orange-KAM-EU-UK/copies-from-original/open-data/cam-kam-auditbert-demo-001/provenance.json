@@ -1,0 +1,12 @@
+{
+  "package_id": "cam-kam-auditbert-demo-001",
+  "data_type": "synthetic demonstration data",
+  "redistribution_status": "public-safe",
+  "linked_private_research": "CAM/KAM AuditBERT project",
+  "raw_private_data_included": false,
+  "licensed_audit_analytics_records_included": false,
+  "linked_models": [
+    "MaRyAm1295/finBERT-KAM",
+    "MaRyAm1295/Llama-3.1-8B-KAM"
+  ]
+}

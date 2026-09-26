@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0-bootstrap",
+  "generated_at_utc": "2026-09-24T00:00:00+00:00",
+  "source": "U.S. SEC filed 10-K statements",
+  "bootstrap_method": "Verified 30-row snapshot from latest 10-K comparative statements after SEC CompanyFacts returned HTTP 403 from GitHub-hosted and Kaggle-hosted runners.",
+  "live_refresh_status": "Code retained; cloud-hosted live refresh currently blocked by SEC 403. Use a permitted/local runner for live CompanyFacts refresh.",
+  "company_count": 10,
+  "row_count": 30,
+  "data_sha256": "a75668e9867941856a894c194fda6203236898626732a0480de920a78bea4080",
+  "companies": {
+    "MSFT": {"company":"Microsoft Corporation","cik":"0000789019","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm","accession":"0001193125-26-323660","filed":"2026-07-29","quality_note":"OK"},
+    "AAPL": {"company":"Apple Inc.","cik":"0000320193","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm","accession":"0000320193-25-000079","filed":"2025-10-31","quality_note":"OK"},
+    "GOOGL": {"company":"Alphabet Inc.","cik":"0001652044","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm","accession":"0001652044-26-000018","filed":"2026-02-05","quality_note":"DERIVED:GROSS_PROFIT=REVENUE-COST_OF_REVENUES"},
+    "AMZN": {"company":"Amazon.com, Inc.","cik":"0001018724","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm","accession":"0001018724-26-000004","filed":"2026-02-06","quality_note":"NOT_REPORTED:GROSS_PROFIT"},
+    "NVDA": {"company":"NVIDIA Corporation","cik":"0001045810","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm","accession":"0001045810-26-000021","filed":"2026-02-25","quality_note":"OK"},
+    "META": {"company":"Meta Platforms, Inc.","cik":"0001326801","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/1326801/000162828026025534/meta-12312025x10kars.htm","accession":"0001628280-26-025534","filed":"2026-02-05","quality_note":"DERIVED:GROSS_PROFIT=REVENUE-COST_OF_REVENUE"},
+    "JPM": {"company":"JPMorgan Chase & Co.","cik":"0000019617","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm","accession":"0001628280-26-008131","filed":"2026-02-20","quality_note":"BANK:TOTAL_NET_REVENUE;NOT_APPLICABLE:GROSS_PROFIT|OPERATING_INCOME"},
+    "WMT": {"company":"Walmart Inc.","cik":"0000104169","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm","accession":"0000104169-26-000055","filed":"2026-03-13","quality_note":"OK"},
+    "XOM": {"company":"Exxon Mobil Corporation","cik":"0000034088","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/34088/000003408826000045/xom-20251231.htm","accession":"0000034088-26-000045","filed":"2026-02-25","quality_note":"NOT_REPORTED:GROSS_PROFIT|OPERATING_INCOME;REVENUE=TOTAL_REVENUES_AND_OTHER_INCOME"},
+    "TSLA": {"company":"Tesla, Inc.","cik":"0001318605","latest_10k_url":"https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm","accession":"0001628280-26-003952","filed":"2026-01-29","quality_note":"OK"}
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "case_id": "MSFT-SEC-2026-001",
+  "title": "Microsoft FY2026 SEC accounting and audit evidence benchmark",
+  "company": "Microsoft Corporation",
+  "ticker": "MSFT",
+  "cik": "0000789019",
+  "filing": {
+    "form": "10-K",
+    "fiscal_year_end": "2026-06-30",
+    "filed": "2026-07-29",
+    "accession_number": "0001193125-26-323660",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+  },
+  "unit": "USD millions",
+  "evidence": [
+    {
+      "id": "E1",
+      "fact": "FY2026 revenue = 331839",
+      "source": "Microsoft FY2026 Form 10-K / SEC"
+    },
+    {
+      "id": "E2",
+      "fact": "FY2025 revenue = 281724",
+      "source": "Microsoft FY2026 Form 10-K / SEC"
+    },
+    {
+      "id": "E3",
+      "fact": "FY2026 gross margin = 225465",
+      "source": "Microsoft FY2026 Form 10-K / SEC"
+    },
+    {
+      "id": "E4",
+      "fact": "FY2026 operating income = 155237",
+      "source": "Microsoft FY2026 Form 10-K / SEC"
+    },
+    {
+      "id": "E5",
+      "fact": "FY2026 net income = 133749",
+      "source": "Microsoft FY2026 Form 10-K / SEC"
+    },
+    {
+      "id": "E6",
+      "fact": "Independent auditor expressed an unqualified opinion on the FY2026 financial statements.",
+      "source": "Microsoft FY2026 Form 10-K / SEC"
+    },
+    {
+      "id": "E7",
+      "fact": "Independent auditor expressed an unqualified opinion on ICFR as of June 30, 2026.",
+      "source": "Microsoft FY2026 Form 10-K / SEC"
+    }
+  ],
+  "task": [
+    "Calculate FY2026 revenue growth versus FY2025.",
+    "Calculate FY2026 gross margin percentage.",
+    "Calculate FY2026 operating margin percentage.",
+    "Calculate FY2026 net margin percentage.",
+    "Classify the financial-statement audit opinion using only the supplied evidence.",
+    "Classify the ICFR audit opinion using only the supplied evidence.",
+    "List evidence IDs used and identify any unsupported claims."
+  ],
+  "required_output_schema": {
+    "revenue_growth_pct": "number rounded to 2 decimals",
+    "gross_margin_pct": "number rounded to 2 decimals",
+    "operating_margin_pct": "number rounded to 2 decimals",
+    "net_margin_pct": "number rounded to 2 decimals",
+    "financial_statement_opinion": "unqualified|qualified|adverse|disclaimer|unknown",
+    "icfr_opinion": "unqualified|adverse|disclaimer|unknown",
+    "evidence_ids_used": "array of E1-E7",
+    "unsupported_claims": "array"
+  },
+  "gold_standard": {
+    "revenue_growth_pct": 17.79,
+    "gross_margin_pct": 67.94,
+    "operating_margin_pct": 46.78,
+    "net_margin_pct": 40.31,
+    "financial_statement_opinion": "unqualified",
+    "icfr_opinion": "unqualified",
+    "required_evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "E7"
+    ],
+    "unsupported_claims": []
+  },
+  "controls": {
+    "evidence_before_narrative": true,
+    "deterministic_recalculation_required": true,
+    "reviewer_required": true,
+    "human_gate": "required_for_any_material_professional_interpretation",
+    "no_audit_opinion_by_system": true
+  }
+}

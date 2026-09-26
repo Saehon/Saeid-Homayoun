@@ -1,0 +1,37 @@
+# Logical provider aliases only. Do not commit credentials.
+# Exact model IDs should be set at run time and frozen in experiment metadata.
+
+providers:
+  openai:
+    family: GPT
+    api_key_env: OPENAI_API_KEY
+
+  anthropic:
+    family: Claude
+    api_key_env: ANTHROPIC_API_KEY
+
+  google:
+    family: Gemini
+    api_key_env: GEMINI_API_KEY
+
+  microsoft:
+    family: Azure_OpenAI_or_Foundry
+    api_key_env: AZURE_OPENAI_API_KEY
+    endpoint_env: AZURE_OPENAI_ENDPOINT
+
+  moonshot:
+    family: Kimi
+    api_key_env: MOONSHOT_API_KEY
+
+  deepseek:
+    family: DeepSeek
+    api_key_env: DEEPSEEK_API_KEY
+
+  local:
+    family: Ollama
+    base_url_env: OLLAMA_BASE_URL
+
+routing:
+  gateway: LiteLLM
+  require_run_metadata: true
+  preferred_reviewer_provider_different_from_preparer: true

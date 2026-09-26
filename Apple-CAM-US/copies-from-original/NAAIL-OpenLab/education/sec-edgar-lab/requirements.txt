@@ -1,0 +1,4 @@
+pandas>=2.2
+requests>=2.32
+# Optional higher-level EDGAR tooling for later labs:
+# edgartools>=4

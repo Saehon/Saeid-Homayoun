@@ -1,0 +1,42 @@
+name: FRANKENSTEIN Microsoft SEC Case 002
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "FRANKENSTEIN/phase4_benchmark/case_002_microsoft_sec_2026.json"
+      - "FRANKENSTEIN/phase4_benchmark/validate_case_002_microsoft.py"
+      - "FRANKENSTEIN/phase4_benchmark/reviewer_case_002.json"
+      - "FRANKENSTEIN/tests/test_case_002_microsoft.py"
+      - ".github/workflows/frankenstein_microsoft_case002.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run deterministic Microsoft SEC validation
+        run: python FRANKENSTEIN/tests/test_case_002_microsoft.py
+      - name: Print reviewer control
+        run: cat FRANKENSTEIN/phase4_benchmark/reviewer_case_002.json
+
+  openai-check:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+    steps:
+      - name: Report OpenAI readiness
+        shell: bash
+        run: |
+          if [[ -n "$OPENAI_API_KEY" && -n "$OPENAI_MODEL" ]]; then
+            echo "OpenAI credentials/model are configured. Use the Phase 4 live-provider benchmark workflow for the live call."
+          else
+            echo "OpenAI live call skipped: OPENAI_API_KEY and/or OPENAI_MODEL are not configured."
+          fi

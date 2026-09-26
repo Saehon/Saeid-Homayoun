@@ -1,0 +1,17 @@
+variable,definition,unit,module,source_id,evidence_class
+revenue,FY2026 Microsoft revenue,USD millions,Accounting,SEC_XBRL_R2,REAL_XBRL
+operating_income,FY2026 operating income,USD millions,Accounting,SEC_XBRL_R2,REAL_XBRL
+net_income,FY2026 net income,USD millions,Accounting,SEC_XBRL_R2,REAL_XBRL
+total_assets,FY2026 total assets,USD millions,Accounting,SEC_XBRL_R4,REAL_XBRL
+current_ratio,Current assets/current liabilities,ratio,Finance,SEC_XBRL_R4,DERIVED
+fcf_proxy,Operating cash flow - capex,USD millions,Finance,SEC_XBRL_R6,DERIVED
+msft_fy2026_price_return,Last/first IEX close - 1; excludes dividends,ratio,Finance,MSFT_MARKET_IEX,DERIVED_REAL_MARKET
+dgs10,US 10-year Treasury yield at FY-end,percent,Finance/Macro,FRED_DGS10,PUBLIC_MACRO
+rd_intensity,R&D expense/revenue,ratio,Innovation,SEC_XBRL_R2,DERIVED
+github_repo_snapshot,Approx Microsoft public repository count,count,Innovation,MICROSOFT_GITHUB,PUBLIC_METADATA
+cam_revenue_recognition,Revenue-recognition CAM mapping,categorical,Audit,SEC_10K_2026,REAL_PUBLIC
+cam_uncertain_tax_positions,Uncertain-tax-position CAM mapping,categorical,Audit,SEC_10K_2026,REAL_PUBLIC
+uncertainty_per_100_words,Dictionary uncertainty count per 100 words,count/100 words,Text,SEC_10K_2026,DERIVED_BOUNDED_SAMPLE
+innovation_per_100_words,Innovation dictionary count per 100 words,count/100 words,Text,SEC_10K_2026,DERIVED_BOUNDED_SAMPLE
+tdabc_activity_cost,Capacity cost rate × required activity time,USD,Management Accounting,SYNTHETIC_AI_PROCESS,SYNTHETIC
+livebench_cost_success,External cost per successful benchmark task,USD/task,AI Benchmark,LIVEBENCH_2026_06_25,EXTERNAL_BENCHMARK

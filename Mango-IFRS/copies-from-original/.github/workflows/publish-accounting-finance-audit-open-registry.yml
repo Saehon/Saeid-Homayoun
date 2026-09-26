@@ -1,0 +1,135 @@
+name: Publish Accounting Finance Audit Open Registry
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "open-source/accounting-finance-audit/repos.yml"
+      - "open-source/accounting-finance-audit/data/data_sources.yml"
+      - "open-source/accounting-finance-audit/scripts/build_cross_platform_registry.py"
+      - "huggingface/datasets/accounting-finance-audit-open-registry/**"
+      - "kaggle/datasets/accounting-finance-audit-open-registry/**"
+      - ".github/workflows/publish-accounting-finance-audit-open-registry.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-accounting-finance-audit-open-registry
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build canonical registry bundle
+        run: |
+          python -m pip install --quiet PyYAML
+          rm -rf /tmp/accounting-finance-audit-registry
+          python open-source/accounting-finance-audit/scripts/build_cross_platform_registry.py \
+            --out /tmp/accounting-finance-audit-registry
+          ls -lah /tmp/accounting-finance-audit-registry
+      - uses: actions/upload-artifact@v4
+        with:
+          name: accounting-finance-audit-open-registry
+          path: /tmp/accounting-finance-audit-registry/
+          if-no-files-found: error
+
+  publish-huggingface:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Hugging Face token
+        id: auth
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${HF_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::HF_TOKEN missing; Hugging Face publication skipped."
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.auth.outputs.configured == 'true'
+      - uses: actions/setup-python@v5
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          name: accounting-finance-audit-open-registry
+          path: /tmp/accounting-finance-audit-registry
+      - name: Publish Hugging Face dataset
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python -m pip install --quiet --upgrade huggingface_hub
+          cp huggingface/datasets/accounting-finance-audit-open-registry/README.md /tmp/accounting-finance-audit-registry/README.md
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          repo_id = "SADHON/accounting-finance-audit-open-registry"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.create_repo(repo_id=repo_id, repo_type="dataset", private=False, exist_ok=True)
+          api.upload_folder(
+              repo_id=repo_id,
+              repo_type="dataset",
+              folder_path="/tmp/accounting-finance-audit-registry",
+              commit_message=f"Sync accounting-finance-audit registry {os.environ.get('GITHUB_SHA','')}",
+          )
+          print(f"Published https://huggingface.co/datasets/{repo_id}")
+          PY
+
+  publish-kaggle:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Kaggle token
+        id: auth
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "${KAGGLE_API_TOKEN}" ]]; then
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::KAGGLE_API_TOKEN missing; Kaggle publication skipped."
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.auth.outputs.configured == 'true'
+      - uses: actions/setup-python@v5
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        if: steps.auth.outputs.configured == 'true'
+        with:
+          name: accounting-finance-audit-open-registry
+          path: /tmp/accounting-finance-audit-registry
+      - name: Publish Kaggle dataset
+        if: steps.auth.outputs.configured == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          python -m pip install --quiet --upgrade kaggle
+          cp kaggle/datasets/accounting-finance-audit-open-registry/README.md /tmp/accounting-finance-audit-registry/README.md
+          cp kaggle/datasets/accounting-finance-audit-open-registry/dataset-metadata.json /tmp/accounting-finance-audit-registry/dataset-metadata.json
+          REF="sadhon/accounting-finance-audit-open-registry"
+          kaggle datasets list --page-size 1 >/dev/null
+          if kaggle datasets files "${REF}" >/dev/null 2>&1; then
+            kaggle datasets version -p /tmp/accounting-finance-audit-registry -m "GitHub sync ${GITHUB_SHA}"
+          else
+            kaggle datasets create -p /tmp/accounting-finance-audit-registry --public
+          fi

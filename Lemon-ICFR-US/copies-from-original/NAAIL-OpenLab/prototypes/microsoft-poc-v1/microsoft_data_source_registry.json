@@ -1,0 +1,33 @@
+{
+  "prototype_id": "NAAIL-MSFT-POC-V1-FY2026",
+  "as_of": "2026-09-16",
+  "maturity": "RESEARCH_PROTOTYPE",
+  "constitutional_cores": ["Stable Knowledge Core™", "Replaceable Technology Core™"],
+  "license_gate_rule": "No source is ingested, cached, transformed, or redistributed unless access, provenance, rights/terms and permitted-use status are recorded.",
+  "sources": [
+    {"id":"SEC_10K_2026","name":"Microsoft FY2026 Form 10-K","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm","authority":"SEC","rights_class":"PRIMARY_REGULATORY_PUBLIC_ACCESS","status":"EXECUTED"},
+    {"id":"SEC_XBRL_R2","name":"Income Statements XBRL report","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R2.htm","authority":"SEC","rights_class":"PRIMARY_REGULATORY_XBRL","status":"EXECUTED"},
+    {"id":"SEC_XBRL_R4","name":"Balance Sheets XBRL report","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R4.htm","authority":"SEC","rights_class":"PRIMARY_REGULATORY_XBRL","status":"EXECUTED"},
+    {"id":"SEC_XBRL_R6","name":"Cash Flows XBRL report","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R6.htm","authority":"SEC","rights_class":"PRIMARY_REGULATORY_XBRL","status":"EXECUTED"},
+    {"id":"SEC_XBRL_R107","name":"Segment Revenue/Profit XBRL report","url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R107.htm","authority":"SEC","rights_class":"PRIMARY_REGULATORY_XBRL","status":"EXECUTED"},
+    {"id":"SEC_COMPANYFACTS","name":"SEC CompanyFacts","url":"https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json","authority":"SEC","rights_class":"PRIMARY_REGULATORY_API","status":"REGISTERED_LIVE_FETCH_NOT_EXECUTED_IN_LOCAL_PYTHON_RUNTIME"},
+    {"id":"MSFT_MARKET_IEX","name":"MSFT FY2026 daily IEX bars","authority":"Alpaca market-data connector","rights_class":"CONNECTED_MARKET_DATA_TERMS_APPLY","status":"EXECUTED","period":"2025-07-01/2026-06-30","records":251},
+    {"id":"FRED_DGS10","name":"10-Year Treasury Constant Maturity","url":"https://fred.stlouisfed.org/series/DGS10","authority":"Federal Reserve/FRED","rights_class":"SERIES_SPECIFIC_TERMS_CITATION_REQUIRED","status":"EXECUTED_SNAPSHOT","value_2026_06_30":4.44},
+    {"id":"DAMODARAN_ERP","name":"Damodaran July 2026 ERP","url":"https://pages.stern.nyu.edu/adamodar/New_Home_Page/datacurrent.html","authority":"NYU/Damodaran","rights_class":"ACADEMIC_PUBLIC_REFERENCE_TERMS_APPLY","status":"EXECUTED_REFERENCE_SNAPSHOT"},
+    {"id":"FAMA_FRENCH","name":"Kenneth French Data Library","url":"https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html","authority":"academic data library","rights_class":"SOURCE_TERMS_APPLY","status":"REGISTERED_NOT_REGRESSED"},
+    {"id":"MICROSOFT_GITHUB","name":"Microsoft GitHub organization","url":"https://github.com/microsoft","authority":"GitHub/Microsoft","rights_class":"PUBLIC_METADATA_REPO_LICENSES_VARY","status":"EXECUTED_SNAPSHOT"},
+    {"id":"PATENTSVIEW","name":"PatentsView","url":"https://patentsview.org/","authority":"USPTO-linked public patent data","rights_class":"VERIFY_CURRENT_API_LICENSE","status":"REGISTERED_NOT_EXECUTED"},
+    {"id":"MSFT_SUSTAINABILITY","name":"Microsoft sustainability reporting","url":"https://www.microsoft.com/en-us/corporate-responsibility/reports-hub","authority":"issuer","rights_class":"PUBLIC_WEB_COPYRIGHTED_REFERENCE","status":"REGISTERED"},
+    {"id":"LIVEBENCH_2026_06_25","name":"LiveBench latest release","url":"https://livebench.ai/","authority":"LiveBench","rights_class":"PUBLIC_BENCHMARK_REFERENCE_TERMS_APPLY","status":"EXECUTED_REFERENCE_SNAPSHOT"},
+    {"id":"OPENALEX","name":"OpenAlex","url":"https://openalex.org/","authority":"OpenAlex","rights_class":"OPEN_METADATA_TERMS_APPLY","status":"REGISTERED"},
+    {"id":"CROSSREF","name":"Crossref","url":"https://www.crossref.org/","authority":"Crossref","rights_class":"OPEN_METADATA_TERMS_APPLY","status":"REGISTERED"}
+  ],
+  "research_benchmarks": [
+    {"citation":"Loughran & McDonald (2011), Journal of Finance","role":"financial-text dictionary design","journal_gate":"CURRENT_FT50_2026"},
+    {"citation":"Burke et al. (2023), The Accounting Review","role":"CAM disclosure design/economic consequences","journal_gate":"CURRENT_FT50_2026"},
+    {"citation":"Fama & French (1993), Journal of Financial Economics","role":"factor-model benchmark","journal_gate":"CURRENT_FT50_2026"},
+    {"citation":"Fama & French (2015), Journal of Financial Economics","role":"five-factor benchmark","journal_gate":"CURRENT_FT50_2026"},
+    {"citation":"Roach & Cohen (2013), Management Science","role":"patent citations/knowledge-flow measurement","journal_gate":"CURRENT_FT50_2026"},
+    {"citation":"Current Management Science human–AI field/experimental designs","role":"human-AI experiment benchmark family","journal_gate":"CURRENT_FT50_2026"}
+  ]
+}

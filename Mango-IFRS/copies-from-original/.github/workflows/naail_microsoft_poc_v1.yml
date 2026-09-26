@@ -1,0 +1,44 @@
+name: NAAIL Microsoft POC V1 Guard
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/prototypes/microsoft-poc-v1/**'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+      - 'NAAIL-OpenLab/architecture/PLATFORM_CAPABILITY_MATRIX.md'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/prototypes/microsoft-poc-v1/**'
+      - 'NAAIL-OpenLab/architecture/platform_capability_registry.json'
+  workflow_dispatch:
+
+jobs:
+  microsoft-poc-v1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install bounded prototype dependencies
+        run: python -m pip install pytest pandas lxml
+      - name: Run Microsoft POC V1 tests
+        run: python -m pytest -q NAAIL-OpenLab/prototypes/microsoft-poc-v1/tests/test_microsoft_poc_v1.py
+      - name: Enforce constitutional and maturity boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('NAAIL-OpenLab/architecture/platform_capability_registry.json').read_text())
+          by={x['id']:x for x in r['capabilities']}
+          inv=r['invariants']
+          assert r['platform']['permanent_core_count']==2
+          assert r['platform']['permanent_cores']==['Stable Knowledge Core™','Replaceable Technology Core™']
+          assert by['prototype_003']['status']=='EXECUTED_VALIDATED'
+          assert by['microsoft_poc_v1']['status']=='RESEARCH_PROTOTYPE'
+          assert by['microsoft_poc_v1']['core'] is False
+          assert inv['microsoft_poc_v1_is_executed_validated'] is False
+          assert inv['microsoft_poc_v1_human_experiment_executed'] is False
+          assert inv['validated_checkpoint_changed_by_microsoft_poc_v1'] is False
+          print('Microsoft POC V1 constitutional/maturity boundary OK')
+          PY

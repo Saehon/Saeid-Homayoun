@@ -1,0 +1,6 @@
+measure,value,unit,definition,source_url,status
+rd_intensity,0.10716642709265638,ratio,FY2026 R&D / revenue,https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm,EXECUTED
+rd_spend_usd_m,35562,USD millions,FY2026 R&D expense,https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm,EXECUTED
+microsoft_github_public_repositories_snapshot,8300,approx repositories,GitHub Microsoft org page displayed 8.3k repositories,https://github.com/microsoft,EXECUTED_SNAPSHOT
+microsoft_github_followers_snapshot,130000,approx followers,GitHub Microsoft org page displayed 130k followers,https://github.com/microsoft,EXECUTED_SNAPSHOT
+patent_activity,,count,PatentsView/USPTO connector defined; no aggregate count executed in this runtime,https://patentsview.org/,NOT_EXECUTED

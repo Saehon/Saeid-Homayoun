@@ -1,0 +1,6 @@
+company,ticker,year,auditor,industry,cam_count,inventory_cam,revenue_cam,business_combination_cam,new_cam_count,dropped_cam_count,persistent_cam_count,cam_persistence_rate,cam_topic_change_count,total_cam_text_words,avg_cam_text_words
+AAR CORP,AIR,2020,KPMG LLP,Aircraft & Parts,2,1,1,0,,,,,,760,380.0
+AAR CORP,AIR,2021,KPMG LLP,Aircraft & Parts,2,1,1,0,0,0,2,1.0,0,772,386.0
+AAR CORP,AIR,2022,KPMG LLP,Aircraft & Parts,2,1,1,0,0,0,2,1.0,0,765,382.5
+AAR CORP,AIR,2023,KPMG LLP,Aircraft & Parts,2,1,1,0,0,0,2,1.0,0,765,382.5
+AAR CORP,AIR,2024,KPMG LLP,Aircraft & Parts,2,1,0,1,1,1,1,0.5,2,776,388.0

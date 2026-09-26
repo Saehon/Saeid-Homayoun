@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "source": "https://www.sec.gov/files/company_tickers.json",
+  "companies": [
+    {
+      "ticker": "MSFT",
+      "cik": "0000789019",
+      "name": "Microsoft Corporation",
+      "sector": "Technology"
+    },
+    {
+      "ticker": "AAPL",
+      "cik": "0000320193",
+      "name": "Apple Inc.",
+      "sector": "Technology"
+    },
+    {
+      "ticker": "GOOGL",
+      "cik": "0001652044",
+      "name": "Alphabet Inc.",
+      "sector": "Communication Services"
+    },
+    {
+      "ticker": "AMZN",
+      "cik": "0001018724",
+      "name": "Amazon.com, Inc.",
+      "sector": "Consumer / Technology"
+    },
+    {
+      "ticker": "NVDA",
+      "cik": "0001045810",
+      "name": "NVIDIA Corporation",
+      "sector": "Technology"
+    },
+    {
+      "ticker": "META",
+      "cik": "0001326801",
+      "name": "Meta Platforms, Inc.",
+      "sector": "Communication Services"
+    },
+    {
+      "ticker": "JPM",
+      "cik": "0000019617",
+      "name": "JPMorgan Chase & Co.",
+      "sector": "Financials"
+    },
+    {
+      "ticker": "WMT",
+      "cik": "0000104169",
+      "name": "Walmart Inc.",
+      "sector": "Consumer Staples"
+    },
+    {
+      "ticker": "XOM",
+      "cik": "0000034088",
+      "name": "Exxon Mobil Corporation",
+      "sector": "Energy"
+    },
+    {
+      "ticker": "TSLA",
+      "cik": "0001318605",
+      "name": "Tesla, Inc.",
+      "sector": "Automotive / Energy"
+    }
+  ]
+}

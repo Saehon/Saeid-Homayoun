@@ -1,0 +1,54 @@
+name: Validate CAM-KAM AuditBERT Package
+
+on:
+  push:
+    paths:
+      - "research/cam-kam-auditbert-maryam/**"
+      - ".github/workflows/validate_cam_kam_auditbert.yml"
+  pull_request:
+    paths:
+      - "research/cam-kam-auditbert-maryam/**"
+      - ".github/workflows/validate_cam_kam_auditbert.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install validation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas scikit-learn openpyxl
+
+      - name: Run synthetic reproducibility test
+        run: |
+          python research/cam-kam-auditbert-maryam/prepare_cam_kam_data.py \
+            --input research/cam-kam-auditbert-maryam/synthetic_cam_kam_sample.csv \
+            --output /tmp/cam_kam_demo
+
+      - name: Verify outputs
+        run: |
+          test -s /tmp/cam_kam_demo/train.csv
+          test -s /tmp/cam_kam_demo/test.csv
+          test -s /tmp/cam_kam_demo/metadata.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("/tmp/cam_kam_demo/metadata.json")
+          m = json.loads(p.read_text())
+          assert m["rows_after_cleaning"] == 3
+          assert m["topic_count"] == 3
+          assert m["train_rows"] + m["test_rows"] == 3
+          print("CAM/KAM reproducibility package validation: PASS")
+          PY

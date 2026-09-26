@@ -1,0 +1,36 @@
+name: NAAIL Accounting Audit Open-Source Registry
+
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md'
+      - 'NAAIL-OpenLab/architecture/accounting_audit_open_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_accounting_audit_open_source_registry.py'
+      - '.github/workflows/naail_accounting_audit_open_source_registry.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/OPEN_SOURCE_ACCOUNTING_AUDIT_PACK.md'
+      - 'NAAIL-OpenLab/architecture/accounting_audit_open_source_registry.json'
+      - 'NAAIL-OpenLab/tests/test_accounting_audit_open_source_registry.py'
+      - '.github/workflows/naail_accounting_audit_open_source_registry.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install pytest
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Validate accounting and audit open-source registry
+        run: pytest -q NAAIL-OpenLab/tests/test_accounting_audit_open_source_registry.py

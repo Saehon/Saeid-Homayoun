@@ -1,0 +1,37 @@
+{
+  "case_id": "MSFT-SEC-2026-001",
+  "reviewer_type": "deterministic_reviewer",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "authoritative_source",
+      "result": "PASS",
+      "detail": "Primary evidence points to SEC-filed Microsoft FY2026 Form 10-K."
+    },
+    {
+      "check": "recalculation",
+      "result": "PASS",
+      "detail": "Growth and margin targets independently recompute to 17.79%, 67.94%, 46.78%, and 40.31%."
+    },
+    {
+      "check": "financial_statement_opinion",
+      "result": "PASS",
+      "detail": "Case evidence records an unqualified opinion."
+    },
+    {
+      "check": "icfr_opinion",
+      "result": "PASS",
+      "detail": "Case evidence records an unqualified ICFR opinion."
+    },
+    {
+      "check": "unsupported_claims",
+      "result": "PASS",
+      "detail": "Gold-standard answer requires no unsupported claims."
+    }
+  ],
+  "human_gate": {
+    "status": "NOT_REQUIRED_FOR_MECHANICAL_RECALCULATION",
+    "condition": "Required before any material professional interpretation, fraud conclusion, deficiency-severity conclusion, or audit opinion."
+  },
+  "boundary": "This reviewer validates benchmark mechanics and source alignment; it does not perform or replace an audit."
+}
