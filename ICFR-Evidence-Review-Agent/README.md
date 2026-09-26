@@ -36,6 +36,17 @@ The commercial child uses a Darwin product operating system plus a forward-deplo
 
 The stable product core remains auditable. Customer deployments generate learning that is promoted into the core only when reusable, rights-cleared and testable.
 
+
+## Private R&D factory boundary
+
+The detailed **Frankenstein for Lemon** architecture is maintained in the private Lemon R&D environment and is intentionally not reproduced in this public repository.
+
+Public product development follows the high-level relationship:
+
+**Mother / governance source → private Frankenstein builder → validation and graduation gates → Lemon-ICFR-US commercial product.**
+
+Only validated, rights-cleared and deliberately publishable components graduate into this repository. See [Frankenstein → Lemon Public Boundary](FRANKENSTEIN_PUBLIC_BOUNDARY.md).
+
 ## Child-project rule
 
 This directory is the commercial child project. The original research projects remain unchanged.
