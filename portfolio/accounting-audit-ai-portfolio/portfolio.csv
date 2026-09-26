@@ -1,0 +1,15 @@
+priority,asset,platform,url,domain,role,status
+1,NAAIL OpenLab,Hugging Face,https://huggingface.co/datasets/SADHON/NAAIL-OpenLab,Accounting and auditing AI,Flagship research lab,public
+1,NAAIL OpenLab,GitHub,https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab,Accounting and auditing AI,Canonical code and provenance,public
+2,SEC 10-Company Accounting Panel,Hugging Face,https://huggingface.co/datasets/SADHON/sec-10-company-accounting-panel,SEC EDGAR and XBRL,Reproducible accounting dataset,public
+2,SEC 10-Company Accounting Panel,Kaggle,https://www.kaggle.com/datasets/sadhon/sec-10-company-accounting-panel,SEC EDGAR and XBRL,Interactive data and notebooks,public
+3,Kimi DeepSeek Accounting Finance Audit,Hugging Face,https://huggingface.co/datasets/SADHON/kimi-deepseek-accounting-finance-audit,Open accounting AI stack,Model and tool registry,public
+3,Kimi DeepSeek Accounting Finance Audit,Kaggle,https://www.kaggle.com/datasets/sadhon/kimi-deepseek-accounting-finance-audit,Open accounting AI stack,Reproducible registry,public
+4,Accounting Finance Audit Open Registry,Hugging Face,https://huggingface.co/datasets/SADHON/accounting-finance-audit-open-registry,Open-source AI and data,Discovery registry,public
+5,SEC CAM ICFR Governance ESG,Hugging Face,https://huggingface.co/datasets/SADHON/sec-10-company-cam-icfr-governance-esg,Audit and governance research,Multi-domain SEC benchmark,public
+6,Frankenstein Phase 4 Accounting Audit Benchmark,Hugging Face,https://huggingface.co/datasets/SADHON/frankenstein-phase4-accounting-audit-benchmark,Agent evaluation,Accounting and audit benchmark,public
+7,Microsoft Accounting Demo,Hugging Face,https://huggingface.co/datasets/SADHON/microsoft-accounting-demo,Teaching and demonstration,Simple SEC accounting example,public
+8,GitHub Public Research Data,Hugging Face,https://huggingface.co/datasets/SADHON/github-public-research-data,Research reproducibility,Public GitHub data mirror,public
+9,AWS Free Accounting Audit Finance Registry,Hugging Face,https://huggingface.co/datasets/SADHON/aws-free-accounting-audit-finance-registry,Cloud and open data,Free-resource registry,public
+10,Saeid Homayoun GitHub,GitHub,https://github.com/Saehon/Saeid-Homayoun,Research portfolio,Canonical portfolio,public
+10,Saeid Homayoun ORCID,ORCID,https://orcid.org/0000-0002-2536-0446,Research identity,Persistent scholarly identifier,public
