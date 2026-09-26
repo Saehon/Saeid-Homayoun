@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://naail.example/schema/microsoft-evidence-passport-v1.json",
+  "title": "NAAIL Microsoft POC V1 Evidence Passport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "passport_id",
+    "source_id",
+    "source_url",
+    "retrieved_at",
+    "evidence_class",
+    "rights_gate",
+    "provenance",
+    "transformation",
+    "claim_scope",
+    "human_review_status"
+  ],
+  "properties": {
+    "passport_id": {"type": "string"},
+    "source_id": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "retrieved_at": {"type": "string"},
+    "evidence_class": {"type": "string"},
+    "rights_gate": {"enum": ["PASS", "PASS_WITH_ATTRIBUTION", "REGISTERED_NOT_EXECUTED", "FAIL"]},
+    "provenance": {
+      "type": "object",
+      "required": ["provider", "period", "locator"],
+      "properties": {
+        "provider": {"type": "string"},
+        "period": {"type": "string"},
+        "locator": {"type": "string"}
+      }
+    },
+    "transformation": {
+      "type": "object",
+      "required": ["method", "derived"],
+      "properties": {
+        "method": {"type": "string"},
+        "derived": {"type": "boolean"},
+        "code_path": {"type": ["string", "null"]}
+      }
+    },
+    "claim_scope": {"type": "string"},
+    "content_hash": {"type": ["string", "null"]},
+    "execution_status": {"enum": ["EXECUTED", "DERIVED_EXECUTED", "SYNTHETIC_EXECUTED", "DESIGN_ONLY", "REGISTERED_NOT_EXECUTED"]},
+    "human_review_status": {"enum": ["APPROVE_WITH_LIMITATIONS", "REQUEST_MORE_EVIDENCE", "REJECT", "PENDING"]}
+  }
+}

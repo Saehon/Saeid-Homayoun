@@ -1,0 +1,34 @@
+{
+  "adjusted_bank_balance": 100500,
+  "adjusted_book_balance": 100500,
+  "book_entry_items": [
+    "service_fee",
+    "interest_income"
+  ],
+  "bank_only_items": [
+    "outstanding_checks",
+    "deposit_in_transit"
+  ],
+  "journal_entries": [
+    {
+      "debit_account": "bank_service_fee_expense",
+      "credit_account": "cash",
+      "amount": 500
+    },
+    {
+      "debit_account": "cash",
+      "credit_account": "interest_income",
+      "amount": 1000
+    }
+  ],
+  "balances": true,
+  "evidence_ids_used": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+  ],
+  "unsupported_claims": []
+}

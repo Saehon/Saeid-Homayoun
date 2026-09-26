@@ -1,0 +1,90 @@
+{
+  "case_id": "BANK-REC-001",
+  "title": "Bank reconciliation — deterministic accounting benchmark",
+  "domain": [
+    "financial_accounting",
+    "audit_testing"
+  ],
+  "difficulty": "simple",
+  "evidence": [
+    {
+      "id": "E1",
+      "fact": "Unadjusted general-ledger cash balance is 100000."
+    },
+    {
+      "id": "E2",
+      "fact": "Bank statement ending balance is 108500."
+    },
+    {
+      "id": "E3",
+      "fact": "Outstanding checks total 12000."
+    },
+    {
+      "id": "E4",
+      "fact": "Deposit in transit is 4000."
+    },
+    {
+      "id": "E5",
+      "fact": "Bank service fee of 500 has not been recorded in the books."
+    },
+    {
+      "id": "E6",
+      "fact": "Bank interest income of 1000 has not been recorded in the books."
+    }
+  ],
+  "task": [
+    "Calculate adjusted bank balance.",
+    "Calculate adjusted book balance.",
+    "Identify which items require book entries and which are bank-only reconciling items.",
+    "Provide the required journal entries.",
+    "State whether the reconciliation balances."
+  ],
+  "required_output_schema": {
+    "adjusted_bank_balance": "number",
+    "adjusted_book_balance": "number",
+    "book_entry_items": "array of strings chosen from service_fee, interest_income, outstanding_checks, deposit_in_transit",
+    "bank_only_items": "array of strings chosen from service_fee, interest_income, outstanding_checks, deposit_in_transit",
+    "journal_entries": "array of objects with debit_account, credit_account, amount",
+    "balances": "boolean",
+    "evidence_ids_used": "array of E1-E6",
+    "unsupported_claims": "array"
+  },
+  "gold_standard": {
+    "adjusted_bank_balance": 100500,
+    "adjusted_book_balance": 100500,
+    "book_entry_items": [
+      "service_fee",
+      "interest_income"
+    ],
+    "bank_only_items": [
+      "outstanding_checks",
+      "deposit_in_transit"
+    ],
+    "journal_entries": [
+      {
+        "debit_account": "bank_service_fee_expense",
+        "credit_account": "cash",
+        "amount": 500
+      },
+      {
+        "debit_account": "cash",
+        "credit_account": "interest_income",
+        "amount": 1000
+      }
+    ],
+    "balances": true,
+    "required_evidence_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6"
+    ],
+    "unsupported_claims": []
+  },
+  "human_gate": {
+    "required": false,
+    "reason": "Deterministic educational reconciliation case with no material professional judgment."
+  }
+}

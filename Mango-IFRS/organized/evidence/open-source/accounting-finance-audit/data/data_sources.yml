@@ -1,0 +1,104 @@
+version: 1
+curated: "2026-09-25"
+download_root: research-data
+sources:
+  - id: hf-vynfi-audit-p2p
+    platform: huggingface
+    kind: dataset
+    handle: VynFi/vynfi-audit-p2p
+    split: train
+    licence: apache-2.0
+    domains: [accounting, audit, sox, journal-entries, fraud, anomalies]
+    size_note: "656k rows"
+    default_rows: 1000
+  - id: hf-vynfi-aml-100k
+    platform: huggingface
+    kind: dataset
+    handle: VynFi/aml-100k
+    config: transactions
+    split: train
+    licence: apache-2.0
+    domains: [aml, fraud, banking, transactions]
+    size_note: "about 752k transaction rows; synthetic"
+    default_rows: 1000
+  - id: hf-edgar-xbrl-companyfacts
+    platform: huggingface
+    kind: dataset
+    handle: DenyTranDFW/edgar_xbrl_companyfacts
+    split: train
+    licence: gpl
+    domains: [sec, xbrl, financial-statements, us-gaap, ifrs]
+    size_note: "100M-1B category on Hub; sample by default"
+    default_rows: 1000
+  - id: hf-sfd-v1
+    platform: huggingface
+    kind: dataset
+    handle: sfd-anonymous/sfd-v1
+    split: train
+    licence: cc-by-nc-4.0
+    domains: [sec, filings, 10-k, 10-q, nlp, rag]
+    size_note: "about 45.4 GB; stream/sample rather than full download"
+    streaming: true
+    default_rows: 50
+  - id: hf-financialphrasebank
+    platform: huggingface
+    kind: dataset
+    handle: lmassaron/FinancialPhraseBank
+    split: train
+    licence: cc-by-nc-sa-4.0
+    domains: [finance, nlp, sentiment]
+    size_note: "small benchmark"
+    default_rows: 500
+  - id: hf-company-reports-esg
+    platform: huggingface
+    kind: dataset
+    handle: DataNeed/company-reports
+    split: "2024_02_03"
+    licence: cc-by-sa-4.0
+    domains: [esg, sustainability, corporate-governance, company-reports]
+    size_note: "about 2.05 GB total; sample by default"
+    default_rows: 100
+  - id: kaggle-credit-card-fraud
+    platform: kaggle
+    kind: dataset
+    handle: mlg-ulb/creditcardfraud
+    licence: "Open Database / Database Contents"
+    domains: [fraud, finance, anomaly-detection]
+    size_note: "150.83 MB; 284,807 transactions"
+  - id: kaggle-sec-2024-index
+    platform: kaggle
+    kind: dataset
+    handle: nclunaventures/2024-financial-year-8-core-sec-datasets-for-ml
+    licence: cc0
+    domains: [sec, filings, metadata, finance]
+    size_note: "2024 SEC filing index"
+  - id: kaggle-world-bank-esg
+    platform: kaggle
+    kind: dataset
+    handle: tunguz/environment-social-and-governance-data
+    licence: cc-by-4.0
+    domains: [esg, sustainability, world-bank, finance]
+  - id: github-financebenchmark
+    platform: github
+    kind: program-and-data
+    handle: microsoft/FinanceBenchmark
+    licence: "verify upstream"
+    domains: [finance, ap, ar, agents, benchmark]
+  - id: github-ibm-aml-data
+    platform: github
+    kind: data
+    handle: IBM/AML-Data
+    licence: "dataset licence differs from code; verify upstream"
+    domains: [aml, banking, fraud, synthetic-data]
+  - id: github-ibm-amlsim
+    platform: github
+    kind: program-and-data
+    handle: IBM/AMLSim
+    licence: "verify upstream"
+    domains: [aml, fraud, banking, simulator]
+  - id: github-audit-analytics
+    platform: github
+    kind: program-and-data
+    handle: westland/auditanalytics
+    licence: "verify upstream"
+    domains: [audit, analytics, r, teaching]

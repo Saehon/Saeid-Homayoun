@@ -1,0 +1,45 @@
+{
+  "project": "Open Agentic Accounting & Audit Lab",
+  "version": "0.2",
+  "updated": "2026-09-24",
+  "repository": "https://github.com/Saehon/Saeid-Homayoun/tree/main/Open-Agentic-Accounting-Audit-Lab",
+  "google_drive_folder": "https://drive.google.com/drive/folders/1_Zaq6PFJIZUX9O6AzBvmrf-_CRRWw_5s",
+  "google_drive_proposal": "https://docs.google.com/document/d/16Mq0zEZJsTNd73tGzfnE86WhRL2je4fUC92iiVJgINk/edit",
+  "domains": [
+    "financial_accounting",
+    "audit",
+    "icfr",
+    "corporate_governance",
+    "cam",
+    "kam",
+    "ifrs",
+    "esg"
+  ],
+  "providers": [
+    "openai_gpt_codex",
+    "anthropic_claude",
+    "google_gemini",
+    "microsoft_azure",
+    "kimi_moonshot",
+    "deepseek",
+    "ollama_optional"
+  ],
+  "cases": {
+    "US": 10,
+    "Europe": 10,
+    "Asia": 10,
+    "total": 30
+  },
+  "treatments": [
+    "T0",
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6"
+  ],
+  "core_case_treatment_cells": 210,
+  "approximate_six_provider_scale": 1260,
+  "next_milestone": "Executable U.S. CAM + ICFR pilot with frozen evidence, gold standard, deterministic validators, cross-model review and human gate"
+}

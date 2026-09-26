@@ -1,0 +1,15 @@
+{
+  "id": "sadhon/finance-sentiment-model-microsoft-sec-example",
+  "title": "Finance Sentiment Model + Microsoft SEC Example",
+  "code_file": "financial_sentiment_microsoft.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["sadhon/microsoft-accounting-demo-sec-10k"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

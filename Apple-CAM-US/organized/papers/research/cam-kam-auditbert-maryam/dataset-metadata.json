@@ -1,0 +1,18 @@
+{
+  "title": "CAM KAM AuditBERT Public Demo",
+  "subtitle": "Synthetic CAM and KAM records for reproducible AuditBERT-style preprocessing",
+  "description": "A public-safe synthetic demonstration dataset for CAM/KAM accounting-topic classification and AuditBERT research workflows. Raw licensed research data are excluded.",
+  "id": "sadhon/cam-kam-auditbert-public-demo",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "keywords": [
+    "auditing",
+    "accounting",
+    "critical audit matters",
+    "key audit matters",
+    "bert"
+  ]
+}

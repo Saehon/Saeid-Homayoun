@@ -1,0 +1,96 @@
+{
+  "study": "IFRS-CPJ Management Science",
+  "hypothesis": "Independent AI challenge plus evidence verification, deterministic recalculation, and a human professional gate reduces material IFRS error and improves evidence-grounded decision quality relative to single-AI or AI self-review.",
+  "github_upstreams": [
+    {
+      "name": "ESMA ESEF Toolkit",
+      "repo": "European-Securities-Markets-Authority/esef_toolkit",
+      "url": "https://github.com/European-Securities-Markets-Authority/esef_toolkit",
+      "license": "EUPL-1.2",
+      "role": "ESEF ingestion"
+    },
+    {
+      "name": "TRR266 ESEF",
+      "repo": "trr266/esef-website",
+      "url": "https://github.com/trr266/esef-website",
+      "license": "MIT",
+      "role": "academic ESEF data/research pipeline"
+    },
+    {
+      "name": "Arelle",
+      "repo": "Arelle/Arelle",
+      "url": "https://github.com/Arelle/Arelle",
+      "license": "Apache-2.0",
+      "role": "XBRL validation/parser"
+    },
+    {
+      "name": "Open-ESEF",
+      "repo": "reeyarn/openesef",
+      "url": "https://github.com/reeyarn/openesef",
+      "license": "GPL-3.0",
+      "role": "isolated ESEF research environment"
+    },
+    {
+      "name": "sec-edgar-downloader",
+      "repo": "jadchaar/sec-edgar-downloader",
+      "url": "https://github.com/jadchaar/sec-edgar-downloader",
+      "license": "MIT",
+      "role": "SEC/20-F ingestion"
+    },
+    {
+      "name": "TRR266 treat",
+      "repo": "trr266/treat",
+      "url": "https://github.com/trr266/treat",
+      "license": "MIT",
+      "role": "reproducibility template"
+    }
+  ],
+  "kaggle_external": [
+    {
+      "name": "SEC Financial Statement Extracts",
+      "url": "https://www.kaggle.com/securities-exchange-commission/financial-statement-extracts",
+      "role": "US-GAAP comparison/calculation benchmark"
+    },
+    {
+      "name": "SEC Edgar Annual Financial Filings 2021",
+      "url": "https://www.kaggle.com/datasets/pranjalverma08/sec-edgar-annual-financial-filings-2021",
+      "role": "filing text extraction"
+    },
+    {
+      "name": "2023–2024 SEC Data: 8 Core Filings",
+      "url": "https://www.kaggle.com/datasets/nclunaventures/2023-2024-sec-data-8-core-filings-for-ml-and-quant/data",
+      "role": "filing metadata/discovery"
+    },
+    {
+      "name": "SEC Filings 1994–2020",
+      "url": "https://www.kaggle.com/finnhub/sec-filings",
+      "role": "historical robustness"
+    },
+    {
+      "name": "Financial Reports Fraud Detection Data",
+      "url": "https://www.kaggle.com/datasets/ziya07/financial-reports-fraud-detection-data",
+      "role": "fraud/adversarial extension"
+    },
+    {
+      "name": "AntiFraud Centre Dataset",
+      "url": "https://www.kaggle.com/datasets/monamzubair/antifraud-centre-dataset/versions/1",
+      "role": "fraud/anomaly stress test"
+    },
+    {
+      "name": "Extracting 10-K Reports via SEC EDGAR",
+      "url": "https://www.kaggle.com/code/purvasingh/extracting-financial-10-k-reports-via-sec-edgar-db",
+      "role": "retrieval notebook pattern"
+    }
+  ],
+  "treatments": [
+    "T0 Human only",
+    "T1 Single AI",
+    "T2 Human + AI",
+    "T3 AI + self-review",
+    "T4 AI + blind independent challenger",
+    "T5 Generator + challenger + evidence + deterministic calculator",
+    "T6 T5 + human professional gate"
+  ],
+  "target_cases": 300,
+  "policy": "Do not vendor third-party code or Kaggle datasets into proprietary/public project modules without checking and satisfying their current licenses/terms."
+}
