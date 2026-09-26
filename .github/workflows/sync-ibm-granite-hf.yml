@@ -1,0 +1,36 @@
+name: Sync IBM Granite to Hugging Face
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "open-source/ibm-granite/huggingface-space/**"
+      - "scripts/sync_ibm_granite_hf.py"
+      - ".github/workflows/sync-ibm-granite-hf.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_SPACE_REPO: SADHON/ibm-granite-accounting-audit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check Hugging Face token
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN repository secret is not configured."
+            echo "Add a Hugging Face write token named HF_TOKEN to enable automatic publishing."
+            exit 1
+          fi
+      - name: Install Hugging Face client
+        run: pip install "huggingface_hub>=0.35,<1"
+      - name: Publish Space
+        run: python scripts/sync_ibm_granite_hf.py
