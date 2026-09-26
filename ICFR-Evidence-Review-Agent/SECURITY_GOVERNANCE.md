@@ -20,3 +20,12 @@ The child project may learn from the mother research project, but material in th
 
 ## Professional boundary
 The system is decision support. It does not provide an audit opinion, management certification, or regulator finding. Final professional judgment and sign-off remain with authorized humans.
+
+
+## Private R&D / public product boundary
+
+Detailed Frankenstein R&D architecture, proprietary prompts, agent-routing logic, private benchmark gold labels, customer-specific logic, pricing/commercial rules and patent-sensitive mechanisms remain outside the public repository.
+
+Only deliberately selected non-sensitive interfaces, governance, synthetic tests and customer-facing implementation artifacts may be published.
+
+Graduation from private R&D into Lemon requires applicable testing, evidence/provenance review, security/privacy review, rights/licensing review and human architecture approval. Technology providers remain replaceable and cannot become professional authority.
