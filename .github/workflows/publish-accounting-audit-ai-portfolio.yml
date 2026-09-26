@@ -30,14 +30,17 @@ jobs:
       - name: Validate portfolio
         run: |
           python - <<'PY'
-          import pandas as pd
+          import csv
           p="portfolio/accounting-audit-ai-portfolio/portfolio.csv"
-          df=pd.read_csv(p)
+          with open(p, newline="", encoding="utf-8") as fh:
+              rows=list(csv.DictReader(fh))
           required={"priority","asset","platform","url","domain","role","status"}
-          assert required.issubset(df.columns)
-          assert len(df) >= 10
-          assert df["url"].str.startswith("https://").all()
-          print(df[["priority","asset","platform"]].head(10).to_string(index=False))
+          assert rows, "portfolio.csv is empty"
+          assert required.issubset(rows[0].keys())
+          assert len(rows) >= 10
+          assert all(r["url"].startswith("https://") for r in rows)
+          for r in rows[:10]:
+              print(r["priority"], r["asset"], r["platform"])
           PY
 
       - name: Detect credentials
@@ -51,7 +54,7 @@ jobs:
 
       - name: Install publishers
         if: steps.creds.outputs.hf == 'true' || steps.creds.outputs.kaggle == 'true'
-        run: python -m pip install --quiet --upgrade huggingface_hub kaggle pandas
+        run: python -m pip install --quiet --upgrade huggingface_hub kaggle
 
       - name: Publish Hugging Face portfolio
         if: steps.creds.outputs.hf == 'true'
