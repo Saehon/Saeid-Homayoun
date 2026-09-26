@@ -1,0 +1,29 @@
+[
+  {
+    "id": "REV-CLEAN-01",
+    "control_id": "REV-01",
+    "objective": "Monthly revenue reconciliation is prepared and independently reviewed.",
+    "required_evidence": ["reconciliation", "reviewer sign-off", "period"],
+    "evidence_text": "Revenue reconciliation for period FY2026 with reviewer sign-off.",
+    "expected_status": "READY_FOR_HUMAN_REVIEW",
+    "expected_missing": []
+  },
+  {
+    "id": "ACCESS-GAP-01",
+    "control_id": "ITGC-ACCESS-01",
+    "objective": "Quarterly privileged access review is completed and approved.",
+    "required_evidence": ["access listing", "reviewer sign-off", "period"],
+    "evidence_text": "Privileged access listing for period Q2 FY2026.",
+    "expected_status": "EVIDENCE_GAPS",
+    "expected_missing": ["reviewer sign-off"]
+  },
+  {
+    "id": "JOURNAL-GAP-01",
+    "control_id": "JE-01",
+    "objective": "Manual journal entries require documented approval.",
+    "required_evidence": ["journal entry", "approval", "period"],
+    "evidence_text": "Journal entry JE-7781 recorded for period FY2026.",
+    "expected_status": "EVIDENCE_GAPS",
+    "expected_missing": ["approval"]
+  }
+]
