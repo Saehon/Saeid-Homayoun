@@ -1,0 +1,29 @@
+version: 0.1
+status: research-prototype
+canonical_hub: github
+benchmarks:
+  cam_kam:
+    task: audit_matter_discovery_and_dynamics
+    outputs: [topic, new_topic, entry, exit, persistence, evidence]
+    metrics: [precision, recall, f1, pr_auc, evidence_coverage]
+    human_gate: true
+  icfr:
+    task: material_weakness_risk_and_classification
+    outputs: [weakness_category, severity, horizon, evidence]
+    metrics: [pr_auc, brier_score, recall_at_k, calibration_error]
+    human_gate: true
+  financial_reasoning:
+    task: evidence_grounded_financial_reasoning
+    outputs: [answer, calculation_trace, evidence]
+    metrics: [exact_match, numeric_tolerance_accuracy, evidence_accuracy]
+    human_gate: true
+external_references:
+  helm: https://github.com/stanford-crfm/helm
+  artkit: https://github.com/BCG-X-Official/artkit
+  financemath: https://github.com/yale-nlp/FinanceMath
+policy:
+  vendor_external_code: false
+  require_license_check: true
+  require_provenance: true
+  require_model_version: true
+  require_human_approval: true
