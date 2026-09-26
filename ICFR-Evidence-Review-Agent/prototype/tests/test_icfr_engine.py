@@ -76,3 +76,16 @@ def test_wrong_period_is_flagged():
     )
     assert "PERIOD_MISMATCH" in result["primary_review"]["deterministic_flags"]
     assert result["primary_review"]["status"] == "EXCEPTION_REVIEW_REQUIRED"
+
+
+def test_negative_status_alone_is_not_a_conflict():
+    result = review_control(
+        ControlInput(
+            control_id="C6",
+            objective="Negative status should not be treated as a contradiction by substring.",
+            required_evidence=["journal entry", "period"],
+            evidence_text="Journal entry JE-22 for period FY2026 is not approved.",
+            period="FY2026",
+        )
+    )
+    assert "CONFLICTING_EVIDENCE" not in result["primary_review"]["deterministic_flags"]
