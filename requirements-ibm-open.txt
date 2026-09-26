@@ -1,0 +1,7 @@
+# Open-source IBM / IBM-origin research layer.
+# Keep versions frozen in an experiment-specific lockfile before a reproducible run.
+transformers
+torch
+sentence-transformers
+docling
+beeai-framework
