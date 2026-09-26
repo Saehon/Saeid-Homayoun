@@ -63,6 +63,16 @@ This directory is the commercial child project. The original research projects r
 - synthetic Customer-Zero benchmark
 - Human Gate remains locked regardless of model output
 
+### V2 — Customer Zero regression benchmark
+- 20 synthetic ICFR control/evidence cases across five control families
+- explicit wrong-period, stale, conflicting, duplicate, no-evidence and prompt-injection cases
+- deterministic exception flags and evidence-lineage checks
+- benchmark precision/recall and false-positive/false-negative reporting
+- controlled GPT vs Claude vs IBM Granite experiment plan
+- Human Gate and provider-neutral architecture remain unchanged
+
+See [Customer Zero V2](CUSTOMER_ZERO_V2.md) and [Model Benchmark Plan](MODEL_BENCHMARK_PLAN.md).
+
 ## First sellable MVP
 
 The MVP reviews one control at a time and produces:
