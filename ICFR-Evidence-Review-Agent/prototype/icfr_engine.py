@@ -84,7 +84,13 @@ def _detect_conflict(evidence_lower: str) -> bool:
         ("sign-off completed", "sign-off missing"),
         ("reconciled", "not reconciled"),
     )
-    return any(left in evidence_lower and right in evidence_lower for left, right in conflict_pairs)
+    for positive, negative in conflict_pairs:
+        if negative not in evidence_lower:
+            continue
+        remainder = evidence_lower.replace(negative, " ")
+        if positive in remainder:
+            return True
+    return False
 
 
 def _deterministic_flags(control: ControlInput, evidence: str) -> list[str]:
