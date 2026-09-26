@@ -16,6 +16,10 @@ I conduct research at the intersection of **accounting, auditing, assurance, fin
 - **SSRN AI/KAM paper:** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7272139
 - **Citation metadata:** [CITATION.cff](CITATION.cff)
 
+## 🗂️ Academic Portfolio Navigation
+
+➡️ **[Academic Research & AI Portfolio Index](ACADEMIC_PORTFOLIO_INDEX.md)** — structured navigation across the existing research, data, AI, audit, IFRS, finance, and development repositories. This is an organizational index only; the underlying projects remain unchanged.
+
 ## 🧭 Research System
 
 | Layer | Focus |
