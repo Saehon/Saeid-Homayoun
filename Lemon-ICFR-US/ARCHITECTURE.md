@@ -1,164 +1,236 @@
-# 🍋 Lemon-ICFR-US — Scientific Agent Architecture
+# 🍋 Lemon-ICFR-US — Mother-Inherited Scientific Agent Architecture
 
 ## Mission
-Lemon-ICFR-US is an evidence-governed agent system for US Internal Control over Financial Reporting (ICFR), designed for research, education, prototyping, and controlled professional experimentation.
+Lemon-ICFR-US is an evidence-governed agent system for US Internal Control over Financial Reporting (ICFR), designed for education, research, simulation, benchmarking, and controlled professional experimentation.
 
-It combines:
-- authoritative ICFR evidence and standards,
-- COSO-oriented control reasoning,
-- Claude financial-services capabilities as a replaceable technology layer,
-- Co-Scientist multi-agent reasoning,
-- AlphaFold-inspired latent-structure discovery,
-- AlphaEvolve-inspired controlled improvement,
-- scientific-discovery workflows,
-- independent falsification,
-- Digital Twin / scenario testing,
-- Evidence Passports and full lineage,
-- mandatory human approval for consequential conclusions.
+## Constitutional inheritance from the Mother
+Lemon inherits the Mother repository's frozen **Two-Core Constitution**.
 
-## Design rule
-**Permanent assurance logic must not depend on one model vendor.**
+### Permanent Core 1 — Stable Knowledge Core
+Contains durable ICFR meaning that must not drift when models or vendors change:
+- SEC / SOX 404 / PCAOB / COSO mappings;
+- accounts, assertions, processes, risks, controls, evidence, deficiencies and escalation logic;
+- professional judgment schemas;
+- Evidence Passport, Variable DNA, Chain-of-Evidence, Professional Decision DAG;
+- source hierarchy, rights/licensing, provenance and chronology rules;
+- scientific validation, replication, falsification and Human Gate rules;
+- benchmark definitions and Failure Memory.
 
-Claude is currently a preferred execution layer for agent orchestration, financial analysis, spreadsheet interaction, and software development. The Lemon control, evidence, scientific, governance, and approval architecture remains provider-neutral.
+### Permanent Core 2 — Replaceable Technology Core
+Contains technology that may be upgraded or retired without changing ICFR meaning:
+- Claude / OpenAI / Gemini / Microsoft / local models;
+- Claude for Financial Services, Financial Analysis, Excel, Claude Code and finance-agent templates;
+- agent SDKs and orchestration runtimes;
+- MCP / A2A connectors;
+- RAG / GraphRAG / KAG implementations;
+- code execution, data stores, tracing, observability and evaluation;
+- Digital Twin engines;
+- GAN / synthetic-data generators;
+- UI and marketplace adapters.
 
-## Core architecture
+**No third permanent core is created.**
+
+## Cross-cutting Lemon layers
+Scientific and agentic capabilities are layers/fabrics connecting the two permanent cores:
+
+1. **Knowledge & Evidence Plane** — ICFR ontology, evidence hierarchy, GraphRAG, Evidence Passport, Variable DNA.
+2. **Agentic Mesh** — orchestrator and specialist ICFR agents with scoped tools and separation of duties.
+3. **Scientific Discovery Plane** — Co-Scientist, ERA-style empirical conversion, AlphaEvolve-inspired search, AlphaFold-inspired latent-structure reasoning, replication and falsification.
+4. **Digital Twin & Scenario Lab** — repeatable entity/process/account/control/transaction twins.
+5. **GAN / Synthetic-Adversarial Layer** — synthetic populations, rare-failure scenarios and adversarial stress cases. Synthetic outputs are simulations, never primary evidence of a real control failure.
+6. **Governance & Observability Plane** — RBAC, run IDs, hashes, traces, cost/latency, quality metrics, privacy, model lineage, release controls and Failure Memory.
+7. **Experience / Workflow Layer** — controller, internal audit, external audit, researcher and teaching interfaces.
+
+The **Adaptive Intelligence / AI-to-AI Scientific Fabric** routes governed tasks and evidence across these layers.
+
+## Canonical architecture
 
 ```text
-Authoritative Evidence
-SEC | PCAOB | SOX 404 | COSO | Filings | XBRL | Workpapers | ERP evidence
-        │
-        ▼
-Evidence & Rights Gateway
-source → license/rights → provenance → Evidence Passport → version
-        │
-        ▼
-ICFR Knowledge Core
-entity/process/account/assertion/control/risk/deficiency graph
-        │
-        ├─────────────► Structure Discovery Engine
-        │                AlphaFold-inspired latent relationship discovery
-        │                process ↔ account ↔ assertion ↔ risk ↔ control ↔ evidence
-        │
-        ▼
-Lemon Orchestrator
-        │
-        ├─ Risk & Scoping Agent
-        ├─ Control Design Agent
-        ├─ Evidence Agent
-        ├─ Operating Effectiveness Agent
-        ├─ Financial Analysis Agent
-        ├─ Deficiency Evaluation Agent
-        ├─ Reviewer Agent
-        └─ Independent Falsification Agent
-        │
-        ▼
-Co-Scientist Layer
-generate hypotheses → competing explanations → evidence search → debate
-        │
-        ▼
-Scientific Discovery Engine
-observe → hypothesize → test → replicate → challenge → update
-        │
-        ▼
-Digital Twin / Scenario Lab
-transaction/control simulations + counterfactuals + stress cases
-        │
-        ▼
-AlphaEvolve-style Improvement Loop
-propose variants → benchmark → reject unsafe/weak variants → retain validated improvements
-        │
-        ▼
-Adversarial / Falsification Gate
-independent contradiction search + evidence sufficiency test
-        │
-        ▼
-Human Approval Gate
-controller / internal audit / external audit / researcher
-        │
-        ▼
-Decision + Evidence Passport + Reproducible Audit Trail
-        │
-        └─────────────► Learning Loop / Skill Passport
+                           LEMON-ICFR-US
+                                  │
+          ┌───────────────────────┴────────────────────────┐
+          │                                                │
+ STABLE KNOWLEDGE CORE                            REPLACEABLE TECHNOLOGY CORE
+ SEC | SOX | PCAOB | COSO                        Claude | GPT | Gemini | MS
+ ICFR ontology / judgments                       local/open models
+ Evidence Passport                               MCP / A2A / GraphRAG
+ Variable DNA / Decision DAG                     runtimes / stores / sandboxes
+ Chain-of-Evidence / Failure Memory              Digital Twin / GAN adapters
+          │                                                │
+          └──────────── Adaptive Intelligence Fabric ───────┘
+                                  │
+                    Knowledge & Evidence Plane
+                                  │
+                           Agentic Mesh
+                                  │
+             Co-Scientist Hypothesis Tournament
+     Generation → Reflection → Ranking → Evolution → Meta-review
+                                  │
+             Professional Decision DAG / Systems Map
+                                  │
+                  ERA-style Executable ICFR Object
+                                  │
+              Deterministic Tests + Model-Assisted Tests
+                                  │
+     AlphaEvolve-inspired Search under Frozen Fitness Function
+                                  │
+      AlphaFold-inspired Latent Structure / Relationship Search
+                                  │
+         Digital Twin + GAN/Synthetic-Adversarial Stress Lab
+                                  │
+                Temporal / OOS / Holdout Validation
+                                  │
+             Independent Reviewer / Replicator
+                                  │
+                     Falsification Agent
+                                  │
+             Science-One-style Chain-of-Evidence
+                                  │
+                          CoE Audit
+                                  │
+                        Evidence Passport
+                                  │
+                          HUMAN GATE
+                                  │
+                    Decision + Failure Memory
+                                  │
+                        Controlled Learning
 ```
 
+## ICFR scientific object
+For each material case Lemon should maintain:
+
+`entity → process → account/disclosure → assertion → risk → control objective → control → evidence → test → exception → alternative explanation → deficiency candidate → reviewer → falsifier → human disposition`
+
+Each governed object should also carry:
+- source and provenance;
+- rights/license status;
+- chronology/information-availability status;
+- Variable DNA / construct definition where applicable;
+- model/tool/configuration versions;
+- parent hash / content hash;
+- independence class of reviewer;
+- contradictions and failure state;
+- required next action.
+
 ## COSO alignment
-Lemon maps each material conclusion to the five COSO components:
+Lemon maps material cases to the five COSO components:
 1. Control Environment
 2. Risk Assessment
 3. Control Activities
 4. Information & Communication
 5. Monitoring Activities
 
-The agent system should store the relevant COSO component/principle, financial-statement assertion, process, risk, key control, test procedure, evidence, exception, deficiency rationale, reviewer result, falsification result, and human disposition.
+Lemon should also use COSO's 2026 Generative-AI internal-control guidance as a current risk/control reference for AI used inside ICFR workflows, while preserving the 2013 Internal Control—Integrated Framework as the underlying framework.
 
 ## Claude finance stack mapping
 
-| Claude capability | Lemon role | Architectural status |
+| Claude capability | Lemon role | Status |
 |---|---|---|
-| Claude for Financial Services | Financial-domain interaction and workflow surface | Replaceable technology |
-| Financial Analysis Solution | Financial analysis and anomaly support | Specialist subagent/tool |
-| Claude for Excel | Spreadsheet evidence review and controlled analyst interface | Interface/tool |
-| Claude Code | Build, test, maintain and evaluate Lemon | Developer plane |
-| Financial Services Agents | Reusable workflow/subagent patterns | Agent template layer |
+| Claude for Financial Services | financial-domain workflow surface | Replaceable Technology |
+| Financial Analysis Solution | trend/anomaly/context analysis | Specialist tool |
+| Claude for Excel | controlled spreadsheet evidence/review interface | Specialist interface |
+| Claude Code | engineering, testing and repository maintenance | Developer plane |
+| Financial Services Agents | skills + connectors + subagent design pattern | Agent template layer |
+| Claude connectors / MCP | governed access to approved data/tools | Connector layer |
 
-No Claude-generated conclusion becomes trusted evidence merely because Claude produced it.
+Claude is **not** Lemon's professional authority. No model-generated conclusion becomes trusted evidence solely because a model produced it.
 
-## Scientific intelligence layers
+## Scientific discovery contract
 
 ### Co-Scientist
-Multiple role-separated agents generate competing hypotheses about:
-- control failures,
-- missing evidence,
-- transaction anomalies,
-- root causes,
-- potential material weaknesses,
-- alternative explanations.
+Lemon uses specialized functions inspired by multi-agent scientific collaboration:
+- generation;
+- reflection;
+- ranking;
+- evolution;
+- proximity/redundancy review;
+- meta-review.
 
-Consensus is not sufficient. Minority hypotheses and contradictory evidence are preserved.
+Ranking is a search heuristic, not truth.
 
-### AlphaFold-inspired Structure Discovery
-This is an analogy, not use of the AlphaFold biological model. Lemon searches for latent structure across:
-`entity → process → account → assertion → risk → control → evidence → exception → deficiency`.
+### ERA-style empirical conversion
+A surviving hypothesis becomes an executable ICFR object with:
+- data/evidence;
+- Variable DNA;
+- chronology;
+- test procedure;
+- code;
+- frozen metrics;
+- robustness/falsification plan;
+- replication/OOS plan;
+- expected failure modes.
 
-The engine may propose hidden relationships or clusters, but all material links require evidence and review.
+### AlphaEvolve-inspired controlled improvement
+Prompts, agent routing, deterministic rules, sampling logic, thresholds and test strategies may evolve only against a **frozen fitness function**. Search cannot optimize merely for a favorable conclusion.
 
-### AlphaEvolve-inspired Improvement
-Candidate prompts, test strategies, rules, thresholds, retrieval plans, and agent-routing variants are generated and evaluated against frozen benchmark cases. A variant graduates only when it improves defined metrics without degrading safety, provenance, reproducibility, or false-positive controls.
+### AlphaFold-inspired structure reasoning
+AlphaFold is a biological model and is not an accounting model. Lemon borrows only the general idea of discovering difficult latent structure and subjecting it to rigorous external benchmarking.
 
-### Scientific Discovery
-Every important finding follows:
-`Observation → Question → Hypotheses → Evidence → Test → Replication → Falsification → Human Judgment → Learning`.
+### Chain-of-Evidence + CoE Audit
+Material claims should trace:
+
+`claim → source/data → transformation → code/test → executed result → robustness/falsification → replication → interpretation → human decision`
+
+CoE Audit checks reference validity, numerical reproducibility, specification integrity, method/code alignment and claim/evidence alignment.
+
+## GAN / Synthetic-Adversarial Layer
+GAN or other synthetic generators may be useful for:
+- rare control-failure scenarios;
+- imbalanced material-weakness classes;
+- transaction populations for sampling tests;
+- access-control and segregation-of-duties stress cases;
+- cut-off, approval and reconciliation exceptions;
+- red-team/adversarial scenarios.
+
+Rules:
+- synthetic data is explicitly labelled;
+- generated cases never masquerade as company evidence;
+- provenance includes generator/model/version/seed/configuration;
+- synthetic scenarios are separated from blind holdout gold keys;
+- promotion from SANDBOX requires frozen-benchmark evidence;
+- real professional conclusions require real/authoritative evidence anchors.
+
+## Four-system separation
+Where feasible:
+1. **Generator** proposes hypotheses/tests.
+2. **Evaluator** applies frozen metrics.
+3. **Validator** independently replicates, red-teams and falsifies.
+4. **Human Authority** approves/rejects the final disposition.
+
+Different prompts to the same model are role separation, not strong independence.
+
+## Technology promotion firewall
+Every external technology follows:
+
+`WATCH → EVALUATE → SANDBOX → ADOPT → REPLACE/RETIRE`
+
+Promotion requires evidence on capability, security, privacy, rights, reproducibility, provenance, failure behavior, tool reliability, latency, cost, portability, observability, Human Gate compatibility and regression against frozen Lemon benchmarks.
 
 ## Required gates
-A material Lemon conclusion must pass:
-1. Source/provenance gate
-2. Rights/license gate
-3. ICFR/COSO grounding gate
-4. Evidence sufficiency gate
-5. Independent reviewer gate
-6. Falsification/challenge gate
-7. Reproducibility gate
-8. Human approval gate
+1. provenance
+2. rights/license
+3. chronology/information availability
+4. ICFR/COSO grounding
+5. real-evidence anchor for real-world conclusions
+6. evidence sufficiency
+7. independent review
+8. falsification
+9. Chain-of-Evidence / CoE Audit
+10. reproducibility / replication where material
+11. human approval
 
-## Non-negotiable boundaries
-- AI does not sign an audit opinion.
-- AI does not replace management's ICFR assessment.
-- AI does not replace auditor professional judgment.
-- Vendor commentary does not outrank SEC/PCAOB/COSO/primary evidence.
-- Self-improvement is benchmark-gated and version-controlled; no uncontrolled autonomous mutation.
-- All consequential outputs retain provenance and human disposition.
+## Non-negotiable invariants
+```text
+agent_consensus_is_truth = false
+model_confidence_is_evidence = false
+synthetic_data_is_real_evidence = false
+prediction_equals_causality = false
+optimize_for_favorable_conclusion = false
+failed_runs_are_deleted = false
+technology_change_rewrites_icfr_meaning = false
+uncontrolled_self_improvement_allowed = false
+human_gate_required = true
+```
 
-## Primary product outcome
-Lemon should produce a structured **ICFR Evidence Passport** containing:
-- scoped process/account/assertion,
-- identified risk,
-- control objective and control,
-- evidence used,
-- test performed,
-- exceptions,
-- alternative hypotheses,
-- reviewer challenge,
-- falsification result,
-- deficiency classification rationale,
-- model/tool/version lineage,
-- human approval and final disposition.
+AI does not sign an audit opinion, replace management's ICFR assessment, replace auditor professional judgment, or authorize its own material conclusion.
