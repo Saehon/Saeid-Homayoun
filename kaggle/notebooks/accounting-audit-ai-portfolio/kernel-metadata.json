@@ -1,0 +1,13 @@
+{
+  "id": "sadhon/accounting-audit-ai-portfolio-start-here",
+  "title": "Accounting & Audit AI Portfolio — Start Here",
+  "code_file": "accounting-audit-ai-portfolio.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["sadhon/accounting-audit-ai-portfolio"],
+  "competition_sources": [],
+  "kernel_sources": []
+}
