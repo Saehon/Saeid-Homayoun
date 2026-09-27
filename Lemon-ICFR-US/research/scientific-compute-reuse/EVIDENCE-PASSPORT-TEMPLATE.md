@@ -23,6 +23,11 @@ Clustering:
 Winsorization:
 Missing-data rule:
 Replication code/data:
+Retrieval date (UTC):
+Artifact version / release / commit SHA:
+Source URL / persistent identifier:
+Rights / license / permitted research use:
+Rights verification evidence:
 Table / column / page provenance:
 Outcome compatibility:
 Population compatibility:
