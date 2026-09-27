@@ -1,0 +1,19 @@
+model_id: LEMON-SCI-ESM-001
+short_name: ACK2007
+status: EXECUTABLE-CANDIDATE
+m1_locked: false
+retraining: forbidden
+intercept: -3.752
+coefficient_count: 14
+estimand: mixed ICD existence/discovery/reporting
+source_model: Ashbaugh-Skaife, Collins & Kinney (2007), Journal of Accounting and Economics
+compiler_policy:
+  exact_published_coefficients: true
+  coefficient_tuning: false
+  test_set_optimization: false
+  unresolved_raw_subgate:
+    - RZSCORE raw construction and decile reference sample
+warnings:
+  - Executable does not mean externally validated.
+  - Zero-vector probability is a mathematical compiler check, not an empirical finding.
+  - Inputs must already follow the locked ACK2007 ontology.
