@@ -1,0 +1,4 @@
+.opencloud/
+.env
+.env.*
+!.env.example
