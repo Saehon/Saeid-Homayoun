@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Customer Zero V2 Public Case Schema",
+  "description": "Structure only. Contains no benchmark cases, gold labels, prompts, thresholds, or customer data.",
+  "type": "object",
+  "required": ["case_id", "domain", "input", "governance"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "domain": {"type": "string"},
+    "input": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "governance": {
+      "type": "object",
+      "required": ["human_gate_required"],
+      "properties": {
+        "human_gate_required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
