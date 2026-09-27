@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Accounting Audit Evidence Passport",
+  "type": "object",
+  "required": ["issuer","filing","claim","evidence","verification","human_approval"],
+  "properties": {
+    "issuer": {"type":"object","required":["name","cik"],"properties":{"name":{"type":"string"},"cik":{"type":"string"}}},
+    "filing": {"type":"object","required":["form","period_end","source_url"],"properties":{"form":{"type":"string"},"period_end":{"type":"string","format":"date"},"accession":{"type":["string","null"]},"source_url":{"type":"string"}}},
+    "claim": {"type":"object","required":["claim_id","kind"],"properties":{"claim_id":{"type":"string"},"kind":{"enum":["numeric","text","control","audit"]},"value":{},"unit":{"type":["string","null"]},"period":{"type":["string","null"]}}},
+    "evidence": {"type":"object","required":["source_locator","extraction_method"],"properties":{"xbrl_concept":{"type":["string","null"]},"source_locator":{"type":"string"},"extraction_method":{"type":"string"},"tool_version":{"type":["string","null"]},"checksum":{"type":["string","null"]}}},
+    "verification": {"type":"object","required":["deterministic_checks","status"],"properties":{"deterministic_checks":{"type":"array","items":{"type":"string"}},"cross_tool_agreement":{"type":["number","null"],"minimum":0,"maximum":1},"falsification_notes":{"type":"array","items":{"type":"string"}},"status":{"enum":["pass","review","fail"]}}},
+    "human_approval": {"type":"object","required":["required","status"],"properties":{"required":{"type":"boolean"},"status":{"enum":["pending","approved","rejected","not_required"]},"reviewer":{"type":["string","null"]},"timestamp":{"type":["string","null"]}}}
+  }
+}
