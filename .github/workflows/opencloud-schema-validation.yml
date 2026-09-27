@@ -1,0 +1,31 @@
+name: OpenCloud Schema Validation
+
+on:
+  pull_request:
+    paths:
+      - "opencloud/**"
+      - ".github/workflows/opencloud-schema-validation.yml"
+  push:
+    paths:
+      - "opencloud/**"
+      - ".github/workflows/opencloud-schema-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate fixture JSON
+        run: python -m json.tool opencloud/tests/fixtures/customer-zero-v2-schema.json > /dev/null
+      - name: Compile public OpenCloud package
+        run: python -m compileall -q opencloud/core
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Run synthetic unit tests
+        run: python -m pytest -q opencloud/tests/test_urc.py
