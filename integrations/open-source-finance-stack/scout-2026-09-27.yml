@@ -1,0 +1,31 @@
+version: 1
+updated: 2026-09-27
+canonical_platform: github
+components:
+  - name: TradingAgents
+    upstream: https://github.com/TauricResearch/TradingAgents
+    version: v0.5.1
+    license: Apache-2.0
+    role: technology_sandbox
+    cross_sync: [huggingface_metadata, kaggle_notebook]
+  - name: Finch
+    upstream: https://huggingface.co/datasets/FinWorkBench/Finch
+    code: https://github.com/FinWorkBench/Finch
+    license: CC-BY-3.0
+    role: external_benchmark
+    cross_sync: [huggingface_reference, kaggle_notebook]
+  - name: Verified-Credit-Research-Agent
+    upstream: https://github.com/phaywang/verified-credit-research-agent
+    license: MIT
+    role: audit_architecture_sandbox
+    cross_sync: [huggingface_metadata, kaggle_notebook]
+  - name: SEC-10-K-Structured-Extraction
+    upstream: https://github.com/LLMSystems/SEC-10-K-Structured-Extraction
+    license: MIT
+    role: extraction_benchmark
+    cross_sync: [huggingface_metadata, kaggle_notebook]
+governance:
+  vendor_source_by_default: false
+  preserve_upstream_license: true
+  require_provenance: true
+  require_human_approval_for_material_audit_conclusions: true
