@@ -24,9 +24,7 @@ jobs:
       - run: python -m pip install pytest
       - run: pytest -q
       - name: Execute frozen fixtures and checksum
-        run: |
-          cp ../../verification/ACK2007/run_fixtures.py .
-          python run_fixtures.py
+        run: python ../../verification/ACK2007/run_fixtures.py
       - uses: actions/upload-artifact@v4
         with:
           name: ack2007-frozen-fixture-results
