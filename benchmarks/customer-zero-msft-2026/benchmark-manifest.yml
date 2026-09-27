@@ -1,0 +1,34 @@
+benchmark: customer-zero-msft-2026
+issuer:
+  name: Microsoft Corporation
+  ticker: MSFT
+  cik: "0000789019"
+filing:
+  form: 10-K
+  period_end: 2026-06-30
+  source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
+routing:
+  policy: free-first
+  deterministic_first: true
+  proprietary_llm_required: false
+paths:
+  - sec-data
+  - edgar-mcp
+  - sec-10-k-structured-extraction
+  - verified-credit-research-agent
+evaluation:
+  metrics:
+    - filing_identity
+    - numeric_accuracy
+    - completeness
+    - provenance_coverage
+    - cross_tool_agreement
+    - unsupported_claim_rate
+    - reproducibility
+    - runtime
+gates:
+  falsification: required
+  human_approval_for_material_conclusions: required
+cross_sync:
+  huggingface: after_pass
+  kaggle: after_pass

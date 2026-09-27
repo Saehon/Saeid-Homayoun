@@ -1,0 +1,6 @@
+{
+  "status": "BASELINE_CREATED",
+  "execution_status": "NOT_RUN",
+  "reason": "Adapters must be installed and pinned in isolated environments before empirical comparison.",
+  "human_approval": "PENDING"
+}
