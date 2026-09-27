@@ -1,5 +1,6 @@
 name: LEMON-SCI ACK2007 Compiler Tests
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - 'Lemon-ICFR-US/research/scientific-compute-reuse/**'
