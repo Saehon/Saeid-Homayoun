@@ -1,0 +1,8 @@
+original_name,exact_definition,data_source,time_window,status
+FOREIGN_SALES,"1 if reports foreign sales; 0 otherwise","Compustat Segment","2003/model fiscal convention","PASS"
+RGROWTH,"decile rank of average sales growth rate","Compustat #12","2001-2003","PASS"
+%LOSS,"proportion of years with negative earnings","Compustat","2001-2003","PASS"
+RZSCORE,"decile rank of Altman (1980) z-score","accounting inputs / Altman construct","model convention","PASS_AS_INPUT_RAW_SUBGATE"
+AUDITOR,"1 if auditor is PwC/Deloitte & Touche/EY/KPMG/Grant Thornton/BDO Seidman; 0 otherwise","Compustat #149","2003","PASS"
+INST_CON,"percentage institutional shares divided by number of institutions owning stock; preserve published scaling","Thomson Financial Securities","Dec 31 2003 / model convention","PASS"
+LITIGATION,"1 if SIC 2833-2836,3570-3577,3600-3674,5200-5961,7370; 0 otherwise","SIC","model convention","PASS"

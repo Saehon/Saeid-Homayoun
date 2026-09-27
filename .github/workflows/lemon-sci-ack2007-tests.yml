@@ -1,0 +1,23 @@
+name: LEMON-SCI ACK2007 Compiler Tests
+on:
+  pull_request:
+    paths:
+      - 'Lemon-ICFR-US/research/scientific-compute-reuse/executable-models/ACK2007/**'
+  push:
+    branches:
+      - feature/lemon-scientific-compute-reuse
+    paths:
+      - 'Lemon-ICFR-US/research/scientific-compute-reuse/executable-models/ACK2007/**'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Lemon-ICFR-US/research/scientific-compute-reuse/executable-models/ACK2007
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: pytest -q
