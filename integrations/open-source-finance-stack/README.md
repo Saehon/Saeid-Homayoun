@@ -1,6 +1,6 @@
 # Open-Source Accounting, Audit & Finance Integration Registry
 
-Updated: 2026-09-26
+Updated: 2026-09-27
 
 This registry integrates external projects by reference/adapters rather than copying third-party source code. Upstream licenses remain authoritative.
 
@@ -35,3 +35,29 @@ This registry integrates external projects by reference/adapters rather than cop
 3. Prototype EDGAR MCP behind a read-only research-agent interface.
 4. Evaluate Accounted and Magpie in isolated sandboxes.
 5. Keep AGPL code outside the core unless licensing implications are explicitly accepted.
+
+
+## Scout batch — 2026-09-27
+
+| Component | Platform | Purpose | Verified license | Integration mode |
+|---|---|---|---|---|
+| TradingAgents v0.5.1 | GitHub | Multi-agent financial research/trading framework; SEC EDGAR and point-in-time workflows | Apache-2.0 | Technology-layer sandbox and architecture benchmark |
+| Finch / FinWorkBench | Hugging Face + GitHub | 172 finance/accounting spreadsheet-centric enterprise workflows for agent evaluation | CC BY 3.0 | External benchmark with attribution; no training leakage into sealed evaluation |
+| Verified Credit Research Agent | GitHub | SEC/XBRL credit research with deterministic numeric verification, workpapers and guardrails | MIT | Audit/assurance architecture reference and sandbox |
+| SEC-10-K-Structured-Extraction | GitHub | Deterministic/rule-based 10-K item extraction to standardized JSON | MIT | Extraction benchmark and candidate adapter |
+
+### Installation policy for this batch
+
+- Components are **registered and integrated by reference** in the canonical GitHub stack; upstream source is not silently copied.
+- Runtime installation happens only in isolated environments/workflows, pinned to a release/commit where practical.
+- TradingAgents must not be allowed to turn trading output into accounting/audit evidence without independent verification.
+- Finch is treated as an external evaluation benchmark; preserve CC BY 3.0 attribution and keep sealed reference outputs out of model-development loops.
+- Verified Credit Research Agent and SEC-10-K-Structured-Extraction may be adapted under MIT, while preserving copyright/license notices.
+- SEC-derived numeric claims must retain filing/accession/provenance and deterministic validation before use.
+- Cross-publishing to Hugging Face/Kaggle is limited to artifacts whose upstream licenses and dataset terms permit redistribution; otherwise publish adapters, manifests, notebooks, and citations rather than mirrored content.
+
+### Cross-platform targets
+
+- Hugging Face: benchmark/evaluation manifests, dataset cards and eligible derived evaluation artifacts.
+- Kaggle: reproducible notebooks and benchmark manifests after GitHub validation.
+- GitHub remains the canonical source for code, provenance, license gates and integration decisions.
