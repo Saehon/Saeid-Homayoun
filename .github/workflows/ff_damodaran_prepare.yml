@@ -44,7 +44,7 @@ jobs:
       - name: Run scientific contract
         run: python studies/FF-Damodaran-Discovery-01/tests/test_contract.py
       - name: Upload review package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ff-damodaran-crosswalk-review
           retention-days: 30

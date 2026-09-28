@@ -48,7 +48,7 @@ jobs:
           python benchmark.py --mode live --output ../../phase4-results/results.json
 
       - name: Upload benchmark result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: frankenstein-phase4-results
           path: phase4-results/results.json
