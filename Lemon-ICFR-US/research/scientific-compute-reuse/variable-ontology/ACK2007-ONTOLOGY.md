@@ -26,6 +26,19 @@ Scientific object: Ashbaugh-Skaife, Collins & Kinney (JAE 2007), ICD discovery/r
 ## Compiler rule
 A variable is executable only after its exact paper formula, unit, transformation, timing, source and missing-value rule are locked. Conceptual equivalence is not sufficient.
 
+## Machine-readable authority boundary
+This ontology defines scientific meaning but is **not** the executable raw-construction admission source.
+
+Canonical raw-construction status is maintained in:
+`../source-definition-recovery/ACK2007-construction-gates.json`
+
+Enforcement is implemented by:
+`../verification/ACK2007/ack2007_admission_validator.py`
+
+If this ontology and the construction-gate registry disagree, raw construction must fail closed until the discrepancy is resolved. Historical/resolved maps remain evidence records, not parallel executable gate lists.
+
+Frozen synthetic fixtures are intentionally separate from the raw-construction gate and test only compiler/schema determinism with preconstructed inputs.
+
 ## Ontology risk flags
 1. SIZE: do not execute raw-data construction until missing-year/sample-eligibility rule is verified from primary evidence.
 2. RGROWTH: preserve corrected 2002–2004 window; do not substitute generic sales growth.
