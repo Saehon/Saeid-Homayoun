@@ -4,6 +4,8 @@ Status: PARTIAL / INPUT-DEFINITIONS RECOVERED / RAW-CONSTRUCTION SUB-GATES OPEN 
 
 Primary scientific target: Ashbaugh-Skaife, Collins & Kinney (JAE 2007) ICD disclosure logit.
 
+> Authority note: this file is a scientific source-recovery record, not executable admission logic. The canonical machine-readable raw-construction gate is `ACK2007-construction-gates.json`; the fail-closed validator is `../verification/ACK2007/ack2007_admission_validator.py`.
+
 ## Recovered definitions and current gates
 | Variable | Source-locked operational definition | Source | Gate |
 |---|---|---|---|
