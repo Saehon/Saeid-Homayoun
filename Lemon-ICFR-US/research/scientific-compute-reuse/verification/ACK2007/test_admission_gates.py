@@ -24,6 +24,10 @@ validator = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(validator)
 
 
+def _clone_registry():
+    return json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
+
+
 def test_registry_covers_exact_model_input_set():
     registry = validator.load_registry(REGISTRY_PATH)
     validator.assert_registry_matches_model(registry, REQUIRED)
@@ -77,19 +81,66 @@ def test_full_raw_construction_plan_is_blocked_while_any_gate_is_unresolved():
 def test_duplicate_registry_keys_are_rejected(tmp_path):
     bad = tmp_path / "dup.json"
     bad.write_text(
-        '{"schema_version":1,"schema_version":1,"model_id":"x",'
-        '"short_name":"x","scope":"raw_model_input_construction_only",'
-        '"default_policy":"BLOCK","notes":[],"variables":{"SIZE":{'
-        '"definition":"x","raw_construction_status":"VERIFIED","reason":"x"}}}',
+        '{"schema_version":1,"schema_version":1,"model_id":"LEMON-SCI-ESM-001",'
+        '"short_name":"ACK2007","scope":"raw_model_input_construction_only",'
+        '"default_policy":"BLOCK","notes":["x"],"variables":{}}',
         encoding="utf-8",
     )
     with pytest.raises(ValueError, match="duplicate JSON key"):
         validator.load_registry(bad)
 
 
-def test_registry_drift_from_model_required_set_is_rejected():
+@pytest.mark.parametrize(
+    "field,value,match",
+    [
+        ("schema_version", 2, "schema_version"),
+        ("model_id", "WRONG-MODEL", "model_id"),
+        ("short_name", "WRONG", "short_name"),
+        ("scope", "wrong_scope", "scope"),
+        ("default_policy", "ALLOW", "default to BLOCK"),
+    ],
+)
+def test_registry_identity_and_policy_drift_are_rejected(
+    tmp_path, field, value, match
+):
+    registry = _clone_registry()
+    registry[field] = value
+    bad = tmp_path / f"{field}.json"
+    bad.write_text(json.dumps(registry), encoding="utf-8")
+    with pytest.raises(ValueError, match=match):
+        validator.load_registry(bad)
+
+
+def test_registry_missing_model_predictor_is_rejected():
     registry = validator.load_registry(REGISTRY_PATH)
     mutated = json.loads(json.dumps(registry))
     mutated["variables"].pop("SIZE")
     with pytest.raises(ValueError, match="registry/model input mismatch"):
         validator.assert_registry_matches_model(mutated, REQUIRED)
+
+
+def test_registry_extra_model_predictor_is_rejected():
+    registry = validator.load_registry(REGISTRY_PATH)
+    mutated = json.loads(json.dumps(registry))
+    mutated["variables"]["MYSTERY_MODEL_INPUT"] = {
+        "definition": "test only",
+        "raw_construction_status": "VERIFIED",
+        "reason": "test only",
+    }
+    with pytest.raises(ValueError, match="registry/model input mismatch"):
+        validator.assert_registry_matches_model(mutated, REQUIRED)
+
+
+def test_nonverified_future_status_fails_closed():
+    registry = validator.load_registry(REGISTRY_PATH)
+    mutated = json.loads(json.dumps(registry))
+    mutated["variables"]["FOREIGN_SALES"]["raw_construction_status"] = (
+        "PENDING_FUTURE_RULE"
+    )
+    result = validator.validate_raw_construction_request(
+        mutated, ["FOREIGN_SALES"]
+    )
+    assert result == {
+        "passed": False,
+        "violations": ["FOREIGN_SALES: PENDING_FUTURE_RULE"],
+    }
