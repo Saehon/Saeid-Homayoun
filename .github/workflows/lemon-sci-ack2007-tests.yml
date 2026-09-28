@@ -24,8 +24,8 @@ jobs:
       - run: python -m pip install pytest
       - name: Test executable ACK2007 compiler
         run: pytest -q
-      - name: Test fail-closed raw-construction admission gate
-        run: pytest -q ../../verification/ACK2007/test_admission_gates.py
+      - name: Test fail-closed admission and frozen-fixture falsification
+        run: pytest -q ../../verification/ACK2007/test_admission_gates.py ../../verification/ACK2007/test_fixture_runner.py
       - name: Execute frozen fixtures and checksum
         run: python ../../verification/ACK2007/run_fixtures.py
       - uses: actions/upload-artifact@v4
