@@ -20,6 +20,11 @@ ALLOWED_TOP_LEVEL = {
     "variables",
 }
 REQUIRED_VARIABLE_FIELDS = {"definition", "raw_construction_status", "reason"}
+EXPECTED_SCHEMA_VERSION = 1
+EXPECTED_MODEL_ID = "LEMON-SCI-ESM-001"
+EXPECTED_SHORT_NAME = "ACK2007"
+EXPECTED_SCOPE = "raw_model_input_construction_only"
+EXPECTED_DEFAULT_POLICY = "BLOCK"
 RAW_VERIFIED = "VERIFIED"
 
 
@@ -44,16 +49,32 @@ def load_registry(path: str | Path) -> dict:
             f"invalid registry top-level schema; missing={sorted(missing_top)}, "
             f"unknown={sorted(unknown_top)}"
         )
-    if registry["default_policy"] != "BLOCK":
+    if registry["schema_version"] != EXPECTED_SCHEMA_VERSION:
+        raise ValueError(
+            f"unexpected registry schema_version: {registry['schema_version']!r}"
+        )
+    if registry["model_id"] != EXPECTED_MODEL_ID:
+        raise ValueError(f"unexpected registry model_id: {registry['model_id']!r}")
+    if registry["short_name"] != EXPECTED_SHORT_NAME:
+        raise ValueError(
+            f"unexpected registry short_name: {registry['short_name']!r}"
+        )
+    if registry["scope"] != EXPECTED_SCOPE:
+        raise ValueError(f"unexpected registry scope: {registry['scope']!r}")
+    if registry["default_policy"] != EXPECTED_DEFAULT_POLICY:
         raise ValueError("ACK2007 raw-construction registry must default to BLOCK")
-    if registry["scope"] != "raw_model_input_construction_only":
-        raise ValueError("unexpected registry scope")
+    if not isinstance(registry["notes"], list) or not all(
+        isinstance(note, str) and note.strip() for note in registry["notes"]
+    ):
+        raise ValueError("registry notes must be a list of non-empty strings")
 
     variables = registry["variables"]
     if not isinstance(variables, dict) or not variables:
         raise ValueError("registry variables must be a non-empty object")
 
     for name, spec in variables.items():
+        if not isinstance(name, str) or not name:
+            raise ValueError("registry variable names must be non-empty strings")
         if not isinstance(spec, dict):
             raise ValueError(f"{name}: registry entry must be an object")
         fields = set(spec)
