@@ -9,8 +9,24 @@ from ack2007 import predict, REQUIRED
 csv_path=HERE/"frozen-fixtures.csv"
 rows=[]
 with csv_path.open(newline="",encoding="utf-8") as f:
-    for row in csv.DictReader(f):
-        case_id=row.pop("case_id"); row.pop("purpose",None)
+    reader=csv.DictReader(f)
+    expected=["case_id", *REQUIRED, "purpose"]
+    fieldnames=reader.fieldnames
+    if fieldnames is None:
+        raise ValueError("frozen fixture is missing a header row")
+    if len(fieldnames) != len(set(fieldnames)):
+        raise ValueError(f"duplicate frozen-fixture headers: {fieldnames}")
+    if set(fieldnames) != set(expected):
+        missing=sorted(set(expected)-set(fieldnames))
+        unknown=sorted(set(fieldnames)-set(expected))
+        raise ValueError(f"invalid frozen-fixture schema; missing={missing}, unknown={unknown}")
+    for row in reader:
+        if None in row:
+            raise ValueError(f"row has extra unnamed fields: {row[None]}")
+        case_id=row.pop("case_id")
+        row.pop("purpose")
+        if any(row[k] is None or row[k] == "" for k in REQUIRED):
+            raise ValueError(f"row {case_id!r} has missing predictor values")
         x={k:float(row[k]) for k in REQUIRED}
         y=predict(x)
         rows.append({"case_id":case_id,"z":f"{y.linear_predictor:.12f}","p":f"{y.probability:.12f}"})
