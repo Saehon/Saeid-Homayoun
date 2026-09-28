@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "model_id": "LEMON-SCI-ESM-001",
+  "short_name": "ACK2007",
+  "scope": "raw_model_input_construction_only",
+  "default_policy": "BLOCK",
+  "notes": [
+    "This registry governs whether ACK2007 model inputs may be constructed from raw data.",
+    "It does not validate arbitrary raw-source columns and it does not replace frozen synthetic compiler fixtures.",
+    "Preconstructed-input compatibility remains a separate scientific admission decision."
+  ],
+  "variables": {
+    "SEGMENTS": {
+      "definition": "Number of reported business segments",
+      "raw_construction_status": "PENDING_TIMING",
+      "reason": "Exact fiscal timing must be locked before raw construction."
+    },
+    "FOREIGN_SALES": {
+      "definition": "1 if firm reports foreign sales; 0 otherwise",
+      "raw_construction_status": "VERIFIED",
+      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+    },
+    "M&A": {
+      "definition": "Merger/acquisition activity indicator as defined by the paper",
+      "raw_construction_status": "PENDING_EXACT_CONSTRUCTION",
+      "reason": "Active ontology remains partial."
+    },
+    "RESTRUCTURE": {
+      "definition": "Restructuring activity/charge indicator as defined by the paper",
+      "raw_construction_status": "PENDING_EXACT_CONSTRUCTION",
+      "reason": "Active ontology remains partial."
+    },
+    "RGROWTH": {
+      "definition": "Decile rank of average sales growth rate, 2002-2004",
+      "raw_construction_status": "BLOCKED_MISSING_DATA_RULE",
+      "reason": "Missing-data and ranking eligibility rule remains unresolved."
+    },
+    "INVENTORY": {
+      "definition": "Inventory scaled by total assets",
+      "raw_construction_status": "PENDING_TIMING",
+      "reason": "Exact fiscal timing remains pending."
+    },
+    "SIZE": {
+      "definition": "Average market value of equity over 2001-2003, USD billions",
+      "raw_construction_status": "BLOCKED_MISSING_YEAR_RULE",
+      "reason": "Missing-year/sample-eligibility rule remains unresolved."
+    },
+    "%LOSS": {
+      "definition": "Proportion of years 2001-2003 with negative earnings",
+      "raw_construction_status": "VERIFIED",
+      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+    },
+    "RZSCORE": {
+      "definition": "Decile rank of Altman (1980) z-score/distress measure",
+      "raw_construction_status": "BLOCKED_RAW_CONSTRUCTION",
+      "reason": "Exact raw formula inputs, missing-data policy, and decile reference implementation remain unresolved."
+    },
+    "AUDITOR_RESIGN": {
+      "definition": "Indicator for auditor resignation",
+      "raw_construction_status": "PENDING_TIMING",
+      "reason": "Exact timing remains pending."
+    },
+    "AUDITOR": {
+      "definition": "1 if 2003 auditor is PwC, Deloitte & Touche, Ernst & Young, KPMG, Grant Thornton, or BDO Seidman; 0 otherwise",
+      "raw_construction_status": "VERIFIED",
+      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+    },
+    "RESTATEMENT": {
+      "definition": "Restatement or SEC AAER indicator",
+      "raw_construction_status": "PENDING_WINDOW",
+      "reason": "Exact executable window remains pending in active ontology."
+    },
+    "INST_CON": {
+      "definition": "Percentage institutional shares divided by number of institutions owning stock; preserve published scaling",
+      "raw_construction_status": "VERIFIED",
+      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+    },
+    "LITIGATION": {
+      "definition": "1 for SIC 2833-2836, 3570-3577, 3600-3674, 5200-5961, or 7370; 0 otherwise",
+      "raw_construction_status": "VERIFIED",
+      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+    }
+  }
+}
