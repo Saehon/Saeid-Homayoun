@@ -4,31 +4,51 @@ Decision: **REVISE — NOT ADMITTED TO M1**
 
 ## Gate results
 1. Compiler artifact integrity — PASS at source-review level.
-2. Unit-test and frozen-fixture execution — PASS at engineering level on the latest verified successful ACK workflow before this gate edit; synthetic fixtures are compiler checks only, never empirical performance evidence.
+2. Unit-test and frozen-fixture execution — requires observed CI/test evidence on the candidate commit. Prior successful workflow evidence does not automatically carry forward after gate-architecture changes.
 3. Provenance — PARTIAL / RAW CONSTRUCTION BLOCKED.
+   - Canonical raw-construction authority: `source-definition-recovery/ACK2007-construction-gates.json`.
+   - Fail-closed enforcement: `verification/ACK2007/ack2007_admission_validator.py`.
    - SIZE: BLOCKED_MISSING_YEAR_RULE.
-   - RGROWTH: BLOCKED_MISSING_DATA_RULE; canonical window 2002–2004.
-   - RZSCORE: raw construction/reference-sample sub-gate open.
+   - RGROWTH: BLOCKED_MISSING_DATA_RULE; canonical definition is decile rank of average sales growth rate, 2002–2004.
+   - RZSCORE: BLOCKED_RAW_CONSTRUCTION.
+   - Other ACK2007 inputs remain governed by their explicit registry status; absence from the registry is a hard failure.
 4. Estimand — WARNING: mixed ICD existence/discovery/reporting; not a pure latent-MW model.
 5. Transportability — NOT TESTED.
 
+## Authority boundary
+The construction-gate registry is the single machine-readable authority for whether an ACK2007 model input may be constructed from raw data.
+
+The ontology, resolved-variable map, Phase-4 recovery record, and Evidence Passport remain scientific/provenance evidence. They must not be interpreted as independent executable admission logic.
+
+Frozen synthetic fixtures are a separate software-determinism path. They use preconstructed synthetic model inputs and therefore do **not** call the raw-construction validator.
+
 ## Falsification tests registered
-- Missing/unknown/nonfinite input -> reject.
+- Registry must cover the exact ACK2007 model-input set.
+- Duplicate registry keys -> reject.
+- Unknown requested model input -> reject.
+- Any requested raw construction whose status is not VERIFIED -> reject.
+- SIZE missing-year rule unresolved -> reject raw construction.
+- RGROWTH missing-data/ranking eligibility unresolved -> reject raw construction.
+- RZSCORE raw-construction/reference-sample rule unresolved -> reject raw construction.
+- Frozen-fixture missing/unknown/nonfinite input -> reject.
 - Frozen-fixture schema drift or duplicate headers -> reject.
 - Scaling mismatch -> provenance failure.
-- SIZE missing-year rule unresolved -> block raw construction and M1 admission.
-- RGROWTH missing-data/ranking eligibility unresolved -> block raw construction and M1 admission.
-- RZSCORE raw-construction/reference-sample mismatch -> block raw construction and M1 admission.
 - Outcome mismatch -> reject flat ensemble.
-- Synthetic fixture -> compiler validation only.
+- Synthetic fixture -> compiler validation only; never empirical performance evidence.
 
 ## Admission rule
 ACK2007 remains LEMON-SCI-ESM-001 EXECUTABLE-CANDIDATE.
+
 M1 admission requires:
 A. observed CI/test execution evidence on the candidate commit;
-B. closure of every applicable raw-construction provenance gate, specifically SIZE, RGROWTH, and RZSCORE, OR an explicit preconstructed-input boundary that names each unresolved variable and prevents raw construction;
+B. raw-construction requests pass the canonical fail-closed construction-gate validator, OR the target dataset is explicitly treated as preconstructed input and passes a separate provenance/compatibility decision;
 C. frozen target-dataset compatibility decision;
-D. deterministic fixture execution/checksum;
+D. deterministic compiler/fixture execution and checksum;
 E. human scientific gate.
 
-No single-variable exception can satisfy Gate B. SIZE, RGROWTH, and RZSCORE must each be resolved or explicitly bounded. Current verdict: REVISE.
+No documentation-only exception can satisfy Gate B. `model.yaml` points to the canonical registry rather than duplicating a hand-maintained unresolved-variable list.
+
+## Current verdict
+**REVISE / HOLD.**
+
+Technical compiler execution and raw scientific construction are intentionally separate. Successful fixture execution cannot be used to infer that unresolved raw variables are scientifically constructible.
