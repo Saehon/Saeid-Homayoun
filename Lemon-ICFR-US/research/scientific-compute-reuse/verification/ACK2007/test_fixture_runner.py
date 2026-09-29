@@ -76,16 +76,14 @@ def test_fixture_evaluator_exception_is_not_silently_swallowed(tmp_path, monkeyp
 
     monkeypatch.setattr(runner, "_evaluate_regression_pin_fixture", boom)
     with pytest.raises(RuntimeError, match="fixture evaluator failure"):
-        runner.execute_fixtures(
-            HERE / "frozen-fixtures.csv", tmp_path / "out"
-        )
+        runner.execute_fixtures(HERE / "frozen-fixtures.csv", tmp_path / "out")
 
 
 def test_unknown_fixture_column_is_rejected(tmp_path):
     path = tmp_path / "unknown.csv"
     _write_csv(path, [*EXPECTED, "UNKNOWN"], [_base_row()])
     with pytest.raises(ValueError, match="schema/order"):
-        runner.execute_fixtures(path, tmp_path / "out")
+        runner.parse_fixture_rows(path)
 
 
 def test_reordered_fixture_columns_are_rejected(tmp_path):
@@ -93,7 +91,7 @@ def test_reordered_fixture_columns_are_rejected(tmp_path):
     reordered = ["purpose", *EXPECTED[:-1]]
     _write_csv(path, reordered, [_base_row()])
     with pytest.raises(ValueError, match="schema/order"):
-        runner.execute_fixtures(path, tmp_path / "out")
+        runner.parse_fixture_rows(path)
 
 
 def test_missing_fixture_predictor_is_rejected(tmp_path):
@@ -101,7 +99,7 @@ def test_missing_fixture_predictor_is_rejected(tmp_path):
     missing_fields = [name for name in EXPECTED if name != "SIZE"]
     _write_csv(path, missing_fields, [_base_row()])
     with pytest.raises(ValueError, match="schema/order"):
-        runner.execute_fixtures(path, tmp_path / "out")
+        runner.parse_fixture_rows(path)
 
 
 def test_duplicate_fixture_header_is_rejected(tmp_path):
@@ -113,14 +111,14 @@ def test_duplicate_fixture_header_is_rejected(tmp_path):
         encoding="utf-8",
     )
     with pytest.raises(ValueError, match="duplicate frozen-fixture headers"):
-        runner.execute_fixtures(path, tmp_path / "out")
+        runner.parse_fixture_rows(path)
 
 
 def test_duplicate_case_id_is_rejected(tmp_path):
     path = tmp_path / "duplicate-case.csv"
     _write_csv(path, EXPECTED, [_base_row("DUP"), _base_row("DUP")])
     with pytest.raises(ValueError, match="duplicate frozen fixture case_id"):
-        runner.execute_fixtures(path, tmp_path / "out")
+        runner.parse_fixture_rows(path)
 
 
 @pytest.mark.parametrize("value", ["nan", "inf", "-inf"])
@@ -130,18 +128,34 @@ def test_nonfinite_fixture_value_is_rejected(tmp_path, value):
     row["SIZE"] = value
     _write_csv(path, EXPECTED, [row])
     with pytest.raises(ValueError, match="finite numeric"):
-        runner.execute_fixtures(path, tmp_path / "out")
+        runner.parse_fixture_rows(path)
 
 
 def test_empty_case_id_is_rejected(tmp_path):
     path = tmp_path / "empty-case.csv"
     _write_csv(path, EXPECTED, [_base_row(case_id="")])
     with pytest.raises(ValueError, match="case_id must be non-empty"):
-        runner.execute_fixtures(path, tmp_path / "out")
+        runner.parse_fixture_rows(path)
 
 
 def test_empty_purpose_is_rejected(tmp_path):
     path = tmp_path / "empty-purpose.csv"
     _write_csv(path, EXPECTED, [_base_row(purpose="")])
     with pytest.raises(ValueError, match="empty purpose"):
+        runner.parse_fixture_rows(path)
+
+
+def test_arithmetic_rejects_noncanonical_fixture_even_when_schema_valid(tmp_path):
+    path = tmp_path / "schema-valid.csv"
+    _write_csv(path, EXPECTED, [_base_row()])
+    with pytest.raises(ValueError, match="committed canonical frozen fixture"):
         runner.execute_fixtures(path, tmp_path / "out")
+
+
+@pytest.mark.parametrize("predictor", runner.REQUIRED)
+def test_fixture_evaluator_covers_every_coefficient_one_hot(predictor):
+    x = {name: 0.0 for name in runner.REQUIRED}
+    x[predictor] = 1.0
+    z, p = runner._evaluate_regression_pin_fixture(x)
+    assert z == pytest.approx(runner.INTERCEPT + runner.COEFFICIENTS[predictor])
+    assert p == pytest.approx(runner.logistic(z))
