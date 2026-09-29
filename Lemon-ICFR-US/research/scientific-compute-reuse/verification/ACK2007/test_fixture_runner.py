@@ -12,7 +12,8 @@ runner = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(runner)
 
 EXPECTED = ["case_id", *runner.REQUIRED, "purpose"]
-EXPECTED_SHA = "c420891c605066edc1fe0e895ab5412decd65b648d25a42a1ceaeeb96113dda6"
+EXPECTED_OUTPUT_SHA = "c420891c605066edc1fe0e895ab5412decd65b648d25a42a1ceaeeb96113dda6"
+EXPECTED_INPUT_SHA = "e41b2536f8e485bfd4d72cc7f91b49f0640afdcd5e4b96231e6914868b884205"
 
 
 def _base_row(case_id="CASE", purpose="test"):
@@ -30,6 +31,12 @@ def _write_csv(path, fieldnames, rows):
             writer.writerow(row)
 
 
+def test_committed_fixture_input_bytes_are_pinned():
+    path = HERE / "frozen-fixtures.csv"
+    assert runner.file_sha256(path) == EXPECTED_INPUT_SHA
+    runner.verify_fixture_input_checksum(path, EXPECTED_INPUT_SHA)
+
+
 def test_committed_fixture_is_deterministic_across_two_clean_runs(tmp_path):
     payload1, sha1 = runner.execute_fixtures(
         HERE / "frozen-fixtures.csv", tmp_path / "clean-run-1"
@@ -38,10 +45,21 @@ def test_committed_fixture_is_deterministic_across_two_clean_runs(tmp_path):
         HERE / "frozen-fixtures.csv", tmp_path / "clean-run-2"
     )
     assert payload1 == payload2
-    assert sha1 == sha2 == EXPECTED_SHA
+    assert sha1 == sha2 == EXPECTED_OUTPUT_SHA
+    assert (tmp_path / "clean-run-1" / "fixture-input.sha256").read_text().startswith(EXPECTED_INPUT_SHA)
+    assert (tmp_path / "clean-run-2" / "fixture-input.sha256").read_text().startswith(EXPECTED_INPUT_SHA)
 
 
-def test_checksum_mutation_is_detected(tmp_path):
+def test_fixture_input_mutation_is_detected_even_if_outputs_would_round_same(tmp_path):
+    original = (HERE / "frozen-fixtures.csv").read_bytes()
+    mutated = tmp_path / "mutated.csv"
+    mutated.write_bytes(original.replace(b"intercept_arithmetic_only", b"changed_purpose_only"))
+    assert runner.file_sha256(mutated) != EXPECTED_INPUT_SHA
+    with pytest.raises(ValueError, match="input checksum mismatch"):
+        runner.verify_fixture_input_checksum(mutated, EXPECTED_INPUT_SHA)
+
+
+def test_output_checksum_mutation_is_detected(tmp_path):
     payload, sha = runner.execute_fixtures(
         HERE / "frozen-fixtures.csv", tmp_path / "clean"
     )
@@ -51,7 +69,7 @@ def test_checksum_mutation_is_detected(tmp_path):
 
 
 def test_predict_exception_is_not_silently_swallowed(tmp_path, monkeypatch):
-    def boom(_):
+    def boom(*args, **kwargs):
         raise RuntimeError("predict failure")
 
     monkeypatch.setattr(runner, "predict", boom)

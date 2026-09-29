@@ -26,7 +26,7 @@ jobs:
         run: pytest -q
       - name: Test fail-closed admission and frozen-fixture falsification
         run: pytest -q ../../verification/ACK2007/test_admission_gates.py ../../verification/ACK2007/test_fixture_runner.py
-      - name: Execute frozen fixtures and checksum
+      - name: Execute frozen fixtures and input/output checksums
         run: python ../../verification/ACK2007/run_fixtures.py
       - uses: actions/upload-artifact@v4
         with:
@@ -34,3 +34,4 @@ jobs:
           path: |
             Lemon-ICFR-US/research/scientific-compute-reuse/executable-models/ACK2007/fixture-results.json
             Lemon-ICFR-US/research/scientific-compute-reuse/executable-models/ACK2007/fixture-results.sha256
+            Lemon-ICFR-US/research/scientific-compute-reuse/executable-models/ACK2007/fixture-input.sha256

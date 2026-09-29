@@ -1,19 +1,30 @@
 # LEMON-SCI Executable Scientific Model #1 — ACK2007
 
-Status: **EXECUTABLE-CANDIDATE; NOT M1-LOCKED**
+Status: **ENGINEERING-EXECUTABLE / SCIENTIFIC-HOLD / NOT M1-LOCKED**
 
-This artifact compiles the recovered ACK2007 logit specification into deterministic Python. It performs no fitting, tuning, calibration, threshold selection, or test-set optimization.
+This artifact is an engineering compiler for the current ACK2007 regression pin. It performs no fitting, tuning, calibration, threshold selection, test-set optimization, or scientific coefficient verification.
 
-Equation:
-`z = -3.752 + Σ beta_k x_k`
-`p = 1/(1+exp(-z))`
+## Single sources of truth
+- Numerical coefficient/intercept engineering pin: `coefficient-contract.json`
+- Raw-construction gate status: `../../source-definition-recovery/ACK2007-construction-gates.json`
+- Scientific/provenance decisions: append-only Drive Conflict/Resolution records plus repository verification notes
 
-The 14 coefficients are stored explicitly in `ack2007.py`. Input validation rejects missing, unknown, nonnumeric, and nonfinite fields.
+The coefficient contract remains:
+- `role = regression_pin_only`
+- `coefficient_verification = PENDING_PRIMARY_TABLE`
+- `coefficient_origin = UNKNOWN_ORIGIN`
+
+This README intentionally does not duplicate numerical coefficients or the intercept.
+
+## Prediction boundary
+While scientific raw-construction gates remain unresolved, the public compiler prediction API fails closed unless the caller explicitly selects `PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST` mode.
+
+That mode exists only for committed synthetic compiler/schema fixtures. It is not a production/raw-data admission path and is not empirical evidence.
 
 ## Scientific boundary
-Passing unit tests proves compiler arithmetic and interface invariants only. It does **not** establish replication, transportability, calibration, or predictive performance.
+Passing unit tests proves compiler arithmetic, interface invariants, fail-closed behavior and deterministic fixture execution only. It does **not** establish primary-paper replication, transportability, calibration, scientific validity, or predictive performance.
+
+All 14 raw predictors currently remain non-VERIFIED in the construction registry. No complete raw ACK2007 prediction is scientifically admitted.
 
 ## Remaining gate
-RZSCORE is accepted as a preconstructed model input (decile rank of the relevant Altman z-score). A raw-data pipeline must not claim full reproduction until its exact raw construction and ranking reference sample are provenance-locked.
-
-Next: run tests in CI, create provenance checksum, then execute on a frozen compatible dataset only after the scientific gate approves it.
+Published-primary evidence is required to resolve coefficient origin and the unresolved construction rules, including SIZE, RGROWTH, %LOSS and RZSCORE. No raw construction, M1 lock, or scientific status upgrade is allowed before those gates close with append-only evidence and human approval.

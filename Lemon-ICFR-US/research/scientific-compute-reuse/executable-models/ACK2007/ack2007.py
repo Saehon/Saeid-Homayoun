@@ -3,6 +3,10 @@
 The coefficient vector is loaded from the single machine-readable coefficient
 contract and retained unchanged as a regression pin pending primary-table
 verification. This module makes no scientific coefficient-validity claim.
+
+While ACK2007 is SCIENTIFIC_HOLD, public prediction is restricted to the
+explicit preconstructed-synthetic compiler-fixture mode. Raw-data callers must
+not bypass the construction-gate boundary by calling this module directly.
 """
 from dataclasses import dataclass
 from math import exp, isfinite
@@ -12,6 +16,7 @@ from pathlib import Path
 from typing import Mapping
 
 CONTRACT_PATH = Path(__file__).with_name("coefficient-contract.json")
+SYNTHETIC_FIXTURE_MODE = "PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST"
 EXPECTED_CONTRACT_FIELDS = {
     "schema_version",
     "model_id",
@@ -49,6 +54,15 @@ def _no_duplicate_object_pairs(pairs):
     return obj
 
 
+def _finite_number(value, label: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{label} must be finite numeric")
+    value = float(value)
+    if not isfinite(value):
+        raise ValueError(f"{label} must be finite numeric")
+    return value
+
+
 def load_coefficient_contract(path: str | Path = CONTRACT_PATH) -> dict:
     path = Path(path)
     with path.open("r", encoding="utf-8") as fh:
@@ -66,8 +80,7 @@ def load_coefficient_contract(path: str | Path = CONTRACT_PATH) -> dict:
         raise ValueError("coefficient verification must remain PENDING_PRIMARY_TABLE")
     if contract["coefficient_origin"] != "UNKNOWN_ORIGIN":
         raise ValueError("coefficient origin must remain UNKNOWN_ORIGIN")
-    if not isinstance(contract["intercept"], (int, float)) or not isfinite(float(contract["intercept"])):
-        raise ValueError("coefficient-contract intercept must be finite numeric")
+    _finite_number(contract["intercept"], "coefficient-contract intercept")
 
     predictors = contract["predictors"]
     if not isinstance(predictors, list) or len(predictors) != 14:
@@ -77,11 +90,9 @@ def load_coefficient_contract(path: str | Path = CONTRACT_PATH) -> dict:
         if not isinstance(item, dict) or set(item) != {"name", "coefficient"}:
             raise ValueError("invalid coefficient-contract predictor schema")
         name = item["name"]
-        beta = item["coefficient"]
         if not isinstance(name, str) or not name:
             raise ValueError("coefficient-contract predictor name must be non-empty")
-        if not isinstance(beta, (int, float)) or not isfinite(float(beta)):
-            raise ValueError(f"{name}: coefficient must be finite numeric")
+        _finite_number(item["coefficient"], f"{name}: coefficient")
         names.append(name)
     if len(names) != len(set(names)):
         raise ValueError("duplicate coefficient-contract predictor name")
@@ -111,7 +122,7 @@ class ACK2007Prediction:
     probability: float
 
 
-def _validate(x: Mapping[str, float]) -> None:
+def _validate_values(x: Mapping[str, float]) -> None:
     missing = [k for k in REQUIRED if k not in x]
     extra = [k for k in x if k not in COEFFICIENTS]
     if missing:
@@ -119,13 +130,23 @@ def _validate(x: Mapping[str, float]) -> None:
     if extra:
         raise ValueError(f"Unknown ACK2007 variables: {extra}")
     for k in REQUIRED:
-        v = x[k]
-        if not isinstance(v, (int, float)) or not isfinite(float(v)):
-            raise ValueError(f"{k} must be a finite numeric value")
+        _finite_number(x[k], k)
 
 
-def linear_predictor(x: Mapping[str, float]) -> float:
-    _validate(x)
+def _require_synthetic_fixture_mode(input_mode: str | None) -> None:
+    if input_mode != SYNTHETIC_FIXTURE_MODE:
+        raise ValueError(
+            "ACK2007 prediction is fail-closed while scientific raw-construction "
+            "gates are unresolved; only explicit PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST "
+            "mode is allowed in the engineering compiler."
+        )
+
+
+def linear_predictor(
+    x: Mapping[str, float], *, input_mode: str | None = None
+) -> float:
+    _require_synthetic_fixture_mode(input_mode)
+    _validate_values(x)
     return INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
 
 
@@ -136,6 +157,10 @@ def logistic(z: float) -> float:
     return ez / (1.0 + ez)
 
 
-def predict(x: Mapping[str, float]) -> ACK2007Prediction:
-    z = linear_predictor(x)
+def predict(
+    x: Mapping[str, float], *, input_mode: str | None = None
+) -> ACK2007Prediction:
+    _require_synthetic_fixture_mode(input_mode)
+    _validate_values(x)
+    z = INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
     return ACK2007Prediction(z, logistic(z))

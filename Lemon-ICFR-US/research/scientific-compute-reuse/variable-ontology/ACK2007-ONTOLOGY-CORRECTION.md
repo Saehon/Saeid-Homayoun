@@ -1,22 +1,34 @@
-# ACK2007 ontology correction — Phase 6C (secondary-source record; primary verification pending)
+# ACK2007 ontology correction — Phase 6C historical secondary-source record
 
-A cross-check against the author-team's 2009 JAR Appendix Table 13 exposed a possible material ontology error in the earlier draft. JAR 2009 is secondary evidence for the ACK2007 target and MUST NOT be treated as resolving the JAE 2007 specification without the published JAE primary text/table.
+> **SUPERSEDED AS EXECUTABLE AUTHORITY / NON-EXECUTABLE.**
+> This document preserves a 2026-09-27 forensic comparison against the author-team's
+> 2009 JAR Appendix material. JAR 2009 is secondary evidence for ACK2007.
+> None of the candidate definitions below resolves the JAE 2007 construction gates.
+> The active construction authority is `../source-definition-recovery/ACK2007-construction-gates.json`.
 
-## Correction
-For the JAR 2009 Table-13 specification that appears to carry values matching parts of the coefficient vector used by LEMON-SCI-ESM-001 (coefficient origin remains unverified):
-- SIZE = average market value of equity from 2001–2003, expressed in $ billions (Compustat #199 × #25). **It is not ln(market value of equity).**
-- M&A = indicator for merger/acquisition from 2002–2004.
-- RESTRUCTURE = nonzero Compustat #376/#377/#378/#379 from 2002–2004.
-- RGROWTH = decile rank of average sales growth rate from 2002–2004 (Compustat #12).
-- RESTATEMENT = restatement or SEC AAER from 2002–2004.
-- INVENTORY and %LOSS remain defined over 2001–2003 in that Appendix definition.
-- RZSCORE = decile rank of Altman (1980) z-score.
+## Historical secondary-source observations
+The 2009 JAR material contains candidate definitions involving:
+- a level/average market-value SIZE construct rather than a log construct;
+- 2002–2004 windows for several change/growth variables;
+- 2001–2003 windows for some accounting-history variables;
+- an Altman-version reference for its own specification.
 
-## Consequence
-Earlier ontology statements using ln(MVE) or 2001–2003 for all change variables are superseded for this executable coefficient vector. No empirical execution on firm data is permitted using the superseded mapping.
+These observations exposed conflicts in earlier project drafts. They are retained for fingerprinting only.
 
-## RZSCORE boundary
-RZSCORE is provenance-locked as a **preconstructed decile-rank model input**. Raw construction is not claimed reproduced because the exact reference sample/tie/missing-value ranking implementation is not established by the recovered text.
+## Current ACK2007 consequence
+Do **not** choose the JAR 2009 candidate definitions as ACK2007 truth.
 
-## Primary-evidence boundary (2026-09-29)
-The entries above are retained as a secondary-source forensic fingerprint, not as canonical ACK2007 truth. RGROWTH and SIZE remain PROVENANCE_CONFLICT for raw construction; %LOSS remains BLOCKED_MISSING_YEAR_RULE; RZSCORE remains NOT_LOCKED/BLOCKED_RAW_CONSTRUCTION. The coefficient vector remains PENDING_PRIMARY_TABLE until the published JAE 2007 results table is directly verified.
+Current ACK2007 gates remain:
+- SIZE = PROVENANCE_CONFLICT
+- RGROWTH = PROVENANCE_CONFLICT
+- %LOSS = BLOCKED_MISSING_YEAR_RULE
+- RZSCORE = BLOCKED_RAW_CONSTRUCTION / exact Altman version unresolved
+- FOREIGN_SALES, AUDITOR, INST_CON, LITIGATION = SECONDARY_SOURCE
+
+Any older statement in this historical record that described one candidate mapping as "corrected", "superseding", "provenance-locked", or ready for the executable ACK2007 model is itself superseded by the append-only Resolution Log.
+
+## Coefficient boundary
+Similarity between later-paper values and the repository regression pin is a secondary forensic signal only. The coefficient contract remains `PENDING_PRIMARY_TABLE / UNKNOWN_ORIGIN / regression_pin_only`.
+
+## Primary-evidence boundary
+No primary status upgrade is permitted until exact published JAE evidence is documented in a new append-only Resolution entry.
