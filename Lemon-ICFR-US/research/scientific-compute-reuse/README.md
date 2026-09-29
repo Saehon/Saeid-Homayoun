@@ -23,3 +23,13 @@ FT50 + AJG/ABS 4*/4; replication code/data preferred. Management Science replica
 
 ## Rules
 ICFR only; published science first; replication before trust; falsification before claim; no ML leakage into M1; no fabricated coefficients/results; compatibility outranks prestige; human approval is final.
+
+
+## Paper-selection governance
+All topic-level literature selection follows:
+`paper-selection/CANONICAL-PAPER-SELECTION-POLICY.md`
+
+Required hierarchy:
+FT50/AJG4*/AJG4 -> AJG3 -> AJG2 -> AJG1.
+
+Every fallback is auditable and versioned. A lower-tier paper may be used only when no admissible higher-tier candidate remains after the scientific gates.
