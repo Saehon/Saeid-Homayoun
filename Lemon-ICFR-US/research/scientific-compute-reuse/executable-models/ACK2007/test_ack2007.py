@@ -46,7 +46,7 @@ def test_zero_vector_equals_intercept():
 
 def test_zero_vector_probability_is_mathematical_execution_only():
     p = predict(ZERO).probability
-    assert p == pytest.approx(1 / (1 + math.exp(-INTERCEPT * -1)))
+    assert p == pytest.approx(1 / (1 + math.exp(-INTERCEPT)))
     assert 0 < p < 1
 
 
