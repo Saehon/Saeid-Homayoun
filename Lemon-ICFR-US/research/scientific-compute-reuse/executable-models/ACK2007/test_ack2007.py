@@ -113,7 +113,15 @@ def test_predictor_identity_mutations_rejected(tmp_path, mutation):
 
 @pytest.mark.parametrize(
     "mutation",
-    ["coefficient_change", "coefficient_zero", "sign_flip", "intercept_mutation", "intercept_sign_flip"],
+    [
+        "coefficient_change",
+        "coefficient_zero",
+        "coefficient_scale",
+        "sign_flip",
+        "intercept_mutation",
+        "intercept_sign_flip",
+        "intercept_scale",
+    ],
 )
 def test_numeric_contract_mutations_break_regression_pin(mutation):
     mutated = copy.deepcopy(CONTRACT)
@@ -121,12 +129,16 @@ def test_numeric_contract_mutations_break_regression_pin(mutation):
         mutated["predictors"][0]["coefficient"] += 0.001
     elif mutation == "coefficient_zero":
         mutated["predictors"][0]["coefficient"] = 0.0
+    elif mutation == "coefficient_scale":
+        mutated["predictors"][0]["coefficient"] *= 100
     elif mutation == "sign_flip":
         mutated["predictors"][1]["coefficient"] *= -1
     elif mutation == "intercept_mutation":
         mutated["intercept"] += 0.001
-    else:
+    elif mutation == "intercept_sign_flip":
         mutated["intercept"] *= -1
+    else:
+        mutated["intercept"] *= 100
     assert contract_semantic_digest(mutated) != EXPECTED_CONTRACT_DIGEST
 
 
