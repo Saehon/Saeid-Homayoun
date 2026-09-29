@@ -1,5 +1,5 @@
 model_id,paper,role,estimand,journal_tier,replication_status,coefficient_status,m1_status,notes
 M1-ICFR-001,"Doyle, Ge & McVay","ICFR candidate","MW/ICFR weakness determinants","FT50/AJG4-family","PENDING","PENDING","PENDING","Verify exact table, intercept and definitions"
-M1-ICFR-002,"Ashbaugh-Skaife, Collins & Kinney","ICFR candidate","ICD discovery/reporting","FT50/AJG4-family","PENDING","PARTIAL_VERIFICATION","PENDING","Keep separate from incompatible MW estimands"
+M1-ICFR-002,"Ashbaugh-Skaife, Collins & Kinney","ICFR candidate","ICD discovery/reporting","FT50/AJG4-family","PENDING","PENDING_PRIMARY_TABLE / UNKNOWN_ORIGIN","PENDING","Keep separate from incompatible MW estimands"
 M1-ICFR-003,"Rice & Weber","ICFR candidate","reporting/disclosure conditional on underlying weakness","FT50/AJG4-family","PENDING","PENDING","PENDING","Do not mechanically average with existence models"
 PILOT-COMPILER-001,"deHaan, de Kok, Matsumoto & Rodriguez-Vazquez","Compiler control","financial-reporting process resilience","Management Science","PUBLIC_PACKAGE_IDENTIFIED","PENDING","NOT_M1_ICFR","Validate Paper-to-Code-to-Executable pipeline"
