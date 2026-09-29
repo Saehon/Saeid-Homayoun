@@ -16,9 +16,11 @@ compiler_policy:
   test_set_optimization: false
   construction_gate_registry: ../../source-definition-recovery/ACK2007-construction-gates.json
   raw_construction_default: BLOCK
-  frozen_fixture_scope: PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST
+  public_prediction: DISABLED_DURING_SCIENTIFIC_HOLD
+  frozen_fixture_scope: VERIFICATION_RUNNER_ONLY
 warnings:
   - Executable does not mean scientifically verified or externally validated.
   - Coefficient values and intercept live only in coefficient-contract.json and are retained unchanged as an engineering regression pin pending direct verification against the published JAE 2007 primary results table.
+  - Public predict() and linear_predictor() are disabled while scientific hold is active; frozen synthetic arithmetic exists only in verification/ACK2007/run_fixtures.py.
   - Zero-vector probability is a mathematical compiler check, not an empirical finding.
   - Raw-data construction is governed only by the canonical construction-gate registry and its fail-closed validator.
