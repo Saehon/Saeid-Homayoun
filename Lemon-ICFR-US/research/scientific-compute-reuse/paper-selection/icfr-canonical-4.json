@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "cell_id": "ICFR_C4_v2026.09",
+  "topic": "internal_control_over_financial_reporting",
+  "selection_date": "2026-09-29",
+  "status": "PAPER_SELECTION_LOCK_V1",
+  "roles": [
+    {
+      "slot": "P1",
+      "role": "META_ANALYSIS_SYNTHESIS",
+      "citation": "Bilal; Chen, Songsheng; Komal, Bushra (2018). Audit committee financial expertise and earnings quality: A meta-analysis. Journal of Business Research 84:253-270.",
+      "doi": "10.1016/j.jbusres.2017.11.048",
+      "ft50_or_ajg4_claim": false,
+      "executable_model_source": false,
+      "note": "Closest admissible quantitative-synthesis scaffold found in this screening pass; includes internal-control weakness among outcome constructs and SOX moderation."
+    },
+    {
+      "slot": "P2",
+      "role": "SYSTEMATIC_REVIEW",
+      "citation": "Chalmers, Keryn; Hay, David; Khlif, Hichem (2019). Internal control in accounting research: A review. Journal of Accounting Literature 42:80-103.",
+      "doi": "10.1016/j.acclit.2018.03.002",
+      "ft50_or_ajg4_claim": false,
+      "executable_model_source": false,
+      "note": "Direct internal-control/ICFR knowledge-map anchor."
+    },
+    {
+      "slot": "P3",
+      "role": "MANAGEMENT_SCIENCE_EXECUTABLE_FRONTIER",
+      "citation": "deHaan, Ed; de Kok, Ties; Matsumoto, Dawn; Rodriguez-Vazquez, Edgar (2023). How Resilient Are Firms’ Financial Reporting Processes? Management Science 69(4):2536-2545.",
+      "doi": "10.1287/mnsc.2023.4670",
+      "journal": "Management Science",
+      "publication_year": 2023,
+      "replication_url": "https://github.com/TiesdeKok/mnsc.2023.4670",
+      "replication_status": "PUBLIC_PACKAGE_VERIFIED_AT_SELECTION",
+      "executable_model_source": true
+    },
+    {
+      "slot": "P4",
+      "role": "MANAGEMENT_SCIENCE_AI_AUDIT_FRONTIER",
+      "citation": "Law, Kelvin K. F.; Shen, Michael (2025). How Does Artificial Intelligence Shape Audit Firms? Management Science 71(5):3641-3666.",
+      "doi": "10.1287/mnsc.2022.04040",
+      "journal": "Management Science",
+      "publication_year": 2025,
+      "replication_status": "INFORMS_FULL_PACKAGE_REPORTED",
+      "executable_model_source": true
+    }
+  ],
+  "selection_rule": {
+    "fixed_slots": ["META_ANALYSIS", "SYSTEMATIC_REVIEW", "MANAGEMENT_SCIENCE_FRONTIER", "MANAGEMENT_SCIENCE_COMPLEMENT"],
+    "preferred_modern_window": "2021-2026",
+    "priority_journals": ["FT50", "AJG4*", "AJG4", "Management Science"],
+    "tie_break_order": ["estimand_fit", "primary_evidence_quality", "replication_completeness", "executability", "methodological_credibility", "recency", "prestige"],
+    "version_not_overwrite": true
+  }
+}
