@@ -1,0 +1,11 @@
+university,candidate,year,title,icfr_relevance,access,decision
+"Chicago Booth","Maria Alexandra Khrakovsky","2025","Disrupting Consistency in Accounting","HIGH","Open repository; indexed tables","ADMIT"
+"Wharton","Irina Luneva","2024","Explaining Debt Covenant Amendments: A Structural Approach","LOW","Open dissertation","EXCLUDE_CORE"
+"Stanford GSB","","2021-2026","","NO_DIRECT_HIT_INITIAL_PASS","","CONTINUE_SEARCH"
+"Harvard Business School","","2021-2026","","NO_DIRECT_HIT_INITIAL_PASS","","CONTINUE_SEARCH"
+"MIT Sloan","","2021-2026","","NO_DIRECT_DISSERTATION_HIT_INITIAL_PASS","","CONTINUE_SEARCH"
+"Columbia Business School","Anthony Le","2026","Accounting Rules and the Labor Market for Accountants","LOW_BOUNDARY","Dissertation-based JAR paper","EXCLUDE_CORE"
+"NYU Stern","","2021-2026","","NO_DIRECT_DISSERTATION_HIT_INITIAL_PASS","","CONTINUE_SEARCH"
+"Michigan Ross","","2021-2026","","NO_DIRECT_HIT_INITIAL_PASS","","CONTINUE_SEARCH"
+"Texas McCombs","","2021-2026","","NO_DIRECT_HIT_INITIAL_PASS","","CONTINUE_SEARCH"
+"UNC Kenan-Flagler","","2021-2026","","NO_DIRECT_HIT_INITIAL_PASS","","CONTINUE_SEARCH"
