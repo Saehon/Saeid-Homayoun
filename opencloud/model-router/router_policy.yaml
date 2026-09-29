@@ -1,0 +1,13 @@
+version: 1
+strategy: local_first
+default_route:
+  provider: ollama
+  model_family: ibm-granite
+escalation:
+  triggers: [low_confidence, failed_validation, failed_tests, complex_reasoning, high_risk_judgment]
+  providers: [gemini, claude, openai]
+human_approval:
+  required_for: [final_accounting_judgment, final_audit_judgment, regulatory_conclusion]
+security:
+  commit_secrets: false
+  log_credentials: false
