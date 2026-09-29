@@ -73,3 +73,35 @@ Example:
 - ICFR_C4_v2027.xx = future re-screen with a frozen new corpus snapshot
 
 A future version may replace P1 or P2 if a stronger direct ICFR meta-analysis/systematic review appears, or P3/P4 if newer Management Science/FT50 executable papers dominate under the same deterministic rules.
+
+
+## Mandatory journal-tier fallback hierarchy
+
+For each required slot, the selector searches in the following strict order:
+
+1. FT50 / AJG 4* / AJG 4
+2. AJG 3
+3. AJG 2
+4. AJG 1
+
+The selector may move to a lower tier only when no admissible candidate remains at the higher tier after the mandatory scientific gates are applied.
+
+Mandatory gates:
+- estimand/topic fit;
+- primary-evidence sufficiency;
+- methodological credibility;
+- replication/executability for executable-anchor roles;
+- non-duplication and portfolio contribution.
+
+Every fallback must be auditable. The manifest must record:
+- tier searched;
+- candidate set;
+- exclusion reason codes;
+- selected fallback tier;
+- selected paper;
+- corpus snapshot date;
+- selector version.
+
+Journal tier must be verified against the applicable AJG/ABS edition; the system must not infer or invent a tier.
+
+Management Science remains the preferred modern executable source for P3/P4 in the 2021–2026 window when an admissible paper exists.
