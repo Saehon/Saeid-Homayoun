@@ -127,7 +127,7 @@ def test_nonfinite_fixture_value_is_rejected(tmp_path, value):
     row = _base_row()
     row["SIZE"] = value
     _write_csv(path, EXPECTED, [row])
-    with pytest.raises(ValueError, match="finite numeric value"):
+    with pytest.raises(ValueError, match="finite numeric"):
         runner.execute_fixtures(path, tmp_path / "out")
 
 
