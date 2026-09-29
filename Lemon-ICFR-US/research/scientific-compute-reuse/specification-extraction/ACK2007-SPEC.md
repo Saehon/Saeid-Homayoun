@@ -1,6 +1,6 @@
 # ACK2007 — Specification Extraction
 
-Status: SPEC-READY / ONTOLOGY-PENDING / NOT M1-LOCKED
+Status: SCIENTIFIC-HOLD / COEFFICIENT-ORIGIN-UNVERIFIED / NOT M1-LOCKED
 
 Estimand: joint existence + discovery/reporting of ICD under pre-SOX-404 mandatory-audit regime.
 Estimator: Logit.
@@ -31,9 +31,9 @@ z = intercept + sum(beta_k * x_k)
 p = 1/(1+exp(-z))
 
 DARWIN gate:
-- Coefficients/intercept: PASS (cross-check source identified).
+- Coefficients/intercept: PENDING_PRIMARY_TABLE. The vector is retained as a regression/engineering pin only; the currently recovered matching JAR 2009 values are secondary evidence and do not establish the published JAE 2007 coefficient column.
 - Estimand alignment: CONDITIONAL; joint existence/reporting, not pure latent MW.
 - Variable ontology: PENDING exact definitions/formulas/timing.
 - Replication package: PENDING.
 - Transportability: PENDING.
-Decision: SPEC-READY, NOT YET EXECUTABLE-LOCKED.
+Decision: SCIENTIFIC-HOLD, NOT M1-LOCKED. Do not repair or scientifically freeze the coefficient vector until the published JAE 2007 primary results table is directly cross-checked.
