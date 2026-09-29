@@ -1,7 +1,9 @@
 """LEMON-SCI Executable Scientific Model #1: ACK2007.
 
-Pre-results scientific compiler object. Published coefficients are executed
-without retraining. This module does not claim out-of-sample validity.
+Pre-results engineering compiler object. The current coefficient vector is retained
+unchanged as a regression pin pending direct verification against the published
+JAE 2007 primary results table. This module does not claim scientific coefficient
+verification or out-of-sample validity.
 """
 from dataclasses import dataclass
 from math import exp, isfinite
