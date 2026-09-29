@@ -31,6 +31,27 @@ UNRESOLVED = {
     "RZSCORE": "BLOCKED_RAW_CONSTRUCTION",
 }
 
+PENDING_ONLY = (
+    "SEGMENTS",
+    "M&A",
+    "RESTRUCTURE",
+    "INVENTORY",
+    "AUDITOR_RESIGN",
+    "RESTATEMENT",
+)
+
+
+def _assert_no_verified_raw_status(registry):
+    verified = sorted(
+        name
+        for name, spec in registry["variables"].items()
+        if spec["raw_construction_status"] == "VERIFIED"
+    )
+    assert verified == [], (
+        "ACK2007 SCIENTIFIC_HOLD does not admit a VERIFIED raw-construction "
+        f"status without a primary-evidence gate update; found={verified}"
+    )
+
 
 def _clone_registry():
     return json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
@@ -39,6 +60,27 @@ def _clone_registry():
 def test_registry_covers_exact_model_input_set():
     registry = validator.load_registry(REGISTRY_PATH)
     validator.assert_registry_matches_model(registry, REQUIRED)
+
+
+def test_scientific_hold_registry_has_no_verified_raw_inputs():
+    registry = validator.load_registry(REGISTRY_PATH)
+    _assert_no_verified_raw_status(registry)
+
+
+@pytest.mark.parametrize("name", PENDING_ONLY)
+def test_pending_status_promotion_to_verified_is_detected(name):
+    registry = _clone_registry()
+    registry["variables"][name]["raw_construction_status"] = "VERIFIED"
+    with pytest.raises(AssertionError, match="SCIENTIFIC_HOLD"):
+        _assert_no_verified_raw_status(registry)
+
+
+@pytest.mark.parametrize("name", SECONDARY_ONLY)
+def test_secondary_source_substitution_to_verified_is_detected(name):
+    registry = _clone_registry()
+    registry["variables"][name]["raw_construction_status"] = "VERIFIED"
+    with pytest.raises(AssertionError, match="SCIENTIFIC_HOLD"):
+        _assert_no_verified_raw_status(registry)
 
 
 @pytest.mark.parametrize("name", SECONDARY_ONLY)
