@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "corpus_id": "ICFR_C30_v2026.09",
+  "topic": "internal_control_over_financial_reporting",
+  "selection_date": "2026-09-29",
+  "status": "CANDIDATE_CORPUS_LOCK_V1",
+  "composition": {
+    "meta_analysis": 5,
+    "systematic_review": 5,
+    "management_science_2021_2026": 10,
+    "ft50_empirical": 6,
+    "theory": 4,
+    "total": 30
+  },
+  "public_github_verified": [
+    {
+      "paper": "How Resilient Are Firms’ Financial Reporting Processes?",
+      "url": "https://github.com/TiesdeKok/mnsc.2023.4670"
+    },
+    {
+      "paper": "ChatGPT for Textual Analysis? How to Use Generative LLMs in Accounting Research",
+      "url": "https://github.com/TiesdeKok/chatgpt_paper"
+    }
+  ],
+  "rules": {
+    "journal_tier_fallback": [
+      "FT50_OR_AJG4STAR_OR_AJG4",
+      "AJG3",
+      "AJG2",
+      "AJG1"
+    ],
+    "management_science_window": "2021-2026",
+    "coefficient_source_from_meta_or_review": false,
+    "require_primary_verification_before_M1": true,
+    "require_estimand_alignment": true,
+    "require_replication_lineage": true,
+    "version_not_overwrite": true,
+    "human_approval_final": true
+  }
+}
