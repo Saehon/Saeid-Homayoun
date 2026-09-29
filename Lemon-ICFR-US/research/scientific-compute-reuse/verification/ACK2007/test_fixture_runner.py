@@ -12,6 +12,7 @@ runner = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(runner)
 
 EXPECTED = ["case_id", *runner.REQUIRED, "purpose"]
+EXPECTED_SHA = "c420891c605066edc1fe0e895ab5412decd65b648d25a42a1ceaeeb96113dda6"
 
 
 def _base_row(case_id="CASE", purpose="test"):
@@ -29,16 +30,35 @@ def _write_csv(path, fieldnames, rows):
             writer.writerow(row)
 
 
-def test_committed_fixture_is_deterministic(tmp_path):
+def test_committed_fixture_is_deterministic_across_two_clean_runs(tmp_path):
     payload1, sha1 = runner.execute_fixtures(
-        HERE / "frozen-fixtures.csv", tmp_path / "run1"
+        HERE / "frozen-fixtures.csv", tmp_path / "clean-run-1"
     )
     payload2, sha2 = runner.execute_fixtures(
-        HERE / "frozen-fixtures.csv", tmp_path / "run2"
+        HERE / "frozen-fixtures.csv", tmp_path / "clean-run-2"
     )
     assert payload1 == payload2
-    assert sha1 == sha2
-    assert sha1 == "c420891c605066edc1fe0e895ab5412decd65b648d25a42a1ceaeeb96113dda6"
+    assert sha1 == sha2 == EXPECTED_SHA
+
+
+def test_checksum_mutation_is_detected(tmp_path):
+    payload, sha = runner.execute_fixtures(
+        HERE / "frozen-fixtures.csv", tmp_path / "clean"
+    )
+    runner.verify_payload_checksum(payload, sha)
+    with pytest.raises(ValueError, match="checksum mismatch"):
+        runner.verify_payload_checksum(payload + "mutation", sha)
+
+
+def test_predict_exception_is_not_silently_swallowed(tmp_path, monkeypatch):
+    def boom(_):
+        raise RuntimeError("predict failure")
+
+    monkeypatch.setattr(runner, "predict", boom)
+    with pytest.raises(RuntimeError, match="predict failure"):
+        runner.execute_fixtures(
+            HERE / "frozen-fixtures.csv", tmp_path / "out"
+        )
 
 
 def test_unknown_fixture_column_is_rejected(tmp_path):

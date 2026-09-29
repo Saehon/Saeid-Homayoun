@@ -23,6 +23,14 @@ SPEC = importlib.util.spec_from_file_location(
 validator = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(validator)
 
+SECONDARY_ONLY = ("FOREIGN_SALES", "AUDITOR", "INST_CON", "LITIGATION")
+UNRESOLVED = {
+    "SIZE": "PROVENANCE_CONFLICT",
+    "RGROWTH": "PROVENANCE_CONFLICT",
+    "%LOSS": "BLOCKED_MISSING_YEAR_RULE",
+    "RZSCORE": "BLOCKED_RAW_CONSTRUCTION",
+}
+
 
 def _clone_registry():
     return json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
@@ -33,33 +41,74 @@ def test_registry_covers_exact_model_input_set():
     validator.assert_registry_matches_model(registry, REQUIRED)
 
 
-def test_verified_raw_definition_can_pass_construction_gate():
+@pytest.mark.parametrize("name", SECONDARY_ONLY)
+def test_r005_secondary_only_variables_fail_closed(name):
     registry = validator.load_registry(REGISTRY_PATH)
-    result = validator.validate_raw_construction_request(
-        registry, ["FOREIGN_SALES"]
-    )
-    assert result == {"passed": True, "violations": []}
+    assert registry["variables"][name]["raw_construction_status"] == "SECONDARY_SOURCE"
+    with pytest.raises(ValueError, match=name):
+        validator.require_raw_construction_allowed(registry, [name])
+
+
+@pytest.mark.parametrize("name,expected_status", UNRESOLVED.items())
+def test_known_unresolved_raw_construction_fails_closed(name, expected_status):
+    registry = validator.load_registry(REGISTRY_PATH)
+    result = validator.validate_raw_construction_request(registry, [name])
+    assert result == {"passed": False, "violations": [f"{name}: {expected_status}"]}
+
+
+@pytest.mark.parametrize("name", [*UNRESOLVED, *SECONDARY_ONLY])
+def test_end_to_end_raw_execution_stops_before_constructor(name):
+    registry = validator.load_registry(REGISTRY_PATH)
+    called = []
+
+    def tripwire(raw_record, proposed_rule):
+        called.append((raw_record, proposed_rule))
+        return "SHOULD_NOT_RUN"
+
+    with pytest.raises(ValueError, match=name):
+        validator.execute_raw_construction_request(
+            registry,
+            name,
+            {"dummy": 1},
+            tripwire,
+            {"attempt": "raw execution"},
+        )
+    assert called == []
 
 
 @pytest.mark.parametrize(
-    "name,expected_status",
+    "name,proposed_rule",
     [
-        ("SIZE", "PROVENANCE_CONFLICT"),
-        ("RGROWTH", "PROVENANCE_CONFLICT"),
-        ("%LOSS", "BLOCKED_MISSING_YEAR_RULE"),
-        ("RZSCORE", "BLOCKED_RAW_CONSTRUCTION"),
+        ("SIZE", {"transformation": "ln_market_value_equity"}),
+        ("SIZE", {"transformation": "level_market_value_equity"}),
+        ("SIZE", {"unit": "USD"}),
+        ("SIZE", {"unit": "USD_billions"}),
+        ("SIZE", {"missing_year": "available_year_average"}),
+        ("RGROWTH", {"window": "2001-2003"}),
+        ("RGROWTH", {"window": "2002-2004"}),
+        ("RGROWTH", {"ranking_direction": "reverse"}),
+        ("%LOSS", {"denominator": "observed_years"}),
+        ("%LOSS", {"missing_year": "zero_fill"}),
+        ("RZSCORE", {"formula": "Altman1968"}),
+        ("RZSCORE", {"formula": "Altman1980"}),
+        ("RZSCORE", {"ranking_direction": "reverse"}),
     ],
 )
-def test_known_unresolved_raw_construction_fails_closed(
-    name, expected_status
-):
+def test_adversarial_rule_claims_cannot_bypass_fail_closed(name, proposed_rule):
     registry = validator.load_registry(REGISTRY_PATH)
-    result = validator.validate_raw_construction_request(registry, [name])
-    assert not result["passed"]
-    assert result["violations"] == [f"{name}: {expected_status}"]
+    called = []
+
+    def tripwire(raw_record, rule):
+        called.append(rule)
+
+    with pytest.raises(ValueError, match=name):
+        validator.execute_raw_construction_request(
+            registry, name, {}, tripwire, proposed_rule
+        )
+    assert called == []
 
 
-def test_unknown_model_input_fails_closed_without_inspecting_raw_source_columns():
+def test_unknown_model_input_fails_closed():
     registry = validator.load_registry(REGISTRY_PATH)
     result = validator.validate_raw_construction_request(
         registry, ["MYSTERY_MODEL_INPUT"]
@@ -70,14 +119,12 @@ def test_unknown_model_input_fails_closed_without_inspecting_raw_source_columns(
     }
 
 
-def test_full_raw_construction_plan_is_blocked_while_any_gate_is_unresolved():
+def test_full_raw_construction_plan_is_blocked():
     registry = validator.load_registry(REGISTRY_PATH)
     result = validator.validate_raw_construction_request(registry, REQUIRED)
     assert not result["passed"]
-    assert any(v.startswith("SIZE:") for v in result["violations"])
-    assert any(v.startswith("RGROWTH:") for v in result["violations"])
-    assert any(v.startswith("RZSCORE:") for v in result["violations"])
-    assert any(v.startswith("%LOSS:") for v in result["violations"])
+    for name in [*UNRESOLVED, *SECONDARY_ONLY]:
+        assert any(v.startswith(f"{name}:") for v in result["violations"])
 
 
 def test_duplicate_registry_keys_are_rejected(tmp_path):
@@ -133,23 +180,14 @@ def test_registry_extra_model_predictor_is_rejected():
         validator.assert_registry_matches_model(mutated, REQUIRED)
 
 
-def test_nonverified_future_status_fails_closed():
-    registry = validator.load_registry(REGISTRY_PATH)
-    mutated = json.loads(json.dumps(registry))
-    mutated["variables"]["FOREIGN_SALES"]["raw_construction_status"] = (
-        "PENDING_FUTURE_RULE"
-    )
-    result = validator.validate_raw_construction_request(
-        mutated, ["FOREIGN_SALES"]
-    )
-    assert result == {
-        "passed": False,
-        "violations": ["FOREIGN_SALES: PENDING_FUTURE_RULE"],
-    }
+def test_constructor_exception_is_not_silently_swallowed():
+    registry = _clone_registry()
+    registry["variables"]["SEGMENTS"]["raw_construction_status"] = "VERIFIED"
 
+    def boom(raw_record, proposed_rule):
+        raise RuntimeError("constructor failure")
 
-def test_unresolved_loss_rule_cannot_be_silently_promoted_to_verified():
-    registry = validator.load_registry(REGISTRY_PATH)
-    assert registry["variables"]["%LOSS"]["raw_construction_status"] == "BLOCKED_MISSING_YEAR_RULE"
-    with pytest.raises(ValueError, match="%LOSS"):
-        validator.require_raw_construction_allowed(registry, ["%LOSS"])
+    with pytest.raises(RuntimeError, match="constructor failure"):
+        validator.execute_raw_construction_request(
+            registry, "SEGMENTS", {}, boom, {"test": True}
+        )

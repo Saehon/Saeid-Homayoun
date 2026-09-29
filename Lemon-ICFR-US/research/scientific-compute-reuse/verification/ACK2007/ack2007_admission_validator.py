@@ -1,14 +1,13 @@
 """Fail-closed ACK2007 raw-construction admission checks.
 
-This module governs raw construction of model inputs only. It intentionally
-does not inspect arbitrary source-data columns and is not invoked by the
-frozen synthetic compiler fixture runner.
+The construction registry is the sole machine-readable authority for raw input
+construction. Frozen synthetic fixtures are a separate compiler test path.
 """
 from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Iterable, Mapping
+from typing import Callable, Iterable, Mapping
 
 ALLOWED_TOP_LEVEL = {
     "schema_version",
@@ -50,15 +49,11 @@ def load_registry(path: str | Path) -> dict:
             f"unknown={sorted(unknown_top)}"
         )
     if registry["schema_version"] != EXPECTED_SCHEMA_VERSION:
-        raise ValueError(
-            f"unexpected registry schema_version: {registry['schema_version']!r}"
-        )
+        raise ValueError(f"unexpected registry schema_version: {registry['schema_version']!r}")
     if registry["model_id"] != EXPECTED_MODEL_ID:
         raise ValueError(f"unexpected registry model_id: {registry['model_id']!r}")
     if registry["short_name"] != EXPECTED_SHORT_NAME:
-        raise ValueError(
-            f"unexpected registry short_name: {registry['short_name']!r}"
-        )
+        raise ValueError(f"unexpected registry short_name: {registry['short_name']!r}")
     if registry["scope"] != EXPECTED_SCOPE:
         raise ValueError(f"unexpected registry scope: {registry['scope']!r}")
     if registry["default_policy"] != EXPECTED_DEFAULT_POLICY:
@@ -108,11 +103,6 @@ def assert_registry_matches_model(
 def validate_raw_construction_request(
     registry: Mapping, requested_inputs: Iterable[str]
 ) -> dict:
-    """Validate requested ACK2007 model inputs for raw construction.
-
-    Unknown model inputs fail closed. Raw source dataframe columns are outside
-    this function's scope and must not be treated as model inputs.
-    """
     violations = []
     variables = registry["variables"]
     for name in requested_inputs:
@@ -133,3 +123,19 @@ def require_raw_construction_allowed(
         raise ValueError(
             "ACK2007 raw construction blocked: " + "; ".join(result["violations"])
         )
+
+
+def execute_raw_construction_request(
+    registry: Mapping,
+    name: str,
+    raw_record: Mapping,
+    constructor: Callable,
+    proposed_rule: Mapping | None = None,
+):
+    """End-to-end fail-closed boundary for a single raw-input construction.
+
+    The gate is checked before a constructor or proposed transformation can run.
+    Constructor exceptions are deliberately not swallowed.
+    """
+    require_raw_construction_allowed(registry, [name])
+    return constructor(raw_record, proposed_rule)

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "model_id": "LEMON-SCI-ESM-001",
+  "short_name": "ACK2007",
+  "role": "regression_pin_only",
+  "coefficient_verification": "PENDING_PRIMARY_TABLE",
+  "coefficient_origin": "UNKNOWN_ORIGIN",
+  "intercept": -3.752,
+  "predictors": [
+    {"name": "SEGMENTS", "coefficient": 0.078},
+    {"name": "FOREIGN_SALES", "coefficient": 0.466},
+    {"name": "M&A", "coefficient": 0.177},
+    {"name": "RESTRUCTURE", "coefficient": 0.296},
+    {"name": "RGROWTH", "coefficient": 0.064},
+    {"name": "INVENTORY", "coefficient": 0.785},
+    {"name": "SIZE", "coefficient": -0.048},
+    {"name": "%LOSS", "coefficient": 0.192},
+    {"name": "RZSCORE", "coefficient": -0.016},
+    {"name": "AUDITOR_RESIGN", "coefficient": 1.506},
+    {"name": "AUDITOR", "coefficient": 0.965},
+    {"name": "RESTATEMENT", "coefficient": 0.470},
+    {"name": "INST_CON", "coefficient": 0.085},
+    {"name": "LITIGATION", "coefficient": 0.263}
+  ]
+}

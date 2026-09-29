@@ -3,10 +3,10 @@ short_name: ACK2007
 status: ENGINEERING-EXECUTABLE-SCIENTIFIC-HOLD
 m1_locked: false
 retraining: forbidden
-intercept: -3.752
 coefficient_count: 14
 estimand: mixed ICD existence/discovery/reporting
 source_model: Ashbaugh-Skaife, Collins & Kinney (2007), Journal of Accounting and Economics
+coefficient_contract_file: coefficient-contract.json
 coefficient_verification: PENDING_PRIMARY_TABLE
 coefficient_origin: UNKNOWN_ORIGIN
 compiler_policy:
@@ -19,7 +19,6 @@ compiler_policy:
   frozen_fixture_scope: PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST
 warnings:
   - Executable does not mean scientifically verified or externally validated.
-  - Coefficient values are retained unchanged as an engineering regression pin pending direct verification against the published JAE 2007 primary results table.
+  - Coefficient values and intercept live only in coefficient-contract.json and are retained unchanged as an engineering regression pin pending direct verification against the published JAE 2007 primary results table.
   - Zero-vector probability is a mathematical compiler check, not an empirical finding.
-  - Inputs must already follow the locked ACK2007 ontology.
   - Raw-data construction is governed only by the canonical construction-gate registry and its fail-closed validator.

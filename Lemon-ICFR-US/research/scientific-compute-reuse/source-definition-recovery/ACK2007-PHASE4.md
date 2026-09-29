@@ -1,30 +1,29 @@
 # ACK2007 — Phase 4 Source-Definition Recovery
 
-Status: PARTIAL / INPUT-DEFINITIONS RECOVERED / RAW-CONSTRUCTION SUB-GATES OPEN / NOT M1-LOCKED
+Status: **SECONDARY-EVIDENCE SNAPSHOT / NON-EXECUTABLE / SCIENTIFIC-HOLD**
 
 Primary scientific target: Ashbaugh-Skaife, Collins & Kinney (JAE 2007) ICD disclosure logit.
 
-> Authority note: this file is a scientific source-recovery record, not executable admission logic. The canonical machine-readable raw-construction gate is `ACK2007-construction-gates.json`; the fail-closed validator is `../verification/ACK2007/ack2007_admission_validator.py`.
+> Authority note: this file is a historical/source-recovery record. It is not executable admission logic. The canonical raw-construction authority is `ACK2007-construction-gates.json`. R-005 established that the recovered Phase-4 definitions below are secondary unless separately matched to ACK2007 primary evidence.
 
-## Recovered definitions and current gates
-| Variable | Source-locked operational definition | Source | Gate |
+## Recovered candidate definitions and current evidence status
+| Variable | Candidate operational definition | Evidence status | Current raw gate |
 |---|---|---|---|
-| FOREIGN_SALES | 1 if firm reports foreign sales; 0 otherwise | Compustat Segment file | PASS |
-| RGROWTH | Decile rank of average sales growth rate, 2002–2004; sales = Compustat #12 | Compustat | BLOCKED_MISSING_DATA_RULE |
-| %LOSS | Proportion of years 2001–2003 with negative earnings | Compustat | PASS |
-| RZSCORE | Decile rank of Altman (1980) z-score/distress measure | accounting inputs / Altman construct | PASS as model input; RAW-CONSTRUCTION SUB-GATE |
-| AUDITOR | 1 if 2003 auditor is PwC, Deloitte & Touche, Ernst & Young, KPMG, Grant Thornton, or BDO Seidman; 0 otherwise | Compustat #149 | PASS |
-| INST_CON | Percentage shares held by institutional investors divided by number of institutions owning stock; preserve published scaling | Thomson Financial Securities | PASS |
-| LITIGATION | 1 for SIC 2833–2836, 3570–3577, 3600–3674, 5200–5961, or 7370; 0 otherwise | SIC | PASS |
-| SIZE | Average market value of equity over 2001–2003, USD billions | market data | BLOCKED_MISSING_YEAR_RULE |
+| FOREIGN_SALES | 1 if firm reports foreign sales; 0 otherwise | SECONDARY_SOURCE | SECONDARY_SOURCE |
+| RGROWTH | Decile rank of average sales growth; competing 2001–2003 and 2002–2004 claims remain | SECONDARY_SOURCE + PROVENANCE_CONFLICT | PROVENANCE_CONFLICT |
+| %LOSS | Proportion of years 2001–2003 with negative earnings | SECONDARY_SOURCE | BLOCKED_MISSING_YEAR_RULE |
+| RZSCORE | Decile-ranked Altman z-score/distress measure; exact version unresolved | SECONDARY_SOURCE | BLOCKED_RAW_CONSTRUCTION |
+| AUDITOR | Candidate auditor-group indicator | SECONDARY_SOURCE | SECONDARY_SOURCE |
+| INST_CON | Candidate institutional-ownership concentration measure | SECONDARY_SOURCE | SECONDARY_SOURCE |
+| LITIGATION | Candidate litigation-risk industry indicator | SECONDARY_SOURCE | SECONDARY_SOURCE |
+| SIZE | Market-value-of-equity size construct; log-versus-level/window unresolved | PROVENANCE_CONFLICT | PROVENANCE_CONFLICT |
 
-## Superseded evidence
-The earlier Phase-4 RGROWTH entry using 2001–2003 is superseded and MUST NOT be executed. Current canonical/resolved artifacts use 2002–2004. Missing-data handling for RGROWTH remains unresolved.
-
-## Remaining scientific sub-gates
-1. SIZE: primary-evidence missing-year/sample-eligibility rule.
-2. RGROWTH: primary-evidence missing-data/ranking eligibility rule.
-3. RZSCORE: exact raw formula, eligible population, missing-data policy, and decile-ranking reference sample.
+## Corrections from the earlier Phase-4 narrative
+- The 2001–2003 RGROWTH claim is **not superseded** by 2002–2004. R-002 keeps the window unresolved.
+- The SIZE level/average definition is **not locked**. R-003 keeps log-versus-level/window unresolved.
+- %LOSS is not PASS because the earnings item, denominator and missing-year rule remain unresolved.
+- RZSCORE is not PASS as a raw construct; R-007 forbids inferring the Altman version.
+- FOREIGN_SALES, AUDITOR, INST_CON and LITIGATION are not primary-verified; R-005 requires SECONDARY_SOURCE.
 
 ## Phase-4 decision
-Executable model code may be tested with already-constructed, ontology-conforming inputs. Raw-data construction and M1 admission remain blocked until all applicable construction sub-gates are closed or explicitly bounded as preconstructed-input requirements. No missing-data behavior may be invented.
+This record may guide forensic comparison only. It must not construct raw inputs or upgrade scientific status. Raw construction is governed exclusively by the canonical registry and fail-closed validator. ACK2007 remains SCIENTIFIC-HOLD / NOT M1-LOCKED.

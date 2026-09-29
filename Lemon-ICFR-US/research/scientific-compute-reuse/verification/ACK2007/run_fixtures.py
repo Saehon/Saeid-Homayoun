@@ -10,6 +10,18 @@ sys.path.insert(0, str(MODEL_DIR))
 from ack2007 import predict, REQUIRED
 
 
+def payload_sha256(payload: str) -> str:
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def verify_payload_checksum(payload: str, expected_sha: str) -> None:
+    actual = payload_sha256(payload)
+    if actual != expected_sha:
+        raise ValueError(
+            f"ACK2007 fixture checksum mismatch: expected={expected_sha}, actual={actual}"
+        )
+
+
 def execute_fixtures(
     csv_path: Path | str = HERE / "frozen-fixtures.csv",
     out_dir: Path | str = MODEL_DIR,
@@ -67,7 +79,7 @@ def execute_fixtures(
     payload = json.dumps(rows, sort_keys=True, separators=(",", ":")) + "\n"
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "fixture-results.json").write_text(payload, encoding="utf-8")
-    sha = hashlib.sha256(payload.encode()).hexdigest()
+    sha = payload_sha256(payload)
     (out_dir / "fixture-results.sha256").write_text(
         sha + "  fixture-results.json\n", encoding="utf-8"
     )

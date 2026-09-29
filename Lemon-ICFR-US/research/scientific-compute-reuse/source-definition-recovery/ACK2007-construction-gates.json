@@ -5,9 +5,10 @@
   "scope": "raw_model_input_construction_only",
   "default_policy": "BLOCK",
   "notes": [
-    "This registry governs whether ACK2007 model inputs may be constructed from raw data.",
-    "It does not validate arbitrary raw-source columns and it does not replace frozen synthetic compiler fixtures.",
-    "Preconstructed-input compatibility remains a separate scientific admission decision."
+    "This registry is the single machine-readable authority for whether ACK2007 model inputs may be constructed from raw data.",
+    "It does not replace frozen synthetic compiler fixtures.",
+    "R-005 requires FOREIGN_SALES, AUDITOR, INST_CON and LITIGATION to remain SECONDARY_SOURCE until matched to ACK2007 primary evidence.",
+    "C1/C2/C3/O3 remain unresolved; no conflicting definition may be selected for execution."
   ],
   "variables": {
     "SEGMENTS": {
@@ -16,9 +17,9 @@
       "reason": "Exact fiscal timing must be locked before raw construction."
     },
     "FOREIGN_SALES": {
-      "definition": "1 if firm reports foreign sales; 0 otherwise",
-      "raw_construction_status": "VERIFIED",
-      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+      "definition": "Candidate secondary definition: 1 if firm reports foreign sales; 0 otherwise",
+      "raw_construction_status": "SECONDARY_SOURCE",
+      "reason": "R-005: the currently recovered definition is supported only by Phase 4 / later JAR 2009 evidence, not ACK2007 primary evidence."
     },
     "M&A": {
       "definition": "Merger/acquisition activity indicator as defined by the paper",
@@ -31,9 +32,9 @@
       "reason": "Active ontology remains partial."
     },
     "RGROWTH": {
-      "definition": "Decile rank of average sales growth rate; exact ACK2007 window remains under provenance conflict (2001-2003 vs 2002-2004).",
+      "definition": "Decile-ranked sales-growth construct; exact ACK2007 window remains under provenance conflict (2001-2003 versus 2002-2004).",
       "raw_construction_status": "PROVENANCE_CONFLICT",
-      "reason": "Primary JAE evidence has not resolved the competing window claims or missing-data/ranking eligibility rule."
+      "reason": "R-002/C1: primary JAE evidence has not resolved the competing windows, ranking population/direction, or missing-data eligibility rule."
     },
     "INVENTORY": {
       "definition": "Inventory scaled by total assets",
@@ -41,29 +42,29 @@
       "reason": "Exact fiscal timing remains pending."
     },
     "SIZE": {
-      "definition": "Market-value-of-equity size measure; exact ACK2007 transformation/unit/window remains under provenance conflict.",
+      "definition": "Market-value-of-equity size construct; exact ACK2007 transformation, unit and averaging window remain under provenance conflict.",
       "raw_construction_status": "PROVENANCE_CONFLICT",
-      "reason": "Primary JAE evidence has not resolved ln(MVE) versus average MVE in USD billions, nor missing-year/sample-eligibility handling."
+      "reason": "R-003/C2: primary JAE evidence has not resolved ln(MVE) versus average MVE in USD billions, nor missing-year/sample-eligibility handling."
     },
     "%LOSS": {
-      "definition": "Proportion of years 2001-2003 with negative earnings",
+      "definition": "Candidate secondary definition: proportion of years 2001-2003 with negative earnings",
       "raw_construction_status": "BLOCKED_MISSING_YEAR_RULE",
-      "reason": "Primary evidence does not yet establish the missing-year denominator, sample-eligibility rule, or exact earnings item; raw construction must fail closed."
+      "reason": "R-004/C3: primary evidence does not establish the missing-year denominator, sample-eligibility rule, or exact earnings item."
     },
     "RZSCORE": {
-      "definition": "Decile rank of Altman (1980) z-score/distress measure",
+      "definition": "Decile-ranked Altman z-score/distress construct; exact version/formula is unresolved.",
       "raw_construction_status": "BLOCKED_RAW_CONSTRUCTION",
-      "reason": "Exact raw formula inputs, missing-data policy, and decile reference implementation remain unresolved."
+      "reason": "R-007/O3: do not infer Altman 1968 versus 1980; formula inputs, ranking population/direction and missing-data policy remain unresolved."
     },
     "AUDITOR_RESIGN": {
       "definition": "Indicator for auditor resignation",
       "raw_construction_status": "PENDING_TIMING",
-      "reason": "Exact timing remains pending."
+      "reason": "Concept is supported by the primary preview, but exact executable timing remains pending."
     },
     "AUDITOR": {
-      "definition": "1 if 2003 auditor is PwC, Deloitte & Touche, Ernst & Young, KPMG, Grant Thornton, or BDO Seidman; 0 otherwise",
-      "raw_construction_status": "VERIFIED",
-      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+      "definition": "Candidate secondary definition: indicator for auditor group/market position as recovered in Phase 4",
+      "raw_construction_status": "SECONDARY_SOURCE",
+      "reason": "R-005: exact coding is supported only by Phase 4 / later JAR 2009 evidence, not ACK2007 primary evidence."
     },
     "RESTATEMENT": {
       "definition": "Restatement or SEC AAER indicator",
@@ -71,14 +72,14 @@
       "reason": "Exact executable window remains pending in active ontology."
     },
     "INST_CON": {
-      "definition": "Percentage institutional shares divided by number of institutions owning stock; preserve published scaling",
-      "raw_construction_status": "VERIFIED",
-      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+      "definition": "Candidate secondary institutional-ownership concentration measure recovered in Phase 4",
+      "raw_construction_status": "SECONDARY_SOURCE",
+      "reason": "R-005: exact scaling is supported only by Phase 4 / later JAR 2009 evidence, not ACK2007 primary evidence."
     },
     "LITIGATION": {
-      "definition": "1 for SIC 2833-2836, 3570-3577, 3600-3674, 5200-5961, or 7370; 0 otherwise",
-      "raw_construction_status": "VERIFIED",
-      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+      "definition": "Candidate secondary litigation-risk industry indicator recovered in Phase 4",
+      "raw_construction_status": "SECONDARY_SOURCE",
+      "reason": "R-005: exact SIC set is supported only by Phase 4 / later JAR 2009 evidence, not ACK2007 primary evidence."
     }
   }
 }
