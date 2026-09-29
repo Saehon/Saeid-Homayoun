@@ -36,3 +36,31 @@ def test_nonfinite_rejected():
 def test_logistic_stable_and_bounded(z):
     p = logistic(z)
     assert 0 <= p <= 1
+
+
+EXPECTED_COEFFICIENT_PIN = {
+    "SEGMENTS": 0.078,
+    "FOREIGN_SALES": 0.466,
+    "M&A": 0.177,
+    "RESTRUCTURE": 0.296,
+    "RGROWTH": 0.064,
+    "INVENTORY": 0.785,
+    "SIZE": -0.048,
+    "%LOSS": 0.192,
+    "RZSCORE": -0.016,
+    "AUDITOR_RESIGN": 1.506,
+    "AUDITOR": 0.965,
+    "RESTATEMENT": 0.470,
+    "INST_CON": 0.085,
+    "LITIGATION": 0.263,
+}
+
+def test_complete_coefficient_vector_is_regression_pinned_without_fixture_mutation():
+    assert COEFFICIENTS == EXPECTED_COEFFICIENT_PIN
+    assert tuple(COEFFICIENTS) == tuple(EXPECTED_COEFFICIENT_PIN)
+
+@pytest.mark.parametrize("name,beta", EXPECTED_COEFFICIENT_PIN.items())
+def test_each_coefficient_contributes_exactly_once(name, beta):
+    x = dict(ZERO)
+    x[name] = 1.0
+    assert linear_predictor(x) == pytest.approx(INTERCEPT + beta)
