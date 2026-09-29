@@ -1,21 +1,25 @@
 model_id: LEMON-SCI-ESM-001
 short_name: ACK2007
-status: EXECUTABLE-CANDIDATE
+status: ENGINEERING-EXECUTABLE-SCIENTIFIC-HOLD
 m1_locked: false
 retraining: forbidden
 intercept: -3.752
 coefficient_count: 14
 estimand: mixed ICD existence/discovery/reporting
 source_model: Ashbaugh-Skaife, Collins & Kinney (2007), Journal of Accounting and Economics
+coefficient_verification: PENDING_PRIMARY_TABLE
+coefficient_origin: UNKNOWN_ORIGIN
 compiler_policy:
-  exact_published_coefficients: true
+  exact_published_coefficients: false
+  coefficient_vector_role: regression_pin_only
   coefficient_tuning: false
   test_set_optimization: false
   construction_gate_registry: ../../source-definition-recovery/ACK2007-construction-gates.json
   raw_construction_default: BLOCK
   frozen_fixture_scope: PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST
 warnings:
-  - Executable does not mean externally validated.
+  - Executable does not mean scientifically verified or externally validated.
+  - Coefficient values are retained unchanged as an engineering regression pin pending direct verification against the published JAE 2007 primary results table.
   - Zero-vector probability is a mathematical compiler check, not an empirical finding.
   - Inputs must already follow the locked ACK2007 ontology.
   - Raw-data construction is governed only by the canonical construction-gate registry and its fail-closed validator.
