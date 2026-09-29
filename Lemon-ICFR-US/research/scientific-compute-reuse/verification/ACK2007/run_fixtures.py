@@ -1,13 +1,20 @@
 import csv
 import hashlib
 import json
+from math import isfinite
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 MODEL_DIR = HERE.parent.parent / "executable-models" / "ACK2007"
 sys.path.insert(0, str(MODEL_DIR))
-from ack2007 import predict, REQUIRED, SYNTHETIC_FIXTURE_MODE
+from ack2007 import (
+    COEFFICIENTS,
+    INTERCEPT,
+    REQUIRED,
+    logistic,
+    validate_compiler_input,
+)
 
 
 def payload_sha256(payload: str) -> str:
@@ -31,9 +38,22 @@ def verify_fixture_input_checksum(path: Path | str, expected_sha: str) -> None:
     actual = file_sha256(path)
     if actual != expected_sha:
         raise ValueError(
-            f"ACK2007 frozen-fixture input checksum mismatch: "
+            "ACK2007 frozen-fixture input checksum mismatch: "
             f"expected={expected_sha}, actual={actual}"
         )
+
+
+def _evaluate_regression_pin_fixture(x):
+    """Fixture-only arithmetic for the unverified regression pin.
+
+    This function is intentionally local to the verification runner. It is not
+    a public model prediction API and carries no raw-construction admission.
+    """
+    validate_compiler_input(x)
+    z = INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
+    if not isfinite(z):
+        raise ValueError("ACK2007 fixture linear predictor must be finite")
+    return z, logistic(z)
 
 
 def execute_fixtures(
@@ -82,12 +102,12 @@ def execute_fixtures(
                 raise ValueError(f"row {case_id!r} has missing predictor values")
 
             x = {k: float(row[k]) for k in REQUIRED}
-            y = predict(x, input_mode=SYNTHETIC_FIXTURE_MODE)
+            z, p = _evaluate_regression_pin_fixture(x)
             rows.append(
                 {
                     "case_id": case_id,
-                    "z": f"{y.linear_predictor:.12f}",
-                    "p": f"{y.probability:.12f}",
+                    "z": f"{z:.12f}",
+                    "p": f"{p:.12f}",
                 }
             )
 
