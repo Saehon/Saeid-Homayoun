@@ -36,7 +36,7 @@ def test_registry_covers_exact_model_input_set():
 def test_verified_raw_definition_can_pass_construction_gate():
     registry = validator.load_registry(REGISTRY_PATH)
     result = validator.validate_raw_construction_request(
-        registry, ["FOREIGN_SALES", "%LOSS"]
+        registry, ["FOREIGN_SALES"]
     )
     assert result == {"passed": True, "violations": []}
 
@@ -44,8 +44,9 @@ def test_verified_raw_definition_can_pass_construction_gate():
 @pytest.mark.parametrize(
     "name,expected_status",
     [
-        ("SIZE", "BLOCKED_MISSING_YEAR_RULE"),
-        ("RGROWTH", "BLOCKED_MISSING_DATA_RULE"),
+        ("SIZE", "PROVENANCE_CONFLICT"),
+        ("RGROWTH", "PROVENANCE_CONFLICT"),
+        ("%LOSS", "BLOCKED_MISSING_YEAR_RULE"),
         ("RZSCORE", "BLOCKED_RAW_CONSTRUCTION"),
     ],
 )
@@ -76,6 +77,7 @@ def test_full_raw_construction_plan_is_blocked_while_any_gate_is_unresolved():
     assert any(v.startswith("SIZE:") for v in result["violations"])
     assert any(v.startswith("RGROWTH:") for v in result["violations"])
     assert any(v.startswith("RZSCORE:") for v in result["violations"])
+    assert any(v.startswith("%LOSS:") for v in result["violations"])
 
 
 def test_duplicate_registry_keys_are_rejected(tmp_path):
@@ -144,3 +146,10 @@ def test_nonverified_future_status_fails_closed():
         "passed": False,
         "violations": ["FOREIGN_SALES: PENDING_FUTURE_RULE"],
     }
+
+
+def test_unresolved_loss_rule_cannot_be_silently_promoted_to_verified():
+    registry = validator.load_registry(REGISTRY_PATH)
+    assert registry["variables"]["%LOSS"]["raw_construction_status"] == "BLOCKED_MISSING_YEAR_RULE"
+    with pytest.raises(ValueError, match="%LOSS"):
+        validator.require_raw_construction_allowed(registry, ["%LOSS"])
