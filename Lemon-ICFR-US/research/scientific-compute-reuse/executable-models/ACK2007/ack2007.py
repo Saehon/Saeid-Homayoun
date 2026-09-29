@@ -1,22 +1,22 @@
-"""LEMON-SCI ACK2007 engineering compiler.
+"""LEMON-SCI ACK2007 engineering compiler contract.
 
 The coefficient vector is loaded from the single machine-readable coefficient
 contract and retained unchanged as a regression pin pending primary-table
 verification. This module makes no scientific coefficient-validity claim.
 
-While ACK2007 is SCIENTIFIC_HOLD, public prediction is restricted to the
-explicit preconstructed-synthetic compiler-fixture mode. Raw-data callers must
-not bypass the construction-gate boundary by calling this module directly.
+While ACK2007 is SCIENTIFIC_HOLD, the public prediction boundary is disabled.
+Frozen synthetic fixture arithmetic is implemented only in the verification
+runner so raw-data callers cannot relabel inputs as synthetic.
 """
 from dataclasses import dataclass
 from math import exp, isfinite
 import hashlib
 import json
 from pathlib import Path
+from types import MappingProxyType
 from typing import Mapping
 
 CONTRACT_PATH = Path(__file__).with_name("coefficient-contract.json")
-SYNTHETIC_FIXTURE_MODE = "PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST"
 EXPECTED_CONTRACT_FIELDS = {
     "schema_version",
     "model_id",
@@ -109,9 +109,12 @@ def contract_semantic_digest(contract: Mapping) -> str:
 
 
 CONTRACT = load_coefficient_contract()
-COEFFICIENTS = {
-    item["name"]: float(item["coefficient"]) for item in CONTRACT["predictors"]
-}
+COEFFICIENTS = MappingProxyType(
+    {
+        item["name"]: float(item["coefficient"])
+        for item in CONTRACT["predictors"]
+    }
+)
 INTERCEPT = float(CONTRACT["intercept"])
 REQUIRED = tuple(COEFFICIENTS)
 
@@ -122,7 +125,12 @@ class ACK2007Prediction:
     probability: float
 
 
-def _validate_values(x: Mapping[str, float]) -> None:
+def validate_compiler_input(x: Mapping[str, float]) -> None:
+    """Validate a fully preconstructed compiler input vector.
+
+    This validates shape and numeric finiteness only. It does not grant
+    scientific provenance or raw-construction admission.
+    """
     missing = [k for k in REQUIRED if k not in x]
     extra = [k for k in x if k not in COEFFICIENTS]
     if missing:
@@ -133,21 +141,23 @@ def _validate_values(x: Mapping[str, float]) -> None:
         _finite_number(x[k], k)
 
 
-def _require_synthetic_fixture_mode(input_mode: str | None) -> None:
-    if input_mode != SYNTHETIC_FIXTURE_MODE:
-        raise ValueError(
-            "ACK2007 prediction is fail-closed while scientific raw-construction "
-            "gates are unresolved; only explicit PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST "
-            "mode is allowed in the engineering compiler."
-        )
+def _scientific_hold_error() -> ValueError:
+    return ValueError(
+        "ACK2007 public prediction is disabled while SCIENTIFIC_HOLD is active; "
+        "raw construction must pass the canonical admission boundary, and "
+        "frozen synthetic regression-pin arithmetic is isolated in "
+        "verification/ACK2007/run_fixtures.py."
+    )
 
 
-def linear_predictor(
-    x: Mapping[str, float], *, input_mode: str | None = None
-) -> float:
-    _require_synthetic_fixture_mode(input_mode)
-    _validate_values(x)
-    return INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
+def linear_predictor(x: Mapping[str, float], **kwargs) -> float:
+    """Public prediction boundary: disabled until scientific admission."""
+    raise _scientific_hold_error()
+
+
+def predict(x: Mapping[str, float], **kwargs) -> ACK2007Prediction:
+    """Public prediction boundary: disabled until scientific admission."""
+    raise _scientific_hold_error()
 
 
 def logistic(z: float) -> float:
@@ -155,12 +165,3 @@ def logistic(z: float) -> float:
         return 1.0 / (1.0 + exp(-z))
     ez = exp(z)
     return ez / (1.0 + ez)
-
-
-def predict(
-    x: Mapping[str, float], *, input_mode: str | None = None
-) -> ACK2007Prediction:
-    _require_synthetic_fixture_mode(input_mode)
-    _validate_values(x)
-    z = INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
-    return ACK2007Prediction(z, logistic(z))
