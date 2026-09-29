@@ -1,6 +1,5 @@
 import copy
 import json
-import math
 
 import pytest
 
@@ -10,12 +9,12 @@ from ack2007 import (
     EXPECTED_PREDICTOR_NAMES,
     INTERCEPT,
     REQUIRED,
-    SYNTHETIC_FIXTURE_MODE,
     contract_semantic_digest,
     linear_predictor,
     load_coefficient_contract,
     logistic,
     predict,
+    validate_compiler_input,
 )
 
 ZERO = {k: 0.0 for k in REQUIRED}
@@ -29,14 +28,6 @@ def _write_contract(path, contract):
     )
 
 
-def _predict(x):
-    return predict(x, input_mode=SYNTHETIC_FIXTURE_MODE)
-
-
-def _linear(x):
-    return linear_predictor(x, input_mode=SYNTHETIC_FIXTURE_MODE)
-
-
 def test_contract_is_single_regression_pin():
     assert contract_semantic_digest(CONTRACT) == EXPECTED_CONTRACT_DIGEST
     assert CONTRACT["role"] == "regression_pin_only"
@@ -47,54 +38,49 @@ def test_contract_is_single_regression_pin():
 def test_coefficient_count_and_interface():
     assert len(COEFFICIENTS) == 14
     assert REQUIRED == EXPECTED_PREDICTOR_NAMES
+    assert tuple(COEFFICIENTS) == EXPECTED_PREDICTOR_NAMES
+    assert INTERCEPT == pytest.approx(CONTRACT["intercept"])
 
 
-def test_prediction_boundary_fails_closed_without_explicit_synthetic_mode():
-    with pytest.raises(ValueError, match="fail-closed"):
-        predict(ZERO)
-    with pytest.raises(ValueError, match="fail-closed"):
-        linear_predictor(ZERO)
-    with pytest.raises(ValueError, match="fail-closed"):
-        predict(ZERO, input_mode="RAW_DATA")
+def test_runtime_coefficient_vector_is_immutable():
+    with pytest.raises(TypeError):
+        COEFFICIENTS["SIZE"] = 999.0
+    with pytest.raises(TypeError):
+        del COEFFICIENTS["SIZE"]
 
 
-def test_zero_vector_equals_intercept():
-    assert _linear(ZERO) == pytest.approx(INTERCEPT)
+def test_public_prediction_boundary_is_always_closed_during_scientific_hold():
+    for kwargs in ({}, {"input_mode": "RAW_DATA"}, {"input_mode": "PRECONSTRUCTED_SYNTHETIC_COMPILER_TEST"}):
+        with pytest.raises(ValueError, match="public prediction is disabled"):
+            predict(ZERO, **kwargs)
+        with pytest.raises(ValueError, match="public prediction is disabled"):
+            linear_predictor(ZERO, **kwargs)
 
 
-def test_zero_vector_probability_is_mathematical_execution_only():
-    p = _predict(ZERO).probability
-    assert p == pytest.approx(1 / (1 + math.exp(-INTERCEPT)))
-    assert 0 < p < 1
+def test_compiler_input_validation_accepts_complete_finite_vector():
+    validate_compiler_input(ZERO)
 
 
-def test_each_contract_coefficient_contributes_exactly_once():
-    for name, beta in COEFFICIENTS.items():
-        x = dict(ZERO)
-        x[name] = 1.0
-        assert _linear(x) == pytest.approx(INTERCEPT + beta)
-
-
-def test_missing_variable_rejected():
+def test_missing_variable_rejected_by_compiler_input_validation():
     x = dict(ZERO)
     x.pop("RZSCORE")
-    with pytest.raises(ValueError):
-        _predict(x)
+    with pytest.raises(ValueError, match="Missing ACK2007 variables"):
+        validate_compiler_input(x)
 
 
-def test_unknown_variable_rejected():
+def test_unknown_variable_rejected_by_compiler_input_validation():
     x = dict(ZERO)
     x["LEAKAGE"] = 1
-    with pytest.raises(ValueError):
-        _predict(x)
+    with pytest.raises(ValueError, match="Unknown ACK2007 variables"):
+        validate_compiler_input(x)
 
 
 @pytest.mark.parametrize("value", [float("nan"), float("inf"), float("-inf"), True, "1.0"])
 def test_invalid_runtime_value_rejected(value):
     x = dict(ZERO)
     x["SIZE"] = value
-    with pytest.raises(ValueError):
-        _predict(x)
+    with pytest.raises(ValueError, match="finite numeric"):
+        validate_compiler_input(x)
 
 
 @pytest.mark.parametrize("z", [-1000, -10, 0, 10, 1000])
