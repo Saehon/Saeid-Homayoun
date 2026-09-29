@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "cell_id": "ICFR_C4_v2026.09",
   "topic": "internal_control_over_financial_reporting",
   "selection_date": "2026-09-29",
@@ -46,10 +46,51 @@
     }
   ],
   "selection_rule": {
-    "fixed_slots": ["META_ANALYSIS", "SYSTEMATIC_REVIEW", "MANAGEMENT_SCIENCE_FRONTIER", "MANAGEMENT_SCIENCE_COMPLEMENT"],
+    "fixed_slots": [
+      "META_ANALYSIS",
+      "SYSTEMATIC_REVIEW",
+      "MANAGEMENT_SCIENCE_FRONTIER",
+      "MANAGEMENT_SCIENCE_COMPLEMENT"
+    ],
     "preferred_modern_window": "2021-2026",
-    "priority_journals": ["FT50", "AJG4*", "AJG4", "Management Science"],
-    "tie_break_order": ["estimand_fit", "primary_evidence_quality", "replication_completeness", "executability", "methodological_credibility", "recency", "prestige"],
-    "version_not_overwrite": true
+    "priority_journals": [
+      "FT50",
+      "AJG4*",
+      "AJG4",
+      "Management Science"
+    ],
+    "tie_break_order": [
+      "estimand_fit",
+      "primary_evidence_quality",
+      "replication_completeness",
+      "executability",
+      "methodological_credibility",
+      "recency",
+      "prestige"
+    ],
+    "version_not_overwrite": true,
+    "journal_tier_fallback": [
+      "FT50_OR_AJG4STAR_OR_AJG4",
+      "AJG3",
+      "AJG2",
+      "AJG1"
+    ],
+    "fallback_policy": "DESCEND_ONLY_IF_NO_ADMISSIBLE_CANDIDATE_AT_HIGHER_TIER",
+    "mandatory_admission_gates": [
+      "estimand_or_topic_fit",
+      "primary_evidence_sufficiency",
+      "methodological_credibility",
+      "replication_or_executability_for_executable_roles",
+      "nonduplication_and_portfolio_contribution"
+    ],
+    "required_fallback_audit": [
+      "tier_searched",
+      "candidate_set",
+      "exclusion_reason_codes",
+      "selected_fallback_tier",
+      "selected_paper",
+      "corpus_snapshot_date",
+      "selector_version"
+    ]
   }
 }
