@@ -53,7 +53,9 @@ def test_committed_fixture_is_deterministic_across_two_clean_runs(tmp_path):
 def test_fixture_input_mutation_is_detected_even_if_outputs_would_round_same(tmp_path):
     original = (HERE / "frozen-fixtures.csv").read_bytes()
     mutated = tmp_path / "mutated.csv"
-    mutated.write_bytes(original.replace(b"intercept_arithmetic_only", b"changed_purpose_only"))
+    mutated.write_bytes(
+        original.replace(b"intercept_arithmetic_only", b"changed_purpose_only")
+    )
     assert runner.file_sha256(mutated) != EXPECTED_INPUT_SHA
     with pytest.raises(ValueError, match="input checksum mismatch"):
         runner.verify_fixture_input_checksum(mutated, EXPECTED_INPUT_SHA)
@@ -68,12 +70,12 @@ def test_output_checksum_mutation_is_detected(tmp_path):
         runner.verify_payload_checksum(payload + "mutation", sha)
 
 
-def test_predict_exception_is_not_silently_swallowed(tmp_path, monkeypatch):
+def test_fixture_evaluator_exception_is_not_silently_swallowed(tmp_path, monkeypatch):
     def boom(*args, **kwargs):
-        raise RuntimeError("predict failure")
+        raise RuntimeError("fixture evaluator failure")
 
-    monkeypatch.setattr(runner, "predict", boom)
-    with pytest.raises(RuntimeError, match="predict failure"):
+    monkeypatch.setattr(runner, "_evaluate_regression_pin_fixture", boom)
+    with pytest.raises(RuntimeError, match="fixture evaluator failure"):
         runner.execute_fixtures(
             HERE / "frozen-fixtures.csv", tmp_path / "out"
         )
