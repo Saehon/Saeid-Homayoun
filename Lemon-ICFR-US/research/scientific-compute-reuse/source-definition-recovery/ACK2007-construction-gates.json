@@ -31,9 +31,9 @@
       "reason": "Active ontology remains partial."
     },
     "RGROWTH": {
-      "definition": "Decile rank of average sales growth rate, 2002-2004",
-      "raw_construction_status": "BLOCKED_MISSING_DATA_RULE",
-      "reason": "Missing-data and ranking eligibility rule remains unresolved."
+      "definition": "Decile rank of average sales growth rate; exact ACK2007 window remains under provenance conflict (2001-2003 vs 2002-2004).",
+      "raw_construction_status": "PROVENANCE_CONFLICT",
+      "reason": "Primary JAE evidence has not resolved the competing window claims or missing-data/ranking eligibility rule."
     },
     "INVENTORY": {
       "definition": "Inventory scaled by total assets",
@@ -41,14 +41,14 @@
       "reason": "Exact fiscal timing remains pending."
     },
     "SIZE": {
-      "definition": "Average market value of equity over 2001-2003, USD billions",
-      "raw_construction_status": "BLOCKED_MISSING_YEAR_RULE",
-      "reason": "Missing-year/sample-eligibility rule remains unresolved."
+      "definition": "Market-value-of-equity size measure; exact ACK2007 transformation/unit/window remains under provenance conflict.",
+      "raw_construction_status": "PROVENANCE_CONFLICT",
+      "reason": "Primary JAE evidence has not resolved ln(MVE) versus average MVE in USD billions, nor missing-year/sample-eligibility handling."
     },
     "%LOSS": {
       "definition": "Proportion of years 2001-2003 with negative earnings",
-      "raw_construction_status": "VERIFIED",
-      "reason": "Recovered source definition is marked PASS in ACK2007 Phase 4."
+      "raw_construction_status": "BLOCKED_MISSING_YEAR_RULE",
+      "reason": "Primary evidence does not yet establish the missing-year denominator, sample-eligibility rule, or exact earnings item; raw construction must fail closed."
     },
     "RZSCORE": {
       "definition": "Decile rank of Altman (1980) z-score/distress measure",
