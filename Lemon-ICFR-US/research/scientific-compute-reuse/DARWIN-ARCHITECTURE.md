@@ -14,3 +14,14 @@ Pattern → Hypothesis → Mechanism → Falsification → Replication → Trans
 Promotion: L0 Pattern → L1 Hypothesis → L2 Falsification Survivor → L3 Replicated → L4 Transportable → L5 Executable Scientific Knowledge. Only L5 enters the next bank after human approval.
 
 Idealized learning: S_(t+1)=S_t+D_t; U_(t+1)=U_t-D_t. Monotone knowledge growth is tested, not assumed.
+
+
+## Paper-selection governance
+
+Before compilation, every topic uses a deterministic four-slot evidence cell:
+P1 meta-analysis, P2 systematic review, P3 modern executable/frontier paper, P4 modern complementary/executable paper.
+
+Journal-tier fallback is strict:
+FT50/AJG4*/AJG4 -> AJG3 -> AJG2 -> AJG1.
+
+Darwin/Co-Scientist/AlphaEvolve components may challenge and evolve candidate portfolios, but final admission must obey the canonical paper-selection policy, hard scientific gates, versioning, and audit-trail requirements.
