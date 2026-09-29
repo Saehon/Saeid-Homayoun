@@ -22,7 +22,7 @@ M1 Published Science; M2 Traditional ML; M3 Deep Learning; M4 Science + Residual
 FT50 + AJG/ABS 4*/4; replication code/data preferred. Management Science replication packages are prioritized for compiler validation. SSRN is secondary discovery/code evidence.
 
 ## Rules
-ICFR only; published science first; replication before trust; falsification before claim; no ML leakage into M1; no fabricated coefficients/results; compatibility outranks prestige; human approval is final.
+Current executable pilot: ICFR. The paper-selection policy applies to all current and future LEMON-SCI research topics. Published science first; replication before trust; falsification before claim; no ML leakage into M1; no fabricated coefficients/results; compatibility outranks prestige; human approval is final.
 
 
 ## Paper-selection governance
