@@ -70,13 +70,9 @@ def test_output_checksum_mutation_is_detected(tmp_path):
         runner.verify_payload_checksum(payload + "mutation", sha)
 
 
-def test_fixture_evaluator_exception_is_not_silently_swallowed(tmp_path, monkeypatch):
-    def boom(*args, **kwargs):
-        raise RuntimeError("fixture evaluator failure")
+def test_pre_attestation_evaluator_is_not_exposed():
+    assert not hasattr(runner, "_evaluate_regression_pin_fixture")
 
-    monkeypatch.setattr(runner, "_evaluate_regression_pin_fixture", boom)
-    with pytest.raises(RuntimeError, match="fixture evaluator failure"):
-        runner.execute_fixtures(HERE / "frozen-fixtures.csv", tmp_path / "out")
 
 
 def test_unknown_fixture_column_is_rejected(tmp_path):
@@ -152,10 +148,27 @@ def test_arithmetic_rejects_noncanonical_fixture_even_when_schema_valid(tmp_path
         runner.execute_fixtures(path, tmp_path / "out")
 
 
-@pytest.mark.parametrize("predictor", runner.REQUIRED)
-def test_fixture_evaluator_covers_every_coefficient_one_hot(predictor):
-    x = {name: 0.0 for name in runner.REQUIRED}
-    x[predictor] = 1.0
-    z, p = runner._evaluate_regression_pin_fixture(x)
-    assert z == pytest.approx(runner.INTERCEPT + runner.COEFFICIENTS[predictor])
-    assert p == pytest.approx(runner.logistic(z))
+def test_provenance_manifest_binds_fixture_contract_output_and_commit(tmp_path):
+    payload, output_sha = runner.execute_fixtures(
+        HERE / "frozen-fixtures.csv", tmp_path / "provenance-run"
+    )
+    import json
+    provenance = json.loads(
+        (tmp_path / "provenance-run" / "fixture-provenance.json").read_text(encoding="utf-8")
+    )
+    assert provenance["model_id"] == "ACK2007"
+    assert provenance["scientific_status"] == "HOLD"
+    assert provenance["fixture_input_sha256"] == EXPECTED_INPUT_SHA
+    assert provenance["fixture_output_sha256"] == output_sha
+    assert provenance["coefficient_contract_sha256"] == runner.file_sha256(
+        runner.COEFFICIENT_CONTRACT
+    )
+    assert provenance["producing_git_commit"]
+    assert provenance["producing_git_commit"] != "UNAVAILABLE"
+
+
+def test_coefficient_contract_covers_every_required_predictor():
+    assert list(runner.COEFFICIENTS) == list(runner.REQUIRED)
+    assert len(runner.COEFFICIENTS) == 14
+    for predictor in runner.REQUIRED:
+        assert predictor in runner.COEFFICIENTS
