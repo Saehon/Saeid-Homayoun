@@ -1,0 +1,9 @@
+engine,role,execution_status,numeric_accuracy,completeness,provenance_coverage,unsupported_claim_rate,reproducibility,notes
+Microsoft_reference,independent_reference,PASS,1.0,1.0,1.0,0.0,1.0,"FY2026 published financial statements/reference values"
+sec_xbrl_deterministic,gold_candidate,READY,,,,,,"Execute against pinned SEC accession/iXBRL"
+sec-data,extractor,NOT_RUN,,,,,,"Isolated pinned runtime required"
+edgar-mcp,agent_data_adapter,NOT_RUN,,,,,,"Read-only adapter; isolated execution required"
+sec-10-k-structured-extraction,extractor,NOT_RUN,,,,,,"MIT upstream; isolated execution required"
+verified-credit-research-agent,research_agent,NOT_RUN,,,,,,"MIT upstream; verify every claim"
+xoomar-mcp,challenger_adapter,NOT_RUN,,,,,,"Read-only; no data mirroring"
+vouch-sec-filing-agent,challenger_agent,NOT_RUN,,,,,,"Deterministic/traceable challenger; independent reproduction required"
