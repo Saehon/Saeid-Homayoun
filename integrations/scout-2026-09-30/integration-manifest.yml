@@ -1,0 +1,33 @@
+version: 1
+date: 2026-09-30
+canonical: github
+components:
+  - name: APEX-Accounting-Harbor
+    role: sealed_accounting_benchmark
+    license: CC-BY-4.0
+    redistribution: attribution_required
+    action: integrate
+  - name: XOOMAR-MCP
+    role: read_only_evidence_adapter
+    code_license: Apache-2.0
+    data_terms: upstream_separate
+    mirror_data: false
+    action: integrate_read_only
+  - name: OpenEAGO
+    organization: FINOS
+    role: agent_governance_control_plane
+    license: Apache-2.0
+    action: integrate_architecture
+  - name: HiFi-KPI
+    role: xbrl_kpi_scientific_benchmark
+    license_status: pin_exact_artifact_before_redistribution
+    redistribution: hold
+    action: reference_and_test
+cross_sync:
+  huggingface: pass_and_license_gate
+  kaggle: pass_and_license_gate
+governance:
+  provenance_required: true
+  falsification_required: true
+  human_approval_material_conclusions: true
+  vendor_external_source_by_default: false
