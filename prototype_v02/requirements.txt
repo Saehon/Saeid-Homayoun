@@ -1,5 +1,5 @@
 streamlit>=1.40
-openai>=1.0.0
+openai>=3.19.2
 python-dotenv>=1.2.3
 pandas>=3.0.6
 numpy>=2.5.3
