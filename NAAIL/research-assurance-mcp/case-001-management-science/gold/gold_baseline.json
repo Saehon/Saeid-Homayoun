@@ -1,0 +1,61 @@
+{
+  "case_id": "MNSC-2023-4670",
+  "baseline_version": "0.1.0",
+  "status": "PARTIAL",
+  "source": {
+    "paper_doi": "10.1287/mnsc.2023.4670",
+    "replication_repo": "TiesdeKok/mnsc.2023.4670"
+  },
+  "software": {
+    "python": "3.6+",
+    "sas": "9.4",
+    "stata": "17+"
+  },
+  "pipeline": [
+    "0_data",
+    "1_code",
+    "2_pipeline",
+    "3_output"
+  ],
+  "table_map": {
+    "Table 1": {
+      "A-B": "1_code/c_2a_run_regressions_main.do",
+      "C": "1_code/c_3_generate_narrative_statistics.ipynb"
+    },
+    "Table 2": {
+      "A-D": "1_code/c_2a_run_regressions_main.do"
+    },
+    "Table 3": {
+      "A-B": "1_code/c_2a_run_regressions_main.do"
+    },
+    "Table 4": {
+      "A-D": "1_code/c_2a_run_regressions_main.do"
+    },
+    "Table 5": {
+      "A-D": "1_code/c_2a_run_regressions_main.do"
+    },
+    "Table OA.1": {
+      "A-F": "1_code/c_2b_run_regressions_appendix.do"
+    },
+    "Table OA.3": {
+      "A-B": "1_code/c_2b_run_regressions_appendix.do"
+    },
+    "Table OA.4": {
+      "A-C": "1_code/c_2b_run_regressions_appendix.do"
+    }
+  },
+  "main_specs": {
+    "table_2b": "reghdfe Untimely_Filer Post; absorb(gvkey); cluster(fdate_final)",
+    "table_2c": "reghdfe Untimely_Filer Post; absorb(gvkey sec_filing_limit); cluster(fdate_final)",
+    "table_3a": "reghdfe sec_delay_final Post; absorb(gvkey); cluster(fdate_final)",
+    "table_3b": "reghdfe sec_delay_final Post; absorb(gvkey sec_filing_limit); cluster(fdate_final)",
+    "table_4a": "reghdfe EADelay Post; absorb(gvkey); cluster(rdq)",
+    "table_4b": "reghdfe EADelay Post; absorb(gvkey sec_filing_limit); cluster(rdq)",
+    "table_4c": "reghdfe big_change Post; absorb(gvkey sec_filing_limit); cluster(rdq)"
+  },
+  "limitations": [
+    "raw source data not included; multiple WRDS licenses required",
+    "README states Stata/SAS logs are included under 3_output/logs, but current public 3_output exposes only an auto-generated-content placeholder",
+    "numerical coefficient/p-value/N reconciliation is therefore not VERIFIED in V0.1"
+  ]
+}
