@@ -11,7 +11,7 @@ HERE = Path(__file__).resolve().parent
 MODEL_DIR = HERE.parent.parent / "executable-models" / "ACK2007"
 CANONICAL_FIXTURE = HERE / "frozen-fixtures.csv"
 COEFFICIENT_CONTRACT = MODEL_DIR / "coefficient-contract.json"
-CANONICAL_FIXTURE_SHA256 = "e41b2536f8e485bfd4d72cc7f91b49f0640afdcd5e4b96231e6914868b884205"
+CANONICAL_FIXTURE_SHA256 = "fcec3365f05b4787a9adc151f0a21404d939fc44263ac51a87c8a2133894cace"
 sys.path.insert(0, str(MODEL_DIR))
 from ack2007 import (\n    COEFFICIENTS, CONTRACT, INTERCEPT, REQUIRED, contract_semantic_digest, logistic, validate_compiler_input\n)
 
