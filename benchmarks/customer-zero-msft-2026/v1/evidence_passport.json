@@ -1,0 +1,9 @@
+{
+  "issuer":{"name":"Microsoft Corporation","cik":"0000789019"},
+  "filing":{"form":"10-K","period_end":"2026-06-30","accession":"0001193125-26-323660","source_url":"https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"},
+  "benchmark_version":"1.0.0",
+  "reference":{"status":"PASS","secondary_crosscheck":"Microsoft FY26 Q4/FY26 published financial statements"},
+  "execution":{"deterministic_sec_xbrl":"READY","external_adapters":"NOT_RUN"},
+  "verification":{"falsification_status":"PENDING","human_approval":"PENDING"},
+  "policy":"No engine receives a score until reproducibly executed against the pinned filing."
+}
