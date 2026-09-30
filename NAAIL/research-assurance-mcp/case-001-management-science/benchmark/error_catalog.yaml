@@ -1,0 +1,14 @@
+case_id: MNSC-2023-4670
+policy: never_modify_author_source
+mutations:
+  - {id: E01, type: coefficient, test: alter_reported_beta}
+  - {id: E02, type: p_value, test: alter_reported_p_value}
+  - {id: E03, type: significance, test: alter_significance_star}
+  - {id: E04, type: sample_size, test: alter_N}
+  - {id: E05, type: standard_errors, test: remove_or_change_clustering}
+  - {id: E06, type: variable_definition, test: alter_transformation}
+  - {id: E07, type: specification, test: mismatch_methods_and_code}
+  - {id: E08, type: leakage, test: introduce_future_information}
+  - {id: E09, type: pipeline, test: remove_processing_step}
+  - {id: E10, type: interpretation, test: association_to_causal_claim}
+metrics: [precision, recall, false_positive_rate, detection_time, evidence_trace_completeness, reproducibility_status_accuracy]
