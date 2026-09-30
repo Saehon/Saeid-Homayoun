@@ -142,6 +142,24 @@ def test_numeric_contract_mutations_break_regression_pin(mutation):
     assert contract_semantic_digest(mutated) != EXPECTED_CONTRACT_DIGEST
 
 
+@pytest.mark.parametrize("predictor_index", range(14))
+@pytest.mark.parametrize("mutation", ["change", "zero", "sign_flip", "scale"])
+def test_every_coefficient_mutation_breaks_regression_pin(predictor_index, mutation):
+    """Integrity-cover all 14 unverified regression-pin coefficients without executing predictions."""
+    mutated = copy.deepcopy(CONTRACT)
+    original = mutated["predictors"][predictor_index]["coefficient"]
+    assert original != 0.0
+    if mutation == "change":
+        mutated["predictors"][predictor_index]["coefficient"] = original + 0.001
+    elif mutation == "zero":
+        mutated["predictors"][predictor_index]["coefficient"] = 0.0
+    elif mutation == "sign_flip":
+        mutated["predictors"][predictor_index]["coefficient"] = -original
+    else:
+        mutated["predictors"][predictor_index]["coefficient"] = original * 100
+    assert contract_semantic_digest(mutated) != EXPECTED_CONTRACT_DIGEST
+
+
 @pytest.mark.parametrize(
     "field,value,match",
     [
