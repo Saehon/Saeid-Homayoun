@@ -7,7 +7,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 MODEL_DIR = HERE.parent.parent / "executable-models" / "ACK2007"
-CANONICAL_FIXTURE = HERE / "frozen-fixtures.csv"
+CANONICAL_FIXTURE = HERE / "frozen-fixtures.csv"\nCOEFFICIENT_CONTRACT = MODEL_DIR / "coefficient-contract.json"
 CANONICAL_FIXTURE_SHA256 = "e41b2536f8e485bfd4d72cc7f91b49f0640afdcd5e4b96231e6914868b884205"
 sys.path.insert(0, str(MODEL_DIR))
 from ack2007 import COEFFICIENTS, INTERCEPT, REQUIRED, logistic, validate_compiler_input
