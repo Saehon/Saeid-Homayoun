@@ -1,0 +1,21 @@
+version: 1
+platform: NAAIL-OpenLab
+core: Scientific-Core
+module: Benchmarks
+family: Customer-Zero
+benchmark: Microsoft-FY2026
+canonical_runtime_path: benchmarks/customer-zero-msft-2026
+related_integration_registry:
+  - integrations/open-source-finance-stack
+  - integrations/scout-2026-09-30
+consumers:
+  - LEMON-ICFR-US
+  - CAM-KAM
+  - IFRS-Value-Intelligence
+  - PCAOB-Embedded-Inspection-Agent
+separation_policy: reusable_infrastructure_not_project_merge
+promotion:
+  require_reproducible_pass: true
+  require_license_gate: true
+  require_falsification: true
+  require_human_approval_for_material_conclusions: true
