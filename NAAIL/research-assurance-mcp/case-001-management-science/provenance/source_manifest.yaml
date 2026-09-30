@@ -1,0 +1,15 @@
+paper:
+  journal: Management Science
+  doi: 10.1287/mnsc.2023.4670
+  title: "How Resilient Are Firms' Financial Reporting Processes?"
+replication:
+  repository: TiesdeKok/mnsc.2023.4670
+  source_policy: external_reference_only
+  languages: [Python, SAS, Stata]
+  pipeline: [0_data, 1_code, 2_pipeline, 3_output]
+constraints:
+  - raw source data are not fully included
+  - WRDS licenses are required for multiple datasets
+  - one SPAC dataset is author-provided
+  - full end-to-end execution may take days
+assurance_rule: never claim FULL_REPRODUCTION unless required licensed data and execution evidence are available
