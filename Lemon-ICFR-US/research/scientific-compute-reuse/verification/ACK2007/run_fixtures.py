@@ -13,7 +13,7 @@ CANONICAL_FIXTURE = HERE / "frozen-fixtures.csv"
 COEFFICIENT_CONTRACT = MODEL_DIR / "coefficient-contract.json"
 CANONICAL_FIXTURE_SHA256 = "e41b2536f8e485bfd4d72cc7f91b49f0640afdcd5e4b96231e6914868b884205"
 sys.path.insert(0, str(MODEL_DIR))
-from ack2007 import COEFFICIENTS, INTERCEPT, REQUIRED, logistic, validate_compiler_input
+from ack2007 import (\n    COEFFICIENTS, CONTRACT, INTERCEPT, REQUIRED, contract_semantic_digest, logistic, validate_compiler_input\n)
 
 
 def payload_sha256(payload: str) -> str:
@@ -89,7 +89,9 @@ def _require_canonical_fixture(csv_path: Path | str) -> Path:
 
 
 def _producing_commit() -> str:
-    sha = os.environ.get("GITHUB_SHA")
+    # On pull_request workflows GITHUB_SHA is the synthetic merge commit.
+    # Record the source branch head when GitHub exposes it.
+    sha = os.environ.get("GITHUB_HEAD_SHA") or os.environ.get("GITHUB_SHA")
     if sha:
         return sha
     try:
@@ -109,6 +111,11 @@ def execute_fixtures(csv_path: Path | str = CANONICAL_FIXTURE, out_dir: Path | s
     out_dir = Path(out_dir)
     input_sha = file_sha256(csv_path)
     contract_sha = file_sha256(COEFFICIENT_CONTRACT)
+    runtime_contract_sha = contract_semantic_digest(CONTRACT)
+    runtime_coefficients = {name: COEFFICIENTS[name] for name in REQUIRED}
+    file_coefficients = {item["name"]: float(item["coefficient"]) for item in CONTRACT["predictors"]}
+    if runtime_coefficients != file_coefficients or INTERCEPT != float(CONTRACT["intercept"]):
+        raise ValueError("ACK2007 runtime coefficient state diverged from the loaded coefficient contract")
     rows = []
     for case_id, _purpose, x in parse_fixture_rows(csv_path):
         # Arithmetic deliberately lives inside the attested execution boundary.
@@ -135,6 +142,7 @@ def execute_fixtures(csv_path: Path | str = CANONICAL_FIXTURE, out_dir: Path | s
         "fixture_input_sha256": input_sha,
         "fixture_output_sha256": output_sha,
         "coefficient_contract_sha256": contract_sha,
+        "coefficient_contract_semantic_sha256": runtime_contract_sha,
         "producing_git_commit": _producing_commit(),
     }
     (out_dir / "fixture-provenance.json").write_text(
