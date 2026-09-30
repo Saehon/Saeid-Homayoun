@@ -2,12 +2,15 @@ import csv
 import hashlib
 import json
 from math import isfinite
+import os
+import subprocess
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 MODEL_DIR = HERE.parent.parent / "executable-models" / "ACK2007"
-CANONICAL_FIXTURE = HERE / "frozen-fixtures.csv"\nCOEFFICIENT_CONTRACT = MODEL_DIR / "coefficient-contract.json"
+CANONICAL_FIXTURE = HERE / "frozen-fixtures.csv"
+COEFFICIENT_CONTRACT = MODEL_DIR / "coefficient-contract.json"
 CANONICAL_FIXTURE_SHA256 = "e41b2536f8e485bfd4d72cc7f91b49f0640afdcd5e4b96231e6914868b884205"
 sys.path.insert(0, str(MODEL_DIR))
 from ack2007 import COEFFICIENTS, INTERCEPT, REQUIRED, logistic, validate_compiler_input
@@ -34,15 +37,6 @@ def verify_fixture_input_checksum(path: Path | str, expected_sha: str) -> None:
             "ACK2007 frozen-fixture input checksum mismatch: "
             f"expected={expected_sha}, actual={actual}"
         )
-
-
-def _evaluate_regression_pin_fixture(x):
-    """Fixture-only arithmetic for the unverified regression pin."""
-    validate_compiler_input(x)
-    z = INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
-    if not isfinite(z):
-        raise ValueError("ACK2007 fixture linear predictor must be finite")
-    return z, logistic(z)
 
 
 def parse_fixture_rows(csv_path: Path | str):
@@ -94,21 +88,59 @@ def _require_canonical_fixture(csv_path: Path | str) -> Path:
     return path
 
 
+def _producing_commit() -> str:
+    sha = os.environ.get("GITHUB_SHA")
+    if sha:
+        return sha
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=HERE,
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        return "UNAVAILABLE"
+
+
 def execute_fixtures(csv_path: Path | str = CANONICAL_FIXTURE, out_dir: Path | str = MODEL_DIR):
+    """Execute the regression pin only after canonical fixture attestation."""
     csv_path = _require_canonical_fixture(csv_path)
     out_dir = Path(out_dir)
     input_sha = file_sha256(csv_path)
+    contract_sha = file_sha256(COEFFICIENT_CONTRACT)
     rows = []
     for case_id, _purpose, x in parse_fixture_rows(csv_path):
-        z, p = _evaluate_regression_pin_fixture(x)
+        # Arithmetic deliberately lives inside the attested execution boundary.
+        validate_compiler_input(x)
+        z = INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
+        if not isfinite(z):
+            raise ValueError("ACK2007 fixture linear predictor must be finite")
+        p = logistic(z)
         rows.append({"case_id": case_id, "z": f"{z:.12f}", "p": f"{p:.12f}"})
 
     payload = json.dumps(rows, sort_keys=True, separators=(",", ":")) + "\n"
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "fixture-results.json").write_text(payload, encoding="utf-8")
     output_sha = payload_sha256(payload)
-    (out_dir / "fixture-results.sha256").write_text(output_sha + "  fixture-results.json\n", encoding="utf-8")
-    (out_dir / "fixture-input.sha256").write_text(input_sha + "  frozen-fixtures.csv\n", encoding="utf-8")
+    (out_dir / "fixture-results.sha256").write_text(
+        output_sha + "  fixture-results.json\n", encoding="utf-8"
+    )
+    (out_dir / "fixture-input.sha256").write_text(
+        input_sha + "  frozen-fixtures.csv\n", encoding="utf-8"
+    )
+    provenance = {
+        "model_id": "ACK2007",
+        "scientific_status": "HOLD",
+        "fixture_input_sha256": input_sha,
+        "fixture_output_sha256": output_sha,
+        "coefficient_contract_sha256": contract_sha,
+        "producing_git_commit": _producing_commit(),
+    }
+    (out_dir / "fixture-provenance.json").write_text(
+        json.dumps(provenance, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+    )
     return payload, output_sha
 
 
