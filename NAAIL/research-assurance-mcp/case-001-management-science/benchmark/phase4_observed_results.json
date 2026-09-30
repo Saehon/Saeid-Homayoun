@@ -1,0 +1,66 @@
+{
+  "case": "MNSC-2023-4670",
+  "fixture": "CASE001-T4B-SYNTHETIC-001",
+  "synthetic": true,
+  "run_date": "2026-09-30",
+  "benchmark_type": "deterministic single-mutation engineering unit test",
+  "n_mutations": 10,
+  "detected": 10,
+  "macro_precision": 1,
+  "macro_recall": 1,
+  "false_positive_rate": 0,
+  "per_mutation": {
+    "E01": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E02": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E03": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E04": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E05": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E06": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E07": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E08": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E09": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    },
+    "E10": {
+      "expected": 1,
+      "detected": 1,
+      "cross_flags": 0
+    }
+  },
+  "interpretation": "V0.1 detector satisfies its controlled single-error contracts.",
+  "validity_limit": "Not an empirical accuracy estimate. Values are synthetic; real author numerical results were not reproduced. Next tests must use blind compound mutations and accessible real replication artifacts."
+}
