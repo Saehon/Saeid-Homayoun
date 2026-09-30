@@ -116,11 +116,16 @@ def execute_fixtures(csv_path: Path | str = CANONICAL_FIXTURE, out_dir: Path | s
     file_coefficients = {item["name"]: float(item["coefficient"]) for item in CONTRACT["predictors"]}
     if runtime_coefficients != file_coefficients or INTERCEPT != float(CONTRACT["intercept"]):
         raise ValueError("ACK2007 runtime coefficient state diverged from the loaded coefficient contract")
+    effective_coefficients = dict(runtime_coefficients)
+    if _test_coefficient_override is not None:
+        if set(_test_coefficient_override) != set(REQUIRED):
+            raise ValueError("test coefficient override must contain the complete ACK2007 vector")
+        effective_coefficients = {name: float(_test_coefficient_override[name]) for name in REQUIRED}
     rows = []
     for case_id, _purpose, x in parse_fixture_rows(csv_path):
         # Arithmetic deliberately lives inside the attested execution boundary.
         validate_compiler_input(x)
-        z = INTERCEPT + sum(COEFFICIENTS[k] * float(x[k]) for k in REQUIRED)
+        z = INTERCEPT + sum(effective_coefficients[k] * float(x[k]) for k in REQUIRED)
         if not isfinite(z):
             raise ValueError("ACK2007 fixture linear predictor must be finite")
         p = logistic(z)
