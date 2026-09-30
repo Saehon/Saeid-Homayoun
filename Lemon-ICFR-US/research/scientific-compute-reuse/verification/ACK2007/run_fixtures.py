@@ -105,7 +105,7 @@ def _producing_commit() -> str:
         return "UNAVAILABLE"
 
 
-def execute_fixtures(csv_path: Path | str = CANONICAL_FIXTURE, out_dir: Path | str = MODEL_DIR):
+def execute_fixtures(csv_path: Path | str = CANONICAL_FIXTURE, out_dir: Path | str = MODEL_DIR, *, _test_coefficient_override=None):
     """Execute the regression pin only after canonical fixture attestation."""
     csv_path = _require_canonical_fixture(csv_path)
     out_dir = Path(out_dir)
