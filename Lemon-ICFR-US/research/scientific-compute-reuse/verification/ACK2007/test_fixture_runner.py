@@ -172,3 +172,24 @@ def test_coefficient_contract_covers_every_required_predictor():
     assert len(runner.COEFFICIENTS) == 14
     for predictor in runner.REQUIRED:
         assert predictor in runner.COEFFICIENTS
+
+
+@pytest.mark.parametrize("predictor", runner.REQUIRED)
+def test_every_coefficient_changes_attested_arithmetic_when_observable(tmp_path, predictor):
+    """Falsify each term through the canonical-attested execution path."""
+    baseline_payload, _ = runner.execute_fixtures(
+        HERE / "frozen-fixtures.csv", tmp_path / "baseline"
+    )
+    mutated = dict(runner.COEFFICIENTS)
+    mutated[predictor] = mutated[predictor] + 1.0
+    mutated_payload, _ = runner.execute_fixtures(
+        HERE / "frozen-fixtures.csv",
+        tmp_path / f"mutated-{predictor.replace('/', '_')}",
+        _test_coefficient_override=mutated,
+    )
+    canonical_rows = [x for _, _, x in runner.parse_fixture_rows(HERE / "frozen-fixtures.csv")]
+    observable = any(float(row[predictor]) != 0.0 for row in canonical_rows)
+    if observable:
+        assert mutated_payload != baseline_payload
+    else:
+        pytest.fail(f"{predictor} is not observable in any canonical attested fixture row")
