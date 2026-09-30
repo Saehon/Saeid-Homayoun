@@ -13,7 +13,7 @@ SPEC.loader.exec_module(runner)
 
 EXPECTED = ["case_id", *runner.REQUIRED, "purpose"]
 EXPECTED_OUTPUT_SHA = "c420891c605066edc1fe0e895ab5412decd65b648d25a42a1ceaeeb96113dda6"
-EXPECTED_INPUT_SHA = "e41b2536f8e485bfd4d72cc7f91b49f0640afdcd5e4b96231e6914868b884205"
+EXPECTED_INPUT_SHA = "fcec3365f05b4787a9adc151f0a21404d939fc44263ac51a87c8a2133894cace"
 
 
 def _base_row(case_id="CASE", purpose="test"):
