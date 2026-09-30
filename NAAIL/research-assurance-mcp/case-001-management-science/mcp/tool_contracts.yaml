@@ -1,0 +1,12 @@
+name: naail-research-assurance-mcp
+version: 0.1.0
+case: MNSC-2023-4670
+tools:
+  inspect_replication_package: {returns: [software, files, dependencies, data_requirements, limitations]}
+  map_table_to_code: {inputs: [table_id], returns: [source_files, expected_outputs]}
+  compare_reported_result: {inputs: [reported_result, computational_output], returns: [status, discrepancies, evidence]}
+  check_method_code_consistency: {inputs: [methods_text, code], returns: [status, mismatches, human_review_items]}
+  trace_result_provenance: {inputs: [result_id], returns: [claim, table, log, code, data, lineage_status]}
+  inject_controlled_error: {inputs: [fixture, mutation_id], returns: [mutated_fixture, ground_truth]}
+  score_detection: {inputs: [ground_truth, findings], returns: [precision, recall, false_positive_rate]}
+  generate_assurance_report: {returns: [computational_verification, consistency, reproducibility, methodology_flags, claim_alignment, provenance, human_review]}
