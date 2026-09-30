@@ -1,0 +1,29 @@
+{
+  "fixture_id": "CASE001-T4B-SYNTHETIC-001",
+  "synthetic": true,
+  "anchored_to": "Table 4B structural specification only; numerical values are synthetic and are NOT author/published results",
+  "gold": {
+    "dependent_variable": "EADelay",
+    "regressor": "Post",
+    "beta": 0.184,
+    "se": 0.07,
+    "p_value": 0.008,
+    "n": 4821,
+    "fixed_effects": [
+      "gvkey",
+      "sec_filing_limit"
+    ],
+    "cluster": "rdq",
+    "sample_period": "2019-2021",
+    "variable_definition": "EADelay = synthetic fixture definition v1",
+    "future_information": false,
+    "pipeline_steps": [
+      "load",
+      "clean",
+      "construct",
+      "estimate",
+      "export"
+    ],
+    "manuscript_claim": "Post is associated with EADelay in this synthetic benchmark fixture."
+  }
+}
