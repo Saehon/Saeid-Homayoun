@@ -109,7 +109,7 @@ jobs:
           PY
 
       - name: Upload reproducibility package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: sec-10-company-accounting-phase2
           path: |

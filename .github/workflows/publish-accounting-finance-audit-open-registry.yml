@@ -35,7 +35,7 @@ jobs:
           python open-source/accounting-finance-audit/scripts/build_cross_platform_registry.py \
             --out /tmp/accounting-finance-audit-registry
           ls -lah /tmp/accounting-finance-audit-registry
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: accounting-finance-audit-open-registry
           path: /tmp/accounting-finance-audit-registry/
