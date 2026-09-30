@@ -2,3 +2,4 @@ case_id,SEGMENTS,FOREIGN_SALES,M&A,RESTRUCTURE,RGROWTH,INVENTORY,SIZE,%LOSS,RZSC
 ZERO,0,0,0,0,0,0,0,0,0,0,0,0,0,0,intercept_arithmetic_only
 AUDITOR_RESIGN_ONLY,0,0,0,0,0,0,0,0,0,1,0,0,0,0,single_coefficient_check
 SCHEMA_VALID,2,1,0,0,5,0.10,8,0.33,4,0,1,0,0.20,0,deterministic_synthetic_fixture
+ALL_TERMS_OBSERVABLE,1,1,1,1,1,1,1,1,1,1,1,1,1,1,synthetic_integrity_coverage_only\n
