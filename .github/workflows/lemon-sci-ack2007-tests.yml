@@ -27,7 +27,7 @@ jobs:
       - name: Test fail-closed admission and frozen-fixture falsification
         run: pytest -q ../../verification/ACK2007/test_admission_gates.py ../../verification/ACK2007/test_fixture_runner.py
       - name: Execute frozen fixtures and input/output checksums
-        run: python ../../verification/ACK2007/run_fixtures.py
+        env:\n          GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}\n        run: python ../../verification/ACK2007/run_fixtures.py
       - uses: actions/upload-artifact@v4
         with:
           name: ack2007-frozen-fixture-results
