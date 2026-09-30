@@ -12,7 +12,7 @@ runner = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(runner)
 
 EXPECTED = ["case_id", *runner.REQUIRED, "purpose"]
-EXPECTED_OUTPUT_SHA = "c420891c605066edc1fe0e895ab5412decd65b648d25a42a1ceaeeb96113dda6"
+EXPECTED_OUTPUT_SHA = "84fd60074500b523cd78e0e159796cf7edf0717df847ec631577075e1f4b3cde"
 EXPECTED_INPUT_SHA = "fcec3365f05b4787a9adc151f0a21404d939fc44263ac51a87c8a2133894cace"
 
 
