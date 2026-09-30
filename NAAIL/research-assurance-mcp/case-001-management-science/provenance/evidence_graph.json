@@ -1,0 +1,64 @@
+{
+  "case_id": "MNSC-2023-4670",
+  "nodes": [
+    {
+      "id": "PAPER",
+      "type": "paper",
+      "doi": "10.1287/mnsc.2023.4670"
+    },
+    {
+      "id": "CODE_MAIN",
+      "type": "stata_code",
+      "path": "1_code/c_2a_run_regressions_main.do"
+    },
+    {
+      "id": "CODE_APPX",
+      "type": "stata_code",
+      "path": "1_code/c_2b_run_regressions_appendix.do"
+    },
+    {
+      "id": "DATA_REG",
+      "type": "intermediate_data",
+      "path": "2_pipeline/c_1_generate_variables/out/regression_data.dta",
+      "availability": "generated/not_public"
+    },
+    {
+      "id": "RAW_WRDS",
+      "type": "licensed_data",
+      "availability": "restricted"
+    },
+    {
+      "id": "LOGS",
+      "type": "computational_logs",
+      "expected_path": "3_output/logs",
+      "availability": "not_observed_in_current_public_tree"
+    }
+  ],
+  "edges": [
+    {
+      "from": "RAW_WRDS",
+      "to": "DATA_REG",
+      "relation": "transformed_into"
+    },
+    {
+      "from": "DATA_REG",
+      "to": "CODE_MAIN",
+      "relation": "input_to"
+    },
+    {
+      "from": "CODE_MAIN",
+      "to": "PAPER",
+      "relation": "generates_main_tables"
+    },
+    {
+      "from": "CODE_APPX",
+      "to": "PAPER",
+      "relation": "generates_appendix_tables"
+    }
+  ],
+  "assurance": {
+    "structural_provenance": "CONSISTENT",
+    "numerical_reproduction": "PARTIAL",
+    "human_review_required": true
+  }
+}
