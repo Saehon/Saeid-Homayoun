@@ -1,0 +1,13 @@
+{
+  "case": "MNSC-2023-4670",
+  "benchmark": "E01-E10 deterministic synthetic unit benchmark",
+  "synthetic": true,
+  "n_mutations": 10,
+  "expected_result": {
+    "macro_precision": 1,
+    "macro_recall": 1,
+    "false_positive_rate": 0
+  },
+  "interpretation": "If implementation matches contracts, each single controlled mutation is exactly detected.",
+  "caveat": "This is an engineering unit test with known mutations. It is not an empirical estimate of NAAIL accuracy on real research packages."
+}
