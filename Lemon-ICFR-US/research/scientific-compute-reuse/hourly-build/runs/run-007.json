@@ -24,8 +24,8 @@
     "hourly-build/runs/run-007.json"
   ],
   "github_starting_head": "bce544d91af04d3caf678ac2763243a685c044d4",
-  "github_ending_head": null,
-  "github_commit": null,
+  "github_ending_head": "c073c725cac23a3c34cad423dfd9173cfa66786a",
+  "github_commit": "c073c725cac23a3c34cad423dfd9173cfa66786a",
   "tests": [
     "estimand alignment",
     "coefficient completeness",
@@ -46,14 +46,14 @@
     "continue M1 search"
   ],
   "drive_updates": [
-    "Run 007 pending append after GitHub persistence"
+    "Run 007 pending append to canonical Drive master log"
   ],
-  "github_readback": "NOT_VERIFIED",
+  "github_readback": "VERIFIED",
   "drive_readback": "NOT_VERIFIED",
   "engineering_status": "PARTIAL",
   "scientific_status": "PASS",
   "gate_status": "HOLD",
-  "dual_save_status": "BLOCKED",
+  "dual_save_status": "PARTIAL",
   "poc_v1_status": "M1 not frozen",
   "next_executable_task": "screen next FT50/ABS4 direct-MW candidate; formalize two-track architecture if exact public-only literature M1 is unavailable"
 }
