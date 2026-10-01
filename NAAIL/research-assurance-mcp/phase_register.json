@@ -1,0 +1,127 @@
+{
+  "project": "NAAIL Research Assurance MCP",
+  "mode": "ACCELERATED_POC_THEN_V1",
+  "hourly_packet_minutes": 15,
+  "schedule": "hourly",
+  "current_gate": "POC",
+  "current_baseline": {
+    "case_001_author_output_consistency": "VERIFIED",
+    "case_001_regression_cells": "264/264",
+    "case_001_full_reproduction": "PARTIAL",
+    "microsoft_sec_one_company": "COMPLETE"
+  },
+  "poc_tasks": [
+    {
+      "id": "P0",
+      "name": "Freeze Case 001",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "P1",
+      "name": "Error Taxonomy V2",
+      "status": "OPEN"
+    },
+    {
+      "id": "P2",
+      "name": "Adversarial Benchmark V2",
+      "status": "OPEN"
+    },
+    {
+      "id": "P3",
+      "name": "Evidence Graph V1",
+      "status": "OPEN"
+    },
+    {
+      "id": "P4",
+      "name": "Research Assurance Report V1",
+      "status": "OPEN"
+    },
+    {
+      "id": "P5",
+      "name": "Minimal MCP/API layer",
+      "status": "OPEN"
+    },
+    {
+      "id": "P6",
+      "name": "End-to-end Case 001 demo",
+      "status": "OPEN"
+    },
+    {
+      "id": "P7",
+      "name": "POC tests and QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "P8",
+      "name": "Freeze POC release",
+      "status": "OPEN"
+    }
+  ],
+  "v1_tasks": [
+    {
+      "id": "V1.1",
+      "name": "Select Cases 002-003",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.2",
+      "name": "Build case adapters and gold baselines",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.3",
+      "name": "Required multi-software support",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.4",
+      "name": "Blinded/compound benchmark set",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.5",
+      "name": "Human ground-truth protocol",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.6",
+      "name": "Pilot comparative evaluation",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.7",
+      "name": "Evidence Graph V2",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.8",
+      "name": "Journal Evidence Library V1",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.9",
+      "name": "Researcher pre-flight workflow",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.10",
+      "name": "Security/governance baseline",
+      "status": "WAITING_FOR_POC"
+    },
+    {
+      "id": "V1.11",
+      "name": "V1 QA and release candidate",
+      "status": "WAITING_FOR_POC"
+    }
+  ],
+  "governance": [
+    "immutable originals",
+    "derived patches only",
+    "no fabricated evidence",
+    "missing evidence never PASS",
+    "separate synthetic/author/independent evidence",
+    "author-output consistency != independent reproduction",
+    "computational correctness != methodological validity",
+    "no protected-main merge without explicit authorization"
+  ]
+}
