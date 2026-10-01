@@ -1,0 +1,50 @@
+{
+  "case_id": "MNSC-2023-4670",
+  "verification_version": "0.1",
+  "scope": "Author-output consistency, not full reproduction",
+  "sources": {
+    "article": "EBSCO-FullText-2026-10-01.pdf",
+    "stata_main_log": "3_output/logs/c_2a_run_regressions_main.smcl",
+    "python_table1c": "1_code/c_3_generate_narrative_statistics.ipynb",
+    "stata_code": "1_code/c_2a_run_regressions_main.do"
+  },
+  "regression_cells": {
+    "cells_checked": 264,
+    "cells_matched": 264,
+    "match_rate": 1,
+    "coverage": [
+      "2B",
+      "2C",
+      "3A",
+      "3B",
+      "4A",
+      "4B",
+      "4C",
+      "5B",
+      "5C",
+      "5D"
+    ],
+    "basis": "published precision/tolerance"
+  },
+  "descriptive_panels": {
+    "Table 1A": "CONSISTENT",
+    "Table 1B": "CONSISTENT",
+    "Table 1C": "CONSISTENT (stored Python notebook output)",
+    "Table 2A": "CONSISTENT",
+    "Table 2D": "CONSISTENT",
+    "Table 4D": "CONSISTENT",
+    "Table 5A": "CONSISTENT"
+  },
+  "assurance_state": {
+    "structural_mapping": "VERIFIED",
+    "author_output_consistency": "VERIFIED",
+    "full_reproduction": "PARTIAL",
+    "methodological_validity": "HUMAN_REVIEW"
+  },
+  "important_correction": "Expected Stata/SAS logs are present in the uploaded replication package under 3_output/logs.",
+  "limitations": [
+    "Author-output consistency is not independent raw-data reproduction.",
+    "Table 1C is checked against stored Python notebook outputs.",
+    "Computational consistency does not establish methodological validity."
+  ]
+}
