@@ -1,0 +1,54 @@
+{
+  "case_id": "MNSC-2023-4670",
+  "proof_id": "SEC-ONE-COMPANY-MSFT-FINAL",
+  "company": {
+    "name": "Microsoft Corporation",
+    "ticker": "MSFT",
+    "cik": "0000789019"
+  },
+  "scope": "One-company public-SEC reconstruction of core timeliness constructs",
+  "status": "COMPLETE_WITHIN_ONE_COMPANY_SCOPE",
+  "constructs": {
+    "filing_lag": "filing date minus period end",
+    "late_filer": "0 for all 10 observations; every filing lag is below even the shortest standard Exchange Act deadline applicable to 10-Q/10-K filers",
+    "post": "1 for 2020 onward",
+    "covid_presence": "binary presence of covid/corona in SEC filing text; 2019 matched filings=0, 2020-Q2 2021 matched filings=1"
+  },
+  "matched_changes_days": {
+    "Q1-2020_vs_Q1-2019": 5,
+    "Q2-2020_vs_Q2-2019": -2,
+    "Q3-2020_vs_Q3-2019": 4,
+    "Q4-2020_vs_Q4-2019": -3,
+    "Q1-2021_vs_Q1-2019": 3,
+    "Q2-2021_vs_Q2-2019": -3
+  },
+  "summary": {
+    "n_filings": 10,
+    "n_late_filings": 0,
+    "mean_2019_filing_lag_days": 27,
+    "post_period_changes_days": [
+      5,
+      -2,
+      4,
+      -3,
+      3,
+      -3
+    ],
+    "covid_presence_2019": 0,
+    "covid_presence_post": 1
+  },
+  "assurance_state": {
+    "sec_filing_dates_and_periods": "VERIFIED",
+    "filing_lag_calculation": "VERIFIED",
+    "same_quarter_change_calculation": "VERIFIED",
+    "late_filer_one_company": "VERIFIED",
+    "covid_presence_binary": "VERIFIED",
+    "full_paper_replication": "OUT_OF_SCOPE_FOR_ONE_COMPANY_CASE",
+    "methodological_generalization": "NOT_CLAIMED"
+  },
+  "limitations": [
+    "One company cannot reproduce the paper's cross-sectional regressions or population-level inference.",
+    "Audit Analytics, IBES, and proprietary variables are not reconstructed.",
+    "COVID presence is binary here; exact section-level counts/FOG/risk-header counts are not claimed as independently reproduced."
+  ]
+}
