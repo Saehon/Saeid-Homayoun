@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "run_path_pattern": "hourly-build/runs/YYYY-MM-DD/HHMM_<gate>_<task>.md",
+  "required_fields": [
+    "START_TIME",
+    "END_TIME",
+    "DURATION",
+    "delivery_gate",
+    "task_phase",
+    "starting_git_head",
+    "ending_git_head",
+    "open_work_considered",
+    "open_blockers_considered",
+    "work_attempted",
+    "work_completed",
+    "evidence_produced",
+    "files_changed",
+    "commits",
+    "tests_ci",
+    "drive_updates",
+    "new_blockers",
+    "blocker_disposition",
+    "next_executable_task",
+    "status",
+    "DUAL_SAVE_STATUS"
+  ],
+  "dual_save": {
+    "github": "required",
+    "google_drive": "required",
+    "verification": "readback required",
+    "on_failure": "record as OPEN BLOCKER and retry in next run while continuing executable work"
+  },
+  "fail_forward": true
+}
