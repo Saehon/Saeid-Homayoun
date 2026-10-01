@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "name": "NAAIL Research Assurance POC tool contract",
+  "tools": [
+    {
+      "name": "inspect_package",
+      "purpose": "inventory supplied research artifacts"
+    },
+    {
+      "name": "map_table_to_code",
+      "purpose": "trace table or figure evidence to code"
+    },
+    {
+      "name": "compare_reported_result",
+      "purpose": "compare reported and regenerated numeric values within declared tolerance"
+    },
+    {
+      "name": "trace_provenance",
+      "purpose": "trace evidence lineage through the evidence graph"
+    },
+    {
+      "name": "score_detection",
+      "purpose": "score benchmark taxonomy detection"
+    },
+    {
+      "name": "generate_assurance_report",
+      "purpose": "summarize scoped assurance states from evidence"
+    }
+  ],
+  "assurance_states": [
+    "VERIFIED",
+    "CONSISTENT",
+    "PARTIAL",
+    "FLAGGED",
+    "HUMAN_REVIEW"
+  ],
+  "rules": [
+    "Missing evidence cannot become VERIFIED.",
+    "CONSISTENT is not independent reproduction.",
+    "Methodological validity is not inferred from computational consistency.",
+    "Restricted data are not bypassed."
+  ]
+}
