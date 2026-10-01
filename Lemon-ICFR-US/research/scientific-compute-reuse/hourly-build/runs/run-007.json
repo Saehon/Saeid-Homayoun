@@ -1,0 +1,59 @@
+{
+  "start_time": "2026-10-01T18:03:15+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Navarro-Velez et al. (2026) I-score and Calvin (2024)",
+  "journal": "International Journal of Auditing",
+  "journal_tier": "UNCLASSIFIED",
+  "phase": "benchmark feasibility screening",
+  "work_attempted": [
+    "screen direct MW predictor",
+    "screen account-risk companion"
+  ],
+  "work_completed": [
+    "I-score confirmed as direct MW-likelihood model",
+    "paid third-party data dependency confirmed",
+    "Calvin 2024 assigned to account-risk companion role"
+  ],
+  "evidence": [
+    "DOI 10.1111/ijau.70042",
+    "DOI 10.1111/ijau.12329"
+  ],
+  "changed_files": [
+    "benchmark-candidates/navarro-velez-2026-iscore.json",
+    "hourly-build/runs/run-007.json"
+  ],
+  "github_starting_head": "bce544d91af04d3caf678ac2763243a685c044d4",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "estimand alignment",
+    "coefficient completeness",
+    "public-data feasibility"
+  ],
+  "ci_status": "not re-run; provenance artifacts only",
+  "codex_status": "NOT_REQUESTED",
+  "blockers": [
+    "I-score coefficient vector not obtained from accessible publisher text; paid third-party data required",
+    "Calvin depends on Audit Analytics and Compustat"
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "retain I-score for model bank",
+    "retain Calvin for account-risk module",
+    "continue M1 search"
+  ],
+  "drive_updates": [
+    "Run 007 pending append after GitHub persistence"
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "M1 not frozen",
+  "next_executable_task": "screen next FT50/ABS4 direct-MW candidate; formalize two-track architecture if exact public-only literature M1 is unavailable"
+}
