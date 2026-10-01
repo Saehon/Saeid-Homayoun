@@ -1,0 +1,87 @@
+{
+  "candidate_id": "PILOT-COMPILER-001",
+  "paper": {
+    "authors": [
+      "Ed deHaan",
+      "Ties de Kok",
+      "Dawn Matsumoto",
+      "Edgar Rodriguez-Vazquez"
+    ],
+    "title": "How Resilient Are Firms’ Financial Reporting Processes?",
+    "journal": "Management Science",
+    "year": 2023,
+    "volume": 69,
+    "issue": 4,
+    "pages": "2536–2545",
+    "doi": "10.1287/mnsc.2023.4670",
+    "journal_tier": "FT50"
+  },
+  "role_decision": {
+    "compiler_control": "PASS",
+    "icfr_m1_benchmark": "NO",
+    "first_one_company_public_data_poc": "HOLD",
+    "reason": "The public repository supplies an unusually strong paper-to-code-to-results pipeline, but the full empirical replication requires WRDS-licensed datasets and an author-provided SPAC dataset. It is therefore suitable for validating LEMON-SCI's scientific-compute compiler architecture, not for freezing a public-data-only one-company ICFR M1 benchmark."
+  },
+  "verified_package": {
+    "repository": "https://github.com/TiesdeKok/mnsc.2023.4670",
+    "code_languages": [
+      "Python",
+      "SAS",
+      "Stata"
+    ],
+    "pipeline_structure": [
+      "0_data/external",
+      "1_code",
+      "2_pipeline",
+      "3_output"
+    ],
+    "reported_execution_order": [
+      "a_1_generate_filing_dataset.ipynb",
+      "a_2_identify_exemption_filers.ipynb",
+      "a_3_download_filing_deadlines.ipynb",
+      "a_4_calculate_calendar_bias.ipynb",
+      "a_5_calculate_auditor_variables.ipynb",
+      "a_6a_download_raw_filings.ipynb",
+      "a_6b_parse_filings.ipynb",
+      "a_6c_calculate_text_metrics.ipynb",
+      "b_1_download_wrds_data.sas",
+      "b_2_process_data.sas",
+      "c_1_generate_variables.do",
+      "c_2a_run_regressions_main.do",
+      "c_2b_run_regressions_appendix.do",
+      "c_2c_run_regressions_appendix_2018_vs_2019.do",
+      "c_3_generate_narrative_statistics.ipynb",
+      "c_4_calculate_calendar_bias_for_sample.ipynb"
+    ]
+  },
+  "data_gate": {
+    "public_or_sec_native_components": [
+      "SEC 10-K/10-Q filing dates and filing text are conceptually public and the package includes code paths for filing acquisition/parsing."
+    ],
+    "nonpublic_or_licensed_dependencies": [
+      "WRDS",
+      "Compustat",
+      "CRSP",
+      "Audit Analytics",
+      "WRDS SEC Analytics Suite",
+      "IBES",
+      "WRDS Linking Tables",
+      "Compustat Snapshot",
+      "Thomson-Reuters 13F",
+      "author-provided SPAC dataset"
+    ],
+    "exact_full_replication_public_only": false
+  },
+  "darwin": {
+    "define": "Find the next executable FT50 benchmark after DGM2007 failed the public-data freeze gate.",
+    "alternatives": [
+      "Rice & Weber (2012) direct ICFR disclosure model",
+      "deHaan et al. (2023) public replication package"
+    ],
+    "retrieve_replicate": "Public deHaan package and paper metadata verified; package exposes code, pipeline, variable dictionary, and execution order.",
+    "whole_system_dependencies": "Full paper reproduction depends on licensed/proprietary inputs despite public code.",
+    "invalidate_falsify": "Public code alone is insufficient to claim end-to-end empirical replication or a public-data-only one-company POC.",
+    "next_evolution": "Admit deHaan as compiler-control benchmark; continue direct ICFR benchmark search with Rice & Weber primary-table extraction."
+  },
+  "status": "COMPILER_CONTROL_PASS__ICFR_M1_NO__PUBLIC_ONLY_POC_HOLD"
+}
