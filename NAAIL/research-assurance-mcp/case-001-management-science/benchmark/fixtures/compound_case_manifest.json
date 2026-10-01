@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "fixture": "CASE001-T4B-SYNTHETIC-001",
+  "mutations": [
+    "E01",
+    "E02",
+    "E05",
+    "E07",
+    "E08"
+  ],
+  "expected_detection": [
+    "E01",
+    "E02",
+    "E05",
+    "E07",
+    "E08"
+  ],
+  "observed_detection": [
+    "E01",
+    "E02",
+    "E05",
+    "E07",
+    "E08"
+  ],
+  "status": "PASS"
+}
