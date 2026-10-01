@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "benchmark_candidate_id": "DGM2007_JAE_MW_LOGIT_COL1",
+  "status": "SCIENTIFIC_HOLD",
+  "freeze_status": "NOT_FROZEN",
+  "reason": "Published Table 5 Column 1 coefficients are available for named predictors, but the published specification includes 16 industry indicators whose coefficients are not tabulated. Several required inputs are also sourced from non-public/proprietary datasets. Exact one-company SEC/public-data execution would therefore require unsupported substitutions or omitted coefficients.",
+  "citation": {
+    "authors": [
+      "Jeffrey Doyle",
+      "Weili Ge",
+      "Sarah McVay"
+    ],
+    "year": 2007,
+    "title": "Determinants of weaknesses in internal control over financial reporting",
+    "journal": "Journal of Accounting and Economics",
+    "volume": 44,
+    "pages": "193-223",
+    "doi": "10.1016/j.jacceco.2006.10.003",
+    "source_archive_drive_id": "14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g",
+    "primary_pdf_filename": "Determinants-of-weaknesses-in-internal-control-_2007_Journal-of-Accounting-a.pdf"
+  },
+  "journal_tier": "FT50",
+  "estimand": "Probability that a firm disclosed a material weakness in internal control over financial reporting",
+  "estimator": "logistic regression",
+  "dependent_variable": {
+    "name": "MW",
+    "definition": "1 if the firm disclosed a material weakness in internal control from August 2002 to August 2005; 0 for control firms"
+  },
+  "selected_specification": "Table 5 Column 1",
+  "preprocessing": [
+    "Continuous variables winsorized at 1% and 99%",
+    "16 industry indicator variables included"
+  ],
+  "coefficients": {
+    "intercept": -2.182,
+    "MARKETCAP": -0.08,
+    "FIRM_AGE": -0.136,
+    "AGGREGATE_LOSSES": 0.438,
+    "SPEs": 0.161,
+    "SEGMENTS": 0.269,
+    "FOREIGN_TRANSACTIONS": 0.311,
+    "ACQUISITION_VALUE": 0.763,
+    "EXTREME_SALES_GROWTH": 0.227,
+    "RESTRUCTURING_CHARGE": 1.184
+  },
+  "omitted_from_column_1": [
+    "BANKRUPTCY_RISK",
+    "GOVERNANCE_SCORE"
+  ],
+  "provenance": {
+    "equation": "Equation (1), article p. 210 in PDF pagination",
+    "variable_definitions": "Table 1",
+    "coefficients": "Table 5 Column 1",
+    "industry_mapping": "Footnote 25",
+    "industry_coefficients": "NOT_TABULATED"
+  },
+  "public_data_feasibility": {
+    "MARKETCAP": {
+      "paper_source": "market value of equity",
+      "public_sec_path": "PARTIAL: shares/equity facts do not provide a point-in-time market price; external market-price source needed for faithful market capitalization",
+      "status": "PARTIAL"
+    },
+    "FIRM_AGE": {
+      "paper_source": "CRSP price-history years",
+      "public_sec_path": "Possible proxy from SEC filing history, but not definition-equivalent",
+      "status": "HOLD"
+    },
+    "AGGREGATE_LOSSES": {
+      "paper_source": "earnings before extraordinary items t and t-1",
+      "public_sec_path": "Potentially reconstructable from SEC financial facts with definition mapping",
+      "status": "PARTIAL"
+    },
+    "SPEs": {
+      "paper_source": "special-purpose-entity data supplied by Feng, Gramlich and Gupta",
+      "public_sec_path": "No verified structured SEC equivalent established",
+      "status": "DEPENDENCY_CRITICAL"
+    },
+    "SEGMENTS": {
+      "paper_source": "Compustat Segments operating + geographic segment counts",
+      "public_sec_path": "Potential EDGAR segment-note/XBRL extraction, but definition-equivalence requires validation",
+      "status": "PARTIAL"
+    },
+    "FOREIGN_TRANSACTIONS": {
+      "paper_source": "non-zero foreign currency translation Compustat item 150",
+      "public_sec_path": "Potential XBRL mapping requires validation",
+      "status": "PARTIAL"
+    },
+    "ACQUISITION_VALUE": {
+      "paper_source": "SDC Platinum acquisitions >=50% ownership, years t and t-1",
+      "public_sec_path": "No verified complete SEC-only transaction database equivalent",
+      "status": "DEPENDENCY_CRITICAL"
+    },
+    "EXTREME_SALES_GROWTH": {
+      "paper_source": "top quintile of industry-adjusted year-over-year sales growth",
+      "public_sec_path": "SEC facts can supply sales but requires a cross-sectional industry universe",
+      "status": "PARTIAL"
+    },
+    "RESTRUCTURING_CHARGE": {
+      "paper_source": "Compustat restructuring charges t and t-1",
+      "public_sec_path": "Potential XBRL mapping requires validation",
+      "status": "PARTIAL"
+    },
+    "INDUSTRY_EFFECTS": {
+      "paper_source": "16 SIC-based indicators included",
+      "public_sec_path": "SIC mapping is public, but fitted coefficients are not tabulated",
+      "status": "DEPENDENCY_CRITICAL"
+    }
+  },
+  "reproducibility_gate": {
+    "exact_published_probability_from_public_data": "FAIL",
+    "engineering_reimplementation_of_tabulated_core": "POSSIBLE",
+    "admissible_as_frozen_first_benchmark": false
+  },
+  "next_action": "Do not freeze DGM2007. Preserve it as a high-quality scientific reference/candidate. Screen the next-ranked ICFR paper for a fully tabulated executable specification with inputs that can be obtained or definition-equivalently reconstructed from SEC/public sources."
+}
