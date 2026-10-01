@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Saehon/Saeid-Homayoun/blob/feature/lemon-scientific-compute-reuse/Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/hourly-run.schema.json",
+  "title": "LEMON-SCI Hourly Run Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "start_time",
+    "end_time",
+    "duration",
+    "paper_or_model",
+    "journal",
+    "journal_tier",
+    "phase",
+    "work_attempted",
+    "work_completed",
+    "evidence",
+    "changed_files",
+    "github_starting_head",
+    "github_ending_head",
+    "github_commit",
+    "tests",
+    "ci_status",
+    "codex_status",
+    "blockers",
+    "blocker_class",
+    "open_repair_queue_changes",
+    "drive_updates",
+    "github_readback",
+    "drive_readback",
+    "engineering_status",
+    "scientific_status",
+    "gate_status",
+    "dual_save_status",
+    "poc_v1_status",
+    "next_executable_task"
+  ],
+  "properties": {
+    "start_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "end_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "duration": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "paper_or_model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "journal": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "journal_tier": {
+      "enum": [
+        "FT50",
+        "ABS4",
+        "ABS3",
+        "ABS2",
+        "ABS1",
+        "UNCLASSIFIED",
+        "NOT_APPLICABLE",
+        null
+      ]
+    },
+    "phase": {
+      "type": "string"
+    },
+    "work_attempted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "work_completed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "changed_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "github_starting_head": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "github_ending_head": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "github_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ci_status": {
+      "type": "string"
+    },
+    "codex_status": {
+      "enum": [
+        "REVIEWED",
+        "FINDINGS_OPEN",
+        "PENDING",
+        "UNAVAILABLE",
+        "NOT_REQUESTED"
+      ]
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocker_class": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "LOCAL",
+          "DEPENDENCY_CRITICAL"
+        ]
+      }
+    },
+    "open_repair_queue_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "drive_updates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "github_readback": {
+      "enum": [
+        "VERIFIED",
+        "FAILED",
+        "NOT_VERIFIED"
+      ]
+    },
+    "drive_readback": {
+      "enum": [
+        "VERIFIED",
+        "FAILED",
+        "NOT_VERIFIED"
+      ]
+    },
+    "engineering_status": {
+      "enum": [
+        "PASS",
+        "PARTIAL",
+        "HOLD",
+        "BLOCKED"
+      ]
+    },
+    "scientific_status": {
+      "enum": [
+        "PASS",
+        "PARTIAL",
+        "HOLD",
+        "BLOCKED"
+      ]
+    },
+    "gate_status": {
+      "enum": [
+        "PASS",
+        "PARTIAL",
+        "HOLD",
+        "BLOCKED"
+      ]
+    },
+    "dual_save_status": {
+      "enum": [
+        "PASS",
+        "PARTIAL",
+        "BLOCKED"
+      ]
+    },
+    "poc_v1_status": {
+      "type": "string"
+    },
+    "next_executable_task": {
+      "type": "string"
+    }
+  }
+}
