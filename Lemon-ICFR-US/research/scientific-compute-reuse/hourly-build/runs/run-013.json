@@ -1,0 +1,63 @@
+{
+  "start_time": "2026-10-02T00:03:34+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "LEMON-SCI Track B SEC-native POC / Run 012 repair",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "Repair sweep + Track B provenance-first preparation",
+  "work_attempted": [
+    "Verify PR/branch/HEAD/CI state",
+    "Read canonical schema and GitHub master log",
+    "Read Run 012 machine record",
+    "Attempt append-only GitHub master-log corrective follow-up"
+  ],
+  "work_completed": [
+    "Verified PR #76 remains open on authorized branch at 45642fd25e67add2f5c560c6a79df670a531451c",
+    "Verified no commit status contexts and no workflow runs were returned for current HEAD",
+    "Confirmed Run 012 machine record exists and documents the Track B EXACT/PROXY/UNAVAILABLE firewall",
+    "Attempted required GitHub master-log append; connector safety control blocked the write"
+  ],
+  "evidence": [
+    "PR #76 head_sha=45642fd25e67add2f5c560c6a79df670a531451c",
+    "hourly-run.schema.json readback",
+    "hourly-build-log.md readback",
+    "run-012.json readback",
+    "canonical Drive master document revision readback"
+  ],
+  "changed_files": [],
+  "github_starting_head": "45642fd25e67add2f5c560c6a79df670a531451c",
+  "github_ending_head": "45642fd25e67add2f5c560c6a79df670a531451c",
+  "github_commit": null,
+  "tests": [
+    "PR/branch identity check",
+    "commit-status check: zero contexts",
+    "workflow-run check: zero runs",
+    "schema readback",
+    "Run 012 readback"
+  ],
+  "ci_status": "No commit-status contexts and no workflow runs returned for current HEAD; no CI PASS claimed.",
+  "codex_status": "NOT_REQUESTED",
+  "blockers": [
+    "Required GitHub append-only master-log write blocked by connector safety control",
+    "GKM2017 primary PDF remains unavailable for exact Track-A definition lock"
+  ],
+  "blocker_class": [
+    "LOCAL",
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "Retain GitHub master-log append as OPEN LOCAL repair with exact future action: retry append-only corrective follow-up without rewriting prior records",
+    "Retain GKM2017 primary-PDF recovery as DEPENDENCY_CRITICAL for Track A only",
+    "Advance Track B independently after logging attempt per progress-first rule"
+  ],
+  "drive_updates": [],
+  "github_readback": "VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Build the first real-issuer SEC provenance input object for Track B, testing schema, provenance, temporal leakage and determinism only; do not generate a pseudo-GKM2017 probability."
+}
