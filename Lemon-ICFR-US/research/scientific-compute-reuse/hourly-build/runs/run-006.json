@@ -1,0 +1,60 @@
+{
+  "start_time": "2026-10-01T16:55:47+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Ashbaugh-Skaife, Collins & Kinney (2007) — discovery/reporting of internal control deficiencies",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "benchmark feasibility screening",
+  "work_attempted": [
+    "verify current PR/branch/HEAD and prior run state",
+    "verify publication identity/estimand",
+    "test whether exact coefficient vector and public-only one-company inputs are presently available",
+    "preserve estimand separation from MW-existence models"
+  ],
+  "work_completed": [
+    "verified DOI 10.1016/j.jacceco.2006.10.001 and JAE 44(1-2):166-192",
+    "verified estimand is pre-SOX-404 ICD discovery/reporting rather than pure MW existence",
+    "confirmed model concept uses both economic exposure and management discovery/reporting incentives",
+    "did not freeze M1 because complete primary fitted coefficient/intercept vector was not obtained in this run and several incentive inputs require historical/non-SEC sources"
+  ],
+  "evidence": [
+    "PR #76 starting HEAD 1aaa3e370ae2df2a296b43674ceffafae307af2d",
+    "EconPapers/Elsevier bibliographic record DOI 10.1016/j.jacceco.2006.10.001",
+    "published abstract reports complexity, organizational change, accounting risk, resources, auditor resignation, SEC enforcement, restatements, dominant auditor and institutional ownership determinants"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-006.json"
+  ],
+  "github_starting_head": "1aaa3e370ae2df2a296b43674ceffafae307af2d",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "publication identity check",
+    "estimand-alignment test",
+    "coefficient-completeness gate",
+    "public-data feasibility gate"
+  ],
+  "ci_status": "not re-run; run artifact only",
+  "codex_status": "NOT_REQUESTED",
+  "blockers": [
+    "complete primary fitted coefficient/intercept vector not obtained in this run",
+    "historical SEC enforcement/restatement/institutional-ownership and auditor-resignation constructs prevent a clean SEC-only one-company execution without additional sourced data"
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "retain exact primary-table extraction for Ashbaugh-Skaife et al. (2007) as quarantined benchmark repair item",
+    "continue search for an FT50/ABS4 direct-ICFR benchmark with fully reported coefficients and public-reconstructible inputs"
+  ],
+  "drive_updates": [],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "direct ICFR executable benchmark not yet frozen",
+  "next_executable_task": "Screen the next direct-ICFR FT50/ABS4 candidate for a complete coefficient vector and SEC/public-only one-company feasibility; prioritize a model whose dependent variable and all fitted inputs are definition-equivalently reconstructible."
+}
