@@ -1,0 +1,253 @@
+{
+  "schema_version": "2.0.0",
+  "title": "NAAIL Research Assurance Error Taxonomy V2",
+  "purpose": "Machine-readable classification for research-assurance findings and adversarial benchmark mutations. Classification does not itself imply methodological invalidity; severity and assurance_state are evaluated separately.",
+  "assurance_states": [
+    "VERIFIED",
+    "CONSISTENT",
+    "PARTIAL",
+    "FLAGGED",
+    "HUMAN_REVIEW"
+  ],
+  "evidence_classes": [
+    "AUTHOR_PROVIDED",
+    "PUBLIC_SOURCE_RECONSTRUCTED",
+    "INDEPENDENTLY_REGENERATED",
+    "SYNTHETIC_MUTATION"
+  ],
+  "severity_levels": [
+    "INFO",
+    "LOW",
+    "MODERATE",
+    "HIGH",
+    "CRITICAL"
+  ],
+  "dimensions": [
+    {
+      "id": "RPT",
+      "name": "Reporting",
+      "definition": "Mismatch or omission in reported manuscript/table/figure content relative to available evidence.",
+      "errors": [
+        {
+          "id": "RPT-01",
+          "name": "Numeric transcription mismatch",
+          "detectability": "deterministic",
+          "benchmarkable": true
+        },
+        {
+          "id": "RPT-02",
+          "name": "Table/figure label mismatch",
+          "detectability": "deterministic",
+          "benchmarkable": true
+        },
+        {
+          "id": "RPT-03",
+          "name": "Significance/uncertainty misstatement",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "RPT-04",
+          "name": "Unsupported narrative claim",
+          "detectability": "judgment",
+          "benchmarkable": true
+        }
+      ]
+    },
+    {
+      "id": "SPC",
+      "name": "Specification",
+      "definition": "Implemented model differs from the stated or intended statistical specification.",
+      "errors": [
+        {
+          "id": "SPC-01",
+          "name": "Omitted control or fixed effect",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "SPC-02",
+          "name": "Wrong functional form/transformation",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "SPC-03",
+          "name": "Wrong sample/filter/window",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "SPC-04",
+          "name": "SE/clustering/inference mismatch",
+          "detectability": "mixed",
+          "benchmarkable": true
+        }
+      ]
+    },
+    {
+      "id": "DAT",
+      "name": "Data engineering",
+      "definition": "Error in source selection, extraction, cleaning, merge, timing, units, or variable construction.",
+      "errors": [
+        {
+          "id": "DAT-01",
+          "name": "Source/provenance mismatch",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "DAT-02",
+          "name": "Merge/key/cardinality error",
+          "detectability": "deterministic",
+          "benchmarkable": true
+        },
+        {
+          "id": "DAT-03",
+          "name": "Temporal alignment/look-ahead error",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "DAT-04",
+          "name": "Unit/scaling/currency error",
+          "detectability": "deterministic",
+          "benchmarkable": true
+        },
+        {
+          "id": "DAT-05",
+          "name": "Variable-construction mismatch",
+          "detectability": "mixed",
+          "benchmarkable": true
+        }
+      ]
+    },
+    {
+      "id": "IDN",
+      "name": "Identification",
+      "definition": "Research design does not support the causal or identifying interpretation claimed.",
+      "errors": [
+        {
+          "id": "IDN-01",
+          "name": "Treatment/control contamination",
+          "detectability": "judgment",
+          "benchmarkable": true
+        },
+        {
+          "id": "IDN-02",
+          "name": "Post-treatment/bad-control use",
+          "detectability": "judgment",
+          "benchmarkable": true
+        },
+        {
+          "id": "IDN-03",
+          "name": "Parallel-trends/identifying-assumption failure",
+          "detectability": "judgment",
+          "benchmarkable": true
+        },
+        {
+          "id": "IDN-04",
+          "name": "Leakage/target contamination",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "IDN-05",
+          "name": "Endogeneity/rival explanation not resolved",
+          "detectability": "judgment",
+          "benchmarkable": false
+        }
+      ]
+    },
+    {
+      "id": "INT",
+      "name": "Interpretation",
+      "definition": "Conclusion exceeds, reverses, or mischaracterizes what the estimated evidence supports.",
+      "errors": [
+        {
+          "id": "INT-01",
+          "name": "Association stated as causation",
+          "detectability": "judgment",
+          "benchmarkable": true
+        },
+        {
+          "id": "INT-02",
+          "name": "Economic magnitude misinterpreted",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "INT-03",
+          "name": "Population/external-validity overclaim",
+          "detectability": "judgment",
+          "benchmarkable": true
+        },
+        {
+          "id": "INT-04",
+          "name": "Null/non-significant result treated as proof of no effect",
+          "detectability": "judgment",
+          "benchmarkable": true
+        }
+      ]
+    },
+    {
+      "id": "REP",
+      "name": "Reproducibility",
+      "definition": "Package, environment, dependency, randomness, or execution evidence prevents faithful rerun or trace.",
+      "errors": [
+        {
+          "id": "REP-01",
+          "name": "Missing required artifact/dependency",
+          "detectability": "deterministic",
+          "benchmarkable": true
+        },
+        {
+          "id": "REP-02",
+          "name": "Version/environment drift",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "REP-03",
+          "name": "Non-deterministic seed/state not controlled",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "REP-04",
+          "name": "Code-output/table lineage break",
+          "detectability": "mixed",
+          "benchmarkable": true
+        },
+        {
+          "id": "REP-05",
+          "name": "Dynamic/hidden macro or external state",
+          "detectability": "mixed",
+          "benchmarkable": true
+        }
+      ]
+    }
+  ],
+  "finding_contract": {
+    "required": [
+      "finding_id",
+      "taxonomy_id",
+      "claim_or_object",
+      "evidence_refs",
+      "evidence_class",
+      "assurance_state",
+      "severity",
+      "detectability",
+      "rationale",
+      "human_review_required"
+    ],
+    "rules": [
+      "Missing evidence cannot map to VERIFIED.",
+      "CONSISTENT means available artifacts agree; it is not independent reproduction.",
+      "PARTIAL means only a declared subset of the required evidence chain is established.",
+      "FLAGGED denotes a supported anomaly/error signal, not automatic methodological invalidity.",
+      "HUMAN_REVIEW is mandatory for unresolved judgment-dependent findings.",
+      "Synthetic mutations must never be represented as author errors."
+    ]
+  }
+}
