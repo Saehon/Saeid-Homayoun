@@ -1,0 +1,19 @@
+{
+  "case_id": "MNSC-2023-4670",
+  "gate": "INDEPENDENT_REEXECUTION",
+  "attempt_date": "2026-10-01",
+  "status": "BLOCKED_BEFORE_DATA_CONSTRUCTION",
+  "interpretation": "Independent re-execution was initiated from the original uploaded replication ZIP. The run cannot proceed to data construction or estimation because required source data and proprietary runtimes are unavailable in the execution environment. This is not a failed reproduction result.",
+  "observed_environment": {"python":"3.13.5","conda":"NOT_INSTALLED","sas":"NOT_INSTALLED","stata":"NOT_INSTALLED"},
+  "required_environment": {"python":"3.9 (environment.yml)","sas":"9.4","stata":"17+"},
+  "missing_required_inputs": [
+    "0_data/external/wrds_all_10qk_filings_07022022.xlsx",
+    "0_data/external/spac_main.xlsx"
+  ],
+  "clean_run_findings": [
+    {"id":"R001","type":"INPUT_FILENAME_MISMATCH","severity":"HIGH","observed":"a_1_generate_filing_dataset.ipynb references wrds_all_10qk_filings_08132021.xlsx while README/placeholder specify wrds_all_10qk_filings_07022022.xlsx","status":"FLAGGED"},
+    {"id":"R002","type":"CLEAN_RUN_CACHE_CHECK_DEFECT","severity":"HIGH","observed":"if not speed_bypass_loc.exists:","expected":"if not speed_bypass_loc.exists():","status":"FLAGGED"},
+    {"id":"R003","type":"ENVIRONMENT_VERSION_DRIFT","severity":"MEDIUM","observed":"yaml.load(f) is incompatible with current PyYAML 6.x without Loader","status":"ENVIRONMENT_COMPATIBILITY"}
+  ],
+  "existing_verified_evidence":{"author_output_consistency":"VERIFIED","regression_cells_checked":264,"regression_cells_matched":264,"full_independent_reproduction":"NOT_YET_TESTABLE"}
+}
