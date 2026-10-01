@@ -1,0 +1,58 @@
+{
+  "start_time": "2026-10-01T15:58:52+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Rice & Weber (2012) — SOX 404 material-weakness disclosure model",
+  "journal": "Journal of Accounting Research",
+  "journal_tier": "FT50",
+  "phase": "benchmark feasibility screening",
+  "work_attempted": [
+    "verify current branch/HEAD and Drive state",
+    "verify primary publication identity and estimand",
+    "test coefficient completeness and public-only one-company feasibility",
+    "identify next candidate"
+  ],
+  "work_completed": [
+    "verified conditional disclosure estimand and publisher-reported directional determinants",
+    "determined exact published model cannot be frozen without complete primary coefficient vector",
+    "determined sample eligibility requires historical restatement/control-linkage evidence",
+    "advanced Ashbaugh-Skaife, Collins & Kinney (2007) as next direct-ICFR FT50 screen"
+  ],
+  "evidence": [
+    "Wiley publisher record DOI 10.1111/j.1475-679X.2011.00434.x",
+    "starting branch HEAD 9d63b124c9a009783dc1d7e148b4d671ce5a18ca"
+  ],
+  "changed_files": [],
+  "github_starting_head": "9d63b124c9a009783dc1d7e148b4d671ce5a18ca",
+  "github_ending_head": "9d63b124c9a009783dc1d7e148b4d671ce5a18ca",
+  "github_commit": null,
+  "tests": [
+    "primary-source identity check",
+    "estimand suitability test",
+    "coefficient completeness gate",
+    "public-data feasibility gate"
+  ],
+  "ci_status": "not re-run; no GitHub change persisted",
+  "codex_status": "NOT_REQUESTED",
+  "blockers": [
+    "GitHub create_file write blocked by connector safety checks",
+    "complete primary coefficient table not obtained in this run"
+  ],
+  "blocker_class": [
+    "LOCAL",
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "add GitHub Run 005 backfill",
+    "retain Rice-Weber exact-spec extraction as quarantined benchmark repair item"
+  ],
+  "drive_updates": [],
+  "github_readback": "FAILED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "direct ICFR executable benchmark not yet frozen",
+  "next_executable_task": "Screen Ashbaugh-Skaife, Collins & Kinney (2007) for complete executable coefficients and SEC/public-input feasibility."
+}
