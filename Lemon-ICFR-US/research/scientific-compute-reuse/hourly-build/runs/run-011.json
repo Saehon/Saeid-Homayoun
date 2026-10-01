@@ -1,0 +1,43 @@
+{
+  "START_TIME": "2026-10-01T22:00:02+02:00",
+  "END_TIME": "2026-10-01T22:14:00+02:00",
+  "DURATION": "approximately 14 minutes",
+  "PAPER_OR_MODEL": "Ge, Koester & McVay (2017) — public reconstruction contract / primary-source recovery",
+  "JOURNAL": "Journal of Accounting and Economics",
+  "JOURNAL_TIER": "FT50",
+  "PHASE": "primary-source recovery and definition-equivalence gate",
+  "WORK_ATTEMPTED": "Verify PR/branch/HEAD and Drive state; recover GKM2017 primary PDF from the specified source-article folder; preserve progress-first gate.",
+  "WORK_COMPLETED": "Verified PR #76 remains open on the authorized branch at HEAD fde5b705044c6950f7eac990bca0e7185f6c31f4. Queried the exact source folder ID and Drive-wide title/author variants. The specified source folder currently exposes only the hourly-log subfolder; no GKM2017 primary PDF was retrieved. Drive-wide author/title searches returned unrelated CAM and SOX files, not GKM2017. Therefore no Table 3 Panel C definitions, sample filters, or winsorization details were inferred. GKM2017 remains Track A PASS_CANDIDATE but definition-equivalence HOLD.",
+  "EVIDENCE": [
+    "GitHub branch API HEAD fde5b705044c6950f7eac990bca0e7185f6c31f4",
+    "PR #76 open with same head",
+    "Drive source-folder parent query returned only LEMON-SCI — Hourly Build Logs",
+    "Drive searches for 'Ge Koester McVay 2017', 'Koester McVay', and article-title terms did not retrieve the GKM2017 primary PDF"
+  ],
+  "CHANGED_FILES": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-011.json"
+  ],
+  "GITHUB_STARTING_HEAD": "fde5b705044c6950f7eac990bca0e7185f6c31f4",
+  "GITHUB_ENDING_HEAD": "PENDING_SAVE",
+  "GITHUB_COMMIT": "PENDING_SAVE",
+  "TESTS": [
+    "branch/PR state verification",
+    "source-folder exact-parent retrieval",
+    "Drive-wide title/author retrieval",
+    "anti-fabrication definition-equivalence gate"
+  ],
+  "CI_STATUS": "PR mergeable_state=dirty; no exact-head CI success independently verified in this run",
+  "CODEX_STATUS": "NOT_REQUESTED",
+  "BLOCKERS": "GKM2017 primary PDF is not currently retrievable from the specified source folder or Drive-wide author/title searches; exact Table 3 Panel C definitions/sample/preprocessing remain unavailable.",
+  "BLOCKER_CLASS": "DEPENDENCY_CRITICAL for exact definition-equivalence freeze of GKM2017; LOCAL for project",
+  "OPEN_REPAIR_QUEUE_CHANGES": "Retain GKM2017 primary-PDF recovery; add verification that source article folder ID currently exposes only hourly-log subfolder; continue independent Track B SEC-native contract work next.",
+  "DRIVE_UPDATES": "PENDING",
+  "GITHUB_READBACK": "PENDING",
+  "DRIVE_READBACK": "PENDING",
+  "ENGINEERING_STATUS": "PARTIAL",
+  "SCIENTIFIC_STATUS": "PASS — no unsupported definitions inferred",
+  "GATE_STATUS": "HOLD",
+  "DUAL_SAVE_STATUS": "PARTIAL",
+  "POC_V1_STATUS": "NOT_FROZEN",
+  "NEXT_EXECUTABLE_TASK": "Continue progress-first with Track B SEC-native variable contract using only independently verifiable SEC/public definitions; in parallel retain GKM2017 primary-PDF recovery as dependency-critical repair."
+}
