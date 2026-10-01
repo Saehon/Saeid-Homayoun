@@ -1,0 +1,65 @@
+{
+  "start_time": "2026-10-01T15:02:20+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "deHaan, de Kok, Matsumoto & Rodriguez-Vazquez (2023) / PILOT-COMPILER-001",
+  "journal": "Management Science",
+  "journal_tier": "FT50",
+  "phase": "next-benchmark screening after DGM2007 hold",
+  "work_attempted": [
+    "Verify current PR/HEAD/CI/Codex state",
+    "Screen next executable FT50 benchmark/control",
+    "Test public-data-only feasibility",
+    "Persist benchmark decision"
+  ],
+  "work_completed": [
+    "Verified PR #76 starting HEAD 01f72d893aaaff9ecba3223aa1371943fb3122c9",
+    "Verified public deHaan et al. replication package structure, execution order, variable dictionary, and dependencies",
+    "Classified deHaan et al. as COMPILER_CONTROL_PASS but ICFR_M1_NO and PUBLIC_ONLY_POC_HOLD",
+    "Kept Rice & Weber (2012) as next direct-ICFR primary-table extraction target"
+  ],
+  "evidence": [
+    "Management Science DOI 10.1287/mnsc.2023.4670",
+    "Public repository https://github.com/TiesdeKok/mnsc.2023.4670",
+    "Repository documents Python/SAS/Stata pipeline and lists WRDS/Compustat/CRSP/Audit Analytics/IBES/13F plus author-provided SPAC data dependencies",
+    "Canonical corpus already records deHaan et al. as PUBLIC_PACKAGE_VERIFIED / M1 candidate YES for compiler role"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/benchmarks/candidates/DEHAAN2023_MNSC_COMPILER_CONTROL.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-004.json"
+  ],
+  "github_starting_head": "01f72d893aaaff9ecba3223aa1371943fb3122c9",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Evidence/package-structure verification",
+    "Public-data dependency falsification",
+    "Role-separation gate: compiler control vs ICFR M1"
+  ],
+  "ci_status": "NO_COMMIT_STATUS_REPORTED_AT_STARTING_HEAD",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "Full deHaan empirical reproduction requires licensed/proprietary inputs; unsuitable as public-data-only one-company ICFR M1 benchmark",
+    "Existing Codex threads on retired ACK2007 remain open but are not on the active benchmark critical path"
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL",
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Add deHaan full-replication data-license dependency as non-blocking compiler-control limitation",
+    "Keep ACK2007 Codex findings historical/noncritical",
+    "Advance Rice & Weber (2012) exact primary-table extraction"
+  ],
+  "drive_updates": [
+    "Run 004 to be appended to canonical Drive master log after GitHub persistence"
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "PARTIAL",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "Benchmark role separation advanced; direct ICFR executable benchmark still not frozen.",
+  "next_executable_task": "Extract Rice & Weber (2012) exact regression table/column, estimator, coefficients/intercept, and variable definitions from the primary article; test each required input for SEC/public-data feasibility."
+}
