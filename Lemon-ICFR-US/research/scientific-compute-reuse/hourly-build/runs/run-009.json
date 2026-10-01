@@ -1,0 +1,33 @@
+{
+  "START_TIME": "2026-10-01T20:02:33+02:00",
+  "END_TIME": "not independently captured",
+  "DURATION": "not independently captured",
+  "PAPER_OR_MODEL": "Ge, Koester & McVay (2017) public reconstruction contract",
+  "JOURNAL": "Journal of Accounting and Economics",
+  "JOURNAL_TIER": "FT50",
+  "PHASE": "public reconstruction contract",
+  "WORK_ATTEMPTED": "Build nine-variable public reconstruction contract and assess exact-vs-SEC-native feasibility.",
+  "WORK_COMPLETED": "Contract covers AggLoss, Restate, Seg, Age, BankInd, Size, Cash, InstOwn, Prior404302; exact Track A retained; SEC-native Track B held pending definition-equivalence and population preprocessing.",
+  "EVIDENCE": "Primary-paper Equation [2]/Table 3 Panel C evidence from prior verified run; no intercept invented; population winsorization and Compustat-age dependencies preserved.",
+  "CHANGED_FILES": [
+    "hourly-build/runs/run-009.json"
+  ],
+  "GITHUB_STARTING_HEAD": "8c309e36b2cc6fa24a43c25468783db879fb41b9",
+  "GITHUB_ENDING_HEAD": "eedd08c0ebf4c6f22b0247e51837513cd7da433f",
+  "GITHUB_COMMIT": "eedd08c0ebf4c6f22b0247e51837513cd7da433f",
+  "TESTS": "Definition/dependency feasibility review",
+  "CI_STATUS": "not independently verified in Run 009",
+  "CODEX_STATUS": "NOT_REQUESTED",
+  "BLOCKERS": "Drive Run 009 append/readback not completed in Run 009.",
+  "BLOCKER_CLASS": "LOCAL",
+  "OPEN_REPAIR_QUEUE_CHANGES": "Backfill Run 009 GitHub record; Drive Run 009 remains repair item.",
+  "DRIVE_UPDATES": "not verified",
+  "GITHUB_READBACK": "pending after backfill",
+  "DRIVE_READBACK": "NOT_VERIFIED",
+  "ENGINEERING_STATUS": "PARTIAL",
+  "SCIENTIFIC_STATUS": "PASS",
+  "GATE_STATUS": "PARTIAL",
+  "DUAL_SAVE_STATUS": "PARTIAL",
+  "POC_V1_STATUS": "NOT_FROZEN",
+  "NEXT_EXECUTABLE_TASK": "Extract exact Table 3 Panel C definitions/sample filters/winsorization and build variable equivalence matrix."
+}
