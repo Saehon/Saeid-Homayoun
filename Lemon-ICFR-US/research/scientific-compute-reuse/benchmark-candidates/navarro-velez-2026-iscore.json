@@ -1,0 +1,42 @@
+{
+  "candidate_id": "NAVARRO_VELEZ_ET_AL_2026_ISCORE",
+  "title": "Predicting Internal Control Over Financial Reporting Quality",
+  "authors": [
+    "Patricia Navarro-Velez",
+    "Robin W. Roberts",
+    "Patrick Ryu",
+    "Dana Wallace"
+  ],
+  "journal": "International Journal of Auditing",
+  "year": 2026,
+  "doi": "10.1111/ijau.70042",
+  "journal_tier": "UNCLASSIFIED",
+  "estimand": "Firm-year likelihood of a material weakness in ICFR (I-score).",
+  "scientific_relevance": "PASS",
+  "direct_mw_prediction": true,
+  "evidence_verified": [
+    "Publisher abstract states I-score measures likely presence of a material weakness and predicts MWs and restatements.",
+    "Publisher data-availability statement says supporting data come from third-party providers and require paid subscriptions."
+  ],
+  "public_only_one_company_poc": "HOLD",
+  "exact_execution": "HOLD",
+  "blockers": [
+    "Full fitted model coefficient/intercept vector was not available in the accessible publisher text during this run.",
+    "Publisher explicitly states underlying data require paid third-party subscriptions."
+  ],
+  "decision": "Do not freeze as public-only M1; retain as high-priority scientific/model-bank benchmark and source for modern MW-prediction design.",
+  "companion_candidate": {
+    "id": "CALVIN_2024_ACCOUNT_RISK",
+    "title": "Where's the risk? Material weakness detection in advance of financial misstatement discovery",
+    "journal": "International Journal of Auditing",
+    "doi": "10.1111/ijau.12329",
+    "role": "ACCOUNT_LEVEL_RISK_BENCHMARK",
+    "decision": "Not M1. Preserve for account-level risk / audit-attention module because it explicitly distinguishes financial-statement and account-type risk.",
+    "verified_findings": [
+      "Income-statement MWs are detected in advance more often than balance-sheet MWs; cash-flow-statement MWs less often.",
+      "Revenue and asset areas show higher advance MW detection; equity and expense areas lower.",
+      "Research design depends on Audit Analytics and Compustat and therefore is not a clean SEC-only M1."
+    ]
+  },
+  "m1_search_rule_after_run": "Continue FT50/ABS4 search for a direct MW-existence model with a complete published coefficient vector and inputs reconstructible from public SEC data. If none exists, formally separate exact-literature benchmark from SEC-native public POC rather than silently substituting variables."
+}
