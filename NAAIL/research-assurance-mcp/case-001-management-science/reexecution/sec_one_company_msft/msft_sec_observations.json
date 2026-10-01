@@ -1,0 +1,56 @@
+{
+  "case_id": "MNSC-2023-4670",
+  "proof_id": "SEC-ONE-COMPANY-MSFT-001",
+  "company": {
+    "name": "Microsoft Corporation",
+    "ticker": "MSFT",
+    "cik": "0000789019"
+  },
+  "source": "Official SEC EDGAR filing detail pages",
+  "construct": "FilingLag = filing_date - period_of_report",
+  "observations": [
+    {
+      "calendar_quarter": "Q1-2019",
+      "form": "10-Q",
+      "period_end": "2019-03-31",
+      "filing_date": "2019-04-24",
+      "filing_lag_days": 24,
+      "accession": "0001564590-19-012709"
+    },
+    {
+      "calendar_quarter": "Q1-2020",
+      "form": "10-Q",
+      "period_end": "2020-03-31",
+      "filing_date": "2020-04-29",
+      "filing_lag_days": 29,
+      "accession": "0001564590-20-019706"
+    },
+    {
+      "calendar_quarter": "Q2-2019",
+      "form": "10-K",
+      "period_end": "2019-06-30",
+      "filing_date": "2019-08-01",
+      "filing_lag_days": 32,
+      "accession": "0001564590-19-027952"
+    },
+    {
+      "calendar_quarter": "Q2-2020",
+      "form": "10-K",
+      "period_end": "2020-06-30",
+      "filing_date": "2020-07-30",
+      "filing_lag_days": 30,
+      "accession": "0001564590-20-034944"
+    }
+  ],
+  "within_company_changes_days": {
+    "Q1_2020_vs_Q1_2019": 5,
+    "Q2_2020_vs_Q2_2019": -2
+  },
+  "assurance_state": "SEC_SOURCE_VERIFIED_ONE_COMPANY_PROOF",
+  "limitations": [
+    "One issuer only",
+    "Does not recreate paper regression sample",
+    "Does not replace Audit Analytics/IBES inputs",
+    "Does not verify earnings-announcement lag"
+  ]
+}
