@@ -1,0 +1,65 @@
+{
+  "start_time": "2026-10-01T14:04:26+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Doyle, Ge & McVay (2007), Table 5 Column 1 MW logit",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "machine-readable candidate specification + public-data feasibility gate",
+  "work_attempted": [
+    "verify exact published model",
+    "encode coefficients/provenance",
+    "map required inputs to SEC/public evidence",
+    "decide whether DGM2007 can be frozen as Benchmark #1"
+  ],
+  "work_completed": [
+    "verified Equation (1), Table 1, Table 5 Column 1 and footnote 25 from the primary PDF",
+    "created DGM2007 machine-readable candidate specification",
+    "determined DGM2007 cannot be frozen as the first exact SEC/public-data benchmark because required industry coefficients are not tabulated and several core inputs depend on proprietary/non-public datasets"
+  ],
+  "evidence": [
+    "primary publisher PDF in Drive source archive 14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g",
+    "benchmarks/candidates/DGM2007_JAE_MW_LOGIT_COL1.json",
+    "Table 5 Column 1 coefficients and Table 1 definitions"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/benchmarks/candidates/DGM2007_JAE_MW_LOGIT_COL1.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-003.json"
+  ],
+  "github_starting_head": "8f9c3fc94931ba65d0e9ad27ddf0e69f597c7ab0",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "primary-PDF provenance consistency check",
+    "coefficient transcription check",
+    "public-data feasibility gate"
+  ],
+  "ci_status": "NOT_RUN",
+  "codex_status": "NOT_REQUESTED",
+  "blockers": [
+    "DGM2007 includes 16 industry indicators but fitted industry coefficients are not tabulated",
+    "SPE data were supplied by other researchers",
+    "acquisition values use SDC Platinum",
+    "firm age uses CRSP",
+    "segment counts use Compustat Segments"
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "add DGM2007 exact-reproduction limitation",
+    "advance next benchmark candidate rather than force substitutions",
+    "master hourly log append blocked by connector safety check; per-run JSON used as canonical GitHub run artifact and master-log backfill remains open"
+  ],
+  "drive_updates": [
+    "Run 003 append pending"
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "benchmark-selection stage continues; DGM2007 not frozen",
+  "next_executable_task": "Screen the next-ranked direct-ICFR candidate for a fully tabulated executable specification and definition-equivalent SEC/public inputs; prefer no untabulated fixed-effect coefficients or proprietary-only core predictors."
+}
