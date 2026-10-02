@@ -1,8 +1,13 @@
 {
+  "schema_version": "1.0",
+  "track": "B_SEC_NATIVE",
   "fixture_id": "microsoft-fy2025-track-b",
   "issuer": {
     "name": "Microsoft Corporation",
-    "cik": "0000789019"
+    "cik": "0000789019",
+    "accession": "0000950170-25-100235",
+    "fiscal_year_end": "2025-06-30",
+    "filed": "2025-07-30"
   },
   "filing": {
     "form": "10-K",
@@ -13,68 +18,25 @@
   "model_reference": "GKM2017",
   "purpose": "provenance-only fail-closed fixture; not an exact GKM2017 score",
   "candidate_inputs": [
-    {
-      "name": "AggLoss",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "Restate",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "Seg",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "Age",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "BankInd",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "Size",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "Cash",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "InstOwn",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    },
-    {
-      "name": "Prior404302",
-      "status": "UNAVAILABLE",
-      "value": null,
-      "proxy_allowed": false
-    }
+    {"name":"AggLoss","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"Restate","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"Seg","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"Age","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"BankInd","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"Size","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"Cash","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"InstOwn","status":"UNAVAILABLE","value":null,"proxy_allowed":false},
+    {"name":"Prior404302","status":"UNAVAILABLE","value":null,"proxy_allowed":false}
   ],
   "scientific_firewall": {
     "apply_gkm_coefficients": false,
     "generate_gkm_probability": false,
-    "outcome_may_enter_predictors": false
+    "outcome_may_enter_predictors": false,
+    "proxy_may_be_scored_as_exact": false
   },
   "observed_outcome": {
-    "use_as_predictor": false
+    "use_as_predictor": false,
+    "may_enter_predictors": false
   },
   "provenance_note": "Filing identity previously verified; exact published variable definitions/timing/transformations are required before any candidate input may become EXACT."
 }
