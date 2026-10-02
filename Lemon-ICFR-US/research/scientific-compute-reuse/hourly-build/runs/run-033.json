@@ -1,0 +1,58 @@
+{
+  "start_time": "2026-10-02T21:01:33+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Cheng, Dhaliwal & Zhang (2013) benchmark feasibility",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "Benchmark specification completeness and one-company feasibility",
+  "work_attempted": [
+    "Inspect the primary paper's focal equations, timing, estimator, coefficients, fixed effects, data dependencies, and one-company public-data feasibility.",
+    "Persist feasibility assessment and hourly evidence."
+  ],
+  "work_completed": [
+    "Inspected full primary paper from the canonical Drive archive.",
+    "Verified Model (1), timing, OverFirm construction, Table 3 Panel A coefficients, industry fixed effects, and two-way clustered inference.",
+    "Determined that a scientifically faithful one-company execution is not admissible and quarantined the candidate conceptually; GitHub persistence attempt was blocked."
+  ],
+  "evidence": [
+    "Model (1) uses Investment_t, Weak, Weak×OverFirm, OverFirm, multiple controls, and Fama-French 48 industry fixed effects.",
+    "Investment is 100*(R&D + capital + acquisition expenditures - sale of PP&E)/lagged total assets; controls are t-1 and AQ is t-2.",
+    "Table 3 Panel A Column A reports intercept 9.25, Weak -1.79, OverFirm -1.09, Weak×OverFirm 4.32, N=5,544, R2=23.93%.",
+    "Exact one-company fitted value is blocked by sample-relative OverFirm ranks, omitted individual industry-FE coefficients, and panel/non-SEC controls."
+  ],
+  "changed_files": [],
+  "github_starting_head": "8e5bd3fe1fb119a43fdd59ce4abcb893d1ecf388",
+  "github_ending_head": "8e5bd3fe1fb119a43fdd59ce4abcb893d1ecf388",
+  "github_commit": null,
+  "tests": [
+    "Primary-specification extraction PASS.",
+    "One-company executability FAIL-CLOSED; no fitted value or scientific effect fabricated."
+  ],
+  "ci_status": "Not reclassified as PASS; no CI evidence produced in this run.",
+  "codex_status": "PENDING",
+  "blockers": [
+    "GitHub create-file mutation blocked by safety control.",
+    "CDZ2013 one-company execution requires sample-relative ranks, unreported industry fixed-effect coefficients, and panel/non-SEC controls."
+  ],
+  "blocker_class": [
+    "LOCAL",
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "Add Run-033 GitHub machine record and human-readable append when write path is available.",
+    "Quarantine CDZ2013 from active one-company POC unless new primary evidence/data resolves dependencies.",
+    "Advance to next-ranked FT50 benchmark."
+  ],
+  "drive_updates": [
+    "Canonical master-log append pending."
+  ],
+  "github_readback": "Existing canonical log and Run-031 read back; Run-033 write NOT_VERIFIED.",
+  "drive_readback": "PENDING",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Advance to the next-ranked FT50 ICFR benchmark and test exact specification completeness plus public-data one-company feasibility."
+}
