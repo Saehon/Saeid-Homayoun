@@ -10,6 +10,6 @@ Q3: READBACK-VERIFIED clean draft PR #102, mergeable, unmerged; source snapshot 
 BLOCKER Q5: missing/nonavailable EDGAR_IDENTITY; USER adds it under repository Settings → Secrets and variables → Actions.
 BLOCKER Q6: article PDF and 3_output/logs absent from the repository intake; USER provides those files.
 NEXT: Q5 — run the unchanged preregistered Microsoft scan once the secret is supplied; preserve any Q4-2019 mismatch as FLAGGED.
-DUAL_SAVE: BLOCKED — run-record readback pending; all payload and review-snapshot byte readbacks PASS.
+DUAL_SAVE: PASS — GitHub and Drive payloads, review snapshot, and this run record were read back and matched.
 POC criteria met: 7 of 10 (USER-REPORTED canonical gate) | V1 criteria met: 0 of 10 | POC_COMPLETE = FALSE | V1_COMPLETE = FALSE
 Q7: WAITING_FOR_USER — final matrix only after Q1–Q5 DONE, then Claude review through the user; no matrix or POC completion decision produced.
