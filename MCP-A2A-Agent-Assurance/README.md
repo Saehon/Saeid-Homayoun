@@ -3,6 +3,10 @@
 **Status:** architecture and research-design package  
 **Purpose:** build a vendor-neutral accounting, audit and finance assurance layer across Claude, GPT, Gemini, Mistral and other compatible agents.
 
+## Architecture
+
+![NAAIL MCP + A2A Agent Assurance Architecture](assets/mcp_a2a_agent_assurance_architecture.svg)
+
 ## Core idea
 
 MCP provides standardized access to tools and data. A2A provides agent-to-agent collaboration and handoffs. NAAIL adds the domain-specific assurance layer: provenance, independent review, falsification, controls, evidence lineage and human approval.
