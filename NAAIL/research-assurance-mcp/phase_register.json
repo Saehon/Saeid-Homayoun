@@ -30,7 +30,7 @@
       "id": "P2",
       "name": "Adversarial Benchmark V2",
       "status": "CONSISTENT",
-      "evidence_basis": "CI-EVIDENCE run 37002351818; 19 designed synthetic fixtures; 8 of 9 evasion probes missed in the local falsification run"
+      "evidence_basis": "CI-EVIDENCE run 37003872890, job 110827499066; 19/19 designed synthetic fixtures met outcome rules; falsification suite: 30 clean packages with 0 findings, 1/9 evasion probes caught and 8/9 missed; engineering evidence only."
     },
     {
       "id": "P3",
@@ -60,7 +60,7 @@
       "id": "P7",
       "name": "POC tests and QA",
       "status": "VERIFIED",
-      "evidence_basis": "CI-EVIDENCE run 37002351818, job 110822699228; engineering checks only"
+      "evidence_basis": "CI-EVIDENCE run 37003872890, job 110827499066; four engineering steps exit 0 on CPython 3.12.14; scientific scope guards unchanged."
     },
     {
       "id": "P8",
@@ -148,7 +148,7 @@
         "microsoft_sec_one_company": "PARTIAL"
       },
       "rationale": "FilingLag is VERIFIED for the 10 frozen observations, but the COVID classification remains PARTIAL until the preregistered primary-filing scan is executed.",
-      "evidence": "derived/evidence_graph_v1_1_case001.json"
+      "evidence": "evidence-graph/evidence_graph_v1_1_case001.json"
     },
     {
       "date": "2026-10-02",
@@ -156,10 +156,22 @@
       "change": "Refresh stale POC task states; retain FilingLag VERIFIED, COVID PARTIAL, and the uninspectable author-output cell claim PARTIAL.",
       "evidence": [
         "evidence-graph/evidence_graph_v1_1_case001.json",
+        "derived/NONCANONICAL_ASSURANCE_LABEL_MAPPING_2026-10-02.md",
         "derived/CLAUDE_ARTIFACT_INTAKE_MANIFEST_2026-10-02.md",
-        "CI run 37002351818"
+        "CI run 37003872890, job 110827499066"
       ],
       "note": "Task states describe bounded artifact/engineering evidence, not a POC-completion decision."
+    },
+    {
+      "date": "2026-10-02",
+      "change_id": "Q4-FOUR-STEP-CI-RECONCILIATION",
+      "change": "Bind Q4 corrected states to the four-step engineering CI including the P2 falsification suite.",
+      "evidence": [
+        "CI run 37003872890",
+        "job 110827499066",
+        "CPython 3.12.14"
+      ],
+      "note": "POC criteria remain 7 of 10; Q5 Microsoft COVID remains separate and PARTIAL."
     }
   ],
   "poc_criteria_met": 7,
