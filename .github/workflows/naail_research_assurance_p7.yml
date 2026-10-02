@@ -25,7 +25,13 @@ jobs:
           python-version: "3.12"
 
       - name: Run P7 integration harness
-        run: python NAAIL/research-assurance-mcp/p7/test_poc_integration.py
+        shell: bash
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/p7/test_poc_integration.py
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
 
       - name: Run Claude P7 regression v2
         shell: bash
