@@ -22,3 +22,5 @@ This is an additive compatibility note. Historical artifacts and their original 
 5. Methodological validity remains `HUMAN_REVIEW` where judgment is required.
 
 Related correction artifact: `derived/evidence_graph_v1_1_case001.json`.
+
+2026-10-02 additive clarification: the canonical corrected graph is `evidence-graph/evidence_graph_v1_1_case001.json`. The earlier `derived/evidence_graph_v1_1_case001.json` copy is retained as history. Apply the positive SEC label only to verified FilingLag fields; COVID remains PARTIAL. The reported 264/264 author-output count remains PARTIAL until Q6 supplies inspectable per-cell evidence.
