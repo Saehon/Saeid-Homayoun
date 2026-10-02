@@ -19,6 +19,26 @@ WORKING BRANCH: naail/research-assurance-case-001
 NEVER merge to main. Open PRs only; merging requires the user's explicit approval in chat.
 
 =====================================================================
+SINGLE-WRITER LOCK — CHECK BEFORE ANY WRITE
+=====================================================================
+Before any GitHub/Drive mutation, read:
+NAAIL/research-assurance-mcp/hourly-build/LOCK.json
+
+If LOCK.json exists with active=true, its owner is not this hourly run, and expires_at has not passed:
+- NO-OP immediately.
+- Do not commit, edit files, open/close/update PRs, rerun CI, or write Drive records.
+- Report only: "NO-OP: interactive writer lock active" plus owner and expiry.
+- Never delete or overwrite another operator's active lock.
+
+This rule overrides the queue and all fail-forward rules below. Exactly one writer may operate on
+naail/research-assurance-case-001 at a time.
+
+PR discipline:
+- PR A #101 = Q1/Q2/Q4/engineering and CI only.
+- Q5/COVID uses one separate PR B only.
+- Do not reopen superseded PRs or create overlapping PRs.
+
+=====================================================================
 START OF EVERY RUN (max 2 minutes)
 =====================================================================
 1. Read branch HEAD, the latest Actions runs, and the last run record.
