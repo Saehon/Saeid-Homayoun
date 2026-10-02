@@ -28,7 +28,19 @@ jobs:
         run: python NAAIL/research-assurance-mcp/p7/test_poc_integration.py
 
       - name: Run Claude P7 regression v2
-        run: python NAAIL/research-assurance-mcp/derived/claude_2026-10-02/p7_regression_v2.py NAAIL/research-assurance-mcp NAAIL/research-assurance-mcp/derived/claude_2026-10-02
+        shell: bash
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/derived/claude_2026-10-02/p7_regression_v2.py NAAIL/research-assurance-mcp NAAIL/research-assurance-mcp/derived/claude_2026-10-02
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
 
       - name: Run executable P2 adversarial benchmark
-        run: python NAAIL/research-assurance-mcp/derived/claude_2026-10-02/p2_executable/p2_adversarial_v2_executable.py NAAIL/research-assurance-mcp
+        shell: bash
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/derived/claude_2026-10-02/p2_executable/p2_adversarial_v2_executable.py NAAIL/research-assurance-mcp
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
