@@ -1,0 +1,57 @@
+{
+  "start_time": "2026-10-02T17:58:20+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Microsoft FY2025 Track-B / GKM2017 provenance-only fail-closed fixture",
+  "journal": null,
+  "journal_tier": "NOT_APPLICABLE",
+  "phase": "Track-B adversarial falsification persistence",
+  "work_attempted": [
+    "Verified PR #76 branch/head and Track-B fixture/schema/baseline tests.",
+    "Attempted to persist five-control adversarial fail-closed test suite.",
+    "Inspected canonical Drive source-article folder after local GitHub write blocker."
+  ],
+  "work_completed": [
+    "Verified PR #76 open at starting HEAD 4e2d7b1190e34e1ee1573d7f88facb05b142fc69.",
+    "Verified fixture blob c84ab22f4e75032e4d267f634dc5a2ff3038bd26 and baseline test/schema blobs by readback.",
+    "Confirmed source archive contains two ScienceDirect ICFR ZIP archives plus hourly-log folder."
+  ],
+  "evidence": [
+    "PR #76 head_sha=4e2d7b1190e34e1ee1573d7f88facb05b142fc69.",
+    "Fixture readback blob=c84ab22f4e75032e4d267f634dc5a2ff3038bd26.",
+    "Combined commit statuses=[]; no CI PASS claimed.",
+    "GitHub create_file for adversarial suite blocked by safety checks.",
+    "Drive source folder IDs: 1Eru-bFSbxEOWQfVTR-0Pfb2AjQmTiunF and 14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g."
+  ],
+  "changed_files": [],
+  "github_starting_head": "4e2d7b1190e34e1ee1573d7f88facb05b142fc69",
+  "github_ending_head": "4e2d7b1190e34e1ee1573d7f88facb05b142fc69",
+  "github_commit": null,
+  "tests": [
+    "Baseline committed controls read back; prior 8/8 evidence preserved.",
+    "Adversarial suite NOT_EXECUTED because persistence was blocked."
+  ],
+  "ci_status": "NO_STATUS_CONTEXTS; no CI PASS claimed",
+  "codex_status": "PENDING",
+  "blockers": [
+    "GitHub create_file for Track-B adversarial test suite blocked by safety checks."
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "ADD: persist adversarial suite and execute baseline + five mutations.",
+    "RETAIN: canonical GitHub hourly human-readable append backlog."
+  ],
+  "drive_updates": [
+    "Run-030 Drive master-log append pending at time of machine-record creation."
+  ],
+  "github_readback": "VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Bypass local write blocker by advancing benchmark/source-archive inventory; retry adversarial suite persistence later, then execute baseline plus five mutations and request Codex review."
+}
