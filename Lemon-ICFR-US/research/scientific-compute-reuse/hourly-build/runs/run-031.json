@@ -1,0 +1,60 @@
+{
+  "start_time": "2026-10-02T18:59:08+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "GKM2017 benchmark feasibility",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "Archive inventory and benchmark falsification",
+  "work_attempted": [
+    "Inventory and deduplicate the two canonical article archives.",
+    "Inspect rank-1 primary paper for exact executable specification."
+  ],
+  "work_completed": [
+    "Verified 20-file archive is an exact subset of 66-file archive; union=66.",
+    "Persisted archive inventory.",
+    "Inspected Eq. (1b) and Table 3 Panel C; exact one-company probability is not admissible because the inspected table does not report an intercept.",
+    "Persisted feasibility assessment."
+  ],
+  "evidence": [
+    "Archive counts 20 and 66; intersection=20; union=66.",
+    "Table 3 Panel C reports nine slope coefficients and ROC 0.887; no intercept was found in the inspected model output.",
+    "No missing parameter was inferred."
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/benchmark/archive-inventory-2026-10-02.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/benchmark/gkm2017-feasibility-assessment.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-031.json"
+  ],
+  "github_starting_head": "8830be8a20f5d78e981226ed2b92c038bdc8d06c",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Archive deduplication PASS.",
+    "Specification-completeness check FAIL-CLOSED; no probability executed."
+  ],
+  "ci_status": "No status contexts or workflow runs observed at starting HEAD; no CI PASS claimed.",
+  "codex_status": "PENDING",
+  "blockers": [
+    "Exact one-company probability lacks a reported intercept in the inspected primary model output."
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "Quarantine exact GKM2017 one-company probability unless new primary evidence resolves the missing parameter.",
+    "Advance to next benchmark candidate.",
+    "Retain prior local persistence backlogs."
+  ],
+  "drive_updates": [
+    "Master-log append pending."
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Inspect the next-ranked FT50 ICFR benchmark for complete specification and public-data feasibility."
+}
