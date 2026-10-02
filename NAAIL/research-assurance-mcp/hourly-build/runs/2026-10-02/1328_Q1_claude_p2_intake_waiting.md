@@ -8,5 +8,5 @@ STATE CHANGES: PR #98 is already merged; primary seven-file Claude intake is alr
 BLOCKER: derived_claude_2026-10-02_p2.zip is absent from the Drive run-log folder and p2_adversarial_v2_executable.py / MANIFEST_P2.md are absent from main.
 USER ACTION: upload derived_claude_2026-10-02_p2.zip to “NAAIL Research Assurance MCP — Hourly Run Logs” (fallback: GitHub derived/).
 NEXT: hash P2 ZIP against fedaa45c26709311a06b44b8bcd52beeb26653f0980534371216b719e0a026cd, verify MANIFEST_P2, commit p2_executable files, read back, mirror Drive.
-DUAL_SAVE: pending final cross-readback.
+DUAL_SAVE: PASS — Drive and GitHub run records created and read back.
 POC criteria met: 7 of 10 | POC_COMPLETE = FALSE | V1_COMPLETE = FALSE
