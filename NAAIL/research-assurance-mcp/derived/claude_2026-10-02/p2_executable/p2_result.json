@@ -1,0 +1,597 @@
+{
+  "benchmark_source": "benchmark/adversarial_benchmark_v2.json",
+  "benchmark_sha256": "6237d06b0fbad0f236446df246d8f4fbdf4ee9256241be4706b7934e0ce06013",
+  "python": "3.12.3",
+  "synthetic": true,
+  "summary": {
+    "fixtures": 19,
+    "executable_fixtures": 19,
+    "outcome_rule_met": 19,
+    "exact_id": {
+      "tp": 24,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "family": {
+      "tp": 23,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "clean_control_false_positives": 0
+  },
+  "cases": [
+    {
+      "id": "ADV-CTRL-001",
+      "kind": "clean_control",
+      "expected": "NO_FLAG",
+      "expected_ids": [],
+      "detected_ids": [],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": []
+    },
+    {
+      "id": "ADV-RPT-001",
+      "kind": "single",
+      "expected": "FLAG",
+      "expected_ids": [
+        "RPT-01"
+      ],
+      "detected_ids": [
+        "RPT-01"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "RPT-01",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "table_vs_lineage_output": {
+              "coef_x": [
+                0.527,
+                0.477
+              ]
+            }
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-RPT-002",
+      "kind": "single",
+      "expected": "FLAG_OR_HUMAN_REVIEW",
+      "expected_ids": [
+        "RPT-03"
+      ],
+      "detected_ids": [
+        "RPT-03"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "RPT-03",
+          "assurance_state": "HUMAN_REVIEW",
+          "evidence": {
+            "claim": "C2",
+            "cited_p": [
+              0.875
+            ]
+          },
+          "human_review_required": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-SPC-001",
+      "kind": "single",
+      "expected": "FLAG",
+      "expected_ids": [
+        "SPC-01"
+      ],
+      "detected_ids": [
+        "SPC-01"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "SPC-01",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "declared_not_in_code": [
+              "firm"
+            ]
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-SPC-002",
+      "kind": "single",
+      "expected": "FLAG",
+      "expected_ids": [
+        "SPC-04"
+      ],
+      "detected_ids": [
+        "SPC-04"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "SPC-04",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "manuscript": "firm",
+            "code": null
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-DAT-001",
+      "kind": "single",
+      "expected": "FLAG",
+      "expected_ids": [
+        "DAT-02"
+      ],
+      "detected_ids": [
+        "DAT-02"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "DAT-02",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "dup_keys": 1,
+            "left_rows": 240,
+            "merged_rows": 246
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-DAT-002",
+      "kind": "single",
+      "expected": "FLAG_OR_HUMAN_REVIEW",
+      "expected_ids": [
+        "DAT-03"
+      ],
+      "detected_ids": [
+        "DAT-03"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "DAT-03",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "rows_with_predictor_after_decision": 200
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-DAT-003",
+      "kind": "single",
+      "expected": "FLAG",
+      "expected_ids": [
+        "DAT-04"
+      ],
+      "detected_ids": [
+        "DAT-04"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "DAT-04",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "rows_inconsistent_with_dictionary_factor": 1
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-IDN-001",
+      "kind": "single",
+      "expected": "FLAG_OR_HUMAN_REVIEW",
+      "expected_ids": [
+        "IDN-04"
+      ],
+      "detected_ids": [
+        "IDN-04"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "IDN-04",
+          "assurance_state": "HUMAN_REVIEW",
+          "evidence": {
+            "target_inputs_to_feature": [
+              {
+                "var": "y",
+                "offset": 0
+              }
+            ]
+          },
+          "human_review_required": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-INT-001",
+      "kind": "single",
+      "expected": "HUMAN_REVIEW",
+      "expected_ids": [
+        "INT-01"
+      ],
+      "detected_ids": [
+        "INT-01"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "INT-01",
+          "assurance_state": "HUMAN_REVIEW",
+          "evidence": {
+            "claim": "C1"
+          },
+          "human_review_required": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-REP-001",
+      "kind": "single",
+      "expected": "FLAG",
+      "expected_ids": [
+        "REP-01"
+      ],
+      "detected_ids": [
+        "REP-01"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "REP-01",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "missing": [
+              "data/firm_attrs.csv"
+            ]
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-REP-002",
+      "kind": "single",
+      "expected": "FLAG_OR_PARTIAL",
+      "expected_ids": [
+        "REP-02"
+      ],
+      "detected_ids": [
+        "REP-02"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "REP-02",
+          "assurance_state": "PARTIAL",
+          "evidence": {
+            "lock_vs_runtime": {
+              "statlib": [
+                "1.4.2",
+                "2.0.0"
+              ]
+            }
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-REP-003",
+      "kind": "single",
+      "expected": "FLAG_OR_PARTIAL",
+      "expected_ids": [
+        "REP-03"
+      ],
+      "detected_ids": [
+        "REP-03"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "REP-03",
+          "assurance_state": "PARTIAL",
+          "evidence": {
+            "rerun_boot_se": [
+              0.09167877086119361,
+              0.08182282363239188
+            ]
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-REP-004",
+      "kind": "single",
+      "expected": "FLAG",
+      "expected_ids": [
+        "REP-04"
+      ],
+      "detected_ids": [
+        "REP-04"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "REP-04",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "lineage_spec_hash": "70e19d48901d",
+            "current_spec_hash": "27e85b42ea4a"
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-REP-005",
+      "kind": "single",
+      "expected": "FLAG_OR_HUMAN_REVIEW",
+      "expected_ids": [
+        "REP-05"
+      ],
+      "detected_ids": [
+        "REP-05"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "REP-05",
+          "assurance_state": "HUMAN_REVIEW",
+          "evidence": {
+            "undeclared_reads": [
+              "ENV:WINSOR"
+            ],
+            "output_changes_with_env": true
+          },
+          "human_review_required": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-CMP-001",
+      "kind": "compound",
+      "expected": "MULTI_FLAG_AND_HUMAN_REVIEW",
+      "expected_ids": [
+        "DAT-03",
+        "IDN-04",
+        "RPT-04"
+      ],
+      "detected_ids": [
+        "DAT-03",
+        "IDN-04",
+        "RPT-04"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "DAT-03",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "rows_with_predictor_after_decision": 200
+          },
+          "human_review_required": false
+        },
+        {
+          "taxonomy_id": "IDN-04",
+          "assurance_state": "HUMAN_REVIEW",
+          "evidence": {
+            "target_inputs_to_feature": [
+              {
+                "var": "y",
+                "offset": 0
+              }
+            ]
+          },
+          "human_review_required": true
+        },
+        {
+          "taxonomy_id": "RPT-04",
+          "assurance_state": "HUMAN_REVIEW",
+          "evidence": {
+            "claim": "C3",
+            "cites_absent_metric": [
+              "oos_accuracy"
+            ]
+          },
+          "human_review_required": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-CMP-002",
+      "kind": "compound",
+      "expected": "MULTI_FLAG",
+      "expected_ids": [
+        "REP-04",
+        "RPT-01",
+        "SPC-01"
+      ],
+      "detected_ids": [
+        "REP-04",
+        "RPT-01",
+        "SPC-01"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "REP-04",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "lineage_spec_hash": "27e85b42ea4a",
+            "current_spec_hash": "f31b9460d7a4"
+          },
+          "human_review_required": false
+        },
+        {
+          "taxonomy_id": "RPT-01",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "table_vs_lineage_output": {
+              "coef_x": [
+                0.527,
+                0.477
+              ]
+            }
+          },
+          "human_review_required": false
+        },
+        {
+          "taxonomy_id": "SPC-01",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "declared_not_in_code": [
+              "firm"
+            ]
+          },
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "ADV-BLD-001",
+      "kind": "blinded",
+      "expected": "DETECT_AT_LEAST_ONE_AND_ESCALATE",
+      "expected_ids": [
+        "REP-02",
+        "REP-05"
+      ],
+      "detected_ids": [
+        "REP-02",
+        "REP-05"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "REP-02",
+          "assurance_state": "PARTIAL",
+          "evidence": {
+            "lock_vs_runtime": {
+              "statlib": [
+                "1.4.2",
+                "2.0.0"
+              ]
+            }
+          },
+          "human_review_required": false
+        },
+        {
+          "taxonomy_id": "REP-05",
+          "assurance_state": "HUMAN_REVIEW",
+          "evidence": {
+            "undeclared_reads": [
+              "ENV:WINSOR"
+            ],
+            "output_changes_with_env": true
+          },
+          "human_review_required": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-BLD-002",
+      "kind": "blinded",
+      "expected": "DETECT_AND_TRACE_SAMPLE_CHANGE",
+      "expected_ids": [
+        "DAT-02",
+        "SPC-03"
+      ],
+      "detected_ids": [
+        "DAT-02",
+        "SPC-03"
+      ],
+      "false_positive_ids": [],
+      "missed_ids": [],
+      "outcome_rule_met": true,
+      "findings": [
+        {
+          "taxonomy_id": "DAT-02",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "dup_keys": 1,
+            "left_rows": 240,
+            "merged_rows": 246
+          },
+          "human_review_required": false
+        },
+        {
+          "taxonomy_id": "SPC-03",
+          "assurance_state": "FLAGGED",
+          "evidence": {
+            "declared_n": 240,
+            "executed_n": 246
+          },
+          "human_review_required": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Generator and detector share one author: measures implementation correctness on designed fixtures, not real-world detection.",
+    "'Blinded' fixtures are blind to the detector input only; the designer knew the mutations.",
+    "All data are synthetic; no author data or published results are used.",
+    "Judgment-dependent findings are escalated to HUMAN_REVIEW; escalation is not a validity judgment."
+  ]
+}
