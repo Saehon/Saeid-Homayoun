@@ -1,0 +1,102 @@
+{
+  "inventory_date": "2026-10-02",
+  "source_folder_id": "1qTgLv33za4xDfO9xlPDsYs88lGadei7g",
+  "archives": [
+    {
+      "file_id": "1Eru-bFSbxEOWQfVTR-0Pfb2AjQmTiunF",
+      "name": "ScienceDirect_ICOFR_articles_01Oct2026_09-02-32.960.zip",
+      "pdf_count": 20,
+      "size_bytes": 32106064
+    },
+    {
+      "file_id": "14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g",
+      "name": "ScienceDirect-ICOFR_articles_01Oct2026_08-57-59.984.zip",
+      "pdf_count": 66,
+      "size_bytes": 54767345
+    }
+  ],
+  "deduplication": {
+    "intersection_count": 20,
+    "union_unique_pdf_count": 66,
+    "first_archive_is_exact_subset_of_second": true,
+    "first_archive_unique_only": 0,
+    "second_archive_unique_only": 46
+  },
+  "journal_tier_evidence": {
+    "ft50_reference": "Financial Times 50 list (2024/2026 sources checked); Journal of Accounting and Economics and Accounting, Organizations and Society are FT50."
+  },
+  "benchmark_queue": [
+    {
+      "rank": 1,
+      "paper": "Benefits and costs of Sarbanes-Oxley Section 404(b) exemption: Evidence from small firms’ internal control disclosures",
+      "authors": [
+        "Weili Ge",
+        "Allison Koester",
+        "Sarah McVay"
+      ],
+      "journal": "Journal of Accounting and Economics",
+      "year": 2017,
+      "tier": "FT50",
+      "status": "CANDIDATE",
+      "operational_note": "Direct ICFR/SOX 404 relevance. Primary PDF present. Uses audit-fee savings and internal-control misreporting outcomes; exact one-company execution still requires checking model tables, variable sources, and whether required data are publicly reproducible."
+    },
+    {
+      "rank": 2,
+      "paper": "Internal control and management guidance",
+      "authors": [
+        "Mei Feng",
+        "Chan Li",
+        "Sarah McVay"
+      ],
+      "journal": "Journal of Accounting and Economics",
+      "year": 2009,
+      "tier": "FT50",
+      "status": "CANDIDATE",
+      "operational_note": "Direct ICFR relevance and primary PDF present. Outcome depends on management-guidance accuracy; likely requires forecast data beyond SEC-native facts, so public one-company feasibility must be tested before promotion."
+    },
+    {
+      "rank": 3,
+      "paper": "Does investment efficiency improve after the disclosure of material weaknesses in internal control over financial reporting?",
+      "authors": [
+        "Mei Cheng",
+        "Dan Dhaliwal",
+        "Yuan Zhang"
+      ],
+      "journal": "Journal of Accounting and Economics",
+      "year": 2013,
+      "tier": "FT50",
+      "status": "CANDIDATE",
+      "operational_note": "Direct ICFR relevance and primary PDF present. Investment-efficiency design is cross-sectional/causal and may not collapse to an admissible one-company deterministic POC without external estimation dependencies."
+    },
+    {
+      "rank": 4,
+      "paper": "Internal control over financial reporting and managerial rent extraction: Evidence from the profitability of insider trading",
+      "authors": [
+        "Hollis A. Skaife",
+        "David Veenman",
+        "Daniel Wangerin"
+      ],
+      "journal": "Journal of Accounting and Economics",
+      "year": 2013,
+      "tier": "FT50",
+      "status": "CANDIDATE",
+      "operational_note": "Direct ICFR relevance and primary PDF present. Insider-trading profitability requires transaction data and cross-sectional estimation; public-data feasibility needs validation."
+    },
+    {
+      "rank": 5,
+      "paper": "Determinants of weaknesses in internal control over financial reporting",
+      "authors": [
+        "Jeffrey Doyle",
+        "Weili Ge",
+        "Sarah McVay"
+      ],
+      "journal": "Journal of Accounting and Economics",
+      "year": 2007,
+      "tier": "FT50",
+      "status": "QUARANTINED_DEPENDENCY_CRITICAL",
+      "operational_note": "Primary PDF present but exact one-company probability remains blocked by untabulated industry effects/cross-sectional ranking dependencies. Preserved for provenance; not active."
+    }
+  ],
+  "selection_rule": "Prefer highest-tier paper that is independently re-executable with evidence-supported specification and admissible public data. Do not infer missing coefficients, fixed effects, rankings, or proprietary inputs.",
+  "next_task": "Inspect rank-1 paper tables/footnotes/data definitions for a fully specified executable submodel and public-data feasibility; if dependency-critical, quarantine and advance rank-2."
+}
