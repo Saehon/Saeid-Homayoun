@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DARWIN Decision Card",
+  "type": "object",
+  "required": ["event_id", "accounting_status", "assurance_status", "recommendation", "human_gate"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "accounting_status": {"enum": ["PASS", "REVIEW", "FAIL"]},
+    "assurance_status": {"enum": ["ASSURED", "CONDITIONAL", "UNRESOLVED"]},
+    "true_economic_cost": {"type": ["number", "null"]},
+    "evi": {"type": ["number", "null"]},
+    "eva": {"type": ["number", "null"]},
+    "sva": {"type": ["number", "null"]},
+    "opportunity_cost": {"type": ["number", "null"]},
+    "integrated_decision_value": {"type": ["number", "null"]},
+    "best_alternative": {"type": ["string", "null"]},
+    "best_alternative_expected_value": {"type": ["number", "null"]},
+    "recommendation": {
+      "enum": ["APPROVE", "MODIFY", "REPRICE", "RENEGOTIATE", "RESCHEDULE", "REPLACE", "OUTSOURCE", "REJECT", "ESCALATE"]
+    },
+    "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "human_gate": {"type": "string"},
+    "expected_outcome": {"type": ["object", "null"]},
+    "actual_outcome": {"type": ["object", "null"]},
+    "attribution": {"type": ["object", "null"]}
+  },
+  "additionalProperties": true
+}

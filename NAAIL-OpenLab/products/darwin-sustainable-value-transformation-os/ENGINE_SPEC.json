@@ -1,0 +1,39 @@
+{
+  "product": "DARWIN Sustainable Value Transformation OS™",
+  "status": "public_non_enabling_architecture",
+  "north_star": "Maximum Sustainable Economic Value",
+  "inputs": "ERP events, carbon, energy, water, waste, supplier ESG, product footprint, CapEx and customer requirements",
+  "modules": [
+    "ESG Cost Truth",
+    "Management Accounting Decision Engine™",
+    "Double Materiality Filter",
+    "Six-Capital Transformation Graph™",
+    "Sustainability Value Added Engine™",
+    "Impact-to-Financial-Value Translator",
+    "Systems Thinking Engine™",
+    "Opportunity Cost Engine™",
+    "Counterfactual Engine",
+    "DARWIN MetaBrain™",
+    "Pre-Transaction ESG Gate",
+    "Outcome Learning"
+  ],
+  "actions": [
+    "APPROVE",
+    "MODIFY",
+    "REPRICE",
+    "RENEGOTIATE",
+    "RESCHEDULE",
+    "REDESIGN",
+    "REPLACE",
+    "REJECT"
+  ],
+  "pomelo_style_governance": {
+    "evidence_passport": true,
+    "construct_firewall": true,
+    "competing_hypotheses": true,
+    "falsification": true,
+    "counterfactuals": true,
+    "human_gate": true,
+    "outcome_learning": true
+  }
+}

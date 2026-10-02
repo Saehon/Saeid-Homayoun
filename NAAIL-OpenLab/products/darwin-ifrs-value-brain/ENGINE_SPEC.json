@@ -1,0 +1,40 @@
+{
+  "product": "DARWIN IFRS Value Brain™",
+  "status": "public_non_enabling_architecture",
+  "north_star": "Maximum Sustainable Economic Value subject to IFRS constraints",
+  "inputs": "contract, sales order, lease, inventory, CapEx, impairment signal, R&D, credit and M&A",
+  "modules": [
+    "IFRS Accounting Brain™",
+    "IFRS Value Genome™",
+    "Cost Truth Engine™",
+    "Management Accounting Decision Engine™",
+    "Economic Value Impact Engine™",
+    "Sustainability Value Link",
+    "Systems Thinking Engine™",
+    "Opportunity Cost Engine™",
+    "Counterfactual Engine",
+    "DARWIN MetaBrain™",
+    "Pre-Transaction IFRS Value Gate™",
+    "Outcome Learning"
+  ],
+  "actions": [
+    "APPROVE",
+    "MODIFY",
+    "REPRICE",
+    "RENEGOTIATE",
+    "RESCHEDULE",
+    "BUY",
+    "LEASE",
+    "OUTSOURCE",
+    "REJECT"
+  ],
+  "pomelo_style_governance": {
+    "evidence_passport": true,
+    "construct_firewall": true,
+    "competing_hypotheses": true,
+    "falsification": true,
+    "counterfactuals": true,
+    "human_gate": true,
+    "outcome_learning": true
+  }
+}
