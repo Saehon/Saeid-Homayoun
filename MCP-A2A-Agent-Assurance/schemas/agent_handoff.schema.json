@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NAAIL Agent Handoff Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "handoff_id",
+    "task_id",
+    "from_agent",
+    "to_agent",
+    "intent",
+    "evidence_refs",
+    "permissions",
+    "created_at",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "handoff_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "from_agent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_agent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "read",
+          "calculate",
+          "review",
+          "challenge",
+          "propose",
+          "write",
+          "execute",
+          "approve"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "requested",
+        "accepted",
+        "completed",
+        "rejected",
+        "escalated"
+      ]
+    }
+  }
+}
