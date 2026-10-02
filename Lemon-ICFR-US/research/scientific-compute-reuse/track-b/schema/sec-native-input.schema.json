@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "track",
+    "issuer",
+    "scientific_firewall",
+    "candidate_inputs",
+    "observed_outcome"
+  ],
+  "properties": {
+    "track": {
+      "const": "B_SEC_NATIVE"
+    },
+    "candidate_inputs": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9
+    },
+    "scientific_firewall": {
+      "type": "object",
+      "properties": {
+        "apply_gkm_coefficients": {
+          "const": false
+        },
+        "generate_gkm_probability": {
+          "const": false
+        },
+        "outcome_may_enter_predictors": {
+          "const": false
+        },
+        "proxy_may_be_scored_as_exact": {
+          "const": false
+        }
+      },
+      "required": [
+        "apply_gkm_coefficients",
+        "generate_gkm_probability",
+        "outcome_may_enter_predictors",
+        "proxy_may_be_scored_as_exact"
+      ]
+    }
+  }
+}
