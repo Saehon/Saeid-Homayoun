@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "active": true,
+  "owner": "interactive-session-q5-pr-consolidation",
+  "branch": "naail/research-assurance-case-001",
+  "purpose": "Q5 manual COVID execution, PR consolidation, and single-writer governance repair",
+  "created_at": "2026-10-02T14:06:00+02:00",
+  "expires_at": "2026-10-02T15:06:00+02:00",
+  "rule": "Hourly/scheduled operators must NO-OP while this lock is active and unexpired. Do not delete another operator's lock."
+}
