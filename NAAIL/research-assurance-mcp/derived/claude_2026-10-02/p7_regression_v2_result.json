@@ -1,0 +1,166 @@
+{
+  "harness": "p7_regression_v2",
+  "python": "3.12.3",
+  "results": [
+    {
+      "id": "T1_original_p7",
+      "ok": true,
+      "blocking": true,
+      "detail": "exit=0"
+    },
+    {
+      "id": "T2_parser_tests",
+      "ok": true,
+      "blocking": true,
+      "detail": {
+        "test_sas_warning": "PASS",
+        "test_stata_n": "PASS",
+        "test_stata_spec": "PASS"
+      }
+    },
+    {
+      "id": "T3_clean_control_no_flags",
+      "ok": true,
+      "blocking": true,
+      "detail": []
+    },
+    {
+      "id": "T4_single_mutations_exact",
+      "ok": true,
+      "blocking": true,
+      "detail": {
+        "E01": [
+          "E01"
+        ],
+        "E02": [
+          "E02"
+        ],
+        "E03": [
+          "E03"
+        ],
+        "E04": [
+          "E04"
+        ],
+        "E05": [
+          "E05"
+        ],
+        "E06": [
+          "E06"
+        ],
+        "E07": [
+          "E07"
+        ],
+        "E08": [
+          "E08"
+        ],
+        "E09": [
+          "E09"
+        ],
+        "E10": [
+          "E10"
+        ]
+      }
+    },
+    {
+      "id": "T5_compound_executed_not_stored",
+      "ok": true,
+      "blocking": true,
+      "detail": {
+        "executed": [
+          "E01",
+          "E02",
+          "E05",
+          "E07",
+          "E08"
+        ],
+        "manifest_claims": [
+          "E01",
+          "E02",
+          "E05",
+          "E07",
+          "E08"
+        ]
+      }
+    },
+    {
+      "id": "T6_masking_probe_E02_only",
+      "ok": false,
+      "blocking": false,
+      "detail": [
+        "E02",
+        "E03"
+      ]
+    },
+    {
+      "id": "T7_msft_levels_match_independent",
+      "ok": true,
+      "blocking": true,
+      "detail": {
+        "mismatched_quarters": [],
+        "n_rows": 10
+      }
+    },
+    {
+      "id": "T8_msft_vector_match",
+      "ok": true,
+      "blocking": true,
+      "detail": {
+        "frozen_csv": [
+          5,
+          -2,
+          4,
+          -3,
+          3,
+          -3
+        ],
+        "independent": [
+          5,
+          -2,
+          4,
+          -3,
+          3,
+          -3
+        ]
+      }
+    },
+    {
+      "id": "T9_msft_artifact_has_generator",
+      "ok": false,
+      "blocking": false,
+      "detail": {
+        "periods_targeted_by_code": 5,
+        "rows_in_artifact": 10,
+        "covid_logic_in_code": false
+      }
+    },
+    {
+      "id": "T10_adv_v2_executable_fixtures",
+      "ok": false,
+      "blocking": false,
+      "detail": {
+        "cases": 19,
+        "with_executable_payload": 0
+      }
+    },
+    {
+      "id": "T11_canonical_states_only",
+      "ok": false,
+      "blocking": false,
+      "detail": {
+        "non_canonical": [
+          "OUT_OF_SCOPE_FOR_ONE_COMPANY_CASE",
+          "NOT_CLAIMED",
+          "SEC_SOURCE_VERIFIED_ONE_COMPANY_PROOF"
+        ]
+      }
+    }
+  ],
+  "blocking_failures": [],
+  "nonblocking_findings": [
+    "T6_masking_probe_E02_only",
+    "T9_msft_artifact_has_generator",
+    "T10_adv_v2_executable_fixtures",
+    "T11_canonical_states_only"
+  ],
+  "status": "PASS"
+}
