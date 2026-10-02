@@ -5,56 +5,68 @@
   "schedule": "hourly",
   "current_gate": "POC",
   "current_baseline": {
-    "case_001_author_output_consistency": "VERIFIED",
+    "case_001_author_output_consistency": "PARTIAL",
     "case_001_regression_cells": "264/264",
     "case_001_full_reproduction": "PARTIAL",
-    "microsoft_sec_one_company": "COMPLETE"
+    "microsoft_sec_one_company": "PARTIAL",
+    "case_001_regression_cells_evidence": "USER-REPORTED summary; per-cell recheck WAITING_FOR_USER at Q6",
+    "microsoft_filinglag": "VERIFIED",
+    "microsoft_covid": "PARTIAL"
   },
   "poc_tasks": [
     {
       "id": "P0",
       "name": "Freeze Case 001",
-      "status": "IN_PROGRESS"
+      "status": "PARTIAL",
+      "evidence_basis": "READBACK-VERIFIED repository artifacts; canonical POC gate remains 7 of 10 met"
     },
     {
       "id": "P1",
       "name": "Error Taxonomy V2",
-      "status": "OPEN"
+      "status": "VERIFIED",
+      "evidence_basis": "READBACK-VERIFIED repository artifacts; canonical POC gate remains 7 of 10 met"
     },
     {
       "id": "P2",
       "name": "Adversarial Benchmark V2",
-      "status": "OPEN"
+      "status": "CONSISTENT",
+      "evidence_basis": "CI-EVIDENCE run 37002351818; 19 designed synthetic fixtures; 8 of 9 evasion probes missed in the local falsification run"
     },
     {
       "id": "P3",
       "name": "Evidence Graph V1",
-      "status": "OPEN"
+      "status": "VERIFIED",
+      "evidence_basis": "READBACK-VERIFIED repository artifacts; canonical POC gate remains 7 of 10 met"
     },
     {
       "id": "P4",
       "name": "Research Assurance Report V1",
-      "status": "OPEN"
+      "status": "CONSISTENT",
+      "evidence_basis": "READBACK-VERIFIED repository artifacts; canonical POC gate remains 7 of 10 met"
     },
     {
       "id": "P5",
       "name": "Minimal MCP/API layer",
-      "status": "OPEN"
+      "status": "CONSISTENT",
+      "evidence_basis": "READBACK-VERIFIED repository artifacts; canonical POC gate remains 7 of 10 met"
     },
     {
       "id": "P6",
       "name": "End-to-end Case 001 demo",
-      "status": "OPEN"
+      "status": "CONSISTENT",
+      "evidence_basis": "READBACK-VERIFIED repository artifacts; canonical POC gate remains 7 of 10 met"
     },
     {
       "id": "P7",
       "name": "POC tests and QA",
-      "status": "OPEN"
+      "status": "VERIFIED",
+      "evidence_basis": "CI-EVIDENCE run 37002351818, job 110822699228; engineering checks only"
     },
     {
       "id": "P8",
       "name": "Freeze POC release",
-      "status": "OPEN"
+      "status": "PARTIAL",
+      "evidence_basis": "READBACK-VERIFIED repository artifacts; canonical POC gate remains 7 of 10 met"
     }
   ],
   "v1_tasks": [
@@ -123,5 +135,36 @@
     "author-output consistency != independent reproduction",
     "computational correctness != methodological validity",
     "no protected-main merge without explicit authorization"
-  ]
+  ],
+  "changelog": [
+    {
+      "date": "2026-10-02",
+      "change_id": "Q4-EVIDENCE-GRAPH-V1.1",
+      "change": "Correct Microsoft one-company baseline and record Evidence Graph v1.1 split.",
+      "previous": {
+        "microsoft_sec_one_company": "COMPLETE"
+      },
+      "current": {
+        "microsoft_sec_one_company": "PARTIAL"
+      },
+      "rationale": "FilingLag is VERIFIED for the 10 frozen observations, but the COVID classification remains PARTIAL until the preregistered primary-filing scan is executed.",
+      "evidence": "derived/evidence_graph_v1_1_case001.json"
+    },
+    {
+      "date": "2026-10-02",
+      "change_id": "Q4-STATUS-EVIDENCE-RECONCILIATION",
+      "change": "Refresh stale POC task states; retain FilingLag VERIFIED, COVID PARTIAL, and the uninspectable author-output cell claim PARTIAL.",
+      "evidence": [
+        "evidence-graph/evidence_graph_v1_1_case001.json",
+        "derived/CLAUDE_ARTIFACT_INTAKE_MANIFEST_2026-10-02.md",
+        "CI run 37002351818"
+      ],
+      "note": "Task states describe bounded artifact/engineering evidence, not a POC-completion decision."
+    }
+  ],
+  "poc_criteria_met": 7,
+  "poc_criteria_total": 10,
+  "POC_COMPLETE": false,
+  "V1_COMPLETE": false,
+  "v1_criteria_met": 0
 }

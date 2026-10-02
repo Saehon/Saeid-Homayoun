@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "rule_id": "NAAIL-MSFT-COVID-RULE-V1",
+  "status": "FROZEN_PREREGISTERED",
+  "frozen_date": "2026-10-02",
+  "case_id": "MNSC-2023-4670",
+  "company": "Microsoft Corporation",
+  "cik": "0000789019",
+  "source_csv": "case-001-management-science/reexecution/sec_one_company_msft/msft_one_company_final.csv",
+  "identity_secret": "EDGAR_IDENTITY",
+  "text_scope": {
+    "forms": ["10-Q", "10-K"],
+    "document_scope": "primary filing document only",
+    "exclude_exhibits": true,
+    "case_sensitive": false
+  },
+  "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+  "match_rule": {
+    "covid_present": "1 iff match_count > 0; otherwise 0",
+    "count": "count all non-overlapping regex matches in primary filing text",
+    "snippets": "store up to 3 snippets per filing; each snippet must be no more than 15 words"
+  },
+  "filing_lag_rule": {
+    "definition": "SEC filing date minus fiscal period end, in calendar days",
+    "baseline": "same calendar quarter of 2019",
+    "regenerate_all_10_rows": true
+  },
+  "frozen_expectations": [
+    {"calendar_quarter":"Q1-2019","form":"10-Q","accession":"0001564590-19-012709","expected_covid_present":0},
+    {"calendar_quarter":"Q2-2019","form":"10-K","accession":"0001564590-19-027952","expected_covid_present":0},
+    {"calendar_quarter":"Q3-2019","form":"10-Q","accession":"0001564590-19-037549","expected_covid_present":0},
+    {"calendar_quarter":"Q4-2019","form":"10-Q","accession":"0001564590-20-002450","expected_covid_present":0,"decisive":true},
+    {"calendar_quarter":"Q1-2020","form":"10-Q","accession":"0001564590-20-019706","expected_covid_present":1},
+    {"calendar_quarter":"Q2-2020","form":"10-K","accession":"0001564590-20-034944","expected_covid_present":1},
+    {"calendar_quarter":"Q3-2020","form":"10-Q","accession":"0001564590-20-047996","expected_covid_present":1},
+    {"calendar_quarter":"Q4-2020","form":"10-Q","accession":"0001564590-21-002316","expected_covid_present":1},
+    {"calendar_quarter":"Q1-2021","form":"10-Q","accession":"0001564590-21-020891","expected_covid_present":1},
+    {"calendar_quarter":"Q2-2021","form":"10-K","accession":"0001564590-21-039151","expected_covid_present":1}
+  ],
+  "required_output_per_filing": [
+    "calendar_quarter",
+    "form",
+    "accession",
+    "period_end",
+    "filing_date",
+    "filing_lag_days",
+    "document_sha256",
+    "match_count",
+    "covid_present",
+    "expected_covid_present",
+    "matches_expectation",
+    "snippets"
+  ],
+  "decision_rule": {
+    "all_10_match": "COVID claim may be upgraded to VERIFIED within this bounded Microsoft public-SEC scope.",
+    "any_mismatch": "Record the COVID claim as FLAGGED and preserve mismatch evidence.",
+    "q4_2019_special": "Any regex match in Q4-2019 makes the frozen expected value 0 false and must be recorded FLAGGED."
+  },
+  "immutability": "After the first result is observed, this v1 rule must not be altered. Any methodological change requires covid_rule_v2.json with an explicit reason and must not overwrite v1."
+}

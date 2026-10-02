@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_tag": "CI-EVIDENCE",
+  "project": "NAAIL Research Assurance MCP",
+  "run_id": 37003148170,
+  "job_id": 110825211903,
+  "head_sha": "a1e0ea7b449d90a0d4821e45a6c63d1182cdbe3a",
+  "python": "3.12.14",
+  "job_conclusion": "failure",
+  "steps": [
+    {
+      "name": "Run P7 integration harness",
+      "exit_code": 0,
+      "conclusion": "success"
+    },
+    {
+      "name": "Run Claude P7 regression v2",
+      "exit_code": 0,
+      "conclusion": "success"
+    },
+    {
+      "name": "Run executable P2 adversarial benchmark",
+      "exit_code": 0,
+      "conclusion": "success",
+      "designed_fixtures": 19,
+      "outcome_rules_met": 19,
+      "clean_control_false_positives": 0,
+      "interpretation": "Synthetic engineering evidence; not real-world detection performance."
+    },
+    {
+      "name": "Run preregistered Microsoft COVID scan",
+      "exit_code": 1,
+      "conclusion": "failure",
+      "log_excerpt": "ERROR: EDGAR_IDENTITY is required and must be supplied by the CI secret.",
+      "filings_scanned": 0
+    },
+    {
+      "name": "Upload Microsoft COVID scan evidence",
+      "exit_code": null,
+      "conclusion": "skipped"
+    }
+  ],
+  "all_job_steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Checkout",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Set up Python",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Run P7 integration harness",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Run Claude P7 regression v2",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Run executable P2 adversarial benchmark",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Run preregistered Microsoft COVID scan",
+      "status": "completed",
+      "conclusion": "failure",
+      "number": 7
+    },
+    {
+      "name": "Upload Microsoft COVID scan evidence",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 8
+    },
+    {
+      "name": "Post Set up Python",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 15
+    },
+    {
+      "name": "Post Checkout",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 16
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 17
+    }
+  ],
+  "prior_q2_success": {
+    "run_id": 37002351818,
+    "job_id": 110822699228,
+    "head_sha": "9323365cbf4af80abe751d99aedf04f9cc9cfaf8",
+    "python": "3.12.14",
+    "conclusion": "success"
+  },
+  "previous_identical_secret_blocker": {
+    "run_id": 37002953001,
+    "job_id": 110825074065,
+    "covid_exit_code": 1,
+    "log_excerpt": "ERROR: EDGAR_IDENTITY is required and must be supplied by the CI secret."
+  },
+  "q5": {
+    "status": "WAITING_FOR_USER",
+    "assurance_state": "PARTIAL",
+    "required_action": "User adds repository Actions secret EDGAR_IDENTITY with a valid identifying User-Agent/contact.",
+    "freeze_commit": "a7e999a6880fd8f9b6f9616faad93f4b769904dd",
+    "rule_sha256": "0b3f752df17b6dd8ca2cc6b911f49753fe470fad4741cd691e247efcf5ac567d",
+    "scanner_sha256": "a2c6ea665049a6788c2ba4da179af8cd64b2bf2e5ed869a0a91bf083f93998a5",
+    "retry_policy": "Same missing secret confirmed in two consecutive runs. No manual retry until new input."
+  },
+  "local_falsification": {
+    "evidence_tag": "READBACK-VERIFIED",
+    "python": "3.12.14",
+    "command": "python NAAIL/research-assurance-mcp/derived/claude_2026-10-02/p2_executable/p2_falsification.py NAAIL/research-assurance-mcp",
+    "exit_code": 0,
+    "clean_seeds_evaluated": 30,
+    "seeds_skipped_by_design_assert": 4,
+    "clean_packages_with_findings": 0,
+    "evasion_probes": 9,
+    "caught": 1,
+    "missed": 8,
+    "detected_ids_deterministic": true,
+    "limitation": "The designer wrote both generator and detector. Evasion probes document boundaries; PASS does not mean broad adversarial robustness."
+  },
+  "scope": {
+    "original_p7_scoring_sanity_is_detection_evidence": false,
+    "author_output_264_claim": "PARTIAL: reported summary counts, not an inspectable per-cell recheck.",
+    "POC_criteria_met": 7,
+    "POC_criteria_total": 10,
+    "POC_COMPLETE": false,
+    "V1_criteria_met": 0,
+    "V1_COMPLETE": false
+  }
+}

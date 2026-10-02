@@ -8,6 +8,8 @@ on:
       - "NAAIL/research-assurance-mcp/p7/**"
       - "NAAIL/research-assurance-mcp/evidence-graph/**"
       - "NAAIL/research-assurance-mcp/benchmark/**"
+      - "NAAIL/research-assurance-mcp/derived/claude_2026-10-02/**"
+      - "NAAIL/research-assurance-mcp/derived/derived_claude_2026-10-02_p2.zip"
       - ".github/workflows/naail_research_assurance_p7.yml"
 
 jobs:
@@ -16,9 +18,53 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Run P7 integration harness
-        run: python NAAIL/research-assurance-mcp/p7/test_poc_integration.py
+        shell: bash
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/p7/test_poc_integration.py
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
+
+      - name: Run Claude P7 regression v2
+        shell: bash
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/derived/claude_2026-10-02/p7_regression_v2.py NAAIL/research-assurance-mcp NAAIL/research-assurance-mcp/derived/claude_2026-10-02
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
+
+      - name: Run executable P2 adversarial benchmark
+        shell: bash
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/derived/claude_2026-10-02/p2_executable/p2_adversarial_v2_executable.py NAAIL/research-assurance-mcp
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
+
+      - name: Run preregistered Microsoft COVID scan
+        shell: bash
+        env:
+          EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/derived/msft_covid_scan.py
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
+
+      - name: Upload Microsoft COVID scan evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: msft-covid-scan-evidence
+          path: NAAIL/research-assurance-mcp/derived/msft_covid_scan_result.json
+          if-no-files-found: error
