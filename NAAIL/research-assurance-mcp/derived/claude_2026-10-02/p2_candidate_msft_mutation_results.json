@@ -1,0 +1,174 @@
+{
+  "source": "msft_filinglag_independent_check_v2.json",
+  "source_sha256": "2933ad5ec7e1d1bff11f43469b969966f8f869d820baa855a100a94b15757fc7",
+  "project_vector": [
+    5,
+    -2,
+    4,
+    -3,
+    3,
+    -3
+  ],
+  "results": [
+    {
+      "id": "C0_clean",
+      "cls": "clean_control",
+      "desc": "correct pipeline",
+      "vector": [
+        5,
+        -2,
+        4,
+        -3,
+        3,
+        -3
+      ],
+      "detectors": {
+        "D1_vector_vs_project": false,
+        "D2_levels_vs_EDGAR": false,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": false,
+      "outcome": "TN"
+    },
+    {
+      "id": "M1_prior_year_base",
+      "cls": "single",
+      "desc": "2021 quarters compared to 2020 not 2019 (natural GPT error)",
+      "vector": [
+        5,
+        -2,
+        4,
+        -3,
+        -2,
+        -1
+      ],
+      "detectors": {
+        "D1_vector_vs_project": true,
+        "D2_levels_vs_EDGAR": false,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": true,
+      "outcome": "TP"
+    },
+    {
+      "id": "M2_afterhours_rule",
+      "cls": "single",
+      "desc": "Q2_2020 10-K moved to next day (acceptance 20:44 treated as next business day)",
+      "vector": [
+        5,
+        -1,
+        4,
+        -3,
+        3,
+        -3
+      ],
+      "detectors": {
+        "D1_vector_vs_project": true,
+        "D2_levels_vs_EDGAR": true,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": true,
+      "outcome": "TP"
+    },
+    {
+      "id": "M3_inclusive_count",
+      "cls": "difficult",
+      "desc": "inclusive day count (+1 to every lag)",
+      "vector": [
+        5,
+        -2,
+        4,
+        -3,
+        3,
+        -3
+      ],
+      "detectors": {
+        "D1_vector_vs_project": false,
+        "D2_levels_vs_EDGAR": true,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": true,
+      "outcome": "TP"
+    },
+    {
+      "id": "M4_sign_flip",
+      "cls": "single",
+      "desc": "change computed as base minus COVID-era",
+      "vector": [
+        -5,
+        2,
+        -4,
+        3,
+        -3,
+        3
+      ],
+      "detectors": {
+        "D1_vector_vs_project": true,
+        "D2_levels_vs_EDGAR": false,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": true,
+      "outcome": "TP"
+    },
+    {
+      "id": "M5_10K_deadline_40d",
+      "cls": "difficult",
+      "desc": "10-K deadline mis-set to 40 days",
+      "vector": [
+        5,
+        -2,
+        4,
+        -3,
+        3,
+        -3
+      ],
+      "detectors": {
+        "D1_vector_vs_project": false,
+        "D2_levels_vs_EDGAR": false,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": false,
+      "outcome": "FN"
+    },
+    {
+      "id": "M6_compound_M1_M2",
+      "cls": "compound",
+      "desc": "M1 + M2",
+      "vector": [
+        5,
+        -1,
+        4,
+        -3,
+        -2,
+        -2
+      ],
+      "detectors": {
+        "D1_vector_vs_project": true,
+        "D2_levels_vs_EDGAR": true,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": true,
+      "outcome": "TP"
+    },
+    {
+      "id": "M7_provenance_swap",
+      "cls": "provenance",
+      "desc": "Q1_2019 date taken from wrong filing (FY2019 Q4 10-Q swapped: +5d)",
+      "vector": [
+        0,
+        -2,
+        4,
+        -3,
+        -2,
+        -3
+      ],
+      "detectors": {
+        "D1_vector_vs_project": true,
+        "D2_levels_vs_EDGAR": true,
+        "D3_latefiler_vs_project_zero": false
+      },
+      "flagged": true,
+      "outcome": "TP"
+    }
+  ]
+}

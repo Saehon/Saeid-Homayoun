@@ -1,0 +1,166 @@
+{
+  "check": "Case001_Microsoft_FilingLag_independent_regeneration",
+  "generated": "2026-10-02",
+  "definition_assumed": "FilingLag = EDGAR filing date - fiscal period end (calendar days)",
+  "deadlines_assumed": "large accelerated filer: 10-Q 40d, 10-K 60d (not verified this session)",
+  "evidence_class": "independently regenerated from public SEC sources",
+  "observations": [
+    {
+      "obs": "Q1_2019",
+      "form": "10-Q",
+      "period_end": "2019-03-31",
+      "filed": "2019-04-24",
+      "filing_lag": 24,
+      "late_filer": 0,
+      "source": "EDGAR doc metadata (ex-32.1, acc 0001564590-19-012709)"
+    },
+    {
+      "obs": "Q2_2019",
+      "form": "10-K",
+      "period_end": "2019-06-30",
+      "filed": "2019-08-01",
+      "filing_lag": 32,
+      "late_filer": 0,
+      "source": "EDGAR filing index: Filing Date 2019-08-01, accepted 16:09:55 (acc 0001564590-19-027952)"
+    },
+    {
+      "obs": "Q3_2019",
+      "form": "10-Q",
+      "period_end": "2019-09-30",
+      "filed": "2019-10-23",
+      "filing_lag": 23,
+      "late_filer": 0,
+      "source": "EDGAR doc metadata (acc 0001564590-19-037549)"
+    },
+    {
+      "obs": "Q4_2019",
+      "form": "10-Q",
+      "period_end": "2019-12-31",
+      "filed": "2020-01-29",
+      "filing_lag": 29,
+      "late_filer": 0,
+      "source": "EDGAR doc metadata (ex-32.1, acc 0001564590-20-002450)"
+    },
+    {
+      "obs": "Q1_2020",
+      "form": "10-Q",
+      "period_end": "2020-03-31",
+      "filed": "2020-04-29",
+      "filing_lag": 29,
+      "late_filer": 0,
+      "source": "EDGAR directory listing timestamps (acc 0001564590-20-019706)"
+    },
+    {
+      "obs": "Q2_2020",
+      "form": "10-K",
+      "period_end": "2020-06-30",
+      "filed": "2020-07-30",
+      "filing_lag": 30,
+      "late_filer": 0,
+      "source": "EDGAR filing index: Filing Date 2020-07-30, accepted 20:44:46 (acc 0001564590-20-034944)"
+    },
+    {
+      "obs": "Q3_2020",
+      "form": "10-Q",
+      "period_end": "2020-09-30",
+      "filed": "2020-10-27",
+      "filing_lag": 27,
+      "late_filer": 0,
+      "source": "EDGAR doc metadata (acc 0001564590-20-047996)"
+    },
+    {
+      "obs": "Q4_2020",
+      "form": "10-Q",
+      "period_end": "2020-12-31",
+      "filed": "2021-01-26",
+      "filing_lag": 26,
+      "late_filer": 0,
+      "source": "EDGAR doc metadata (acc 0001564590-21-002316)"
+    },
+    {
+      "obs": "Q1_2021",
+      "form": "10-Q",
+      "period_end": "2021-03-31",
+      "filed": "2021-04-27",
+      "filing_lag": 27,
+      "late_filer": 0,
+      "source": "EDGAR filing index: Filing Date (acc 0001564590-21-020891)"
+    },
+    {
+      "obs": "Q2_2021",
+      "form": "10-K",
+      "period_end": "2021-06-30",
+      "filed": "2021-07-29",
+      "filing_lag": 29,
+      "late_filer": 0,
+      "source": "EDGAR doc metadata (acc 0001564590-21-039151)"
+    }
+  ],
+  "comparisons": [
+    {
+      "pair": "Q1_2020_vs_Q1_2019",
+      "computed": 5,
+      "reported": 5,
+      "match": true
+    },
+    {
+      "pair": "Q2_2020_vs_Q2_2019",
+      "computed": -2,
+      "reported": -2,
+      "match": true
+    },
+    {
+      "pair": "Q3_2020_vs_Q3_2019",
+      "computed": 4,
+      "reported": 4,
+      "match": true
+    },
+    {
+      "pair": "Q4_2020_vs_Q4_2019",
+      "computed": -3,
+      "reported": -3,
+      "match": true
+    },
+    {
+      "pair": "Q1_2021_vs_Q1_2019",
+      "computed": 3,
+      "reported": 3,
+      "match": true
+    },
+    {
+      "pair": "Q2_2021_vs_Q2_2019",
+      "computed": -3,
+      "reported": -3,
+      "match": true
+    }
+  ],
+  "version": 2,
+  "supersedes": {
+    "file": "msft_filinglag_independent_check.json",
+    "sha256": "84228cfdb32b1a7111b822a4be14ed6ddb3663ffda805a29adcefd55d281c731",
+    "change": "Q2_2019 and Q2_2020 10-K dates upgraded from company narrative to EDGAR filing index; dates and lags unchanged"
+  },
+  "baseline_rule": "each COVID-era quarter compared with the SAME CALENDAR QUARTER OF 2019 (per Case 001 master plan)",
+  "project_reported_vector": [
+    5,
+    -2,
+    4,
+    -3,
+    3,
+    -3
+  ],
+  "project_vector_source": "NAAIL Master Plan, 'Current verified baseline' (user-supplied, 2026-10-02)",
+  "ai_to_ai_check": {
+    "external_vector": [
+      5,
+      -2,
+      4,
+      -3,
+      -2,
+      -1
+    ],
+    "source": "GPT addendum (user-pasted)",
+    "finding": "positions 5-6 use prior-year (2020) baseline instead of 2019; inconsistent with project definition; dates agree 10/10"
+  },
+  "open_definitional_item": "specify EDGAR 'Filing Date' field vs acceptance timestamp (Q2_2020 accepted 20:44:46)"
+}
