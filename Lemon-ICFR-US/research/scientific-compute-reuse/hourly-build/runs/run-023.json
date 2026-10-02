@@ -1,0 +1,66 @@
+{
+  "start_time": "2026-10-02T10:59:56+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Track B — Microsoft FY2025 SEC-native provenance fixture / GKM2017 firewall",
+  "journal": null,
+  "journal_tier": "NOT_APPLICABLE",
+  "phase": "Track-B fail-closed test execution and fixture/schema conformance falsification",
+  "work_attempted": [
+    "Reverify PR #76 HEAD/CI and Track-B fixture/schema/tests",
+    "Execute the eight committed Track-B controls against the persisted fixture",
+    "Repair fixture/schema conformance defects without relaxing the scientific firewall",
+    "Persist append-only hourly evidence"
+  ],
+  "work_completed": [
+    "Reverified PR #76 open at starting HEAD 6d3a325f0c1ac9308ec928d01b64fe3c32f70b75; statuses=[]; workflow_runs=[]",
+    "Executed the logical assertions in the committed eight-test suite against the exact persisted fixture",
+    "Observed 4 PASS and 4 FAIL: nine_unique, fail_closed, no_pseudo_gkm, deterministic_serialization PASS; identity, no_proxy_scoring, outcome_separation, temporal_identity FAIL",
+    "Root cause: persisted fixture stores accession/fiscal_year_end/filed under filing rather than issuer; omits scientific_firewall.proxy_may_be_scored_as_exact and observed_outcome.may_enter_predictors required by committed test/schema expectations",
+    "Prepared a fail-closed fixture repair; GitHub update was blocked by connector safety checks, so no repair commit or test PASS was claimed"
+  ],
+  "evidence": [
+    "GitHub fixture blob a08e889bcbcfd9ac4783965e6f141b832d509630 read back",
+    "Track-B test blob 24ba971a82f9d491873022be8d2ad268f2936d0d read back",
+    "Track-B schema blob af32cbaeb641c82c33846abd0ac0e0ade983b9b3 read back",
+    "Combined status returned statuses=[]; commit workflow runs returned workflow_runs=[]",
+    "Direct assertion evaluation against exact fixture: 4 PASS / 4 FAIL"
+  ],
+  "changed_files": [],
+  "github_starting_head": "6d3a325f0c1ac9308ec928d01b64fe3c32f70b75",
+  "github_ending_head": "6d3a325f0c1ac9308ec928d01b64fe3c32f70b75",
+  "github_commit": null,
+  "tests": [
+    "PASS test_nine_unique",
+    "PASS test_fail_closed",
+    "PASS test_no_pseudo_gkm",
+    "PASS test_deterministic_serialization",
+    "FAIL test_identity",
+    "FAIL test_no_proxy_scoring",
+    "FAIL test_outcome_separation",
+    "FAIL test_temporal_identity"
+  ],
+  "ci_status": "statuses=[]; workflow_runs=[]; no CI PASS claimed",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "Fixture/test/schema contract mismatch prevents eight-test PASS",
+    "GitHub fixture repair write blocked by connector safety checks",
+    "Canonical GitHub human-readable master log remains missing prior hourly records"
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "ADD: align fixture with committed schema/test contract without enabling scoring; then rerun all eight controls",
+    "RETAIN: append/backfill corrective human-readable GitHub hourly records without rewriting history"
+  ],
+  "drive_updates": [],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Retry minimal fixture contract repair; rerun all eight controls; only after 8/8 PASS add adversarial mutations for wrong accession, proxy-as-exact, outcome leakage, malformed cardinality, and serialization."
+}
