@@ -1,0 +1,67 @@
+{
+  "start_time": "2026-10-02T21:56:32+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Skaife, Veenman & Wangerin (2013), Internal control over financial reporting and managerial rent extraction",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "Benchmark screening and one-company feasibility triage",
+  "work_attempted": [
+    "Verify current branch evidence, CI/workflow state, canonical Drive archive state, and next FT50 candidate.",
+    "Screen Skaife, Veenman & Wangerin (2013) for direct ICFR relevance and one-company public-data feasibility without inferring unverified model details.",
+    "Persist a schema-conforming hourly machine record."
+  ],
+  "work_completed": [
+    "Verified Run-033 commit 36ac83e22dcaeecc8d0c8d2307a186a0c4506210 and found no commit statuses or PR-triggered workflow runs.",
+    "Verified the canonical source folder still contains the 66-paper archive, its 20-paper subset archive, and the hourly-log folder.",
+    "Verified publication identity and direct ICFR relevance of Skaife, Veenman & Wangerin (2013).",
+    "Classified the candidate as SCREENING_HOLD rather than fabricating an executable specification: the focal outcome is insider-trading profitability, while exact primary-paper equations/coefficient set were not verified in this block.",
+    "Identified that a public-data route may be possible in principle through SEC insider filings plus permitted market-price data, so the paper is not yet quarantined solely for data availability."
+  ],
+  "evidence": [
+    "Journal of Accounting and Economics 55(1), 91-110; DOI 10.1016/j.jacceco.2012.07.005.",
+    "Published abstract states the study tests whether ineffective ICFR is associated with greater insider-trading profitability and examines pre-disclosure/remediation patterns and tone-at-the-top opinions.",
+    "Primary full-text retrieval through the external repository returned HTTP 403 in this block; therefore exact equations, transformations, coefficient/intercept completeness, and estimator were not asserted.",
+    "Run-033 machine record itself contains stale internal ending-head/commit fields and non-schema enum strings despite being committed at 36ac83e22dcaeecc8d0c8d2307a186a0c4506210; corrective follow-up is required rather than silent rewrite."
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-034.json"
+  ],
+  "github_starting_head": "36ac83e22dcaeecc8d0c8d2307a186a0c4506210",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Publication identity and DOI cross-source check PASS.",
+    "Direct ICFR relevance check PASS.",
+    "Exact executable-specification gate HOLD because primary equation/coefficient evidence was not retrieved.",
+    "No fitted value, causal effect, or probability computed."
+  ],
+  "ci_status": "Starting HEAD returned no combined-status contexts and no PR-triggered workflow runs; no CI PASS claimed.",
+  "codex_status": "PENDING",
+  "blockers": [
+    "Primary full-text retrieval for Skaife-Veenman-Wangerin (2013) was unavailable through the external repository in this block.",
+    "Run-033 committed machine record is not schema-conforming in several status fields and contains stale internal head/commit claims.",
+    "GitHub human-readable master log is missing prior hourly entries."
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL",
+    "LOCAL",
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Add primary-paper extraction for Skaife-Veenman-Wangerin (2013); if exact specification remains unavailable, quarantine and advance.",
+    "Add corrective follow-up for Run-033 schema/head inconsistencies; do not rewrite Run-033.",
+    "Backfill append-only GitHub human-readable hourly log without altering prior setup record."
+  ],
+  "drive_updates": [
+    "Run-034 Drive append pending after GitHub persistence."
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PARTIAL",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Retrieve/inspect the primary Skaife-Veenman-Wangerin (2013) specification from the canonical archive or another permitted primary source; verify equations, transformations, estimator, coefficients/intercept and data dependencies, then either admit or quarantine before advancing."
+}
