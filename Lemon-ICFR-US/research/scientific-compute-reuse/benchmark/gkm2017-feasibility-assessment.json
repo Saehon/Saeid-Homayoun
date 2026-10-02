@@ -1,0 +1,17 @@
+{
+  "paper": "Ge, Koester, McVay (2017), Benefits and costs of Sarbanes-Oxley Section 404(b) exemption",
+  "journal": "Journal of Accounting and Economics",
+  "tier": "FT50",
+  "source": "Primary PDF in canonical Drive source archive",
+  "model": "Eq. (1b) stepwise logistic MaintainedIneffective model",
+  "table": "Table 3 Panel C",
+  "reported_predictors": ["AggLoss","Restate","Seg","Age","BankInd","Size","Cash","InstOwn","Prior404302"],
+  "reported_slopes": [0.301,0.940,0.072,-0.344,-0.714,-0.361,-1.088,-1.285,3.161],
+  "roc": 0.887,
+  "reported_probability_cutoff": 0.217,
+  "intercept_visible_in_table3_panel_c": false,
+  "data_dependencies": ["internal-control database","restatement database","financial-statement database","segment database","institutional-holdings database","cross-sectional fiscal-year winsorization"],
+  "scientific_decision": "DEPENDENCY_CRITICAL for exact one-company PredictedProbability. Do not infer the missing intercept or cross-sectional transforms.",
+  "replication_only_note": "Table 2 audit-fee benefit arithmetic is reproducible from reported table values but is an aggregate sample calculation, not a one-company SEC-native risk model.",
+  "next_task": "Advance to the next benchmark candidate and test exact specification plus public-data feasibility."
+}
