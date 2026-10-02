@@ -50,3 +50,21 @@ jobs:
           rc=$?
           echo "exit_code=$rc"
           exit "$rc"
+
+      - name: Run preregistered Microsoft COVID scan
+        shell: bash
+        env:
+          EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
+        run: |
+          set +e
+          python NAAIL/research-assurance-mcp/derived/msft_covid_scan.py
+          rc=$?
+          echo "exit_code=$rc"
+          exit "$rc"
+
+      - name: Upload Microsoft COVID scan evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: msft-covid-scan-evidence
+          path: NAAIL/research-assurance-mcp/derived/msft_covid_scan_result.json
+          if-no-files-found: error
