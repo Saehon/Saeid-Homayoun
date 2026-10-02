@@ -22,7 +22,8 @@
   "evidence": [
     "Drive archive 14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g contains DGM2007 JAE 44 (2007) 193-223 PDF",
     "DGM2007 Table 1 and Table 5 inspected from primary PDF",
-    "Table 5 continuous variables winsorized 1%/99%; all three models include industry indicators"
+    "Table 5 continuous variables winsorized 1%/99%; all three models include industry indicators",
+    "Run 021 readback reconfirmed run-020.json and Drive master revision; GitHub combined statuses=[] and workflow_runs=[] at 39d72a9a7e5537d6c22f74c8b48965492585b286."
   ],
   "changed_files": [],
   "github_starting_head": "f87507ef1b9835896c75435f95204ca2a99f1166",
@@ -46,7 +47,8 @@
   "open_repair_queue_changes": [
     "Add GitHub persistence retry for DGM2007 recovery artifact and hourly record",
     "Retain GitHub human-readable hourly-log backfill",
-    "Add DGM2007 industry-FE/ranking dependency recovery gate"
+    "Add DGM2007 industry-FE/ranking dependency recovery gate",
+    "Corrective Run 021: canonical GitHub human-readable master-log append remains blocked by connector safety control; retry later without rewriting history."
   ],
   "drive_updates": [
     "Pending canonical Drive master-log append for this run"
