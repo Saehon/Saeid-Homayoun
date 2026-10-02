@@ -1,0 +1,62 @@
+{
+  "start_time": "2026-10-02T08:04:51+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Doyle, Ge & McVay (2007) — Determinants of weaknesses in internal control over financial reporting",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "Benchmark archive inventory and primary-source recovery",
+  "work_attempted": [
+    "Verify PR/branch/HEAD/CI and Drive state",
+    "Inventory both canonical ScienceDirect ZIP archives",
+    "Inspect strongest direct-ICFR primary paper",
+    "Persist benchmark recovery evidence to GitHub"
+  ],
+  "work_completed": [
+    "Verified PR #76 open at f87507ef1b9835896c75435f95204ca2a99f1166 and no workflow runs returned",
+    "Downloaded and inventoried both Drive ZIP archives",
+    "Recovered DGM2007 primary published JAE PDF from second archive",
+    "Extracted Table 1 variable definitions and Table 5 logistic specifications directly from primary PDF",
+    "Identified industry fixed effects, Shumway ranking and industry-growth ranking as execution dependencies"
+  ],
+  "evidence": [
+    "Drive archive 14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g contains DGM2007 JAE 44 (2007) 193-223 PDF",
+    "DGM2007 Table 1 and Table 5 inspected from primary PDF",
+    "Table 5 continuous variables winsorized 1%/99%; all three models include industry indicators"
+  ],
+  "changed_files": [],
+  "github_starting_head": "f87507ef1b9835896c75435f95204ca2a99f1166",
+  "github_ending_head": "f87507ef1b9835896c75435f95204ca2a99f1166",
+  "github_commit": null,
+  "tests": [
+    "ZIP integrity/listing succeeded for both source archives",
+    "Primary PDF text extraction succeeded",
+    "No model execution credited"
+  ],
+  "ci_status": "No workflow runs returned for starting HEAD; no CI PASS claimed",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "GitHub create-file persistence blocked by connector safety control",
+    "DGM2007 one-company execution still requires industry-indicator coefficient/coding plus exact ranking-population dependencies"
+  ],
+  "blocker_class": [
+    "LOCAL",
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "Add GitHub persistence retry for DGM2007 recovery artifact and hourly record",
+    "Retain GitHub human-readable hourly-log backfill",
+    "Add DGM2007 industry-FE/ranking dependency recovery gate"
+  ],
+  "drive_updates": [
+    "Pending canonical Drive master-log append for this run"
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Inspect DGM2007 footnotes/appendix and replication materials for industry indicator coding/coefficient availability, Shumway implementation, ranking populations, missingness and sample timing; if dependencies remain unavailable, advance the next independently executable ICFR benchmark."
+}
