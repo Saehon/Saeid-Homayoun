@@ -1,0 +1,66 @@
+{
+  "start_time": "2026-10-03T02:01:51+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Aobdia & Yoon (2026), Do auditors understand the implications of ESG issues for their audits? Evidence from financially material negative ESG incidents",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "Benchmark screening and exact one-company feasibility falsification",
+  "work_attempted": [
+    "Verify authorized branch HEAD, CI/workflow state, canonical Drive master-log state, and source archive.",
+    "Inspect the next direct-ICFR FT50 primary paper from the canonical 66-paper archive under DARWIN.",
+    "Test whether the published focal ICFR specification is independently executable for one company using SEC/permitted public data.",
+    "Persist an append-only machine record before Drive logging."
+  ],
+  "work_completed": [
+    "Verified authorized branch HEAD 92e6bf662b20b195486d65cd895fb938d5bfba28; combined statuses and PR-triggered workflow runs were empty, so no CI PASS is claimed.",
+    "Recovered the primary Aobdia & Yoon paper from the canonical 66-paper Drive archive and verified Eq. (1), Table 3 Panel A, controls, fixed effects, clustering, and focal coefficients.",
+    "Verified Eq. (1) is a linear fixed-effects model of ICW/restatement outcomes on Material ESG Incidents, Post, their interaction, controls, company FE, year FE, and historical 2-digit SIC FE; client-clustered heteroskedasticity-robust SEs.",
+    "Verified Table 3 Panel A Column (1) Material ESG Incidents coefficient = -0.01497 (t=-3.000), N=29,075, adjusted R-squared=0.228; Column (2) interaction Material ESG Incidents x Post = -0.01593 (t=-2.287).",
+    "Quarantined this paper for the exact one-company POC: focal ESG incidents come from RepRisk, and the individual company/year/historical-SIC fixed-effect coefficients required for an exact fitted value are not tabulated. No proxy ESG incident, intercept, fixed effect, score, or probability was fabricated."
+  ],
+  "evidence": [
+    "Canonical Drive archive ID 14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g; primary PDF Do-auditors-understand-the-implications-of-ESG-issues-fo_2026_Journal-of-Acc.pdf.",
+    "Primary paper: Journal of Accounting and Economics 81 (2026) 101831; DOI 10.1016/j.jacceco.2025.101831.",
+    "Primary PDF Eq. (1) and Table 3 Panel A inspected directly; paper states RepRisk supplied raw ESG incident data.",
+    "GitHub starting HEAD statuses=[] and workflow_runs=[]."
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-038.json"
+  ],
+  "github_starting_head": "92e6bf662b20b195486d65cd895fb938d5bfba28",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Primary-source identity PASS.",
+    "Direct ICFR relevance PASS.",
+    "Equation/estimator/control extraction PASS.",
+    "One-company exact-execution gate FAIL-CLOSED: proprietary RepRisk focal input and untabulated fixed effects prevent faithful exact fitted output.",
+    "No sealed outcome, proxy substitution, or invented parameter used."
+  ],
+  "ci_status": "Starting HEAD returned statuses=[] and workflow_runs=[]; no CI PASS claimed.",
+  "codex_status": "PENDING",
+  "blockers": [
+    "Exact one-company reproduction of Aobdia & Yoon (2026) requires RepRisk ESG incident data and untabulated fixed-effect coefficients.",
+    "GitHub human-readable master log still lacks prior hourly backfills."
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL",
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Mark Aobdia & Yoon (2026) quarantined for exact one-company POC; advance benchmark queue.",
+    "Retain GitHub human-readable log backfill/corrective-follow-up items; do not rewrite historical records."
+  ],
+  "drive_updates": [
+    "Pending after GitHub persistence."
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "After dual-save/readback, screen the next-ranked FT50 direct-ICFR candidate; prioritize a specification with public focal inputs and fully recoverable parameters, and quarantine immediately if exact one-company execution is structurally impossible."
+}
