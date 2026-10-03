@@ -1,0 +1,53 @@
+{
+  "start_time": "2026-10-03T04:00:48+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "LEMON-SCI dual-save repair",
+  "journal": null,
+  "journal_tier": "NOT_APPLICABLE",
+  "phase": "Repair/falsification sweep",
+  "work_attempted": [
+    "Verify current state and repair GitHub human-readable logging gap."
+  ],
+  "work_completed": [
+    "Verified PR #76 open at HEAD 313d47051c7d94a788be56ff17f221460924a045.",
+    "Verified Run-038 machine record blob a4d9b971528cdeebe89f70541db4d56a380f198d.",
+    "Verified canonical Drive source folder still contains both ScienceDirect archives.",
+    "GitHub human-readable append was attempted and blocked; retained as LOCAL repair item."
+  ],
+  "evidence": [
+    "PR #76 readback.",
+    "Run-038 JSON readback.",
+    "Drive source-folder readback."
+  ],
+  "changed_files": [],
+  "github_starting_head": "313d47051c7d94a788be56ff17f221460924a045",
+  "github_ending_head": "313d47051c7d94a788be56ff17f221460924a045",
+  "github_commit": null,
+  "tests": [
+    "State readback PASS.",
+    "No scientific inference."
+  ],
+  "ci_status": "No CI PASS claimed.",
+  "codex_status": "PENDING",
+  "blockers": [
+    "GitHub write safety control blocked required persistence."
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Retain Run-039 GitHub machine and human-readable persistence for repair sweep."
+  ],
+  "drive_updates": [
+    "Pending Drive append."
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Append/read back Run 039 in Drive; continue next scientifically admissible task while GitHub persistence remains LOCAL."
+}
