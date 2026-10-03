@@ -1,0 +1,69 @@
+{
+  "start_time": "2026-10-03T09:01:09+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Ashbaugh-Skaife, Collins, Kinney & LaFond (2009), The Effect of SOX Internal Control Deficiencies on Firm Risk and Cost of Equity",
+  "journal": "Journal of Accounting Research",
+  "journal_tier": "FT50",
+  "phase": "Benchmark screening and exact one-company public-data feasibility gate",
+  "work_attempted": [
+    "Reverify authorized GitHub PR/branch/HEAD/CI and canonical Drive/source-archive state.",
+    "Advance to an unused FT50 direct-ICFR benchmark and test exact one-company public-data executability.",
+    "Apply fail-closed DARWIN screening without proxy substitution."
+  ],
+  "work_completed": [
+    "Verified PR #76 open on feature/lemon-scientific-compute-reuse at starting HEAD 3c57e9e8a210023578392148cbbfb412892707f1; combined statuses and PR-triggered workflow runs were empty.",
+    "Verified canonical Drive master log contains Run 042 and source folder still contains both ScienceDirect ICFR archives.",
+    "Screened Ashbaugh-Skaife, Collins, Kinney & LaFond (2009), Journal of Accounting Research 47(1):1-43, DOI 10.1111/j.1475-679X.2008.00315.x using the publisher full text.",
+    "Primary publisher evidence shows the study uses SOX 302/404 ICD disclosures, risk/cost-of-equity models, Ken French factor data, and Value Line expected returns; initial ICD identification also used Compliance Week and Glass Lewis with SEC back-tracing.",
+    "Quarantined the paper for the exact one-company public-data POC because the cost-of-equity scientific object relies on Value Line expected returns and the complete published fitted one-company contract is not established as reproducible from definition-equivalent public inputs. No proxy cost of equity, coefficient, intercept, or company score was fabricated."
+  ],
+  "evidence": [
+    "GitHub PR #76 live readback: head_sha 3c57e9e8a210023578392148cbbfb412892707f1.",
+    "GitHub combined statuses=[] and PR-triggered workflow_runs=[] for starting HEAD.",
+    "Google Drive master log revision AHj4eMRbhmsxOW8NxPNmXslg5AffXjqPPKcFbbH7Mn-A7z0HKvLTc3hNAr6_b-T2INcNgVE0LIgTAZ3HXRtjRjNn8bcLgjZjK4EsTKt2-4o contained Run 042.",
+    "Source folder 1qTgLv33za4xDfO9xlPDsYs88lGadei7g contains archives 14JJQtcJdLIwUaDR7EwK8Vd2IJbKodA0g and 1Eru-bFSbxEOWQfVTR-0Pfb2AjQmTiunF.",
+    "Wiley publisher full text DOI 10.1111/j.1475-679X.2008.00315.x: JAR 47(1):1-43; Value Line cost-of-equity measure; Ken French factor data; SEC filing back-trace for ICD event dates."
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-043.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/hourly-build-log.md"
+  ],
+  "github_starting_head": "3c57e9e8a210023578392148cbbfb412892707f1",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Live PR/HEAD readback PASS.",
+    "Starting-head CI/status readback PASS as evidence of no reported checks; no CI PASS claimed.",
+    "Drive master-log/source-folder readback PASS.",
+    "Direct ICFR relevance PASS.",
+    "Exact one-company public-data feasibility FAIL-CLOSED because Value Line expected returns are not established as definition-equivalent public inputs and complete fitted one-company parameters are not established.",
+    "No proxy/missing-parameter fabrication PASS."
+  ],
+  "ci_status": "Starting HEAD had statuses=[] and workflow_runs=[]; Run-043 CI pending until/if commit is created; no CI PASS claimed.",
+  "codex_status": "PENDING",
+  "blockers": [
+    "Ashbaugh-Skaife et al. (2009) cost-of-equity construction uses Value Line expected returns; exact public-data equivalence not established.",
+    "Complete exact fitted one-company parameter contract not established from primary evidence in this run.",
+    "Prior persistence repair queue remains open."
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL",
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Add Ashbaugh-Skaife et al. (2009) as DEPENDENCY_CRITICAL/quarantined for exact one-company public-data POC unless definition-equivalent public inputs and complete fitted parameters are later established.",
+    "Retain prior GitHub/Drive persistence backfills."
+  ],
+  "drive_updates": [
+    "Run 043 append to canonical Google Drive master log required after GitHub save."
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Screen the next unused FT50 direct-ICFR candidate requiring complete published parameters and definition-equivalent SEC/EDGAR/public inputs; continue persistence repair without revisiting quarantined papers absent new evidence."
+}
