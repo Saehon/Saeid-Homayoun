@@ -1,0 +1,57 @@
+{
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Doyle, Ge & McVay (2007), Determinants of weaknesses in internal control over financial reporting",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "benchmark selection / parameter-contract falsification",
+  "work_attempted": [
+    "Correct Run 056 archive-membership claim using direct inspection of the canonical 66-PDF Drive archive.",
+    "Screen the next directly archived FT50 ICFR benchmark for an independently executable one-company parameter contract."
+  ],
+  "work_completed": [
+    "Verified that Ashbaugh-Skaife et al. (2009) is cited inside archived papers but is not itself one of the 66 PDFs in the canonical archive; Run 056 claim that it was recovered as an archived benchmark is superseded.",
+    "Inspected the primary archived Doyle et al. (2007) PDF. Table 5 publishes intercept and main-variable logit coefficients, but the model explicitly includes 16 industry indicator variables whose coefficients are not tabulated.",
+    "Classified Doyle et al. (2007) as DEPENDENCY_CRITICAL for exact deterministic reuse because the published executable parameter vector is incomplete; no coefficients, industry effects, or one-company score were inferred."
+  ],
+  "evidence": [
+    "Canonical Drive ZIP ScienceDirect-ICOFR_articles_01Oct2026_08-57-59.984.zip contains 66 PDFs; no Ashbaugh-Skaife et al. (2009) PDF filename is present.",
+    "Doyle et al. (2007) primary PDF: Eq. (1) includes industry effects; text states 16 industry indicator variables are included but not tabulated.",
+    "Doyle et al. (2007) Table 5 reports intercept and main-variable coefficients, confirming that omission of industry coefficients prevents exact reconstruction of the published specification."
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-057.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/hourly-build-log.md"
+  ],
+  "github_starting_head": "7203ea075f3fd653680f7ad32f0d707f9e782151",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Archive membership check: PASS for 66-PDF inventory; Ashbaugh-Skaife et al. (2009) absent as a standalone PDF.",
+    "Parameter-contract completeness test for Doyle et al. (2007): FAIL-CLOSED because 16 included industry coefficients are not tabulated."
+  ],
+  "ci_status": "No workflow runs or commit statuses were present on starting HEAD; CI PASS not claimed.",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "Doyle et al. (2007) exact published specification cannot be deterministically re-executed without the unreported industry-effect coefficients."
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL"
+  ],
+  "open_repair_queue_changes": [
+    "Add corrective supersession of Run 056 archive-membership claim; preserve Run 056 history rather than rewriting it.",
+    "Quarantine Doyle et al. (2007) for exact one-company POC unless primary replication materials recover the omitted industry coefficients."
+  ],
+  "drive_updates": [
+    "Append Run 057 corrective/scientific record to canonical Drive master log after GitHub persistence."
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Continue FT50-first screening within the canonical archive for a direct-ICFR benchmark with a complete published parameter contract and definition-equivalent public inputs; do not reactivate ACK2007."
+}
