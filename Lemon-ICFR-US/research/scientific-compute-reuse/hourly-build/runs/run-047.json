@@ -1,0 +1,61 @@
+{
+  "start_time": "2026-10-03T13:02:35+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Ashbaugh-Skaife, Collins & Kinney (2007), The discovery and reporting of internal control deficiencies prior to SOX-mandated audits",
+  "journal": "Journal of Accounting and Economics",
+  "journal_tier": "FT50",
+  "phase": "benchmark feasibility screening",
+  "work_attempted": [
+    "Verify live GitHub branch/HEAD/CI state and canonical Drive source archive.",
+    "Screen the next unused FT50 direct-ICFR benchmark under the exact one-company public-data admission gate."
+  ],
+  "work_completed": [
+    "Verified prior Run-046 machine record on authorized branch and no combined status checks or PR-triggered workflow runs at starting HEAD 948dd12b4ca7cc76953f8729717cd5ba8e5c0c78.",
+    "Verified both canonical ScienceDirect ICFR ZIP archives remain present in source folder 1qTgLv33za4xDfO9xlPDsYs88lGadei7g.",
+    "Verified Ashbaugh-Skaife, Collins & Kinney (2007), JAE 44(1-2):166-192, DOI 10.1016/j.jacceco.2006.10.001, directly studies economic determinants of pre-SOX-404 internal-control-deficiency disclosure and discovery/reporting incentives.",
+    "Exact one-company POC gate failed closed in this block: available evidence establishes determinants and study design but not a complete fixed coefficient/intercept contract plus definition-equivalent public inputs sufficient for exact deterministic company-level execution. No missing coefficient, proxy, or company output was inferred."
+  ],
+  "evidence": [
+    "Journal of Accounting and Economics 44(1-2):166-192; DOI 10.1016/j.jacceco.2006.10.001.",
+    "Primary/metadata evidence identifies complexity, organizational change, accounting-risk exposure, resources, auditor resignation, prior SEC enforcement/restatements, dominant auditor, and institutional-ownership concentration as determinants/incentives.",
+    "GitHub Run-046 readback blob b511b393e9535c1ebc80dd42a7a8fc10596570ba; starting HEAD 948dd12b4ca7cc76953f8729717cd5ba8e5c0c78; combined statuses=[]; workflow_runs=[].",
+    "Drive source-folder readback: 32,106,064-byte and 54,767,345-byte ScienceDirect ICFR ZIP archives present."
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-047.json"
+  ],
+  "github_starting_head": "948dd12b4ca7cc76953f8729717cd5ba8e5c0c78",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Paper identity/direct-ICFR relevance: PASS.",
+    "Exact fixed-parameter one-company execution contract: FAIL-CLOSED for this block.",
+    "No fabricated coefficients, proxies, public-data equivalence, or company output: PASS."
+  ],
+  "ci_status": "No combined status checks or PR-triggered workflow runs observed at starting HEAD; no CI PASS claimed.",
+  "codex_status": "PENDING",
+  "blockers": [
+    "Complete published fixed coefficient/intercept contract and definition-equivalent public inputs were not established for exact one-company deterministic execution.",
+    "Historical GitHub human-readable log and machine-record backfills remain in the OPEN REPAIR QUEUE."
+  ],
+  "blocker_class": [
+    "DEPENDENCY_CRITICAL",
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Quarantine Ashbaugh-Skaife, Collins & Kinney (2007) from the exact one-company POC unless new primary/replication evidence establishes the missing executable contract.",
+    "Retain historical persistence backfills; do not silently rewrite prior hourly records."
+  ],
+  "drive_updates": [
+    "Pending GitHub save/readback before Drive append."
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Advance to the next unused FT50 direct-ICFR benchmark requiring both a complete published parameter contract and definition-equivalent public inputs; continue persistence repair sweep independently."
+}
