@@ -1,0 +1,43 @@
+{
+  "START_TIME": "2026-10-03T09:57:53+02:00",
+  "END_TIME": null,
+  "DURATION": null,
+  "PAPER_OR_MODEL": "Ashbaugh-Skaife, Collins, Kinney & LaFond (2008), The Effect of SOX Internal Control Deficiencies and Their Remediation on Accrual Quality",
+  "JOURNAL": "The Accounting Review",
+  "JOURNAL_TIER": "FT50",
+  "PHASE": "benchmark feasibility screening",
+  "WORK_ATTEMPTED": "Screen next unused FT50 direct-ICFR benchmark for exact one-company public-data executability; verify live PR/HEAD/status/workflows and canonical Drive source archive.",
+  "WORK_COMPLETED": "Verified paper identity/DOI/direct ICFR relevance and accrual-quality/remediation design. Exact one-company POC gate failed closed because the scientific outcomes require firm-history/cross-sectional estimation (accrual-noise and abnormal-accrual constructions) rather than a published fixed parameter vector directly executable for one company; no coefficient/proxy/output inferred. Verified PR #76 open at starting HEAD and canonical Drive archives present.",
+  "EVIDENCE": [
+    "DOI 10.2308/accr.2008.83.1.217",
+    "The Accounting Review 83(1):217-250",
+    "Publisher/metadata abstract confirms ICD/remediation effects on accrual noise and absolute abnormal accruals",
+    "Run-start GitHub PR #76 head a3a2089a92b4e3bb7ac2628b6ce44eb47a1a9936; combined statuses empty; workflow runs empty",
+    "Drive source folder contains both canonical ScienceDirect ICFR archives"
+  ],
+  "CHANGED_FILES": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/runs/run-044.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/hourly-build-log.md"
+  ],
+  "GITHUB_STARTING_HEAD": "a3a2089a92b4e3bb7ac2628b6ce44eb47a1a9936",
+  "GITHUB_ENDING_HEAD": null,
+  "GITHUB_COMMIT": null,
+  "TESTS": "Paper identity/direct-ICFR relevance PASS; exact one-company fixed-parameter executability FAIL-CLOSED; live PR/head readback PASS; no fabricated parameters/data/output.",
+  "CI_STATUS": "No statuses/workflow runs observed at starting HEAD; no CI PASS claimed.",
+  "CODEX_STATUS": "No new exact-HEAD Codex review established in this run.",
+  "BLOCKERS": [
+    "Published design is not a fixed one-company scoring contract; accrual-quality outcomes require multi-period/cross-sectional estimation context.",
+    "Prior GitHub/Drive persistence backfills remain open."
+  ],
+  "BLOCKER_CLASS": "DEPENDENCY_CRITICAL; LOCAL",
+  "OPEN_REPAIR_QUEUE_CHANGES": "Quarantine Ashbaugh-Skaife et al. (2008) from exact one-company POC unless new primary/replication evidence establishes an independently executable fixed contract; retain prior persistence backfills.",
+  "DRIVE_UPDATES": "Pending GitHub save/readback before Drive append.",
+  "GITHUB_READBACK": "PENDING",
+  "DRIVE_READBACK": "PENDING",
+  "ENGINEERING_STATUS": "PARTIAL",
+  "SCIENTIFIC_STATUS": "PASS",
+  "GATE_STATUS": "HOLD",
+  "DUAL_SAVE_STATUS": "BLOCKED",
+  "POC_V1_STATUS": "NOT_FROZEN",
+  "NEXT_EXECUTABLE_TASK": "Advance to next unused FT50 direct-ICFR candidate requiring complete published parameters and definition-equivalent public inputs; continue persistence repair sweep without revisiting quarantined benchmarks absent new evidence."
+}
