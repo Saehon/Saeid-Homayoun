@@ -183,6 +183,16 @@
       "rationale": "Current POC lacks inspectable per-cell comparison evidence; the claim remains bounded author-output consistency and is not reconstructed or promoted to independent reproduction.",
       "evidence": "case-001-management-science/P0_CASE001_FREEZE.md",
       "note": "POC criteria remain 7 of 10 until the remaining COVID and final release/synchronization gates are resolved."
+    },
+    {
+      "date": "2026-10-04",
+      "change_id": "MSFT-COVID-V1R-RETROSPECTIVE-RUN",
+      "change": "Record the authoritative retrospective Microsoft COVID v1-R execution without changing the COVID assurance state.",
+      "evidence": [
+        "GitHub Actions run 37204180146",
+        "PR #103"
+      ],
+      "note": "v1-R run 37204180146 regenerated all 10 FilingLag rows (pending Claude file review)"
     }
   ],
   "poc_criteria_met": 7,
