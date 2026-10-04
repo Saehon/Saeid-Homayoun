@@ -2,7 +2,7 @@ program_version: v3
 mode: CONTINUOUS — Claude final review at P19
 program_branch: lemon/p00-bootstrap
 start_point_sha: 5ede5d32534a94f7363a571f506b2caec95768e9
-current_phase: P01
+current_phase: P02
 owner_contact_email_for_sec: NOT_PROVIDED
 owner_approved_cryptography: no
 runs_in_current_phase: 0
@@ -10,7 +10,7 @@ quarantined_science: ORQ-001 SIZE, ORQ-002 RGROWTH (ACK2007 = SCIENTIFIC_HOLD)
 open_owner_items: SEC contact email required before P04; merges deferred to end per ORQ-013
 phase_status:
   P00: COMPLETE
-  P01: NOT_STARTED
+  P01: COMPLETE
   P02: NOT_STARTED
   P03: NOT_STARTED
   P04: NOT_STARTED
