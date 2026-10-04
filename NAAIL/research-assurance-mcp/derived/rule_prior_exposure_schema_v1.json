@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Saehon/Saeid-Homayoun/NAAIL/research-assurance-mcp/derived/rule_prior_exposure_schema_v1.json",
+  "title": "NAAIL research-rule prior-exposure governance schema",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "status",
+    "active_for_execution",
+    "prior_exposure",
+    "freeze_commit",
+    "freeze_timestamp_utc",
+    "earliest_outcome_artifact",
+    "policy_disposition"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "FROZEN_PREREGISTERED",
+        "RETROSPECTIVE_REDERIVATION",
+        "REJECTED_V1_PREREGISTRATION",
+        "HISTORICAL"
+      ]
+    },
+    "active_for_execution": {
+      "type": "boolean"
+    },
+    "prior_exposure": {
+      "type": "boolean"
+    },
+    "freeze_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "freeze_timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "earliest_outcome_artifact": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "path",
+            "commit",
+            "timestamp_utc"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "timestamp_utc": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "policy_disposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "correction_record": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "FROZEN_PREREGISTERED"
+          },
+          "active_for_execution": {
+            "const": true
+          }
+        },
+        "required": [
+          "status",
+          "active_for_execution"
+        ]
+      },
+      "then": {
+        "properties": {
+          "prior_exposure": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "prior_exposure": {
+            "const": true
+          }
+        },
+        "required": [
+          "prior_exposure"
+        ]
+      },
+      "then": {
+        "properties": {
+          "earliest_outcome_artifact": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
