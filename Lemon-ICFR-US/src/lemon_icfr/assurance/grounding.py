@@ -40,6 +40,7 @@ class Control:
 
 @dataclass(frozen=True)
 class TestProcedure:
+    __test__ = False   # not a pytest test class (fixes PytestCollectionWarning)
     test_id: str
     control_id: str
     population_source: str
