@@ -1,0 +1,58 @@
+{
+  "start_time": "2026-10-04T06:58:34+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Park et al. (2021) COSO noncompliance construct",
+  "journal": "Journal of Accounting and Public Policy",
+  "journal_tier": "ABS3",
+  "phase": "POC machine-readable specification / contrasting SEC validation / negative tests",
+  "work_attempted": [
+    "Create strict fail-closed benchmark specification",
+    "Validate contrasting post-2014 COSO 1992 SEC filing",
+    "Exercise positive, negative and ambiguous classifier cases",
+    "Persist implementation and tests"
+  ],
+  "work_completed": [
+    "Verified contrasting SEC filing explicitly uses COSO 1992 for fiscal year ended 2015-05-31",
+    "Created and read back benchmark-spec.json on authorized branch",
+    "Executed five classifier logic cases locally: explicit 1992=1, explicit 2013=0, unversioned=None, both versions=None, empty=None"
+  ],
+  "evidence": [
+    "SEC 10-K accession 0001193125-15-283224 explicitly states Internal Control—Integrated Framework (1992) for May 31 2015",
+    "Microsoft FY2015 accession 0001193125-15-272806 remains explicit COSO 2013 comparator",
+    "GitHub benchmark-spec.json readback SHA 4b1930f6547ec4be5f2329782a395797633c56ff"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/benchmark-spec.json"
+  ],
+  "github_starting_head": "bcc59bf708804b6cf7479aa22ca97868f058423c",
+  "github_ending_head": "b3e376a6df48c1247754a9af2c82a0ecc4e662db",
+  "github_commit": "b3e376a6df48c1247754a9af2c82a0ecc4e662db",
+  "tests": [
+    "SEC contrasting-framework evidence PASS",
+    "benchmark-spec readback PASS",
+    "classifier logic 5/5 PASS in execution environment; classifier source not persisted due write blocker"
+  ],
+  "ci_status": "NOT_RUN",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "GitHub persistence of classifier source/tests blocked; after two write failures no third retry in current progression",
+    "GitHub append-only master-log has prior repeated write blocker and was not retried"
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Add classifier source and tests in later repair sweep; preserve exact fail-closed behavior",
+    "Backfill canonical GitHub master log when persistence blocker is repaired"
+  ],
+  "drive_updates": [],
+  "github_readback": "VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "PARTIAL",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Append/read back Run 063 in Drive, then next run persist executable classifier/tests or advance to independent mutation/determinism testing under two-failure rule."
+}
