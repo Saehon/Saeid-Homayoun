@@ -27,6 +27,8 @@ The persisted classifier logic was executed locally without modification.
 
 Summary: **3/7 PASS; 4/7 FAIL**.
 
+The seven-case matrix was executed twice at the same persisted classifier content. Both result payloads had SHA-256 `c73a7276a2048730c36d84e61d67232d52fa1e142c73baa2ac5ece3e7d185e31`; determinism passed, while scientific correctness remained 3/7.
+
 ## Findings
 
 ### F-068-01 — Evidence-scope leakage
