@@ -1,8 +1,8 @@
 program_version: v3
 mode: CONTINUOUS — Claude final review at P19
-program_branch: lemon/p00-bootstrap
+program_branch: lemon/p02-fact-extraction
 start_point_sha: 5ede5d32534a94f7363a571f506b2caec95768e9
-current_phase: P02
+current_phase: P03
 owner_contact_email_for_sec: NOT_PROVIDED
 owner_approved_cryptography: no
 runs_in_current_phase: 0
@@ -11,7 +11,7 @@ open_owner_items: SEC contact email required before P04; merges deferred to end 
 phase_status:
   P00: COMPLETE
   P01: COMPLETE
-  P02: NOT_STARTED
+  P02: COMPLETE
   P03: NOT_STARTED
   P04: NOT_STARTED
   P05: NOT_STARTED
