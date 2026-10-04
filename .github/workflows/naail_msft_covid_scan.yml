@@ -1,4 +1,4 @@
-name: NAAIL Microsoft COVID Scan
+name: NAAIL Microsoft COVID v1-R Re-derivation
 
 on:
   workflow_dispatch:
@@ -7,44 +7,59 @@ permissions:
   contents: read
 
 jobs:
-  msft-covid-scan:
+  msft-covid-v1r-rederivation:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout reviewed v1-R instrument
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          ref: 7b23810af2f4a38fdefa54b242600593c804ea91
+          persist-credentials: false
 
-      - name: Verify frozen COVID rule
+      - name: Verify reviewed rule, protocol, and scanner blobs before SEC access
         shell: bash
         run: |
-          expected="d7760b4909ae84896cae8797fb8536f59d36053c"
-          actual="$(git hash-object NAAIL/research-assurance-mcp/derived/covid_rule_v1.json)"
-          echo "expected_blob=$expected"
-          echo "actual_blob=$actual"
-          if [ "$actual" != "$expected" ]; then
-            echo "Frozen covid_rule_v1.json blob mismatch" >&2
-            exit 1
-          fi
+          set -euo pipefail
 
-      - name: Run preregistered Microsoft COVID scan
+          rule_path="NAAIL/research-assurance-mcp/derived/covid_rule_v1.json"
+          protocol_path="NAAIL/research-assurance-mcp/derived/covid_rederivation_protocol_v1r.json"
+          scanner_path="NAAIL/research-assurance-mcp/derived/msft_covid_rederivation_scan_v1r.py"
+
+          expected_rule="d7760b4909ae84896cae8797fb8536f59d36053c"
+          expected_protocol="83af7a6859b2d44b782b5d838420f07717ea79d3"
+          expected_scanner="5b0b31de72f67fd14439875db58cab7f6427f5a1"
+
+          actual_rule="$(git hash-object "$rule_path")"
+          actual_protocol="$(git hash-object "$protocol_path")"
+          actual_scanner="$(git hash-object "$scanner_path")"
+
+          echo "expected_rule_blob=$expected_rule"
+          echo "actual_rule_blob=$actual_rule"
+          echo "expected_protocol_blob=$expected_protocol"
+          echo "actual_protocol_blob=$actual_protocol"
+          echo "expected_scanner_blob=$expected_scanner"
+          echo "actual_scanner_blob=$actual_scanner"
+
+          test "$actual_rule" = "$expected_rule"
+          test "$actual_protocol" = "$expected_protocol"
+          test "$actual_scanner" = "$expected_scanner"
+
+      - name: Run reviewed retrospective v1-R scanner
         shell: bash
         env:
           EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
         run: |
           set +e
-          python NAAIL/research-assurance-mcp/derived/msft_covid_scan.py
+          checked_out_sha="$(git rev-parse HEAD)"
+          GITHUB_SHA="$checked_out_sha" python3 NAAIL/research-assurance-mcp/derived/msft_covid_rederivation_scan_v1r.py
           rc=$?
           echo "exit_code=$rc"
           exit "$rc"
 
-      - name: Upload Microsoft COVID scan evidence
-        if: success()
+      - name: Upload v1-R result or partial failure record
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: msft-covid-scan-evidence
-          path: NAAIL/research-assurance-mcp/derived/msft_covid_scan_result.json
-          if-no-files-found: error
+          name: msft-covid-v1r-evidence
+          path: NAAIL/research-assurance-mcp/derived/msft_covid_rederivation_v1r_result.json
+          if-no-files-found: warn
