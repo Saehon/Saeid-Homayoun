@@ -1,0 +1,28 @@
+{
+  "registry_id": "COSO-SEC-TRUSTED-EXTRACTIONS-v0.1",
+  "status": "PRIMARY_SOURCE_MANUAL_VERIFICATION",
+  "records": [
+    {
+      "record_id": "SEC-0001193125-15-272806-MSFT-ITEM9A-MGMT-2013",
+      "verification_status": "PRIMARY_SOURCE_MANUAL_VERIFIED",
+      "issuer_name": "Microsoft Corporation",
+      "issuer_cik": "0000789019",
+      "accession": "0001193125-15-272806",
+      "form_type": "10-K",
+      "filing_date": "2015-07-31",
+      "period_end": "2015-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312515272806/d918813d10k.htm",
+      "source_section": "MANAGEMENT_ICFR_ASSESSMENT",
+      "source_locator": "Part II, Item 9A, Report of Management on Internal Control over Financial Reporting, page 99, SEC rendered lines 11852-11856",
+      "speaker": "MANAGEMENT",
+      "disclosure_excerpt": "Management conducted an evaluation of the effectiveness of our internal control over financial reporting based on the framework in Internal Control – Integrated Framework (2013) issued by the Committee of Sponsoring Organizations of the Treadway Commission. Based on this evaluation, management concluded that the company’s internal control over financial reporting was effective as of June 30, 2015.",
+      "excerpt_sha256": "479359a2bd7ad2fee66be416699e09a9057bf1e55d6832e9cea9c46a2453a186",
+      "explicit_framework_version": "2013",
+      "assertion_polarity": "ADOPTED",
+      "third_party_quote": false,
+      "verified_at": "2026-10-04T19:03:00+02:00",
+      "verification_note": "Verified directly against the SEC filing index and management ICFR section; auditor-report occurrences were excluded."
+    }
+  ],
+  "known_gap": "No 1992 record is admitted until the claimed accession 0001193125-15-283224 is independently resolved to the correct issuer and management ICFR source."
+}
