@@ -1,94 +1,56 @@
-# NAAIL RiskOS™ — Microsoft Golden Anchor POC
+# NAAIL-RiskOS-MSFT-POC v0.2 — Multi-Agent Audit Risk Prototype
 
-**Generated:** 2026-10-04  
+**Company:** Microsoft Corporation (FY2026)  
 **Maturity:** RESEARCH_PROTOTYPE  
-**Commercial shell candidate:** ACCO Risk™  
-**Anchor company:** Microsoft Corporation (MSFT), FY2026
+**Core audit-risk spine:** `AR = IR × CR × DR`
 
-## Purpose
+This version upgrades the earlier RiskOS dashboard into a deterministic, multi-agent proof of concept modeled after a modern professional conversational workspace.
 
-This package turns the existing NAAIL Microsoft POC into a simple Claude-like risk workspace. It does **not** create a production risk rating. It demonstrates how a commercial risk product can route one company through specialist accounting, audit, control, forensic, cybersecurity, ESG and regulatory modules while preserving evidence, applicability and Human Gate status.
+## Agents
 
-## Why Microsoft
+1. **RiskOS Orchestrator** — routes the case and composes the final state.
+2. **Applicability Agent** — determines US GAAP/IFRS, CAM/KAM and jurisdiction boundaries.
+3. **Inherent Risk Agent** — maps CAM/accounting judgment, business/financial pressure, disclosure, forensic/cyber/ESG inputs to IR.
+4. **Control Risk Agent** — maps ICFR, ITGC, control design/operation and governance to CR.
+5. **Detection Risk Agent** — maps procedure coverage, evidence sufficiency, sampling, model risk and review to DR.
+6. **Evidence Agent** — checks Evidence Passport, source status and missing modules.
+7. **Independent Challenger** — falsifies unsupported aggregation and claim boundaries.
+8. **Human Gate** — permits research demonstration only and blocks production claims.
 
-The existing repository already contains the strongest bounded Golden Anchor package: SEC/XBRL facts, CAM/ICFR mapping, text analytics, market data, finance features, Evidence Passport, dashboard and the executed 15-test artifact contract. This makes Microsoft the right first integration case.
+## Current illustrative output
 
-## Product architecture
+- IR index: **0.6525**
+- CR index: **0.3650**
+- DR index: **0.3775**
+- AR index: **0.0899**
+- User-selected target AR index: **0.0500**
+- Allowed DR index at that target: **0.2099**
+- Current state: **MORE_AUDIT_ASSURANCE_REQUIRED**
 
-1. Applicability Gate — jurisdiction, reporting basis, audit regime, source period.
-2. Evidence Fabric — source ID, rights, timestamp, hash/lineage and Evidence Passport.
-3. Specialist engines — ICFR, CAM, KAM, IFRS, AAER/forensic, cybersecurity, ESG, PCAOB, finance.
-4. Risk Triage — transparent domain states; missing evidence remains pending.
-5. Cross-domain risk graph — connect account → assertion → risk → control → evidence → audit matter → regulator → consequence.
-6. Challenger / falsifier — independent review.
-7. Human Gate — approve, modify, escalate, reject.
-8. Digital Twin / learning — preserve time, version, outcomes and model changes.
+These are **illustrative, uncalibrated normalized indices**, not literal probabilities or professional audit conclusions.
 
-## Critical design decision
+## Run
 
-The POC intentionally does **not** output a single 0–100 enterprise risk score. A commercial score should be introduced only after:
-- benchmark calibration;
-- outcome definition;
-- temporal and company holdouts;
-- false-positive / false-negative cost analysis;
-- independent replication;
-- governance approval.
+```bash
+python run_poc.py
+```
 
-Until then, domain-level triage is safer and scientifically defensible.
+Run tests:
 
-## Current Microsoft module state
-
-- CAM: ELEVATED_JUDGMENT — two high-judgment CAMs.
-- ICFR: LOW_SIGNAL — unqualified ICFR opinion, not zero risk.
-- Finance/market: WATCH — FY2026 simple price return -24.2%; strong accounting margins.
-- Text risk: WATCH_BOUNDED — bounded sample only.
-- IFRS: SHADOW_MODE — Microsoft reports U.S. GAAP.
-- KAM: N/A as primary regime — comparator only.
-- AAER/forensic: PENDING_MATCH.
-- Cybersecurity: PENDING_DEDICATED_INGEST.
-- ESG: SOURCE_REGISTERED, analytics not executed.
-- PCAOB: CONTEXT_ONLY; no engagement-specific deficiency inference.
-- Evidence Assurance: EXECUTED.
-- Human Gate: RESEARCH_ONLY; production approval NO.
-
-## Fruit / specialist router
-
-| Family | Role |
-|---|---|
-| LEMON | ICFR / controls |
-| APPLE | CAM-US |
-| ORANGE | KAM-EU/UK |
-| MANGO | IFRS |
-| POMELO | Forensic / investigation |
-| GRAPE | Audit & assurance workflow |
-| KIWI | Knowledge / audit intelligence |
-| PEAR | Evidence assurance |
-| DATA | Digital Twin / economic value |
-| ESG | Sustainability assurance |
-| PCAOB | Standards / inspection readiness |
-| FINANCE | Valuation / market / scenario risk |
-| NAAIL BOARD | Governance / challenge / Human Gate |
-
-## Moat
-
-The defensible moat is the governed evidence and decision system, not any single LLM:
-- evidence provenance and rights;
-- cross-domain applicability routing;
-- domain-specific deterministic tests;
-- risk/control/assertion/evidence graph;
-- multi-model reviewer/falsifier separation;
-- temporal Digital Twin;
-- Human Gate;
-- regulator/auditor-ready audit trail;
-- risk-to-economic-value linkage;
-- reproducible research benchmarks.
+```bash
+pytest -q test_risk_engine.py
+```
 
 ## Files
 
-- `naail_riskos_msft_poc.html` — interactive standalone demo.
-- `riskos_poc_data.json` — structured POC data and domain states.
-- `README_RiskOS_POC.md` — this document.
+- `naail_riskos_multiagent_msft_poc.html` — Claude-like interactive front end.
+- `microsoft_case.json` — company evidence and transparent illustrative inputs.
+- `risk_engine.py` — multi-agent engine and orchestration.
+- `run_poc.py` — executes one full multi-agent review.
+- `poc_run_result.json` — generated example output.
+- `test_risk_engine.py` — basic invariants.
+- `METHODOLOGY.md` — AR/IR/CR/DR formulation and NAAIL mapping.
 
 ## Scientific boundary
 
-This is a product-design and research prototype. It is not an audit opinion, credit rating, investment recommendation, fraud determination, regulatory finding or production risk model.
+Research prototype only. No production approval, audit opinion, fraud determination, regulator finding, investment recommendation or calibrated audit-failure probability is claimed.
