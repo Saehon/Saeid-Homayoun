@@ -34,5 +34,7 @@ After independent review and explicit user approval/merge of PR #104, verify the
 
 ## Dual-save
 
-- GitHub: pending readback of this record.
-- Google Drive: pending append/readback in the Hourly Build Master Log.
+- GitHub: PASS; record read back at blob `60cf434df37aeeab8e3d329adf015c9165571840`.
+- Google Drive: PASS; RUN 026 appended to Hourly Build Master Log `1FV8qyLJaxDVbOuh_FBkKVcD1bcDPoHQRI4VPabG1vNI` and read back at revision `ANLCKQl_rtb4I0KzdRLnTMQqjq-WQmn5nxckY-cCpgmxodorw-moXGHvz9CF__Hw10NgbpECs9RnQVPLgistb9Gfi4lR-R4XaRjxDlWwXg4`.
+- Drive write attempt 1 failed atomically on an invalid date-format enum; attempt 2 used the supported abbreviated date format and succeeded. This resolved failure does not enter OPEN REPAIR QUEUE.
+- DUAL_SAVE = PASS.
