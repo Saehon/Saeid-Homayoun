@@ -2,25 +2,28 @@
 
 This folder contains public-facing concept and research artifacts for the NAAIL OpenLab™ Multi-Agent Assurance & Risk Intelligence POC.
 
-## Included artifacts
+## Included in this GitHub package
 
-- `management-science-startup-infographic.jpg` — concept infographic connecting the Management Science research chain to the NAAIL/LEMON startup architecture.
-- `multi-agent-poc-dashboard.jpg` — illustrative Claude-style multi-agent dashboard concept.
-- `Who_Assures_the_AI_Agents_Management_Science_Working_Paper.docx` — pre-results Management Science working-paper draft.
-- `naail_multi_agent_poc.zip` — bounded runnable proof-of-concept package.
+- [Management Science startup infographic](./management-science-startup-infographic.svg) — GitHub-renderable concept image connecting the research chain to the NAAIL/LEMON startup architecture.
+- [POC architecture image](../architecture.svg) — earlier multi-agent assurance architecture graphic.
+- [Management Science working paper](../research/Management_Science_AI_Agent_Assurance_Working_Paper.md) — pre-results manuscript in GitHub-friendly Markdown.
+- [Management Science research chain](../MANAGEMENT_SCIENCE_RESEARCH_CHAIN.md) — Penno → Kim → deHaan → Ashraf → Law & Shen → de Kok → Krakowski → Zhong → research gap.
+- [Claude multi-agent startup master prompt](../STARTUP_MASTER_PROMPT.md) — operating prompt for the startup POC.
+
+## Word manuscript master
+
+The formatted Word manuscript remains in the project's Google Drive working-paper folder. GitHub carries the Markdown research version so the manuscript is inspectable, diffable and version controlled.
 
 ## Interpretation boundary
 
-These public images contain **illustrative / conceptual** dashboard values and product states. They are design artifacts, not evidence of executed customer deployment, regulatory approval, validated production performance or independently replicated empirical results.
+All dashboard scores, company examples, “live” labels, product states or risk probabilities in concept graphics are illustrative unless linked to an executed reproducible run artifact. These visuals do not by themselves establish customer deployment, production performance or scientific replication.
 
-The Management Science manuscript is a **working paper / research design**. No unexecuted empirical result should be interpreted as a finding.
-
-The POC package is research/startup software and must not be used to issue an audit opinion or regulatory determination.
+The Management Science manuscript is a working paper / pre-results research design. No unexecuted empirical result is presented as a finding.
 
 ## Canonical governance sequence
 
-Evidence acquisition → evidence verification → Evidence Passport → temporal/provenance gate → specialist risk analysis → independent challenge → assurance review → human approval.
+Evidence acquisition → evidence verification → Evidence Passport → provenance and temporal cutoff → specialist risk analysis → independent challenge → assurance review → human approval.
 
 ## Parent architecture
 
-These artifacts are contained within **NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin**. They do not create a separate umbrella platform or a third permanent core.
+These artifacts sit within NAAIL OpenLab™ — V2026.3 Multi-Agent Digital Twin. They do not create a separate umbrella platform or a third permanent core.
