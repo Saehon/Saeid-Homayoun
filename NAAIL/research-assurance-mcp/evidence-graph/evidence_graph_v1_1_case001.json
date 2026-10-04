@@ -111,7 +111,7 @@
     {
       "id": "LIMIT_COVID_RULE",
       "type": "limitation",
-      "label": "COVID rule is frozen; COVID classification cannot be upgraded from PARTIAL until the preregistered 10-accession scan is executed and independently reviewed.",
+      "label": "v1 preregistration was rejected because outcomes were previously exposed. Authoritative retrospective v1-R run 37204180146 regenerated all 10 FilingLag rows and COVID sensitivity outputs; the COVID claim remains PARTIAL pending Claude file/snippet review.",
       "assurance_state": "PARTIAL"
     },
     {
@@ -256,6 +256,10 @@
     {
       "date": "2026-10-04",
       "change": "Independent-review correction: relabel Microsoft code provenance as partial, record absence of an in-repo 10-row generator, and update the COVID limitation to reflect that the rule is already frozen and now awaits execution plus independent review."
+    },
+    {
+      "date": "2026-10-04",
+      "change": "Additive v1-R correction: v1 preregistration was rejected for prior exposure; authoritative retrospective run 37204180146 regenerated all 10 FilingLag rows. COVID remains PARTIAL pending Claude file/snippet review."
     }
   ]
 }
