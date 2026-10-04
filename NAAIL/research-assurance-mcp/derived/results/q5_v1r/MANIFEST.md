@@ -71,18 +71,31 @@ Live Drive readback:
 
 ## GitHub result-file publication status
 
-The exact result bytes were successfully materialized as Git object
-`7fe507dce4f6ac3a21c956bcb275c1aae9c2647e`.
+The authoritative result is now permanently archived on branch
+`naail/research-assurance-pr-b-q5-covid` at:
 
-The connected GitHub write safety layer blocked attaching that result payload to the PR branch path during this session. Therefore this manifest does **not** claim that
-`derived/results/q5_v1r/msft_covid_rederivation_v1r_result.json`
-is present in the branch.
+`NAAIL/research-assurance-mcp/derived/results/q5_v1r/msft_covid_rederivation_v1r_result.json`
 
-The authoritative unchanged copies remain:
-1. GitHub Actions artifact 11303563139.
-2. Google Drive raw JSON above, with matching SHA-256.
+Publication commit:
+`59ba31b60bf3aee7f85b97ec544104c9a98ed9c9`
 
-No rerun is permitted to work around this publication limitation.
+Git blob:
+`7fe507dce4f6ac3a21c956bcb275c1aae9c2647e`
+
+Post-write SHA-256 recomputation:
+`b45257ac53a1ca83db5eabd0dda5744d720aaeb2d9009b087315f40c47ee9d53`
+
+Post-write size:
+`29102 bytes`
+
+The GitHub copy was re-hashed after publication and is byte-for-byte identical to the authoritative workflow result.
+
+The authoritative preserved locations are now:
+1. GitHub branch result file above.
+2. GitHub Actions artifact `11303563139`.
+3. Google Drive raw JSON mirror with matching SHA-256.
+
+No rerun is permitted.
 
 ## Scientific gate
 
