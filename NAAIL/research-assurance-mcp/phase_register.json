@@ -9,7 +9,7 @@
     "case_001_regression_cells": "264/264",
     "case_001_full_reproduction": "PARTIAL",
     "microsoft_sec_one_company": "PARTIAL",
-    "case_001_regression_cells_evidence": "USER-REPORTED summary; per-cell recheck WAITING_FOR_USER at Q6",
+    "case_001_regression_cells_evidence": "Documented limitation accepted for POC on 2026-10-04 (Option B); no inspectable per-cell comparison artifact currently available; do not reconstruct unavailable cells.",
     "microsoft_filinglag": "VERIFIED",
     "microsoft_covid": "PARTIAL"
   },
@@ -172,6 +172,17 @@
         "CPython 3.12.14"
       ],
       "note": "POC criteria remain 7 of 10; Q5 Microsoft COVID remains separate and PARTIAL."
+    },
+    {
+      "date": "2026-10-04",
+      "change_id": "OPTION-B-264-DOCUMENTED-LIMITATION",
+      "change": "Record the human-selected Option B treatment for the historical 264/264 author-output consistency statement.",
+      "current": {
+        "case_001_author_output_consistency": "PARTIAL"
+      },
+      "rationale": "Current POC lacks inspectable per-cell comparison evidence; the claim remains bounded author-output consistency and is not reconstructed or promoted to independent reproduction.",
+      "evidence": "case-001-management-science/P0_CASE001_FREEZE.md",
+      "note": "POC criteria remain 7 of 10 until the remaining COVID and final release/synchronization gates are resolved."
     }
   ],
   "poc_criteria_met": 7,
