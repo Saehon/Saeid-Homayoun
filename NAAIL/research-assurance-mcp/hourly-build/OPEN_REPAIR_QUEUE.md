@@ -1,6 +1,6 @@
 # OPEN REPAIR QUEUE — NAAIL Research Assurance MCP
 
-Last verified: 2026-10-04T14:32:00+02:00  
+Last verified: 2026-10-04T14:30:46+02:00  
 Scope in this revision: Q5 Microsoft COVID only
 
 ## Q5-PROTOCOL-VALIDITY-001
