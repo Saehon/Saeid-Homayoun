@@ -235,6 +235,16 @@ class LemonOrchestrator:
         challenges: list[Finding] = []
         if hypotheses:
             challenges = [provider.challenge_claim(case_id, evidence, h) for h in hypotheses]
+            for c in challenges:
+                if isinstance(c.metadata, dict):
+                    c.metadata["status"] = "LEGACY_UNVALIDATED_CHALLENGE"
+
+        repro_ok = repro_ref is not None and not repro_ref.missing()
+        repro_notes = [] if repro_ok else [
+            f"ReproRef incomplete: {repro_ref.missing() if repro_ref else 'absent'}"
+        ]
+        if reproducibility_ref:
+            repro_notes.append(f"legacy reproducibility_ref={reproducibility_ref!r} is informational only")
 
         gates.extend(
             [
@@ -254,8 +264,8 @@ class LemonOrchestrator:
                 ),
                 GateResult(
                     "reproducibility",
-                    bool(reproducibility_ref),
-                    [] if reproducibility_ref else ["Missing legacy reproducibility reference."],
+                    repro_ok,
+                    repro_notes,
                 ),
                 # A machine run can never pass this gate by itself.
                 GateResult("human_approval", False, ["Authorized human disposition required."]),
