@@ -1,0 +1,37 @@
+name: NAAIL Prior Exposure Guard
+
+on:
+  push:
+    paths:
+      - "NAAIL/research-assurance-mcp/derived/rule_prior_exposure_schema_v1.json"
+      - "NAAIL/research-assurance-mcp/derived/rule_prior_exposure_registry.json"
+      - "NAAIL/research-assurance-mcp/derived/test_rule_prior_exposure_guard.py"
+      - "NAAIL/research-assurance-mcp/derived/covid_rederivation_protocol_v1r.json"
+      - ".github/workflows/naail_rule_prior_exposure_guard.yml"
+  pull_request:
+    paths:
+      - "NAAIL/research-assurance-mcp/derived/rule_prior_exposure_schema_v1.json"
+      - "NAAIL/research-assurance-mcp/derived/rule_prior_exposure_registry.json"
+      - "NAAIL/research-assurance-mcp/derived/test_rule_prior_exposure_guard.py"
+      - "NAAIL/research-assurance-mcp/derived/covid_rederivation_protocol_v1r.json"
+      - ".github/workflows/naail_rule_prior_exposure_guard.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  prior-exposure-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run prior-exposure guard
+        run: python NAAIL/research-assurance-mcp/derived/test_rule_prior_exposure_guard.py
