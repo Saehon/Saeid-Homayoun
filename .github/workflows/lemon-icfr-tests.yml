@@ -31,7 +31,7 @@ jobs:
         run: |
           demo_output="$(python examples/minimal_case.py)"
           printf '%s\n' "$demo_output"
-          first_line="${demo_output%%\n'*}"
+          first_line="$(printf '%s\\n' "$demo_output" | head -n 1)"
           if [[ "$first_line" != BLOCKED:* ]]; then
             echo "Demo must remain fail-closed; first line was: $first_line" >&2
             exit 1
