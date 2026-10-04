@@ -15,3 +15,19 @@
 - Repair queue: empty.
 - Ending gate counts: PASS 1; NOT_STARTED 59; all other statuses 0.
 - Next gate: P0.2.
+
+## RUN JFE-002 — 2026-10-04
+
+- Phase/gate: P0 Governance & Scientific Constitution / P0.2.
+- Starting state: canonical plan read; P0.1 PASS; Draft PR #112 open and sole PR for scope; branch HEAD `f0698d8693deebf192d5b0a90408bc749426d34c`; repair queue empty; no visible active writer-lock artifact.
+- Work completed: froze role authority, mandatory human approvals, four-class data policy, public-GitHub and controlled-Drive rules, secrets prohibition, external-model restrictions, evidence/model provenance, privacy/ethics/licensing controls, writer-lock rule, and release/change controls.
+- Status: PASS (governance design freeze only).
+- Evidence: `P0_GOVERNANCE_HUMAN_APPROVAL_DATA_RULES.md` v1.0.
+- Falsification/readback: acceptance checklist requires all governance elements; checked that no automation may self-approve sealed-test access, protected-main merge, restricted-data release, external claims, or journal submission.
+- GitHub: atomic three-file commit on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged; final commit and readback recorded after mutation.
+- Drive: P0.2 evidence uploaded; canonical ledger and run log replaced in place; all three content-read back after mutation.
+- Dual-save status: PASS after final readback.
+- Fail count: 0.
+- Repair queue: empty; no change.
+- Ending gate counts: PASS 2; NOT_STARTED 58; all other statuses 0.
+- Next gate: P0.3 — development/validation/sealed-test firewall.
