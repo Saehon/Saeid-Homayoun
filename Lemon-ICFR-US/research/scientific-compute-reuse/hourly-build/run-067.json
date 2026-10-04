@@ -1,0 +1,64 @@
+{
+  "start_time": "2026-10-04T10:59:18+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Park et al. (2021) COSO noncompliance deterministic classifier",
+  "journal": "Journal of Accounting and Public Policy",
+  "journal_tier": "ABS3",
+  "phase": "independent engineering review / executable test evidence / applicability falsification",
+  "work_attempted": [
+    "Execute persisted base and mutation/determinism tests in an isolated Python environment",
+    "Review classifier against benchmark-spec.json whole-system applicability rule",
+    "Patch classifier and tests to enforce fiscal-year-end applicability cutoff"
+  ],
+  "work_completed": [
+    "Executed persisted test_classifier.py with exit code 0",
+    "Executed persisted test_mutation_determinism.py with exit code 0",
+    "Identified a scientific-contract gap: classifier.py does not enforce benchmark-spec applicable_if fiscal-year end after 2014-12-15",
+    "Demonstrated locally that a cutoff-aware fail-closed patch can preserve positive/ambiguous behavior while rejecting inapplicable dates"
+  ],
+  "evidence": [
+    "Persisted classifier blob 8f9def9dad81f78c80a8030072eea11c61016cec",
+    "Persisted base-test blob 7c007450550c0cce744cc41cdf37ee1329bff4ad",
+    "Persisted mutation-test blob ff3e6d3841b5a59f1ae102c6d6020f14ff75e71d",
+    "benchmark-spec.json states applicable_if fiscal-year end is after 2014-12-15",
+    "Current classifier accepts text only and therefore cannot enforce that applicability condition",
+    "Local isolated Python execution: base test exit 0; mutation/determinism test exit 0"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/run-067.json"
+  ],
+  "github_starting_head": "8f418e6a3edf434d6bf96b23b94494dede0a01ad",
+  "github_ending_head": null,
+  "github_commit": null,
+  "tests": [
+    "Persisted base test: PASS in isolated execution (exit 0)",
+    "Persisted mutation/determinism test: PASS in isolated execution (exit 0)",
+    "Applicability falsification: FAIL for current persisted classifier because period_end is not an input"
+  ],
+  "ci_status": "NO_CI_CLAIM; local isolated execution only",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "Classifier/spec mismatch on fiscal-year applicability",
+    "Classifier/test patch write blocked twice by safety control"
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "OPEN: patch classifier to require period_end and fail closed when period_end <= 2014-12-15, missing, or invalid",
+    "OPEN: update base and mutation tests with cutoff/missing-date cases",
+    "Retain prior canonical GitHub master-log backfills"
+  ],
+  "drive_updates": [
+    "Run 067 canonical master-log append pending"
+  ],
+  "github_readback": "NOT_VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PARTIAL",
+  "gate_status": "HOLD",
+  "dual_save_status": "BLOCKED",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Bypass the twice-blocked patch write; continue independent negative/leakage review and repair the applicability mismatch in the later repair sweep."
+}
