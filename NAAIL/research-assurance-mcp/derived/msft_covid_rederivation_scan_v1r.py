@@ -50,6 +50,8 @@ EXPECTED_BASE_RULE_BLOB = "d7760b4909ae84896cae8797fb8536f59d36053c"
 CANONICAL_STATES = {"VERIFIED", "CONSISTENT", "PARTIAL", "FLAGGED", "HUMAN_REVIEW"}
 
 CURRENT_STAGE = "startup"
+PARTIAL_OBSERVATIONS: list[dict[str, Any]] = []
+PARTIAL_AGREEMENT_TABLE: list[dict[str, Any]] = []
 
 
 class PrimaryTextExtractor(HTMLParser):
@@ -139,7 +141,8 @@ def write_failure(error: Exception, started_at: str | None) -> None:
         "base_rule_git_blob": safe_blob(BASE_RULE_PATH),
         "protocol_git_blob": safe_blob(PROTOCOL_PATH),
         "provenance": execution_provenance(started_at or utc_now()),
-        "observations_completed": [],
+        "observations_completed": PARTIAL_OBSERVATIONS,
+        "agreement_rows_completed": PARTIAL_AGREEMENT_TABLE,
         "note": (
             "Partial failure record written before non-zero exit. "
             "EDGAR_IDENTITY is neither printed nor written."
@@ -237,9 +240,11 @@ def snippets(
 
 
 def main() -> int:
-    global CURRENT_STAGE
+    global CURRENT_STAGE, PARTIAL_OBSERVATIONS, PARTIAL_AGREEMENT_TABLE
 
     started_at = utc_now()
+    PARTIAL_OBSERVATIONS = []
+    PARTIAL_AGREEMENT_TABLE = []
 
     CURRENT_STAGE = "identity_preflight"
     identity = os.getenv("EDGAR_IDENTITY", "").strip()
@@ -295,8 +300,8 @@ def main() -> int:
     CURRENT_STAGE = "sec_metadata_retrieval"
     metadata = submission_index(identity, needed)
 
-    observations: list[dict[str, Any]] = []
-    agreement_table: list[dict[str, Any]] = []
+    observations = PARTIAL_OBSERVATIONS
+    agreement_table = PARTIAL_AGREEMENT_TABLE
 
     for row in frozen_rows:
         accession = row["accession"]
