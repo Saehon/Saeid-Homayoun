@@ -1,20 +1,20 @@
 # Canonical 60-Gate Ledger
 
 Plan: `MASTER_PLAN_60_GATES.md`  
-Ledger version: 1.1  
+Ledger version: 1.2  
 Last updated: 2026-10-04
 
 ## Evidence-backed counts
 
 | Status | Count |
 |---|---:|
-| PASS | 2 |
+| PASS | 3 |
 | PARTIAL | 0 |
 | ACTIVE | 0 |
 | BLOCKED | 0 |
 | REPAIR_QUEUE | 0 |
 | CLOSED | 0 |
-| NOT_STARTED | 58 |
+| NOT_STARTED | 57 |
 
 Engineering activity, commits, elapsed time, and documentation volume do not count as scientific completion.
 
@@ -24,7 +24,7 @@ Engineering activity, commits, elapsed time, and documentation volume do not cou
 |---|---|---|
 | P0.1 | PASS | `P0_RESEARCH_QUESTION_AND_CONTRIBUTION.md` v1.0; design freeze only |
 | P0.2 | PASS | `P0_GOVERNANCE_HUMAN_APPROVAL_DATA_RULES.md` v1.0; governance design freeze only |
-| P0.3 | NOT_STARTED | — |
+| P0.3 | PASS | `P0_DEVELOPMENT_VALIDATION_SEALED_TEST_FIREWALL.md` v1.0; firewall design freeze only; operational enforcement and partition construction not yet tested |
 | P0.4 | NOT_STARTED | — |
 | P0.5 | NOT_STARTED | Control files initialized, but gate has not yet been evaluated |
 | P1.1–P1.5 | NOT_STARTED | — |
@@ -41,4 +41,4 @@ Engineering activity, commits, elapsed time, and documentation volume do not cou
 
 ## Next scientifically admissible gate
 
-P0.3 — Define development/validation/sealed-test firewall.
+P0.4 — Define change-control, versioning, and preregistration rules.
