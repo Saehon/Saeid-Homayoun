@@ -111,7 +111,7 @@
     {
       "id": "LIMIT_COVID_RULE",
       "type": "limitation",
-      "label": "COVID classification cannot be upgraded from PARTIAL until covid_rule_v1.json is frozen before execution and the 10-accession scan is run.",
+      "label": "COVID rule is frozen; COVID classification cannot be upgraded from PARTIAL until the preregistered 10-accession scan is executed and independently reviewed.",
       "assurance_state": "PARTIAL"
     },
     {
@@ -133,6 +133,12 @@
       "evidence_class": "independently_regenerated",
       "assurance_state": "VERIFIED",
       "evidence_basis": "READBACK-VERIFIED SHA256 2933ad5ec7e1d1bff11f43469b969966f8f869d820baa855a100a94b15757fc7"
+    },
+    {
+      "id": "LIMIT_MSFT_10ROW_GENERATOR",
+      "type": "limitation",
+      "label": "No in-repository generator currently reproduces the complete 10-row msft_one_company_final.csv; the historical sec_one_company_check.py covers only four observations.",
+      "assurance_state": "PARTIAL"
     }
   ],
   "edges": [
@@ -184,7 +190,7 @@
     {
       "from": "RESULT_MSFT",
       "to": "CODE_MSFT",
-      "relation": "generated_by"
+      "relation": "partially_generated_by"
     },
     {
       "from": "CODE_MSFT",
@@ -225,11 +231,16 @@
       "from": "RESULT_MSFT",
       "to": "VERIFICATION_MSFT_FILINGLAG",
       "relation": "independently_checked_by"
+    },
+    {
+      "from": "RESULT_MSFT",
+      "to": "LIMIT_MSFT_10ROW_GENERATOR",
+      "relation": "bounded_by"
     }
   ],
   "validation": {
-    "node_count": 17,
-    "edge_count": 18,
+    "node_count": 18,
+    "edge_count": 19,
     "all_node_ids_unique": true,
     "all_edge_endpoints_resolve": true,
     "author_and_independent_evidence_separated": true,
@@ -241,6 +252,10 @@
     {
       "date": "2026-10-02",
       "change": "Place Q4 correction in the requested evidence-graph path, retain original V1 and earlier derived copy, classify the uninspectable 264/264 claim as PARTIAL, and link the ten-observation independent FilingLag evidence."
+    },
+    {
+      "date": "2026-10-04",
+      "change": "Independent-review correction: relabel Microsoft code provenance as partial, record absence of an in-repo 10-row generator, and update the COVID limitation to reflect that the rule is already frozen and now awaits execution plus independent review."
     }
   ]
 }
