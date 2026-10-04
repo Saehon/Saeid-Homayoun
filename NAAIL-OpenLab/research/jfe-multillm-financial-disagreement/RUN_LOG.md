@@ -74,9 +74,9 @@
 - Evidence: `P0_GATE_LEDGER_REPAIR_QUEUE_COMPLETION_CONTROL.md` v1.0; `GATE_LEDGER.md` v1.4; `OPEN_REPAIR_QUEUE.md` v1.0.
 - Falsification/readback: checked 60 unique rows, count total 60, P0 5/5 only, CLOSED excluded from PASS, failure identity persistent across hours/operators, and first-pass separated from final scientific completion.
 - Engineering attempt history: local patch bundle attempt 1/2 failed before external mutation because it targeted the same temporary ledger twice; repaired by separate replacement artifacts; no queue entry required.
-- GitHub: authorized research branch; Draft PR #112 retained; protected `main` unchanged; evidence/control commits recorded after writes.
-- Drive: evidence uploaded; ledger, run log, and repair queue replaced in place; IDs/readback recorded after verification.
-- Dual-save status: pending final readback at time this entry was drafted.
+- GitHub: evidence commit `a85f9f105656d029ac08e51c87395749e56b6c16`; ledger commit `05c082b6285b5d88a3ac960b261636d4a793642e`; repair-queue commit `cfd312c50f3501d26907ce8a8416f593c0ea338a`; initial run-log commit `81d55e48cbfca68e645076464d0f570b210d2f39`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: evidence `1vKOa5sTr0Nr0WIywwJICPExZqgeqNWK7`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; repair queue `1mBOxByY7Yhup8yXWgJjVtCSDPaYWjbO4`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all scheduled for final content readback after this update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
 - Repair queue: empty; upgraded to operational v1.0; no blocker fabricated.
 - Ending gate counts: PASS 5; NOT_STARTED 55; all other statuses 0.
