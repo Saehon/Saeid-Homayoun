@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NAAIL RiskOS Multi-Agent — Microsoft POC</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#14213d;--muted:#667085;--line:#e4e7ec;--nav:#132b49;--blue:#315f9c;--ok:#137a45;--warn:#9a6410;--bad:#a43d2a;--purple:#6746a3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app{display:grid;grid-template-columns:250px minmax(0,1fr) 320px;min-height:100vh}.side{background:linear-gradient(180deg,#142d4f,#0e213a);color:#fff;padding:18px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:21px;font-weight:850}.small{font-size:11px;color:var(--muted);line-height:1.45}.side .small{color:#d0dae7}
+.company{margin:18px 0;padding:12px;border:1px solid #ffffff22;background:#ffffff0d;border-radius:14px}.company strong{display:block}.company span{font-size:11px;opacity:.72}
+.agent{padding:10px;border-radius:10px;margin:4px 0;cursor:pointer;font-size:13px}.agent:hover,.agent.active{background:#ffffff16}.agent i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#9fb5cf;margin-right:8px}
+.main{padding:24px;max-width:1120px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;gap:20px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800}
+h1{font-size:28px;letter-spacing:-.6px;margin:5px 0}.tag{padding:7px 10px;border-radius:999px;background:#fff3d2;color:#875b10;font-weight:800;font-size:11px;height:min-content}
+.formula{margin:18px 0;background:#132b49;color:#fff;border-radius:16px;padding:17px;text-align:center;font-size:24px;font-weight:850;letter-spacing:.3px}.formula small{display:block;font-size:11px;font-weight:500;opacity:.75;margin-top:6px}
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.metric{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px}.metric small{color:var(--muted);display:block;margin-bottom:5px}.metric b{font-size:20px}
+.bar{height:7px;background:#edf0f4;border-radius:20px;margin-top:9px;overflow:hidden}.fill{height:100%;background:#536f96}
+.alert{margin:14px 0;background:#fffaf0;border:1px solid #ead49d;border-radius:14px;padding:12px;font-size:12.5px;line-height:1.5}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.btn{border:0;background:#142d4f;color:white;padding:10px 13px;border-radius:11px;cursor:pointer}.btn.secondary{background:white;color:#344054;border:1px solid var(--line)}
+.timeline{background:#fff;border:1px solid var(--line);border-radius:17px;padding:14px;margin-top:12px}.step{padding:12px;border-bottom:1px solid #eef0f3;display:grid;grid-template-columns:24px 155px 1fr;gap:10px;align-items:start}.step:last-child{border:0}
+.num{width:22px;height:22px;border-radius:50%;background:#e9eef5;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}.step strong{font-size:12px}.step p{margin:0;font-size:12px;color:#526071;line-height:1.48}
+.chat{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.chathead{padding:13px 15px;border-bottom:1px solid var(--line);font-weight:800}.msgs{min-height:210px;max-height:340px;overflow:auto;padding:14px}.msg{padding:10px 12px;border-radius:14px;margin:8px 0;font-size:12.5px;line-height:1.5;white-space:pre-wrap;max-width:88%}.ai{background:#f2f5f8}.user{margin-left:auto;background:#e7edf7}.prompt{border-top:1px solid var(--line);padding:10px;display:flex;gap:8px}.prompt input{flex:1;border:1px solid #d0d5dd;border-radius:11px;padding:10px}.prompt button{border:0;background:#142d4f;color:white;border-radius:11px;padding:0 14px}
+.right{background:#fbfbfc;border-left:1px solid var(--line);padding:18px;position:sticky;top:0;height:100vh;overflow:auto}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}.panel h3{font-size:13px;margin:0 0 8px}.kv{display:grid;grid-template-columns:1fr auto;gap:7px;border-bottom:1px dashed #e5e7eb;padding:7px 0;font-size:11.5px}.kv:last-child{border:0}
+.status{font-size:10px;font-weight:800;padding:4px 7px;border-radius:999px}.s-warn{background:#fff3d2;color:#875b10}.s-ok{background:#e9f7ef;color:#137a45}.s-purple{background:#f0ebfb;color:#6746a3}
+@media(max-width:1100px){.app{grid-template-columns:220px 1fr}.right{display:none}.metrics{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.app{display:block}.side{height:auto;position:relative}.agent{display:none}.main{padding:14px}.metrics{grid-template-columns:1fr 1fr}}
+</style>
+</head><body>
+<div class="app">
+<aside class="side">
+  <div class="brand">NAAIL RiskOS™</div><div class="small">Multi-Agent Audit Risk POC · v0.2</div>
+  <div class="company"><strong>Microsoft Corporation</strong><span>MSFT · FY2026 · US GAAP · PCAOB CAM</span></div>
+  <div class="small" style="margin:10px 7px">AGENTS</div>
+  <div id="agentNav"></div>
+  <div class="small" style="margin-top:18px">Research prototype. No production risk rating or audit opinion.</div>
+</aside>
+
+<main class="main">
+  <div class="top"><div><div class="eyebrow">Evidence-grounded professional risk workspace</div><h1>Audit Risk = Inherent Risk × Control Risk × Detection Risk</h1><div class="small">One company → specialist agents → challenge → Human Gate.</div></div><div class="tag">RESEARCH PROTOTYPE</div></div>
+
+  <div class="formula">AR = IR × CR × DR<small>Normalized, illustrative, uncalibrated research-demo indices — not literal probabilities.</small></div>
+
+  <div class="metrics">
+    <div class="metric"><small>IR index</small><b id="ir"></b><div class="bar"><div id="irbar" class="fill"></div></div></div>
+    <div class="metric"><small>CR index</small><b id="cr"></b><div class="bar"><div id="crbar" class="fill"></div></div></div>
+    <div class="metric"><small>DR index</small><b id="dr"></b><div class="bar"><div id="drbar" class="fill"></div></div></div>
+    <div class="metric"><small>AR index</small><b id="ar"></b><div class="bar"><div id="arbar" class="fill"></div></div></div>
+    <div class="metric"><small>Allowed DR @ target</small><b id="allowed"></b><div class="bar"><div id="allowbar" class="fill"></div></div></div>
+  </div>
+
+  <div class="alert" id="decision"></div>
+  <div class="controls">
+    <button class="btn" onclick="runAgents()">Run multi-agent review</button>
+    <button class="btn secondary" onclick="ask('Explain the audit risk result')">Explain audit risk</button>
+    <button class="btn secondary" onclick="ask('How can detection risk be reduced?')">Reduce detection risk</button>
+    <button class="btn secondary" onclick="ask('What evidence is missing?')">Evidence gaps</button>
+  </div>
+
+  <div class="timeline" id="timeline"><div class="small">Press <b>Run multi-agent review</b> to execute the visible agent sequence.</div></div>
+
+  <div class="chat">
+    <div class="chathead">Ask RiskOS <span class="small">· Claude-like local POC · transparent routing</span></div>
+    <div class="msgs" id="msgs"><div class="msg ai">Microsoft FY2026 case loaded. I can route questions to Applicability, IR, CR, DR, Evidence, Challenger and Human Gate agents. Missing evidence will remain unresolved rather than being converted into a low-risk conclusion.</div></div>
+    <div class="prompt"><input id="q" placeholder="Ask about IR, CR, DR, CAM, ICFR, AAER, cyber, ESG, PCAOB…"><button onclick="submitQ()">Ask</button></div>
+  </div>
+</main>
+
+<aside class="right">
+  <div class="panel"><h3>Evidence Passport</h3><div class="kv"><span>ID</span><b>EP-MSFT-XBRL-FY2026</b></div><div class="kv"><span>Artifact tests</span><b>15/15 PASS</b></div><div class="kv"><span>Production</span><b>NO</b></div><div class="kv"><span>Replication</span><b>PENDING</b></div></div>
+  <div class="panel"><h3>Audit-risk routing</h3><div class="kv"><span>IR</span><b>CAM · Forensic · Finance · ESG/Cyber exposure</b></div><div class="kv"><span>CR</span><b>ICFR · ITGC · Control design/operation</b></div><div class="kv"><span>DR</span><b>Procedures · Evidence · PCAOB · Review</b></div></div>
+  <div class="panel"><h3>Golden Anchor facts</h3><div class="kv"><span>Revenue</span><b>$331.8bn</b></div><div class="kv"><span>Operating margin</span><b>46.8%</b></div><div class="kv"><span>CAMs</span><b>2</b></div><div class="kv"><span>ICFR opinion</span><b>Unqualified</b></div><div class="kv"><span>FY26 price return</span><b>-24.2%</b></div></div>
+</aside>
+</div>
+<script>
+const CASE = {"project": "NAAIL-RiskOS-MSFT-POC", "version": "0.2", "maturity": "RESEARCH_PROTOTYPE", "company": {"name": "Microsoft Corporation", "ticker": "MSFT", "cik": "0000789019", "fiscal_year": 2026, "reporting_basis": "US_GAAP", "audit_regime": "PCAOB_CAM"}, "verified_poc_facts": {"revenue_usd_m": 331839, "revenue_growth": 0.1775298522, "operating_margin": 0.4678081841, "net_margin": 0.4030538906, "current_ratio": 1.230327262, "liabilities_to_assets": 0.4166653481, "free_cash_flow_proxy_usd_m": 66987, "rd_intensity": 0.1071664271, "fy2026_simple_price_return": -0.2421865474, "auditor": "Deloitte & Touche LLP", "icfr_opinion": "UNQUALIFIED", "cams": [{"topic": "Revenue Recognition", "judgment": "HIGH", "assertions": ["occurrence", "accuracy", "cutoff", "classification"]}, {"topic": "Income Taxes — Uncertain Tax Positions", "judgment": "HIGH_WITH_TAX_SPECIALISTS", "assertions": ["valuation", "completeness", "presentation"]}], "evidence_passport": "EP-MSFT-XBRL-FY2026", "artifact_validation": "15/15 PASS", "production_approval": "NO", "scientific_validation": "PENDING_INDEPENDENT_REPLICATION"}, "audit_risk_model": {"formula": "AR_index = IR_index * CR_index * DR_index", "target_ar_index": 0.05, "interpretation": "Normalized research-demo indices, not calibrated probabilities and not an audit opinion.", "input_policy": "Only executed/declared evidence may create a positive or negative signal. Missing evidence creates a coverage gap, not a PASS."}, "illustrative_uncalibrated_inputs": {"IR": {"reporting_judgment": {"score": 0.8, "weight": 0.35, "basis": "Two high-judgment FY2026 CAMs"}, "financial_reporting_complexity": {"score": 0.65, "weight": 0.25, "basis": "Large diversified reporting footprint; bounded POC"}, "disclosure_complexity": {"score": 0.6, "weight": 0.2, "basis": "Bounded risk-factor sample has low readability"}, "market_business_pressure": {"score": 0.45, "weight": 0.2, "basis": "FY2026 simple price return -24.2%; not itself audit evidence"}}, "CR": {"icfr_opinion_signal": {"score": 0.2, "weight": 0.5, "basis": "Unqualified ICFR opinion lowers but does not eliminate control risk"}, "control_level_evidence_gap": {"score": 0.55, "weight": 0.3, "basis": "Current POC lacks full control-by-control operating effectiveness evidence"}, "itgc_evidence_gap": {"score": 0.5, "weight": 0.2, "basis": "Dedicated ITGC/cyber control evidence package not yet executed"}}, "DR": {"procedure_coverage_gap": {"score": 0.35, "weight": 0.35, "basis": "CAM procedures mapped, but full engagement procedure population not available"}, "evidence_sufficiency_gap": {"score": 0.3, "weight": 0.25, "basis": "Evidence Passport exists; several specialist modules remain pending"}, "independent_replication_gap": {"score": 0.6, "weight": 0.25, "basis": "Independent scientific replication still pending"}, "human_review_gap": {"score": 0.2, "weight": 0.15, "basis": "Human Gate exists; production approval remains NO"}}}, "domain_mapping": {"IR": ["MANGO/IFRS-shadow", "APPLE/CAM", "ORANGE/KAM-comparator", "POMELO/Forensic-AAER", "Cyber inherent exposure", "ESG inherent reporting risk", "FINANCE/ECONOVA-S", "Disclosure/Text"], "CR": ["LEMON/ICFR", "ITGC", "Cyber controls", "ESG controls", "Governance", "Control design", "Control operation"], "DR": ["GRAPE/Audit workflow", "PEAR/Evidence assurance", "KIWI/Challenge", "PCAOB requirements", "Sampling/Coverage", "AI model risk", "Independent reviewer", "NAAIL BOARD/Human Gate"]}, "poc_result": {"IR_index": 0.6525, "CR_index": 0.365, "DR_index": 0.3775, "AR_index": 0.0899, "target_AR_index": 0.05, "allowed_DR_index_at_target": 0.2099, "detection_gap": 0.1676, "status": "MORE_AUDIT_ASSURANCE_REQUIRED", "boundary": "Illustrative, uncalibrated normalized research-demo indices; not probabilities, not audit conclusions."}};
+const RESULT = CASE.poc_result;
+const AGENTS = [
+ ["RiskOS Orchestrator","Routes the case, composes IR/CR/DR and sends unresolved items to Human Gate."],
+ ["Applicability Agent","Checks US GAAP vs IFRS, CAM vs KAM, jurisdiction and period before scoring."],
+ ["Inherent Risk Agent","CAM/accounting judgment, business/financial pressure, disclosure and forensic/cyber/ESG inherent exposure."],
+ ["Control Risk Agent","ICFR, ITGC, control design, operating effectiveness and governance."],
+ ["Detection Risk Agent","Procedure coverage, evidence sufficiency, sampling, model risk and independent review."],
+ ["Evidence Agent","Evidence Passport, source status, rights/provenance and missing evidence."],
+ ["Independent Challenger","Attempts to falsify unsupported aggregation and cross-domain claims."],
+ ["Human Gate","Approves, modifies, escalates or rejects; production remains blocked in this POC."]
+];
+function pct(x){return (x*100).toFixed(1)+"%"}
+document.getElementById("ir").textContent=RESULT.IR_index.toFixed(4);
+document.getElementById("cr").textContent=RESULT.CR_index.toFixed(4);
+document.getElementById("dr").textContent=RESULT.DR_index.toFixed(4);
+document.getElementById("ar").textContent=RESULT.AR_index.toFixed(4);
+document.getElementById("allowed").textContent=RESULT.allowed_DR_index_at_target.toFixed(4);
+for(const [id,val] of [["irbar",RESULT.IR_index],["crbar",RESULT.CR_index],["drbar",RESULT.DR_index],["arbar",RESULT.AR_index],["allowbar",RESULT.allowed_DR_index_at_target]]) document.getElementById(id).style.width=Math.min(100,val*100)+"%";
+document.getElementById("decision").innerHTML = `<b>${RESULT.status.replaceAll("_"," ")}</b><br>Illustrative DR (${RESULT.DR_index.toFixed(4)}) is above the allowed DR index (${RESULT.allowed_DR_index_at_target.toFixed(4)}) implied by target AR=${RESULT.target_AR_index.toFixed(4)}. The POC therefore routes the case to stronger procedures, challenge and Human Gate.`;
+const nav=document.getElementById("agentNav"); AGENTS.forEach((a,i)=>{let d=document.createElement("div");d.className="agent"+(i===0?" active":"");d.innerHTML=`<i></i>${a[0]}`;d.onclick=()=>{document.querySelectorAll(".agent").forEach(x=>x.classList.remove("active"));d.classList.add("active");addAI(`${a[0]}\n${a[1]}`)};nav.appendChild(d)});
+function runAgents(){
+ const t=document.getElementById("timeline"); t.innerHTML="";
+ AGENTS.forEach((a,i)=>setTimeout(()=>{let s=document.createElement("div");s.className="step";s.innerHTML=`<div class="num">${i+1}</div><strong>${a[0]}</strong><p>${a[1]}</p>`;t.appendChild(s); if(i===AGENTS.length-1)addAI(`Multi-agent review complete.\nIR=${RESULT.IR_index.toFixed(4)}, CR=${RESULT.CR_index.toFixed(4)}, DR=${RESULT.DR_index.toFixed(4)}, AR=${RESULT.AR_index.toFixed(4)}.\nAllowed DR at target AR=${RESULT.target_AR_index.toFixed(4)} is ${RESULT.allowed_DR_index_at_target.toFixed(4)}.\nFinal state: HUMAN REVIEW REQUIRED.`)},i*250));
+}
+function addAI(x){let m=document.createElement("div");m.className="msg ai";m.textContent=x;document.getElementById("msgs").appendChild(m);m.scrollIntoView({behavior:"smooth"})}
+function addUser(x){let m=document.createElement("div");m.className="msg user";m.textContent=x;document.getElementById("msgs").appendChild(m);m.scrollIntoView({behavior:"smooth"})}
+function answer(q){
+ const s=q.toLowerCase();
+ if(s.includes("audit risk")||s.includes("result"))return `The research-demo decomposition is AR = IR × CR × DR = ${RESULT.IR_index.toFixed(4)} × ${RESULT.CR_index.toFixed(4)} × ${RESULT.DR_index.toFixed(4)} = ${RESULT.AR_index.toFixed(4)}. These are normalized, uncalibrated indices—not literal probabilities.`;
+ if(s.includes("detection")||s.includes("reduce"))return `Detection Risk Agent: current DR index is ${RESULT.DR_index.toFixed(4)} versus allowed ${RESULT.allowed_DR_index_at_target.toFixed(4)} at target AR ${RESULT.target_AR_index.toFixed(4)}. Reduce DR through stronger procedure coverage, higher-quality evidence, more population testing, independent review/falsification and Human Gate resolution.`;
+ if(s.includes("inherent")||s==="ir")return "Inherent Risk Agent routes CAM/accounting judgment, reporting complexity, disclosure, forensic/AAER, cyber/ESG exposure and financial/business pressure into IR. In this POC only executed or explicitly declared signals are scored.";
+ if(s.includes("control")||s==="cr"||s.includes("icfr"))return "Control Risk Agent centers LEMON/ICFR. The unqualified ICFR opinion lowers the current signal but does not prove zero control risk. Full control-level design and operating-effectiveness evidence plus ITGC/cyber controls are still needed.";
+ if(s.includes("missing")||s.includes("gap"))return "Evidence Agent flags: company-specific AAER matching, dedicated cybersecurity evidence, executed ESG analytics, full control-by-control operating-effectiveness evidence, full engagement procedure population and independent replication.";
+ if(s.includes("cam"))return "Two Microsoft FY2026 CAMs are mapped: Revenue Recognition and Income Taxes—Uncertain Tax Positions. They primarily inform inherent risk; their audit-response procedures also inform detection risk.";
+ if(s.includes("ifrs")||s.includes("kam"))return "Applicability Agent: Microsoft reports under U.S. GAAP and uses the PCAOB CAM regime. IFRS and KAM operate only as cross-framework comparator modes in this POC.";
+ if(s.includes("pcaob"))return "PCAOB Agent contributes to Detection Risk by mapping standards, inspection themes and audit-execution expectations. Firm-level inspection findings cannot be treated as Microsoft engagement findings without direct evidence.";
+ if(s.includes("cyber"))return "Cyber has two paths: inherent cyber exposure contributes to IR, while cyber/IT controls contribute to CR. The current Microsoft POC lacks a dedicated executed cyber package, so missing cyber evidence remains pending.";
+ if(s.includes("esg"))return "ESG has both IR and CR components: reporting/measurement complexity can raise IR; ESG reporting controls affect CR. Microsoft sustainability sources are registered, but executed ESG analytics are still pending.";
+ if(s.includes("aaer")||s.includes("forensic"))return "POMELO/Forensic AAER signals belong mainly in IR. The current Microsoft package does not yet contain an executed company-specific AAER match, so the correct state is pending—not low risk.";
+ if(s.includes("agent"))return "The POC has eight visible agents: Orchestrator, Applicability, IR, CR, DR, Evidence, Independent Challenger and Human Gate. The model provider can later be GPT, Claude, Gemini or another model without changing the audit-risk/evidence architecture.";
+ return "I will route this through the audit-risk architecture: first applicability, then IR/CR/DR, then Evidence, Challenger and Human Gate. Ask about any agent or risk domain.";
+}
+function ask(q){addUser(q);setTimeout(()=>addAI(answer(q)),100)}
+function submitQ(){let el=document.getElementById("q"),q=el.value.trim();if(!q)return;el.value="";ask(q)}
+document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="Enter")submitQ()});
+</script></body></html>
