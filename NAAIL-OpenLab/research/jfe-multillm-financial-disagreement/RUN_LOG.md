@@ -47,3 +47,20 @@
 - Repair queue: empty; no change.
 - Ending gate counts: PASS 3; NOT_STARTED 57; all other statuses 0.
 - Next gate: P0.4 — change-control, versioning, and preregistration rules.
+
+## RUN JFE-004 — 2026-10-04
+
+- Phase/gate: P0 Governance & Scientific Constitution / P0.4.
+- Starting state: canonical GitHub plan and Drive mirror read; P0.1–P0.3 PASS; Draft PR #112 open and sole PR for scope; branch HEAD `3dd302b3c8613fd330c623654c4680c74b9608fb`; repair queue empty; no writer-lock file found.
+- Work completed: froze the source-of-truth hierarchy; semantic version classes; controlled-object registry fields; change-request workflow; protected human decisions; three preregistration stages; prospective/post-hoc labels; outcome-exposure rules; deviation severity; dependency/rerun logic; dual-save closure requirements; and machine-checkable change record.
+- Status: PASS (change-control and preregistration design freeze only).
+- Evidence: `P0_CHANGE_CONTROL_VERSIONING_PREREGISTRATION.md` v1.0.
+- Falsification/readback: acceptance test prevents used validation or sealed-test samples from regaining confirmatory status; null results cannot be recast as technical errors; post-hoc work remains explicitly labeled; changed upstream hashes invalidate downstream reproducibility until rerun or supported no-impact determination.
+- GitHub: branch `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged; evidence, ledger, and run-log commits recorded after connector writes.
+- Drive: evidence uploaded to project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place; evidence ID and final readback recorded after connector verification.
+- Dual-save status: pending final readback at time this entry was drafted.
+- Fail count: 0.
+- Blocker classification: none.
+- Repair queue: empty; no change.
+- Ending gate counts: PASS 4; NOT_STARTED 56; all other statuses 0.
+- Next gate: P0.5 — run ledger, OPEN REPAIR QUEUE, and completion criteria.
