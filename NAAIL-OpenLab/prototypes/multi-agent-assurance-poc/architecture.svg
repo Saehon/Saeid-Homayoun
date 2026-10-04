@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="hdr" x1="0" x2="1"><stop stop-color="#062c50"/><stop offset="1" stop-color="#0b4c73"/></linearGradient>
+  <linearGradient id="blue" x1="0" x2="1"><stop stop-color="#1a5ca5"/><stop offset="1" stop-color="#0e3c75"/></linearGradient>
+  <linearGradient id="green" x1="0" x2="1"><stop stop-color="#16a36a"/><stop offset="1" stop-color="#08724c"/></linearGradient>
+  <linearGradient id="red" x1="0" x2="1"><stop stop-color="#ef5b4f"/><stop offset="1" stop-color="#d83d37"/></linearGradient>
+  <linearGradient id="purple" x1="0" x2="1"><stop stop-color="#7c48d8"/><stop offset="1" stop-color="#5527a6"/></linearGradient>
+  <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#dfa51a"/><stop offset="1" stop-color="#b67d00"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-opacity=".16"/></filter>
+  <style>
+    .title{font:700 54px Arial,sans-serif;fill:white}
+    .sub{font:400 24px Arial,sans-serif;fill:white}
+    .h2{font:700 28px Arial,sans-serif;fill:#11243b}
+    .boxTitle{font:700 24px Arial,sans-serif;fill:white}
+    .body{font:400 17px Arial,sans-serif;fill:#1b2b3d}
+    .small{font:400 15px Arial,sans-serif;fill:#1b2b3d}
+    .whiteSmall{font:400 17px Arial,sans-serif;fill:white}
+    .metric{font:700 50px Arial,sans-serif;fill:#e74a3b}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="#eef4f8"/>
+<rect x="0" y="0" width="1600" height="150" fill="url(#hdr)"/>
+<text x="38" y="66" class="title">NAAIL</text>
+<text x="225" y="57" class="sub" style="font-weight:700">Multi-Agent Assurance &amp; Risk Intelligence Platform</text>
+<text x="225" y="97" class="sub">Claude-style multi-agent POC for accounting, audit, ICFR, risk and assurance</text>
+<rect x="1380" y="26" rx="14" width="155" height="70" fill="#0a3558" stroke="#6b91ae"/>
+<text x="1424" y="70" class="sub" style="font-weight:700">POC</text>
+
+<text x="30" y="195" class="h2">Multi-Agent Architecture</text>
+<g filter="url(#shadow)">
+<rect x="28" y="225" rx="14" width="185" height="235" fill="#fff" stroke="#b9ccdc"/>
+<text x="57" y="263" class="h2" style="font-size:22px">Company Data</text>
+<text x="52" y="303" class="body">• 10-Q / 10-K</text>
+<text x="52" y="336" class="body">• XBRL / financials</text>
+<text x="52" y="369" class="body">• ICFR history</text>
+<text x="52" y="402" class="body">• PCAOB / audit reports</text>
+<text x="52" y="435" class="body">• AAER / ESG / news</text>
+
+<rect x="245" y="225" rx="14" width="190" height="235" fill="url(#blue)"/>
+<text x="275" y="278" class="boxTitle">Orchestrator</text>
+<text x="268" y="322" class="whiteSmall">✓ Task planning</text>
+<text x="268" y="354" class="whiteSmall">✓ Agent routing</text>
+<text x="268" y="386" class="whiteSmall">✓ Context &amp; memory</text>
+<text x="268" y="418" class="whiteSmall">✓ Quality control</text>
+
+<rect x="468" y="225" rx="14" width="190" height="235" fill="url(#green)"/>
+<text x="493" y="270" class="boxTitle">ICFR Risk Agent</text>
+<text x="535" y="302" class="boxTitle">(LEMON)</text>
+<text x="490" y="342" class="whiteSmall">✓ Control-risk analysis</text>
+<text x="490" y="374" class="whiteSmall">✓ ML / statistical models</text>
+<text x="490" y="406" class="whiteSmall">✓ Risk prioritization</text>
+<text x="490" y="438" class="whiteSmall">✓ Key drivers</text>
+
+<rect x="691" y="225" rx="14" width="190" height="235" fill="#1174cf"/>
+<text x="713" y="278" class="boxTitle">Evidence Agent</text>
+<text x="713" y="322" class="whiteSmall">✓ Source retrieval</text>
+<text x="713" y="354" class="whiteSmall">✓ Fact verification</text>
+<text x="713" y="386" class="whiteSmall">✓ Citation &amp; provenance</text>
+<text x="713" y="418" class="whiteSmall">✓ Evidence Passport</text>
+
+<rect x="914" y="225" rx="14" width="190" height="235" fill="url(#red)"/>
+<text x="934" y="278" class="boxTitle">Challenger</text>
+<text x="938" y="322" class="whiteSmall">✓ Falsify assumptions</text>
+<text x="938" y="354" class="whiteSmall">✓ Find inconsistencies</text>
+<text x="938" y="386" class="whiteSmall">✓ Alternative explanations</text>
+<text x="938" y="418" class="whiteSmall">✓ Missing evidence</text>
+
+<rect x="1137" y="225" rx="14" width="190" height="235" fill="url(#purple)"/>
+<text x="1151" y="278" class="boxTitle">Assurance Reviewer</text>
+<text x="1160" y="322" class="whiteSmall">✓ Integrate results</text>
+<text x="1160" y="354" class="whiteSmall">✓ Reliability checks</text>
+<text x="1160" y="386" class="whiteSmall">✓ Standards checks</text>
+<text x="1160" y="418" class="whiteSmall">✓ Recommendation</text>
+
+<rect x="1360" y="225" rx="14" width="210" height="235" fill="url(#gold)"/>
+<text x="1382" y="278" class="boxTitle">Human Approval</text>
+<text x="1384" y="322" class="whiteSmall">✓ Review dashboard</text>
+<text x="1384" y="354" class="whiteSmall">✓ Approve / request change</text>
+<text x="1384" y="386" class="whiteSmall">✓ Professional judgment</text>
+<text x="1384" y="418" class="whiteSmall">✓ Final audit trail</text>
+</g>
+
+<g stroke="#1b5b89" stroke-width="6" fill="none">
+<path d="M213 340 H245"/><path d="M435 340 H468"/><path d="M658 340 H691"/><path d="M881 340 H914"/><path d="M1104 340 H1137"/><path d="M1327 340 H1360"/>
+</g>
+<g fill="#1b5b89">
+<polygon points="238,331 252,340 238,349"/><polygon points="461,331 475,340 461,349"/><polygon points="684,331 698,340 684,349"/><polygon points="907,331 921,340 907,349"/><polygon points="1130,331 1144,340 1130,349"/><polygon points="1353,331 1367,340 1353,349"/>
+</g>
+
+<text x="30" y="515" class="h2">POC Output</text>
+<g filter="url(#shadow)">
+<rect x="28" y="545" rx="14" width="485" height="310" fill="#fff" stroke="#b9ccdc"/>
+<text x="52" y="585" class="h2" style="font-size:23px">Agent Execution</text>
+<text x="55" y="625" class="body">1  Orchestrator ............. COMPLETE</text>
+<text x="55" y="660" class="body">2  ICFR Risk Agent ........ COMPLETE</text>
+<text x="55" y="695" class="body">3  Evidence Agent .......... COMPLETE</text>
+<text x="55" y="730" class="body">4  Challenger .............. 4 issues tested</text>
+<text x="55" y="765" class="body">5  Assurance Reviewer ...... COMPLETE</text>
+<text x="55" y="800" class="body">6  Human Approval .......... PENDING</text>
+
+<rect x="535" y="545" rx="14" width="485" height="310" fill="#fff" stroke="#b9ccdc"/>
+<text x="560" y="585" class="h2" style="font-size:23px">Risk Dashboard</text>
+<text x="560" y="630" class="body">ICFR Failure Risk</text>
+<text x="560" y="700" class="metric">0.42</text>
+<text x="715" y="700" class="body" style="fill:#d83d37;font-weight:700">HIGH RISK</text>
+<rect x="560" y="730" width="390" height="18" rx="9" fill="#e6eef4"/>
+<rect x="560" y="730" width="165" height="18" rx="9" fill="#e74a3b"/>
+<text x="560" y="790" class="small">Top drivers: revenue recognition, IT controls, prior ICFR issues, auditor change</text>
+
+<rect x="1042" y="545" rx="14" width="528" height="310" fill="#fff" stroke="#b9ccdc"/>
+<text x="1066" y="585" class="h2" style="font-size:23px">Evidence &amp; Assurance</text>
+<text x="1066" y="625" class="body">Evidence Passport: VERIFIED SOURCES</text>
+<text x="1066" y="660" class="body">Challenger: 4 counter-tests</text>
+<text x="1066" y="695" class="body">Assurance status: UNRESOLVED / REVIEW</text>
+<rect x="1066" y="728" width="460" height="70" rx="10" fill="#e9f7f0" stroke="#95d6b8"/>
+<text x="1086" y="757" class="small" style="font-weight:700">Reviewer conclusion</text>
+<text x="1086" y="782" class="small">Elevated ICFR risk is evidence-supported; human review required.</text>
+<rect x="1066" y="812" width="135" height="32" rx="7" fill="#1ca86e"/>
+<rect x="1216" y="812" width="175" height="32" rx="7" fill="#176fc1"/>
+<rect x="1406" y="812" width="120" height="32" rx="7" fill="#df4a42"/>
+<text x="1105" y="834" class="small" style="fill:white;font-weight:700">APPROVE</text>
+<text x="1242" y="834" class="small" style="fill:white;font-weight:700">REQUEST CHANGES</text>
+<text x="1444" y="834" class="small" style="fill:white;font-weight:700">REJECT</text>
+</g>
+</svg>
