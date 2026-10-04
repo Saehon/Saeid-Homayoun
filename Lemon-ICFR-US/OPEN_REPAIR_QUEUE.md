@@ -48,3 +48,11 @@ This file records blockers only. No repair was applied in this triage session.
 ## Separation rule
 
 These blockers belong to LEMON only. They must not be mixed into NAAIL scientific PRs, NAAIL assurance evidence, or NAAIL COVID execution decisions.
+
+## Process failure — repeated push without compile gate
+
+- **Classification:** DEFERRED_ENGINEERING / PROCESS_CONTROL_FAILURE
+- Five consecutive ACK2007 repair commits were pushed while the same Python `SyntaxError` remained present.
+- This violates the project two-failure rule: after two unsuccessful attempts, the blocker should have been diagnosed, recorded, and parked instead of continuing to push new attempts.
+- **Mandatory prevention rule:** before any future ACK2007 repair push, run `python -m py_compile Lemon-ICFR-US/research/scientific-compute-reuse/verification/ACK2007/run_fixtures.py` locally or in a pre-push validation step. Only if compilation passes should the targeted ACK2007 tests be run and a new commit pushed.
+- Do not resume this repair until deliberately authorized as LEMON work.
