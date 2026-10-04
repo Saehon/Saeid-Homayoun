@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "protocol_id": "NAAIL-MSFT-COVID-REDERIVATION-V1R",
+  "status": "RETROSPECTIVE_REDERIVATION",
+  "created_date": "2026-10-04",
+  "case_id": "MNSC-2023-4670",
+  "company": "Microsoft Corporation",
+  "cik": "0000789019",
+  "prior_exposure": true,
+  "prior_exposure_basis": {
+    "description": "COVID-presence outcomes for the same 10 Microsoft observations were already present in repository artifacts before the v1 rule/scanner freeze.",
+    "earliest_outcome_artifact": {
+      "path": "case-001-management-science/reexecution/sec_one_company_msft/msft_one_company_final.csv",
+      "commit": "6dd3f0f30e851a13713d3c4ed6e48e3ee413611e",
+      "timestamp_utc": "2026-10-01T09:12:54Z"
+    },
+    "additional_outcome_artifacts": [
+      {
+        "path": "case-001-management-science/reexecution/sec_one_company_msft/msft_one_company_final.json",
+        "commit": "bc783cef59b35e58b278544c14704cb248648d50",
+        "timestamp_utc": "2026-10-01T09:12:57Z"
+      },
+      {
+        "path": "case-001-management-science/reexecution/sec_one_company_msft/FINAL_REPORT.md",
+        "commit": "53b25b530e0dccb1c2677eae1ba3e8b5a5cec7b8",
+        "timestamp_utc": "2026-10-01T09:12:59Z"
+      }
+    ],
+    "v1_freeze_commit": "2b278315a1ca38f67bab6e97b265e57ce28c3a5e",
+    "v1_freeze_timestamp_utc": "2026-10-02T12:13:34Z",
+    "governance_decision": "Q5_PROTOCOL_DECISION = REJECT_V1_PREREGISTRATION"
+  },
+  "base_rule": {
+    "path": "derived/covid_rule_v1.json",
+    "git_blob": "d7760b4909ae84896cae8797fb8536f59d36053c",
+    "reuse": "filing set, primary-document scope, exclusions, FilingLag integrity checks, and primary term set are reused as historical base logic; v1 remains unchanged."
+  },
+  "data_scope": {
+    "filings": "the same 10 Microsoft accessions in covid_rule_v1.json",
+    "document_scope": "primary filing document only",
+    "exclude_exhibits": true,
+    "fetch_rule": "download each primary filing document once and apply every frozen term set to the same bytes",
+    "case_sensitive": false
+  },
+  "term_sets": {
+    "PRIMARY": {
+      "label": "v1 primary pattern unchanged",
+      "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+      "role": "DECIDING"
+    },
+    "S1": {
+      "label": "primary plus compact COVID19, plural coronavirus, and SARS-CoV-2 forms",
+      "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+      "role": "DECIDING"
+    },
+    "S2": {
+      "label": "S1 without corona to reduce non-disease ambiguity such as Corona beer",
+      "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+      "role": "DECIDING"
+    },
+    "S3": {
+      "label": "S1 plus pandemic",
+      "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+      "role": "BROAD_DIAGNOSTIC"
+    }
+  },
+  "binary_rule": "For each term set separately: covid_present = 1 iff that term set has match_count > 0 in the normalized primary-document text; otherwise 0.",
+  "normalization": "HTMLParser text extraction; exclude script/style/head/ix:hidden; collapse whitespace; regex IGNORECASE. No stemming, semantic expansion, or section cherry-picking.",
+  "sensitivity_decision_rule": {
+    "deciding_sets": "PRIMARY, S1 and S2 only.",
+    "agreement_required": "For each of all 10 filings, PRIMARY, S1 and S2 must produce the same binary value.",
+    "deciding_set_disagreement": "FLAGGED",
+    "q4_2019_special": "If PRIMARY, S1 or S2 produces a match in Q4-2019, FLAGGED.",
+    "s3_role": "S3 is BROAD_DIAGNOSTIC only and does not participate in automated agreement.",
+    "s3_only_definition": "S3_ONLY when PRIMARY=0, S1=0, S2=0 and S3=1 for a filing.",
+    "s3_only_treatment": "S3_ONLY does not itself FLAG the run. Automated state remains HUMAN_REVIEW. Store every S3 match snippet for each S3_ONLY filing with no count cap and no more than 15 words per snippet.",
+    "s3_human_classification": "Claude classifies every S3_ONLY snippet as either COVID reference without an explicit deciding-set term (may require FLAGGED) or generic pandemic-risk language (no effect on bounded COVID-term claim).",
+    "automated_all_deciding_agree_state": "HUMAN_REVIEW",
+    "assurance_ceiling": "VERIFIED only after PRIMARY/S1/S2 agree on all 10 filings, no PRIMARY/S1/S2 match occurs in Q4-2019, and Claude independently classifies every S3_ONLY snippet.",
+    "note": "The scanner itself cannot emit VERIFIED."
+  },
+  "historical_reference": {
+    "source": "case-001-management-science/reexecution/sec_one_company_msft/msft_one_company_final.csv",
+    "purpose": "retrospective comparison only; not treated as preregistered expected outcomes",
+    "values": "2019 rows = 0; Q1-2020 through Q2-2021 = 1"
+  },
+  "required_output": {
+    "top_level": [
+      "protocol_id",
+      "protocol_status",
+      "prior_exposure",
+      "scanner_git_blob",
+      "base_rule_git_blob",
+      "protocol_git_blob",
+      "provenance",
+      "observations",
+      "agreement_table",
+      "summary"
+    ],
+    "per_filing": [
+      "calendar_quarter",
+      "form",
+      "accession",
+      "period_end",
+      "filing_date",
+      "filing_lag_days",
+      "primary_document",
+      "document_sha256",
+      "historical_reference_covid_present",
+      "term_sets",
+      "deciding_sets_agree",
+      "s3_only"
+    ],
+    "per_term_set": [
+      "pattern",
+      "match_count",
+      "covid_present",
+      "snippets"
+    ],
+    "failure_record": "On any execution/integrity/retrieval failure, write a partial failure JSON record to the result path before exiting non-zero, preserving completed filing and agreement rows.",
+    "agreement_table": [
+      "calendar_quarter",
+      "accession",
+      "PRIMARY",
+      "S1",
+      "S2",
+      "S3",
+      "deciding_sets_agree",
+      "s3_only",
+      "historical_reference"
+    ],
+    "summary": [
+      "filings_scanned",
+      "term_sets",
+      "deciding_term_sets",
+      "filings_with_deciding_set_agreement",
+      "filings_with_deciding_set_disagreement",
+      "s3_only_filings",
+      "primary_matches_historical_reference",
+      "q4_2019_any_deciding_set_match",
+      "automated_assurance_state",
+      "verified_ceiling_condition"
+    ]
+  },
+  "secret_policy": {
+    "identity_secret": "EDGAR_IDENTITY",
+    "use": "SEC HTTP User-Agent header only",
+    "never_print_or_write_value": true
+  },
+  "immutability": "This protocol must be reviewed before execution. After the first SEC retrieval under v1-R, changes require a new versioned retrospective protocol and must not overwrite v1-R.",
+  "v1_future_boundary": "A genuinely preregistered confirmatory COVID-disclosure study with unseen filings is deferred to V1, not this POC.",
+  "amendment": {
+    "date": "2026-10-04",
+    "record": "derived/Q5_V1R_PREEXECUTION_AMENDMENT_S3_2026-10-04.md",
+    "reason": "S3 adds generic pandemic-risk language and therefore is a broad diagnostic rather than a deciding COVID-term sensitivity set. Amendment occurred before any v1-R SEC retrieval."
+  },
+  "term_roles": {
+    "deciding": [
+      "PRIMARY",
+      "S1",
+      "S2"
+    ],
+    "broad_diagnostic": [
+      "S3"
+    ]
+  }
+}
