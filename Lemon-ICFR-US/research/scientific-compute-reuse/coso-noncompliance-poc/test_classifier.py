@@ -46,3 +46,15 @@ assert classify_noncompliance(unversioned) is None
 assert classify_noncompliance(both_versions) is None
 assert classify_noncompliance("") is None
 assert evaluate_noncompliance("")["reason"] == "INVALID_PROVENANCE_METADATA"
+
+invalid_metadata = evidence(
+    "Management assessed ICFR using Internal Control—Integrated Framework (2013).",
+    "2013",
+    issuer_cik="789019",
+    accession="invalid",
+)
+assert classify_noncompliance(invalid_metadata) is None
+assert (
+    evaluate_noncompliance(invalid_metadata)["reason"]
+    == "INVALID_PROVENANCE_METADATA"
+)
