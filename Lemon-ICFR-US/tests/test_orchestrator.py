@@ -206,3 +206,23 @@ def test_low_independence_is_labelled():
     review = gate(result, "independent_review")
     assert review.passed is True
     assert any("LOW independence" in note for note in review.notes), review.notes
+
+def test_legacy_reproducibility_ref_is_informational_only():
+    kw = valid_kwargs()
+    kw["repro_ref"] = None
+    kw["reproducibility_ref"] = "legacy-string-is-present"
+    result = LemonOrchestrator().run(**kw)
+    repro = gate(result, "reproducibility")
+    assert repro.passed is False
+    assert any("ReproRef incomplete: absent" in note for note in repro.notes)
+    assert any("legacy reproducibility_ref='legacy-string-is-present' is informational only" in note
+               for note in repro.notes)
+    assert result.status != "AWAITING_HUMAN_APPROVAL"
+
+
+def test_legacy_challenges_are_labelled_unvalidated():
+    result = LemonOrchestrator().run(**valid_kwargs())
+    challenges = [f for f in result.findings if f.agent == "legacy-independent-falsification-output"]
+    assert challenges
+    assert all(f.metadata.get("status") == "LEGACY_UNVALIDATED_CHALLENGE" for f in challenges)
+
