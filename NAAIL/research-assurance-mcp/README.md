@@ -62,7 +62,35 @@ The project intentionally does **not** convert these engineering results into cl
 
 ---
 
-## 3. Important scientific correction: Microsoft COVID v1
+## 3. Scientific articles used and referenced
+
+The project distinguishes between the **article directly used in the current POC** and broader **scientific/methodological anchors** used to guide future replication, AI-assurance, NLP, uncertainty, and falsification work.
+
+| # | Article | Journal | Role in NAAIL Research Assurance MCP | Status |
+|---|---|---|---|---|
+| **1** | **deHaan, de Kok, Matsumoto & Rodriguez-Vazquez (2023), “How Resilient Are Firms’ Financial Reporting Processes?”** | **Management Science** | **Primary Case 001**; supports manuscript → claim → table → output → code → data → provenance testing, the Microsoft SEC re-derivation, Evidence Graph construction, and the current POC assurance workflow. DOI: `10.1287/mnsc.2023.4670` | 🟢 **Directly used in POC** |
+| **2** | **de Kok (2025), “ChatGPT for Textual Analysis? How to Use Generative LLMs in Accounting Research”** | **Management Science** | Methodological anchor for LLM-based textual analysis, construct validation, reproducibility, and controlled use of generative AI in accounting research. DOI: `10.1287/mnsc.2023.03253` | 🔵 Methodological foundation |
+| **3** | **Law & Shen, “How Does Artificial Intelligence Shape Audit Firms?”** | **Management Science** | Research anchor for AI adoption in audit firms and a future candidate for audit-agent and evidence-assurance testing. | 🔵 Research anchor / future case |
+| **4** | **Huang, Li, Li & Lin, “Local Information Advantage and Stock Returns: Evidence from Social Media”** | **Contemporary Accounting Research** | Reproducible accounting/finance NLP pipeline and candidate NLP assurance case. | 🔵 Future replication case |
+| **5** | **Brown, Ma & Tucker, “Financial Statement Similarity”** | **Contemporary Accounting Research** | Financial-statement textual measurement and reproducible similarity analysis; candidate for future assurance testing. | 🔵 Future replication case |
+| **6** | **Breuer & Schütt, “Accounting for Uncertainty: An Application of Bayesian Methods to Accruals Models”** | **Review of Accounting Studies** | Methodological anchor for uncertainty, calibration, and probabilistic assurance testing. | 🔵 Methodological / future case |
+| **7** | **Jensen, Kelly & Pedersen — replication-crisis research in finance** | **Journal of Finance** | Replication and falsification architecture; candidate foundation for future finance assurance cases. | 🔵 Replication foundation |
+
+### Primary POC article
+
+The core scientific article actually exercised in the present POC is:
+
+**deHaan, de Kok, Matsumoto & Rodriguez-Vazquez (2023), _How Resilient Are Firms’ Financial Reporting Processes?_, Management Science, 69(4), 2536–2545. DOI: `10.1287/mnsc.2023.4670`.**
+
+Within this repository it underpins:
+
+`Case 001 → author-output consistency → Microsoft SEC FilingLag reconstruction → Evidence Graph → adversarial benchmark → Research Assurance MCP`
+
+The remaining papers are currently treated as **scientific or methodological anchors**, not as completed POC replications.
+
+---
+
+## 4. Important scientific correction: Microsoft COVID v1
 
 The original Microsoft COVID v1 rule was frozen after earlier project artifacts had already recorded COVID-presence outcomes for the same ten Microsoft observations.
 
@@ -85,7 +113,7 @@ This is a rejection of the **preregistration label**, not necessarily of the bou
 
 ---
 
-## 4. Retrospective re-derivation: v1-R
+## 5. Retrospective re-derivation: v1-R
 
 The POC now uses a clearly labeled **retrospective re-derivation protocol (v1-R)**.
 
@@ -135,7 +163,7 @@ A bounded `VERIFIED` conclusion is only possible after independent review of the
 
 ---
 
-## 5. Execution remains blocked pending independent review
+## 6. Execution remains blocked pending independent review
 
 **No v1-R SEC retrieval has been performed.**
 
@@ -149,7 +177,7 @@ The amended protocol and scanner must be independently approved before execution
 
 ---
 
-## 6. Infrastructure PR — #116
+## 7. Infrastructure PR — #116
 
 **Draft PR #116** replaces the rejected v1 execution path with the v1-R execution path.
 
@@ -173,7 +201,7 @@ Current workflow candidate blob:
 
 ---
 
-## 7. Prior-exposure governance — #117
+## 8. Prior-exposure governance — #117
 
 A separate governance PR addresses the institutional lesson from this case.
 
@@ -191,7 +219,7 @@ This PR is **separate from the scientific v1-R execution gate** and remains subj
 
 ---
 
-## 8. What readers should understand about the 8/9 missed probes
+## 9. What readers should understand about the 8/9 missed probes
 
 The POC deliberately preserves a negative result:
 
@@ -205,7 +233,7 @@ That limitation is scientifically useful: the purpose of the POC is not to manuf
 
 ---
 
-## 9. Case 001 and the 264/264 result
+## 10. Case 001 and the 264/264 result
 
 The project contains a historical statement that **264/264 published regression cells matched author-provided output at published precision**.
 
@@ -221,7 +249,7 @@ The project does not reconstruct unavailable evidence.
 
 ---
 
-## 10. Current execution sequence
+## 11. Current execution sequence
 
 The intended order is:
 
@@ -249,7 +277,7 @@ The project must remain inside the POC gate until those evidence steps are compl
 
 ---
 
-## 11. Repository map
+## 12. Repository map
 
 | Location | Purpose |
 |---|---|
@@ -269,7 +297,7 @@ The project must remain inside the POC gate until those evidence steps are compl
 
 ---
 
-## 12. Governance principles
+## 13. Governance principles
 
 This project follows several hard rules:
 
@@ -285,7 +313,7 @@ This project follows several hard rules:
 
 ---
 
-## 13. Current reader takeaway
+## 14. Current reader takeaway
 
 The NAAIL Research Assurance MCP POC is **scientifically active but not complete**.
 
