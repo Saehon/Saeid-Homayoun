@@ -1,0 +1,37 @@
+{
+  "benchmark": "Park et al. (2021) COSO noncompliance construct",
+  "construct": "Noncompliance",
+  "decision_rule": {
+    "applicable_if": "fiscal-year end is after 2014-12-15 and filing contains an explicit management ICFR framework version",
+    "COSO_1992": 1,
+    "COSO_2013": 0,
+    "ambiguous": null
+  },
+  "fail_closed": true,
+  "allowed_evidence": [
+    "explicit SEC annual-report management ICFR disclosure naming 1992 framework",
+    "explicit SEC annual-report management ICFR disclosure naming 2013 framework"
+  ],
+  "prohibited_inference": [
+    "infer framework version from filing date alone",
+    "infer 2013 from unversioned 'Internal Control—Integrated Framework'",
+    "infer from auditor identity",
+    "infer from ICFR effectiveness"
+  ],
+  "validated_examples": [
+    {
+      "company": "Microsoft",
+      "period_end": "2015-06-30",
+      "accession": "0001193125-15-272806",
+      "explicit_framework": "2013",
+      "expected_noncompliance": 0
+    },
+    {
+      "company": "National Instruments Corporation",
+      "period_end": "2015-05-31",
+      "accession": "0001193125-15-283224",
+      "explicit_framework": "1992",
+      "expected_noncompliance": 1
+    }
+  ]
+}
