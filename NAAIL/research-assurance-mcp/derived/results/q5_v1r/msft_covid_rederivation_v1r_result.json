@@ -1,0 +1,703 @@
+{
+  "protocol_id": "NAAIL-MSFT-COVID-REDERIVATION-V1R",
+  "protocol_status": "RETROSPECTIVE_REDERIVATION",
+  "prior_exposure": true,
+  "scanner_git_blob": "5b0b31de72f67fd14439875db58cab7f6427f5a1",
+  "base_rule_git_blob": "d7760b4909ae84896cae8797fb8536f59d36053c",
+  "protocol_git_blob": "83af7a6859b2d44b782b5d838420f07717ea79d3",
+  "source_csv": "case-001-management-science/reexecution/sec_one_company_msft/msft_one_company_final.csv",
+  "scope": "Retrospective re-derivation of COVID-term presence in the same 10 Microsoft primary 10-Q/10-K documents; exhibits excluded.",
+  "provenance": {
+    "retrieval_started_at_utc": "2026-10-04T13:02:07.654672+00:00",
+    "retrieval_completed_at_utc": "2026-10-04T13:02:17.910906+00:00",
+    "source_system": "SEC EDGAR",
+    "executing_commit": "7b23810af2f4a38fdefa54b242600593c804ea91",
+    "workflow_name": "NAAIL Microsoft COVID v1-R Re-derivation",
+    "workflow_run_id": "37204180146",
+    "workflow_run_attempt": "1",
+    "repository": "Saehon/Saeid-Homayoun",
+    "run_url": "https://github.com/Saehon/Saeid-Homayoun/actions/runs/37204180146"
+  },
+  "observations": [
+    {
+      "calendar_quarter": "Q1-2019",
+      "form": "10-Q",
+      "accession": "0001564590-19-012709",
+      "period_end": "2019-03-31",
+      "filing_date": "2019-04-24",
+      "filing_lag_days": 24,
+      "primary_document": "msft-10q_20190331.htm",
+      "document_sha256": "50fc51dcaaf6471c3f33ac80b184f09adc5b1403cc384a278502a745c643d0e9",
+      "historical_reference_covid_present": 0,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": [],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q2-2019",
+      "form": "10-K",
+      "accession": "0001564590-19-027952",
+      "period_end": "2019-06-30",
+      "filing_date": "2019-08-01",
+      "filing_lag_days": 32,
+      "primary_document": "msft-10k_20190630.htm",
+      "document_sha256": "cca6b0a1b5f66032d1236e8a6ea4052bb4c7a676ab4757ac916ff113bc39942d",
+      "historical_reference_covid_present": 0,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": [],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q3-2019",
+      "form": "10-Q",
+      "accession": "0001564590-19-037549",
+      "period_end": "2019-09-30",
+      "filing_date": "2019-10-23",
+      "filing_lag_days": 23,
+      "primary_document": "msft-10q_20190930.htm",
+      "document_sha256": "00d39e2b8e4dbedcba17bfad8033e58c80a2490e0d5901e68282cdf215c5e0a2",
+      "historical_reference_covid_present": 0,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": [],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q4-2019",
+      "form": "10-Q",
+      "accession": "0001564590-20-002450",
+      "period_end": "2019-12-31",
+      "filing_date": "2020-01-29",
+      "filing_lag_days": 29,
+      "primary_document": "msft-10q_20191231.htm",
+      "document_sha256": "432640afde6827999c9630d9d0410b65b46ca199412056cc7462b982b8d8a3a6",
+      "historical_reference_covid_present": 0,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": []
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 0,
+          "covid_present": 0,
+          "snippets": [],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q1-2020",
+      "form": "10-Q",
+      "accession": "0001564590-20-019706",
+      "period_end": "2020-03-31",
+      "filing_date": "2020-04-29",
+      "filing_lag_days": 29,
+      "primary_document": "msft-10q_20200331.htm",
+      "document_sha256": "2ba93a6a4a9357b700b7db4ee20eccba9a3bd177e8b0ad79dfd3b2314491c3fe",
+      "historical_reference_covid_present": 1,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 17,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider",
+            "of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider all highly",
+            "We continue to monitor economic implications of the COVID-19 pandemic; however, based on current market"
+          ]
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 17,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider",
+            "of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider all highly",
+            "We continue to monitor economic implications of the COVID-19 pandemic; however, based on current market"
+          ]
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 17,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider",
+            "of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider all highly",
+            "We continue to monitor economic implications of the COVID-19 pandemic; however, based on current market"
+          ]
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 32,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider",
+            "of a novel strain of the coronavirus (“COVID-19”). Financial Instruments Investments We consider all highly",
+            "We continue to monitor economic implications of the COVID-19 pandemic; however, based on current market"
+          ],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q2-2020",
+      "form": "10-K",
+      "accession": "0001564590-20-034944",
+      "period_end": "2020-06-30",
+      "filing_date": "2020-07-30",
+      "filing_lag_days": 30,
+      "primary_document": "msft-10k_20200630.htm",
+      "document_sha256": "853d05246a4c3e7dd475632842c38d9c4e2d79ea99efee2866745c9f5918763d",
+      "historical_reference_covid_present": 1,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 22,
+          "covid_present": 1,
+          "snippets": [
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do",
+            "of a novel strain of the coronavirus (“COVID-19”), we are working to do our part",
+            "best of Microsoft. 5 PART I Item 1 COVID-19 In March 2020, the World Health"
+          ]
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 22,
+          "covid_present": 1,
+          "snippets": [
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do",
+            "of a novel strain of the coronavirus (“COVID-19”), we are working to do our part",
+            "best of Microsoft. 5 PART I Item 1 COVID-19 In March 2020, the World Health"
+          ]
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 22,
+          "covid_present": 1,
+          "snippets": [
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do",
+            "of a novel strain of the coronavirus (“COVID-19”), we are working to do our part",
+            "best of Microsoft. 5 PART I Item 1 COVID-19 In March 2020, the World Health"
+          ]
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 43,
+          "covid_present": 1,
+          "snippets": [
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do",
+            "of a novel strain of the coronavirus (“COVID-19”), we are working to do our part",
+            "best of Microsoft. 5 PART I Item 1 COVID-19 In March 2020, the World Health"
+          ],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q3-2020",
+      "form": "10-Q",
+      "accession": "0001564590-20-047996",
+      "period_end": "2020-09-30",
+      "filing_date": "2020-10-27",
+      "filing_lag_days": 27,
+      "primary_document": "msft-10q_20200930.htm",
+      "document_sha256": "c6160722c775cd4193ac8ad83da6dd8a0fc9eaed44a4ab6e1c1dfce7f1d46608",
+      "historical_reference_covid_present": 1,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 12,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed",
+            "of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 12,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed",
+            "of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 12,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed",
+            "of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 23,
+          "covid_present": 1,
+          "snippets": [
+            "recent outbreak of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed",
+            "of a novel strain of the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "the outbreak of a novel strain of the coronavirus (“COVID-19”), we are working to do"
+          ],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q4-2020",
+      "form": "10-Q",
+      "accession": "0001564590-21-002316",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-01-26",
+      "filing_lag_days": 26,
+      "primary_document": "msft-10q_20201231.htm",
+      "document_sha256": "0aa8225cff0dd4ac7947f88a16507d3b714c47ed1b4e422ceacf25bc499f4fb3",
+      "historical_reference_covid_present": 1,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 15,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 15,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 15,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 26,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q1-2021",
+      "form": "10-Q",
+      "accession": "0001564590-21-020891",
+      "period_end": "2021-03-31",
+      "filing_date": "2021-04-27",
+      "filing_lag_days": 27,
+      "primary_document": "msft-10q_20210331.htm",
+      "document_sha256": "005918ebd18a4999056f448ebf9eb9095bd8cecdc4404b67786e30a6096d8057",
+      "historical_reference_covid_present": 1,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 15,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 15,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 15,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ]
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 26,
+          "covid_present": 1,
+          "snippets": [
+            "in the current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed",
+            "current economic environment due to the coronavirus (“COVID-19”). In July 2020, we completed an assessment",
+            "As the world continues to respond to the coronavirus (“COVID-19”), we are working to do"
+          ],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    },
+    {
+      "calendar_quarter": "Q2-2021",
+      "form": "10-K",
+      "accession": "0001564590-21-039151",
+      "period_end": "2021-06-30",
+      "filing_date": "2021-07-29",
+      "filing_lag_days": 29,
+      "primary_document": "msft-10k_20210630.htm",
+      "document_sha256": "9f8ba73d2a10674478ad35dc44d067a57529ab5038d0d21dc14929ce6a3c36ea",
+      "historical_reference_covid_present": 1,
+      "term_sets": {
+        "PRIMARY": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b",
+          "role": "DECIDING",
+          "match_count": 22,
+          "covid_present": 1,
+          "snippets": [
+            "new solutions that reflect the best of Microsoft. COVID-19 In March 2020, the World Health",
+            "the World Health Organization declared the outbreak of COVID-19 to be a pandemic. The COVID-19",
+            "outbreak of COVID-19 to be a pandemic. The COVID-19 pandemic continues to have widespread and"
+          ]
+        },
+        "S1": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 22,
+          "covid_present": 1,
+          "snippets": [
+            "new solutions that reflect the best of Microsoft. COVID-19 In March 2020, the World Health",
+            "the World Health Organization declared the outbreak of COVID-19 to be a pandemic. The COVID-19",
+            "outbreak of COVID-19 to be a pandemic. The COVID-19 pandemic continues to have widespread and"
+          ]
+        },
+        "S2": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b",
+          "role": "DECIDING",
+          "match_count": 22,
+          "covid_present": 1,
+          "snippets": [
+            "new solutions that reflect the best of Microsoft. COVID-19 In March 2020, the World Health",
+            "the World Health Organization declared the outbreak of COVID-19 to be a pandemic. The COVID-19",
+            "outbreak of COVID-19 to be a pandemic. The COVID-19 pandemic continues to have widespread and"
+          ]
+        },
+        "S3": {
+          "pattern": "\\bcovid(-19)?\\b|\\bcoronavirus\\b|\\bcorona\\b|\\bcovid-?19\\b|\\bcoronaviruses\\b|\\bsars-cov-2\\b|\\bpandemic\\b",
+          "role": "BROAD_DIAGNOSTIC",
+          "match_count": 41,
+          "covid_present": 1,
+          "snippets": [
+            "new solutions that reflect the best of Microsoft. COVID-19 In March 2020, the World Health",
+            "the World Health Organization declared the outbreak of COVID-19 to be a pandemic. The COVID-19",
+            "declared the outbreak of COVID-19 to be a pandemic. The COVID-19 pandemic continues to have"
+          ],
+          "snippet_policy": "UP_TO_3"
+        }
+      },
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "primary_matches_historical_reference": true
+    }
+  ],
+  "agreement_table": [
+    {
+      "calendar_quarter": "Q1-2019",
+      "accession": "0001564590-19-012709",
+      "PRIMARY": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 0
+    },
+    {
+      "calendar_quarter": "Q2-2019",
+      "accession": "0001564590-19-027952",
+      "PRIMARY": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 0
+    },
+    {
+      "calendar_quarter": "Q3-2019",
+      "accession": "0001564590-19-037549",
+      "PRIMARY": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 0
+    },
+    {
+      "calendar_quarter": "Q4-2019",
+      "accession": "0001564590-20-002450",
+      "PRIMARY": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 0
+    },
+    {
+      "calendar_quarter": "Q1-2020",
+      "accession": "0001564590-20-019706",
+      "PRIMARY": 1,
+      "S1": 1,
+      "S2": 1,
+      "S3": 1,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 1
+    },
+    {
+      "calendar_quarter": "Q2-2020",
+      "accession": "0001564590-20-034944",
+      "PRIMARY": 1,
+      "S1": 1,
+      "S2": 1,
+      "S3": 1,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 1
+    },
+    {
+      "calendar_quarter": "Q3-2020",
+      "accession": "0001564590-20-047996",
+      "PRIMARY": 1,
+      "S1": 1,
+      "S2": 1,
+      "S3": 1,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 1
+    },
+    {
+      "calendar_quarter": "Q4-2020",
+      "accession": "0001564590-21-002316",
+      "PRIMARY": 1,
+      "S1": 1,
+      "S2": 1,
+      "S3": 1,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 1
+    },
+    {
+      "calendar_quarter": "Q1-2021",
+      "accession": "0001564590-21-020891",
+      "PRIMARY": 1,
+      "S1": 1,
+      "S2": 1,
+      "S3": 1,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 1
+    },
+    {
+      "calendar_quarter": "Q2-2021",
+      "accession": "0001564590-21-039151",
+      "PRIMARY": 1,
+      "S1": 1,
+      "S2": 1,
+      "S3": 1,
+      "deciding_sets_agree": true,
+      "s3_only": false,
+      "historical_reference": 1
+    }
+  ],
+  "summary": {
+    "filings_scanned": 10,
+    "term_sets": [
+      "PRIMARY",
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "deciding_term_sets": [
+      "PRIMARY",
+      "S1",
+      "S2"
+    ],
+    "filings_with_deciding_set_agreement": 10,
+    "filings_with_deciding_set_disagreement": 0,
+    "s3_only_filings": [],
+    "primary_matches_historical_reference": 10,
+    "q4_2019_any_deciding_set_match": false,
+    "automated_assurance_state": "HUMAN_REVIEW",
+    "verified_ceiling_condition": "VERIFIED is unavailable to automation. It requires PRIMARY/S1/S2 agreement on all 10 filings, no PRIMARY/S1/S2 match in Q4-2019, and independent Claude classification of every S3-only snippet."
+  },
+  "interpretation": "This is retrospective re-derivation, not preregistration. PRIMARY/S1/S2 are deciding sets. S3 is a BROAD_DIAGNOSTIC only. HUMAN_REVIEW means the deciding sets agree and Q4-2019 has no deciding-set match; FLAGGED means deciding-set disagreement or a Q4-2019 deciding-set match."
+}
