@@ -1,0 +1,69 @@
+{
+  "project": "NAAIL-RiskOS-MSFT-POC",
+  "version": "0.2",
+  "maturity": "RESEARCH_PROTOTYPE",
+  "company": {
+    "name": "Microsoft Corporation",
+    "ticker": "MSFT",
+    "cik": "0000789019",
+    "fiscal_year": 2026,
+    "reporting_basis": "US_GAAP",
+    "audit_regime": "PCAOB_CAM"
+  },
+  "verified_poc_facts": {
+    "revenue_usd_m": 331839,
+    "revenue_growth": 0.1775298522,
+    "operating_margin": 0.4678081841,
+    "net_margin": 0.4030538906,
+    "current_ratio": 1.230327262,
+    "liabilities_to_assets": 0.4166653481,
+    "free_cash_flow_proxy_usd_m": 66987,
+    "rd_intensity": 0.1071664271,
+    "fy2026_simple_price_return": -0.2421865474,
+    "auditor": "Deloitte & Touche LLP",
+    "icfr_opinion": "UNQUALIFIED",
+    "cams": [
+      {"topic":"Revenue Recognition","judgment":"HIGH","assertions":["occurrence","accuracy","cutoff","classification"]},
+      {"topic":"Income Taxes — Uncertain Tax Positions","judgment":"HIGH_WITH_TAX_SPECIALISTS","assertions":["valuation","completeness","presentation"]}
+    ],
+    "evidence_passport": "EP-MSFT-XBRL-FY2026",
+    "artifact_validation": "15/15 PASS",
+    "production_approval": "NO",
+    "scientific_validation": "PENDING_INDEPENDENT_REPLICATION"
+  },
+  "audit_risk_model": {
+    "formula": "AR_index = IR_index * CR_index * DR_index",
+    "target_ar_index": 0.05,
+    "interpretation": "Normalized research-demo indices, not calibrated probabilities and not an audit opinion.",
+    "input_policy": "Only executed/declared evidence may create a positive or negative signal. Missing evidence creates a coverage gap, not a PASS."
+  },
+  "illustrative_uncalibrated_inputs": {
+    "IR": {
+      "reporting_judgment":{"score":0.8,"weight":0.35,"basis":"Two high-judgment FY2026 CAMs"},
+      "financial_reporting_complexity":{"score":0.65,"weight":0.25,"basis":"Large diversified reporting footprint; bounded POC"},
+      "disclosure_complexity":{"score":0.6,"weight":0.2,"basis":"Bounded risk-factor sample has low readability"},
+      "market_business_pressure":{"score":0.45,"weight":0.2,"basis":"FY2026 simple price return -24.2%; not itself audit evidence"}
+    },
+    "CR": {
+      "icfr_opinion_signal":{"score":0.2,"weight":0.5,"basis":"Unqualified ICFR opinion lowers but does not eliminate control risk"},
+      "control_level_evidence_gap":{"score":0.55,"weight":0.3,"basis":"Current POC lacks full control-by-control operating effectiveness evidence"},
+      "itgc_evidence_gap":{"score":0.5,"weight":0.2,"basis":"Dedicated ITGC/cyber control evidence package not yet executed"}
+    },
+    "DR": {
+      "procedure_coverage_gap":{"score":0.35,"weight":0.35,"basis":"CAM procedures mapped, but full engagement procedure population not available"},
+      "evidence_sufficiency_gap":{"score":0.3,"weight":0.25,"basis":"Evidence Passport exists; several specialist modules remain pending"},
+      "independent_replication_gap":{"score":0.6,"weight":0.25,"basis":"Independent scientific replication still pending"},
+      "human_review_gap":{"score":0.2,"weight":0.15,"basis":"Human Gate exists; production approval remains NO"}
+    }
+  },
+  "domain_mapping": {
+    "IR":["MANGO/IFRS-shadow","APPLE/CAM","ORANGE/KAM-comparator","POMELO/Forensic-AAER","Cyber inherent exposure","ESG inherent reporting risk","FINANCE/ECONOVA-S","Disclosure/Text"],
+    "CR":["LEMON/ICFR","ITGC","Cyber controls","ESG controls","Governance","Control design","Control operation"],
+    "DR":["GRAPE/Audit workflow","PEAR/Evidence assurance","KIWI/Challenge","PCAOB requirements","Sampling/Coverage","AI model risk","Independent reviewer","NAAIL BOARD/Human Gate"]
+  },
+  "poc_result": {
+    "IR_index":0.6525,"CR_index":0.365,"DR_index":0.3775,"AR_index":0.0899,"target_AR_index":0.05,
+    "allowed_DR_index_at_target":0.2099,"detection_gap":0.1676,"status":"MORE_AUDIT_ASSURANCE_REQUIRED",
+    "boundary":"Illustrative, uncalibrated normalized research-demo indices; not probabilities, not audit conclusions."
+  }
+}
