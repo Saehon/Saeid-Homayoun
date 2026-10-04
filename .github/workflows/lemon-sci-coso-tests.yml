@@ -1,0 +1,32 @@
+name: LEMON-SCI COSO Evidence Contract Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/**'
+      - '.github/workflows/lemon-sci-coso-tests.yml'
+  push:
+    branches:
+      - feature/lemon-scientific-compute-reuse
+    paths:
+      - 'Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/**'
+      - '.github/workflows/lemon-sci-coso-tests.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Base evidence-object tests
+        run: python test_classifier.py
+      - name: Mutation and determinism tests
+        run: python test_mutation_determinism.py
+      - name: Sixteen-case evidence-contract tests
+        run: python test_evidence_contract.py
