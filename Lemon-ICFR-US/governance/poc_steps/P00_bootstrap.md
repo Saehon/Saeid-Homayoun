@@ -10,7 +10,7 @@ Committed the supplied LEMON POC v3 toolkit as one bootstrap scope; installed th
 `PYTHONPATH=src python tools/poc_state.py current` → `P00` before advancement. `PYTHONPATH=src python tools/poc_cycle.py begin --run-id R2026100418-P00` → `PHASE P00 | run 1/4`. After this step file is validated, `poc_cycle.py end` advances the machine-readable state to P01.
 
 ## Tests (command, commit SHA, PASS/FAIL counts)
-Pre-commit syntax check on the supplied Python toolkit: `python -m py_compile <all supplied .py files>` → PASS. Full repository test command required by P00: `PYTHONPATH=src python -m pytest -q`; commit SHA and exact GitHub Actions counts are recorded after the bootstrap commit/CI and must be green before hourly continuation.
+Pre-commit syntax check on the supplied Python toolkit: `python -m py_compile <all supplied .py files>` → PASS. Repository CI on toolkit commit `b61e48193107426222f80b09c9e69ca93f2fa25f`, run `37225991540`, executed `pytest -q` on Python 3.11.16 → **83 passed, 1 skipped, 30 subtests passed**. This matches the P00 contract allowing 83 passed + 1 skipped when the optional cryptography path is unavailable/not enabled. The fail-closed demo also executed successfully and began `BLOCKED:icfr_coso_grounding,evidence_consistency`.
 
 ## Problems found (ORQ ids, or "none")
 SEC contact email was not provided as an actual email address in the owner instruction; `owner_contact_email_for_sec` is therefore set to `NOT_PROVIDED`. This does not block P00, but P04 must become PARTIAL rather than invent an SEC User-Agent contact if the owner has not supplied one by then. Existing active LEMON-SCI hourly operator detected; P00 will update that operator instead of creating a second parallel LEMON schedule.
