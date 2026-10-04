@@ -7,6 +7,8 @@ import re
 CUTOFF = date(2014, 12, 15)
 _VERSION_1992 = re.compile(r"Integrated Framework\s*\(\s*1992\s*\)", re.I)
 _VERSION_2013 = re.compile(r"Integrated Framework\s*\(\s*2013\s*\)", re.I)
+_CIK = re.compile(r"^[0-9]{10}$")
+_ACCESSION = re.compile(r"^[0-9]{10}-[0-9]{2}-[0-9]{6}$")
 
 
 def _result(classification, reason):
@@ -23,9 +25,14 @@ def evaluate_noncompliance(evidence):
     if not isinstance(evidence, dict):
         return _result(None, "INVALID_PROVENANCE_METADATA")
 
-    required_metadata = ("issuer_cik", "accession")
-    if any(not isinstance(evidence.get(key), str) or not evidence[key].strip()
-           for key in required_metadata):
+    issuer_cik = evidence.get("issuer_cik")
+    accession = evidence.get("accession")
+    if (
+        not isinstance(issuer_cik, str)
+        or not _CIK.fullmatch(issuer_cik)
+        or not isinstance(accession, str)
+        or not _ACCESSION.fullmatch(accession)
+    ):
         return _result(None, "INVALID_PROVENANCE_METADATA")
 
     period_end = evidence.get("period_end")
