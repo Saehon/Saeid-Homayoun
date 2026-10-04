@@ -7,6 +7,7 @@ on:
       - "NAAIL/research-assurance-mcp/derived/rule_prior_exposure_registry.json"
       - "NAAIL/research-assurance-mcp/derived/test_rule_prior_exposure_guard.py"
       - "NAAIL/research-assurance-mcp/derived/covid_rederivation_protocol_v1r.json"
+      - "NAAIL/research-assurance-mcp/derived/msft_covid_rederivation_scan_v1r.py"
       - ".github/workflows/naail_rule_prior_exposure_guard.yml"
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - "NAAIL/research-assurance-mcp/derived/rule_prior_exposure_registry.json"
       - "NAAIL/research-assurance-mcp/derived/test_rule_prior_exposure_guard.py"
       - "NAAIL/research-assurance-mcp/derived/covid_rederivation_protocol_v1r.json"
+      - "NAAIL/research-assurance-mcp/derived/msft_covid_rederivation_scan_v1r.py"
       - ".github/workflows/naail_rule_prior_exposure_guard.yml"
 
 permissions:
@@ -32,6 +34,22 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Validate v1-R JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("NAAIL/research-assurance-mcp/derived/covid_rederivation_protocol_v1r.json")
+          obj = json.loads(p.read_text(encoding="utf-8"))
+          assert obj["status"] == "RETROSPECTIVE_REDERIVATION"
+          assert obj["prior_exposure"] is True
+          assert list(obj["term_sets"]) == ["PRIMARY", "S1", "S2", "S3"]
+          print("v1-R protocol JSON PASS")
+          PY
+
+      - name: Compile v1-R scanner without execution
+        run: python -m py_compile NAAIL/research-assurance-mcp/derived/msft_covid_rederivation_scan_v1r.py
 
       - name: Run prior-exposure guard
         run: python NAAIL/research-assurance-mcp/derived/test_rule_prior_exposure_guard.py
