@@ -1,0 +1,19 @@
+{
+  "project": "NAAIL-RiskOS-MSFT-POC",
+  "company": {"name":"Microsoft Corporation","ticker":"MSFT","cik":"0000789019","fiscal_year":2026,"reporting_basis":"US_GAAP","audit_regime":"PCAOB_CAM"},
+  "audit_risk_decomposition": {
+    "IR_index":0.6525,"CR_index":0.365,"DR_index":0.3775,"AR_index":0.0899,"target_AR_index":0.05,"allowed_DR_index":0.2099,
+    "formula":"AR_index = IR_index * CR_index * DR_index",
+    "boundary":"Normalized, illustrative, uncalibrated research-demo indices only."
+  },
+  "agents":[
+    {"agent":"Applicability Agent","status":"PASS_WITH_BOUNDARIES","summary":"Determined which professional regimes are applicable before scoring.","evidence":["Reporting basis: US_GAAP","Audit regime: PCAOB_CAM","KAM is comparator-only for this Microsoft POC.","IFRS is shadow/cross-framework mode, not Microsoft's primary reporting basis."],"next_actions":["Keep jurisdiction and period gates machine-enforced."]},
+    {"agent":"Inherent Risk Agent","status":"ILLUSTRATIVE_UNCALIBRATED","summary":"IR index = 0.6525. This is a normalized research-demo index, not a calibrated probability.","evidence":["2 CAMs mapped; both high-judgment areas.","Revenue growth: 17.8%.","R&D intensity: 10.7%.","FY2026 simple price return: -24.2% (context, not audit evidence)."],"next_actions":["Add company-specific AAER matching.","Add dedicated cyber and ESG evidence before expanding IR inputs."]},
+    {"agent":"Control Risk Agent","status":"ILLUSTRATIVE_UNCALIBRATED","summary":"CR index = 0.3650. Unqualified ICFR lowers the current signal but does not imply zero control risk.","evidence":["ICFR opinion: UNQUALIFIED.","Control-level operating-effectiveness evidence is incomplete in the current POC.","Dedicated ITGC/cyber-control package is not yet executed."],"next_actions":["Extend LEMON to control-by-control design and operating-effectiveness testing.","Add ITGC and cyber-control evidence."]},
+    {"agent":"Detection Risk Agent","status":"ABOVE_ALLOWABLE_INDEX","summary":"DR index = 0.3775; allowable DR index at target AR=0.0500 is 0.2099.","evidence":["Evidence Passport exists.","CAM procedures are mapped.","Independent replication remains pending."],"next_actions":["Increase procedure coverage and independent review until DR is at or below the chosen target index."]},
+    {"agent":"Evidence Agent","status":"PASS_WITH_GAPS","summary":"Verified current POC evidence and identified non-executed specialist modules.","evidence":["Evidence Passport: EP-MSFT-XBRL-FY2026","Artifact validation: 15/15 PASS","AAER match, dedicated cyber, ESG analytics, and engagement-level PCAOB mapping remain incomplete."],"next_actions":["Preserve source, timestamp, rights, transformation lineage and status for every new signal."]},
+    {"agent":"Independent Challenger","status":"CHALLENGE_RAISED","summary":"Challenged aggregation and claim boundaries for AR index 0.0899.","evidence":["Do not describe the normalized AR index as a literal probability of audit failure.","Do not convert missing AAER/cyber/ESG evidence into low risk.","Do not treat firm-level PCAOB inspection findings as Microsoft engagement findings.","Current illustrative DR index exceeds the allowable index implied by the selected target."],"next_actions":["Require explicit Human Gate disposition for every unresolved challenge."]},
+    {"agent":"Human Gate","status":"RESEARCH_ONLY_ESCALATE","summary":"Research prototype may be demonstrated with limitations; production/professional use is not approved.","evidence":["Production approval in source POC: NO.","Scientific validation: PENDING_INDEPENDENT_REPLICATION."],"next_actions":["Obtain independent replication and calibrated validation before any production risk rating."]}
+  ],
+  "final_state":"HUMAN_REVIEW_REQUIRED"
+}
