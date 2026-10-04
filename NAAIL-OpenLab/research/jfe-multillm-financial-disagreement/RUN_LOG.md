@@ -56,9 +56,9 @@
 - Status: PASS (change-control and preregistration design freeze only).
 - Evidence: `P0_CHANGE_CONTROL_VERSIONING_PREREGISTRATION.md` v1.0.
 - Falsification/readback: acceptance test prevents used validation or sealed-test samples from regaining confirmatory status; null results cannot be recast as technical errors; post-hoc work remains explicitly labeled; changed upstream hashes invalidate downstream reproducibility until rerun or supported no-impact determination.
-- GitHub: branch `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged; evidence, ledger, and run-log commits recorded after connector writes.
-- Drive: evidence uploaded to project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place; evidence ID and final readback recorded after connector verification.
-- Dual-save status: pending final readback at time this entry was drafted.
+- GitHub: branch `research/jfe-multillm-2026-10-04`; evidence commit `cb9cf51254923707e6bd47838813fa7a7adef5be`; ledger commit `5039826779c4924aa8cd7a4f728448f687c1cf66`; initial run-log commit `744002b4112bfa0b74ed3b5d957ff5ce66bbcd23`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD created by the commit containing this entry.
+- Drive: evidence `1DZAqxhk_bM-_3z-tCXCFBUUu62XgdF7n` uploaded to the project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place; all three scheduled for final content readback after this provenance update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none.
 - Repair queue: empty; no change.
