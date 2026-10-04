@@ -21,7 +21,7 @@ import os
 import re
 import sys
 import time
-from datetime import date
+from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
@@ -137,6 +137,7 @@ def snippets(text: str, matches: list[re.Match[str]], limit: int = 3, max_words:
 
 
 def main() -> int:
+    retrieval_started_at = datetime.now(timezone.utc).isoformat()
     identity = os.getenv("EDGAR_IDENTITY", "").strip()
     if not identity:
         raise RuntimeError("EDGAR_IDENTITY is required and must be supplied by the CI secret.")
@@ -218,9 +219,25 @@ def main() -> int:
 
     all_match = all(o["matches_expectation"] for o in observations)
     q4 = next(o for o in observations if o["calendar_quarter"] == "Q4-2019")
-    state = "VERIFIED" if all_match else "FLAGGED"
+    state = "HUMAN_REVIEW" if all_match else "FLAGGED"
     if state not in CANONICAL_STATES:
         raise RuntimeError("Non-canonical assurance state generated")
+
+    run_id = os.getenv("GITHUB_RUN_ID", "").strip()
+    server_url = os.getenv("GITHUB_SERVER_URL", "").strip()
+    repository = os.getenv("GITHUB_REPOSITORY", "").strip()
+    run_url = f"{server_url}/{repository}/actions/runs/{run_id}" if server_url and repository and run_id else None
+    provenance = {
+        "retrieval_started_at_utc": retrieval_started_at,
+        "retrieval_completed_at_utc": datetime.now(timezone.utc).isoformat(),
+        "source_system": "SEC EDGAR",
+        "executing_commit": os.getenv("GITHUB_SHA", "").strip() or None,
+        "workflow_name": os.getenv("GITHUB_WORKFLOW", "").strip() or None,
+        "workflow_run_id": run_id or None,
+        "workflow_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT", "").strip() or None,
+        "repository": repository or None,
+        "run_url": run_url,
+    }
 
     result = {
         "rule_id": rule["rule_id"],
@@ -231,6 +248,7 @@ def main() -> int:
         "regex": rule["pattern"],
         "case_insensitive": True,
         "filinglag_regenerated_rows": len(observations),
+        "provenance": provenance,
         "observations": observations,
         "summary": {
             "filings_scanned": len(observations),
@@ -243,7 +261,7 @@ def main() -> int:
             "covid_claim_assurance_state": state,
         },
         "interpretation": (
-            "Execution success records the preregistered test. A FLAGGED scientific result is not an execution failure."
+            "Execution success records the preregistered test. Matching expectations remain HUMAN_REVIEW until approval is separately recorded; a FLAGGED scientific result is not an execution failure."
         ),
     }
     OUT_PATH.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
