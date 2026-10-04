@@ -4,6 +4,7 @@ from collections.abc import Callable
 from typing import Any
 
 from lemon_icfr.assurance.adapter import assure_case
+from lemon_icfr.assurance.enums import FinalStatus
 from lemon_icfr.assurance.evidence import EvidenceStore
 from lemon_icfr.assurance.falsify import Falsifier
 from lemon_icfr.assurance.grounding import Control, ICFRScope, Risk, validate_scope
@@ -17,6 +18,8 @@ _REQUIRED_GATES = (
     "provenance",
     "rights_license",
     "icfr_coso_grounding",
+    "evidence_consistency",
+    "evidence_passport",
     "evidence_sufficiency",
     "independent_review",
     "falsification",
@@ -35,6 +38,20 @@ class LemonOrchestrator:
             GateResult("provenance", provenance_ok, [] if provenance_ok else ["Missing evidence provenance."]),
             GateResult("rights_license", rights_ok, [] if rights_ok else ["Missing rights/license status."]),
         ]
+
+    def _evidence_consistency_gate(self, evidence: list[EvidenceItem], store: EvidenceStore) -> GateResult:
+        legacy_ids = {e.evidence_id for e in evidence}
+        store_ids = {e.evidence_id for e in store.all()}
+        issues: list[str] = []
+        if not store_ids:
+            issues.append("evidence store is empty")
+        if legacy_ids != store_ids:
+            issues.append(f"legacy-only {sorted(legacy_ids - store_ids)}; store-only {sorted(store_ids - legacy_ids)}")
+        for e in store.all():
+            bad = e.admissibility_issues()
+            if bad:
+                issues.append(f"{e.evidence_id}: {', '.join(bad)}")
+        return GateResult("evidence_consistency", not issues, issues)
 
     @staticmethod
     def _missing_scope() -> ICFRScope:
@@ -135,6 +152,7 @@ class LemonOrchestrator:
         created_at: str = "",
     ) -> LemonCaseResult:
         gates = self._evidence_gates(evidence)
+        store = evidence_store if evidence_store is not None else EvidenceStore()
 
         # ORQ-010: the legacy Boolean is retained for API compatibility but can no longer
         # establish COSO/ICFR grounding. Only a structured ICFRScope validated by the R1
@@ -149,6 +167,7 @@ class LemonOrchestrator:
             if coso_context_supplied:
                 grounding_notes.append("Legacy Boolean COSO context flag was ignored for scientific gating.")
         gates.append(GateResult("icfr_coso_grounding", grounding_ok, grounding_notes))
+        gates.append(self._evidence_consistency_gate(evidence, store))
 
         if not all(g.passed for g in gates):
             missing = [g.gate for g in gates if not g.passed]
@@ -158,15 +177,14 @@ class LemonOrchestrator:
                 gates=gates,
                 contradictions=[],
                 status=f"BLOCKED:{','.join(missing)}",
+                assurance_passport=None,
+                assurance_reasons=tuple(grounding_notes),
             )
-            result.assurance_passport = None
-            result.assurance_reasons = tuple(grounding_notes)
             return result
 
         hypotheses = provider.generate_hypotheses(case_id, evidence, question)
         legacy_hypotheses = self._legacy_hypothesis_records(hypotheses)
 
-        store = evidence_store if evidence_store is not None else EvidenceStore()
         default_generator, default_reviewer_run, default_falsifier_run = self._default_runs(case_id, provider, created_at)
         generator = generator_run if generator_run is not None else default_generator
         reviewer_obj = reviewer if reviewer is not None else Reviewer(default_reviewer_run)
@@ -192,6 +210,19 @@ class LemonOrchestrator:
         )
         decision_notes = list(decision.reasons)
 
+        pstat = decision.passport.final_status(store) if decision.passport else None
+        passport_ok = pstat is FinalStatus.AWAITING_HUMAN_APPROVAL
+        pnotes = [] if passport_ok else [
+            f"passport status: {pstat.value if pstat else 'ABSENT'}",
+            *(map(str, decision.passport.missing_material_fields()) if decision.passport else []),
+        ]
+        gates.append(GateResult("evidence_passport", passport_ok, pnotes))
+
+        rv = decision.passport.review if decision.passport else None
+        independence_notes: list[str] = []
+        if rv is not None:
+            independence_notes.append(f"{rv.independence.value} independence")
+
         gates.append(
             GateResult(
                 "evidence_sufficiency",
@@ -210,7 +241,11 @@ class LemonOrchestrator:
                 GateResult(
                     "independent_review",
                     reviewer_ok,
-                    [] if reviewer_ok else ["Assurance-core independent review did not pass.", *decision_notes],
+                    independence_notes if reviewer_ok else [
+                        "Assurance-core independent review did not pass.",
+                        *independence_notes,
+                        *decision_notes,
+                    ],
                 ),
                 GateResult(
                     "falsification",
@@ -238,9 +273,9 @@ class LemonOrchestrator:
             gates=gates,
             contradictions=contradictions,
             status=status,
+            assurance_passport=decision.passport,
+            assurance_reasons=decision.reasons,
         )
-        result.assurance_passport = decision.passport
-        result.assurance_reasons = decision.reasons
         return result
 
     @staticmethod
