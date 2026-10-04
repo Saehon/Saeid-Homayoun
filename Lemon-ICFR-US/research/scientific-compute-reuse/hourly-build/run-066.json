@@ -1,0 +1,63 @@
+{
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Park et al. (2021) COSO noncompliance deterministic classifier",
+  "journal": "Journal of Accounting and Public Policy",
+  "journal_tier": "ABS3",
+  "phase": "POC mutation / ambiguity / determinism test persistence",
+  "work_attempted": [
+    "Persist expanded mutation/ambiguity/determinism test suite",
+    "Verify branch HEAD and test-source readback",
+    "Check workflow runs for new scientific-test commit"
+  ],
+  "work_completed": [
+    "Persisted test_mutation_determinism.py on second allowed write attempt",
+    "Verified non-empty GitHub readback of mutation/determinism test source",
+    "Confirmed no workflow run is associated with scientific-test commit"
+  ],
+  "evidence": [
+    "Starting HEAD 4e622f557fb2fe9720696ad215d1d7bd3778f307",
+    "Scientific-test commit 78b210d704750fe177d78cb394512ab6abbf0fca",
+    "test_mutation_determinism.py blob ff3e6d3841b5a59f1ae102c6d6020f14ff75e71d",
+    "GitHub workflow_runs=[] for scientific-test commit",
+    "Test execution not claimed; source persistence/readback only"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/test_mutation_determinism.py",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/run-066.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/hourly-build-log.md"
+  ],
+  "github_starting_head": "4e622f557fb2fe9720696ad215d1d7bd3778f307",
+  "github_ending_head": null,
+  "github_commit": "78b210d704750fe177d78cb394512ab6abbf0fca",
+  "tests": [
+    "Mutation/ambiguity/determinism test source persisted and read back",
+    "Execution pending; no CI workflow run available"
+  ],
+  "ci_status": "NO_WORKFLOW_RUNS",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "Test execution is not independently verified because no workflow run is associated with the commit",
+    "Prior canonical master-log backfills remain in OPEN REPAIR QUEUE"
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Mutation-test source persistence item CLOSED by verified GitHub readback",
+    "Add executable test run/CI evidence when available",
+    "Retain prior hourly master-log backfills for repair sweep"
+  ],
+  "drive_updates": [
+    "Pending canonical Drive append/readback for Run 066"
+  ],
+  "github_readback": "VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "PARTIAL",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Request/inspect independent engineering review and obtain executable test evidence without retrying resolved persistence work."
+}
