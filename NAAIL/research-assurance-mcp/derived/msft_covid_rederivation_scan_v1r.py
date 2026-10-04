@@ -9,9 +9,11 @@ Execution rules:
 - Declare prior exposure explicitly.
 - Fetch each of the 10 primary SEC filing documents once.
 - Apply PRIMARY + S1/S2/S3 to the same normalized bytes.
+- Use PRIMARY/S1/S2 as deciding sets; report S3 as BROAD_DIAGNOSTIC only.
 - Never print or write EDGAR_IDENTITY.
-- Emit HUMAN_REVIEW when all sensitivity binaries agree and Q4-2019 has no match.
-- Emit FLAGGED on any sensitivity disagreement or any Q4-2019 match.
+- Emit HUMAN_REVIEW when PRIMARY/S1/S2 agree and Q4-2019 has no deciding-set match.
+- Emit FLAGGED on PRIMARY/S1/S2 disagreement or any Q4-2019 deciding-set match.
+- Preserve every S3 snippet with no count cap for S3-only filings.
 - Never emit VERIFIED automatically.
 - Write a partial failure record before any non-zero exit.
 """
@@ -214,7 +216,7 @@ def primary_text(raw: bytes) -> str:
 def snippets(
     text: str,
     matches: list[re.Match[str]],
-    limit: int = 3,
+    limit: int | None = 3,
     max_words: int = 15,
 ) -> list[str]:
     words = list(re.finditer(r"\S+", text))
@@ -222,7 +224,8 @@ def snippets(
         return []
     starts = [word.start() for word in words]
     out: list[str] = []
-    for match in matches[:limit]:
+    selected_matches = matches if limit is None else matches[:limit]
+    for match in selected_matches:
         lo, hi = 0, len(starts)
         while lo < hi:
             mid = (lo + hi) // 2
@@ -275,6 +278,7 @@ def main() -> int:
 
     term_sets = protocol.get("term_sets", {})
     required_sets = ["PRIMARY", "S1", "S2", "S3"]
+    deciding_sets = ["PRIMARY", "S1", "S2"]
     if list(term_sets.keys()) != required_sets:
         raise RuntimeError("v1-R requires term sets in exact order PRIMARY, S1, S2, S3")
     if term_sets["PRIMARY"]["pattern"] != base_rule["pattern"]:
@@ -333,9 +337,11 @@ def main() -> int:
         CURRENT_STAGE = f"term_set_application:{accession}"
         set_results: dict[str, Any] = {}
         binary_values: dict[str, int] = {}
+        match_objects: dict[str, list[re.Match[str]]] = {}
 
         for name in required_sets:
             matches = list(compiled[name].finditer(text))
+            match_objects[name] = matches
             count = len(matches)
             binary = 1 if count > 0 else 0
             sample_snippets = snippets(text, matches, limit=3, max_words=15)
@@ -343,13 +349,29 @@ def main() -> int:
                 raise RuntimeError(f"{accession}/{name}: snippet word limit violated")
             set_results[name] = {
                 "pattern": term_sets[name]["pattern"],
+                "role": term_sets[name].get("role"),
                 "match_count": count,
                 "covid_present": binary,
                 "snippets": sample_snippets,
             }
             binary_values[name] = binary
 
-        all_sets_agree = len(set(binary_values.values())) == 1
+        deciding_sets_agree = len({binary_values[name] for name in deciding_sets}) == 1
+        s3_only = (
+            all(binary_values[name] == 0 for name in deciding_sets)
+            and binary_values["S3"] == 1
+        )
+        if s3_only:
+            all_s3_snippets = snippets(
+                text, match_objects["S3"], limit=None, max_words=15
+            )
+            if any(len(snippet.split()) > 15 for snippet in all_s3_snippets):
+                raise RuntimeError(f"{accession}/S3: snippet word limit violated")
+            set_results["S3"]["snippets"] = all_s3_snippets
+            set_results["S3"]["snippet_policy"] = "ALL_MATCHES_NO_COUNT_CAP"
+        else:
+            set_results["S3"]["snippet_policy"] = "UP_TO_3"
+
         historical_reference = int(row["covid_present"])
 
         lag = (date.fromisoformat(filing_date) - date.fromisoformat(report_date)).days
@@ -377,7 +399,8 @@ def main() -> int:
                 "document_sha256": document_sha256,
                 "historical_reference_covid_present": historical_reference,
                 "term_sets": set_results,
-                "all_term_sets_agree": all_sets_agree,
+                "deciding_sets_agree": deciding_sets_agree,
+                "s3_only": s3_only,
                 "primary_matches_historical_reference": (
                     binary_values["PRIMARY"] == historical_reference
                 ),
@@ -391,19 +414,39 @@ def main() -> int:
                 "S1": binary_values["S1"],
                 "S2": binary_values["S2"],
                 "S3": binary_values["S3"],
-                "all_term_sets_agree": all_sets_agree,
+                "deciding_sets_agree": deciding_sets_agree,
+                "s3_only": s3_only,
                 "historical_reference": historical_reference,
             }
         )
 
     CURRENT_STAGE = "decision_rule"
-    any_disagreement = any(not row["all_term_sets_agree"] for row in agreement_table)
-    q4 = next(row for row in observations if row["calendar_quarter"] == "Q4-2019")
-    q4_any_match = any(
-        result["covid_present"] == 1 for result in q4["term_sets"].values()
+    any_deciding_disagreement = any(
+        not row["deciding_sets_agree"] for row in agreement_table
     )
+    q4 = next(row for row in observations if row["calendar_quarter"] == "Q4-2019")
+    q4_any_deciding_match = any(
+        q4["term_sets"][name]["covid_present"] == 1 for name in deciding_sets
+    )
+    s3_only_filings = [
+        {
+            "calendar_quarter": row["calendar_quarter"],
+            "accession": row["accession"],
+            "s3_match_count": next(
+                observation["term_sets"]["S3"]["match_count"]
+                for observation in observations
+                if observation["accession"] == row["accession"]
+            ),
+        }
+        for row in agreement_table
+        if row["s3_only"]
+    ]
 
-    state = "FLAGGED" if any_disagreement or q4_any_match else "HUMAN_REVIEW"
+    state = (
+        "FLAGGED"
+        if any_deciding_disagreement or q4_any_deciding_match
+        else "HUMAN_REVIEW"
+    )
     if state not in CANONICAL_STATES:
         raise RuntimeError("Non-canonical assurance state generated")
     if state == "VERIFIED":
@@ -433,24 +476,28 @@ def main() -> int:
         "summary": {
             "filings_scanned": len(observations),
             "term_sets": required_sets,
-            "filings_with_full_term_set_agreement": sum(
-                row["all_term_sets_agree"] for row in agreement_table
+            "deciding_term_sets": deciding_sets,
+            "filings_with_deciding_set_agreement": sum(
+                row["deciding_sets_agree"] for row in agreement_table
             ),
-            "filings_with_term_set_disagreement": sum(
-                not row["all_term_sets_agree"] for row in agreement_table
+            "filings_with_deciding_set_disagreement": sum(
+                not row["deciding_sets_agree"] for row in agreement_table
             ),
+            "s3_only_filings": s3_only_filings,
             "primary_matches_historical_reference": historical_primary_matches,
-            "q4_2019_any_term_set_match": q4_any_match,
+            "q4_2019_any_deciding_set_match": q4_any_deciding_match,
             "automated_assurance_state": state,
             "verified_ceiling_condition": (
-                "VERIFIED is unavailable to automation. It requires all 10 binaries "
-                "to agree across PRIMARY/S1/S2/S3 and independent Claude snippet review."
+                "VERIFIED is unavailable to automation. It requires PRIMARY/S1/S2 "
+                "agreement on all 10 filings, no PRIMARY/S1/S2 match in Q4-2019, "
+                "and independent Claude classification of every S3-only snippet."
             ),
         },
         "interpretation": (
             "This is retrospective re-derivation, not preregistration. "
-            "HUMAN_REVIEW means sensitivity binaries agree and Q4-2019 has no match; "
-            "FLAGGED means term-set disagreement or a Q4-2019 match."
+            "PRIMARY/S1/S2 are deciding sets. S3 is a BROAD_DIAGNOSTIC only. "
+            "HUMAN_REVIEW means the deciding sets agree and Q4-2019 has no deciding-set "
+            "match; FLAGGED means deciding-set disagreement or a Q4-2019 deciding-set match."
         ),
     }
     OUT_PATH.write_text(
