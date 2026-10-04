@@ -1,0 +1,57 @@
+{
+  "start_time": "2026-10-04T07:55:26+02:00",
+  "end_time": null,
+  "duration": null,
+  "paper_or_model": "Park et al. (2021) COSO noncompliance construct",
+  "journal": "Journal of Accounting and Public Policy",
+  "journal_tier": "ABS3",
+  "phase": "POC executable classifier persistence / negative-test persistence",
+  "work_attempted": [
+    "Verify latest canonical GitHub/Drive state",
+    "Persist fail-closed classifier source",
+    "Persist negative/ambiguity test source"
+  ],
+  "work_completed": [
+    "Read back benchmark specification and Run 063",
+    "Persisted classifier.py on authorized branch",
+    "Read back classifier.py and verified non-empty content"
+  ],
+  "evidence": [
+    "benchmark-spec.json blob 4b1930f6547ec4be5f2329782a395797633c56ff",
+    "classifier.py blob 8f9def9dad81f78c80a8030072eea11c61016cec",
+    "classifier commit 33dc2be7edccd59cb823a15b819264641197a544"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/classifier.py"
+  ],
+  "github_starting_head": "7c5f22e226ee86a6fb574d0a17406fa2448fb5c8",
+  "github_ending_head": "33dc2be7edccd59cb823a15b819264641197a544",
+  "github_commit": "33dc2be7edccd59cb823a15b819264641197a544",
+  "tests": [
+    "classifier.py readback PASS",
+    "test_classifier.py persistence attempt 1 BLOCKED; no execution claimed"
+  ],
+  "ci_status": "NOT_RUN",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "test_classifier.py persistence blocked on first attempt",
+    "canonical GitHub master-log historical append blocker remains queued"
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Classifier source persistence item CLOSED with verified readback",
+    "Test-source persistence remains OPEN; retry at most once before bypass",
+    "GitHub master-log backfill remains OPEN"
+  ],
+  "drive_updates": [],
+  "github_readback": "VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PASS",
+  "gate_status": "PARTIAL",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Save/read back this hourly record to GitHub and Drive; next run retry test-source persistence once, then bypass to mutation/determinism testing if it fails again."
+}
