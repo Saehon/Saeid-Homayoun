@@ -1,0 +1,37 @@
+{
+  "START_TIME": null,
+  "END_TIME": null,
+  "DURATION": null,
+  "PAPER_OR_MODEL": "Feng, Li & McVay (2009), Internal control and management guidance",
+  "JOURNAL": "Journal of Accounting and Economics",
+  "JOURNAL_TIER": "FT50",
+  "PHASE": "benchmark selection / public-data feasibility",
+  "WORK_ATTEMPTED": "Screen next queued FT50 ICFR candidate for exact one-company public-data POC suitability.",
+  "WORK_COMPLETED": "Candidate screened and quarantined for public-data one-company POC because the management-guidance estimand depends on non-SEC data.",
+  "EVIDENCE": [
+    "Canonical benchmark queue: primary PDF present.",
+    "Published DOI 10.1016/j.jacceco.2009.09.004.",
+    "Design evidence identifies Audit Analytics, First Call, Annual Compustat and CRSP dependencies."
+  ],
+  "CHANGED_FILES": [
+    "hourly-build/run-059.json"
+  ],
+  "GITHUB_STARTING_HEAD": "980ab1fd2b6462a8b4410a6bbf4b2f7b20da2a77",
+  "GITHUB_ENDING_HEAD": null,
+  "GITHUB_COMMIT": null,
+  "TESTS": "Scientific dependency and estimand compatibility screen.",
+  "CI_STATUS": "NOT_CHECKED_YET",
+  "CODEX_STATUS": "FINDINGS_OPEN_HISTORICAL; no new review",
+  "BLOCKERS": "Management-guidance outcome and non-SEC dependencies prevent exact SEC-only one-company replication.",
+  "BLOCKER_CLASS": "DEPENDENCY_CRITICAL",
+  "OPEN_REPAIR_QUEUE_CHANGES": "GitHub Run 059 persistence failed twice; add exact future backfill action. Scientific candidate quarantined; advance next candidate.",
+  "DRIVE_UPDATES": "PENDING",
+  "GITHUB_READBACK": "PENDING",
+  "DRIVE_READBACK": "PENDING",
+  "ENGINEERING_STATUS": "PARTIAL",
+  "SCIENTIFIC_STATUS": "PASS",
+  "GATE_STATUS": "HOLD",
+  "DUAL_SAVE_STATUS": "BLOCKED",
+  "POC_V1_STATUS": "NOT_FROZEN",
+  "NEXT_EXECUTABLE_TASK": "Screen Cheng, Dhaliwal & Zhang (2013) next-ranked FT50 candidate."
+}
