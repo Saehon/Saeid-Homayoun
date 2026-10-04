@@ -31,7 +31,7 @@
 
 ## Governance holds
 
-- **ORQ-013 remains OPEN** until the human owner explicitly acknowledges the deviation and the rule: no merge into any branch, including stacked bases, without owner approval.
+- **ORQ-013 ACKNOWLEDGED (2026-10-04)**. Owner confirmed: no merge into any branch, including stacked bases, without explicit owner approval.
 - **ORQ-014 is OPEN / P3 / NON-BLOCKING**: legacy challenge text in `contradictions` needs an explicit unvalidated label or typed replacement in a later scope.
 - No merge to `main` is authorized by this state file.
 
