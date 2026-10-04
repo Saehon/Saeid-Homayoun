@@ -64,3 +64,21 @@
 - Repair queue: empty; no change.
 - Ending gate counts: PASS 4; NOT_STARTED 56; all other statuses 0.
 - Next gate: P0.5 — run ledger, OPEN REPAIR QUEUE, and completion criteria.
+
+## RUN JFE-005 — 2026-10-05
+
+- Phase/gate: P0 Governance & Scientific Constitution / P0.5.
+- Starting state: canonical GitHub plan and Drive mirror read; P0.1–P0.4 PASS; Draft PR #112 open and sole PR for scope; branch HEAD `3aa1f00e06173a025d19258c561d9d78f02ef67c`; repair queue empty; no writer-lock file found; GitHub/Drive counts reconciled at PASS 4 and NOT_STARTED 56.
+- Work completed: defined and audited ledger invariants; expanded the ledger to 60 individual gate rows; froze status transitions/PASS evidence; operationalized stable blocker identity and persistent two-failure rule; defined blocker classes, dependency/quarantine logic, run minimums, and phase/first-pass/final completion; upgraded the empty repair queue to a machine-readable persistent register.
+- Status: PASS (governance/control-system design and internal audit only).
+- Evidence: `P0_GATE_LEDGER_REPAIR_QUEUE_COMPLETION_CONTROL.md` v1.0; `GATE_LEDGER.md` v1.4; `OPEN_REPAIR_QUEUE.md` v1.0.
+- Falsification/readback: checked 60 unique rows, count total 60, P0 5/5 only, CLOSED excluded from PASS, failure identity persistent across hours/operators, and first-pass separated from final scientific completion.
+- Engineering attempt history: local patch bundle attempt 1/2 failed before external mutation because it targeted the same temporary ledger twice; repaired by separate replacement artifacts; no queue entry required.
+- GitHub: authorized research branch; Draft PR #112 retained; protected `main` unchanged; evidence/control commits recorded after writes.
+- Drive: evidence uploaded; ledger, run log, and repair queue replaced in place; IDs/readback recorded after verification.
+- Dual-save status: pending final readback at time this entry was drafted.
+- Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
+- Repair queue: empty; upgraded to operational v1.0; no blocker fabricated.
+- Ending gate counts: PASS 5; NOT_STARTED 55; all other statuses 0.
+- Phase state: P0 COMPLETE 5/5 for governance/control design only.
+- Next gate: P1.1 — map actors, data, models, decisions, and outcomes.
