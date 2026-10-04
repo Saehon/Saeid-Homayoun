@@ -76,6 +76,56 @@ The project distinguishes between the **article directly used in the current POC
 | **6** | **Breuer & Schütt, “Accounting for Uncertainty: An Application of Bayesian Methods to Accruals Models”** | **Review of Accounting Studies** | Methodological anchor for uncertainty, calibration, and probabilistic assurance testing. | 🔵 Methodological / future case |
 | **7** | **Jensen, Kelly & Pedersen — replication-crisis research in finance** | **Journal of Finance** | Replication and falsification architecture; candidate foundation for future finance assurance cases. | 🔵 Replication foundation |
 
+### How and why these articles were selected
+
+The articles were not chosen simply because they are highly cited or published in strong journals. They were selected because, together, they provide a useful **research-assurance test bed** for NAAIL.
+
+The selection followed six criteria:
+
+1. **Reproducibility and inspectable evidence.** Preference was given to studies with public or author-provided code, replication repositories, documented pipelines, output files, or clearly traceable empirical procedures. NAAIL needs research objects that can be linked from claim → table → result → code → data/source → assurance state.
+
+2. **Direct relevance to accounting, auditing, finance, and reporting.** The project focuses on domains where research evidence may affect auditors, regulators, investors, boards, researchers, and AI systems. The selected papers therefore cover financial reporting processes, auditing and AI, financial-statement analysis, accounting/finance NLP, uncertainty, and replication.
+
+3. **Methodological diversity.** The set deliberately includes regression-based empirical accounting, public-filing reconstruction, NLP/textual analysis, similarity measures, Bayesian/uncertainty methods, AI-related audit research, and replication/falsification research. This helps test whether the assurance architecture can generalize beyond one statistical design.
+
+4. **Suitability for adversarial and provenance testing.** NAAIL is designed to detect broken links between claims and evidence, not merely rerun code. The selected studies provide useful opportunities to test provenance, missing dependencies, restricted data, output consistency, construct validity, sensitivity analysis, and human-review gates.
+
+5. **Availability of a defensible bounded test.** A study does not need fully open raw data to be useful. Where licensed or proprietary inputs prevent full reproduction, NAAIL can still test bounded claims such as author-output consistency, public-data reconstruction, code-to-table lineage, or methodological limitations—provided those boundaries are stated explicitly.
+
+6. **Value for future agentic research assurance.** The broader anchor papers were chosen because they can become future cases for AI-to-AI checking, evidence-grounded agents, falsification, uncertainty calibration, and independent scientific review. They extend the project from one accounting case toward a reusable research-assurance architecture.
+
+#### Why deHaan et al. (2023) was selected as Case 001
+
+deHaan, de Kok, Matsumoto & Rodriguez-Vazquez (2023) was selected as the **Primary POC Article** because it offers an unusually useful combination of:
+
+- a Management Science research setting directly related to financial-reporting processes;
+- an author replication package with documented code and outputs;
+- multiple computational components, including Python, SAS and Stata;
+- clear table/output/code relationships that can be mapped into an Evidence Graph;
+- important real-world dependencies that are not fully public, allowing NAAIL to demonstrate the distinction between author-output consistency and full independent reproduction; and
+- a public SEC-based component that can be independently re-derived without pretending that restricted-data replication has been completed.
+
+That combination makes it a strong first test of the project's core proposition:
+
+> **Research assurance should verify not only whether code runs, but whether every scientific claim is supported by an inspectable, provenance-preserving evidence chain with explicitly bounded assurance.**
+
+#### Why the other papers are included
+
+The remaining papers are not claimed as completed NAAIL replications. They are included as **scientific and methodological anchors** because each extends a different capability that the platform will eventually need:
+
+- **de Kok (2025):** generative LLM use, textual-analysis validity, and construct validation.
+- **Law & Shen:** AI in audit firms and future audit-agent/evidence-assurance testing.
+- **Huang, Li, Li & Lin:** accounting/finance NLP and reproducible text-analysis pipelines.
+- **Brown, Ma & Tucker:** financial-statement similarity and measurement reproducibility.
+- **Breuer & Schütt:** uncertainty, probabilistic reasoning, and calibration.
+- **Jensen, Kelly & Pedersen:** replication, robustness, and falsification at scale.
+
+Accordingly, the article set is intentionally layered:
+
+`Case 001 direct POC evidence → methodological anchors → future replication cases → broader agentic research-assurance benchmark library`
+
+This prevents the README from implying that every cited paper has already been independently reproduced by NAAIL.
+
 ### Primary POC article
 
 The core scientific article actually exercised in the present POC is:
