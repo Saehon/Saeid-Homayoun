@@ -1,0 +1,135 @@
+{
+  "contract_id": "COSO-NONCOMPLIANCE-EVIDENCE-v0.1",
+  "status": "DESIGN_FOR_REPAIR_SWEEP",
+  "scientific_source": "Park et al. (2021) paper-defined COSO noncompliance construct",
+  "cutoff": {
+    "field": "period_end",
+    "operator": ">",
+    "value": "2014-12-15",
+    "interpretation": "The fiscal-year end must be strictly after the COSO supersession date."
+  },
+  "input_object": {
+    "additional_properties": false,
+    "required": [
+      "issuer_cik",
+      "accession",
+      "form_type",
+      "period_end",
+      "source_section",
+      "speaker",
+      "disclosure_excerpt",
+      "excerpt_sha256",
+      "explicit_framework_version",
+      "assertion_polarity",
+      "third_party_quote"
+    ],
+    "properties": {
+      "issuer_cik": {
+        "type": "string",
+        "pattern": "^[0-9]{10}$"
+      },
+      "accession": {
+        "type": "string",
+        "pattern": "^[0-9]{10}-[0-9]{2}-[0-9]{6}$"
+      },
+      "form_type": {
+        "enum": [
+          "10-K",
+          "10-K/A"
+        ]
+      },
+      "period_end": {
+        "type": "string",
+        "format": "date"
+      },
+      "source_section": {
+        "const": "MANAGEMENT_ICFR_ASSESSMENT"
+      },
+      "speaker": {
+        "const": "MANAGEMENT"
+      },
+      "disclosure_excerpt": {
+        "type": "string",
+        "min_length": 1
+      },
+      "excerpt_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "explicit_framework_version": {
+        "enum": [
+          "1992",
+          "2013",
+          "AMBIGUOUS",
+          "UNVERSIONED"
+        ]
+      },
+      "assertion_polarity": {
+        "enum": [
+          "ADOPTED",
+          "HISTORICAL_ONLY",
+          "BIBLIOGRAPHIC",
+          "NEGATED",
+          "UNCLEAR"
+        ]
+      },
+      "third_party_quote": {
+        "type": "boolean"
+      }
+    }
+  },
+  "eligibility_rules": [
+    "period_end parses as an ISO calendar date and is strictly after 2014-12-15",
+    "form_type is 10-K or 10-K/A",
+    "source_section is MANAGEMENT_ICFR_ASSESSMENT",
+    "speaker is MANAGEMENT",
+    "the framework version is stated explicitly inside the same bounded disclosure_excerpt",
+    "assertion_polarity is ADOPTED",
+    "third_party_quote is false",
+    "excerpt_sha256 matches the exact stored disclosure_excerpt"
+  ],
+  "classification_rules": {
+    "1992": 1,
+    "2013": 0,
+    "AMBIGUOUS": null,
+    "UNVERSIONED": null
+  },
+  "fail_closed_reasons": [
+    "MISSING_OR_INVALID_PERIOD_END",
+    "PERIOD_END_NOT_AFTER_CUTOFF",
+    "UNSUPPORTED_FORM_TYPE",
+    "UNVERIFIED_SOURCE_SECTION",
+    "NON_MANAGEMENT_SPEAKER",
+    "EMPTY_EXCERPT",
+    "EXCERPT_HASH_MISMATCH",
+    "AMBIGUOUS_OR_UNVERSIONED_FRAMEWORK",
+    "HISTORICAL_BIBLIOGRAPHIC_NEGATED_OR_UNCLEAR_ASSERTION",
+    "THIRD_PARTY_QUOTE"
+  ],
+  "prohibited_inputs": [
+    "unbounded full-filing text without verified section identity",
+    "auditor report text standing alone",
+    "bibliography or citation text",
+    "historical comparison text that does not state current management adoption",
+    "quoted disclosure from another issuer",
+    "framework version inferred from filing date, auditor identity, or ICFR effectiveness"
+  ],
+  "provenance_requirements": [
+    "SEC accession and issuer CIK",
+    "fiscal-year end",
+    "form type",
+    "verified management ICFR section identity",
+    "exact bounded excerpt",
+    "SHA-256 of exact excerpt",
+    "explicit version and assertion-polarity annotations"
+  ],
+  "promotion_gate": [
+    "repair implementation satisfies every rule above",
+    "boundary and negative-context catalog executes twice at the same exact HEAD",
+    "both executions are identical",
+    "exact-head CI is observed",
+    "fresh independent review has no blocking findings",
+    "human owner approves the POC baseline freeze"
+  ],
+  "note": "This artifact is a repair design and evidence contract, not an executed classifier and not scientific PASS."
+}
