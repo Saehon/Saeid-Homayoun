@@ -1,0 +1,89 @@
+{
+  "start_time": "2026-10-04T17:57:48+02:00",
+  "end_time": "2026-10-04T18:04:15+02:00",
+  "duration": "6 minutes 27 seconds wall-clock; substantive repair, double execution, CI setup and review request, not padded",
+  "paper_or_model": "Park et al. (2021) COSO noncompliance deterministic classifier",
+  "journal": "Journal of Accounting and Public Policy",
+  "journal_tier": "ABS3",
+  "phase": "dedicated repair sweep / evidence-contract implementation / executable falsification",
+  "work_attempted": [
+    "Reconstruct canonical Drive state, live PR #76 HEAD/CI/Codex, writer-lock state and persistent repair queue",
+    "Explicitly reopen F-067-01 because Run 069 supplied a changed dependency: the machine-readable evidence contract and 16-case catalog",
+    "Implement the temporal cutoff and section-bounded evidence object in classifier.py",
+    "Wire base, mutation/determinism and all 16 catalog cases; execute twice from persisted GitHub readbacks",
+    "Add isolated COSO CI and request a fresh exact-head Codex engineering review"
+  ],
+  "work_completed": [
+    "Verified PR #76 open at starting HEAD 0c0c5a109db63eec7591d49c329c17404b674a5a with no writer-lock filename among changed files",
+    "Persisted a fail-closed evidence-object classifier requiring valid CIK/accession, ISO period_end after 2014-12-15, 10-K/10-K-A form, management section/speaker, exact excerpt SHA-256, explicit version agreement, ADOPTED polarity and no third-party quotation",
+    "Updated base and mutation/determinism suites and persisted test_evidence_contract.py wired to all 16 catalog cases",
+    "Executed all three persisted suites twice in isolated Python; all six processes exited 0",
+    "Executed the 16-result payload twice with identical SHA-256 df9a058ff773de0f39d9354001a3d536b4cf7ec07de7d49158cc5407a9d089df",
+    "Found a CIK/accession validation mismatch in self-review; first targeted replacement was a no-op and the second full-file attempt succeeded; added a malformed-provenance negative test",
+    "Added and read back isolated workflow lemon-sci-coso-tests.yml; Ruby parser was unavailable, second YAML validation with Python/PyYAML passed",
+    "Requested fresh Codex review of exact repair HEAD c6600bfc241eb9af9daabba84ee7254acc20bb6a and updated readiness count to 9 MET / 1 PARTIAL / 2 NOT_MET"
+  ],
+  "evidence": [
+    "Final classifier blob aa781d3a5f5b62f0e615d69e3eb96407b34a74d4",
+    "Base-test blob db684cf91025db1979d4eeea25f1a2d8e050c053",
+    "Mutation-test blob 5d83d83b6d12206d47b76b78f7dc49e3324faf4f",
+    "16-case test blob c418d2059358435aa9e40ef82b12c92a59332f92",
+    "Aligned evidence-contract blob 7d8e8c45d41b09bae4a552d0beb4eeae6c45c73e",
+    "COSO workflow blob d9f49fe5e6d9cbafa52713683ebd17115e15d1d3",
+    "Readiness blob c9be2d560da5e077bc693ee46ccbe041850710bd",
+    "Fresh Codex review request comment ID 5981888052",
+    "No workflow runs and no combined statuses observed for scientific ending HEAD bf0c3e15ab5e0a9a7a4264e195279b4443c49b1d"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/classifier.py",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/test_classifier.py",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/test_mutation_determinism.py",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/test_evidence_contract.py",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/evidence-input-contract-v0.1.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/freeze-readiness-069.md",
+    ".github/workflows/lemon-sci-coso-tests.yml",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/run-070.json"
+  ],
+  "github_starting_head": "0c0c5a109db63eec7591d49c329c17404b674a5a",
+  "github_ending_head": "bf0c3e15ab5e0a9a7a4264e195279b4443c49b1d",
+  "github_commit": "bf0c3e15ab5e0a9a7a4264e195279b4443c49b1d",
+  "tests": [
+    "Persisted base evidence-object suite: PASS twice, exit 0 both executions",
+    "Persisted mutation/determinism suite: PASS twice, exit 0 both executions",
+    "Persisted 16-case evidence-contract suite: PASS twice, exit 0 both executions",
+    "Sixteen-result deterministic payload: PASS twice with identical SHA-256 df9a058ff773de0f39d9354001a3d536b4cf7ec07de7d49158cc5407a9d089df",
+    "Malformed CIK/accession fail-closed test: PASS",
+    "Workflow YAML validation attempt 1: Ruby unavailable, exit 127",
+    "Workflow YAML validation attempt 2: Python/PyYAML PASS, jobs=test"
+  ],
+  "ci_status": "WORKFLOW_PERSISTED_AND_YAML_PARSED; NO_WORKFLOW_RUNS_AND_NO_COMBINED_STATUSES observed for scientific ending HEAD; no CI PASS claimed",
+  "codex_status": "PENDING",
+  "blockers": [
+    "FR-10 OPEN: exact-head COSO CI run is not yet visible",
+    "FR-11 PARTIAL: fresh Codex review requested but no result is claimed",
+    "FR-12 NOT_MET: human POC baseline freeze approval has not occurred",
+    "GH-LOG-BACKFILL BLOCKED_AFTER_2_ATTEMPTS remains queued and was not retried",
+    "Historical ACK2007 findings and HOLD remain preserved but are retired from the active path"
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "F-067-01 CLOSED at repair-sweep implementation/local-execution level; temporal cutoff is persisted and boundary-tested twice, while CI/review remain separate promotion gates",
+    "F-068-01 CLOSED at repair-sweep implementation/local-execution level; management scope, polarity, quotation and hash controls are persisted and catalog-tested twice",
+    "F-070-01 CLOSED on attempt 2: CIK/accession hardening attempt 1 produced no blob change; attempt 2 full-file replacement persisted and malformed-metadata test passed",
+    "Retain FR-10 exact-head CI, FR-11 fresh Codex review and FR-12 human freeze as open gates",
+    "Retain GH-LOG-BACKFILL retry_state=BLOCKED_AFTER_2_ATTEMPTS; no GitHub master-log retry this progression"
+  ],
+  "drive_updates": [
+    "Run 070 append to canonical Drive master log pending"
+  ],
+  "github_readback": "VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PARTIAL",
+  "gate_status": "PARTIAL",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Reconstruct the live branch and inspect the workflow/Codex results for scientific HEAD bf0c3e15ab5e0a9a7a4264e195279b4443c49b1d. If CI did not register, diagnose the isolated workflow without weakening tests; if CI is green, address any fresh Codex findings, rerun at the repaired exact HEAD, and prepare the human freeze decision packet."
+}
