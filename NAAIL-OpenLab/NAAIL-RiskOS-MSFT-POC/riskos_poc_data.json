@@ -1,0 +1,261 @@
+{
+  "product": {
+    "name": "NAAIL RiskOS™",
+    "commercial_shell_candidate": "ACCO Risk™",
+    "subtitle": "Evidence-grounded cross-domain enterprise risk intelligence",
+    "maturity": "RESEARCH_PROTOTYPE",
+    "anchor_company": "Microsoft Corporation",
+    "ticker": "MSFT",
+    "fiscal_year": 2026,
+    "architecture": [
+      "Stable Knowledge Core™",
+      "Replaceable Technology Core™"
+    ],
+    "overall_gate": "HUMAN_REVIEW",
+    "composite_score": null,
+    "score_note": "Composite risk score intentionally disabled until benchmark calibration and independent validation."
+  },
+  "verified_company_evidence": {
+    "revenue_usd_m": 331839,
+    "revenue_growth_pct": 17.752985219370785,
+    "operating_margin_pct": 46.78081840892722,
+    "net_margin_pct": 40.30538905915218,
+    "current_ratio": 1.2303272619576484,
+    "liabilities_to_assets_pct": 41.66653480595377,
+    "free_cash_flow_proxy_usd_m": 66987,
+    "rd_intensity_pct": 10.716642709265638,
+    "simple_price_return_pct": -24.218654744970536,
+    "auditor": "Deloitte & Touche LLP",
+    "icfr_opinion": "UNQUALIFIED",
+    "cams": [
+      {
+        "topic": "Revenue Recognition",
+        "judgment": "HIGH",
+        "assertions": [
+          "occurrence",
+          "accuracy",
+          "cutoff",
+          "classification"
+        ]
+      },
+      {
+        "topic": "Income Taxes — Uncertain Tax Positions",
+        "judgment": "HIGH_WITH_TAX_SPECIALISTS",
+        "assertions": [
+          "valuation",
+          "completeness",
+          "presentation"
+        ]
+      }
+    ],
+    "text_sample": {
+      "name": "RiskFactors_AI_sample",
+      "words": 107,
+      "flesch_reading_ease": 27.773813,
+      "uncertainty_per_100_words": 2.803738,
+      "negative_per_100_words": 2.803738
+    },
+    "evidence_passport": "EP-MSFT-XBRL-FY2026",
+    "artifact_test_status": "15/15 PASS",
+    "production_approval": "NO",
+    "scientific_validation": "PENDING_INDEPENDENT_REPLICATION"
+  },
+  "domains": [
+    {
+      "id": "cam",
+      "name": "CAM / Audit Judgment",
+      "fruit": "APPLE / CAM",
+      "state": "ELEVATED_JUDGMENT",
+      "severity": "elevated",
+      "applicability": "APPLICABLE",
+      "basis": "Two FY2026 CAMs are mapped in the current Microsoft POC; both are high-judgment areas.",
+      "evidence": "FY2026 Deloitte CAM disclosures in Microsoft POC",
+      "next_action": "Map CAM procedures to account assertions, control evidence and year-over-year persistence."
+    },
+    {
+      "id": "icfr",
+      "name": "ICFR / Controls",
+      "fruit": "LEMON",
+      "state": "LOW_SIGNAL",
+      "severity": "low",
+      "applicability": "APPLICABLE",
+      "basis": "Current POC records an unqualified ICFR opinion. This is not evidence of zero control risk.",
+      "evidence": "Microsoft FY2026 audit/ICFR mapping",
+      "next_action": "Add control-level evidence, deficiency history and independent exception testing."
+    },
+    {
+      "id": "market",
+      "name": "Finance / Market",
+      "fruit": "FINANCE / ECONOVA-S",
+      "state": "WATCH",
+      "severity": "watch",
+      "applicability": "APPLICABLE",
+      "basis": "FY2026 simple price return in the POC is -24.2%; financial margins remain strong. This is a market signal, not an audit finding.",
+      "evidence": "251 IEX daily bars + SEC XBRL features",
+      "next_action": "Complete factor regression and benchmark against sector/market distributions."
+    },
+    {
+      "id": "text",
+      "name": "Disclosure / Text Risk",
+      "fruit": "KIWI / POMELO",
+      "state": "WATCH_BOUNDED",
+      "severity": "watch",
+      "applicability": "APPLICABLE",
+      "basis": "Bounded risk-factor sample has low readability and measurable uncertainty; source sample is too small for a company-wide conclusion.",
+      "evidence": "FY2026 10-K bounded text feature sample",
+      "next_action": "Run full-section chronology-safe NLP and compare against prior years and peers."
+    },
+    {
+      "id": "ifrs",
+      "name": "IFRS Judgment",
+      "fruit": "MANGO",
+      "state": "SHADOW_MODE",
+      "severity": "context",
+      "applicability": "CROSS_FRAMEWORK_ONLY",
+      "basis": "Microsoft reports under U.S. GAAP; IFRS should be used only as a cross-framework comparison layer in this POC.",
+      "evidence": "Applicability rule",
+      "next_action": "Map only comparable accounting judgments; do not label IFRS as the issuer's reporting basis."
+    },
+    {
+      "id": "kam",
+      "name": "KAM",
+      "fruit": "ORANGE",
+      "state": "NOT_APPLICABLE_PRIMARY",
+      "severity": "na",
+      "applicability": "N/A_PRIMARY",
+      "basis": "The Microsoft U.S. audit report uses the PCAOB CAM regime; KAM is a comparator, not the primary disclosure regime.",
+      "evidence": "Jurisdiction / reporting-regime applicability",
+      "next_action": "Use KAM only for cross-jurisdiction benchmarking."
+    },
+    {
+      "id": "aaer",
+      "name": "AAER / Forensic",
+      "fruit": "POMELO",
+      "state": "PENDING_MATCH",
+      "severity": "pending",
+      "applicability": "APPLICABLE",
+      "basis": "AAER is registered as forensic/adversarial evidence in NAAIL, but the current Microsoft POC has no executed company-specific AAER match artifact.",
+      "evidence": "NAAIL Free Data Fabric + Microsoft POC registry",
+      "next_action": "Run entity-resolved SEC AAER/enforcement matching and preserve negative results as evidence."
+    },
+    {
+      "id": "cyber",
+      "name": "Cybersecurity",
+      "fruit": "CYBER SPECIALIST",
+      "state": "PENDING_DEDICATED_INGEST",
+      "severity": "pending",
+      "applicability": "APPLICABLE",
+      "basis": "Cybersecurity is in the platform scope, but the current Microsoft POC does not yet contain a dedicated executed cyber-risk evidence package.",
+      "evidence": "Current POC boundary",
+      "next_action": "Ingest Item 1C / cyber disclosures, incident history and control/governance evidence with source timestamps."
+    },
+    {
+      "id": "esg",
+      "name": "ESG / Sustainability",
+      "fruit": "ESG / STRAWBERRY",
+      "state": "SOURCE_REGISTERED",
+      "severity": "pending",
+      "applicability": "APPLICABLE",
+      "basis": "Microsoft sustainability reporting is registered in the POC source registry, but ESG analytics are not yet executed in the Microsoft POC.",
+      "evidence": "MSFT_SUSTAINABILITY source registration",
+      "next_action": "Run emissions/disclosure provenance, framework mapping and ESG assurance checks."
+    },
+    {
+      "id": "pcaob",
+      "name": "PCAOB / Inspection Readiness",
+      "fruit": "PCAOB / CHERRY",
+      "state": "CONTEXT_ONLY",
+      "severity": "context",
+      "applicability": "AUDITOR_CONTEXT",
+      "basis": "PCAOB standards and public inspection data can inform audit-risk context; firm-level inspection findings must not be treated as Microsoft engagement findings.",
+      "evidence": "PCAOB public standards/inspection design",
+      "next_action": "Map audit procedures to PCAOB requirements without inferring engagement-specific deficiencies."
+    },
+    {
+      "id": "evidence",
+      "name": "Evidence Assurance",
+      "fruit": "PEAR",
+      "state": "EXECUTED",
+      "severity": "low",
+      "applicability": "CROSS_CUTTING",
+      "basis": "An executed Microsoft Evidence Passport exists for FY2026 XBRL evidence.",
+      "evidence": "EP-MSFT-XBRL-FY2026",
+      "next_action": "Extend passports to cyber, ESG, AAER and PCAOB-derived context."
+    },
+    {
+      "id": "human",
+      "name": "Governance / Human Gate",
+      "fruit": "NAAIL BOARD",
+      "state": "RESEARCH_ONLY",
+      "severity": "watch",
+      "applicability": "CROSS_CUTTING",
+      "basis": "Current Human Gate approves publication of the research prototype with limitations; production approval is NO.",
+      "evidence": "Microsoft POC Human Gate record",
+      "next_action": "Require independent replication and benchmark calibration before any professional score is released."
+    }
+  ],
+  "fruit_router": [
+    [
+      "LEMON",
+      "ICFR / controls"
+    ],
+    [
+      "APPLE",
+      "CAM-US"
+    ],
+    [
+      "ORANGE",
+      "KAM-EU/UK"
+    ],
+    [
+      "MANGO",
+      "IFRS"
+    ],
+    [
+      "POMELO",
+      "Forensic / investigation"
+    ],
+    [
+      "GRAPE",
+      "Audit & assurance workflow"
+    ],
+    [
+      "KIWI",
+      "Knowledge / audit intelligence"
+    ],
+    [
+      "PEAR",
+      "Evidence assurance"
+    ],
+    [
+      "DATA",
+      "Digital Twin / economic value"
+    ],
+    [
+      "ESG",
+      "Sustainability assurance"
+    ],
+    [
+      "PCAOB",
+      "Standards / inspection readiness"
+    ],
+    [
+      "FINANCE",
+      "Valuation / market / scenario risk"
+    ],
+    [
+      "NAAIL BOARD",
+      "Governance / challenge / Human Gate"
+    ]
+  ],
+  "sources": [
+    {
+      "label": "Public GitHub Microsoft POC",
+      "url": "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab/prototypes/microsoft-poc-v1"
+    },
+    {
+      "label": "Microsoft FY2026 SEC 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+    }
+  ]
+}
