@@ -1,0 +1,177 @@
+{
+  "catalog_id": "COSO-NONCOMPLIANCE-ADVERSARIAL-v0.1",
+  "status": "DESIGN_CASES_NOT_YET_WIRED_TO_CLASSIFIER",
+  "contract_id": "COSO-NONCOMPLIANCE-EVIDENCE-v0.1",
+  "base_fixture": {
+    "issuer_cik": "0000789019",
+    "accession": "0001193125-15-272806",
+    "form_type": "10-K",
+    "period_end": "2015-06-30",
+    "source_section": "MANAGEMENT_ICFR_ASSESSMENT",
+    "speaker": "MANAGEMENT",
+    "disclosure_excerpt": "Management assessed ICFR using Internal Control—Integrated Framework (2013).",
+    "excerpt_hash_matches": true,
+    "explicit_framework_version": "2013",
+    "assertion_polarity": "ADOPTED",
+    "third_party_quote": false
+  },
+  "execution_rule": "Apply each case's remove list and overrides to a fresh copy of base_fixture. A fail-closed reason takes precedence over classification.",
+  "cases": [
+    {
+      "id": "A01_ELIGIBLE_1992",
+      "overrides": {
+        "period_end": "2015-05-31",
+        "source_section": "MANAGEMENT_ICFR_ASSESSMENT",
+        "speaker": "MANAGEMENT",
+        "explicit_framework_version": "1992",
+        "assertion_polarity": "ADOPTED",
+        "third_party_quote": false
+      },
+      "expected_classification": 1,
+      "expected_reason": null
+    },
+    {
+      "id": "A02_ELIGIBLE_2013",
+      "overrides": {
+        "period_end": "2015-06-30",
+        "source_section": "MANAGEMENT_ICFR_ASSESSMENT",
+        "speaker": "MANAGEMENT",
+        "explicit_framework_version": "2013",
+        "assertion_polarity": "ADOPTED",
+        "third_party_quote": false
+      },
+      "expected_classification": 0,
+      "expected_reason": null
+    },
+    {
+      "id": "B01_CUTOFF_EQUAL",
+      "overrides": {
+        "period_end": "2014-12-15"
+      },
+      "expected_classification": null,
+      "expected_reason": "PERIOD_END_NOT_AFTER_CUTOFF"
+    },
+    {
+      "id": "B02_CUTOFF_PLUS_ONE",
+      "overrides": {
+        "period_end": "2014-12-16",
+        "explicit_framework_version": "2013"
+      },
+      "expected_classification": 0,
+      "expected_reason": null
+    },
+    {
+      "id": "B03_PERIOD_END_MISSING",
+      "remove": [
+        "period_end"
+      ],
+      "expected_classification": null,
+      "expected_reason": "MISSING_OR_INVALID_PERIOD_END"
+    },
+    {
+      "id": "B04_PERIOD_END_INVALID",
+      "overrides": {
+        "period_end": "2015-02-30"
+      },
+      "expected_classification": null,
+      "expected_reason": "MISSING_OR_INVALID_PERIOD_END"
+    },
+    {
+      "id": "S01_AUDITOR_ONLY",
+      "overrides": {
+        "source_section": "AUDITOR_ICFR_REPORT",
+        "speaker": "AUDITOR",
+        "explicit_framework_version": "1992"
+      },
+      "expected_classification": null,
+      "expected_reason": "UNVERIFIED_SOURCE_SECTION"
+    },
+    {
+      "id": "S02_HISTORICAL_ONLY",
+      "overrides": {
+        "assertion_polarity": "HISTORICAL_ONLY",
+        "explicit_framework_version": "1992"
+      },
+      "expected_classification": null,
+      "expected_reason": "HISTORICAL_BIBLIOGRAPHIC_NEGATED_OR_UNCLEAR_ASSERTION"
+    },
+    {
+      "id": "S03_BIBLIOGRAPHY_ONLY",
+      "overrides": {
+        "assertion_polarity": "BIBLIOGRAPHIC",
+        "explicit_framework_version": "2013"
+      },
+      "expected_classification": null,
+      "expected_reason": "HISTORICAL_BIBLIOGRAPHIC_NEGATED_OR_UNCLEAR_ASSERTION"
+    },
+    {
+      "id": "S04_NEGATED_ADOPTION",
+      "overrides": {
+        "assertion_polarity": "NEGATED",
+        "explicit_framework_version": "1992"
+      },
+      "expected_classification": null,
+      "expected_reason": "HISTORICAL_BIBLIOGRAPHIC_NEGATED_OR_UNCLEAR_ASSERTION"
+    },
+    {
+      "id": "S05_THIRD_PARTY_QUOTE",
+      "overrides": {
+        "third_party_quote": true,
+        "explicit_framework_version": "2013"
+      },
+      "expected_classification": null,
+      "expected_reason": "THIRD_PARTY_QUOTE"
+    },
+    {
+      "id": "V01_BOTH_VERSIONS",
+      "overrides": {
+        "explicit_framework_version": "AMBIGUOUS"
+      },
+      "expected_classification": null,
+      "expected_reason": "AMBIGUOUS_OR_UNVERSIONED_FRAMEWORK"
+    },
+    {
+      "id": "V02_UNVERSIONED",
+      "overrides": {
+        "explicit_framework_version": "UNVERSIONED"
+      },
+      "expected_classification": null,
+      "expected_reason": "AMBIGUOUS_OR_UNVERSIONED_FRAMEWORK"
+    },
+    {
+      "id": "P01_HASH_MISMATCH",
+      "overrides": {
+        "excerpt_hash_matches": false
+      },
+      "expected_classification": null,
+      "expected_reason": "EXCERPT_HASH_MISMATCH"
+    },
+    {
+      "id": "P02_UNSUPPORTED_FORM",
+      "overrides": {
+        "form_type": "8-K"
+      },
+      "expected_classification": null,
+      "expected_reason": "UNSUPPORTED_FORM_TYPE"
+    },
+    {
+      "id": "P03_QUOTED_OTHER_COMPANY",
+      "overrides": {
+        "third_party_quote": true,
+        "quoted_issuer_differs": true,
+        "explicit_framework_version": "2013"
+      },
+      "expected_classification": null,
+      "expected_reason": "THIRD_PARTY_QUOTE"
+    }
+  ],
+  "acceptance": {
+    "total_cases": 16,
+    "required_passes": 16,
+    "executions_at_same_exact_head": 2,
+    "deterministic_result_payload_required": true,
+    "exact_head_ci_required": true,
+    "fresh_independent_review_required": true
+  },
+  "provenance_note": "A01 and A02 correspond to the validated 1992 and 2013 construct sides; all other cases are adversarial design fixtures and are not empirical company observations."
+}
