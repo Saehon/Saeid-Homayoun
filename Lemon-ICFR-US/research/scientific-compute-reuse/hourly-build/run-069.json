@@ -1,0 +1,77 @@
+{
+  "start_time": "2026-10-04T14:03:01+02:00",
+  "end_time": "2026-10-04T14:07:13+02:00",
+  "duration": "4 minutes 12 seconds wall-clock; focused contract design, validation, persistence and review, not padded",
+  "paper_or_model": "Park et al. (2021) COSO noncompliance deterministic classifier",
+  "journal": "Journal of Accounting and Public Policy",
+  "journal_tier": "ABS3",
+  "phase": "section-bounded evidence contract / adversarial catalog / freeze-readiness evidence pack",
+  "work_attempted": [
+    "Reconstruct canonical Drive state, live PR #76 HEAD, CI/status, Codex findings, writer-lock state, persistent failure counts and repair queue",
+    "Design a section-bounded and provenance-preserving input contract without retrying the twice-blocked classifier patch",
+    "Build a boundary, source-scope, polarity, quotation and provenance adversarial catalog",
+    "Validate the design catalog twice and produce a project-local freeze-readiness checklist"
+  ],
+  "work_completed": [
+    "Verified PR #76 open at starting HEAD 4db589fd9e7dd8968ea4f1f4ab7ba421276129bf; no writer-lock filename observed among 108 changed files",
+    "Persisted/read back evidence-input-contract-v0.1.json with 10 fail-closed reasons and all required fields defined",
+    "Persisted/read back adversarial-case-catalog-v0.1.json with 16 unique cases: 3 expected classifications and 13 fail-closed outcomes",
+    "Executed a temporary design-reference evaluator twice: 16/16 both times with identical result-payload SHA-256 1f7356d0fa9c177642350e6f69c54add206d1c71060ff8f97abc7da2ec7794a7",
+    "Persisted/read back freeze-readiness-069.md with a verified project-local count of 6 MET / 1 PARTIAL / 5 NOT_MET",
+    "Did not modify classifier.py or retry F-067-01"
+  ],
+  "evidence": [
+    "Canonical Section 24 re-read at Drive revision AHj4eMRmvXTsucd_1jqrseB6BWhLBfuvxG4q2SpclKbeLfWGry-1rrgZBT4asYJyDFWor84U47pVngD1s5L6Pz7BQNH-3fLegbiQ53YBysg",
+    "Input-contract blob d80622821a179c7008bfc46e81566cafe71083bd",
+    "Adversarial-catalog blob 9b5756e72d80d221f829a4458ed690f322a40bba",
+    "Freeze-readiness blob 6ce9a7e2028e345120419c2655c34cad7f54cd4b",
+    "Scientific-work commits b238aae1fccf5ca79221ea411109c81bc8e9377f, ff81413c06956dbfd60da536abef8af3fba085a6, 138ef62649d9f3c4e52e62955f4dcfe09986f8c4 and 006e509320251877c85bf53af9a129d9be5551ff",
+    "No workflow runs and no combined statuses observed for scientific ending HEAD 006e509320251877c85bf53af9a129d9be5551ff"
+  ],
+  "changed_files": [
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/evidence-input-contract-v0.1.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/adversarial-case-catalog-v0.1.json",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/coso-noncompliance-poc/freeze-readiness-069.md",
+    "Lemon-ICFR-US/research/scientific-compute-reuse/hourly-build/run-069.json"
+  ],
+  "github_starting_head": "4db589fd9e7dd8968ea4f1f4ab7ba421276129bf",
+  "github_ending_head": "006e509320251877c85bf53af9a129d9be5551ff",
+  "github_commit": "006e509320251877c85bf53af9a129d9be5551ff",
+  "tests": [
+    "Contract structural readback: PASS; every required field has a defined property",
+    "Catalog structural readback: PASS; 16/16 IDs unique and acceptance total equals catalog count",
+    "Catalog composition: PASS; 3 classification cases and 13 fail-closed cases",
+    "Design-reference execution 1: 16/16 PASS",
+    "Design-reference execution 2: 16/16 PASS",
+    "Design-reference determinism: PASS; identical SHA-256 1f7356d0fa9c177642350e6f69c54add206d1c71060ff8f97abc7da2ec7794a7",
+    "Persisted classifier execution: NOT_RUN and no PASS claimed; design reference is not classifier evidence"
+  ],
+  "ci_status": "NO_WORKFLOW_RUNS_AND_NO_COMBINED_STATUSES for scientific ending HEAD 006e509320251877c85bf53af9a129d9be5551ff; no CI PASS claimed",
+  "codex_status": "FINDINGS_OPEN",
+  "blockers": [
+    "F-067-01 BLOCKED_AFTER_2_ATTEMPTS with fail_count=2: persisted classifier cannot enforce fiscal-year cutoff; no retry this run",
+    "F-068-01 OPEN with fail_count=0: persisted classifier does not enforce management-ICFR evidence scope",
+    "GH-LOG-BACKFILL BLOCKED_AFTER_2_ATTEMPTS: canonical GitHub hourly-build-log append remains queued and was not retried",
+    "PR-76-CI OPEN: no exact-head workflow/status evidence for current COSO commits and historical Codex workflow findings remain open"
+  ],
+  "blocker_class": [
+    "LOCAL"
+  ],
+  "open_repair_queue_changes": [
+    "Retain F-067-01 fail_count=2 and retry_state=BLOCKED_AFTER_2_ATTEMPTS; new contract/catalog evidence does not silently reset or close it",
+    "Retain F-068-01 fail_count=0; its future repair acceptance criteria are now machine-readable in the evidence contract and 16-case catalog",
+    "Retain GH-LOG-BACKFILL retry_state=BLOCKED_AFTER_2_ATTEMPTS; no append attempt this progression",
+    "Repair-sweep entry is now evidence-ready: explicitly reopen F-067-01, implement both temporal and evidence-scope contracts, wire 16 cases, run twice at one exact HEAD, then obtain CI and fresh independent review"
+  ],
+  "drive_updates": [
+    "Run 069 append to canonical Drive master log pending"
+  ],
+  "github_readback": "VERIFIED",
+  "drive_readback": "NOT_VERIFIED",
+  "engineering_status": "PARTIAL",
+  "scientific_status": "PARTIAL",
+  "gate_status": "HOLD",
+  "dual_save_status": "PARTIAL",
+  "poc_v1_status": "NOT_FROZEN",
+  "next_executable_task": "Begin the dedicated repair sweep only by explicitly reopening F-067-01: implement the section-bounded evidence object and strict period_end cutoff in classifier.py, wire all 16 catalog cases, preserve failure history, and stop after two new failed repair attempts if the changed-dependency repair remains blocked."
+}
