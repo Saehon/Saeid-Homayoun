@@ -24,7 +24,7 @@
 - Status: PASS (governance design freeze only).
 - Evidence: `P0_GOVERNANCE_HUMAN_APPROVAL_DATA_RULES.md` v1.0.
 - Falsification/readback: acceptance checklist requires all governance elements; checked that no automation may self-approve sealed-test access, protected-main merge, restricted-data release, external claims, or journal submission.
-- GitHub: atomic three-file commit on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged; final commit and readback recorded after mutation.
+- GitHub: three sequential contents-API commits on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged; final commit and readback recorded after mutation.
 - Drive: P0.2 evidence uploaded; canonical ledger and run log replaced in place; all three content-read back after mutation.
 - Dual-save status: PASS after final readback.
 - Fail count: 0.
