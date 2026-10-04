@@ -40,9 +40,9 @@
 - Status: PASS (firewall design freeze only).
 - Evidence: `P0_DEVELOPMENT_VALIDATION_SEALED_TEST_FIREWALL.md` v1.0.
 - Falsification/readback: acceptance test distinguishes design from implementation; validation cannot feed candidate evolution; used validation must become development history after redesign; unfavorable completed results cannot be relabeled technical failures; sealed outcomes cannot tune specifications.
-- GitHub: branch `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged; final commit/HEAD recorded after connector write/readback.
-- Drive: evidence uploaded to project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place; final IDs and readback recorded after connector verification.
-- Dual-save status: pending final readback at time this entry was drafted.
+- GitHub: branch `research/jfe-multillm-2026-10-04`; evidence commit `88afddec3e5fcb34a06ddbaf208623c06c36b732`; ledger commit `680372d31ca075626a756a1d6db5cbf997be6412`; initial run-log commit `81d8434f61a27853b1d65ed8322d914e94139cac`; Draft PR #112 retained; protected `main` unchanged. The final run-log provenance update is necessarily the branch HEAD created by the commit containing this entry.
+- Drive: evidence `1hN9pLinT3GNQvtGc3DDZk9ErjQRIywiN` uploaded to project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place; all three scheduled for final content readback after this provenance update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Repair queue: empty; no change.
 - Ending gate counts: PASS 3; NOT_STARTED 57; all other statuses 0.
