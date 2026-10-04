@@ -25,6 +25,12 @@ Verified count for this checklist: **6 MET / 1 PARTIAL / 5 NOT_MET**.
 - `adversarial-case-catalog-v0.1.json`: 16 unique cases; 3 expected classifications and 13 expected fail-closed outcomes.
 - Both JSON artifacts passed structural readback checks: every required contract field is defined, all 16 case IDs are unique, and acceptance count equals catalog count.
 
+## Design-reference execution
+
+A temporary reference evaluator was executed twice against the 16-case catalog to verify that the contract and expected outcomes are internally coherent. Both executions returned **16/16**, with identical result-payload SHA-256 `1f7356d0fa9c177642350e6f69c54add206d1c71060ff8f97abc7da2ec7794a7`.
+
+This is design-validation evidence only. It is not execution of the persisted `classifier.py`, does not close F-067-01 or F-068-01, and does not change FR-09 or FR-10.
+
 ## Repair-sweep entry criteria
 
 The dedicated repair sweep may reopen F-067-01 only by explicitly recording that reason. The repair must implement the evidence contract, preserve the full two-failure history, and add the 16 cases as executable tests. Promotion requires 16/16 twice at one exact HEAD, deterministic output, exact-head CI, fresh independent review, and explicit human approval.
