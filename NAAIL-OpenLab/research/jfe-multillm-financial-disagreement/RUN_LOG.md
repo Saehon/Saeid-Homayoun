@@ -127,9 +127,9 @@
 - Status: PASS (feedback/leakage/overfitting control design only).
 - Evidence: `P1_FEEDBACK_LEAKAGE_OVERFITTING_RISK_MAP.md` v1.0.
 - Falsification/readback: validation and sealed outcomes cannot flow backward into hypotheses, evidence selection, prompts, models, representations, constructs, specifications, thresholds, or narratives; adverse evidence is preserved; Co-Scientist/100-perspective roles cannot create observations; checks are explicitly NOT_RUN specifications and no claim of leakage absence is made.
-- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
-- Drive: P1.3 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
-- Dual-save status: PENDING final GitHub and Drive readback.
+- GitHub: evidence commit `738bc558da3e583813915c22cc9cd02515dc3d98`; ledger commit `730c01e21701357130127ac30b1e562cac9c1098`; initial run-log commit `733e30fe646faf020eedc13202094d1d799e99d6`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.3 evidence `1VXMnlwTx-JrLBEaw5V_hZ7psGooCLEhn`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all scheduled for final content readback after this provenance update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none.
 - Repair queue: empty; no change.
