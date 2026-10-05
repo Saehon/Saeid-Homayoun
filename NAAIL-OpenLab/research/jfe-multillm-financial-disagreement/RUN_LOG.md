@@ -91,9 +91,9 @@
 - Status: PASS (system inventory and boundary design only).
 - Evidence: `P1_ACTORS_DATA_MODELS_DECISIONS_OUTCOMES_MAP.md` v1.0.
 - Falsification/readback: map explicitly distinguishes in-scope candidates from verified availability; external-model outputs are not invented; model providers are not scientific approvers; structured Co-Scientist/100-perspective roles are not observations; outcome timing cannot feed earlier prompts; AlphaFold/AlphaEvolve labels are limited to methodological inspiration.
-- GitHub: authorized branch; Draft PR #112 retained; protected `main` unchanged; commits recorded after writes.
-- Drive: P1.1 evidence uploaded; ledger and run log replaced in place; IDs/readback recorded after verification.
-- Dual-save status: pending final readback at time this entry was drafted.
+- GitHub: evidence commit `2e476a90ae902c9fe9ef198b1ecc500382fad9c0`; ledger commit `c0d5ffbb18efa8fbebdca0df4d5210ec170d5cf5`; initial run-log commit `b269500de65cccedf5ba492cd52250360c19ac61`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.1 evidence `197gokIOhlFwUimWIq1jj70vXIvJB9NoF`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all scheduled for final content readback after this update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none.
 - Repair queue: empty; no change.
