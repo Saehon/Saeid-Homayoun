@@ -13,3 +13,16 @@
 - Affected dependencies: B5 local validation and proposed B5 CI only; no scientific evidence, label, benchmark, or gate state was affected.
 - Resolution evidence: materially different command exited 0 at 2026-10-05T02:44Z and printed `B5 human ground-truth protocol invariants: PASS`; test-file SHA-256 `79d10ca2d579e55884dc524ea948ca934de8323a7f57cedbf3a81aed131058a6`.
 - Future action if the repair fails: do not install packages or repeat either command; rewrite the guard as `unittest.TestCase` and execute `python -m unittest` once.
+
+## NAAIL-B5-REVIEW-PACKAGE-COMMIT-001 — REPAIR IN PROGRESS
+
+- UTC: 2026-10-05T02:45:00Z
+- Item: B5 Claude review-package commit
+- Persistent failure count: 1 of 2
+- Exact action: connector script attempted `GET /repos/Saehon/Saeid-Homayoun/commits/naail%2Fv1-b5-human-ground-truth-2026-10-05` and then parsed the absent `structuredContent.content` field.
+- Exact error: `SyntaxError: "undefined" is not valid JSON`; diagnostic readback then returned `HTTPError: 400: GitHub Fetch URL contains an invalid repository path.`
+- Likely root cause: the generic fetch connector rejects an encoded slash in the commit path for a branch name; no GitHub mutation occurred.
+- Attempted repair: none before recording; the review package remains local only.
+- Materially different repair: fetch PR #123 metadata, compare its exact `head_sha` with the expected commit, fetch that full commit SHA for the base tree, and atomically commit the review package plus this queue update.
+- Affected dependencies: B5 review handoff and dual-save record only; the already successful CI run and protocol files are unaffected.
+- Future action if the repair fails: do not repeat branch-name lookup; use `fetch_file` on the PR branch plus a SHA-guarded contents update.
