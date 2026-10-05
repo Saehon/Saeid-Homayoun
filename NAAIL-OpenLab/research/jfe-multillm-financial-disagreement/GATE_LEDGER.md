@@ -1,20 +1,20 @@
 # Canonical 60-Gate Ledger
 
 Plan: `MASTER_PLAN_60_GATES.md`  
-Ledger version: 1.4  
+Ledger version: 1.5  
 Last updated: 2026-10-05
 
 ## Evidence-backed counts
 
 | Status | Count |
 |---|---:|
-| PASS | 5 |
+| PASS | 6 |
 | PARTIAL | 0 |
 | ACTIVE | 0 |
 | BLOCKED | 0 |
 | REPAIR_QUEUE | 0 |
 | CLOSED | 0 |
-| NOT_STARTED | 55 |
+| NOT_STARTED | 54 |
 | **TOTAL** | **60** |
 
 Engineering activity, commits, elapsed time, documentation volume, and visiting a phase do not count as scientific completion.
@@ -28,7 +28,7 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | P0.3 | PASS | `P0_DEVELOPMENT_VALIDATION_SEALED_TEST_FIREWALL.md` v1.0; design only; implementation not yet tested |
 | P0.4 | PASS | `P0_CHANGE_CONTROL_VERSIONING_PREREGISTRATION.md` v1.0; design only; empirical preregistration not yet created |
 | P0.5 | PASS | `P0_GATE_LEDGER_REPAIR_QUEUE_COMPLETION_CONTROL.md` v1.0; control-system design/internal audit only |
-| P1.1 | NOT_STARTED | — |
+| P1.1 | PASS | `P1_ACTORS_DATA_MODELS_DECISIONS_OUTCOMES_MAP.md` v1.0; system inventory/boundary design only; availability and implementation not yet verified |
 | P1.2 | NOT_STARTED | — |
 | P1.3 | NOT_STARTED | — |
 | P1.4 | NOT_STARTED | — |
@@ -89,8 +89,9 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | Phase | PASS | Other disposition | NOT_STARTED | State |
 |---|---:|---:|---:|---|
 | P0 | 5 | 0 | 0 | COMPLETE — governance/control design only |
-| P1–P11 | 0 | 0 | 55 | NOT_STARTED |
+| P1 | 1 | 0 | 4 | ACTIVE — system-map design only |
+| P2–P11 | 0 | 0 | 50 | NOT_STARTED |
 
 ## Next scientifically admissible gate
 
-P1.1 — Map actors, data, models, decisions, and outcomes.
+P1.2 — Map dependencies and critical paths.
