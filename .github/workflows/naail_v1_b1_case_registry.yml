@@ -1,0 +1,32 @@
+name: NAAIL V1 B1 Case Registry Guard
+
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  b1-case-registry-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout proposed registry
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile registry validator and test
+        run: |
+          python -m py_compile NAAIL/research-assurance-mcp/scripts/validate_case_registry.py
+          python -m py_compile NAAIL/research-assurance-mcp/tests/test_b1_case_registry.py
+
+      - name: Validate canonical DOI registry
+        run: python NAAIL/research-assurance-mcp/scripts/validate_case_registry.py NAAIL/research-assurance-mcp/registry/cases.yaml
+
+      - name: Prove RUN 021-style duplicate DOI hard fails
+        run: python NAAIL/research-assurance-mcp/tests/test_b1_case_registry.py
