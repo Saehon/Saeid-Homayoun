@@ -14,7 +14,7 @@
 - Resolution evidence: materially different command exited 0 at 2026-10-05T02:44Z and printed `B5 human ground-truth protocol invariants: PASS`; test-file SHA-256 `79d10ca2d579e55884dc524ea948ca934de8323a7f57cedbf3a81aed131058a6`.
 - Future action if the repair fails: do not install packages or repeat either command; rewrite the guard as `unittest.TestCase` and execute `python -m unittest` once.
 
-## NAAIL-B5-REVIEW-PACKAGE-COMMIT-001 — REPAIR IN PROGRESS
+## NAAIL-B5-REVIEW-PACKAGE-COMMIT-001 — REPAIRED
 
 - UTC: 2026-10-05T02:45:00Z
 - Item: B5 Claude review-package commit
@@ -25,4 +25,18 @@
 - Attempted repair: none before recording; the review package remains local only.
 - Materially different repair: fetch PR #123 metadata, compare its exact `head_sha` with the expected commit, fetch that full commit SHA for the base tree, and atomically commit the review package plus this queue update.
 - Affected dependencies: B5 review handoff and dual-save record only; the already successful CI run and protocol files are unaffected.
+- Resolution evidence: the SHA-guarded atomic repair committed both files at `384fa398eac880070b1ee853548074fdf53ad3be`; review-package blob `cf5aae2f5e5f965030634bd1405d5ec21af9d81b`.
 - Future action if the repair fails: do not repeat branch-name lookup; use `fetch_file` on the PR branch plus a SHA-guarded contents update.
+
+## NAAIL-B5-QUEUE-UPDATE-001 — REPAIR IN PROGRESS
+
+- UTC: 2026-10-05T02:47:00Z
+- Item: publish repaired status for the B5 review-package failure record
+- Persistent failure count: 1 of 2
+- Exact action: read the local queue with `base64 -w0`, then decode inside the connector script with `atob` before a SHA-guarded `update_file` call.
+- Exact error: `ReferenceError: atob is not defined`
+- Likely root cause: this V8 orchestration environment does not expose the browser `atob` global.
+- Attempted repair: none before recording; the SHA guard confirmed remote blob `e0895972d2c5409f08b684c3f5439bb9303270d5`, and no mutation occurred.
+- Materially different repair: serialize the UTF-8 file as a JSON string with the local Python standard library, parse that string in the orchestration environment, then use the same live blob SHA exactly once.
+- Affected dependencies: repair-queue readback only; protocol, CI, and review-package evidence are unaffected.
+- Future action if the repair fails: park the queue update as a connector limitation and leave the already committed evidence unchanged.
