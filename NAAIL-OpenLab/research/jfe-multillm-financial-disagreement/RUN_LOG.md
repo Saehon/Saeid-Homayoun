@@ -145,9 +145,9 @@
 - Status: PASS (graph schema and controlled scientific-flow design only).
 - Evidence: `P1_EVIDENCE_AI_CONSTRUCT_OUTCOME_SYSTEM_GRAPH.md` v1.0.
 - Falsification/readback: initial nodes distinguish schema/candidate/unverified/not-executed/unsupported states; validation/sealed feedback, future-to-past evidence, fabricated model runs, false review independence, engineering-as-science, and unauthorized release are prohibited; null/adverse/anomaly evidence is preserved; graph queries are explicitly NOT_EXECUTED.
-- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
-- Drive: P1.4 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
-- Dual-save status: PENDING final GitHub and Drive readback.
+- GitHub: evidence commit `2a160f646e70bfb6f18a4137d7b91eb632de37ed`; ledger commit `aa0bf274325b930e537fc4c5ad4a94a35552c87e`; initial run-log commit `47fa1d9e2225abcc31d699de355ee9d43a951a3b`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.4 evidence `12XNyWh2x2Tr68xXAOBcfWNkgIgHKqoGT`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all scheduled for final content readback after this provenance update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none.
 - Repair queue: empty; no change.
