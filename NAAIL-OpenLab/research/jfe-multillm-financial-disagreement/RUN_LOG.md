@@ -109,9 +109,9 @@
 - Status: PASS (dependency and critical-path design only).
 - Evidence: `P1_DEPENDENCY_AND_CRITICAL_PATH_MAP.md` v1.0.
 - Falsification/readback: all phases P0–P11 are represented; portfolio priority is not treated as a scientific dependency; HARD controls cover partition integrity, provenance, actual model execution, raw-panel/pair/AID freezes, sealed OOS, clean reproduction, human release, and protected-main restrictions; no data/model availability, replication, empirical, causal, novelty, or publication-readiness claim is made.
-- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
-- Drive: P1.2 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
-- Dual-save status: PENDING final GitHub and Drive readback.
+- GitHub: evidence commit `05dc92df6a86a98eaa5dac60848c4cc24293f672`; ledger commit `0f3a0255a83a47873d4386f092d3fed40718834f`; initial run-log commit `f0dbdd00e71c3ffa0254225be78d0225cc09f501`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.2 evidence `1xO3QpwKP61tf3cYCMrUeIa7FGfdsI_a2`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all scheduled for final content readback after this provenance update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none.
 - Repair queue: empty; no change.
