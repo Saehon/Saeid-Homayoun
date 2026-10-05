@@ -118,3 +118,21 @@
 - Ending gate counts: PASS 7; NOT_STARTED 53; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 at 2/5 PASS for design only.
 - Next gate: P1.3 — map feedback loops and leakage/overfitting risks.
+
+## RUN JFE-008 — 2026-10-05
+
+- Phase/gate: P1 System Map & Digital Research Twin / P1.3.
+- Starting state: canonical GitHub plan and Drive mirror read; P0 complete 5/5 for design controls; P1.1–P1.2 PASS; ledger PASS 7 and NOT_STARTED 53; Draft PR #112 open and sole PR for scope; branch HEAD `634fcd275578bd60d20b6fafc6b3b65527d664a8`; repair queue empty; no writer-lock file found.
+- Work completed: froze eight feedback-loop classes; eight information zones with one-way valves; 36 leakage/overfitting risks; development-only overfitting budget; five incident severities; 12 specified checks; quarantine/STOP_RELEASE rules; and a machine-readable risk record.
+- Status: PASS (feedback/leakage/overfitting control design only).
+- Evidence: `P1_FEEDBACK_LEAKAGE_OVERFITTING_RISK_MAP.md` v1.0.
+- Falsification/readback: validation and sealed outcomes cannot flow backward into hypotheses, evidence selection, prompts, models, representations, constructs, specifications, thresholds, or narratives; adverse evidence is preserved; Co-Scientist/100-perspective roles cannot create observations; checks are explicitly NOT_RUN specifications and no claim of leakage absence is made.
+- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.3 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
+- Dual-save status: PENDING final GitHub and Drive readback.
+- Fail count: 0.
+- Blocker classification: none.
+- Repair queue: empty; no change.
+- Ending gate counts: PASS 8; NOT_STARTED 52; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 at 3/5 PASS for design only.
+- Next gate: P1.4 — build the evidence→AI→construct→outcome system graph.
