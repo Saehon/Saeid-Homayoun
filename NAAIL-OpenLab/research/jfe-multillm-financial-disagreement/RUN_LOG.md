@@ -82,3 +82,21 @@
 - Ending gate counts: PASS 5; NOT_STARTED 55; all other statuses 0.
 - Phase state: P0 COMPLETE 5/5 for governance/control design only.
 - Next gate: P1.1 — map actors, data, models, decisions, and outcomes.
+
+## RUN JFE-006 — 2026-10-05
+
+- Phase/gate: P1 System Map & Digital Research Twin / P1.1.
+- Starting state: canonical plan and Drive mirror read; P0 complete 5/5 for design controls; ledger PASS 5 and NOT_STARTED 55; Draft PR #112 open and sole PR for scope; branch HEAD `34c96a4f8cfb6669fdb996d0c9e95b58a7b0b6a2`; repair queue empty; no writer-lock file found.
+- Work completed: mapped 16 actor roles/authorities, 17 candidate data/evidence objects, 15 model/computational components, 12 governed decisions, 9 outcome families, 8 primary interfaces, feedback/firewall boundaries, inclusion/exclusion boundaries, and a machine-readable node schema.
+- Status: PASS (system inventory and boundary design only).
+- Evidence: `P1_ACTORS_DATA_MODELS_DECISIONS_OUTCOMES_MAP.md` v1.0.
+- Falsification/readback: map explicitly distinguishes in-scope candidates from verified availability; external-model outputs are not invented; model providers are not scientific approvers; structured Co-Scientist/100-perspective roles are not observations; outcome timing cannot feed earlier prompts; AlphaFold/AlphaEvolve labels are limited to methodological inspiration.
+- GitHub: authorized branch; Draft PR #112 retained; protected `main` unchanged; commits recorded after writes.
+- Drive: P1.1 evidence uploaded; ledger and run log replaced in place; IDs/readback recorded after verification.
+- Dual-save status: pending final readback at time this entry was drafted.
+- Fail count: 0.
+- Blocker classification: none.
+- Repair queue: empty; no change.
+- Ending gate counts: PASS 6; NOT_STARTED 54; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 at 1/5 PASS for design only.
+- Next gate: P1.2 — map dependencies and critical paths.
