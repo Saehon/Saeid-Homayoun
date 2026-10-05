@@ -1,8 +1,8 @@
 program_version: v3
 mode: CONTINUOUS — Claude final review at P19
-program_branch: lemon/p04-msft-evidence-blocked
+program_branch: lemon/p05-msft-extraction-dependency
 start_point_sha: 5ede5d32534a94f7363a571f506b2caec95768e9
-current_phase: P05
+current_phase: P06
 owner_contact_email_for_sec: NOT_PROVIDED
 owner_approved_cryptography: no
 runs_in_current_phase: 0
@@ -14,7 +14,7 @@ phase_status:
   P02: COMPLETE
   P03: COMPLETE
   P04: PARTIAL
-  P05: NOT_STARTED
+  P05: NOT_RUN_DEPENDENCY
   P06: NOT_STARTED
   P07: NOT_STARTED
   P08: NOT_STARTED
