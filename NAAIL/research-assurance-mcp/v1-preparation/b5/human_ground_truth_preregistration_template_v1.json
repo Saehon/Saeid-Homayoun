@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "template_id": "NAAIL-V1-B5-HGT-PREREG-TEMPLATE-V1",
+  "status": "DRAFT_TEMPLATE",
+  "protocol_id": "NAAIL-V1-B5-HGT-V1",
+  "protocol_git_blob": "TO_BE_RECORDED_BEFORE_DATA",
+  "protocol_sha256": "TO_BE_RECORDED_BEFORE_DATA",
+  "coder_handbook_git_blob": "TO_BE_RECORDED_BEFORE_DATA",
+  "coding_schema_git_blob": "TO_BE_RECORDED_BEFORE_DATA",
+  "analysis_script_git_blob": "TO_BE_RECORDED_BEFORE_DATA",
+  "item_manifest_git_blob": "TO_BE_RECORDED_BEFORE_DATA",
+  "frozen_at_utc": "TO_BE_RECORDED_BEFORE_DATA",
+  "prior_exposure_declarations": {
+    "protocol_operator": "Has seen detector and disclosed Benchmark V2 examples; excluded from probe authorship and coding.",
+    "coder_1": "TO_BE_DECLARED",
+    "coder_2": "TO_BE_DECLARED",
+    "adjudicator": "TO_BE_DECLARED",
+    "data_custodian": "TO_BE_DECLARED"
+  },
+  "sample": {
+    "source": "TO_BE_RECORDED",
+    "unit_definition": "TO_BE_RECORDED",
+    "eligible_item_count": "TO_BE_RECORDED",
+    "exclusion_rules": "TO_BE_RECORDED",
+    "randomization_method": "TO_BE_RECORDED",
+    "blinding_key_custodian": "TO_BE_RECORDED"
+  },
+  "labels": {
+    "objective_fields": "COPY_FROM_FROZEN_PROTOCOL",
+    "judgment_dependent_fields": "COPY_FROM_FROZEN_PROTOCOL",
+    "codebook_version": "TO_BE_RECORDED"
+  },
+  "reliability": {
+    "statistic": "Cohen's kappa",
+    "weighting": "unweighted",
+    "minimum_threshold": 0.70,
+    "threshold_operator": ">=",
+    "undefined_rule": "UNDEFINED is not threshold met",
+    "analysis_commit": "TO_BE_RECORDED_BEFORE_DATA"
+  },
+  "adjudication": {
+    "adjudicator_id": "TO_BE_RECORDED",
+    "starts_only_after_raw_lock": true,
+    "raw_label_overwrite_permitted": false
+  },
+  "authorizations": {
+    "human_poc_approval_reference": "REQUIRED_BEFORE_EXECUTION",
+    "claude_protocol_approval_reference": "REQUIRED_BEFORE_EXECUTION",
+    "human_freeze_approval_reference": "REQUIRED_BEFORE_EXECUTION"
+  },
+  "results": "MUST_REMAIN_EMPTY_UNTIL_AFTER_FREEZE_AND_EXECUTION"
+}

@@ -1,0 +1,31 @@
+name: NAAIL V1 B5 Human Ground-Truth Protocol Guard
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "NAAIL/research-assurance-mcp/v1-preparation/b5/**"
+      - "NAAIL/research-assurance-mcp/tests/test_b5_human_ground_truth_protocol.py"
+      - ".github/workflows/naail_v1_b5_human_ground_truth_protocol.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  b5-protocol-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout proposed protocol
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile protocol guard
+        run: python -m py_compile NAAIL/research-assurance-mcp/tests/test_b5_human_ground_truth_protocol.py
+
+      - name: Validate draft protocol invariants
+        run: python NAAIL/research-assurance-mcp/tests/test_b5_human_ground_truth_protocol.py

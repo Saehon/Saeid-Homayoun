@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "NAAIL-V1-B5-HGT-V1",
+  "title": "NAAIL V1 Human Ground-Truth Protocol",
+  "status": "DRAFT",
+  "created_utc": "2026-10-05T02:34:54Z",
+  "scope": "Protocol preparation only; no coding, data retrieval, case selection, scoring, or scientific conclusion is authorized.",
+  "governance": {
+    "poc_complete": false,
+    "v1_complete": false,
+    "execution_gate": "Human POC approval plus Claude approval of this protocol and a recorded pre-data freeze are required before execution.",
+    "one_authoritative_run": "One agreement calculation and one adjudication release are permitted for each frozen label set and protocol version.",
+    "human_authority": "Humans approve gates and final scientific judgments; the operator administers files and deterministic checks only."
+  },
+  "prior_exposure": {
+    "operator_has_seen_detector": true,
+    "operator_has_seen_benchmark_v2_evasion_examples": true,
+    "operator_role": "Protocol author and repository operator only.",
+    "operator_exclusions": [
+      "holdout probe author",
+      "coder",
+      "adjudicator",
+      "case selector",
+      "ground-truth decision maker"
+    ]
+  },
+  "roles": {
+    "minimum_independent_coders_per_item": 2,
+    "coder_1": "Assigns labels independently under blinding.",
+    "coder_2": "Assigns labels independently under blinding.",
+    "adjudicator": "Reviews locked disagreements only after reliability is computed; must not be either original coder for the item.",
+    "data_custodian": "Randomizes item identifiers, controls the blinding key, and releases only the permitted coding packet.",
+    "operator": "Validates schemas and computes preregistered metrics from locked inputs; never authors probes or labels."
+  },
+  "coding_units": {
+    "holdout": "One sealed probe package defined under the separately frozen B4 specification.",
+    "real_case": "One preregistered claim-evidence unit from a human-selected case.",
+    "no_post_hoc_splitting": true,
+    "unit_manifest_required_before_coding": true
+  },
+  "label_model": {
+    "objective_fields": [
+      "evidence_present",
+      "file_or_output_identity_match",
+      "numeric_or_textual_mismatch_present",
+      "error_present"
+    ],
+    "judgment_dependent_fields": [
+      "error_category",
+      "materiality",
+      "methodological_acceptability",
+      "required_human_review_reason"
+    ],
+    "required_item_values": [
+      "YES",
+      "NO",
+      "INSUFFICIENT_EVIDENCE",
+      "NOT_APPLICABLE"
+    ],
+    "rule": "Objective and judgment-dependent labels remain separate in storage, reliability reporting, adjudication, and downstream analysis."
+  },
+  "blinding": {
+    "coder_must_not_receive": [
+      "NAAIL detector output",
+      "simple-baseline output",
+      "other coder labels",
+      "expected or injected error labels",
+      "condition identity",
+      "system performance summaries"
+    ],
+    "coder_may_receive": [
+      "frozen coder handbook",
+      "source materials needed to evaluate the unit",
+      "randomized item identifier",
+      "locked coding form"
+    ],
+    "randomization": "The data custodian creates a reproducible randomized item order and keeps the seed and mapping sealed until raw coder labels are locked.",
+    "independent_submission": true,
+    "communication_between_coders_before_lock": false
+  },
+  "training_and_calibration": {
+    "training_items_are_disjoint_from_scored_items": true,
+    "training_labels_are_excluded_from_all_v1_metrics": true,
+    "coder_questions_and_clarifications_are_logged": true,
+    "material_codebook_changes_require_new_protocol_version_and_new_hash_before_scored_coding": true
+  },
+  "reliability": {
+    "primary_statistic": "Cohen's kappa",
+    "weighting": "unweighted",
+    "minimum_kappa_threshold": 0.70,
+    "threshold_operator": ">=",
+    "calculation_scope": [
+      "error_present on eligible binary-coded units",
+      "error_category on eligible nominal-coded units"
+    ],
+    "computed_before_adjudication": true,
+    "report_with": [
+      "confusion matrix counts",
+      "raw agreement count",
+      "eligible item count",
+      "marginal label counts",
+      "missing and excluded item counts"
+    ],
+    "undefined_kappa_rule": "If kappa is undefined because eligible labels lack marginal variation, report it as UNDEFINED, preserve counts, and do not treat the threshold as met.",
+    "below_threshold_rule": "Keep the affected ground truth PRELIMINARY and HUMAN_REVIEW; do not use it for confirmatory system claims. Any revised study requires a new frozen protocol version and a new label set.",
+    "no_metric_substitution": true
+  },
+  "adjudication": {
+    "starts_after_raw_labels_locked_and_kappa_computed": true,
+    "raw_labels_immutable": true,
+    "adjudicator_receives": [
+      "source materials",
+      "frozen codebook",
+      "both raw coder labels",
+      "each coder's rationale"
+    ],
+    "adjudicator_does_not_receive": [
+      "NAAIL detector output",
+      "simple-baseline output",
+      "condition identity",
+      "performance summaries"
+    ],
+    "required_record": [
+      "item_id",
+      "raw labels",
+      "final adjudicated label",
+      "rationale",
+      "adjudicator_id",
+      "timestamp_utc"
+    ],
+    "unresolved_state": "HUMAN_REVIEW"
+  },
+  "missingness_and_deviations": {
+    "no_silent_exclusion": true,
+    "permitted_missing_state": "MISSING_CODER_LABEL",
+    "deviation_log_required": true,
+    "excluded_items_remain_in_manifest_with_reason": true
+  },
+  "freeze_before_data": {
+    "required_artifacts": [
+      "this protocol JSON",
+      "coder handbook",
+      "coding form/schema",
+      "item manifest schema",
+      "analysis script",
+      "preregistration record"
+    ],
+    "required_fingerprints": [
+      "Git blob SHA",
+      "SHA-256"
+    ],
+    "freeze_must_predate": [
+      "release of scored items to coders",
+      "coder labels",
+      "system scoring",
+      "result inspection"
+    ]
+  },
+  "outputs": [
+    "immutable raw coder labels",
+    "reliability report",
+    "adjudication log",
+    "adjudicated ground-truth file",
+    "deviation log",
+    "provenance manifest"
+  ],
+  "prohibited_claims": [
+    "Protocol preparation proves detector validity.",
+    "A threshold written in advance guarantees reliable labels.",
+    "Adjudication increases pre-adjudication inter-coder reliability.",
+    "Synthetic outcomes are scientific validation."
+  ]
+}
