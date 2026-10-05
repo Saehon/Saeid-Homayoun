@@ -136,3 +136,21 @@
 - Ending gate counts: PASS 8; NOT_STARTED 52; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 at 3/5 PASS for design only.
 - Next gate: P1.4 — build the evidence→AI→construct→outcome system graph.
+
+## RUN JFE-009 — 2026-10-05
+
+- Phase/gate: P1 System Map & Digital Research Twin / P1.4.
+- Starting state: canonical GitHub plan and Drive mirror read; P0 complete 5/5 for design controls; P1.1–P1.3 PASS; ledger PASS 8 and NOT_STARTED 52; Draft PR #112 open and sole PR for scope; branch HEAD `9811591ebb8cac43671e92eb4bda425422b17852`; repair queue empty; no writer-lock file found.
+- Work completed: froze 11 graph layers; 23 node types; 26 edge types; five end-to-end/reverse-audit paths; 40 initial controlled nodes; 10 prohibited-edge classes; 10 graph invariants; 12 required graph queries; machine-readable node/edge records; and DARWIN/Science Discovery graph operations.
+- Status: PASS (graph schema and controlled scientific-flow design only).
+- Evidence: `P1_EVIDENCE_AI_CONSTRUCT_OUTCOME_SYSTEM_GRAPH.md` v1.0.
+- Falsification/readback: initial nodes distinguish schema/candidate/unverified/not-executed/unsupported states; validation/sealed feedback, future-to-past evidence, fabricated model runs, false review independence, engineering-as-science, and unauthorized release are prohibited; null/adverse/anomaly evidence is preserved; graph queries are explicitly NOT_EXECUTED.
+- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.4 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
+- Dual-save status: PENDING final GitHub and Drive readback.
+- Fail count: 0.
+- Blocker classification: none.
+- Repair queue: empty; no change.
+- Ending gate counts: PASS 9; NOT_STARTED 51; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 at 4/5 PASS for design only.
+- Next gate: P1.5 — freeze v1 system map and dependency register.
