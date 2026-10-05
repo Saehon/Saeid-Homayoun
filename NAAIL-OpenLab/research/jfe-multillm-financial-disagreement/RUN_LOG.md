@@ -100,3 +100,21 @@
 - Ending gate counts: PASS 6; NOT_STARTED 54; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 at 1/5 PASS for design only.
 - Next gate: P1.2 — map dependencies and critical paths.
+
+## RUN JFE-007 — 2026-10-05
+
+- Phase/gate: P1 System Map & Digital Research Twin / P1.2.
+- Starting state: canonical GitHub plan and Drive mirror read; P0 complete 5/5 for design controls; P1.1 PASS; ledger PASS 6 and NOT_STARTED 54; Draft PR #112 open and sole PR for scope; branch HEAD `ce0eb1f052c56f1b72033f405015ca05188107dc`; repair queue empty; no writer-lock file found.
+- Work completed: froze seven dependency types; 42 predecessor/successor controls; four critical paths for inference, data/outcome integrity, model/construct integrity, and release; fail-forward/quarantine rules; eight bottleneck controls; and a machine-readable dependency-edge schema.
+- Status: PASS (dependency and critical-path design only).
+- Evidence: `P1_DEPENDENCY_AND_CRITICAL_PATH_MAP.md` v1.0.
+- Falsification/readback: all phases P0–P11 are represented; portfolio priority is not treated as a scientific dependency; HARD controls cover partition integrity, provenance, actual model execution, raw-panel/pair/AID freezes, sealed OOS, clean reproduction, human release, and protected-main restrictions; no data/model availability, replication, empirical, causal, novelty, or publication-readiness claim is made.
+- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.2 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
+- Dual-save status: PENDING final GitHub and Drive readback.
+- Fail count: 0.
+- Blocker classification: none.
+- Repair queue: empty; no change.
+- Ending gate counts: PASS 7; NOT_STARTED 53; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 at 2/5 PASS for design only.
+- Next gate: P1.3 — map feedback loops and leakage/overfitting risks.
