@@ -28,7 +28,7 @@
 - Resolution evidence: the SHA-guarded atomic repair committed both files at `384fa398eac880070b1ee853548074fdf53ad3be`; review-package blob `cf5aae2f5e5f965030634bd1405d5ec21af9d81b`.
 - Future action if the repair fails: do not repeat branch-name lookup; use `fetch_file` on the PR branch plus a SHA-guarded contents update.
 
-## NAAIL-B5-QUEUE-UPDATE-001 — REPAIR IN PROGRESS
+## NAAIL-B5-QUEUE-UPDATE-001 — REPAIRED
 
 - UTC: 2026-10-05T02:47:00Z
 - Item: publish repaired status for the B5 review-package failure record
@@ -39,4 +39,5 @@
 - Attempted repair: none before recording; the SHA guard confirmed remote blob `e0895972d2c5409f08b684c3f5439bb9303270d5`, and no mutation occurred.
 - Materially different repair: serialize the UTF-8 file as a JSON string with the local Python standard library, parse that string in the orchestration environment, then use the same live blob SHA exactly once.
 - Affected dependencies: repair-queue readback only; protocol, CI, and review-package evidence are unaffected.
+- Resolution evidence: the JSON-escaped UTF-8 repair updated the queue at commit `cb645e2823db479a3ba11d9c3b56604b64dc8885`, content blob `eca8419db46b779c7feb8390d2183723be05e94d`.
 - Future action if the repair fails: park the queue update as a connector limitation and leave the already committed evidence unchanged.
