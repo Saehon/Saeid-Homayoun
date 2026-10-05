@@ -41,3 +41,18 @@
 - Affected dependencies: repair-queue readback only; protocol, CI, and review-package evidence are unaffected.
 - Resolution evidence: the JSON-escaped UTF-8 repair updated the queue at commit `cb645e2823db479a3ba11d9c3b56604b64dc8885`, content blob `eca8419db46b779c7feb8390d2183723be05e94d`.
 - Future action if the repair fails: park the queue update as a connector limitation and leave the already committed evidence unchanged.
+
+## NAAIL-B5-CI-ONE-RUN-001 — FROZEN / NEEDS_CLAUDE_AND_HUMAN
+
+- UTC: 2026-10-05T02:47:04Z
+- Classification: GOVERNANCE_INCIDENT — one-authoritative-run invariant
+- Item: B5 human ground-truth protocol guard on PR #123
+- Persistent failure count: 1 of 2; frozen immediately because further automated execution would repeat a prohibited action.
+- Failure record 1: PR-open run `37256377004`, job `111594244234`, commit `ee893f02430576a7cc3e7ce3c125449b407c8f02`, completed `success`. This first run is retained as historical evidence only and is not used to complete B5 while the incident is unresolved.
+- Consequential duplicate executions: queue/review-only commits unexpectedly triggered runs `37256510992`, `37256561524`, and `37256584134`; each completed `success`. They are non-authoritative and no result was selected among them.
+- Exact triggering design: `.github/workflows/naail_v1_b5_human_ground_truth_protocol.yml` used `pull_request` plus path filters. GitHub reevaluated the pull request's cumulative changed-file set on each synchronize event, so commits outside the listed paths still caused the guard to run because the PR continued to contain matched protocol files.
+- Likely root cause: incorrect assumption that pull-request path filters are evaluated only against the latest commit rather than the cumulative PR diff.
+- Attempted containment: PR #123 was immediately retitled `FROZEN`, closed without merge, and excluded from the V1-preparation completed count. No COVID workflow, benchmark, labels, or scoring was run.
+- Affected dependencies: B5 cannot proceed to Claude approval/freeze; B6 and Phase C human-ground-truth execution may reference no B5 result. POC criteria are unaffected.
+- Exact future repair action: while PR #123 remains closed, change the workflow to a one-run-safe trigger that cannot execute on documentation/queue commits; then obtain Claude and human disposition on whether the first run may remain the sole designated CI evidence. Reopen the same PR only after explicit unpark. If a fresh protocol version is required, freeze new hashes first and arrange exactly one authorized CI execution; never rerun any existing B5 test to select a result.
+- Quarantine: all B5 outputs remain `DRAFT`, the PR remains closed/unmerged, and V1 prep remains 1 of 7 operator-complete.
