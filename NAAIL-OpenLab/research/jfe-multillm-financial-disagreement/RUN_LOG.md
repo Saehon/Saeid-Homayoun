@@ -218,8 +218,8 @@
 - Evidence: `P2_LITERATURE_EVIDENCE_CONSTRUCT_GRAPH.md` v1.0.
 - Falsification/readback: 8/8 unique literature nodes and 8/8 primary resource links; resource classes reconcile to 2 PUBLIC_PACKAGE, 3 PUBLIC_PARTIAL, 2 AUTHOR_RESOURCES and 1 INTEGRITY_HOLD; 11 project constructs, 10 mechanism/boundary nodes, 8 planned tests and 85 controlled edges; no result/discovery node, package/model execution, empirical support, causal claim or novelty claim created.
 - Integrity status: `ANM-RFS-002-EOC` remains visible; `STOP_RELIANCE` blocks LIT-RFS-002 from clean-benchmark or pass-dependent use pending journal resolution or separately authorized independent audit.
-- GitHub: evidence, ledger and run log saved sequentially on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
-- Drive: evidence uploaded to the project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
+- GitHub: evidence commit `39fa464140128201670fd280821fd72618f4e695`; ledger commit `eace1018860b2a4101b16782bad8aba0201f94e3`; initial run-log commit `f8a570195b4ef1e1dcdf750d31355c408f18ec82`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: evidence `1NK8t1r8lGjXsCGqyfJ_VfwNlNAJmiPr7`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all replaced/uploaded as applicable and read back.
 - Dual-save status: PASS after final GitHub and Drive content readback.
 - Engineering attempt history: structural-validation script attempt 1/2 used an incorrect local row predicate and returned zero gate rows; the ledger itself was unchanged. Attempt 2 corrected the predicate and verified 60 unique gate rows, PASS 13, NOT_STARTED 47 and total 60. No external mutation or scientific impact occurred.
 - Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
