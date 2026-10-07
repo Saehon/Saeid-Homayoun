@@ -164,9 +164,9 @@
 - Evidence: `P1_SYSTEM_MAP_AND_DEPENDENCY_REGISTER_V1_FREEZE.md` v1.0.0.
 - Falsification/readback: source artifacts distinguish candidates/design from verified/executed evidence; no validation/sealed feedback path, fabricated model result, false independent-agent claim, engineering-as-science substitution or unauthorized release is permitted; no data/model/empirical readiness is claimed.
 - Engineering attempt history: raw-Drive fetch wrapper attempt 1/2 completed provider reads but failed locally while formatting output because of an undefined print variable; repaired on the next attempt with no external mutation and no scientific impact.
-- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
-- Drive: P1.5 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
-- Dual-save status: PENDING final GitHub and Drive readback.
+- GitHub: evidence commit `f532f04e9123b41822b59917288dcb46b10a1ac5`; ledger commit `1721b3d781276146083fb28ebe463e5dd1e8dac4`; initial run-log commit `c2c59838234184e2544a37f7faebda3a54d32216`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.5 evidence `1gWI-fhS21aNdTVtVZpUvfwAXO-4WPPPy`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all scheduled for final content readback after this provenance update.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
 - Blocker classification: none; repair queue remains empty.
 - Ending gate counts: PASS 10; NOT_STARTED 50; all other statuses 0.
