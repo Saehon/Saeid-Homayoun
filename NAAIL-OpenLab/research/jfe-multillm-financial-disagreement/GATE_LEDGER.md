@@ -8,13 +8,13 @@ Last updated: 2026-10-07
 
 | Status | Count |
 |---|---:|
-| PASS | 12 |
+| PASS | 13 |
 | PARTIAL | 0 |
 | ACTIVE | 0 |
 | BLOCKED | 0 |
 | REPAIR_QUEUE | 0 |
 | CLOSED | 0 |
-| NOT_STARTED | 48 |
+| NOT_STARTED | 47 |
 | **TOTAL** | **60** |
 
 Engineering activity, commits, elapsed time, documentation volume, and visiting a phase do not count as scientific completion.
@@ -35,7 +35,7 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | P1.5 | PASS | `P1_SYSTEM_MAP_AND_DEPENDENCY_REGISTER_V1_FREEZE.md` v1.0.0; P1.1–P1.4 reconciliation/freeze only; implementation and scientific validation remain downstream |
 | P2.1 | PASS | `P2_VERIFIED_AI_FINANCE_LITERATURE_REGISTER.md` v1.0; eight primary publisher records across four outlets verified; bounded seed register, not exhaustive; LIT-RFS-002 reliance quarantined due 2026 Expression of Concern |
 | P2.2 | PASS | `P2_OFFICIAL_REPLICATION_AND_PUBLIC_DATA_INVENTORY.md` v1.0; eight records inventoried; 2 public packages, 3 public-partial, 2 author-resource sets, 1 integrity hold; no execution or reproduction claimed |
-| P2.3 | NOT_STARTED | — |
+| P2.3 | PASS | `P2_LITERATURE_EVIDENCE_CONSTRUCT_GRAPH.md` v1.0; controlled seed graph with 8 literature nodes, 8 resource dispositions, 11 constructs, 10 mechanism/boundary nodes, 8 planned tests and 85 edges; no empirical result or model/package execution claimed |
 | P2.4 | NOT_STARTED | — |
 | P2.5 | NOT_STARTED | — |
 | P3.1 | NOT_STARTED | — |
@@ -90,9 +90,9 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 |---|---:|---:|---:|---|
 | P0 | 5 | 0 | 0 | COMPLETE — governance/control design only |
 | P1 | 5 | 0 | 0 | COMPLETE — system-map/control design only |
-| P2 | 2 | 0 | 3 | ACTIVE — literature and replication-resource inventory only |
+| P2 | 3 | 0 | 2 | ACTIVE — verified seed literature/resource/construct graph; no empirical results |
 | P3–P11 | 0 | 0 | 45 | NOT_STARTED |
 
 ## Next scientifically admissible gate
 
-P2.3 — Build literature/evidence/construct graph.
+P2.4 — Map contradictions, unresolved mechanisms and boundary conditions.
