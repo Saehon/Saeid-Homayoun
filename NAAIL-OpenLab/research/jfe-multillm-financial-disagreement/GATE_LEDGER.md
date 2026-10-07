@@ -1,20 +1,20 @@
 # Canonical 60-Gate Ledger
 
 Plan: `MASTER_PLAN_60_GATES.md`  
-Ledger version: 2.0  
+Ledger version: 2.1  
 Last updated: 2026-10-07
 
 ## Evidence-backed counts
 
 | Status | Count |
 |---|---:|
-| PASS | 11 |
+| PASS | 12 |
 | PARTIAL | 0 |
 | ACTIVE | 0 |
 | BLOCKED | 0 |
 | REPAIR_QUEUE | 0 |
 | CLOSED | 0 |
-| NOT_STARTED | 49 |
+| NOT_STARTED | 48 |
 | **TOTAL** | **60** |
 
 Engineering activity, commits, elapsed time, documentation volume, and visiting a phase do not count as scientific completion.
@@ -34,7 +34,7 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | P1.4 | PASS | `P1_EVIDENCE_AI_CONSTRUCT_OUTCOME_SYSTEM_GRAPH.md` v1.0; graph schema/flow design only; graph not populated and queries not executed |
 | P1.5 | PASS | `P1_SYSTEM_MAP_AND_DEPENDENCY_REGISTER_V1_FREEZE.md` v1.0.0; P1.1–P1.4 reconciliation/freeze only; implementation and scientific validation remain downstream |
 | P2.1 | PASS | `P2_VERIFIED_AI_FINANCE_LITERATURE_REGISTER.md` v1.0; eight primary publisher records across four outlets verified; bounded seed register, not exhaustive; LIT-RFS-002 reliance quarantined due 2026 Expression of Concern |
-| P2.2 | NOT_STARTED | — |
+| P2.2 | PASS | `P2_OFFICIAL_REPLICATION_AND_PUBLIC_DATA_INVENTORY.md` v1.0; eight records inventoried; 2 public packages, 3 public-partial, 2 author-resource sets, 1 integrity hold; no execution or reproduction claimed |
 | P2.3 | NOT_STARTED | — |
 | P2.4 | NOT_STARTED | — |
 | P2.5 | NOT_STARTED | — |
@@ -90,9 +90,9 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 |---|---:|---:|---:|---|
 | P0 | 5 | 0 | 0 | COMPLETE — governance/control design only |
 | P1 | 5 | 0 | 0 | COMPLETE — system-map/control design only |
-| P2 | 1 | 0 | 4 | ACTIVE — verified literature seed register only |
+| P2 | 2 | 0 | 3 | ACTIVE — literature and replication-resource inventory only |
 | P3–P11 | 0 | 0 | 45 | NOT_STARTED |
 
 ## Next scientifically admissible gate
 
-P2.2 — Inventory official replication packages and public data.
+P2.3 — Build literature/evidence/construct graph.
