@@ -1,0 +1,41 @@
+{
+  "product": "DARWIN ValueOS™ — Economic Value Creation Engine",
+  "status": "public_non_enabling_architecture",
+  "north_star": "Maximum Incremental Economic Value",
+  "inputs": "PO, SO, invoice, inventory, production, project, supplier, customer, capacity and working capital",
+  "modules": [
+    "Cost Truth Engine™",
+    "Management Accounting Decision Engine™",
+    "Economic Value Ledger™",
+    "Object Economics",
+    "EVA/EVI Engine",
+    "Opportunity Cost Engine™",
+    "Systems Thinking Graph",
+    "Counterfactual Engine",
+    "CEO-100 Reference Class",
+    "Co-Scientist",
+    "AlphaEvolve-style Search",
+    "Falsification Agent",
+    "Human Gate",
+    "Outcome Learning"
+  ],
+  "actions": [
+    "APPROVE",
+    "MODIFY",
+    "REPRICE",
+    "RENEGOTIATE",
+    "RESCHEDULE",
+    "REPLACE",
+    "OUTSOURCE",
+    "REJECT"
+  ],
+  "pomelo_style_governance": {
+    "evidence_passport": true,
+    "construct_firewall": true,
+    "competing_hypotheses": true,
+    "falsification": true,
+    "counterfactuals": true,
+    "human_gate": true,
+    "outcome_learning": true
+  }
+}
