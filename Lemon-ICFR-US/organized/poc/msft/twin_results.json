@@ -1,0 +1,209 @@
+{
+  "assumptions": {
+    "_note": "ANALYST ASSUMPTIONS \u2014 illustrative, not estimated from data. Edit and justify each value.",
+    "controls": [
+      {
+        "control_id": "K-MONITOR",
+        "covers": [
+          "R-ENTITY"
+        ],
+        "evidence_reliability": 0.8
+      },
+      {
+        "capacity": 10000,
+        "control_id": "K-KEY",
+        "covers": [
+          "R-ENTITY"
+        ],
+        "depends_on": [
+          "K-MONITOR"
+        ],
+        "evidence_reliability": 0.7
+      }
+    ],
+    "population": 1000,
+    "risks": [
+      {
+        "assertion": "entity_level_icfr",
+        "inherent": 0.5,
+        "risk_id": "R-ENTITY"
+      }
+    ],
+    "scenarios": [
+      [
+        "control_failure",
+        "K-KEY"
+      ],
+      [
+        "evidence_removal",
+        "K-KEY"
+      ],
+      [
+        "override_increase",
+        0.3
+      ],
+      [
+        "population_growth",
+        40000
+      ],
+      [
+        "sod_removal",
+        "K-KEY"
+      ],
+      [
+        "reliability_change",
+        "K-KEY",
+        0.2
+      ],
+      [
+        "competing_explanation",
+        "R-ENTITY",
+        0.9
+      ],
+      [
+        "key_control_dependency_failure",
+        "K-MONITOR"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "args": [
+        "K-KEY"
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.07
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'control_failure'",
+      "result": {
+        "R-ENTITY": 0.1
+      },
+      "scenario": "control_failure"
+    },
+    {
+      "args": [
+        "K-KEY"
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.07
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'evidence_removal'",
+      "result": {
+        "R-ENTITY": 0.1
+      },
+      "scenario": "evidence_removal"
+    },
+    {
+      "args": [
+        0.3
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.0822
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'override_increase'",
+      "result": {
+        "R-ENTITY": 0.1122
+      },
+      "scenario": "override_increase"
+    },
+    {
+      "args": [
+        40000
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.3
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'population_growth'",
+      "result": {
+        "R-ENTITY": 0.33
+      },
+      "scenario": "population_growth"
+    },
+    {
+      "args": [
+        "K-KEY"
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.07
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'sod_removal'",
+      "result": {
+        "R-ENTITY": 0.1
+      },
+      "scenario": "sod_removal"
+    },
+    {
+      "args": [
+        "K-KEY",
+        0.2
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.05
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'reliability_change'",
+      "result": {
+        "R-ENTITY": 0.08
+      },
+      "scenario": "reliability_change"
+    },
+    {
+      "args": [
+        "R-ENTITY",
+        0.9
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.024
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'competing_explanation'",
+      "result": {
+        "R-ENTITY": 0.054
+      },
+      "scenario": "competing_explanation"
+    },
+    {
+      "args": [
+        "K-MONITOR"
+      ],
+      "baseline": {
+        "R-ENTITY": 0.03
+      },
+      "delta": {
+        "R-ENTITY": 0.47
+      },
+      "evidence_type": "ANALYTICAL_SIMULATION (not observed real-world evidence)",
+      "interpretation": "residual risk increases for ['R-ENTITY'] under 'key_control_dependency_failure'",
+      "result": {
+        "R-ENTITY": 0.5
+      },
+      "scenario": "key_control_dependency_failure"
+    }
+  ]
+}

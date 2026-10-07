@@ -1,0 +1,67 @@
+{
+  "_note": "ANALYST ASSUMPTIONS \u2014 illustrative, not estimated from data. Edit and justify each value.",
+  "controls": [
+    {
+      "control_id": "K-MONITOR",
+      "covers": [
+        "R-ENTITY"
+      ],
+      "evidence_reliability": 0.8
+    },
+    {
+      "capacity": 10000,
+      "control_id": "K-KEY",
+      "covers": [
+        "R-ENTITY"
+      ],
+      "depends_on": [
+        "K-MONITOR"
+      ],
+      "evidence_reliability": 0.7
+    }
+  ],
+  "population": 1000,
+  "risks": [
+    {
+      "assertion": "entity_level_icfr",
+      "inherent": 0.5,
+      "risk_id": "R-ENTITY"
+    }
+  ],
+  "scenarios": [
+    [
+      "control_failure",
+      "K-KEY"
+    ],
+    [
+      "evidence_removal",
+      "K-KEY"
+    ],
+    [
+      "override_increase",
+      0.3
+    ],
+    [
+      "population_growth",
+      40000
+    ],
+    [
+      "sod_removal",
+      "K-KEY"
+    ],
+    [
+      "reliability_change",
+      "K-KEY",
+      0.2
+    ],
+    [
+      "competing_explanation",
+      "R-ENTITY",
+      0.9
+    ],
+    [
+      "key_control_dependency_failure",
+      "K-MONITOR"
+    ]
+  ]
+}

@@ -1,8 +1,8 @@
 program_version: v3
 mode: CONTINUOUS — Claude final review at P19
-program_branch: lemon/p07-pipeline-passport-dependency
+program_branch: lemon/p08-digital-twin-scenarios
 start_point_sha: 5ede5d32534a94f7363a571f506b2caec95768e9
-current_phase: P08
+current_phase: P09
 owner_contact_email_for_sec: NOT_PROVIDED
 owner_approved_cryptography: no
 runs_in_current_phase: 0
@@ -17,7 +17,7 @@ phase_status:
   P05: NOT_RUN_DEPENDENCY
   P06: NOT_RUN_DEPENDENCY
   P07: NOT_RUN_DEPENDENCY
-  P08: NOT_STARTED
+  P08: COMPLETE
   P09: NOT_STARTED
   P10: NOT_STARTED
   P11: NOT_STARTED
