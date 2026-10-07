@@ -21,7 +21,7 @@ Draft PR #135 adds a Python stdio MCP transport around the six existing P5 funct
 | `b7/tool_schemas.json` | `ebe8e9dcd4e0773c835894c81553a11b0e3e3a00` | `81c89b2ed59125f6d260f8f99b8a7ac23c2199a642497858a019415bdb15fb63` |
 | `b7/test_b7_mcp_server.py` | `75c92d17e211512163e0bf3b8b7090e19db326ae` | `e8a007c819135acfbd58958a73419828e46a18a7a2a3ac7163cb3165ee38c1cf` |
 | `b7/README.md` | `f1f2173ae8b0dad86dddc718fa4e6a1876dc8a6e` | `a822945ab5b44d8d8dddc40150f5672702db222a4cffb6e9ed28a121bb8371e0` |
-| `derived/OPEN_REPAIR_QUEUE_B7.md` | `262425829a13007c15f105446f1f17556219611a` | `1de8b6400ae61189e5286f2c00ea0eccc1bc899340527c26fda518d8c7a0917a` |
+| `derived/OPEN_REPAIR_QUEUE_B7.md` | `96ba25fbf7af320cf87deb28e80fba8f4fab9630` | `851c6010656486c683597ac09a75f58046e442688652722a62fd916a31ff3d13` |
 | `.github/workflows/naail_b7_mcp_server.yml` | `1c08a128080f6e9ec703860c1d95d5dd26b58cef` | `03fe6a832e03590a8a00921b67422edb58270daf546b9123b4d9945487537fd1` |
 
 ## Transport behavior
@@ -53,6 +53,7 @@ The workflow triggers only on the PR `opened` event for B7 paths. This review-pa
 
 1. Local validation initially lacked the existing P5 source in the scratch workspace. The failure was recorded before restoring the connector-readable live-main dependency; the materially different second attempt passed all tests.
 2. The first GitHub upload orchestration lacked `atob` and failed before any file write. The raw-text sequential upload repaired it without recreating successful content.
+3. The first RUN 034 Drive date chip used local midnight and rendered the prior UTC date. A range-local replacement used noon UTC; connector readback shows `Oct 7, 2026`. This affected only Drive presentation, not B7 code, CI, or scientific state.
 
 ## Independent review questions
 
