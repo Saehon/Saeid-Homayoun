@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<style>
+  .title{font:700 42px Arial,sans-serif;fill:#12345b}.sub{font:22px Arial,sans-serif;fill:#2878c8}
+  .h{font:700 24px Arial,sans-serif;fill:#12345b}.t{font:18px Arial,sans-serif;fill:#263238}.s{font:15px Arial,sans-serif;fill:#455a64}
+  .box{rx:16;ry:16;stroke:#b8c6d8;stroke-width:2}.arrow{stroke:#193b66;stroke-width:4;fill:none;marker-end:url(#m)}
+</style>
+<marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#193b66"/></marker>
+</defs>
+<rect width="1600" height="900" fill="white"/>
+<text x="800" y="58" text-anchor="middle" class="title">NAAIL MCP + A2A Agent Assurance Platform</text>
+<text x="800" y="92" text-anchor="middle" class="sub">Vendor-neutral finance, accounting and audit AI architecture</text>
+
+<rect x="70" y="135" width="1460" height="105" class="box" fill="#f7eee9"/>
+<text x="105" y="172" class="h">AI clients</text>
+<text x="300" y="178" class="t">Claude</text><text x="510" y="178" class="t">GPT</text><text x="680" y="178" class="t">Gemini</text><text x="880" y="178" class="t">Mistral</text><text x="1090" y="178" class="t">Other LLMs</text>
+<text x="300" y="210" class="s">Replaceable reasoning engines</text>
+
+<path d="M800 240 L800 280" class="arrow"/>
+<rect x="70" y="285" width="1460" height="100" class="box" fill="#eef6ff"/>
+<text x="105" y="322" class="h">Open protocol layer</text>
+<text x="340" y="330" class="t">MCP — tools &amp; data</text><text x="650" y="330" class="t">A2A — agent collaboration</text><text x="1030" y="330" class="t">AP2 / UCP / A2UI</text>
+<text x="340" y="360" class="s">Standardized interfaces, handoffs, authority and interactive review</text>
+
+<path d="M800 385 L800 425" class="arrow"/>
+<rect x="70" y="430" width="1460" height="125" class="box" fill="#edf8f2"/>
+<text x="105" y="470" class="h">Specialist MCPs</text>
+<text x="310" y="474" class="t">SEC/XBRL</text><text x="475" y="474" class="t">ICFR (LEMON)</text><text x="690" y="474" class="t">IFRS (Mango)</text><text x="900" y="474" class="t">CAM / KAM</text><text x="1090" y="474" class="t">Audit / ESG / PCAOB</text>
+<text x="310" y="512" class="s">Evidence retrieval • control tests • accounting judgments • disclosure analytics • transaction assurance</text>
+
+<path d="M800 555 L800 590" class="arrow"/>
+<rect x="70" y="595" width="430" height="155" class="box" fill="#e9f4ff"/>
+<text x="100" y="635" class="h">Evidence Passport</text>
+<text x="100" y="670" class="t">Sources • provenance • versions</text>
+<text x="100" y="702" class="t">Calculations • tool traces • reproducibility</text>
+<text x="100" y="734" class="t">Unresolved conflicts • final status</text>
+
+<rect x="585" y="595" width="430" height="155" class="box" fill="#eaf8ee"/>
+<text x="615" y="635" class="h">Independent Assurance</text>
+<text x="615" y="670" class="t">Reviewer • falsifier • replication</text>
+<text x="615" y="702" class="t">Model disagreement • fresh benchmarks</text>
+<text x="615" y="734" class="t">Risk and anomaly detection</text>
+
+<rect x="1100" y="595" width="430" height="155" class="box" fill="#fff0f4"/>
+<text x="1130" y="635" class="h">Control Plane</text>
+<text x="1130" y="670" class="t">Permissions • segregation of duties</text>
+<text x="1130" y="702" class="t">Transaction limits • audit trails</text>
+<text x="1130" y="734" class="t">Policy, model and compliance governance</text>
+
+<path d="M500 672 L585 672" class="arrow"/><path d="M1015 672 L1100 672" class="arrow"/>
+<path d="M800 750 L800 790" class="arrow"/>
+<rect x="370" y="795" width="860" height="70" class="box" fill="#fff7d9"/>
+<text x="800" y="828" text-anchor="middle" class="h">Human Approval → Audit-ready outputs, dashboards, evidence packages and APIs</text>
+<text x="800" y="854" text-anchor="middle" class="s">Independent evidence, not model agreement, is the basis for assurance.</text>
+</svg>
