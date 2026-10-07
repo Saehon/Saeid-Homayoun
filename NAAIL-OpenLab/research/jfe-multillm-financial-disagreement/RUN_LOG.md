@@ -183,7 +183,7 @@
 - Falsification/readback: four required outlets represented; eight DOI identities verified; online/issue-year ambiguity preserved; replication availability not inferred; no external model run or empirical result fabricated; no exhaustiveness or novelty claim made.
 - Adverse evidence: the 2023 RFS article “Man versus Machine Learning” has a 2026 Oxford Academic Expression of Concern. The record remains in the literature register, but downstream reliance is quarantined pending P2.2/P4 inspection. This is not converted into PASS evidence for any dependent claim.
 - GitHub: evidence, ledger and run log saved sequentially on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
-- Drive: evidence uploaded to project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
+- Drive: evidence `1oPdDOXPYaJG-t2nXZ6IvUlR-7zecQlHw` uploaded to the project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
 - Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none. The integrity notice is an evidence limitation/quarantine, not an access or execution failure; repair queue remains empty.
