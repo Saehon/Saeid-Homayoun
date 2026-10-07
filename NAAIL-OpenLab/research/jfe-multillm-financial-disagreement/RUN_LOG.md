@@ -183,10 +183,28 @@
 - Falsification/readback: four required outlets represented; eight DOI identities verified; online/issue-year ambiguity preserved; replication availability not inferred; no external model run or empirical result fabricated; no exhaustiveness or novelty claim made.
 - Adverse evidence: the 2023 RFS article “Man versus Machine Learning” has a 2026 Oxford Academic Expression of Concern. The record remains in the literature register, but downstream reliance is quarantined pending P2.2/P4 inspection. This is not converted into PASS evidence for any dependent claim.
 - GitHub: evidence, ledger and run log saved sequentially on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
-- Drive: evidence `1qxyJutYs23zKB51YsQRMgI8llZvFuo93` uploaded to the project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
+- Drive: evidence uploaded to project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
 - Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none. The integrity notice is an evidence limitation/quarantine, not an access or execution failure; repair queue remains empty.
 - Ending gate counts: PASS 11; NOT_STARTED 49; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 complete 5/5; P2 at 1/5 PASS.
 - Next gate: P2.2 — inventory official replication packages and public data, including the Expression of Concern and resolution status for LIT-RFS-002.
+
+## RUN JFE-012 — 2026-10-07
+
+- Phase/gate: P2 Evidence & Literature Discovery / P2.2.
+- Starting state: canonical GitHub plan and Drive mirror read; ledger PASS 11 and NOT_STARTED 49; P2.1 PASS; Draft PR #112 open and sole PR for scope; branch HEAD `1c030b61c158721eb05f112d8d17d9717a461af1`; repair queue empty; no writer-lock file found.
+- Work completed: inventoried official/publisher/author-controlled replication resources for all eight P2.1 records; classified public packages, partial public code/sample resources, author-controlled resources, license status, restricted inputs, mutable dependencies and exact downstream controls.
+- Status: PASS for resource/access inventory only; no package execution or published-result reproduction.
+- Evidence: `P2_OFFICIAL_REPLICATION_AND_PUBLIC_DATA_INVENTORY.md` v1.0.
+- Falsification/readback: distinguished public packages from public code/synthetic/short-sample resources; recorded licenses only where observed; identified proprietary mortgage, market, analyst/fundamental, text-corpus and API/model dependencies; third-party reproductions were not accepted as official.
+- Integrity status: Oxford's Expression of Concern for LIT-RFS-002 remains unresolved and states that reliability concerns are under investigation. Reliance remains quarantined; this did not block the bounded inventory gate.
+- GitHub: evidence, ledger and run log saved sequentially on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
+- Drive: evidence uploaded to project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
+- Dual-save status: PASS after final GitHub and Drive content readback.
+- Fail count: 0.
+- Blocker classification: none; the journal integrity hold is an evidence/dependency quarantine, not a failed task. Repair queue remains empty.
+- Ending gate counts: PASS 12; NOT_STARTED 48; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 complete 5/5; P2 at 2/5 PASS.
+- Next gate: P2.3 — build the literature/evidence/construct graph, preserving access, licensing and integrity-hold edges.
