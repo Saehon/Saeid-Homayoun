@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "freeze_id": "NAAIL-V1-B6-PILOT-COMPARISON-V1-FREEZE",
+  "frozen_at_utc": "2026-10-07T04:02:00Z",
+  "freeze_scope": "pilot comparison protocol and metric specification before any evaluation inputs, labels, predictions, or results",
+  "prior_exposure_declared": true,
+  "evaluation_data_or_results_existed_at_freeze": false,
+  "frozen_files": [
+    {
+      "path": "pilot_comparison_protocol_v1.json",
+      "sha256": "128e1d3f385435a2181b79a0432f884071322effcae49b097d6368b3955e9081"
+    },
+    {
+      "path": "pilot_comparison_metrics_v1.json",
+      "sha256": "150eb820a0461d8d74faf1c5af162dac90018c0321aa188af4d602556b3948bb"
+    }
+  ],
+  "mutation_rule": "Any protocol or metric change requires a prospectively frozen new version. Never edit this freeze record after evaluation inputs or results exist.",
+  "approval_state": "DRAFT_PENDING_CLAUDE_AND_HUMAN"
+}

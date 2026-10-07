@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "NAAIL-V1-B6-PILOT-COMPARISON-V1",
+  "status": "FROZEN_BEFORE_DATA",
+  "approval_state": "DRAFT_PENDING_CLAUDE_AND_HUMAN",
+  "scope": "V1 preparation protocol only; no evaluation inputs, labels, predictions, scoring, case selection, or scientific claims",
+  "prior_exposure": {
+    "operator_has_seen_detector_code": true,
+    "operator_has_seen_benchmark_v2_probes_and_results": true,
+    "operator_has_seen_benchmark_v3_probes": false,
+    "operator_has_seen_benchmark_v3_ground_truth": false,
+    "operator_has_seen_real_case_evaluation_labels": false,
+    "evaluation_data_or_results_existed_at_freeze": false,
+    "declaration": "The operator has seen the detector and the disclosed Benchmark V2 development probes, including the 8-of-9 missed-probe limitation. This protocol was frozen before any Benchmark V3 probe, V3 ground truth, selected Case 002/003 evaluation label, arm prediction, or pilot result existed."
+  },
+  "comparison_arms": [
+    {
+      "arm_id": "SYSTEM_NAAIL",
+      "description": "The frozen NAAIL detector and assurance workflow version approved for the pilot.",
+      "freeze_requirement": "Commit, configuration, schemas, dependencies, and executable entry point must be hashed before any evaluation input is unsealed.",
+      "tuning_after_unseal_prohibited": true
+    },
+    {
+      "arm_id": "HUMAN_CODERS",
+      "description": "At least two blinded evaluation coders operating under the approved B5 human-ground-truth instructions.",
+      "independence_requirement": "Evaluation coders must not author Benchmark V3 probes and must record any overlap with ground-truth coding or adjudication. Coder-level unadjudicated outputs are scored separately.",
+      "freeze_requirement": "Coder identities or stable pseudonyms, instructions, training materials, assignment rules, and blinding plan must be frozen before evaluation begins."
+    },
+    {
+      "arm_id": "BASELINE_ALWAYS_NO_ERROR",
+      "description": "Training-free deterministic baseline that predicts NO_ERROR and an empty taxonomy set for every evaluation item.",
+      "freeze_requirement": "No parameters, corpus statistics, labels, detector outputs, or post-unseal choices are permitted.",
+      "tuning_after_unseal_prohibited": true
+    }
+  ],
+  "evaluation_strata": [
+    {
+      "stratum_id": "SEALED_HOLDOUT_V3",
+      "unit": "independently authored sealed probe",
+      "requirements": [
+        "B4 specification approved",
+        "probes and ground truth independently authored without detector access",
+        "probe package and ground truth sealed and hashed before scoring",
+        "single scoring authorization recorded by Claude and the human"
+      ]
+    },
+    {
+      "stratum_id": "REAL_CASES_001_003",
+      "unit": "predefined claim-evidence assessment unit",
+      "requirements": [
+        "human POC approval recorded",
+        "Cases 002 and 003 selected by the human under B3",
+        "case inputs, unitization rule, and ground truth frozen before scoring",
+        "no licensed-data result is silently replaced by public-data evidence"
+      ]
+    }
+  ],
+  "ground_truth": {
+    "source": "approved B4 holdout ground truth and approved B5 real-case ground-truth process",
+    "positive_class": "item contains at least one material assurance error under the frozen label schema",
+    "negative_class": "item contains no material assurance error under the frozen label schema",
+    "objective_and_judgment_labels_separate": true,
+    "adjudication_labels_not_an_evaluation_arm": true,
+    "ground_truth_hidden_from_arms_until_all_outputs_are_sealed": true
+  },
+  "execution_sequence": [
+    "verify_human_poc_approval",
+    "verify_claude_approval_of_b4_b5_b6",
+    "freeze_and_hash_all_arm_versions_and_instructions",
+    "freeze_and_hash_holdout_and_real_case_inputs_ground_truth_and_unitization",
+    "record_prior_exposure_and_role_separation",
+    "generate_each_arm_output_without_ground_truth_access",
+    "seal_and_hash_all_arm_outputs",
+    "invoke_the_scoring_entry_point_exactly_once",
+    "preserve_raw_counts_metrics_logs_environment_and_exit_status",
+    "submit_unchanged_results_for_claude_and_human_review"
+  ],
+  "one_authoritative_run": {
+    "maximum_scoring_invocations": 1,
+    "selection_across_runs_prohibited": true,
+    "rerun_after_success_prohibited": true,
+    "rerun_after_failure_prohibited": true,
+    "failure_rule": "The single invocation and all partial outputs remain authoritative evidence of failure. Repair requires a prospectively frozen new protocol version and explicit Claude and human authorization; the failed run is never replaced or hidden."
+  },
+  "pre_run_manifest_required_fields": [
+    "protocol_sha256",
+    "metric_spec_sha256",
+    "label_schema_sha256",
+    "holdout_input_sha256",
+    "holdout_ground_truth_sha256",
+    "real_case_input_manifest_sha256",
+    "real_case_ground_truth_sha256",
+    "system_commit_and_config_sha256",
+    "human_instruction_and_assignment_sha256",
+    "baseline_definition_sha256",
+    "scoring_code_sha256",
+    "environment_lock_sha256",
+    "prior_exposure_declarations",
+    "approval_records"
+  ],
+  "reporting_boundaries": [
+    "Report every prespecified arm and stratum, including null, weak, negative, incomplete, and failed results.",
+    "Report raw TP, FP, FN, and TN alongside precision, recall, and F1.",
+    "Do not pool holdout and real-case strata into a single headline result.",
+    "Do not call a protocol, green CI, synthetic fixture, or elapsed time scientific validation.",
+    "Do not describe an arm as superior without the frozen paired comparison and uncertainty outputs.",
+    "Preserve Benchmark V2 as development evidence and disclose that 8 of 9 realistic evasion probes were missed."
+  ],
+  "execution_gate": "Execution is prohibited until human POC approval, Claude approval of B4/B5/B6, approved and frozen B5 ground truth, independently authored sealed B4 holdout inputs, selected and frozen real cases, and a complete pre-run manifest exist.",
+  "poc_complete": false,
+  "v1_complete": false
+}
