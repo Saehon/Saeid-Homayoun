@@ -25,3 +25,16 @@
 - Next materially different repair: read each UTF-8 file directly through a bounded shell output and pass the returned text to sequential GitHub `create_file` calls without base64 decoding.
 - Resolution evidence: the materially different raw-text path created all six B7 files sequentially; branch head after the workflow file was `d2326cb3f02c8409445aad345ee08aa25585f196`.
 - Future action if a readback fails: fetch only the affected branch file and compare its Git blob/content; do not recreate successful files or open an overlapping PR.
+
+## NAAIL-B7-DRIVE-DATE-CHIP-001 — REPAIRED
+
+- UTC: 2026-10-07T09:13:00Z
+- Item: RUN 034 semantic date in the Drive master log.
+- Persistent failure count: 1 of 2.
+- Exact failed write: `insertDate` at index `42970` with timestamp `2026-10-07T00:00:00+02:00`, locale `en`, date format `DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED`, and time disabled.
+- Exact readback defect: the provider normalized the timestamp to `2026-10-06T22:00:00Z` and rendered `Oct 6, 2026`.
+- Likely root cause: a midnight local timestamp crossed the UTC date boundary before the date-only display was resolved.
+- Materially different repair: delete only the date-element range `42970:42971` at the live revision, then insert a noon UTC timestamp `2026-10-07T12:00:00Z` at the same index.
+- Resolution evidence: connector readback at revision `ANLCKQlzYXaTI0tvGOX8Rosp_i5x80mw8IdUAhEjfpUJw1t_Bh1ZUiICACZWU6A8fbV6WPcYQEtRra5fOVaFhkdg5Rduq_uGMy3KrvlOug0` reports `dateCount = 10`, last date range `42970:42971`, and display text `Oct 7, 2026`.
+- Affected dependencies: Drive presentation of the RUN 034 date only; GitHub artifacts, CI, scientific states, and run text were unaffected.
+- Future action if a date-only chip is needed: use a noon UTC timestamp and verify the connector-visible display text before claiming readback success.
