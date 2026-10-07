@@ -208,3 +208,22 @@
 - Ending gate counts: PASS 12; NOT_STARTED 48; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 complete 5/5; P2 at 2/5 PASS.
 - Next gate: P2.3 — build the literature/evidence/construct graph, preserving access, licensing and integrity-hold edges.
+
+## RUN JFE-013 — 2026-10-07
+
+- Phase/gate: P2 Evidence & Literature Discovery / P2.3.
+- Starting state: canonical GitHub plan and Drive mirror read; ledger PASS 12 and NOT_STARTED 48; P2.1–P2.2 PASS; Draft PR #112 open and sole PR for scope; branch HEAD `9f9a99526070e050c190dceb8756098cd45d16d9`; repair queue empty; no writer-lock file found.
+- Work completed: instantiated the P1.4 Science Discovery schema with all eight P2.1 literature records and all eight P2.2 resource dispositions; separated literature, resource, data/dependency, method, mechanism/boundary, project-construct, planned-test and governance/anomaly layers; encoded licensing, restricted-input, version, chronology and integrity propagation.
+- Status: PASS for controlled seed graph construction and structural reconciliation only.
+- Evidence: `P2_LITERATURE_EVIDENCE_CONSTRUCT_GRAPH.md` v1.0.
+- Falsification/readback: 8/8 unique literature nodes and 8/8 primary resource links; resource classes reconcile to 2 PUBLIC_PACKAGE, 3 PUBLIC_PARTIAL, 2 AUTHOR_RESOURCES and 1 INTEGRITY_HOLD; 11 project constructs, 10 mechanism/boundary nodes, 8 planned tests and 85 controlled edges; no result/discovery node, package/model execution, empirical support, causal claim or novelty claim created.
+- Integrity status: `ANM-RFS-002-EOC` remains visible; `STOP_RELIANCE` blocks LIT-RFS-002 from clean-benchmark or pass-dependent use pending journal resolution or separately authorized independent audit.
+- GitHub: evidence, ledger and run log saved sequentially on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
+- Drive: evidence uploaded to the project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
+- Dual-save status: PASS after final GitHub and Drive content readback.
+- Engineering attempt history: structural-validation script attempt 1/2 used an incorrect local row predicate and returned zero gate rows; the ledger itself was unchanged. Attempt 2 corrected the predicate and verified 60 unique gate rows, PASS 13, NOT_STARTED 47 and total 60. No external mutation or scientific impact occurred.
+- Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
+- Blocker classification: none; active integrity quarantine is an evidence limitation, not a failed gate. Repair queue remains empty.
+- Ending gate counts: PASS 13; NOT_STARTED 47; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 complete 5/5; P2 at 3/5 PASS.
+- Next gate: P2.4 — map contradictions, unresolved mechanisms and boundary conditions.
