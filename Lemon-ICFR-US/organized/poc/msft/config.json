@@ -1,0 +1,17 @@
+{
+  "authority_refs": [
+    "SEC Rule 13a-15(c)",
+    "SOX Section 404(a)/(b)",
+    "PCAOB AS 2201"
+  ],
+  "case_id": "MSFT-ICFR-POC-1",
+  "created_at": "SET-FIXED-ISO-UTC-TIMESTAMP",
+  "question": "Did management conclude that ICFR was effective at period end?",
+  "repro": {
+    "code_version": "",
+    "config_hash": "",
+    "data_version": "",
+    "environment": "",
+    "repo_commit": ""
+  }
+}
