@@ -154,3 +154,21 @@
 - Ending gate counts: PASS 9; NOT_STARTED 51; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 at 4/5 PASS for design only.
 - Next gate: P1.5 — freeze v1 system map and dependency register.
+
+## RUN JFE-010 — 2026-10-07
+
+- Phase/gate: P1 System Map & Digital Research Twin / P1.5.
+- Starting state: canonical GitHub plan and Drive mirror read; P0 complete 5/5 and P1.1–P1.4 PASS for design controls; ledger PASS 9 and NOT_STARTED 51; Draft PR #112 open and sole PR for scope; branch HEAD `9185011210ecc02c2bb9436d1f7aee5370428be8`; repair queue empty; no writer-lock file found.
+- Work completed: reconciled P1.1–P1.4; froze a four-artifact manifest with Git blob identities, Drive IDs and raw Drive SHA-256 readback hashes; completed 12 internal-consistency checks; froze boundaries, ten system rules, change-impact propagation and a machine-readable v1 manifest.
+- Status: PASS (P1 system-map/control-design freeze only).
+- Evidence: `P1_SYSTEM_MAP_AND_DEPENDENCY_REGISTER_V1_FREEZE.md` v1.0.0.
+- Falsification/readback: source artifacts distinguish candidates/design from verified/executed evidence; no validation/sealed feedback path, fabricated model result, false independent-agent claim, engineering-as-science substitution or unauthorized release is permitted; no data/model/empirical readiness is claimed.
+- Engineering attempt history: raw-Drive fetch wrapper attempt 1/2 completed provider reads but failed locally while formatting output because of an undefined print variable; repaired on the next attempt with no external mutation and no scientific impact.
+- GitHub: evidence commit `[pending]`; ledger commit `[pending]`; initial run-log commit `[pending]`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: P1.5 evidence `[pending]`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; final content readback required after provenance update.
+- Dual-save status: PENDING final GitHub and Drive readback.
+- Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
+- Blocker classification: none; repair queue remains empty.
+- Ending gate counts: PASS 10; NOT_STARTED 50; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 complete 5/5, both for design/control evidence only.
+- Next gate: P2.1 — verify JFE/JF/RFS/Management Science AI-finance literature.
