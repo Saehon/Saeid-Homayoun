@@ -1,20 +1,20 @@
 # Canonical 60-Gate Ledger
 
 Plan: `MASTER_PLAN_60_GATES.md`  
-Ledger version: 1.8  
-Last updated: 2026-10-05
+Ledger version: 1.9  
+Last updated: 2026-10-07
 
 ## Evidence-backed counts
 
 | Status | Count |
 |---|---:|
-| PASS | 9 |
+| PASS | 10 |
 | PARTIAL | 0 |
 | ACTIVE | 0 |
 | BLOCKED | 0 |
 | REPAIR_QUEUE | 0 |
 | CLOSED | 0 |
-| NOT_STARTED | 51 |
+| NOT_STARTED | 50 |
 | **TOTAL** | **60** |
 
 Engineering activity, commits, elapsed time, documentation volume, and visiting a phase do not count as scientific completion.
@@ -32,7 +32,7 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | P1.2 | PASS | `P1_DEPENDENCY_AND_CRITICAL_PATH_MAP.md` v1.0; dependency/quarantine/critical-path design only; implementation and external availability not verified |
 | P1.3 | PASS | `P1_FEEDBACK_LEAKAGE_OVERFITTING_RISK_MAP.md` v1.0; feedback/leakage/overfitting control design only; checks not yet implemented or executed |
 | P1.4 | PASS | `P1_EVIDENCE_AI_CONSTRUCT_OUTCOME_SYSTEM_GRAPH.md` v1.0; graph schema/flow design only; graph not populated and queries not executed |
-| P1.5 | NOT_STARTED | — |
+| P1.5 | PASS | `P1_SYSTEM_MAP_AND_DEPENDENCY_REGISTER_V1_FREEZE.md` v1.0.0; P1.1–P1.4 reconciliation/freeze only; implementation and scientific validation remain downstream |
 | P2.1 | NOT_STARTED | — |
 | P2.2 | NOT_STARTED | — |
 | P2.3 | NOT_STARTED | — |
@@ -89,9 +89,9 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | Phase | PASS | Other disposition | NOT_STARTED | State |
 |---|---:|---:|---:|---|
 | P0 | 5 | 0 | 0 | COMPLETE — governance/control design only |
-| P1 | 4 | 0 | 1 | ACTIVE — system-map design only |
+| P1 | 5 | 0 | 0 | COMPLETE — system-map/control design only |
 | P2–P11 | 0 | 0 | 50 | NOT_STARTED |
 
 ## Next scientifically admissible gate
 
-P1.5 — Freeze v1 system map and dependency register.
+P2.1 — Verify JFE/JF/RFS/Management Science AI-finance literature.
