@@ -1,8 +1,8 @@
 program_version: v3
 mode: CONTINUOUS — Claude final review at P19
-program_branch: lemon/p11-benchmark-integrity
+program_branch: lemon/p12-ack2007-provenance
 start_point_sha: 5ede5d32534a94f7363a571f506b2caec95768e9
-current_phase: P12
+current_phase: P13
 owner_contact_email_for_sec: NOT_PROVIDED
 owner_approved_cryptography: no
 runs_in_current_phase: 0
@@ -21,7 +21,7 @@ phase_status:
   P09: NOT_RUN_DEPENDENCY
   P10: NOT_RUN_DEPENDENCY
   P11: COMPLETE
-  P12: NOT_STARTED
+  P12: COMPLETE
   P13: NOT_STARTED
   P14: NOT_STARTED
   P15: NOT_STARTED
