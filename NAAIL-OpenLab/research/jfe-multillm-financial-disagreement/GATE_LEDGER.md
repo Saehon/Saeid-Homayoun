@@ -8,13 +8,13 @@ Last updated: 2026-10-07
 
 | Status | Count |
 |---|---:|
-| PASS | 13 |
+| PASS | 14 |
 | PARTIAL | 0 |
 | ACTIVE | 0 |
 | BLOCKED | 0 |
 | REPAIR_QUEUE | 0 |
 | CLOSED | 0 |
-| NOT_STARTED | 47 |
+| NOT_STARTED | 46 |
 | **TOTAL** | **60** |
 
 Engineering activity, commits, elapsed time, documentation volume, and visiting a phase do not count as scientific completion.
@@ -36,7 +36,7 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | P2.1 | PASS | `P2_VERIFIED_AI_FINANCE_LITERATURE_REGISTER.md` v1.0; eight primary publisher records across four outlets verified; bounded seed register, not exhaustive; LIT-RFS-002 reliance quarantined due 2026 Expression of Concern |
 | P2.2 | PASS | `P2_OFFICIAL_REPLICATION_AND_PUBLIC_DATA_INVENTORY.md` v1.0; eight records inventoried; 2 public packages, 3 public-partial, 2 author-resource sets, 1 integrity hold; no execution or reproduction claimed |
 | P2.3 | PASS | `P2_LITERATURE_EVIDENCE_CONSTRUCT_GRAPH.md` v1.0; controlled seed graph with 8 literature nodes, 8 resource dispositions, 11 constructs, 10 mechanism/boundary nodes, 8 planned tests and 85 edges; no empirical result or model/package execution claimed |
-| P2.4 | NOT_STARTED | — |
+| P2.4 | PASS | `P2_CONTRADICTIONS_MECHANISMS_BOUNDARY_CONDITIONS.md` v1.0; 12 contradictions, 12 unresolved mechanisms, 12 boundary families and 10 non-equivalence rules mapped with falsification requirements; no empirical adjudication claimed |
 | P2.5 | NOT_STARTED | — |
 | P3.1 | NOT_STARTED | — |
 | P3.2 | NOT_STARTED | — |
@@ -90,9 +90,9 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 |---|---:|---:|---:|---|
 | P0 | 5 | 0 | 0 | COMPLETE — governance/control design only |
 | P1 | 5 | 0 | 0 | COMPLETE — system-map/control design only |
-| P2 | 3 | 0 | 2 | ACTIVE — verified seed literature/resource/construct graph; no empirical results |
+| P2 | 4 | 0 | 1 | ACTIVE — contradictions/mechanisms/boundaries mapped; no empirical adjudication |
 | P3–P11 | 0 | 0 | 45 | NOT_STARTED |
 
 ## Next scientifically admissible gate
 
-P2.4 — Map contradictions, unresolved mechanisms and boundary conditions.
+P2.5 — Freeze literature matrix and novelty map.
