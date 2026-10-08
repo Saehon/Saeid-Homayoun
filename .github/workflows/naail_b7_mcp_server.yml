@@ -1,0 +1,25 @@
+name: NAAIL B7 MCP server guard
+
+on:
+  pull_request:
+    types: [opened]
+    paths:
+      - "NAAIL/research-assurance-mcp/b7/**"
+      - ".github/workflows/naail_b7_mcp_server.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  b7-mcp-server:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile transport and tests
+        run: python -m py_compile NAAIL/research-assurance-mcp/b7/naail_mcp_server.py NAAIL/research-assurance-mcp/b7/test_b7_mcp_server.py
+      - name: Run B7 unit tests once
+        run: python NAAIL/research-assurance-mcp/b7/test_b7_mcp_server.py
