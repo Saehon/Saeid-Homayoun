@@ -292,9 +292,12 @@ class P11_P13_Benchmarks(unittest.TestCase):
             (d / rel).write_text("same" if rel.endswith(".json") else "m")
         r = benchmark_registry.scan(d)
         cls = {e["path"]: e["class"] for e in r["entries"]}
-        self.assertEqual(cls["organized/benchmarks/a.json"], "CANONICAL_CANDIDATE")
+        self.assertEqual(cls["organized/benchmarks/a.json"], "CANONICAL")
         self.assertEqual(cls["copies-from-original/a.json"], "ARCHIVAL_COPY")
         self.assertEqual(cls["kaggle/mock_x.csv"], "NON_EXECUTABLE_REFERENCE")
+        self.assertEqual(set(cls.values()) - benchmark_registry.ALLOWED, set())
+        self.assertEqual(r["canonical_counts"], {"a": 1})
+        benchmark_registry.validate(r)
         self.assertEqual(len(r["duplicates"]), 1)
         shutil.rmtree(d)
 

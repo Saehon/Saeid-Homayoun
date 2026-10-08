@@ -1,0 +1,399 @@
+{
+  "allowed_classes": [
+    "ARCHIVAL_COPY",
+    "CANONICAL",
+    "DEPRECATED",
+    "DERIVED_COPY",
+    "EXTERNAL_EXPORT",
+    "NON_EXECUTABLE_REFERENCE"
+  ],
+  "canonical_counts": {
+    "frankenstein-phase4-case-002": 1,
+    "naail-ai-cost-benchmark": 1
+  },
+  "duplicates": {
+    "10128f49aca105b769d255065424dfa712a060c72a7a11461f19721611e553d6": [
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_variable_dictionary.csv",
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_variable_dictionary.csv"
+    ],
+    "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e": [
+      "copies-from-original/FRANKENSTEIN/phase4_benchmark/mock_case_002_microsoft_response.json",
+      "copies-from-original/huggingface/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "copies-from-original/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "organized/benchmarks/FRANKENSTEIN/phase4_benchmark/mock_case_002_microsoft_response.json",
+      "organized/benchmarks/huggingface/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "organized/benchmarks/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json"
+    ],
+    "c460a7382503d594feef0624157e07fe1c7ee3d3f7e14babca71b8f33c0d64b9": [
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/ai_cost_benchmark.csv",
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/ai_cost_benchmark.csv",
+      "organized/benchmarks/NAAIL-OpenLab/prototypes/microsoft-poc-v1/ai_cost_benchmark.csv",
+      "organized/benchmarks/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/ai_cost_benchmark.csv"
+    ],
+    "d4eec2d821504cc8ebec940a76773f4aa37e5238c539adc56bfff1fdc0563267": [
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_text_features.csv",
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_text_features.csv"
+    ],
+    "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2": [
+      "copies-from-original/FRANKENSTEIN/phase4_benchmark/case_002_microsoft_sec_2026.json",
+      "copies-from-original/huggingface/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "copies-from-original/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "organized/benchmarks/FRANKENSTEIN/phase4_benchmark/case_002_microsoft_sec_2026.json",
+      "organized/benchmarks/huggingface/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "organized/benchmarks/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json"
+    ]
+  },
+  "entries": [
+    {
+      "benchmark_name": "frankenstein-phase4-case-002",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/FRANKENSTEIN/phase4_benchmark/case_002_microsoft_sec_2026.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-mock-response",
+      "class": "NON_EXECUTABLE_REFERENCE",
+      "path": "copies-from-original/FRANKENSTEIN/phase4_benchmark/mock_case_002_microsoft_response.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e"
+    },
+    {
+      "benchmark_name": "naail-ai-cost-benchmark",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/ai_cost_benchmark.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "c460a7382503d594feef0624157e07fe1c7ee3d3f7e14babca71b8f33c0d64b9"
+    },
+    {
+      "benchmark_name": "microsoft_data_source_registry",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_data_source_registry.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "981291e770f604677336014d6ec978b5c7ea6162d662636d2c6d8b913d9a18c5"
+    },
+    {
+      "benchmark_name": "microsoft_digital_twin",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_digital_twin.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "3b7b1989795af03ee4a1ae744344301b58f1543ef18c01bf06bdfa372f780329"
+    },
+    {
+      "benchmark_name": "microsoft_evidence_passport_schema",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_evidence_passport_schema.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6ce6da93f5e56cc1608488d4cfe8247655042ebf61bbcd5ff7cd775abeca3d2f"
+    },
+    {
+      "benchmark_name": "microsoft_fama_french_fy2026_input",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_fama_french_fy2026_input.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "3fc966308ee2ad3246c8c5fce059a4cccb141dbcbe1ac4a38ecfc802dbc34a1b"
+    },
+    {
+      "benchmark_name": "microsoft_financial_features",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_financial_features.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "d31938825746aff7d3915e9bcc1dc88db4ea3dd56c0474579b7ed1d42369aa0f"
+    },
+    {
+      "benchmark_name": "microsoft_innovation_features",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_innovation_features.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "e826ee36e71f43a95e98f24afeca02ef3b359b9660576fd8cde1f90294c9991a"
+    },
+    {
+      "benchmark_name": "microsoft_text_features",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_text_features.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "d4eec2d821504cc8ebec940a76773f4aa37e5238c539adc56bfff1fdc0563267"
+    },
+    {
+      "benchmark_name": "microsoft_variable_dictionary",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_variable_dictionary.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "10128f49aca105b769d255065424dfa712a060c72a7a11461f19721611e553d6"
+    },
+    {
+      "benchmark_name": "naail-ai-cost-benchmark",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/ai_cost_benchmark.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "c460a7382503d594feef0624157e07fe1c7ee3d3f7e14babca71b8f33c0d64b9"
+    },
+    {
+      "benchmark_name": "microsoft_data_source_registry",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_data_source_registry.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "23b20d3024623cffc33990332a21683780ade0bf2b7111eb187acfcf46d34904"
+    },
+    {
+      "benchmark_name": "microsoft_digital_twin",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_digital_twin.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "2287db39fac409ccb7f54129fade492116170f4ed490c01b6e236f02bf3d9b3d"
+    },
+    {
+      "benchmark_name": "microsoft_evidence_passport_schema",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_evidence_passport_schema.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "3d3440bf23298f162289f1461a9b299920ef5cd3936c5a6577d5d97cb380a5bb"
+    },
+    {
+      "benchmark_name": "microsoft_financial_features",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_financial_features.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "4197c92bd081f31326aa1c10fdbec1ccbdb91f5e792f3f38ff5f08a76a4af6d8"
+    },
+    {
+      "benchmark_name": "microsoft_innovation_features",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_innovation_features.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "2da7f82589c4917e5bf9696559e0e8f420e56d4e605bb449c642d39a5af40f9e"
+    },
+    {
+      "benchmark_name": "microsoft_text_features",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_text_features.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "d4eec2d821504cc8ebec940a76773f4aa37e5238c539adc56bfff1fdc0563267"
+    },
+    {
+      "benchmark_name": "microsoft_variable_dictionary",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_variable_dictionary.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "10128f49aca105b769d255065424dfa712a060c72a7a11461f19721611e553d6"
+    },
+    {
+      "benchmark_name": "pcaob_synthetic_case",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/NAAIL-OpenLab/simulations/free-stack/examples/pcaob_synthetic_case.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "86bd65d69abbea75ad139504abc174434f9e06a68558047ffddbf90a001f8f92"
+    },
+    {
+      "benchmark_name": "agent_contract",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/external-agent-ecosystems/sec-xbrl/01-public-baseline/agent_contract.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "f63272bbc66f6574ca3537a344b349be01e33bcce78ba4f7f897221290dc9488"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-case-002",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/huggingface/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-mock-response",
+      "class": "NON_EXECUTABLE_REFERENCE",
+      "path": "copies-from-original/huggingface/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-case-002",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-mock-response",
+      "class": "NON_EXECUTABLE_REFERENCE",
+      "path": "copies-from-original/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e"
+    },
+    {
+      "benchmark_name": "dataset-metadata",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/datasets/microsoft-accounting-demo/dataset-metadata.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "76e9aac8c9863adb4e6e69a2236e8ada1c08ec514dfd6aeecc9a2af4d4514794"
+    },
+    {
+      "benchmark_name": "dataset-metadata",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/datasets/sec-10-company-accounting-panel/dataset-metadata.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "a5f97f574a4a8745f378dd3cf2ddca4441b57faa0441f4939229c652fea9bbb0"
+    },
+    {
+      "benchmark_name": "dataset-metadata",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/datasets/sec-10-company-cam-icfr-governance-esg/dataset-metadata.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "72bb48183e3acd97bf52c584b648f78671baaea2ec0c20d51034b248b456d770"
+    },
+    {
+      "benchmark_name": "kernel-metadata",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/notebooks/financial-sentiment-microsoft/kernel-metadata.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "599ad2b23817acef803052566611237e50793c39dfb6f11f5c6d23cf00bf74c9"
+    },
+    {
+      "benchmark_name": "kernel-metadata",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/notebooks/pcaob-ai-inspector/kernel-metadata.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "60601f6f384f948683b7f79bab00e262be9f7e5f10f09148bcc4fc1f963a19f0"
+    },
+    {
+      "benchmark_name": "kernel-metadata",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/notebooks/sec-10-company-accounting-refresh/kernel-metadata.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "ffd4c900bf1241456406f8939a18f967c51144abdd9dbb51695fcb2135c0cf2d"
+    },
+    {
+      "benchmark_name": "kernel-metadata",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/kaggle/notebooks/sec-edgar-microsoft-10k/kernel-metadata.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "d98dea49baf1381ed0e4615ceda305f58c691bcdefb66860221702354dd9a092"
+    },
+    {
+      "benchmark_name": "microsoft_financials",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/microsoft-demo-001/microsoft_financials.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "b0fc573642135624b8f87fc4fb25cea6ce6992d617f0d36301ec2b51f7c20631"
+    },
+    {
+      "benchmark_name": "provenance",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/microsoft-demo-001/provenance.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "90aad1b416d3ad7182947ae6f86191789999da84377cd3ad4fdeab77383b1d43"
+    },
+    {
+      "benchmark_name": "companies",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase2/companies.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "f5f578fa29aac3b2ff995055ebeae982918f6330216db1ef817d2b9a85be75c3"
+    },
+    {
+      "benchmark_name": "phase2_summary",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase2/phase2_summary.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "2d93291838e7ea8acc852c0809500b52f9e9786eef7370157abd7d8d65cfd1f3"
+    },
+    {
+      "benchmark_name": "sec_10_company_panel",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase2/sec_10_company_panel.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "a75668e9867941856a894c194fda6203236898626732a0480de920a78bea4080"
+    },
+    {
+      "benchmark_name": "sec_refresh_manifest",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase2/sec_refresh_manifest.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "04ba1e153bf9d1444272bd1d6032590e65f849675f60bb2438d80daf3c59d3f3"
+    },
+    {
+      "benchmark_name": "cam_latest",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase3/cam_latest.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6014b0c54dfc17544ea9455bed1bd1e28c38e5350c6ff456b25df90885198d4b"
+    },
+    {
+      "benchmark_name": "esg_source_registry",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase3/esg_source_registry.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "4d26da2fce47a40498a5eeff7730c9958cc8d490f11830e5867929373cc63e67"
+    },
+    {
+      "benchmark_name": "governance_source_registry",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase3/governance_source_registry.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "39bdf3f9c8f0c42820bed9d5457c1e0585f2b432549b0516b169be5b4897f7bb"
+    },
+    {
+      "benchmark_name": "icfr_latest",
+      "class": "ARCHIVAL_COPY",
+      "path": "copies-from-original/open-data/sec-10-company-phase3/icfr_latest.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "8782144d25d05e0d943cf3c6bf7796d665f8a04b2618403f797f00c621bbef71"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-case-002",
+      "class": "CANONICAL",
+      "path": "organized/benchmarks/FRANKENSTEIN/phase4_benchmark/case_002_microsoft_sec_2026.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-mock-response",
+      "class": "NON_EXECUTABLE_REFERENCE",
+      "path": "organized/benchmarks/FRANKENSTEIN/phase4_benchmark/mock_case_002_microsoft_response.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e"
+    },
+    {
+      "benchmark_name": "naail-ai-cost-benchmark",
+      "class": "DERIVED_COPY",
+      "path": "organized/benchmarks/NAAIL-OpenLab/prototypes/microsoft-poc-v1/ai_cost_benchmark.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "c460a7382503d594feef0624157e07fe1c7ee3d3f7e14babca71b8f33c0d64b9"
+    },
+    {
+      "benchmark_name": "naail-ai-cost-benchmark",
+      "class": "CANONICAL",
+      "path": "organized/benchmarks/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/ai_cost_benchmark.csv",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "c460a7382503d594feef0624157e07fe1c7ee3d3f7e14babca71b8f33c0d64b9"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-case-002",
+      "class": "EXTERNAL_EXPORT",
+      "path": "organized/benchmarks/huggingface/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-mock-response",
+      "class": "NON_EXECUTABLE_REFERENCE",
+      "path": "organized/benchmarks/huggingface/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-case-002",
+      "class": "EXTERNAL_EXPORT",
+      "path": "organized/benchmarks/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2"
+    },
+    {
+      "benchmark_name": "frankenstein-phase4-mock-response",
+      "class": "NON_EXECUTABLE_REFERENCE",
+      "path": "organized/benchmarks/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "scientific_status": "DEVELOPMENT_ONLY",
+      "sha256": "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e"
+    }
+  ],
+  "note": "CANONICAL means authoritative benchmark representation, not admissible source evidence. Mocks are never evidence. Sprint 1 metrics and all registry content remain DEVELOPMENT_ONLY."
+}

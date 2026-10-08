@@ -1,0 +1,34 @@
+{
+  "duplicate_groups": {
+    "10128f49aca105b769d255065424dfa712a060c72a7a11461f19721611e553d6": [
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_variable_dictionary.csv",
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_variable_dictionary.csv"
+    ],
+    "6bc9fd2ac8dfa3a51445df39349eb3ca094cfbc1d3934e874fdadf3ef073bc5e": [
+      "copies-from-original/FRANKENSTEIN/phase4_benchmark/mock_case_002_microsoft_response.json",
+      "copies-from-original/huggingface/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "copies-from-original/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "organized/benchmarks/FRANKENSTEIN/phase4_benchmark/mock_case_002_microsoft_response.json",
+      "organized/benchmarks/huggingface/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json",
+      "organized/benchmarks/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/mock_case_002_microsoft_response.json"
+    ],
+    "c460a7382503d594feef0624157e07fe1c7ee3d3f7e14babca71b8f33c0d64b9": [
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/ai_cost_benchmark.csv",
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/ai_cost_benchmark.csv",
+      "organized/benchmarks/NAAIL-OpenLab/prototypes/microsoft-poc-v1/ai_cost_benchmark.csv",
+      "organized/benchmarks/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/ai_cost_benchmark.csv"
+    ],
+    "d4eec2d821504cc8ebec940a76773f4aa37e5238c539adc56bfff1fdc0563267": [
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1/microsoft_text_features.csv",
+      "copies-from-original/NAAIL-OpenLab/prototypes/microsoft-poc-v1-fy2026-release/microsoft_text_features.csv"
+    ],
+    "e3a30a224a9044d11a65e9fa5e192be6469608424917527171045e66ceac8fe2": [
+      "copies-from-original/FRANKENSTEIN/phase4_benchmark/case_002_microsoft_sec_2026.json",
+      "copies-from-original/huggingface/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "copies-from-original/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "organized/benchmarks/FRANKENSTEIN/phase4_benchmark/case_002_microsoft_sec_2026.json",
+      "organized/benchmarks/huggingface/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json",
+      "organized/benchmarks/kaggle/datasets/frankenstein-phase4-accounting-audit-benchmark/case_002_microsoft_sec_2026.json"
+    ]
+  }
+}
