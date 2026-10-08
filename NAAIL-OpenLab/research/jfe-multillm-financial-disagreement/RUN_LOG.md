@@ -264,3 +264,22 @@
 - Ending gate counts: PASS 15; NOT_STARTED 45; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 complete 5/5; P2 complete 5/5 for bounded seed evidence/synthesis only.
 - Next gate: P3.1 — generate competing hypotheses and mechanisms.
+
+## RUN JFE-016 — 2026-10-08
+
+- Phase/gate: P3 Co-Scientist Discovery Tournament / P3.1.
+- Starting state: canonical GitHub plan and Drive mirror read; ledger PASS 15 and NOT_STARTED 45; P0–P2 complete for their bounded design/evidence purposes; Draft PR #112 open and sole PR for scope; branch HEAD `e1b42f74e7415672d01dad0b1cc7e9beb8ce3ae7`; repair queue empty; no writer-lock file found; no CI statuses reported.
+- Work completed: generated and froze eight genuinely competing hypothesis families as eight positive–rival–null/adverse triads, yielding 24 uniquely identified candidates with observable implications, rejection conditions, negative controls, admissible partitions and dependency paths.
+- Status: PASS for candidate-hypothesis generation and design completeness only.
+- Evidence: `P3_COMPETING_HYPOTHESES_AND_MECHANISMS.md` v1.0.
+- Falsification/readback: 8/8 P2.5 handoff families represented; 24/24 candidates have rejection conditions, negative controls and dependency/partition labels; all remain `CANDIDATE_NOT_TESTED`; no candidate is supported or ranked.
+- Integrity status: LIT-RFS-002 remains under `STOP_RELIANCE` and cannot provide positive support, ranking evidence or a clean benchmark.
+- Scientific boundary: no dataset, replication package or external model was executed; no validation/sealed outcome was inspected; no novelty, causal, empirical, decision-value or publication-readiness claim is made.
+- GitHub: evidence commit `da98d31eb958ebf2a8f9e2a42d9c83ae9e09337d`; ledger commit `e5f0f4f3169ca3f0014117d41e93766a4c0d011f`; run-log commit recorded by the verified connector write sequence on branch `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
+- Drive: evidence `1UPpl71K2i8e_yqXkRKCp95Bop9LWv0Ne`; canonical ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; saved in project folder `1sKMJbQdDXJ2a_B4tpsSDB3vKlANHFusD`; all three require content readback before dual-save PASS.
+- Dual-save status: PENDING until final GitHub and Drive content readback.
+- Fail count: 0.
+- Blocker classification: none; repair queue remains empty.
+- Ending gate counts: PASS 16; NOT_STARTED 44; all other statuses 0.
+- Phase state: P0 5/5; P1 5/5; P2 5/5; P3 1/5 PASS for hypothesis design only.
+- Next gate: P3.2 — critic review of theory, identification and measurement weaknesses.
