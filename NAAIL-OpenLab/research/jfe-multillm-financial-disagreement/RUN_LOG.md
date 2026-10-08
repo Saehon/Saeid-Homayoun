@@ -227,3 +227,21 @@
 - Ending gate counts: PASS 13; NOT_STARTED 47; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 complete 5/5; P2 at 3/5 PASS.
 - Next gate: P2.4 — map contradictions, unresolved mechanisms and boundary conditions.
+
+## RUN JFE-014 — 2026-10-08
+
+- Phase/gate: P2 Evidence & Literature Discovery / P2.4.
+- Starting state: canonical GitHub plan and Drive mirror read; ledger PASS 13 and NOT_STARTED 47; P2.1–P2.3 PASS; Draft PR #112 open and sole PR for scope; branch HEAD `fd730f46d2cb5df2cf2514c94224335bc8355571`; repair queue empty; no writer-lock file found; no CI statuses reported.
+- Work completed: mapped 12 cross-study and project-design contradictions, 12 unresolved mechanisms with rival explanations and falsification designs, 12 boundary-condition families with required controls, ten non-equivalence rules and explicit requirements for an adversarial P3 hypothesis tournament.
+- Status: PASS for controlled literature/graph contradiction and boundary analysis only.
+- Evidence: `P2_CONTRADICTIONS_MECHANISMS_BOUNDARY_CONDITIONS.md` v1.0.
+- Falsification/readback: prediction is separated from construct validity and causality; current-model regeneration from historical replication; public code from full reproducibility; low disagreement from correctness; human override from ground truth; all planned adjudication tests remain NOT_EXECUTED.
+- Integrity status: CTR-12 preserves `ANM-RFS-002-EOC` and STOP_RELIANCE; no journal resolution or new independent audit was asserted.
+- GitHub: evidence, ledger and run log saved sequentially on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
+- Drive: evidence uploaded to the project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
+- Dual-save status: PASS after final GitHub and Drive content readback.
+- Fail count: 0.
+- Blocker classification: none; active integrity quarantine is a scientific limitation, not a failed task. Repair queue remains empty.
+- Ending gate counts: PASS 14; NOT_STARTED 46; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 complete 5/5; P2 at 4/5 PASS.
+- Next gate: P2.5 — freeze the literature matrix and novelty map.
