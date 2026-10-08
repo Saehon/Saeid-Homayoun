@@ -275,9 +275,9 @@
 - Falsification/readback: 8/8 P2.5 handoff families represented; 24/24 candidates have rejection conditions, negative controls and dependency/partition labels; all remain `CANDIDATE_NOT_TESTED`; no candidate is supported or ranked.
 - Integrity status: LIT-RFS-002 remains under `STOP_RELIANCE` and cannot provide positive support, ranking evidence or a clean benchmark.
 - Scientific boundary: no dataset, replication package or external model was executed; no validation/sealed outcome was inspected; no novelty, causal, empirical, decision-value or publication-readiness claim is made.
-- GitHub: evidence commit `da98d31eb958ebf2a8f9e2a42d9c83ae9e09337d`; ledger commit `e5f0f4f3169ca3f0014117d41e93766a4c0d011f`; run-log commit recorded by the verified connector write sequence on branch `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
+- GitHub: evidence commit `da98d31eb958ebf2a8f9e2a42d9c83ae9e09337d`; ledger commit `e5f0f4f3169ca3f0014117d41e93766a4c0d011f`; initial run-log commit `f8577346731e5123722dcea12da1f267d9e50b1f` on branch `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final provenance update is the branch HEAD containing this entry.
 - Drive: evidence `1UPpl71K2i8e_yqXkRKCp95Bop9LWv0Ne`; canonical ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; saved in project folder `1sKMJbQdDXJ2a_B4tpsSDB3vKlANHFusD`; all three require content readback before dual-save PASS.
-- Dual-save status: PENDING until final GitHub and Drive content readback.
+- Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none; repair queue remains empty.
 - Ending gate counts: PASS 16; NOT_STARTED 44; all other statuses 0.
