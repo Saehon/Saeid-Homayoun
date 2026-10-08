@@ -1,0 +1,14 @@
+interface:
+  display_name: FT50 ABS4 Replication
+  short_description: Position and replicate FT50/AJG4/ABS4 accounting research
+  default_prompt: Use $ft50-abs4-replication to position this accounting manuscript,
+    build its evidence matrix, and run the replication gate.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
