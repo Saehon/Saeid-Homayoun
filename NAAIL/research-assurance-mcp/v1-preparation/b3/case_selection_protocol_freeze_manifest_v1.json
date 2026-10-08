@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "freeze_id": "NAAIL-V1-B3-CASE-SELECTION-V1-FREEZE",
+  "frozen_at_utc": "2026-10-05T13:51:29Z",
+  "freeze_scope": "protocol and blank candidate-record template before any candidate search or retrieval",
+  "prior_exposure_declared": true,
+  "search_or_candidate_data_existed_at_freeze": false,
+  "frozen_files": [
+    {
+      "path": "case_selection_protocol_v1.json",
+      "sha256": "110ea61a4bd0505c24a257d20b423a2ff00f8643873d1dd453dd145d3b2bbac1"
+    },
+    {
+      "path": "case_selection_record_template_v1.json",
+      "sha256": "681ab62ad1ed6876d0f72271b539cc016c258e897b51ba53dae610cdc7d07ee5"
+    }
+  ],
+  "mutation_rule": "Any protocol or template change requires a new version and a new pre-search freeze. Never edit this freeze record.",
+  "approval_state": "DRAFT_PENDING_CLAUDE_AND_HUMAN"
+}
