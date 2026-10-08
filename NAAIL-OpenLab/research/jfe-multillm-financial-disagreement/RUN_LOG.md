@@ -256,8 +256,8 @@
 - Falsification/readback: 8/8 source records represented; resource classes reconcile 2/3/2/1; six novelty nodes remain CANDIDATE_NOT_VERIFIED; no exhaustiveness, verified global novelty, package/model execution, empirical result, causal claim or publication-readiness claim.
 - Integrity status: LIT-RFS-002 remains INTEGRITY_HOLD and cannot provide positive novelty support or clean benchmark evidence.
 - Engineering attempt history: attempt 1/2 failed locally before any external mutation because the patch wrapper interpreted Markdown backticks as JavaScript template delimiters. Attempt 2 removed the wrapper conflict and completed the controlled build; no scientific impact.
-- GitHub: evidence, ledger and run log saved sequentially on research/jfe-multillm-2026-10-04; Draft PR #112 retained; protected main unchanged. Final branch HEAD is the commit containing this entry.
-- Drive: evidence uploaded to the project folder; ledger 165RRft75u4Q315nOOerb43FXEyxScXDC and run log 1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9 replaced and read back.
+- GitHub: evidence commit `3c0918ce363e58b6e9b39a60a00704ab83684587`; ledger commit `e531a35b212b0ab712e3b727ded47476bd63735c`; initial run-log commit `8a0c80c6171facadba6bff7bbbfc1d3649f75f4f`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: evidence `1xAndbUzc0vC_Uo4IiInlFAoCJq7yR5Ek`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all uploaded/replaced as applicable and read back.
 - Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
 - Blocker classification: none; integrity quarantine remains a scientific limitation. Repair queue remains empty.
