@@ -1,0 +1,30 @@
+name: NAAIL V1 B4 Holdout Specification
+
+on:
+  pull_request:
+    paths:
+      - "NAAIL/research-assurance-mcp/v1-preparation/b4/**"
+      - ".github/workflows/naail_v1_b4_holdout_spec.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-specification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile validation test
+        run: python -m py_compile NAAIL/research-assurance-mcp/v1-preparation/b4/test_benchmark_v3_holdout_spec.py
+
+      - name: Validate frozen specification invariants
+        run: python NAAIL/research-assurance-mcp/v1-preparation/b4/test_benchmark_v3_holdout_spec.py
