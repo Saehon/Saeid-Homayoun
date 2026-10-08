@@ -1,0 +1,15 @@
+interface:
+  display_name: Saeid Research Systems
+  short_description: Evidence-first accounting research and AI systems
+  default_prompt: Use the saeid-research-systems skill to plan, execute, challenge,
+    and package this research or AI engineering task with transparent evidence statuses,
+    two-failure progression, and verified external exports when requested.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
