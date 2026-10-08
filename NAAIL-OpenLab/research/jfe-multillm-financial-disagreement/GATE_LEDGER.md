@@ -8,13 +8,13 @@ Last updated: 2026-10-07
 
 | Status | Count |
 |---|---:|
-| PASS | 15 |
+| PASS | 16 |
 | PARTIAL | 0 |
 | ACTIVE | 0 |
 | BLOCKED | 0 |
 | REPAIR_QUEUE | 0 |
 | CLOSED | 0 |
-| NOT_STARTED | 45 |
+| NOT_STARTED | 44 |
 | **TOTAL** | **60** |
 
 Engineering activity, commits, elapsed time, documentation volume, and visiting a phase do not count as scientific completion.
@@ -38,7 +38,7 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | P2.3 | PASS | `P2_LITERATURE_EVIDENCE_CONSTRUCT_GRAPH.md` v1.0; controlled seed graph with 8 literature nodes, 8 resource dispositions, 11 constructs, 10 mechanism/boundary nodes, 8 planned tests and 85 edges; no empirical result or model/package execution claimed |
 | P2.4 | PASS | `P2_CONTRADICTIONS_MECHANISMS_BOUNDARY_CONDITIONS.md` v1.0; 12 contradictions, 12 unresolved mechanisms, 12 boundary families and 10 non-equivalence rules mapped with falsification requirements; no empirical adjudication claimed |
 | P2.5 | PASS | P2_LITERATURE_MATRIX_AND_NOVELTY_MAP_FREEZE.md v1.0.0; 8-record matrix and 6 candidate novelty claims frozen with nearest anchors and kill criteria; bounded seed synthesis, not verified global novelty |
-| P3.1 | NOT_STARTED | — |
+| P3.1 | PASS | `P3_COMPETING_HYPOTHESES_AND_MECHANISMS.md` v1.0; 8 balanced positive–rival–null/adverse triads and 24 falsifiable candidates frozen; hypothesis-design completeness only, all candidates untested and unranked |
 | P3.2 | NOT_STARTED | — |
 | P3.3 | NOT_STARTED | — |
 | P3.4 | NOT_STARTED | — |
@@ -91,8 +91,9 @@ Engineering activity, commits, elapsed time, documentation volume, and visiting 
 | P0 | 5 | 0 | 0 | COMPLETE — governance/control design only |
 | P1 | 5 | 0 | 0 | COMPLETE — system-map/control design only |
 | P2 | 5 | 0 | 0 | COMPLETE — bounded verified seed synthesis and candidate-novelty freeze only |
-| P3–P11 | 0 | 0 | 45 | NOT_STARTED |
+| P3 | 1 | 0 | 4 | ACTIVE — candidate hypothesis portfolio only; no empirical testing or ranking |
+| P4–P11 | 0 | 0 | 40 | NOT_STARTED |
 
 ## Next scientifically admissible gate
 
-P3.1 — Generate competing hypotheses and mechanisms.
+P3.2 — Critic review: theory, identification and measurement weaknesses.
