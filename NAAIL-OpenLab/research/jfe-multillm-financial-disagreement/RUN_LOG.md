@@ -245,3 +245,22 @@
 - Ending gate counts: PASS 14; NOT_STARTED 46; all other statuses 0.
 - Phase state: P0 complete 5/5; P1 complete 5/5; P2 at 4/5 PASS.
 - Next gate: P2.5 — freeze the literature matrix and novelty map.
+
+## RUN JFE-015 — 2026-10-08
+
+- Phase/gate: P2 Evidence & Literature Discovery / P2.5.
+- Starting state: canonical GitHub plan and Drive mirror read; ledger PASS 14 and NOT_STARTED 46; P2.1–P2.4 PASS; Draft PR #112 open and sole PR for scope; branch HEAD 3772977e1bb656328d0c15e70fc6e90e4aa20e22; repair queue empty; no writer-lock file found; no CI statuses reported.
+- Work completed: reconciled and froze the eight-record literature matrix; embedded four P2 source blob identities; mapped six candidate contributions to closest anchors, distinguishing tests and kill criteria; recorded non-novel elements, a novelty-evidence firewall and eight P3 competing-question families.
+- Status: PASS for bounded seed literature synthesis and candidate-novelty freeze only.
+- Evidence: P2_LITERATURE_MATRIX_AND_NOVELTY_MAP_FREEZE.md v1.0.0.
+- Falsification/readback: 8/8 source records represented; resource classes reconcile 2/3/2/1; six novelty nodes remain CANDIDATE_NOT_VERIFIED; no exhaustiveness, verified global novelty, package/model execution, empirical result, causal claim or publication-readiness claim.
+- Integrity status: LIT-RFS-002 remains INTEGRITY_HOLD and cannot provide positive novelty support or clean benchmark evidence.
+- Engineering attempt history: attempt 1/2 failed locally before any external mutation because the patch wrapper interpreted Markdown backticks as JavaScript template delimiters. Attempt 2 removed the wrapper conflict and completed the controlled build; no scientific impact.
+- GitHub: evidence, ledger and run log saved sequentially on research/jfe-multillm-2026-10-04; Draft PR #112 retained; protected main unchanged. Final branch HEAD is the commit containing this entry.
+- Drive: evidence uploaded to the project folder; ledger 165RRft75u4Q315nOOerb43FXEyxScXDC and run log 1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9 replaced and read back.
+- Dual-save status: PASS after final GitHub and Drive content readback.
+- Fail count: 1 resolved ENGINEERING attempt; no persistent blocker.
+- Blocker classification: none; integrity quarantine remains a scientific limitation. Repair queue remains empty.
+- Ending gate counts: PASS 15; NOT_STARTED 45; all other statuses 0.
+- Phase state: P0 complete 5/5; P1 complete 5/5; P2 complete 5/5 for bounded seed evidence/synthesis only.
+- Next gate: P3.1 — generate competing hypotheses and mechanisms.
