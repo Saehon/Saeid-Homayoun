@@ -237,8 +237,8 @@
 - Evidence: `P2_CONTRADICTIONS_MECHANISMS_BOUNDARY_CONDITIONS.md` v1.0.
 - Falsification/readback: prediction is separated from construct validity and causality; current-model regeneration from historical replication; public code from full reproducibility; low disagreement from correctness; human override from ground truth; all planned adjudication tests remain NOT_EXECUTED.
 - Integrity status: CTR-12 preserves `ANM-RFS-002-EOC` and STOP_RELIANCE; no journal resolution or new independent audit was asserted.
-- GitHub: evidence, ledger and run log saved sequentially on `research/jfe-multillm-2026-10-04`; Draft PR #112 retained; protected `main` unchanged. Final branch HEAD is the commit containing this entry.
-- Drive: evidence uploaded to the project folder; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC` and run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9` replaced in place and read back.
+- GitHub: evidence commit `207ec9b67eab74d38b9062fcee04f1f1e6a983da`; ledger commit `0efc7ebb9aae0099134760cf08f69e44b6896586`; initial run-log commit `89547076dd1179b18e8c35b9d46f0a8f0d5238ae`; Draft PR #112 retained; protected `main` unchanged. The final provenance update is necessarily the branch HEAD containing this entry.
+- Drive: evidence `12NkYhVGmqKkQsgLeWmYDz9dVeHejbeZL`; ledger `165RRft75u4Q315nOOerb43FXEyxScXDC`; run log `1TTJikF200Fxwov8bqmiUOTzE-Ic0YvE9`; all uploaded/replaced as applicable and read back.
 - Dual-save status: PASS after final GitHub and Drive content readback.
 - Fail count: 0.
 - Blocker classification: none; active integrity quarantine is a scientific limitation, not a failed task. Repair queue remains empty.
