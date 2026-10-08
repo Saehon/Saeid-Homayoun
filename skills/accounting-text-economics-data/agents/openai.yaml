@@ -1,0 +1,14 @@
+interface:
+  display_name: Accounting Text Economics Data
+  short_description: Join accounting text with market and audit data
+  default_prompt: Use $accounting-text-economics-data to design a leakage-safe text-and-economics
+    data pipeline for this accounting project.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

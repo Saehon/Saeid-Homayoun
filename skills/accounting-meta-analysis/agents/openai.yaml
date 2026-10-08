@@ -1,0 +1,14 @@
+interface:
+  display_name: Accounting Meta-Analysis
+  short_description: Design reproducible accounting meta-analyses
+  default_prompt: Use $accounting-meta-analysis to design or audit this accounting
+    evidence synthesis, effect-size extraction, and meta-regression.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
