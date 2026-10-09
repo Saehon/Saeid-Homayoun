@@ -1,3 +1,13 @@
+# NAAIL OpenLab™
+
+**Evidence-governed AI research and education for accounting, auditing, finance and sustainability.**
+
+Reproducible benchmarks, multi-agent prototypes and human-reviewed analysis.
+
+➡️ **[Explore NAAIL OpenLab™](NAAIL-OpenLab/README.md)**
+
+---
+
 # 👨‍🏫 Saeid Homayoun
 
 **Accounting & Auditing Scholar | Integrating AI into Accounting, Auditing & Assurance Research**
