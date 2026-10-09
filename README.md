@@ -3,6 +3,11 @@
 
 *Evidence-governed AI education and research for accounting, auditing, finance and sustainability.*
 
+![NAAIL OpenLab ecosystem architecture: knowledge and technology cores, human governance, fruit and specialist programmes, navigation pages, and platforms](assets/images/naail-openlab-ecosystem.png)
+
+*Figure: NAAIL OpenLab™ ecosystem — one evidence-governed laboratory connecting research programmes, learning pathways, specialist agents, navigation pages and supporting platforms.*
+
+
 > **AI can produce an answer in seconds. But how do we know whether that answer is correct?**
 
 Imagine an accounting student using AI to examine a company's financial statements. The AI identifies a possible financial-reporting risk. But is the finding accurate? What evidence supports it? Could another AI model reach a different conclusion?

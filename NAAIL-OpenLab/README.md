@@ -3,6 +3,11 @@
 **Next-Generation Accounting, Audit & Assurance Intelligence Lab**  
 *A Global Evidence-Governed Multi-Agent Digital Twin Platform for Accounting, Audit, Finance, Sustainability and Scientific Discovery*
 
+![NAAIL OpenLab overview: architecture, fruit and specialist research programs, key entry pages, and platform engines](../assets/images/naail-openlab-ecosystem.png)
+
+*Overview of the NAAIL research and education ecosystem. The illustration summarizes the platform structure; individual programmes and benchmarks have their own documented validation status.*
+
+
 **Researcher:** Dr. Saeid Homayoun  
 **Academic positioning:** Accounting Scholar and AI Researcher  
 **Research expertise:** AI-enabled Auditing · Agentic AI · Audit Analytics · LLMs/FinBERT · CAM/KAM · ICFR · IFRS · ESG/Sustainability · Multi-Agent Systems · AI Governance  
