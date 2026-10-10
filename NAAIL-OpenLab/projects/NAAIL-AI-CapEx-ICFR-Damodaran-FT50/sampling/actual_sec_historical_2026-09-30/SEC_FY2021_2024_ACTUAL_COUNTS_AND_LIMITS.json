@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/iangow/sec_submissions_data/releases/tag/2026-09-30",
   "archive_date": "2026-09-30",
-  "run_utc": "2026-10-10T20:56:04.082014+00:00",
+  "run_utc": "2026-10-10T21:00:47.620179+00:00",
   "status": "REAL_SEC_10K_FILING_METADATA_EXTRACT__NOT_FULL_CAUSAL_SAMPLE",
   "all_10K_2017_2025_metadata_rows": 63520,
   "unique_CIK_FY_2017_2025": 62641,
