@@ -1,0 +1,39 @@
+name: NAAIL official PCAOB Form AP 10-K join source probe
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - ".github/workflows/naail-form-ap-source-probe.yml"
+      - "NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/inspect_form_ap_bulk_schema.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  download-form-ap-and-inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Download PCAOB's official entire Form AP AuditorSearch data archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 4 --retry-delay 5 --connect-timeout 25 --max-time 900 \
+          "https://assets.pcaobus.org/firm-filings/FirmFilings.zip" -o "$RUNNER_TEMP/FormAP.zip"
+          unzip -t "$RUNNER_TEMP/FormAP.zip" | tail -1
+          unzip -l "$RUNNER_TEMP/FormAP.zip" | head -40
+          sha256sum "$RUNNER_TEMP/FormAP.zip"
+      - name: Inspect official Form AP data members and source field definitions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/inspect_form_ap_bulk_schema.py \
+            --zip "$RUNNER_TEMP/FormAP.zip" --out "$RUNNER_TEMP/FORMAP_SCHEMA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: naail-pcaob-form-ap-bulk-schema-20261010
+          path: ${{ runner.temp }}/FORMAP_SCHEMA/
+          retention-days: 90
+          if-no-files-found: error

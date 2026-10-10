@@ -1,0 +1,336 @@
+{
+  "source": "PCAOB official downloadable public firm inspection reports and Part I.A/I.B",
+  "retrieved_utc": "2026-10-10T21:44:55.487211+00:00",
+  "urls": {
+    "firm_inspections": "https://pcaobus.org/docs/default-source/generated-reports/inspecton-reports-csv.csv?download=true&sfvrsn=1cadcbfa_1193",
+    "part_I_A": "https://pcaobus.org/docs/default-source/generated-reports/part-i-a-flat-file-%28csv%29.csv?download=true&sfvrsn=c59cce67_5",
+    "part_I_B": "https://pcaobus.org/docs/default-source/generated-reports/part-i-b-flat-file-%28csv%29.csv?download=true&sfvrsn=68eeaca9_5"
+  },
+  "as_of_rule": "Source data may include 2026 released reports; no observation may be attributed to pre-release event until release_date and legal auditor firm ID are verified.",
+  "datasets": {
+    "firm_inspections": {
+      "rows": 4336,
+      "encoding": "detected_at_reader",
+      "fields": [
+        "Registration ID",
+        "Firm Names",
+        "Country",
+        "Inspection Report Date",
+        "Global Network",
+        "Audits With Part I.A Deficiencies",
+        "Total Audits Reviewed",
+        "Part I.A Deficiency Rate",
+        "Inspection Year",
+        "Total Issuer Audit Clients",
+        "Inspection Type",
+        "Includes public quality control criticisms?",
+        "Total Issuer Audits In Which The Firm Was Not The Lead Auditor",
+        "Total Engagement Partners On Issuer Audit Work",
+        "Risk Based Selections",
+        "Random Selections",
+        "Target Team Selections",
+        "Audits In Which The Firm Was The Lead Auditor",
+        "Audits In Which The Firm Was Not The Lead Auditor",
+        "Integrated Audits Of Financial Statements And ICFR",
+        "Financial Statement Audits Only",
+        "PDF Inspection Report"
+      ],
+      "field_coverage": {
+        "Registration ID": 4336,
+        "Firm Names": 4336,
+        "Inspection Report Date": 4336,
+        "Audits With Part I.A Deficiencies": 4332,
+        "Total Audits Reviewed": 4284,
+        "Part I.A Deficiency Rate": 4336,
+        "Inspection Year": 4336,
+        "Total Issuer Audit Clients": 4103,
+        "Inspection Type": 4336,
+        "Total Issuer Audits In Which The Firm Was Not The Lead Auditor": 3117,
+        "Total Engagement Partners On Issuer Audit Work": 1722,
+        "Audits In Which The Firm Was The Lead Auditor": 4284,
+        "Audits In Which The Firm Was Not The Lead Auditor": 4284,
+        "Integrated Audits Of Financial Statements And ICFR": 1075,
+        "Financial Statement Audits Only": 1075,
+        "PDF Inspection Report": 4336
+      },
+      "sample_safe_values": {
+        "Registration ID": [
+          "42",
+          "1376",
+          "528",
+          "525",
+          "7143",
+          "1054"
+        ],
+        "Firm Names": [
+          "Ernst & Young LLP",
+          "Deloitte & Touche S.p.A.",
+          "Dannible & McKee, LLP",
+          "Reilly, Penner & Benton LLP",
+          "GuzmanGray",
+          "De Visser Gray LLP"
+        ],
+        "Inspection Report Date": [
+          "22-Jul-2026",
+          "09-Jul-2026",
+          "17-Jun-2026"
+        ],
+        "Audits With Part I.A Deficiencies": [
+          "3",
+          "0",
+          "1",
+          "2"
+        ],
+        "Total Audits Reviewed": [
+          "64",
+          "3",
+          "1",
+          "2",
+          "5",
+          "9"
+        ],
+        "Part I.A Deficiency Rate": [
+          "5%",
+          "0%",
+          "100%",
+          "67%"
+        ],
+        "Inspection Year": [
+          "2025",
+          "2026"
+        ],
+        "Total Issuer Audit Clients": [
+          "",
+          "2",
+          "3",
+          "9",
+          "1",
+          "0"
+        ],
+        "Inspection Type": [
+          "Annually Inspected",
+          "Triennially Inspected"
+        ],
+        "Total Issuer Audits In Which The Firm Was Not The Lead Auditor": [
+          "",
+          "27",
+          "0",
+          "8",
+          "2",
+          "52"
+        ],
+        "Total Engagement Partners On Issuer Audit Work": [
+          "",
+          "16",
+          "2",
+          "1",
+          "3",
+          "6"
+        ],
+        "Audits In Which The Firm Was The Lead Auditor": [
+          "62",
+          "2",
+          "1",
+          "3",
+          "0",
+          "4"
+        ]
+      }
+    },
+    "part_I_A": {
+      "rows": 14349,
+      "encoding": "detected_at_reader",
+      "fields": [
+        "Inspection Type",
+        "Registration ID",
+        "Firm Names",
+        "Inspection Year",
+        "Country",
+        "Global Network",
+        "Inspection Report Date",
+        "Inspection Report Section",
+        "Issuer Reference Key",
+        "Firm played a role but was not the lead auditor",
+        "Audits Affected by the Deficiencies Identified in Part I.A",
+        "Classification of Audits with Part I.A Deficiencies",
+        "Audit Area",
+        "Firm-Identified Risk Assessment",
+        "Finding Count",
+        "Auditing Standard",
+        "Paragraph of the Auditing Standard",
+        "Description in the Firm's Inspection Report"
+      ],
+      "field_coverage": {
+        "Inspection Type": 14349,
+        "Registration ID": 14349,
+        "Firm Names": 14349,
+        "Inspection Year": 14349,
+        "Inspection Report Date": 14349,
+        "Inspection Report Section": 14349,
+        "Firm played a role but was not the lead auditor": 14349,
+        "Audits Affected by the Deficiencies Identified in Part I.A": 14349,
+        "Classification of Audits with Part I.A Deficiencies": 14349,
+        "Audit Area": 14349,
+        "Firm-Identified Risk Assessment": 4877,
+        "Auditing Standard": 14349,
+        "Paragraph of the Auditing Standard": 14344,
+        "Description in the Firm's Inspection Report": 14349
+      },
+      "sample_safe_values": {
+        "Inspection Type": [
+          "Annually Inspected"
+        ],
+        "Registration ID": [
+          "42",
+          "238"
+        ],
+        "Firm Names": [
+          "Ernst & Young LLP",
+          "PricewaterhouseCoopers LLP"
+        ],
+        "Inspection Year": [
+          "2025"
+        ],
+        "Inspection Report Date": [
+          "22-Jul-26",
+          "12-Jun-26"
+        ],
+        "Inspection Report Section": [
+          "Part I.A"
+        ],
+        "Firm played a role but was not the lead auditor": [
+          "No"
+        ],
+        "Audits Affected by the Deficiencies Identified in Part I.A": [
+          "Both financial statement and ICFR audits",
+          "ICFR audit only"
+        ],
+        "Classification of Audits with Part I.A Deficiencies": [
+          "Audits with multiple deficiencies"
+        ],
+        "Audit Area": [
+          "Insurance-related Assets and Liabilities, Including Insurance Reserves",
+          "Revenue and Related Accounts",
+          "Income Taxes",
+          "Debt",
+          "Business Combination",
+          "Oil and Gas Properties"
+        ],
+        "Firm-Identified Risk Assessment": [
+          "",
+          "Fraud Risk"
+        ],
+        "Auditing Standard": [
+          "AS 2201",
+          "AS 1105",
+          "AS 2301",
+          "AS 2810"
+        ]
+      }
+    },
+    "part_I_B": {
+      "rows": 3034,
+      "encoding": "detected_at_reader",
+      "fields": [
+        "Inspection Type",
+        "Registration ID",
+        "Firm Names",
+        "Inspection Year",
+        "Country",
+        "Global Network",
+        "Inspection Report Date",
+        "Inspection Report Section",
+        "Finding Count",
+        "Auditing Standard",
+        "Description in the Firm's Inspection Report"
+      ],
+      "field_coverage": {
+        "Inspection Type": 3024,
+        "Registration ID": 3024,
+        "Firm Names": 3024,
+        "Inspection Year": 3024,
+        "Inspection Report Date": 3024,
+        "Inspection Report Section": 3024,
+        "Auditing Standard": 3024,
+        "Description in the Firm's Inspection Report": 3024
+      },
+      "sample_safe_values": {
+        "Inspection Type": [
+          "Annually Inspected"
+        ],
+        "Registration ID": [
+          "42",
+          "238",
+          "34"
+        ],
+        "Firm Names": [
+          "Ernst & Young LLP",
+          "PricewaterhouseCoopers LLP",
+          "Deloitte & Touche LLP"
+        ],
+        "Inspection Year": [
+          "2025"
+        ],
+        "Inspection Report Date": [
+          "22-Jul-26",
+          "12-Jun-26",
+          "21-May-26"
+        ],
+        "Inspection Report Section": [
+          "Part I.B"
+        ],
+        "Auditing Standard": [
+          "AS 1215",
+          "AS 1301",
+          "AS 2805",
+          "AS 2101",
+          "AS 2201",
+          "PCAOB Rule 3211"
+        ],
+        "Description in the Firm's Inspection Report": [
+          "In one of 64 audits reviewed, the firm did not include all relevant work pa",
+          "In one of 61 audits reviewed, the firm did not provide a copy of the manage",
+          "In two of 61 audits reviewed, the firm did not perform procedures to determ",
+          "In one of 52 audits reviewed, the firm, as the lead auditor, did not obtain",
+          "In one of 59 audits reviewed, the firm did not communicate to management, i",
+          "In three of 59 audits reviewed, the firm did not inform the audit committee"
+        ]
+      }
+    }
+  },
+  "named_firms": {
+    "deloitte": {
+      "firm_inspections": 164,
+      "part_I_A": 340,
+      "part_I_B": 90
+    },
+    "ernst_young": {
+      "firm_inspections": 156,
+      "part_I_A": 1580,
+      "part_I_B": 134
+    },
+    "pricewaterhousecoopers": {
+      "firm_inspections": 187,
+      "part_I_A": 990,
+      "part_I_B": 109
+    },
+    "kpmg": {
+      "firm_inspections": 172,
+      "part_I_A": 1459,
+      "part_I_B": 145
+    },
+    "bdo": {
+      "firm_inspections": 74,
+      "part_I_A": 1267,
+      "part_I_B": 99
+    },
+    "grant_thornton": {
+      "firm_inspections": 76,
+      "part_I_A": 853,
+      "part_I_B": 117
+    }
+  },
+  "filer_year_issuer_join": "NOT COMPLETED: Form AP legal firm IDs and issuer matching must be constructed separately",
+  "causal_pcaob_features_ready": false,
+  "matched_public_rows": 8012
+}
