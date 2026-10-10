@@ -62,7 +62,10 @@ Microsoft Foundry is a separate deployment/authentication option and would requi
 - Vercel gateway: https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway
 - Relevant Lemon core: `Lemon-ICFR-US/src/lemon_icfr/` and `Lemon-ICFR-US/tests/test_orchestrator.py`.
 - Relevant NAAIL core: `NAAIL/research-assurance-mcp/`.
-- Canonical project archive: Google Drive NAAIL Research Assurance MCP (link recorded in project's Drive master index).
+- Canonical Google Drive project folder: https://drive.google.com/drive/folders/1Y6NqwdwjBlYCqkGObTb9UeRNqiZin6iZ
+- Project master index: https://docs.google.com/document/d/1zugMqqio6LW1nhPrDknmjIYkddqin6dH12xrVqG3t5A/edit
+- Lemon ICFR handoff: `Lemon-ICFR-US/integrations/decision1_icfr_triage_bridge.py` (same draft PR, no Human Gate bypass).
+- Proprietary POMELO read-only handoff (access-controlled): https://github.com/Saehon/pomelo-core/pull/57
 
 ### Explicit limitations
 
