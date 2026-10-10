@@ -30,12 +30,22 @@ jobs:
             curl -fL --retry 4 --retry-delay 10 --connect-timeout 25 --max-time 1800               "https://www.sec.gov/files/dera/data/financial-statement-data-sets/${QUARTER}.zip"               -H "User-Agent: NAAIL OpenLab Academic Research research-office@example.org"               -o "$RUNNER_TEMP/SEC-FS/${QUARTER}.zip"
             unzip -t "$RUNNER_TEMP/SEC-FS/${QUARTER}.zip" | tail -2
           done
+      - name: Retrieve previously VERIFIED historical SEC 10-K CIK-FY artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/SECHIST"
+          gh run download 38085610261 --repo Saehon/Saeid-Homayoun --name naail-sec-historical-sample-fy2021-2024 --dir "$RUNNER_TEMP/SECHIST"
+          test -s "$RUNNER_TEMP/SECHIST/SEC_10K_FY2017_2025_UNIVERSE.csv"
+          wc -l "$RUNNER_TEMP/SECHIST/SEC_10K_FY2017_2025_UNIVERSE.csv"
       - name: Match issuer original 10-K accession, contemporaneous SIC and US GAAP facts
         shell: bash
         run: |
           set -euo pipefail
           PROJECT=NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50
-          python "$PROJECT/sampling/join_official_SEC_financial_quarters.py"             --zip "$RUNNER_TEMP/SEC-FS/2025q1.zip" "$RUNNER_TEMP/SEC-FS/2026q1.zip"             --originals "$PROJECT/sampling/actual_sec_historical_2026-09-30/SEC_10K_FY2017_2025_UNIVERSE.csv"             --out "$PROJECT/sampling/actual_sec_official_xbrl_pilot_2026-10-10"
+          python "$PROJECT/sampling/join_official_SEC_financial_quarters.py"             --zip "$RUNNER_TEMP/SEC-FS/2025q1.zip" "$RUNNER_TEMP/SEC-FS/2026q1.zip"             --originals "$RUNNER_TEMP/SECHIST/SEC_10K_FY2017_2025_UNIVERSE.csv"             --out "$PROJECT/sampling/actual_sec_official_xbrl_pilot_2026-10-10"
       - uses: actions/upload-artifact@v4
         with:
           name: naail-sec-official-asfiled-sic-xbrl-pilot
