@@ -15,3 +15,13 @@ Rules:
 10. Human review is required before merging, releasing datasets, making public research claims, or submitting manuscripts.
 
 When asked to implement a new module, first create an issue-like task definition: objective, input specification, as-of date, expected output, data rights, tests, assumptions and explicit done criteria.
+
+
+## New PCAOB / CAM module directives
+- Read research/PCAOB_CAM_INTEGRATION.md before modeling PCAOB or CAM.
+- PCAOB Part I.A anonymous issuer letters CANNOT be joined to CIK. Only link public auditor-firm findings via registered firm ID and confirmed Form AP/issuer associations.
+- Enforce timezone-aware "public as-of" cutoffs; inspect report publication and Part II release separately.
+- Independently calculate pre-CAM account risk; CAM must not enter the scoring rule. High risk/no CAM does not imply auditor misconduct.
+- Respect CAM eligibility and staggered implementation by fiscal year and filer category.
+- Preserve selected-audit denominators, risk-based sampling caveats, and missing public report flags.
+- Unit tests may use synthetic data but never present synthetic results as evidence. Confirm statistical power for audit-firm heterogeneity before high-dimensional specifications.
