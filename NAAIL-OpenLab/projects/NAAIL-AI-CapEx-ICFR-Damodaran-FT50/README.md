@@ -44,3 +44,17 @@ Does internal-control reporting risk moderate the relationship between AI-relate
 - `AGENTS.md` — instructions for Codex in VS Code.
 
 **Privacy:** This branch is in a PUBLIC umbrella repository. Never commit confidential manuscripts, private notes, credentials, licensed raw datasets, or restricted model weights. Keep the master archive in the Google Drive folder above.
+
+
+## PCAOB inspection and CAM extension (2026-10-10)
+The research scope now includes a distinct account-level CAM risk-alignment channel and a **previously-public auditor-firm-level PCAOB inspection exposure** channel. The substantive economic outcomes remain AI investment, free-cash-flow realization, ROIC-WACC and market pricing. Do not infer engagement-specific PCAOB findings from anonymous issuer identifiers.
+
+**Required method documents**: [PCAOB/CAM integration](research/PCAOB_CAM_INTEGRATION.md), [FT50 literature matrix](research/FT50_PCAOB_CAM_LITERATURE.md), [audit oversight prototype](src/audit_oversight.py), and [synthetic unit-test specifications](tests/test_audit_oversight.py).
+
+- **H4 (CAM mismatch):** ex ante high-risk accounts without corresponding CAM disclosures and AI investment economic outcomes.
+- **H5 (PCAOB exposure):** publicly known auditor-firm inspection deficiencies condition AI-investment valuation and/or subsequent cash-flow realization.
+- **H6 (exploratory):** Part I.B CAM compliance findings and information content of CAM-to-risk alignment.
+- **Added Google Drive protocol:** https://docs.google.com/document/d/1N1IhXWiVYsuBxhDaL7fAFir_a3PuFw04ae5fIzgWBHs/edit
+- **Free matching data:** PCAOB AuditorSearch / Form AP https://pcaobus.org/resources/auditorsearch ; official inspection datasets https://pcaobus.org/oversight/inspections/firm-inspection-reports.
+
+*Status: research design and unexecuted scaffold only; no PCAOB/CAM sample downloaded or validated.*
