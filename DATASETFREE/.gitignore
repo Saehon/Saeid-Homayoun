@@ -1,0 +1,17 @@
+# No private research data or secrets in the public repository
+raw/
+downloads/
+cache/
+restricted/
+.env
+.env.*
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.dta
+*.sav
+*.zip
+*.7z
+__pycache__/
+.pytest_cache/
