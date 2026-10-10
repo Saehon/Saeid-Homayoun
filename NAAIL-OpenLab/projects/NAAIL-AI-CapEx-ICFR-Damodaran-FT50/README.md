@@ -58,3 +58,16 @@ The research scope now includes a distinct account-level CAM risk-alignment chan
 - **Free matching data:** PCAOB AuditorSearch / Form AP https://pcaobus.org/resources/auditorsearch ; official inspection datasets https://pcaobus.org/oversight/inspections/firm-inspection-reports.
 
 *Status: research design and unexecuted scaffold only; no PCAOB/CAM sample downloaded or validated.*
+
+
+## FT50 / AJG 4* revised sample — V2 (2026-10-10)
+The October 2026 S&P500-based 424 nonfinancial CIK cohort is an **operational snapshot**, NOT the final 2019–2025 longitudinal sample because of survival/index membership selection.
+A reproducible 424-row split is frozen into 119 prioritized technology/infrastructure **candidates**, 244 other potential comparator **candidates**, and 61 utilities/real-estate special cases. These are not verified treated/control groups.
+**Primary paper**: issuer's OWN AI-related investment → future cash-flow realization conditional on previously public ICFR, account-risk/CAM alignment, and auditor-firm PCAOB public inspection exposure. Sellers' revenues from buyer AI capex are a separate mechanism; never pool equipment suppliers' own capex with builders' capex as if economically the same.
+- [V2 FT50/AJG4* research protocol](sampling/FT50_AJG4_SAMPLE_REDESIGN_V2_2026-10-10.md)
+- [119 tech/supply chain screened](sampling/V2_PRIORITY_119_TECH_SUPPLY_CANDIDATES.csv)
+- [244 general nonfinancial potential comparators](sampling/V2_COMPARATOR_244_GENERAL_NONFINANCIAL.csv)
+- [61 utilities/real estate special](sampling/V2_SPECIAL_61_UTILITIES_REAL_ESTATE.csv)
+- [Rebuild V2 stratification](sampling/rebuild_v2_strata.py)
+- [Verified native Drive FT50 literature reassessment](https://docs.google.com/document/d/1IdbVQSJL4bq97PqKJGyop64MZ01f1My44CvUVqaKQHc/edit)
+No historical 1,500–2,500 issuer universe or new empirical regression is claimed.
