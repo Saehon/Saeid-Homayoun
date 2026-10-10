@@ -28,7 +28,18 @@ jobs:
       - name: Run fixed synthetic demonstration
         working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
         run: python pilot.py --demo --out results/pilot_results.json
+      - name: Run actual Lemon + CAM synthetic integration
+        working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
+        run: python integrated_case.py --case-id SYN-2024-00 --out results/integrated_evidence_passport.json
+      - name: Run author-data rights gate without upstream files
+        working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
+        run: python bao_replication_gateway.py --source-dir /tmp/bao-author-not-mounted --out results/bao_replication_gate.json
       - name: Assert scientific gate stays closed
         working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
         run: |
           python -c "import json; r=json.load(open('results/pilot_results.json')); assert not r['scientific_discovery_claim_allowed']; assert r['human_approval_status']=='REQUIRED_NOT_GRANTED'; assert r['not_bao_replication']"
+      - name: Assert integrated output requires human approval and author gate is dry-run
+        working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
+        run: |
+          python -c "import json; r=json.load(open('results/integrated_evidence_passport.json')); assert r['lemon_status']=='AWAITING_HUMAN_APPROVAL'; assert not r['human_approval_granted']; assert not r['scientific_discovery_claim_allowed']"
+          python -c "import json; r=json.load(open('results/bao_replication_gate.json')); assert r['execution']['status']=='DRY_RUN_ONLY'; assert not r['all_original_code_blobs_match']"
