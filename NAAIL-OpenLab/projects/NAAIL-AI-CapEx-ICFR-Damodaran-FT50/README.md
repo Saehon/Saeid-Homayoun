@@ -71,3 +71,15 @@ A reproducible 424-row split is frozen into 119 prioritized technology/infrastru
 - [Rebuild V2 stratification](sampling/rebuild_v2_strata.py)
 - [Verified native Drive FT50 literature reassessment](https://docs.google.com/document/d/1IdbVQSJL4bq97PqKJGyop64MZ01f1My44CvUVqaKQHc/edit)
 No historical 1,500–2,500 issuer universe or new empirical regression is claimed.
+
+## V3 FROZEN FT50 / AJG 4* empirical sample design (10 October 2026)
+
+- Core issuer-owned AI investment / prior-public audit oversight fiscal years: **FY2021–FY2024**; main t+1 actual outcome **FY2022–FY2025**, secondary t+2 outcome **FY2023–FY2025**, baseline history **FY2017–FY2020**. FY2025 investment is supplementary until FY2026 outcomes become actually available.
+- Final *eligible population rule*: all U.S. domestic operating nonfinancial 10-K filer-years FY2021–FY2024 including delisted and failed firms, excluding historical finance SIC 6000–6999, with utilities and real estate stratified, CAM eligibility as of FYE, auditor 404(b) applicability and PCAOB first-publication timestamp rules.
+- Current **2026 S&P500-based 424-CIK inventory** remains a pilot screen, NOT the final historical cohort. Exactly **119+244+61=424** disjoint nonfinancial firms, 76 financial exclusions, 10 anchors. Original roster contains NO verified historical SEC 10-K eligibility or AI-only CapEx for the additional firms. Final historical numeric company N/firm-year N = **NOT ESTABLISHED**; prior 1,500–2,500 target is an unverified rough feasibility aspiration.
+- [V3 protocol with FT50/AJG4* source mapping and exact data waterfall](sampling/SAMPLE_PROTOCOL_LOCKED_V3_2026-10-10.md)
+- [Machine-readable V3 dates, limitations and N readiness](sampling/SAMPLE_DECISION_LOCK_V3_2026-10-10.json)
+- [Validate first-stage sample counts and partition](sampling/validate_v3_screen.py)
+- [Canonical Google Doc — V3 frozen protocol](https://docs.google.com/document/d/14pQ2rreS8Vph7eu0XUAHCfUJ-VUnv7g8U-bxBoqpSW0/edit)
+
+The original V1/V2 files, CAM/ICFR/PCAOB pilot results and TAR manuscript are intentionally preserved. Do not merge the draft PR without research and data-rights review. No empirical paper-wide coefficients or significance are claimed.
