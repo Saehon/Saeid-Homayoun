@@ -1,0 +1,31 @@
+name: DATASETFREE synthetic free-data archive
+on:
+  push:
+    paths:
+      - "DATASETFREE/archives/**"
+      - ".github/workflows/datasetfree-synthetic-data.yml"
+  pull_request:
+    paths:
+      - "DATASETFREE/archives/**"
+      - ".github/workflows/datasetfree-synthetic-data.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive-synthetic-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Download three MIT-labelled synthetic Parquet tables and provenance
+        run: python DATASETFREE/archives/snapshot_synthetic_benchmark.py
+      - name: Retain free data with source hashes for canonical Drive archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: DATASETFREE-synthetic-resume-benchmark
+          path: DATASETFREE/archives/dist/DATASETFREE_synthetic_resume_benchmark_MIT.zip
+          retention-days: 14
+          if-no-files-found: error
