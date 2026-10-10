@@ -32,7 +32,7 @@ def read_history(path):
 def main(history,zippath,out):
  out.mkdir(parents=True,exist_ok=True)
  source=read_history(history)
- possible=[],unmatched=Counter(),any_rows=0, matched=0,firm_names=Counter()
+ possible=[]; unmatched=Counter(); any_rows=0; matched=0; firm_names=Counter()
  with zipfile.ZipFile(zippath) as z:
   files=[n for n in z.namelist() if n.lower().endswith(".csv")]
   if len(files)!=1:raise ValueError(f"Expected a single authoritative Form AP CSV: {files}")
