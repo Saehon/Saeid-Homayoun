@@ -1,0 +1,35 @@
+name: NAAIL Finance Assurance Offline Tests
+on:
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/plugins/finance-assurance/**'
+      - '.github/workflows/naail-finance-assurance.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'NAAIL-OpenLab/plugins/finance-assurance/**'
+      - '.github/workflows/naail-finance-assurance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-workpapers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: NAAIL-OpenLab/plugins/finance-assurance
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Python unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Synthetic demonstration smoke tests
+        run: |
+          python src/naail_finance.py journal-entry examples/journal-entry.json > /dev/null
+          python src/naail_finance.py reconciliation examples/reconciliation.json > /dev/null
+          python src/naail_finance.py income-statement examples/income-statement.json > /dev/null
+          python src/naail_finance.py variance-analysis examples/variance-analysis.json > /dev/null
+          python src/naail_finance.py sox-testing examples/sox-testing.json > /dev/null
