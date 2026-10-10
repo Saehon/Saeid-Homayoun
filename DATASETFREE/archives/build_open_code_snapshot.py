@@ -25,7 +25,7 @@ def keep(file, base):
 def main():
     DEST.mkdir(parents=True,exist_ok=True)
     out = DEST / "DATASETFREE_open_licensed_code_ONLY.zip"
-    ledger = {"status":"CODE ONLY; NO EMPIRICAL DATA","sources":[],"files":[]}
+    ledger = {"status":"CODE ONLY SUBSET; NO EMPIRICAL DATA","sources":[],"files":[],"omitted_oversize_or_cap":[]}
     total = 0
     with tempfile.TemporaryDirectory() as temp, ZipFile(out,"w",compression=ZIP_DEFLATED) as z:
         for label,url,lic,license_marker in SOURCES:
@@ -39,9 +39,10 @@ def main():
             for file in sorted(base.rglob("*")):
                 if not file.is_file() or not keep(file,base): continue
                 blob=file.read_bytes()
-                if len(blob)>900000: raise RuntimeError("Single file too large")
+                if len(blob)>900000 or total+len(blob)>12000000:
+                    ledger["omitted_oversize_or_cap"].append(str(file.relative_to(base)))
+                    continue
                 total+=len(blob)
-                if total>12000000: raise RuntimeError("Overall code limit exceeded")
                 name=label+"/"+file.relative_to(base).as_posix()
                 z.writestr(name,blob)
                 ledger["files"].append({"name":name,"sha256":hashlib.sha256(blob).hexdigest(),"bytes":len(blob)})
