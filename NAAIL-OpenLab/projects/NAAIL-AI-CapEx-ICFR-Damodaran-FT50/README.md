@@ -101,3 +101,27 @@ The original V1/V2 files, CAM/ICFR/PCAOB pilot results and TAR manuscript are in
 **Research-critical boundary:** source companies.parquet SIC is as of the 2026 snapshot, not time-varying historical SIC. Original issuer-year audit eligibility, actual issuer-owned AI-specific CapEx, financial XBRL facts, account-risk/CAM, SOX 404(a)/(b), Form AP and public PCAOB inspection as-of join are NOT YET VERIFIED at scale. The actual causal FT50 panel remains pending. No experiment or p-value was produced from this full historical metadata frame.
 
 **Authoritative artifacts:** [Google Drive original output ZIP](https://drive.google.com/file/d/1r698sPXTeaWEtBWajoantNCfpUk8GNyw/view) and [Drive actual extracted source QA report](https://docs.google.com/document/d/1lf6ewRvcpG4y8bTHMgF7egDvmQI2t19C4ILv2n0NbeQ/edit). The six original results files are also persisted under [actual_sec_historical_2026-09-30](sampling/actual_sec_historical_2026-09-30/), alongside independent [QA JSON](sampling/actual_sec_historical_2026-09-30/SEC_FY2021_2024_INDEPENDENT_QA_2026-10-10.json) and [forward-panel coverage JSON](sampling/actual_sec_historical_2026-09-30/SEC_FY2021_2024_FOLLOWUP_COVERAGE_2026-10-10.json). Reproducible scripts: [extract](sampling/extract_sec_historical_submissions.py) and [t+1/t+2 coverage](sampling/calculate_forward_10k_coverage.py).
+
+
+## V6 verified full SEC financial statements × PCAOB Form AP registered auditor source joins — 2026-10-10
+
+**Executed two official primary-public data linkage pipelines, independently QAed:**
+- Full SEC official 23 quarterly statement archives (2021 Q1 through 2026 Q3): 29,550 accession-matched original 10-K filings; after source CIK and <=7-day fiscal period consistency 29,313 source-safe; 17,492 FY2021–2024 nonfinancial as-filed SIC CIK-years.
+- PCAOB official full AuditorSearch Form AP: 156,656 original filings in the snapshot; 24,708 FY2021–2024 company–year CIK/FYE matches before eligibility and ambiguity filters. The exact registered firm IDs are not guessed from legal firm names.
+- **17,104 verified as-filed nonfinancial SEC financial CIK-years (5,310 issuers) have one unambiguous Form AP registered auditor ID (305 legal audit firms).**
+- **9,487 source-complete CFO + gross PP&E cash purchases + FY t+1 CFO + Form AP registered auditor CIK-years (3,157 firms)**. FY2021 2,546; FY2022 2,457; FY2023 2,318; FY2024 2,166. Unbalanced source panel.
+- All 17,104 identified auditors are HISTORICAL identities, **not automatically public at the original 10-K filing**. Form AP was filed after original 10-K for ~97.77% of integrated records. Date of PCAOB *inspection report* is not evidence of FIRST public release. The SEC XBRL cash PP&E purchase is NOT firm AI-only CapEx.
+- Independent primary source audit quarantine: 228 full-year historical vs SUB CIK mismatches and 11 >7-day original fiscal period conflicts. Multiple firm ambiguity and auditor report dates after 10-K were screened.
+- No full-universe verified CAM/ICFR/account-risk mapping, independently quantified company-only AI CapEx or PCAOB public AS-OF exposure yet; therefore **no principal FT50 causal hypothesis can be legitimately estimated from this file**.
+
+**Canonical source-backed reusable outputs (Google Drive):**
+[Source complete 17,104 / 9,487 panel + machine QA](https://drive.google.com/file/d/1s0_paa1zHGFb2gTwQrR292JjwNxEv6Wg/view) |
+[Full SEC 23 quarterly GAAP facts](https://drive.google.com/file/d/1diGY2eSn1s8AOeudZD-vR9q042Uu8aPb/view) |
+[Original full Form AP issuer-FYE matches](https://drive.google.com/file/d/1aJx6tqpTaJM6gQtagYzGruAbbKrsx4YP/view) |
+[Official PCAOB 4,336 inspection-report/Part IA/B records](https://drive.google.com/file/d/1TfXkNt7MtrnQt7Hq__Kqx95_5aFUINW1/view).
+
+**[Authoritative validated V6 research report](https://docs.google.com/document/d/1CbRsv4AJfsLBX0x8COibFWdS0tqJQpVB8mkz4y6yavk/edit)**, connected Drive PROJECT_MASTER_INDEX and TAR manuscript Appendix H also updated.
+[Executable exact issuer 10-K GAAP/FormAP merge](sampling/merge_verified_sec_gaap_formap.py) | [actual QA JSON](sampling/ACTUAL_SEC_GAAP_FORMAP_AUDITOR_JOINS_V6_2026-10-10.json) |
+[successful GitHub Actions original integrated build](https://github.com/Saehon/Saeid-Homayoun/actions/runs/38088436448).
+
+**IMPORTANT:** Research design V3 core FY2021–2024 exposure, FY2022–2025 future cashflow and FY2017–2020 baseline remains frozen. All V1–V6 data retained; draft PR remains open pending primary-source review. No AI causal significant coefficient claimed.
