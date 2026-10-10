@@ -62,7 +62,7 @@ def main(zip_paths,source_orig,out):
             count=0
             with z.open(numname) as stream:
                 for chunk in pd.read_csv(stream,sep="\t",dtype=str,chunksize=160000,low_memory=False,encoding="utf-8",on_bad_lines="skip"):
-                    keep=chunk.adsh.isin(lookup)&chunk.tag.isin(METRICS)&chunk.version.eq("us-gaap")
+                    keep=chunk.adsh.isin(lookup)&chunk.tag.isin(METRICS)&chunk.version.fillna("").str.startswith("us-gaap")
                     if "coreg" in chunk:keep &=chunk.coreg.isna()|chunk.coreg.astype(str).eq("")
                     if "segments" in chunk:keep &=chunk.segments.isna()|chunk.segments.astype(str).eq("")
                     filtered=chunk[keep]
