@@ -18,7 +18,10 @@ AUDITORS = {
  "kpmg": ("kpmg",), "bdo": ("bdo",), "grant_thornton": ("grant thornton",)
 }
 def header_and_rows(path):
-    with path.open("r",encoding="utf-8-sig",errors="replace",newline="") as f:
+    with path.open("rb") as bf:
+        first=bf.read(16)
+    encoding="utf-16" if first.startswith(bytes([255,254])) or first.startswith(bytes([254,255])) or bytes([0]) in first else "utf-8-sig"
+    with path.open("r",encoding=encoding,errors="replace",newline="") as f:
         raw=f.read(50000);f.seek(0)
         try: dialect=csv.Sniffer().sniff(raw,delimiters=",;\t|")
         except csv.Error: dialect=csv.excel
@@ -37,7 +40,7 @@ def main(files, out):
         hdr=list(rows[0]) if rows else []
         cand=[h for h in hdr if any(k in h.lower() for k in ("name","firm","registr","date","year","report","inspection","audit","part","id","type"))]
         counts={h:sum(bool(str(r.get(h,"")).strip()) for r in rows) for h in cand}
-        report["datasets"][name]={"rows":len(rows),"fields":hdr,"field_coverage":counts,
+        report["datasets"][name]={"rows":len(rows),"encoding":encoding if False else "detected_at_reader","fields":hdr,"field_coverage":counts,
           "sample_safe_values":{h:list(dict.fromkeys(str(r.get(h,""))[:75] for r in rows[:20]))[:6] for h in cand[:12]}}
         for row in rows:
             norm=" ".join(str(row.get(k,"")) for k in hdr if any(x in k.lower() for x in ("firm", "name", "auditor")))
