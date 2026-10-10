@@ -1,0 +1,90 @@
+{
+  "source": "https://github.com/iangow/sec_submissions_data/releases/tag/2026-09-30",
+  "archive_date": "2026-09-30",
+  "run_utc": "2026-10-10T20:56:04.082014+00:00",
+  "status": "REAL_SEC_10K_FILING_METADATA_EXTRACT__NOT_FULL_CAUSAL_SAMPLE",
+  "all_10K_2017_2025_metadata_rows": 63520,
+  "unique_CIK_FY_2017_2025": 62641,
+  "FY2021_2024_original_10K_issuer_years": 28483,
+  "FY2021_2024_original_10K_unique_CIK": 8926,
+  "FY2021_2024_PROVISIONAL_nonfinancial_SIC_2026_issuer_years": 18336,
+  "FY2021_2024_PROVISIONAL_nonfinancial_unique_CIK": 5489,
+  "FY2021_2024_missing_SIC": 569,
+  "FY2021_2024_10KT_forms_for_review": 66,
+  "FY2021_2024_nonfirst_originals": 429,
+  "FY2021_2024_ambiguous_reporting_periods": 105,
+  "year_counts": [
+    {
+      "fiscal_year": 2017,
+      "original_10K_issuer_years": 7052,
+      "unique_CIK": 7052,
+      "provisional_nonfinancial_rows": 4767,
+      "missing_SIC_rows": 89
+    },
+    {
+      "fiscal_year": 2018,
+      "original_10K_issuer_years": 6891,
+      "unique_CIK": 6891,
+      "provisional_nonfinancial_rows": 4627,
+      "missing_SIC_rows": 95
+    },
+    {
+      "fiscal_year": 2019,
+      "original_10K_issuer_years": 6741,
+      "unique_CIK": 6741,
+      "provisional_nonfinancial_rows": 4494,
+      "missing_SIC_rows": 91
+    },
+    {
+      "fiscal_year": 2020,
+      "original_10K_issuer_years": 6949,
+      "unique_CIK": 6949,
+      "provisional_nonfinancial_rows": 4540,
+      "missing_SIC_rows": 99
+    },
+    {
+      "fiscal_year": 2021,
+      "original_10K_issuer_years": 7663,
+      "unique_CIK": 7663,
+      "provisional_nonfinancial_rows": 4902,
+      "missing_SIC_rows": 114
+    },
+    {
+      "fiscal_year": 2022,
+      "original_10K_issuer_years": 7350,
+      "unique_CIK": 7350,
+      "provisional_nonfinancial_rows": 4786,
+      "missing_SIC_rows": 131
+    },
+    {
+      "fiscal_year": 2023,
+      "original_10K_issuer_years": 6851,
+      "unique_CIK": 6851,
+      "provisional_nonfinancial_rows": 4452,
+      "missing_SIC_rows": 155
+    },
+    {
+      "fiscal_year": 2024,
+      "original_10K_issuer_years": 6619,
+      "unique_CIK": 6619,
+      "provisional_nonfinancial_rows": 4196,
+      "missing_SIC_rows": 169
+    },
+    {
+      "fiscal_year": 2025,
+      "original_10K_issuer_years": 6525,
+      "unique_CIK": 6525,
+      "provisional_nonfinancial_rows": 3947,
+      "missing_SIC_rows": 181
+    }
+  ],
+  "final_FT50_eligible_N": null,
+  "final_FT50_eligible_company_years": null,
+  "historical_SIC_verified": false,
+  "original_10K_content_validated": false,
+  "AI_CapEx_verified": false,
+  "CAM_AS3101_filer_year_status_verified": false,
+  "ICFR_404b_labels_verified": false,
+  "auditor_FormAP_PCAOB_asof_verified": false,
+  "caveat": "Full universe includes later delisted firms but historic SIC, EGC CAM exemptions, company-owned AI CapEx and auditor oversight still unverified; 2026 SIC screening is provisional only. No FT50 regression."
+}
