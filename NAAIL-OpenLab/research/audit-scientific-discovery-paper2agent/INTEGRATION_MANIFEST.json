@@ -2,7 +2,7 @@
   "project": "NAAIL Audit Scientific Discovery — Paper2Agent x Co-Scientist x AlphaEvolve",
   "created": "2026-10-10",
   "branch": "research/audit-discovery-paper2agent-20261010",
-  "google_drive_folder": "https://drive.google.com/drive/folders/1OQsIDutmvJwZZ4APUZXl5urKwbvodj0w",
+  "google_drive_folder": "https://drive.google.com/drive/folders/1iXOWJSYIZFhiXZReULHcp9ajatdSaUAB",
   "code_repo": "https://github.com/Saehon/Saeid-Homayoun",
   "components": [
     {
@@ -45,5 +45,17 @@
   "human_gate": "REQUIRED",
   "scientific_discovery_claim_allowed": false,
   "external_ai_executed": false,
-  "paper_agent_tool_surface": "READ_ONLY_PYTHON_FUNCTIONS_NOT_LIVE_MCP"
+  "paper_agent_tool_surface": "LOCAL_MCP_STDIO_JSON_RPC_SERVER",
+  "legacy_parent_archive": "https://drive.google.com/drive/folders/1OQsIDutmvJwZZ4APUZXl5urKwbvodj0w",
+  "original_author_matlab_executed": false,
+  "existing_lemon_cam_imports_executed_in_synthetic_tests": true,
+  "source_rights_verified_for_redistribution": false,
+  "study_stage": "S5_GATE_BUILT_AUTHOR_REPLICATION_BLOCKED",
+  "study_documents": {
+    "master_index": "https://docs.google.com/document/d/1mA139KFjQX-QVFdaSK-RU96MNFOFuzfmDgLZnDd5OyU/edit",
+    "data_rights": "https://docs.google.com/document/d/1gKseKhopOTm5zMcvCKsWL9YAZoPFC_RyEa7jMYDGHtE/edit",
+    "mcp_usage": "https://docs.google.com/document/d/1dddYjMUQmr0OGGkfIwVbWGnF-gt0UcwDshNIQlSvXSU/edit",
+    "stage_gates": "https://docs.google.com/document/d/1YKxm3c-f9-gpT9SujhfAAyfNQKOftq0diDBHRO3T-Ko/edit",
+    "manuscript_outline": "https://docs.google.com/document/d/1m35BGgqlARj2YRyDCEUytsd-Jm1MlHwMi_t8Fci8v8o/edit"
+  }
 }
