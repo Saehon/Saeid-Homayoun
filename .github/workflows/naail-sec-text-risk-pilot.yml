@@ -1,0 +1,43 @@
+name: NAAIL 2024 original SEC 10-K CAM ICFR AI text evidence screening
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - ".github/workflows/naail-sec-text-risk-pilot.yml"
+      - "NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/sec_2024_CAM_ICFR_AI_text_feasibility.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  10k-source-text-evidence-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Dependencies
+        run: python -m pip install --disable-pip-version-check pandas==2.2.3 requests==2.32.3 beautifulsoup4==4.14.2 lxml==6.0.2
+      - name: Restore fiscal year and issuer CIK source evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/HIST" "$RUNNER_TEMP/GAAP"
+          gh run download 38085610261 --repo Saehon/Saeid-Homayoun --name naail-sec-historical-sample-fy2021-2024 --dir "$RUNNER_TEMP/HIST"
+          gh run download 38087677175 --repo Saehon/Saeid-Homayoun --name naail-actual-SEC-financial-panel-2021-2025 --dir "$RUNNER_TEMP/GAAP"
+      - name: Run deterministic independent SEC 10-K full-text feasibility and context extraction
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT=NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50
+          python "$PROJECT/sampling/sec_2024_CAM_ICFR_AI_text_feasibility.py" \
+            "$RUNNER_TEMP/HIST/SEC_10K_FY2017_2025_UNIVERSE.csv" \
+            "$RUNNER_TEMP/GAAP/SEC_OFFICIAL_ASFILED_SIC_XBRL_FACTS_PILOT.csv" \
+            "$PROJECT/sampling/V2_PRIORITY_119_TECH_SUPPLY_CANDIDATES.csv" \
+            "$RUNNER_TEMP/SEC_FY2024_TEXT_OUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: naail-sec-2024-ai-cam-icfr-text-evidence-candidates
+          path: ${{ runner.temp }}/SEC_FY2024_TEXT_OUT/
+          retention-days: 90
