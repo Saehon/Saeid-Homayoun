@@ -1,0 +1,20 @@
+{
+  "period": "2026-09",
+  "synthetic": true,
+  "bank_balance": 1060,
+  "gl_balance": 1120,
+  "deposits_in_transit": [
+    {
+      "item_id": "D-001",
+      "amount": 100,
+      "evidence_ref": "SYN-BANK-D"
+    }
+  ],
+  "outstanding_checks": [
+    {
+      "item_id": "C-001",
+      "amount": 40,
+      "evidence_ref": "SYN-BANK-C"
+    }
+  ]
+}

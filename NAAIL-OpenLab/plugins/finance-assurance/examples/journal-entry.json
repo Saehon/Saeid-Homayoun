@@ -1,0 +1,16 @@
+{
+  "period": "2026-09",
+  "synthetic": true,
+  "lines": [
+    {
+      "account": "Rent expense",
+      "debit": 250,
+      "evidence_ref": "SYN-DOC-001"
+    },
+    {
+      "account": "Accrued payables",
+      "credit": 250,
+      "evidence_ref": "SYN-DOC-001"
+    }
+  ]
+}

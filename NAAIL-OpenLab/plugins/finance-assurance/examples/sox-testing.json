@@ -1,0 +1,24 @@
+{
+  "synthetic": true,
+  "control_id": "REV-CUTOFF-01",
+  "seed": "NAAIL-DEMO",
+  "sample_size": 2,
+  "population": [
+    {
+      "id": "SYN-INV-001",
+      "evidence_ref": "SYN-CONTROL-001"
+    },
+    {
+      "id": "SYN-INV-002",
+      "evidence_ref": "SYN-CONTROL-002",
+      "exception": true
+    },
+    {
+      "id": "SYN-INV-003",
+      "evidence_ref": "SYN-CONTROL-003"
+    },
+    {
+      "id": "SYN-INV-004"
+    }
+  ]
+}

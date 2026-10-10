@@ -1,0 +1,19 @@
+{
+  "comparison_label": "prior_period",
+  "synthetic": true,
+  "items": [
+    {
+      "account": "Revenue",
+      "actual": 11500,
+      "comparison": 10000,
+      "evidence_ref": "SYN-TB-001",
+      "explanation": "Synthetic volume increase"
+    },
+    {
+      "account": "Operating costs",
+      "actual": 7000,
+      "comparison": 6500,
+      "evidence_ref": "SYN-TB-002"
+    }
+  ]
+}

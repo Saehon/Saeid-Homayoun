@@ -1,0 +1,18 @@
+{
+  "period": "2026-Q3",
+  "synthetic": true,
+  "accounts": [
+    {
+      "kind": "revenue",
+      "account": "Sales",
+      "current": 11500,
+      "prior": 10000
+    },
+    {
+      "kind": "expense",
+      "account": "Operating costs",
+      "current": 7000,
+      "prior": 6500
+    }
+  ]
+}
