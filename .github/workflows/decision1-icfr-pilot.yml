@@ -1,0 +1,35 @@
+name: Decision-1 ICFR Pilot (synthetic-only)
+on:
+  pull_request:
+    paths:
+      - 'NAAIL/research-assurance-mcp/decision1-pilot/**'
+      - '.github/workflows/decision1-icfr-pilot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests (offline; no secrets)
+        run: python -m unittest discover -s NAAIL/research-assurance-mcp/decision1-pilot -p 'test_decision1_pilot.py' -v
+      - name: Offline smoke benchmark
+        run: python NAAIL/research-assurance-mcp/decision1-pilot/decision1_pilot.py --provider offline --output /tmp/decision1_offline.json
+      - name: Confirm zero automatic audit approvals
+        run: |
+          python - <<'PY'
+          import json
+          with open('/tmp/decision1_offline.json', encoding='utf-8') as f:
+              data = json.load(f)
+          assert data['summary']['cases'] >= 18
+          assert data['summary']['human_approval_count'] == 0
+          assert all(not r['approved'] and r['production_action'] is None for r in data['records'])
+          print('Synthetic human-approval invariant: PASS')
+          PY
