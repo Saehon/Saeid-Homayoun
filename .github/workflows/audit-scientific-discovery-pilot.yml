@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
       - name: Unit tests (synthetic, no network)
         working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
-        run: python -m unittest -v test_pilot.py
+        run: python -m unittest discover -v -p 'test_*.py'
       - name: Run fixed synthetic demonstration
         working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
         run: python pilot.py --demo --out results/pilot_results.json
