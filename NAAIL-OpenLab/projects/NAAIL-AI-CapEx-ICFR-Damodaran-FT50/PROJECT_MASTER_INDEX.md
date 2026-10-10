@@ -58,3 +58,21 @@ Native TAR manuscript Appendix E and native Drive master index both updated. Sou
 - [Canonical Google Doc — V3 frozen protocol](https://docs.google.com/document/d/14pQ2rreS8Vph7eu0XUAHCfUJ-VUnv7g8U-bxBoqpSW0/edit)
 
 The original V1/V2 files, CAM/ICFR/PCAOB pilot results and TAR manuscript are intentionally preserved. Do not merge the draft PR without research and data-rights review. No empirical paper-wide coefficients or significance are claimed.
+
+
+## Actual SEC 10-K historical filing-metadata population — observed 10 Oct 2026
+
+**NEW real-run result** (GitHub Actions [successful execution](https://github.com/Saehon/Saeid-Homayoun/actions/runs/38085610261) against a [pinned 2026-09-30 audited SEC submissions mirror](https://github.com/iangow/sec_submissions_data/releases/tag/2026-09-30)). Unlike the prior 424-company S&P500 convenience snapshot, this is 2017–2025 CIK, fiscal-year, original-accession-level source metadata and includes previously delisted issuers present in SEC history.
+
+- FY2021–2024 *original 10-K filing candidates*: **28,483 issuer-years / 8,926 distinct CIK**.
+- FY2021–2024 *2026-SIC provisional nonfinancial screen*: **18,336 issuer-years / 5,489 CIK**. By FY: 4,902 / 4,786 / 4,452 / 4,196. **NOT FINAL analytic/treated sample.**
+- Other FY2021–2024 records: **9,578** current-financial-SIC and **569** SIC missing, plus **66** separately reviewed 10-KT and **105** company-years with multiple period ends.
+- **16,581** nonfinancial-screen FY t company-years / **5,076 CIK** have original FY t+1 10-K (90.43% filing-document coverage, NOT validated CFO).
+- **11,533** of **14,140** FY2021–2023 investment years / **4,391 CIK** have FY t+2 10-K (81.56% coverage).
+- Balanced FY2021–2024 originals: **3,662** CIK; FY2021–2025 complete: **3,303** CIK; retain unbalanced population as primary to avoid attrition bias.
+- Independent QA on the actual exported GitHub Actions artifact (full CSV row counts, original forms, exact CIK–FY uniqueness, source URL and period sequencing, SIC partition totals) **PASS**.
+- Original prior 10 pilot companies each occur in all FY2021–2024: 40 original 10-K issuer-years.
+
+**Research-critical boundary:** source companies.parquet SIC is as of the 2026 snapshot, not time-varying historical SIC. Original issuer-year audit eligibility, actual issuer-owned AI-specific CapEx, financial XBRL facts, account-risk/CAM, SOX 404(a)/(b), Form AP and public PCAOB inspection as-of join are NOT YET VERIFIED at scale. The actual causal FT50 panel remains pending. No experiment or p-value was produced from this full historical metadata frame.
+
+**Authoritative artifacts:** [Google Drive original output ZIP](https://drive.google.com/file/d/1r698sPXTeaWEtBWajoantNCfpUk8GNyw/view) and [Drive actual extracted source QA report](https://docs.google.com/document/d/1lf6ewRvcpG4y8bTHMgF7egDvmQI2t19C4ILv2n0NbeQ/edit). The six original results files are also persisted under [actual_sec_historical_2026-09-30](sampling/actual_sec_historical_2026-09-30/), alongside independent [QA JSON](sampling/actual_sec_historical_2026-09-30/SEC_FY2021_2024_INDEPENDENT_QA_2026-10-10.json) and [forward-panel coverage JSON](sampling/actual_sec_historical_2026-09-30/SEC_FY2021_2024_FOLLOWUP_COVERAGE_2026-10-10.json). Reproducible scripts: [extract](sampling/extract_sec_historical_submissions.py) and [t+1/t+2 coverage](sampling/calculate_forward_10k_coverage.py).
