@@ -21,11 +21,11 @@ def test_future_inspection_not_available_in_past():
 def test_latest_public_report_and_firm_are_matched():
     reports = [
         PublishedInspection("auditor-a", "r1", utc(2023), 10, 2),
-        PublishedInspection("auditor-a", "r2", utc(2025), 20, 4),
+        PublishedInspection("auditor-a", "r2", utc(2025), 20, 6),
         PublishedInspection("auditor-b", "r3", utc(2025), 5, 5),
     ]
     assert published_auditor_exposure("auditor-a", utc(2024), reports) == 0.2
-    assert published_auditor_exposure("auditor-a", utc(2026), reports) == 0.2
+    assert published_auditor_exposure("auditor-a", utc(2026), reports) == 0.3
     assert published_auditor_exposure("auditor-c", utc(2026), reports) is None
 
 
