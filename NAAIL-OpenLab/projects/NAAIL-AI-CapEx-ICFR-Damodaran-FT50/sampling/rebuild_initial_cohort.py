@@ -9,7 +9,7 @@ URL = "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/36472b57
 BUILDERS = {"MSFT","GOOGL","AMZN","META","ORCL"}
 SUPPLIERS = {"NVDA","AVGO","MU","VRT","ANET"}
 KEYS = ["cik","ticker","aliases","company","sector","subindustry","analysis","role","priority","sec_10k_2019_2025_verified","ai_capex_verified","historical_listing_verified","source_snapshot"]
-WORDS = ("semiconductor","technology hardware","electronic","electrical equipment","communications equipment","data processing","construction","industrial machinery")
+WORDS = ("semiconductor","technology hardware","electronic","electrical equipment","communications equipment","data processing","construction & engineering","industrial machinery")
 
 def screen(rows):
     by = defaultdict(list)
@@ -31,7 +31,7 @@ def screen(rows):
             "REAL_ESTATE_SCREENING" if sector=="Real Estate" else
             "INFRASTRUCTURE_SUPPLY_CANDIDATE_UNVERIFIED" if any(w in sub.lower() for w in WORDS) else
             "TECH_ADOPTION_CANDIDATE_UNVERIFIED" if sector in ("Information Technology","Communication Services") else
-            "OTHER_NONFINANCIAL_UNVERIFIED")
+            "OTHER_NONFINANCIAL_UNVERIFIED"))
         priority = ("P0_10_FIRMS" if ticker in BUILDERS|SUPPLIERS else
                     "P1_SECTOR_SCREEN" if role in ("INFRASTRUCTURE_SUPPLY_CANDIDATE_UNVERIFIED","ENERGY_UTILITY_SCREENING","REAL_ESTATE_SCREENING") else "P2_GENERAL_SCREEN")
         d={"cik":str(cik).zfill(10),"ticker":ticker,"aliases":"|".join(v for v in symbols if v!=ticker),
@@ -43,6 +43,8 @@ def screen(rows):
     assert len({x["cik"] for x in selected})==424
     assert sum(x["analysis"]=="SEPARATE_INFRA_SPECIAL" for x in selected)==61
     assert sum(x["priority"]=="P0_10_FIRMS" for x in selected)==10
+    assert sum(x["priority"]=="P1_SECTOR_SCREEN" for x in selected)==126
+    assert sum(x["priority"]=="P2_GENERAL_SCREEN" for x in selected)==288
     return selected,excluded
 
 def main(directory):
