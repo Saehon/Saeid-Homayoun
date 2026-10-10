@@ -36,3 +36,11 @@ Report PR-AUC, precision/recall at fixed monitoring capacity, Brier, calibration
 
 ## Go/no-go before full-scale collection
 Proceed only after manually validating AI-related investment coding, proving sample variation in ICFR measures, and demonstrating viable out-of-time outcomes with accessible data and documented licensing.
+
+
+## PCAOB / CAM extension — appended 2026-10-10
+Add high-risk/no-CAM misalignment using independently assessed account risk, **not** CAM text as the risk-score input. New confirmatory H4/H5 interactions measure moderation of AI investment outcomes, and exploratory H6 studies public Part I.B CAM compliance. Audit eligibility matters: required CAM phased in for large accelerated filers' FYE >= 2019-06-30 and other applicable issuers' FYE >= 2020-12-15. Test only after audit report availability.
+
+Historical PCAOB Part I.A/B inspection exposure is at **audit firm / inspected audit sample** level, not the individual named client. Match PCAOB AuditorSearch Form AP firm IDs as of observation date; missing public inspection is missing, not no deficiencies. Public inspection release date (and separately Part II disclosure date) must predate prediction/event cutoffs. Test selection and denominator sensitivity, varying audit-firm fixed effects, clustering. For full specifications and table plan, see PCAOB_CAM_INTEGRATION.md.
+
+The previous H1–H3 remain unchanged. H4/H5 are theoretical hypotheses until formally frozen and empirically tested. Three-way interactions should NOT be the headline absent feasibility/power checks.
