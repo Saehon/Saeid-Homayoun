@@ -39,3 +39,10 @@ M0: Confirm pipeline governance and check data availability, empirical novelty, 
 **FT50 novelty gate:** Dee et al. (JAE 2026) already studies CAM and ICFR; Acito et al. (TAR 2018) already studies exposure to PCAOB findings. Primary novel question is conditional *economic valuation of AI investment*, not CAM/ICFR or PCAOB alone.
 
 **Research status:** extension documents and initial deterministic code scaffold stored; no new empirical data/results/peer-reviewed findings created; Draft PR #163 remains open for review.
+
+
+## Revised FT50-AJG4* sample — 2026-10-10
+Published methodological comparison against Babina et al. JFE 2024, Biddle et al. JAE 2009, Doyle et al. TAR 2007, Ashbaugh-Skaife et al. JAR 2009, Burke et al. TAR 2023, Dee et al. JAE 2026, Acito et al. TAR 2018, and Law/Shen Management Science 2025 supports separating buyer capital expenditure from supplier-demand spillovers, CAM topical alignment, prior-public PCAOB risk and future capital realization.
+The original 424-issuer 2026-index screen is preserved with derived V2 partitions 119/244/61 and explicit UNKNOWN actual AI status. It does not replace the planned historical SEC 10-K universe with delisted firms.
+Canonical FT50 sampling memo: https://docs.google.com/document/d/1IdbVQSJL4bq97PqKJGyop64MZ01f1My44CvUVqaKQHc/edit
+Native TAR manuscript Appendix E and native Drive master index both updated. Source code and CSVs in sampling/; draft PR #163 still open.
