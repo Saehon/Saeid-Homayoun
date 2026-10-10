@@ -1,0 +1,34 @@
+name: Audit Scientific Discovery synthetic pilot
+on:
+  push:
+    paths:
+      - 'NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent/**'
+      - '.github/workflows/audit-scientific-discovery-pilot.yml'
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent/**'
+      - '.github/workflows/audit-scientific-discovery-pilot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests (synthetic, no network)
+        working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
+        run: python -m unittest -v test_pilot.py
+      - name: Run fixed synthetic demonstration
+        working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
+        run: python pilot.py --demo --out results/pilot_results.json
+      - name: Assert scientific gate stays closed
+        working-directory: NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
+        run: |
+          python -c "import json; r=json.load(open('results/pilot_results.json')); assert not r['scientific_discovery_claim_allowed']; assert r['human_approval_status']=='REQUIRED_NOT_GRANTED'; assert r['not_bao_replication']"
