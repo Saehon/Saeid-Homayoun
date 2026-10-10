@@ -20,7 +20,7 @@ AUDITORS = {
 def header_and_rows(path):
     with path.open("rb") as bf:
         first=bf.read(16)
-    encoding="utf-16" if first.startswith(bytes([255,254])) or first.startswith(bytes([254,255])) or bytes([0]) in first else "utf-8-sig"
+    encoding=("utf-16" if first[:2] in (bytes([255,254]),bytes([254,255])) else "utf-16-le" if bytes([0]) in first and first[1]==0 else "utf-16-be" if bytes([0]) in first else "utf-8-sig")
     with path.open("r",encoding=encoding,errors="replace",newline="") as f:
         raw=f.read(50000);f.seek(0)
         try: dialect=csv.Sniffer().sniff(raw,delimiters=",;\t|")
