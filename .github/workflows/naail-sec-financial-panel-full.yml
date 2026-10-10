@@ -1,0 +1,74 @@
+name: NAAIL full original SEC XBRL financial panel FY2021-2025
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - ".github/workflows/naail-sec-financial-panel-full.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-full-financial-panel:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Install source-parsing dependencies
+        run: python -m pip install --disable-pip-version-check pandas==2.2.3
+      - name: Retrieve verified original SEC CIK-period-accession historical selection
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/HIST"
+          gh run download 38085610261 --repo Saehon/Saeid-Homayoun --name naail-sec-historical-sample-fy2021-2024 --dir "$RUNNER_TEMP/HIST"
+          test -s "$RUNNER_TEMP/HIST/SEC_10K_FY2017_2025_UNIVERSE.csv"
+      - name: Download official SEC financial statement data sets 2021Q1 to 2026Q3
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/SEC-FS"
+          for YEAR in 2021 2022 2023 2024 2025 2026; do
+            if [ "$YEAR" = 2026 ]; then QUARTERS="1 2 3"; else QUARTERS="1 2 3 4"; fi
+            for QUARTER in $QUARTERS; do
+              FILE="${YEAR}q${QUARTER}"
+              echo "SEC_QUARTER_START $FILE"
+              curl -fLsS --retry 4 --retry-delay 7 --connect-timeout 25 --max-time 1200 \
+               "https://www.sec.gov/files/dera/data/financial-statement-data-sets/${FILE}.zip" \
+               -H "User-Agent: NAAIL OpenLab University Accounting Research contact-research@example.org" \
+               -o "$RUNNER_TEMP/SEC-FS/${FILE}.zip"
+              unzip -t "$RUNNER_TEMP/SEC-FS/${FILE}.zip" | tail -1
+              echo "SEC_QUARTER_VERIFIED $FILE"
+            done
+          done
+      - name: Join original issuer 10-K accession to as-filed SIC and official cash-flow GAAP
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT="NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50"
+          python "$PROJECT/sampling/join_official_SEC_financial_quarters.py" \
+            --zip "$RUNNER_TEMP"/SEC-FS/*.zip \
+            --originals "$RUNNER_TEMP/HIST/SEC_10K_FY2017_2025_UNIVERSE.csv" \
+            --out "$RUNNER_TEMP/SEC_FULL_OUT"
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('/home/runner/work/_temp/SEC_FULL_OUT/SEC_OFFICIAL_QUARTER_SIC_XBRL_PILOT_QA.json')
+          if not p.exists():
+              import os
+              p=pathlib.Path(os.environ["RUNNER_TEMP"])/"SEC_FULL_OUT/SEC_OFFICIAL_QUARTER_SIC_XBRL_PILOT_QA.json"
+          x=json.loads(p.read_text())
+          assert len(x["quarters"])==23,x
+          assert x["original_10K_rows_matched"]>10000,x
+          assert x["available_CFO"]>8000,x
+          print("FULL_FINANCIAL_SOURCE_COVERAGE_QA_PASS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: naail-actual-SEC-financial-panel-2021-2025
+          path: ${{ runner.temp }}/SEC_FULL_OUT/
+          retention-days: 90
+          if-no-files-found: error
