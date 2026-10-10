@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 jobs:
-  10k-source-text-evidence-screen:
+  source-text-evidence-screen:
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
