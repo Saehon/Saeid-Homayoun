@@ -43,6 +43,7 @@
   ],
   "evidence_class": "SYNTHETIC_ONLY",
   "human_gate": "REQUIRED",
-  "no_actual_external_ai": false,
-  "scientific_discovery_claim_allowed": false
+  "scientific_discovery_claim_allowed": false,
+  "external_ai_executed": false,
+  "paper_agent_tool_surface": "READ_ONLY_PYTHON_FUNCTIONS_NOT_LIVE_MCP"
 }
