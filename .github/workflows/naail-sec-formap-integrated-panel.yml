@@ -1,0 +1,48 @@
+name: NAAIL complete SEC financial plus PCAOB Form AP auditor ID integrated panel
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - ".github/workflows/naail-sec-formap-integrated-panel.yml"
+      - "NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/merge_verified_sec_gaap_formap.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  financial-auditor-integrated-panel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - run: python -m pip install --disable-pip-version-check pandas==2.2.3
+      - name: Retrieve full historical SEC GAAP XBRL panel from successful verified run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/GAAP"
+          gh run download 38087677175 --repo Saehon/Saeid-Homayoun --name naail-actual-SEC-financial-panel-2021-2025 --dir "$RUNNER_TEMP/GAAP"
+          test -s "$RUNNER_TEMP/GAAP/SEC_OFFICIAL_ASFILED_SIC_XBRL_FACTS_PILOT.csv"
+      - name: Retrieve full Form AP issuer-fiscal-end auditor registry from verified run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/FORMAP"
+          gh run download 38088181817 --repo Saehon/Saeid-Homayoun --name naail-official-form-ap-sec-issuer-auditor-2021-2025 --dir "$RUNNER_TEMP/FORMAP"
+          test -s "$RUNNER_TEMP/FORMAP/FORMAP_SEC_EXACT_CIK_FISCAL_END_MATCH_CANDIDATES_2021_2025.csv"
+      - name: Merge source-verified CIK fiscal period SIC and registered audit-firm IDs
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT=NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50
+          python "$PROJECT/sampling/merge_verified_sec_gaap_formap.py" \
+            --gaap "$RUNNER_TEMP/GAAP/SEC_OFFICIAL_ASFILED_SIC_XBRL_FACTS_PILOT.csv" \
+            --formap "$RUNNER_TEMP/FORMAP/FORMAP_SEC_EXACT_CIK_FISCAL_END_MATCH_CANDIDATES_2021_2025.csv" \
+            --out "$RUNNER_TEMP/ACTUAL_INTEGRATED"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: naail-auditor-financial-integrated-9487-observations
+          path: ${{ runner.temp }}/ACTUAL_INTEGRATED/
+          retention-days: 90
+          if-no-files-found: error
