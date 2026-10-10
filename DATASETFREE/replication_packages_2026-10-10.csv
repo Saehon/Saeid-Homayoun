@@ -1,0 +1,13 @@
+id,journal,topic,url,replication_status,primary_caveat
+JFE-AI,JFE,AI workforce and product innovation,https://data.mendeley.com/datasets/s26kxvspn7/3,pseudodata,Commercial Cognism and Compustat substitutes
+JFE-RECESSION,JFE,Startup macro cohorts and human capital,https://data.mendeley.com/datasets/kj65wmpbft/2,package-claimed-complete,Dependencies not audited
+JFE-HUMCAP,JFE,Innovation financing and human capital,https://data.mendeley.com/datasets/8bksxrcpbs/1,code-data-repository,Reproduction not tested
+JFE-PATENTS,JFE,Patent innovation,https://data.mendeley.com/datasets/2vyv7vwypr/1,code-data-repository,Reproduction not tested
+JFE-COLOR,JFE,Financial-word sentiment,https://data.mendeley.com/datasets/37x3jsf488/2,code-data-repository,Reproduction not tested
+JFE-COPRICING,JFE,Bond equity pricing factors,https://data.mendeley.com/datasets/sxrmkvt3k8/1,dataset-source-listed,Not individual stock returns
+JFE-ESG,JFE,ESG preference machine learning,https://data.mendeley.com/datasets/8ddvm3kwzj/2,analysis-ready-claim,Reproduction not tested
+JFE-CHRONO,JFE,Chronological LLM asset pricing,https://data.mendeley.com/datasets/s6yt64mrwb/2,synthetic-stand-ins,CRSP Dow Jones proprietary
+JFE-WALLS,JFE,China Walls,https://data.mendeley.com/datasets/tf6xbw5x9z/1,synthetic-stand-ins,Does not reproduce original estimates
+JFE-GROWTH,JFE,Appropriated growth,https://data.mendeley.com/datasets/stfk3cj3nc/3,restricted-subsample,Full original sample proprietary
+MS-DEKOK,Management Science,LLM accounting textual analysis,https://github.com/TiesdeKok/chatgpt_paper,example-code-and-sample,Full reproduction not verified
+ICPSR-TEXT,Economic Analysis,Corporate text as data,https://www.openicpsr.org/openicpsr/project/228102/version/V2/view,code-and-derived-files,Some compustat dependencies
