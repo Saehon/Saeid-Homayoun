@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 
 HOME = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(HOME))  # pytest runs from Lemon package root, not repo root
 ROOT = HOME.parent / "NAAIL" / "research-assurance-mcp" / "decision1-pilot"
 spec = importlib.util.spec_from_file_location("decision1_pilot", ROOT / "decision1_pilot.py")
 pilot = importlib.util.module_from_spec(spec)
