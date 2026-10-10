@@ -1,0 +1,228 @@
+{
+  "source": "PCAOB official downloadable public firm inspection reports and Part I.A/I.B",
+  "retrieved_utc": "2026-10-10T21:21:33.969304+00:00",
+  "urls": {
+    "firm_inspections": "https://pcaobus.org/docs/default-source/generated-reports/inspecton-reports-csv.csv?download=true&sfvrsn=1cadcbfa_1193",
+    "part_I_A": "https://pcaobus.org/docs/default-source/generated-reports/part-i-a-flat-file-%28csv%29.csv?download=true&sfvrsn=c59cce67_5",
+    "part_I_B": "https://pcaobus.org/docs/default-source/generated-reports/part-i-b-flat-file-%28csv%29.csv?download=true&sfvrsn=68eeaca9_5"
+  },
+  "as_of_rule": "Source data may include 2026 released reports; no observation may be attributed to pre-release event until release_date and legal auditor firm ID are verified.",
+  "datasets": {
+    "firm_inspections": {
+      "rows": 8674,
+      "fields": [
+        "R\u0000e\u0000g\u0000i\u0000s\u0000t\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000 \u0000I\u0000D\u0000",
+        "\u0000F\u0000i\u0000r\u0000m\u0000 \u0000N\u0000a\u0000m\u0000e\u0000s\u0000",
+        "\u0000C\u0000o\u0000u\u0000n\u0000t\u0000r\u0000y\u0000",
+        "\u0000I\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000i\u0000o\u0000n\u0000 \u0000R\u0000e\u0000p\u0000o\u0000r\u0000t\u0000 \u0000D\u0000a\u0000t\u0000e\u0000",
+        "\u0000G\u0000l\u0000o\u0000b\u0000a\u0000l\u0000 \u0000N\u0000e\u0000t\u0000w\u0000o\u0000r\u0000k\u0000",
+        "\u0000A\u0000u\u0000d\u0000i\u0000t\u0000s\u0000 \u0000W\u0000i\u0000t\u0000h\u0000 \u0000P\u0000a\u0000r\u0000t\u0000 \u0000I\u0000.\u0000A\u0000 \u0000D\u0000e\u0000f\u0000i\u0000c\u0000i\u0000e\u0000n\u0000c\u0000i\u0000e\u0000s\u0000",
+        "\u0000T\u0000o\u0000t\u0000a\u0000l\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000s\u0000 \u0000R\u0000e\u0000v\u0000i\u0000e\u0000w\u0000e\u0000d\u0000",
+        "\u0000P\u0000a\u0000r\u0000t\u0000 \u0000I\u0000.\u0000A\u0000 \u0000D\u0000e\u0000f\u0000i\u0000c\u0000i\u0000e\u0000n\u0000c\u0000y\u0000 \u0000R\u0000a\u0000t\u0000e\u0000",
+        "\u0000I\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000i\u0000o\u0000n\u0000 \u0000Y\u0000e\u0000a\u0000r\u0000",
+        "\u0000T\u0000o\u0000t\u0000a\u0000l\u0000 \u0000I\u0000s\u0000s\u0000u\u0000e\u0000r\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000 \u0000C\u0000l\u0000i\u0000e\u0000n\u0000t\u0000s\u0000",
+        "\u0000I\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000i\u0000o\u0000n\u0000 \u0000T\u0000y\u0000p\u0000e\u0000",
+        "\u0000I\u0000n\u0000c\u0000l\u0000u\u0000d\u0000e\u0000s\u0000 \u0000p\u0000u\u0000b\u0000l\u0000i\u0000c\u0000 \u0000q\u0000u\u0000a\u0000l\u0000i\u0000t\u0000y\u0000 \u0000c\u0000o\u0000n\u0000t\u0000r\u0000o\u0000l\u0000 \u0000c\u0000r\u0000i\u0000t\u0000i\u0000c\u0000i\u0000s\u0000m\u0000s\u0000?\u0000",
+        "\u0000T\u0000o\u0000t\u0000a\u0000l\u0000 \u0000I\u0000s\u0000s\u0000u\u0000e\u0000r\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000s\u0000 \u0000I\u0000n\u0000 \u0000W\u0000h\u0000i\u0000c\u0000h\u0000 \u0000T\u0000h\u0000e\u0000 \u0000F\u0000i\u0000r\u0000m\u0000 \u0000W\u0000a\u0000s\u0000 \u0000N\u0000o\u0000t\u0000 \u0000T\u0000h\u0000e\u0000 \u0000L\u0000e\u0000a\u0000d\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000o\u0000r\u0000",
+        "\u0000T\u0000o\u0000t\u0000a\u0000l\u0000 \u0000E\u0000n\u0000g\u0000a\u0000g\u0000e\u0000m\u0000e\u0000n\u0000t\u0000 \u0000P\u0000a\u0000r\u0000t\u0000n\u0000e\u0000r\u0000s\u0000 \u0000O\u0000n\u0000 \u0000I\u0000s\u0000s\u0000u\u0000e\u0000r\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000 \u0000W\u0000o\u0000r\u0000k\u0000",
+        "\u0000R\u0000i\u0000s\u0000k\u0000 \u0000B\u0000a\u0000s\u0000e\u0000d\u0000 \u0000S\u0000e\u0000l\u0000e\u0000c\u0000t\u0000i\u0000o\u0000n\u0000s\u0000",
+        "\u0000R\u0000a\u0000n\u0000d\u0000o\u0000m\u0000 \u0000S\u0000e\u0000l\u0000e\u0000c\u0000t\u0000i\u0000o\u0000n\u0000s\u0000",
+        "\u0000T\u0000a\u0000r\u0000g\u0000e\u0000t\u0000 \u0000T\u0000e\u0000a\u0000m\u0000 \u0000S\u0000e\u0000l\u0000e\u0000c\u0000t\u0000i\u0000o\u0000n\u0000s\u0000",
+        "\u0000A\u0000u\u0000d\u0000i\u0000t\u0000s\u0000 \u0000I\u0000n\u0000 \u0000W\u0000h\u0000i\u0000c\u0000h\u0000 \u0000T\u0000h\u0000e\u0000 \u0000F\u0000i\u0000r\u0000m\u0000 \u0000W\u0000a\u0000s\u0000 \u0000T\u0000h\u0000e\u0000 \u0000L\u0000e\u0000a\u0000d\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000o\u0000r\u0000",
+        "\u0000A\u0000u\u0000d\u0000i\u0000t\u0000s\u0000 \u0000I\u0000n\u0000 \u0000W\u0000h\u0000i\u0000c\u0000h\u0000 \u0000T\u0000h\u0000e\u0000 \u0000F\u0000i\u0000r\u0000m\u0000 \u0000W\u0000a\u0000s\u0000 \u0000N\u0000o\u0000t\u0000 \u0000T\u0000h\u0000e\u0000 \u0000L\u0000e\u0000a\u0000d\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000o\u0000r\u0000",
+        "\u0000I\u0000n\u0000t\u0000e\u0000g\u0000r\u0000a\u0000t\u0000e\u0000d\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000s\u0000 \u0000O\u0000f\u0000 \u0000F\u0000i\u0000n\u0000a\u0000n\u0000c\u0000i\u0000a\u0000l\u0000 \u0000S\u0000t\u0000a\u0000t\u0000e\u0000m\u0000e\u0000n\u0000t\u0000s\u0000 \u0000A\u0000n\u0000d\u0000 \u0000I\u0000C\u0000F\u0000R\u0000",
+        "\u0000F\u0000i\u0000n\u0000a\u0000n\u0000c\u0000i\u0000a\u0000l\u0000 \u0000S\u0000t\u0000a\u0000t\u0000e\u0000m\u0000e\u0000n\u0000t\u0000 \u0000A\u0000u\u0000d\u0000i\u0000t\u0000s\u0000 \u0000O\u0000n\u0000l\u0000y\u0000",
+        "\u0000P\u0000D\u0000F\u0000 \u0000I\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000i\u0000o\u0000n\u0000 \u0000R\u0000e\u0000p\u0000o\u0000r\u0000t\u0000"
+      ],
+      "field_coverage": {},
+      "sample_safe_values": {}
+    },
+    "part_I_A": {
+      "rows": 14349,
+      "fields": [
+        "Inspection Type",
+        "Registration ID",
+        "Firm Names",
+        "Inspection Year",
+        "Country",
+        "Global Network",
+        "Inspection Report Date",
+        "Inspection Report Section",
+        "Issuer Reference Key",
+        "Firm played a role but was not the lead auditor",
+        "Audits Affected by the Deficiencies Identified in Part I.A",
+        "Classification of Audits with Part I.A Deficiencies",
+        "Audit Area",
+        "Firm-Identified Risk Assessment",
+        "Finding Count",
+        "Auditing Standard",
+        "Paragraph of the Auditing Standard",
+        "Description in the Firm's Inspection Report"
+      ],
+      "field_coverage": {
+        "Inspection Type": 14349,
+        "Registration ID": 14349,
+        "Firm Names": 14349,
+        "Inspection Year": 14349,
+        "Inspection Report Date": 14349,
+        "Inspection Report Section": 14349,
+        "Firm played a role but was not the lead auditor": 14349,
+        "Audits Affected by the Deficiencies Identified in Part I.A": 14349,
+        "Classification of Audits with Part I.A Deficiencies": 14349,
+        "Audit Area": 14349,
+        "Firm-Identified Risk Assessment": 4877,
+        "Auditing Standard": 14349,
+        "Paragraph of the Auditing Standard": 14344,
+        "Description in the Firm's Inspection Report": 14349
+      },
+      "sample_safe_values": {
+        "Inspection Type": [
+          "Annually Inspected"
+        ],
+        "Registration ID": [
+          "42",
+          "238"
+        ],
+        "Firm Names": [
+          "Ernst & Young LLP",
+          "PricewaterhouseCoopers LLP"
+        ],
+        "Inspection Year": [
+          "2025"
+        ],
+        "Inspection Report Date": [
+          "22-Jul-26",
+          "12-Jun-26"
+        ],
+        "Inspection Report Section": [
+          "Part I.A"
+        ],
+        "Firm played a role but was not the lead auditor": [
+          "No"
+        ],
+        "Audits Affected by the Deficiencies Identified in Part I.A": [
+          "Both financial statement and ICFR audits",
+          "ICFR audit only"
+        ],
+        "Classification of Audits with Part I.A Deficiencies": [
+          "Audits with multiple deficiencies"
+        ],
+        "Audit Area": [
+          "Insurance-related Assets and Liabilities, Including Insurance Reserves",
+          "Revenue and Related Accounts",
+          "Income Taxes",
+          "Debt",
+          "Business Combination",
+          "Oil and Gas Properties"
+        ],
+        "Firm-Identified Risk Assessment": [
+          "",
+          "Fraud Risk"
+        ],
+        "Auditing Standard": [
+          "AS 2201",
+          "AS 1105",
+          "AS 2301",
+          "AS 2810"
+        ]
+      }
+    },
+    "part_I_B": {
+      "rows": 3034,
+      "fields": [
+        "Inspection Type",
+        "Registration ID",
+        "Firm Names",
+        "Inspection Year",
+        "Country",
+        "Global Network",
+        "Inspection Report Date",
+        "Inspection Report Section",
+        "Finding Count",
+        "Auditing Standard",
+        "Description in the Firm's Inspection Report"
+      ],
+      "field_coverage": {
+        "Inspection Type": 3024,
+        "Registration ID": 3024,
+        "Firm Names": 3024,
+        "Inspection Year": 3024,
+        "Inspection Report Date": 3024,
+        "Inspection Report Section": 3024,
+        "Auditing Standard": 3024,
+        "Description in the Firm's Inspection Report": 3024
+      },
+      "sample_safe_values": {
+        "Inspection Type": [
+          "Annually Inspected"
+        ],
+        "Registration ID": [
+          "42",
+          "238",
+          "34"
+        ],
+        "Firm Names": [
+          "Ernst & Young LLP",
+          "PricewaterhouseCoopers LLP",
+          "Deloitte & Touche LLP"
+        ],
+        "Inspection Year": [
+          "2025"
+        ],
+        "Inspection Report Date": [
+          "22-Jul-26",
+          "12-Jun-26",
+          "21-May-26"
+        ],
+        "Inspection Report Section": [
+          "Part I.B"
+        ],
+        "Auditing Standard": [
+          "AS 1215",
+          "AS 1301",
+          "AS 2805",
+          "AS 2101",
+          "AS 2201",
+          "PCAOB Rule 3211"
+        ],
+        "Description in the Firm's Inspection Report": [
+          "In one of 64 audits reviewed, the firm did not include all relevant work pa",
+          "In one of 61 audits reviewed, the firm did not provide a copy of the manage",
+          "In two of 61 audits reviewed, the firm did not perform procedures to determ",
+          "In one of 52 audits reviewed, the firm, as the lead auditor, did not obtain",
+          "In one of 59 audits reviewed, the firm did not communicate to management, i",
+          "In three of 59 audits reviewed, the firm did not inform the audit committee"
+        ]
+      }
+    }
+  },
+  "named_firms": {
+    "deloitte": {
+      "part_I_A": 340,
+      "part_I_B": 90
+    },
+    "ernst_young": {
+      "part_I_A": 1580,
+      "part_I_B": 134
+    },
+    "pricewaterhousecoopers": {
+      "part_I_A": 990,
+      "part_I_B": 109
+    },
+    "kpmg": {
+      "part_I_A": 1459,
+      "part_I_B": 145
+    },
+    "bdo": {
+      "part_I_A": 1267,
+      "part_I_B": 99
+    },
+    "grant_thornton": {
+      "part_I_A": 853,
+      "part_I_B": 117
+    }
+  },
+  "filer_year_issuer_join": "NOT COMPLETED: Form AP legal firm IDs and issuer matching must be constructed separately",
+  "causal_pcaob_features_ready": false,
+  "matched_public_rows": 7183
+}
