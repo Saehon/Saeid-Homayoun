@@ -1,7 +1,7 @@
 # NAAIL Audit Scientific Discovery — Paper2Agent × Co-Scientist × AlphaEvolve
 **Status: DEMO / research infrastructure, not verified empirical evidence.**  
 **Created:** 2026-10-10. **Maintainer:** Saeid Homayoun.  
-**Canonical Drive folder:** https://drive.google.com/drive/folders/1OQsIDutmvJwZZ4APUZXl5urKwbvodj0w
+**Canonical Paper2Agent Drive folder:** https://drive.google.com/drive/folders/1iXOWJSYIZFhiXZReULHcp9ajatdSaUAB
 
 ## What was actually built
 A dependency-free, executable *synthetic* architecture benchmark comparing:
@@ -10,13 +10,13 @@ A dependency-free, executable *synthetic* architecture benchmark comparing:
 - **A2:** Co-Scientist-*inspired* competing-model tournament, chosen on training only.
 - **A3:** bounded AlphaEvolve-*inspired* parameter search chosen on a fixed validation split.
 
-This demonstrates a governed workflow, **not** real Google Co-Scientist, DeepMind AlphaEvolve, MCP Paper2Agent deployment, live external LLM use, professional fraud detection, or reproduction of Bao's model. No claims of A3 superiority are warranted from synthetic observations.
+This demonstrates a governed workflow with a **local read-only MCP stdio server** and real module-level integration to existing Lemon and CAM toy pipelines, **not** the upstream full Paper2Agent host conversion, real Google Co-Scientist, DeepMind AlphaEvolve, hosted MCP deployment, live external LLM use, professional fraud detection, or reproduction of Bao's model. No claims of A3 superiority are warranted from synthetic observations.
 
 ## Run
 ```bash
 cd NAAIL-OpenLab/research/audit-scientific-discovery-paper2agent
 python pilot.py --demo --out results/pilot_results.json
-python -m unittest -v test_pilot.py
+python -m unittest discover -v -p 'test_*.py'
 ```
 Python 3.10+; standard library only. The output contains temporal splits, candidate lineage, holdout metrics, evidence coverage, high-risk/no-CAM research triage, and Human Gate status. Expected cohort sizes: train 50 (2018–22), validation 10 (2023), test 20 (2024–25).
 
@@ -54,3 +54,16 @@ python paper_tools.py --tool run_architecture_benchmark
 python paper_tools.py --tool inspect_synthetic_case --case-id SYN-2024-00
 ```
 `paper_tools.py` exposes functions suitable for a *future* verified MCP adapter. It currently performs no RAG, web retrieval, external LLM call or real-money audit. Tests are in `test_paper_tools.py`.
+
+## Updated implementation — executable components
+- `mcp_server.py`, `test_mcp_server.py`: local JSON-RPC MCP stdio server with initialize, tools/list, tools/call, ping; four bounded read-only tools, strict synthetic-only input and security tests.
+- `integrated_case.py`, `test_integrated_case.py`: **real Python module imports** from the existing `Lemon-ICFR-US/src/lemon_icfr/orchestrator.py` and `NAAIL-OpenLab/demos/cam-kam-agent-benchmark/benchmark.py` on artificial evidence; human gate intentionally blocks approval.
+- `bao_replication_gateway.py`, `test_bao_replication_gateway.py`: verifies published MATLAB author files against pinned Git blobs; produces blocked or executed-pending-verification status; never copies author dataset to GitHub.
+- `USAGE.md`: MCP server setup.
+- `DATA_RIGHTS_AND_REPLICATION.md`: pinned original author sources and correction/data provenance.
+- `STAGE_GATES.md`: every engineering and scientific stage, accurate blockers.
+- `MANUSCRIPT_OUTLINE.md`: preliminary research framing, no fabricated findings.
+
+**Operational verification:** GitHub Actions runs all `test_*.py`; successful software tests are not independent scientific replication. The canonical Google Drive Paper2Agent folder includes the linked master index and separate source, usage, stage-gate and manuscript Docs.
+
+**Important:** The origin of paper2agent is Nature/Miao et al. (2026). Local NAAIL server is an independently authored, safer subset inspired by the original and is not described as the upstream package.
