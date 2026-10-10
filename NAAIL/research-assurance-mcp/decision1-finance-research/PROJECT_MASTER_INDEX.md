@@ -39,3 +39,15 @@ G6 Real-world H1/H2/H3 tests: OPEN.
 G7 Human review and journal suitability: OPEN.
 
 **No production branch merges, API billing, external data transmissions or empirical significance claims are authorized by this index.**
+
+
+## Verified later-stage project assets (same date)
+- **Research draft PR #153:** https://github.com/Saehon/Saeid-Homayoun/pull/153
+- **Original preserved Copilot master prompt in Drive:** https://docs.google.com/document/d/1_ElgQ9-cUnLWbXHm43q-kfj5E5lfHZ_mvj11zAqYhXw/edit
+- **Original preserved prompt in GitHub:** ORIGINAL_MICROSOFT_COPILOT_MASTER_PROMPT_2026_10_10.md (archive of owner-supplied file).
+- **Journal of Finance pre-results manuscript:** https://docs.google.com/document/d/1nNQfr4mhF9flA7evFiTPYQj_WdvnhLI0uFs18kFy9m0/edit
+- **Offline factor/ICFR reference model:** temporal_icfr_baseline.py — out-of-time logistic calibration with independently supplied labels, no direct SEC ingestion or vendor API.
+- **Temporal baseline tests:** test_temporal_icfr_baseline.py — rejects future timestamps, outcome columns, unvalidated labels.
+- **Digital Twin Drive files:** https://drive.google.com/file/d/11B6Zp3WZkkMwj_k4YCZ1IEGnHBzmyUl3/view ; https://drive.google.com/file/d/1PcFz7C4zbxsNN2ISS1HJG9OU5jUjQBJi/view .
+- **Temporal model Drive files:** https://drive.google.com/file/d/14sHqZTPcySwe8t8TMg7VRTzeurPkNNC9/view ; https://drive.google.com/file/d/1KEMVqCrDyK3g1SqCBMELlhrtqKtSQf7g/view .
+- **All independent academic outputs remain PRE-RESULTS; original engineering CI only supports synthetic software tests.**
