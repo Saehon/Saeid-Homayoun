@@ -45,3 +45,12 @@ CSV fields: `case_id, year, revenue_growth, accrual_ratio, control_exception, ca
 No autonomous audit opinion, regulator assessment, material-weakness conclusion, or approval. Synthetic cohort only. A high-risk/no-CAM flag is **not** evidence of audit failure; AS 3101 CAM criteria are more specific. Do not copy third-party code into NAAIL without license review. No private POMELO logic or confidential audit evidence. Only model-specification adaptation with frozen scientific fitness, full rejected-candidate trace and sealed final test data.
 
 **Owner's goal:** build an evidence-governed, falsifiable, reproducible auditing scientific-agent platform; not merely a paper chatbot.
+
+## Read-only paper-agent tool interface (not deployed MCP)
+```bash
+python paper_tools.py --tool list_tools
+python paper_tools.py --tool get_paper_method
+python paper_tools.py --tool run_architecture_benchmark
+python paper_tools.py --tool inspect_synthetic_case --case-id SYN-2024-00
+```
+`paper_tools.py` exposes functions suitable for a *future* verified MCP adapter. It currently performs no RAG, web retrieval, external LLM call or real-money audit. Tests are in `test_paper_tools.py`.
