@@ -1,0 +1,105 @@
+{
+  "version": "2026-10-10",
+  "status": "planned",
+  "canonical_drive_folder": "https://drive.google.com/drive/folders/1Bt296IlFWL1aEuwfgNv5S3hgkdmefQW4",
+  "products": [
+    {
+      "id": "evidencegate",
+      "name": "EvidenceGate",
+      "priority": 1,
+      "status": "design only",
+      "pilot_cases": 120,
+      "pilot_unit": "accounting queries",
+      "data": "synthetic/public",
+      "primary_metrics": [
+        "unsupported_claim_rate",
+        "answer_accuracy",
+        "pass_k",
+        "latency",
+        "cost"
+      ],
+      "ft50_targets": [
+        "The Accounting Review",
+        "Management Science"
+      ],
+      "gate": "independent case labels; evaluation at tool, loop and harness levels"
+    },
+    {
+      "id": "icfr-sentinel",
+      "name": "LEMON ICFR Sentinel",
+      "priority": 2,
+      "status": "existing separate offline pilot; new study proposed",
+      "pilot_cases": 200,
+      "pilot_unit": "historical public filings",
+      "data": "SEC EDGAR and XBRL",
+      "primary_metrics": [
+        "PR_AUC",
+        "calibration",
+        "false_negative_rate"
+      ],
+      "ft50_targets": [
+        "Journal of Accounting Research",
+        "Journal of Accounting and Economics"
+      ],
+      "gate": "point-in-time information cutoff and independently adjudicated outcome"
+    },
+    {
+      "id": "cam-compass",
+      "name": "KIWI CAM Compass",
+      "priority": 3,
+      "status": "existing separate measurement pilot; confirmatory study not run",
+      "pilot_cases": 50,
+      "pilot_unit": "firms (existing checkpoint)",
+      "data": "SEC CAM and XBRL",
+      "primary_metrics": [
+        "CAM_entry",
+        "CAM_exit",
+        "CAM_persistence",
+        "risk_alignment"
+      ],
+      "ft50_targets": [
+        "The Accounting Review",
+        "Journal of Accounting Research"
+      ],
+      "gate": "exact auditor-report dates and risk constructed without CAM text"
+    },
+    {
+      "id": "ai-capex-radar",
+      "name": "AI CapEx Market Radar",
+      "priority": 4,
+      "status": "design only",
+      "pilot_cases": 50,
+      "pilot_unit": "hand-verified disclosure events",
+      "data": "SEC EDGAR and rights-cleared market/factor data",
+      "primary_metrics": [
+        "classification_accuracy",
+        "earnings_cash_flow_gap",
+        "event_returns"
+      ],
+      "ft50_targets": [
+        "Journal of Financial Economics",
+        "Management Science"
+      ],
+      "gate": "pre-specified event timing, valid return data rights, sound identification"
+    },
+    {
+      "id": "tokencost-carbon",
+      "name": "TokenCost & Carbon Twin",
+      "priority": 5,
+      "status": "design only",
+      "pilot_cases": 20,
+      "pilot_unit": "synthetic workloads",
+      "data": "public provider rate cards and scenario assumptions",
+      "primary_metrics": [
+        "unit_cost",
+        "allocation_error",
+        "decision_quality",
+        "carbon_sensitivity"
+      ],
+      "ft50_targets": [
+        "Management Science"
+      ],
+      "gate": "external organization data for field validity; license and energy assumptions logged"
+    }
+  ]
+}
