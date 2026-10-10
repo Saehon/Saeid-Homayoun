@@ -43,3 +43,7 @@ Babina et al. (2024), Journal of Financial Economics: https://doi.org/10.1016/j.
 **Canonical one-page memo:** https://docs.google.com/document/d/1Ql_ns50UUrkhyTWL37LRCEoiS-jPzrAvtIHzwlPtoYQ/edit
 
 **Status note:** This file documents product definitions and research protocols, not completed software, model runs, or publishable empirical findings. Existing ICFR/CAM prototypes are separate governed projects; do not merge them without review.
+
+## Developer starter: offline, deterministic only
+
+The branch includes `naail_dev_starter.py` (one elementary baseline for each product) and `test_naail_dev_starter.py` (five synthetic unit tests). Locally, from `NAAIL-OpenLab/developer-products`, run `python -m unittest -v test_naail_dev_starter.py`. The five tests passed in a local Python run on 2026-10-10; GitHub CI has not yet been run for this draft. These tests do **not** verify an agent model, trained classifier, SEC data pipeline, empirical estimate, or finance-market prediction. The evidence gate never grants autonomous professional approval.
