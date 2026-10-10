@@ -27,3 +27,15 @@ Google Drive 00_Project_Master_Index: this project index and decisions.
 
 ## Current milestone
 M0: Confirm pipeline governance and check data availability, empirical novelty, and sample coverage before investing in large-scale data scraping.
+
+
+## PCAOB & CAM extension — 2026-10-10
+**Added research pillars:** (1) account-level, independent risk-to-CAM alignment; (2) previously-public PCAOB Part I.A inspection risk and Part I.B CAM compliance at registered audit-firm level; (3) issuer-to-auditor linking through Form AP/AuditorSearch; (4) conditional AI investment / Damodaran FCFF and valuation outcomes.
+
+**New canonical Google Drive extension protocol:** https://docs.google.com/document/d/1N1IhXWiVYsuBxhDaL7fAFir_a3PuFw04ae5fIzgWBHs/edit
+
+**GitHub design files:** research/PCAOB_CAM_INTEGRATION.md ; research/FT50_PCAOB_CAM_LITERATURE.md ; src/audit_oversight.py ; tests/test_audit_oversight.py.
+
+**FT50 novelty gate:** Dee et al. (JAE 2026) already studies CAM and ICFR; Acito et al. (TAR 2018) already studies exposure to PCAOB findings. Primary novel question is conditional *economic valuation of AI investment*, not CAM/ICFR or PCAOB alone.
+
+**Research status:** extension documents and initial deterministic code scaffold stored; no new empirical data/results/peer-reviewed findings created; Draft PR #163 remains open for review.
