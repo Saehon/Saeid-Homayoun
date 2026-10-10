@@ -12,7 +12,8 @@ SOURCES = [
     ("MacAma", "https://github.com/YilinYuan/MacAma.git", "MIT", "MIT License"),
     ("Twin-2K-500", "https://github.com/tianyipeng-lab/Digital-Twin-Simulation.git", "Apache-2.0", "Apache License")
 ]
-EXCLUDED = {".git","data","raw","dataset","datasets","cache","personas","text_personas","text_questions","text_simulation_input","text_simulation_output","surveys","survey","notebooks","results","outputs","participants","responses","images","assets",".github"}
+EXCLUDED = {".git","data","raw","dataset","datasets","cache","personas","text_personas","text_questions","text_simulation_input","text_simulation_output","surveys","survey","notebooks","results","outputs","participants","responses","images","assets",".github",
+    "meta_env","venv",".venv","site-packages","lib","node_modules","vendor","third_party","__pycache__","dist","build"}
 CODE_TYPES = {".py",".sh",".toml",".yml",".yaml"}
 
 def keep(file, base):
