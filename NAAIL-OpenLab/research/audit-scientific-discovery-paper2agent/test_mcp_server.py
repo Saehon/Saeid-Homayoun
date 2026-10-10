@@ -47,7 +47,7 @@ class McpProtocolTest(unittest.TestCase):
           req(3,"tools/call",{"name":"run_architecture_benchmark","arguments":{"file":"/etc/passwd"}})
         ])
         self.assertTrue(out[0]["result"]["isError"])
-        self.assertEqual(out[1]["error"]["code"],-32601)
+        self.assertTrue(out[1]["result"]["isError"])
         self.assertTrue(out[2]["result"]["isError"])
     def test_invalid_json(self):
         p=subprocess.run([sys.executable,str(ROOT/"mcp_server.py")],
