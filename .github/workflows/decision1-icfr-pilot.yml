@@ -4,6 +4,8 @@ on:
     paths:
       - 'NAAIL/research-assurance-mcp/decision1-pilot/**'
       - '.github/workflows/decision1-icfr-pilot.yml'
+      - 'Lemon-ICFR-US/integrations/decision1_icfr_triage_bridge.py'
+      - 'Lemon-ICFR-US/tests/test_decision1_handoff.py'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +22,10 @@ jobs:
           python-version: '3.11'
       - name: Unit tests (offline; no secrets)
         run: python -m unittest discover -s NAAIL/research-assurance-mcp/decision1-pilot -p 'test_decision1_pilot.py' -v
+      - name: Lemon independent review handoff (offline)
+        env:
+          PYTHONPATH: 'Lemon-ICFR-US:Lemon-ICFR-US/src'
+        run: python -m unittest discover -s Lemon-ICFR-US/tests -p 'test_decision1_handoff.py' -v
       - name: Offline smoke benchmark
         run: python NAAIL/research-assurance-mcp/decision1-pilot/decision1_pilot.py --provider offline --output /tmp/decision1_offline.json
       - name: Confirm zero automatic audit approvals
