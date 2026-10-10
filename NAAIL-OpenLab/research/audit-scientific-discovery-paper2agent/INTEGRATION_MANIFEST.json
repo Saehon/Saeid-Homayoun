@@ -1,0 +1,48 @@
+{
+  "project": "NAAIL Audit Scientific Discovery — Paper2Agent x Co-Scientist x AlphaEvolve",
+  "created": "2026-10-10",
+  "branch": "research/audit-discovery-paper2agent-20261010",
+  "google_drive_folder": "https://drive.google.com/drive/folders/1OQsIDutmvJwZZ4APUZXl5urKwbvodj0w",
+  "code_repo": "https://github.com/Saehon/Saeid-Homayoun",
+  "components": [
+    {
+      "role": "fraud research anchor",
+      "link": "https://github.com/JarFraud/FraudDetection",
+      "state": "REFERENCE_ONLY_NOT_REPLICATED"
+    },
+    {
+      "role": "audit pipeline",
+      "path": "Lemon-ICFR-US/",
+      "state": "INTERFACE_DEFINED_NOT_WIRED"
+    },
+    {
+      "role": "CAM agent",
+      "path": "Apple-CAM-US/",
+      "state": "INTERFACE_DEFINED_NOT_WIRED"
+    },
+    {
+      "role": "PCAOB agent",
+      "path": "NAAIL-OpenLab/agents/pcaob/",
+      "state": "INTERFACE_DEFINED_NOT_WIRED"
+    },
+    {
+      "role": "scientific discovery exemplar",
+      "path": "poc/",
+      "state": "REUSE_PLANNED"
+    },
+    {
+      "role": "FT50 replication benchmark",
+      "path": "NAAIL-OpenLab/benchmarks/ft50_abs4/",
+      "state": "PROTOCOL_REFERENCE"
+    },
+    {
+      "role": "Paper2Agent external",
+      "link": "https://github.com/jmiao24/Paper2Agent",
+      "state": "REFERENCE_ONLY_NOT_INSTALLED"
+    }
+  ],
+  "evidence_class": "SYNTHETIC_ONLY",
+  "human_gate": "REQUIRED",
+  "no_actual_external_ai": false,
+  "scientific_discovery_claim_allowed": false
+}
