@@ -1,0 +1,26 @@
+name: NAAIL Decision-1 Finance Research — Synthetic Power Tests
+on:
+  pull_request:
+    paths:
+      - 'NAAIL/research-assurance-mcp/decision1-finance-research/**'
+      - '.github/workflows/decision1-finance-synthetic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-power-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install scientific test dependencies
+        run: python -m pip install numpy pandas statsmodels
+      - name: Run offline reproducibility and nonfabrication tests
+        working-directory: NAAIL/research-assurance-mcp/decision1-finance-research
+        run: python -m unittest -v test_digital_twin.py
+      - name: Execute tiny offline smoke power study (NOT empirical findings)
+        working-directory: NAAIL/research-assurance-mcp/decision1-finance-research
+        run: python digital_twin_power.py --firms 50 --periods 3 --reps 4
