@@ -1,8 +1,8 @@
 program_version: v3
 mode: CONTINUOUS — Claude final review at P19
-program_branch: lemon/p13-improvement-gate
+program_branch: lemon/p14-cryptographic-separation
 start_point_sha: 5ede5d32534a94f7363a571f506b2caec95768e9
-current_phase: P14
+current_phase: P15
 owner_contact_email_for_sec: NOT_PROVIDED
 owner_approved_cryptography: no
 runs_in_current_phase: 0
@@ -23,7 +23,7 @@ phase_status:
   P11: COMPLETE
   P12: COMPLETE
   P13: PARTIAL
-  P14: NOT_STARTED
+  P14: PARTIAL
   P15: NOT_STARTED
   P16: NOT_STARTED
   P17: NOT_STARTED
