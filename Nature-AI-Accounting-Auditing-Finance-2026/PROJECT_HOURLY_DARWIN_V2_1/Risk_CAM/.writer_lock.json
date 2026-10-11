@@ -1,0 +1,9 @@
+{
+  "project": "Risk_CAM",
+  "owner": "DARWIN_HOURLY",
+  "run_id": "20261011_1124_STAGE01",
+  "created_utc": "2026-10-11T09:21:56.409Z",
+  "expires_utc": "2026-10-11T09:46:56.409Z",
+  "purpose": "one-step historical source reconciliation",
+  "release": "delete after dual-save"
+}
