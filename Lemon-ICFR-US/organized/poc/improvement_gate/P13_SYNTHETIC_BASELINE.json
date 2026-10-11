@@ -1,0 +1,17 @@
+{
+  "_status": "SYNTHETIC_TEST_ONLY",
+  "_purpose": "P13 engineering gate demonstration; not an observed benchmark result",
+  "benchmark_sha": "SYNTHETIC_P13_FROZEN_V1",
+  "provenance_ok": true,
+  "replay_hashes": [
+    "synthetic-replay-v1",
+    "synthetic-replay-v1"
+  ],
+  "gate_regressions": 0,
+  "fn": 5,
+  "fp": 10,
+  "metrics": {
+    "recall": 0.4,
+    "precision": 0.3
+  }
+}

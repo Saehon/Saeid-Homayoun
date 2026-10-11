@@ -1,0 +1,19 @@
+{
+  "status": "DEVELOPMENT_ONLY",
+  "evidence_class": "SYNTHETIC_TEST_ONLY",
+  "frozen_benchmark_sha": "SYNTHETIC_P13_FROZEN_V1",
+  "baseline_sha256": "09804b18a5bebbbc03b0a13c4dbc75471f8e2f5046f93e473baf5e5b0377075d",
+  "worse_candidate_sha256": "9defb52bb8120c9c4cbb692a02c285a1e41099c05acb68d494da186a9b28fef1",
+  "worse_candidate_decision": "REJECT",
+  "worse_candidate_reasons": [
+    "candidate increases false negatives",
+    "no improvement >= 0.01 on recall"
+  ],
+  "baseline_self_decision": "REJECT",
+  "baseline_self_reasons": [
+    "no improvement >= 0.01 on recall"
+  ],
+  "real_frozen_benchmark_executed": false,
+  "production_promotion": false,
+  "limitation": "No provenance-verified real frozen development-benchmark metrics file with the improvement-gate schema was found in the repository. These results demonstrate gate mechanics only and cannot establish empirical improvement."
+}
