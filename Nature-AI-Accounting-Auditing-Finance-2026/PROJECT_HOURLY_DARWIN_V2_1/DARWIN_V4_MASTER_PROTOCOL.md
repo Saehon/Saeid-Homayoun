@@ -18,3 +18,6 @@ ChatGPT limitation: A scheduled task may report in its own task conversation, bu
 - Fama French: https://drive.google.com/drive/folders/1--keZrq7iReLIb2sdOGBwhWv_ZUn2oyd
 
 Applies to all future projects as their default policy. FT50/AJG4 readiness requires independent reproducibility and editorial validation; never claim journal acceptance.
+
+## ChatGPT project progress summaries (2026-10-11)
+After each verified hourly run, produce a short Persian project-specific summary containing actual work, timestamp, verified evidence, blocker, next step, and direct Drive and GitHub links. Post it in the scheduled task thread; a separate ChatGPT Project conversation cannot be automatically updated. When asked from that project conversation, retrieve and show the latest verified status. Canonical private dashboard folder: https://drive.google.com/drive/folders/1FuXrL9d_p2chF2zlAacvly57zRyuTL1c . Private index: https://docs.google.com/document/d/1S3Ud-J0N5wyg-k_F7BHGfGqTUJ7hOai1U5tIg8tkw6g/edit . Do not expose confidential data in public GitHub files.
