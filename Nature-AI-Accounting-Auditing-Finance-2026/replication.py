@@ -21,5 +21,5 @@ out=pd.DataFrame(dict(case_id=np.arange(n),risk=risk,provenance=provenance,right
 p=Path(__file__).parent
 out.to_csv(p/'synthetic_cases.csv',index=False)
 summary={'n':n,'unsafe_cases':int(unsafe.sum()),'baseline_unsafe_auto_pass':int((unsafe*baseline).sum()),'gated_unsafe_auto_pass':int((unsafe*gated).sum()),'awaiting_human':int(all_auto.sum()),'gated_auto_approvals':int(gated.sum())}
-(p/'synthetic_results.txt').write_text('\\n'.join(f'{k}: {v}' for k,v in summary.items())+'\\n')
+(p/'synthetic_results.txt').write_text('\n'.join(f'{k}: {v}' for k,v in summary.items())+'\n')
 print(summary)
