@@ -25,4 +25,4 @@ Recommended provenance and audit-context fields:
 | `topic_fkey` | Original topic key if present in licensed source |
 
 ## Public-release rule
-Do not upload licensed Audit Analytics records unless the license explicitly permits redistribution. Public releases should use SEC/EDGAR-derived records with provenance, or synthetic examples.
+Do not upload CAM/KAM records extracted from companies' annual reports unless the license explicitly permits redistribution. Public releases should use annual-report-derived records with provenance, or synthetic examples.
