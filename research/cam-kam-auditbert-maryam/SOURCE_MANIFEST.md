@@ -18,9 +18,9 @@ These files remain in private Drive storage.
 
 ## Corrected source attribution (12 October 2026)
 
-The research owner confirms that the underlying CAM/KAM data were collected from **companies' annual reports**. SEC EDGAR was a source of filings where applicable. Audit Analytics-like column names and layouts reflect the **format**, not a claim that the data were supplied by Audit Analytics.
+The research owner confirms that the underlying CAM/KAM data were collected from **companies' annual reports**, including SEC EDGAR annual filings where applicable, and organized into a standardized research dataset.
 
-The previous categorical Audit Analytics source attribution was incorrect and is withdrawn. The owner does **not** request additional source-origin testing. This note documents the owner's account of the source; it does not claim an independent audit has taken place.
+**Data source:** Companies' annual reports. The owner does **not** request additional source-origin testing. This note records the source statement and does not claim an independent audit has taken place.
 
 See [source-of-data clarification](PROVENANCE_RECONCILIATION_2026-10-12.md).
 

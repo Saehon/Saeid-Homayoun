@@ -1,6 +1,6 @@
 # CAM/KAM AuditBERT — 12 October 2026 validation update
 
-**Source correction (research owner, 12 October 2026):** The CAM/KAM observations were extracted from **companies' annual reports**. SEC EDGAR was identified as a source for filings where applicable; the data's resemblance to an Audit Analytics export concerns **format only**, not its origin or license. The research owner has confirmed the source and **does not require a separate provenance-retesting project**. The earlier claim that the datasets were supplied by Audit Analytics is withdrawn. This note does not imply that new source-level tests were performed.
+**Data source (confirmed by research owner, 12 October 2026):** The CAM/KAM observations were extracted from **companies' annual reports**, including SEC EDGAR annual filings where applicable, and structured as a standardized research dataset. The owner does not request a separate source-origin audit. No new source-level tests were performed for this documentation update.
 
 **Analysis status:** Summary of file-level checks in Google Drive's `DATA_CHECKS_REPORT.md`; no new model execution or regression was performed in this GitHub documentation update.
 

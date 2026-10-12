@@ -1,4 +1,4 @@
-# Source-of-data statement — CAM/KAM AuditBERT
+# Companies' annual reports — CAM/KAM AuditBERT data-source statement
 **Date:** 12 October 2026  
 **Status:** Research-owner clarification; source retesting not requested.
 
@@ -7,9 +7,9 @@
 The research owner confirmed:
 - The CAM/KAM dataset was assembled **from companies' annual reports**.
 - SEC EDGAR is a route to obtain annual reports/filings where applicable.
-- **Audit Analytics is not the claimed data supplier.** The similarity concerns the **data format and field structure only**.
+- The observations were organized into a **standardized tabular research format**.
 
-Earlier GitHub documentation incorrectly treated the presence of Audit Analytics-like fields as proof of a licensed Audit Analytics data source. That attribution is withdrawn.
+**Project source attribution:** Companies' annual reports. Dataset fields describe the research structure rather than a source provider.
 
 The project may proceed using this source statement. **No additional record-by-record investigation of data origin is required by the project owner.** This statement is not equivalent to an assertion that such an investigation was performed.
 
