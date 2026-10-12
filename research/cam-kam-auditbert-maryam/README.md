@@ -5,11 +5,11 @@
 
 Collaboration associated with Saeid Homayoun, Zabihollah Rezaee, Maryam Khosravian, Salma Boumediene, and Salem L. Boumediene.
 
-This repository folder is a reproducibility layer for CAM/KAM AuditBERT. According to the research owner, the data come from **companies' annual reports** and use an **Audit Analytics-like format only**; they should not be attributed to Audit Analytics as the supplier. Unpublished manuscripts and source datasets are maintained in the project archive.
+This repository folder is a reproducibility layer for CAM/KAM AuditBERT. The research data originate from **companies' annual reports**, including SEC EDGAR filings where applicable, and are maintained in a standardized research dataset format. Unpublished manuscripts and source datasets are maintained in the project archive.
 
 ## Latest validation status (12 October 2026)
 
-See [**October 12 validation update**](VALIDATION_UPDATE_2026-10-12.md) and [**source-of-data clarification**](PROVENANCE_RECONCILIATION_2026-10-12.md). The research owner confirms **company annual reports** as the original source (including SEC EDGAR filings where applicable), with Audit Analytics-like formatting only. No additional source-origin test is requested. Remaining research tasks concern KAM truncation, report-year construction, the 49-class discrepancy and exposed access-token remediation. **No new regression result or pipeline PASS is claimed.**
+See [**October 12 validation update**](VALIDATION_UPDATE_2026-10-12.md) and [**source-of-data clarification**](PROVENANCE_RECONCILIATION_2026-10-12.md). The research owner confirms **companies' annual reports** as the original source, including SEC EDGAR filings where applicable. No additional source-origin test is requested. Remaining research tasks concern KAM truncation, report-year construction, the 49-class discrepancy and exposed access-token remediation. **No new regression result or pipeline PASS is claimed.**
 
 ## Cross-platform integration
 Master integration record:  

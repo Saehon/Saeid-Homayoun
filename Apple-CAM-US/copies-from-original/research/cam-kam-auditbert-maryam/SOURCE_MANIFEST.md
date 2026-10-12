@@ -17,4 +17,4 @@ The private manuscript is archived in Google Drive and is not copied into this p
 These files remain in private Drive storage.
 
 ## Redistribution boundary
-The manuscript describes data from SEC/EDGAR and Audit Analytics. SEC-derived data may support a public reproducibility subset when provenance is retained. Licensed database records should remain private unless redistribution rights are confirmed.
+The CAM/KAM research data were extracted from companies' annual reports, including SEC EDGAR annual filings where applicable. Public replication materials may contain an appropriate annual-report-derived subset and reproducibility code, subject to a separate release decision.

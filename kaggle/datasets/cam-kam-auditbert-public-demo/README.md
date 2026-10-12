@@ -25,7 +25,7 @@ https://github.com/Saehon/Saeid-Homayoun/blob/main/docs/CAM_KAM_AUDITBERT_CROSS_
 This public package contains **synthetic CAM/KAM records only**. It is intended for reproducible preprocessing, teaching, testing, and demonstration.
 
 ### Data deliberately excluded
-- licensed Audit Analytics records,
+- CAM/KAM records drawn from companies' annual reports,
 - unpublished collaborator manuscripts,
 - private Google Drive source workbooks,
 - confidential or restricted research material.

@@ -75,7 +75,7 @@ Private/raw CAM + KAM sources
 - benchmark/notebook scaffolding
 
 ### Private / restricted assets
-- licensed Audit Analytics observations
+- CAM/KAM observations drawn from companies' annual reports
 - private CAM/KAM workbooks
 - unpublished manuscript material unless separately authorized
 - any source whose redistribution rights are not established

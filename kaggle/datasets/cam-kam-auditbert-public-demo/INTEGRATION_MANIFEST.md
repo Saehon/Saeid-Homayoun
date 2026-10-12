@@ -16,4 +16,4 @@ Research models:
 - https://huggingface.co/MaRyAm1295/finBERT-KAM
 - https://huggingface.co/MaRyAm1295/Llama-3.1-8B-KAM
 
-This mirror is intended for public-safe benchmark discovery and notebooks. Licensed Audit Analytics data, private CAM/KAM workbooks, and unpublished manuscript assets are excluded.
+This mirror is intended for public-safe benchmark discovery and notebooks. CAM/KAM datasets extracted from companies' annual reports, private CAM/KAM workbooks, and unpublished manuscript assets are excluded.

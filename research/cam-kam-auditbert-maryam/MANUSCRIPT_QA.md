@@ -53,7 +53,7 @@ These repositories have been verified as existing Hugging Face model repositorie
 
 ## 6. Data-source wording
 
-The manuscript describes a dual-source design involving U.S. SEC/EDGAR material and European Audit Analytics data. Public replication materials should distinguish:
+The research source is companies' annual reports, including SEC EDGAR filings where applicable. Public replication materials should distinguish:
 - source-traceable public SEC/EDGAR material, and
 - licensed data that cannot be redistributed without permission.
 

@@ -1,11 +1,13 @@
 # CAM/KAM AuditBERT — Public Reproducibility Package
 
 ## Research project
+
+**Data source:** Companies' annual reports, including SEC EDGAR annual filings where applicable.
 **AuditBERT: Revolutionizing KAM Disclosures with LLMs**
 
 Collaboration associated with Saeid Homayoun, Zabihollah Rezaee, Maryam Khosravian, Salma Boumediene, and Salem L. Boumediene.
 
-This repository folder is a **public-safe reproducibility layer** for the CAM/KAM AuditBERT research project. It intentionally does **not** redistribute the unpublished manuscript or raw licensed/proprietary audit datasets.
+This repository folder is a **public-safe reproducibility layer** for the CAM/KAM AuditBERT research project. It intentionally does **not** redistribute the unpublished manuscript or source annual-report datasets.
 
 ## Cross-platform integration
 Master integration record:  
