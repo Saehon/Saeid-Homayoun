@@ -5,11 +5,11 @@
 
 Collaboration associated with Saeid Homayoun, Zabihollah Rezaee, Maryam Khosravian, Salma Boumediene, and Salem L. Boumediene.
 
-This repository folder is a **public-safe reproducibility layer** for the CAM/KAM AuditBERT research project. It intentionally does **not** redistribute the unpublished manuscript or raw licensed/proprietary audit datasets.
+This repository folder is a **public-safe reproducibility layer** for the CAM/KAM AuditBERT research project. It does **not** redistribute the unpublished manuscript or raw extracts whose filing-level provenance, non-SEC enrichments and publication permissions have not yet been verified.
 
 ## Latest validation status (12 October 2026)
 
-See [**October 12 validation update**](VALIDATION_UPDATE_2026-10-12.md) for the licensed-source inventory, KAM sample truncation, the 49-class reproducibility discrepancy, report-year join requirements, credential remediation and empirical research gates. This is a documented status review; **no new statistical result or pipeline PASS is claimed**.
+See [**October 12 validation update**](VALIDATION_UPDATE_2026-10-12.md) and [**SEC EDGAR provenance reconciliation**](PROVENANCE_RECONCILIATION_2026-10-12.md). The research owner reports SEC EDGAR as the data origin and describes the Audit Analytics similarity as **format only**; source-level linkage remains to be verified. The reports also document KAM truncation, the 49-class discrepancy, missing report dates and credential remediation. This is a documented status review; **no new statistical result or pipeline PASS is claimed**.
 
 ## Cross-platform integration
 Master integration record:  
@@ -58,7 +58,7 @@ human review and regulatory interpretation
 ## Private source assets located
 The project sources include a U.S. CAM workbook and UK KAM workbooks in the researcher's private Google Drive, plus the revised AuditBERT/KAM manuscript supplied by Maryam Khosravian via Gmail.
 
-Raw data are not committed here because source rights and redistribution permissions must be respected.
+Raw extracts have not been committed here pending record-level EDGAR linkage, separation of any third-party enrichments, credential scans and publication-permission checks. The use of an Audit Analytics-like schema alone does **not** prove Audit Analytics origin or licensing.
 
 ## Manuscript data notes
 The revised manuscript describes a large CAM/KAM research corpus spanning U.S. and European public companies and an AuditBERT/FinBERT/LLaMA workflow. Before publication, sample-count and topic-count statements should be reconciled across the abstract and methodology.
