@@ -5,11 +5,11 @@
 
 Collaboration associated with Saeid Homayoun, Zabihollah Rezaee, Maryam Khosravian, Salma Boumediene, and Salem L. Boumediene.
 
-This repository folder is a **public-safe reproducibility layer** for the CAM/KAM AuditBERT research project. It does **not** redistribute the unpublished manuscript or raw extracts whose filing-level provenance, non-SEC enrichments and publication permissions have not yet been verified.
+This repository folder is a reproducibility layer for CAM/KAM AuditBERT. According to the research owner, the data come from **companies' annual reports** and use an **Audit Analytics-like format only**; they should not be attributed to Audit Analytics as the supplier. Unpublished manuscripts and source datasets are maintained in the project archive.
 
 ## Latest validation status (12 October 2026)
 
-See [**October 12 validation update**](VALIDATION_UPDATE_2026-10-12.md) and [**SEC EDGAR provenance reconciliation**](PROVENANCE_RECONCILIATION_2026-10-12.md). The research owner reports SEC EDGAR as the data origin and describes the Audit Analytics similarity as **format only**; source-level linkage remains to be verified. The reports also document KAM truncation, the 49-class discrepancy, missing report dates and credential remediation. This is a documented status review; **no new statistical result or pipeline PASS is claimed**.
+See [**October 12 validation update**](VALIDATION_UPDATE_2026-10-12.md) and [**source-of-data clarification**](PROVENANCE_RECONCILIATION_2026-10-12.md). The research owner confirms **company annual reports** as the original source (including SEC EDGAR filings where applicable), with Audit Analytics-like formatting only. No additional source-origin test is requested. Remaining research tasks concern KAM truncation, report-year construction, the 49-class discrepancy and exposed access-token remediation. **No new regression result or pipeline PASS is claimed.**
 
 ## Cross-platform integration
 Master integration record:  
@@ -33,7 +33,7 @@ The project studies AI-assisted analysis of **Key Audit Matters (KAMs)** and **C
 ```
 Private/raw KAM + CAM sources
         ↓
-schema validation + provenance checks
+schema checks + report-year mapping
         ↓
 TITLE + DESCRIPTION text construction
         ↓
@@ -58,7 +58,7 @@ human review and regulatory interpretation
 ## Private source assets located
 The project sources include a U.S. CAM workbook and UK KAM workbooks in the researcher's private Google Drive, plus the revised AuditBERT/KAM manuscript supplied by Maryam Khosravian via Gmail.
 
-Raw extracts have not been committed here pending record-level EDGAR linkage, separation of any third-party enrichments, credential scans and publication-permission checks. The use of an Audit Analytics-like schema alone does **not** prove Audit Analytics origin or licensing.
+Original annual-report data remain in the project archive. No new record-by-record source-origin audit is needed for this update. Any publication of the original text/data remains a separate release decision; sanitize exposed access tokens first.
 
 ## Manuscript data notes
 The revised manuscript describes a large CAM/KAM research corpus spanning U.S. and European public companies and an AuditBERT/FinBERT/LLaMA workflow. Before publication, sample-count and topic-count statements should be reconciled across the abstract and methodology.
