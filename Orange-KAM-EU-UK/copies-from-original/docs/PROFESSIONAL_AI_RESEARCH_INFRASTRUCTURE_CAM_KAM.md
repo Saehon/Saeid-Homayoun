@@ -124,7 +124,7 @@ Public GitHub, Kaggle, and Hugging Face demonstration assets should contain:
 - model cards,
 - replication scripts.
 
-Do **not** publicly redistribute Audit Analytics-derived observations unless the applicable license explicitly permits it.
+Do **not** publicly redistribute annual-report-derived CAM/KAM observations unless the applicable license explicitly permits it.
 
 For public U.S. replication, preserve issuer, accession number, filing form, filing date, section, extraction method, and source URL.
 

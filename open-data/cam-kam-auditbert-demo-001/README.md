@@ -2,7 +2,7 @@
 
 Canonical open-data demonstration package for the CAM/KAM AuditBERT research project.
 
-This folder contains **synthetic data only**. It is designed to validate the research pipeline without redistributing unpublished manuscript content or licensed Audit Analytics observations.
+This folder contains **synthetic data only**. It is designed to validate the research pipeline without redistributing unpublished manuscript content or CAM/KAM observations drawn from companies' annual reports.
 
 ## Files
 - `synthetic_cam_kam_sample.csv` — three synthetic CAM/KAM records.

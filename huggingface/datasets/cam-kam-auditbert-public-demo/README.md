@@ -54,7 +54,7 @@ Topic-classification and response-generation metrics are separate tasks. The man
 Synthetic CAM/KAM demonstration records only.
 
 ### Data excluded
-Licensed Audit Analytics observations, unpublished manuscripts, and private Google Drive source workbooks are not redistributed.
+CAM/KAM observations drawn from companies' annual reports, unpublished manuscripts, and private Google Drive source workbooks are not redistributed.
 
 ### Governance
 GitHub is the canonical reproducibility layer. Hugging Face is the model/data layer. Kaggle is the discoverable data/notebook layer. Google Drive remains the private manuscript and licensed-data archive.
