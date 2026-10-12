@@ -7,6 +7,10 @@ Collaboration associated with Saeid Homayoun, Zabihollah Rezaee, Maryam Khosravi
 
 This repository folder is a **public-safe reproducibility layer** for the CAM/KAM AuditBERT research project. It intentionally does **not** redistribute the unpublished manuscript or raw licensed/proprietary audit datasets.
 
+## Latest validation status (12 October 2026)
+
+See [**October 12 validation update**](VALIDATION_UPDATE_2026-10-12.md) for the licensed-source inventory, KAM sample truncation, the 49-class reproducibility discrepancy, report-year join requirements, credential remediation and empirical research gates. This is a documented status review; **no new statistical result or pipeline PASS is claimed**.
+
 ## Cross-platform integration
 Master integration record:  
 https://github.com/Saehon/Saeid-Homayoun/blob/main/docs/CAM_KAM_AUDITBERT_CROSS_PLATFORM_MASTER.md
