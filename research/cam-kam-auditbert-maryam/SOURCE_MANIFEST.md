@@ -16,13 +16,14 @@ The private manuscript is archived in Google Drive and is not copied into this p
 
 These files remain in private Drive storage.
 
-## Origin correction and verification status (12 October 2026)
+## Corrected source attribution (12 October 2026)
 
-The research owner clarifies that the project datasets were **collected from SEC EDGAR**, and that their resemblance to Audit Analytics is **a format/schema choice only**. Our previous documentation attributed the files categorically to Audit Analytics; that attribution is **withdrawn as an established fact**. The statement of SEC origin is owner-reported and **has not yet been independently checked against original accession numbers and filing URLs**.
+The research owner confirms that the underlying CAM/KAM data were collected from **companies' annual reports**. SEC EDGAR was a source of filings where applicable. Audit Analytics-like column names and layouts reflect the **format**, not a claim that the data were supplied by Audit Analytics.
 
-Fields such as `AUDIT_OPINION_FKEY`, company keys, topic taxonomies and enrichment columns resemble vendor exports, but a field label alone does not prove where a record came from. The UK/European KAM corpus needs particular attention: trace each claimed SEC-based observation to an actual EDGAR filing, or record another authenticated public or licensed primary source when no SEC filing exists.
+The previous categorical Audit Analytics source attribution was incorrect and is withdrawn. The owner does **not** request additional source-origin testing. This note documents the owner's account of the source; it does not claim an independent audit has taken place.
 
-See [the stepwise source reconciliation checklist](PROVENANCE_RECONCILIATION_2026-10-12.md).
+See [source-of-data clarification](PROVENANCE_RECONCILIATION_2026-10-12.md).
 
-## Redistribution boundary
-A genuinely SEC-derived, correctly attributed, independently traceable public subset may be suitable for public reproducibility. Any non-SEC vendor enrichments must be identified and rights checked separately. Keep unverified extracts, manuscripts and credentials out of public GitHub, Kaggle and Hugging Face until source mapping, permission review and secrets scanning have passed.
+## Publication and reproducibility
+
+The original annual-report materials and unpublished research files remain in the canonical Google Drive archive. GitHub can contain research code, schemas, derived aggregate research outputs and approved shareable data. Decisions to redistribute complete report texts or enriched datasets are separate from their public accessibility. Do not publish access tokens or unsanitized notebooks.
