@@ -37,7 +37,7 @@ def download(url,dest):
 def ensure_osap():
     if OSAP_ZIP.exists() and OSAP_ZIP.stat().st_size>100_000_000: return
     import gdown
-    out=gdown.download(id=OSAP_FILE_ID,output=str(OSAP_ZIP),quiet=False,fuzzy=True)
+    out=gdown.download(id=OSAP_FILE_ID,output=str(OSAP_ZIP),quiet=False)
     if not out or not OSAP_ZIP.exists(): raise RuntimeError("OpenSourceAP download failed")
 
 def csv_member(zf):
