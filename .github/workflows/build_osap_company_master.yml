@@ -1,0 +1,65 @@
+name: Build OpenSourceAP Company-ID Master
+
+on:
+  push:
+    branches:
+      - feature/osap-company-id-master
+    paths:
+      - 'OpenSourceAP-Company-ID-Bridge/**'
+      - '.github/workflows/build_osap_company_master.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas pyarrow requests gdown
+
+      - name: Build master CSV
+        working-directory: OpenSourceAP-Company-ID-Bridge
+        run: |
+          python build_master.py
+
+      - name: Validate outputs
+        working-directory: OpenSourceAP-Company-ID-Bridge
+        run: |
+          test -s output/osap_company_id_master_2019_2024.csv
+          test -s output/osap_company_id_master_2019_2024.csv.gz
+          test -s output/validation_report.json
+          python - <<'PY'
+          import json, pandas as pd
+          p='output/osap_company_id_master_2019_2024.csv'
+          df=pd.read_csv(p,nrows=1000,low_memory=False)
+          required=['permno','year','cik10_primary','gvkey_primary','id_map_status']
+          missing=[x for x in required if x not in df.columns]
+          if missing: raise SystemExit(f'Missing required columns: {missing}')
+          rpt=json.load(open('output/validation_report.json'))
+          if rpt['master_rows']<=0: raise SystemExit('No output rows')
+          if rpt['master_columns']<200: raise SystemExit('Unexpectedly few columns')
+          print(json.dumps(rpt,indent=2))
+          PY
+
+      - name: Upload master artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: osap-company-id-master-2019-2024
+          path: |
+            OpenSourceAP-Company-ID-Bridge/output/osap_company_id_master_2019_2024.csv
+            OpenSourceAP-Company-ID-Bridge/output/osap_company_id_master_2019_2024.csv.gz
+            OpenSourceAP-Company-ID-Bridge/output/validation_report.json
+            OpenSourceAP-Company-ID-Bridge/output/sample_100_rows.csv
+          compression-level: 0
+          retention-days: 30
