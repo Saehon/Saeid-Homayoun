@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "run_id": "AI_CAPEX_20261013_0914_CEST_MSFT_SCOPE_2024_2025",
+  "data_class": "MANUALLY_TRANSCRIBED_FROM_PUBLIC_PRIMARY_REPORTS_NOT_RAW_SOURCE_BYTES",
+  "company": "Microsoft Corporation",
+  "cik10": "0000789019",
+  "firm_years": [
+    {
+      "fiscal_year": 2024,
+      "fiscal_year_end": "2024-06-30",
+      "sec_filing_date": "2024-07-30",
+      "report_url": "https://www.microsoft.com/investor/reports/ar24/index.html",
+      "sec_10k_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "management_icfr": "EFFECTIVE",
+      "auditor_icfr": "EFFECTIVE",
+      "scope_exclusion_explicitly_disclosed": 1,
+      "scope_exclusion_name": "Activision Blizzard, Inc.",
+      "scope_exclusion_asset_share_upper_bound_pct": 1,
+      "scope_exclusion_asset_share_is_strict_less_than": true,
+      "scope_exclusion_revenue_share_pct": 2,
+      "scope_exclusion_acquisition_date": "2023-10-13",
+      "source_section": "Controls & Procedures / management ICFR / auditor ICFR",
+      "source_byte_sha256": null
+    },
+    {
+      "fiscal_year": 2025,
+      "fiscal_year_end": "2025-06-30",
+      "sec_filing_date": "2025-07-30",
+      "report_url": "https://www.microsoft.com/investor/reports/ar25/index.html",
+      "sec_10k_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "management_icfr": "EFFECTIVE",
+      "auditor_icfr": "EFFECTIVE",
+      "scope_exclusion_explicitly_disclosed": 0,
+      "scope_exclusion_name": null,
+      "scope_exclusion_asset_share_upper_bound_pct": null,
+      "scope_exclusion_revenue_share_pct": null,
+      "scope_exclusion_acquisition_date": null,
+      "source_section": "Controls & Procedures / management ICFR / auditor ICFR",
+      "source_byte_sha256": null
+    }
+  ],
+  "coding_note": "0 means no explicit exclusion in reviewed complete ICFR sections; it does not certify that every subsidiary/control was assessed. Distinguish 2024 disclosed carve-out from 2025 no carve-out disclosed.",
+  "ai_specific_capex_usd_m": null,
+  "independent_source_byte_replication": "NOT_RUN",
+  "causal_model": "NOT_RUN",
+  "source_rights": "Public company filings; short derived factual metadata only, no raw report redistributed."
+}
