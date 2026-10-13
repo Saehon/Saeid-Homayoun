@@ -12,7 +12,8 @@ WORK=ROOT/"work"; OUT=ROOT/"output"
 WORK.mkdir(exist_ok=True); OUT.mkdir(exist_ok=True)
 
 GVKEY_PERM_URL="https://raw.githubusercontent.com/Wenzhi-Ding/Std_Security_Code/main/other/gvkey_permco_permno.pq"
-CIK_GVKEY_URL="https://raw.githubusercontent.com/Wenzhi-Ding/Std_Security_Code/main/other/cik_gvkey.pq"\nSIGNALDOC_URL="https://raw.githubusercontent.com/OpenSourceAP/CrossSection/master/SignalDoc.csv"
+CIK_GVKEY_URL="https://raw.githubusercontent.com/Wenzhi-Ding/Std_Security_Code/main/other/cik_gvkey.pq"
+SIGNALDOC_URL="https://raw.githubusercontent.com/OpenSourceAP/CrossSection/master/SignalDoc.csv"
 YEARS=set(range(2019,2025))
 
 def norm(c): return re.sub(r"[^a-z0-9]+","",str(c).lower())
