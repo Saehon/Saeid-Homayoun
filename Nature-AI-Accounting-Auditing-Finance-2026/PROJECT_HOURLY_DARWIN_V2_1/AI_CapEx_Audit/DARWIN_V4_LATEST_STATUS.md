@@ -7,6 +7,6 @@
 
 Each scheduled hourly run should update this current-status file and append a dated immutable history record, with actual executed step, scientific phase, evidence, sample size only if observed, test results only if run, status, next action, Drive links, GitHub commit link, and verification timestamps. Data-source priority: existing Drive originals > official free academic sources > GitHub > Kaggle > Hugging Face. Protect licensed raw data. Never claim to have posted in a separate ChatGPT Project conversation without verified ability.
 
-## Latest verified run — 2026-10-13 05:16 CEST
+## Latest verified run — 2026-10-13 06:08 CEST
 
-AMZN FY2025 SEC primary cross-check: 1 issuer-year; 24/24 executed source-row arithmetic checks; effective firm-level ICFR, one tax CAM, domain-specific effectiveness unknown, AI-only CapEx unknown. Gross PP&E cash purchases $131819m, CFO $139514m, net cash PP&E $128320m. No causal model. Source: https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm . Report: supplement/RUN_20261013_0516_CEST_AMZN_PUBLIC_QA.md . Code: replication/amzn_primary_20261013_0516/amzn_audit.js . Drive status updated and read back. Overall PARTIAL; independent source-byte reproduction and CI not verified. No merge or submission.
+META FY2025 SEC review: primary auditor report has three CAMs, versus two in the secondary pilot. VIE consolidation CAM was omitted. Preliminary total changes from 13 to 14 topics. 16/16 consistency checks passed; no causal models. Report: supplement/RUN_20261013_0608_CEST_META_QA.md . Code: replication/meta_primary_20261013_0608/meta_cam_qa.js . Drive snapshot readback verified. Overall PARTIAL; CI unknown.
