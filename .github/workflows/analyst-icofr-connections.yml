@@ -1,0 +1,43 @@
+name: ANALYST ICOFR connection checks
+on:
+  workflow_dispatch:
+    inputs:
+      provider:
+        description: Read-only provider to check using repository secrets
+        required: true
+        default: hf
+        type: choice
+        options:
+          - hf
+          - kaggle
+          - all
+permissions:
+  contents: read
+jobs:
+  connections:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: ANALYST ICOFR
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ANALYST ICOFR/requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - name: Verify Hugging Face authorization
+        if: inputs.provider == 'hf' || inputs.provider == 'all'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python connector.py check --provider hf
+      - name: Verify Kaggle authorization
+        if: inputs.provider == 'kaggle' || inputs.provider == 'all'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: python connector.py check --provider kaggle
