@@ -1,0 +1,11 @@
+# Generated/downloaded data: keep out of Git history
+work/
+output/
+*.zip
+*.csv.gz
+
+# Full generated CSVs are canonical in Google Drive / workflow artifacts
+osap_company_id_master_2019_2024.csv
+osap_december_2019_2024.csv
+
+# Small metadata/sample files may be deliberately committed separately
