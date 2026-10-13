@@ -9,6 +9,10 @@ on:
       - '.github/workflows/build_osap_company_master.yml'
   workflow_dispatch:
 
+concurrency:
+  group: osap-company-id-master-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
@@ -48,7 +52,11 @@ jobs:
           if missing: raise SystemExit(f'Missing required columns: {missing}')
           rpt=json.load(open('output/validation_report.json'))
           if rpt['master_rows']<=0: raise SystemExit('No output rows')
-          if rpt['master_columns']<200: raise SystemExit('Unexpectedly few columns')
+          if rpt['master_columns']<220: raise SystemExit('Unexpectedly few columns')
+          if rpt['signals_failed'] != 0: raise SystemExit(f"Failed signals: {rpt['signals_failed']}")
+          if rpt['characteristic_columns'] < 209: raise SystemExit(f"Only {rpt['characteristic_columns']} characteristics")
+          if rpt['coverage_years'] != [2019,2020,2021,2022,2023,2024]:
+              raise SystemExit(f"Incomplete coverage: {rpt['coverage_years']}")
           print(json.dumps(rpt,indent=2))
           PY
 
