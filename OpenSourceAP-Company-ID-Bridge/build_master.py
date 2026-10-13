@@ -4,15 +4,15 @@ from pathlib import Path
 
 import pandas as pd
 import requests
-import openassetpricing as oap
-from openassetpricing.gdrive_parse import _get_readable_link
+from openassetpricing.gdrive_parse import _get_readable_link, _get_name_id_map
+from openassetpricing.urls import release202510_url
 
 ROOT=Path(__file__).resolve().parent
 WORK=ROOT/"work"; OUT=ROOT/"output"
 WORK.mkdir(exist_ok=True); OUT.mkdir(exist_ok=True)
 
 GVKEY_PERM_URL="https://raw.githubusercontent.com/Wenzhi-Ding/Std_Security_Code/main/other/gvkey_permco_permno.pq"
-CIK_GVKEY_URL="https://raw.githubusercontent.com/Wenzhi-Ding/Std_Security_Code/main/other/cik_gvkey.pq"
+CIK_GVKEY_URL="https://raw.githubusercontent.com/Wenzhi-Ding/Std_Security_Code/main/other/cik_gvkey.pq"\nSIGNALDOC_URL="https://raw.githubusercontent.com/OpenSourceAP/CrossSection/master/SignalDoc.csv"
 YEARS=set(range(2019,2025))
 
 def norm(c): return re.sub(r"[^a-z0-9]+","",str(c).lower())
@@ -57,10 +57,10 @@ def drive_download(url,dest,retries=4):
     raise RuntimeError(f"Drive download failed after {retries} tries: {last}")
 
 def load_december_signals():
-    ap=oap.OpenAP(202510)
-    imap=ap.individual_signal_id_map.to_pandas()
-    smap=ap.signal_sign.to_pandas()
-    sign_map={str(r["signal"]):r["sign"] for _,r in smap.iterrows()}
+    _, imap_pl=_get_name_id_map(release202510_url)
+    imap=imap_pl.to_pandas()
+    smap=pd.read_csv(SIGNALDOC_URL,usecols=["Acronym","Sign"])
+    sign_map={str(r["Acronym"]):r["Sign"] for _,r in smap.iterrows()}
 
     signal_col=pick(imap.columns,["signal"])
     url_col=pick(imap.columns,["file_id","url"])
