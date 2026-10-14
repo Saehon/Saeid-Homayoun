@@ -25,3 +25,11 @@ private/
 *.html
 *.docx
 *.json
+*.jsonl
+*.ndjson
+*.tsv
+*.arrow
+*.feather
+*.pkl
+*.pickle
+*.joblib

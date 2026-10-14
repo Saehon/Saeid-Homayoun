@@ -65,3 +65,53 @@ The repository workflow `.github/workflows/analyst-icofr-connections.yml` runs o
 `risk_matrix.py` provides an input-gated CAM/ICFR matrix function using independently supplied, dated risk scores and an explicitly verified eligible-account roster. It preserves unknown states, requires at least20 distinct valid firms for peer thresholds, and keeps incomplete competitor measures unknown. The module docstring defines the required DataFrame schema; no dataset or result is included. Run `python -m unittest -v test_risk_matrix` for its16 synthetic tests. These tests validate code behavior and make no empirical research claim.
 
 To connect another source, add a separate read-only adapter that accepts an explicit identifier and obtains credentials from environment variables. Preserve the same private output boundary and fixed error messages. This repository does not create a general upload channel.
+
+## Local CAM token-risk proxy
+
+`token_risk_profile.py` uses the Hugging Face `tokenizers` library locally for
+Unicode normalization and token segmentation. It applies a reviewable,
+versioned phrase lexicon to `TITLE`, `DESCRIPTION`, and `RESPONSE`, while the
+primary CAM narrative proxy uses `TITLE` plus `DESCRIPTION` only. Auditor
+response language stays separate. No Hub upload, hosted inference, or
+pretrained model inference occurs.
+
+`darwin_token_risk.py` joins the private token profile to separately supplied
+account and opinion-year crosswalks. It can assign provisional H/L/U levels
+within current-SIC2 × account × fiscal-year groups using a linear 70th
+percentile, ties high, and at least 20 distinct companies. Every source row is
+already CAM-present, ICFR remains unknown, and the only possible descriptive
+matrix cells are A3, C3, and U5. It creates no CAM-absent observations.
+
+Both commands require a new private output directory outside every Git working
+tree and an expected source SHA-256 supplied at run time. Use placeholders in
+saved scripts and terminal documentation; keep actual paths and fingerprints
+in private storage.
+
+```bash
+python token_risk_profile.py \
+  --cam /ABSOLUTE/PRIVATE/CAM.csv \
+  --crosswalk /ABSOLUTE/PRIVATE/topic_account_crosswalk.csv \
+  --expected-cam-sha256 EXPECTED_64_HEX_SHA256 \
+  --out /ABSOLUTE/PRIVATE/new-token-profile-output
+
+python darwin_token_risk.py \
+  --cam /ABSOLUTE/PRIVATE/CAM.csv \
+  --profile /ABSOLUTE/PRIVATE/new-token-profile-output/CAM_token_risk_profile_rows_PRIVATE.csv \
+  --opinion-year-crosswalk /ABSOLUTE/PRIVATE/opinion_year_crosswalk.csv \
+  --expected-cam-sha256 EXPECTED_64_HEX_SHA256 \
+  --out /ABSOLUTE/PRIVATE/new-darwin-output
+```
+
+The result is a `post_selection_descriptive_proxy`: disclosure-language
+intensity after CAM selection. It is not independent account risk, a CAM
+probability, ICFR evidence, a material-misstatement probability, or a causal
+estimate. Do not pass it to `risk_matrix.evaluate_risk_matrix` as independent
+`R_iat`. Competition fields cover observed mapped CAM accounts only and are
+not canonical DARWIN competition measures.
+
+Run the synthetic tests from this directory:
+
+```bash
+python -m unittest discover -s tests -v
+python -m unittest -v test_risk_matrix
+```
