@@ -11,6 +11,9 @@
 
 ## Open DARA
 
+- [▶ **Run DARA Phase 3 — Gemini, Gemini CLI, BigQuery, Vertex AI, OpenAI verification**](https://colab.research.google.com/github/Saehon/Saeid-Homayoun/blob/main/DARA/colab/DARA_Phase3_AI_Service_Verification.ipynb)
+- [Phase 3 safe cloud setup and checks](PHASE3_AI_INTEGRATION.md)
+
 - [▶ **Run DARA setup in Google Colab**](https://colab.research.google.com/github/Saehon/Saeid-Homayoun/blob/main/DARA/colab/DARA_Integration_Bootstrap.ipynb)
 - [Full architecture](ARCHITECTURE.md)
 - [Project master index](PROJECT_MASTER_INDEX.md)
