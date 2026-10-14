@@ -11,6 +11,9 @@
 
 ## Open DARA
 
+- [▶ **Run DARA All-in-One Colab — Drive, Workspace, GitHub, BigQuery, Vertex AI, and Gemini readiness**](https://colab.research.google.com/github/Saehon/Saeid-Homayoun/blob/main/DARA/colab/DARA_All_In_One_Google_Colab_Integration.ipynb)
+- [All-in-One Colab run guide](COLAB_ALL_IN_ONE_GUIDE.md)
+
 - [▶ **Run DARA Phase 3 — Gemini, Gemini CLI, BigQuery, Vertex AI, OpenAI verification**](https://colab.research.google.com/github/Saehon/Saeid-Homayoun/blob/main/DARA/colab/DARA_Phase3_AI_Service_Verification.ipynb)
 - [Phase 3 safe cloud setup and checks](PHASE3_AI_INTEGRATION.md)
 
