@@ -115,3 +115,34 @@ Run the synthetic tests from this directory:
 python -m unittest discover -s tests -v
 python -m unittest -v test_risk_matrix
 ```
+
+## Blinded human-validation sampling
+
+`build_validation_sample.py` deterministically creates a 30-case calibration
+pilot or a later 800-case confirmatory sample from private CAM, matter-account,
+and token-profile CSVs. It balances broad token-score bands, account domains,
+provisional year links and unlinked cases while preventing reuse of a CAM,
+company, or normalized narrative. Reviewer A and B receive different display
+orders and only the blind case ID, title, description, and empty annotation
+fields. Source identifiers, strata, years, and token scores stay in a separate
+private key. The script refuses to write raw narratives inside a Git worktree.
+
+All five ratings use the protocol's 0–3 scale. Each score can reference up to
+three exact evidence spans with zero-based half-open offsets and a rationale.
+`validate_completed_reviews.py` checks a completed reviewer CSV without
+echoing narrative text in its error output. Both tools use only the Python
+standard library and contain no source IDs, rows, labels, or empirical results.
+
+```bash
+python build_validation_sample.py \
+  --cam /ABSOLUTE/PRIVATE/CAM.csv \
+  --matter-account /ABSOLUTE/PRIVATE/matter_account.csv \
+  --profile /ABSOLUTE/PRIVATE/token_profile.csv \
+  --codebook /ABSOLUTE/PRIVATE/codebook.md \
+  --output-dir /ABSOLUTE/PRIVATE/new-pilot-output \
+  --exclude-matter-key PLACEHOLDER_RESERVED_MATTER_KEY \
+  --pilot-only
+
+python validate_completed_reviews.py /ABSOLUTE/PRIVATE/completed_reviewer_A.csv \
+  --expected-reviewer REVIEWER_A --expected-batch pilot_round_1
+```
