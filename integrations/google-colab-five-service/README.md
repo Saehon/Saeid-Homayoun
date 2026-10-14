@@ -1,4 +1,4 @@
-# GPT–GitHub–Google research integration
+# GPT–GitHub–Google research integration (Gemini CLI included)
 
 **[▶ Launch the verified GitHub notebook in Google Colab](https://colab.research.google.com/github/Saehon/Saeid-Homayoun/blob/main/integrations/google-colab-five-service/Google_Colab_Drive_Gemini_Cloud_GPT.ipynb)**
 
@@ -11,6 +11,10 @@ Google Cloud project: `third-serenity-428705-g2` • Main repository: `Saehon/Sa
 **Drive closes the research feedback loop:** Colab saves outputs and non-sensitive reports to Drive; ChatGPT accesses Drive independently via the connected Google Drive app to review results. Google Cloud, Colab, Gemini and Google Drive work within Google's ecosystem, but do not universally share credentials: Colab still requires Google authorization.
 
 **GitHub is NOT a live remote-control channel, identity federation service or automatic Colab execution engine.** It provides versioned handoff. To execute code, the user opens the notebook in Colab and runs/approves it. ChatGPT's access to GitHub and Drive does not itself authorize Colab, Gemini Vertex API or other services.
+
+## Gemini CLI within Google Cloud
+
+**Gemini CLI runs in Google Cloud Shell**, a separate browser terminal already including the CLI. It is not the same as the Gemini assistant inside Colab or Gemini inference through Vertex AI. Open Google Cloud Console → Activate Cloud Shell, then run `gemini --version` and confirm project ID `third-serenity-428705-g2`. Authentication and any model requests must be approved by the user. See [Cloud Shell Gemini CLI instructions](CLOUD_SHELL_GEMINI_CLI.md) and scoped [GEMINI.md](GEMINI.md) safety guidance.
 
 ## Minimum steps
 

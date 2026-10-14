@@ -8,12 +8,21 @@
 |---|---|---|
 | ChatGPT/GPT | Plans experiments, analyzes results, reviews notebooks, prepares commits and PRs | Uses independently connected GitHub and Drive apps; does not directly control a running Colab kernel |
 | GitHub (`Saehon/Saeid-Homayoun`, `main`) | Public source-code bridge, version control, reviewable PR changes | Never secrets or private research datasets; no runtime tokens |
+| Gemini CLI (Google Cloud Shell) | Browser-based terminal AI coding agent, already included in Cloud Shell | Separate Google Cloud Shell runtime; independently authenticated; reviews code from GitHub; no direct Colab kernel or mounted Drive access |
 | Google Colab | Interactive online Python executor | Opens notebook from GitHub; user approves notebook execution, mounts Drive and authenticates Cloud |
 | Google Drive | Canonical storage, master index, datasets, model results, reports, manuscripts | ChatGPT accesses via connected app; Colab accesses via its own mount; distinct approvals |
 | Google Cloud (`third-serenity-428705-g2`) | Cloud identity, BigQuery / Vertex AI services when explicitly used | IAM/APIs/billing require separate authorization; none assumed enabled |
 | Gemini in Colab | Google UI coding assistant | Distinct from programmatic Gemini inference |
 | Gemini Vertex AI | Optional model API via Google Cloud SDK | Dedicated API/permissions, explicit cost approval |
 | OpenAI Platform GPT in Colab | **Optional** separate programmatic GPT inference from notebook | Requires Colab Secret `OPENAI_API_KEY` and its own Platform billing; NOT needed for ChatGPT connectors |
+
+## Google ecosystem execution architecture
+
+**ChatGPT ↔ GitHub ↔ [Google Colab + Google Cloud + Gemini in Colab + Gemini CLI in Cloud Shell] ↔ Google Drive.**
+
+Gemini CLI in Cloud Shell can review public GitHub code or prepare suggested edits, but does not automatically access Colab state, Drive mounts or ChatGPT account tokens. Code moves by versioned GitHub review; data/results move through explicitly authorized Drive operations. Cloud Shell and Colab require separate execution and access review.
+
+See [Cloud Shell and Gemini CLI setup](CLOUD_SHELL_GEMINI_CLI.md). Do not treat availability as a completed live test.
 
 ## Preferred loop: human approval as a gate
 
@@ -39,5 +48,6 @@
 - **Canonical Google Drive** per project, with PROJECT_MASTER_INDEX, source/version lineage and read-back verified saves.
 - **GitHub** for code/PR traceability only in this integration scope; preserve ongoing project-specific GitHub pause instructions.
 - **No automatic secrets**: use interactive Google credentials and, only if optional OpenAI API is used, Colab Secrets.
+- **Gemini CLI in Cloud Shell**: prefer preinstalled tool, check `gemini --version` manually, do not install on user's PC or force a CLI into Colab.
 - **No automatic paid inference or provisioning**, no data deletion, no broad cloud administrative rights.
 - Version date: 2026-10-14.
