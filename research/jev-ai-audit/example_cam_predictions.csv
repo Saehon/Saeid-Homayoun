@@ -1,0 +1,9 @@
+variant,industry,domain,icfr_status,label,p_event
+openjev_rlcd,Manufacturing,revenue,unknown,1,0.78
+openjev_rlcd,Manufacturing,inventory,effective,0,0.22
+openjev_verdict,Manufacturing,revenue,unknown,1,0.68
+openjev_verdict,Manufacturing,inventory,effective,0,0.35
+openjevx,Manufacturing,revenue,unknown,1,0.73
+openjevx,Manufacturing,inventory,effective,0,0.29
+logistic_baseline,Manufacturing,revenue,unknown,1,0.60
+logistic_baseline,Manufacturing,inventory,effective,0,0.40
