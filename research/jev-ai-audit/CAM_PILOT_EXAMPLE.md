@@ -38,3 +38,15 @@ Next obtain authorized model predictions from the chosen Hugging Face or OpenJev
 - No copies of actual Google Drive data in this public repository.
 - No model installed, inference performed, or real CAM data scored in this example.
 - For publication: chronological held-out split, calibration, PR-AUC, bootstrap intervals, pre-registered hypothesis, cost and leakage checks.
+
+## RAD (Rapid Application Development) + MLflow extension — CAM first
+
+RAD is a **development methodology**, not a Claude-specific model or an installed package. It provides short, reviewable build–test–feedback cycles; MLflow is the **experiment-tracking layer**. Proposed workflow:
+
+1. **CAM MVP (first)**: use the existing Colab notebook and `three_stage_harness.py` for a synthetic smoke test. Verify source columns and taxonomy in the canonical private Drive CAM workbook. Add actual inference only after model access, permissions and outcome labels are validated.
+2. **MLflow tracking (next)**: in an authorized Colab runtime, `%pip install mlflow`, set a **private, persistent tracking URI** (not a public GitHub artifact), and log dataset version/hash, split dates, model ID, hyperparameters, Brier, PR-AUC and calibration metrics. Never log raw confidential rows or credentials. No MLflow server has been deployed by this commit.
+3. **ICFR extension**: preserve effective/ineffective/unknown, industry and accounting/control-domain stratification; abstain on unverified labels and enforce temporal validation.
+4. **PCAOB extension**: use agent outputs for inspection *triage* only, with evidence lineage and mandatory human approval; never claim an official inspection finding.
+5. **RAD release gate**: every iteration must pass unit tests, schema validation, leakage checks, licensing/privacy review, human review, and a reproducibility receipt before promotion. Keep all new research stage summaries as tabs in the existing canonical Drive workbook; reuse this GitHub directory rather than duplicating files.
+
+**Integration map:** GitHub (versioned code) → Google Colab (execution) → approved model endpoint / Hugging Face (optional inference) → MLflow (private experiment metadata) → Google Drive (canonical data and verified reports). Claude Agent Skills/MCP/A2A may orchestrate approved steps, but are not prerequisites for the synthetic pilot. Google Cloud/Vertex AI requires separate account/project authorization and may incur costs.
