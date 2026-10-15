@@ -64,3 +64,26 @@ This portfolio is primarily an **education and non-commercial academic research 
 ## Main Hub
 
 Return to the [Saeid-Homayoun Research Hub](https://github.com/Saehon/Saeid-Homayoun).
+
+## FRANKENSTEIN–DARWIN FT50/AJG4 Integration Registry (2026-10-15)
+This registry maps candidate integrations; it is **not** evidence that every repository has been installed or benchmarked. The two permanent NAAIL cores remain unchanged. The CAM skill lives at [.claude/skills/cam-evidence-context/SKILL.md](.claude/skills/cam-evidence-context/SKILL.md) on this review branch. Promote only after CI, data-access, IP and human approval gates.
+
+| Repository | Role | Integration decision |
+| --- | --- | --- |
+| Saeid-Homayoun / NAAIL | Central coordination | Pilot CAM skill on review branch; shared context, MCP and evidence rules |
+| RISK-INDEX / Riks-Index | CAM–ICFR risk and complexity | Link to governed CAM/ICFR taxonomy; avoid raw data copies |
+| pomelo-core | Proprietary assurance control plane | Interface by approved adapter only; no public copying or automatic writes |
+| IFRS-AI-Inspector | IFRS reporting review | Later standards-aware skill; human gate |
+| IFRS-PCAOB-AI | PCAOB inspection prototype | Phase 3 independent inspection adapter; no autonomous inspection claims |
+| timesfm | External forecasting model | Dependency/reference only; evaluate temporal leakage and reproducibility |
+| AuditData-API | Audit-data interoperability standard | Schema mapping only; do not alter upstream standard |
+| auditanalytics / Accounting_Analytics_Book | Teaching/reference | Cite and reuse only within licensing terms; no automatic installation |
+| corporate-sustainability-tracker | ESG replication reference | Evaluate data license and replicate before integration |
+| sec-edgar-downloader / yfinance | Data-source dependencies | Pin versions, respect provider access and licenses |
+| Financial-Sentiment-Analysis-and-Classification-Deep-Learning-Models / Kimi-K2 | NLP/model candidates | Offline comparative benchmark; no blind promotion |
+| Google-Antigravity-using-a-multi-agent-BERT-architecture / openai-agents-python | Agent orchestration references | Sandbox and permissions review before execution |
+| Remaining account repositories | Unclassified until code-level inspection | No writes or installation; inventory first |
+
+**Journal rigor:** preregistered constructs and splits; independent risk measurement; evidence-backed CAM and ICFR labels including unknown; sample-flow, multiple-testing control, robustness and falsification; source lineage and runnable replication instructions. Do not mine significant hypotheses. Journal policies and methodological reference points: [JAR author instructions](https://onlinelibrary.wiley.com/page/journal/1475679x/homepage/forauthors.html), [Management Science disclosure policy](https://pubsonline.informs.org/page/mnsc/code-and-data-disclosure-policy), [Reproducibility in Management Science](https://doi.org/10.1287/mnsc.2023.03556).
+
+**Storage:** Google Drive is canonical for evidence and results. Append worksheets to existing canonical workbooks; verify by readback. Respect project-specific GitHub pauses (including Fama–French and Damodaran). No secrets, private data, proprietary code or restricted research datasets in public GitHub. No bulk repository modification without individual suitability review.
