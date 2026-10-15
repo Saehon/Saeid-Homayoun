@@ -1,0 +1,26 @@
+name: Jev CAM synthetic smoke
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/jev-ai-audit/**'
+      - '.github/workflows/jev-cam-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: research/jev-ai-audit/requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r research/jev-ai-audit/requirements.txt
+      - name: Run CAM ICFR PCAOB harness
+        run: python research/jev-ai-audit/three_stage_harness.py
+      - name: Run synthetic MLflow pilot
+        run: python research/jev-ai-audit/run_synthetic_pilot.py
