@@ -65,3 +65,28 @@ Reuse canonical Google Drive datasets/workbooks and add worksheets rather than d
 https://youtu.be/YGgNBcIgI4s
 https://typesafe.ai/
 https://typesafe.ai/blog/introducing-system-one-models-and-jev
+
+
+## Open-source Jev-family variants: research integration (2026-10-15)
+These are **independent third-party projects, not official Jev releases**. Their claims and licenses must be verified before redistribution or production use. We link upstream sources rather than copying their model weights or code, preserving attribution and avoiding redundant files.
+
+| Variant | Upstream | Accounting adaptation | Verification gate |
+|---|---|---|---|
+| OpenJev-RLCD | https://github.com/ZimmyGao/openjev-rlcd | CAM/ICFR confidence calibration, selective prediction, Brier and coverage evaluation | Reproduce published calibration pipeline; benchmark with held-out accounting labels |
+| openJev-verdict-2.0 | https://github.com/Heman10x-NGU/openJev-verdict-2.0 | Typed CAM relevance, account-domain and ICFR risk decisions | Check weights, license, label semantics, benchmark leakage, and calibration |
+| OpenJevX | https://github.com/muthuishere/openjevx | Optional local service for NAAIL/LEMON risk gates and AI-to-AI checks | Install separately; confirm local endpoint schema, authentication and inference |
+| Calibrated logistic/XGBoost | Train from validated project data | Transparent baseline for all tracks | Chronological splits and independent test data |
+
+### Executable comparison harness
+`benchmark.py` is a dependency-free evaluator, **not a Jev installation or a pretrained classifier**. Obtain independently scored held-out probabilities from each model and supply a CSV with columns:
+`variant,industry,domain,icfr_status,label,p_event`.
+Here `label` is the *observed future event* (0/1/blank), `p_event` its predicted probability, and `icfr_status` is effective/ineffective/unknown. Do not substitute ICFR status for the observed outcome or label CAM effectiveness by CAM presence. Keep firm/year identifiers in canonical datasets for split validation.
+
+```bash
+python research/jev-ai-audit/benchmark.py --variants
+python research/jev-ai-audit/benchmark.py --input /path/to/heldout_predictions.csv
+```
+
+The evaluator returns grouped Brier, precision and recall by model × industry × accounting domain, excluding unknown *outcome* labels without imputing them as negatives. Results are descriptive and must not be interpreted as published validation, statistical significance, or Jev performance. For rare outcomes, extend the analysis with PR-AUC, confidence intervals and cost-sensitive utility before submitting a manuscript.
+
+**Implementation stages:** CAM first (revenue/ASC 606, inventory, goodwill); ICFR second (effective/ineffective/unknown stratification); NAAIL/PCAOB third (human approval and abstention). Only public/synthetic data until privacy approval. No model weights, external package, API token, GPU training or live service has been installed by this PR.
