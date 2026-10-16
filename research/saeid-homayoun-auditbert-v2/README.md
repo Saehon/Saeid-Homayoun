@@ -40,7 +40,7 @@ Schema + text quality + duplicate checks + company and year identifiers
     |     macro/weighted F1 + per-class supports + independent test
     |-- TF–IDF + linear classifier benchmark (planned)
     |-- External checkpoint comparator (only where license/access permits)
-    |-- Independent KAM-Llama-8B LoRA/QLoRA research track (planned)
+    |-- Independent KAM-Llama-8B QLoRA SFT trainer (source code added; not executed)
     v
 Human evidence review, disclosure-specificity/error audit, provenance
     |-- Hugging Face SADHON: model weights/cards after real training and rights review
@@ -69,6 +69,15 @@ python research/saeid-homayoun-auditbert-v2/train_finbert_topic.py \
   --split company --epochs 3 --seed 42
 ```
 For forward-time robustness, use `--split year --cutoff 2022` (train through 2021; validate 2022; test 2023 onwards). Ensure the given dataset covers each period. The script aborts rather than silently train on unsupported classes.
+
+Optional independently authored **8B response-generation SFT adapter** (requires authorized `response` column, Meta Llama access and Colab/Kaggle CUDA GPU):
+```bash
+pip install datasets peft trl bitsandbytes
+python research/saeid-homayoun-auditbert-v2/train_llama_response_qlora.py \\
+  --input /content/drive/MyDrive/approved_canonical_cam_kam_export.csv \\
+  --output /content/drive/MyDrive/auditbert_v2_private_qlora --split company
+```
+This produces a private research adapter and held-out evaluation loss, **not** a measured BERTScore/F1 or an audit opinion; human source-grounded tests remain mandatory.
 
 **Minimal-file policy:** keep using the same canonical Drive workbook with new stage tabs; do not create per-run spreadsheets. In GitHub, modify the canonical code in place, use commits/history, and link to the prior collaboration rather than copy its assets.
 
