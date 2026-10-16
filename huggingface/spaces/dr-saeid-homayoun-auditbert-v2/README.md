@@ -21,7 +21,7 @@ The deployed static Space runs fully in the user's browser without server GPU or
 ## Research components
 
 1. **Audit matter screening:** explainable accounting-topic vocabulary with US CAM / IFRS KAM framework references. This is a deterministic research demonstrator and does not estimate CAM effectiveness, audit quality, or risk.
-2. **Future independent classifier checkpoint:** [SADHON/saeid-finbert-kam-v2](https://huggingface.co/SADHON/saeid-finbert-kam-v2) — repository *planned/staging only*, not a trained model.
+2. **Future independent classifier checkpoint:** [SADHON/saeid-finbert-kam-v2](https://huggingface.co/SADHON/saeid-finbert-kam-v2) — repository **created as a private, untrained model-card staging area**, not a trained model.
 3. **Future separate generator adapter:** [SADHON/saeid-llama-31-8b-kam-v2](https://huggingface.co/SADHON/saeid-llama-31-8b-kam-v2) — repository *planned/staging only*, not a trained model.
 4. **Canonical source of code:** [Saehon GitHub, V2 research branch](https://github.com/Saehon/Saeid-Homayoun/pull/185); source is reviewed there, not edited directly on the Hub.
 5. **Source research evidence and prior code:** retained privately in the existing Google Drive archive; no private original notebooks, licensed datasets, training corpus, access tokens or checkpoints are uploaded here.
