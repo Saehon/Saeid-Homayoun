@@ -33,3 +33,17 @@ The earlier collaborative working paper, [*AI-Enabled Key Audit Matter Disclosur
 This demonstration has no model performance results. For publishable V2 results, reconcile 48 versus 49 topic definitions, verify source rights, use firm-disjoint and forward-year holdouts, compare TF–IDF versus independently tuned FinBERT, and report class-level metrics and uncertainties. Response generation requires licensed training pairs, evaluation of factual grounding and independent expert review.
 
 **Not for audit or assurance decisions.** No assertion of compliance with PCAOB, IAASB or IASB rules is made.
+
+
+## Linked measured benchmark — 16 October 2026
+
+A separately executed **private-data, TF–IDF + LinearSVC** topic-classification baseline—not the keyword-based code running in this Space—produced the following preliminary issuer-disjoint held-out scores:
+
+| Audit corpus | Unique eligible examples | Test macro-F1 | Test accuracy | Description-only test macro-F1 |
+|---|---:|---:|---:|---:|
+| US CAM | 36,771 | 0.778623 | 0.867387 | 0.766761 |
+| UK-headquartered KAM candidates | 33,724 | 0.756715 | 0.820740 | 0.717099 |
+
+The UK-headquarters proxy is **not verified to be a UK auditor-reporting regime**; country label taxonomies differ, audit-report years are not validated and semantic near-duplicate leakage requires further analysis. The static interactive demo is still **a deterministic keyword screener and is not the trained TF–IDF baseline, FinBERT, or Llama**. No private raw records or trained model weights are hosted by this Space.
+
+[Research implementation, metrics and scientific caveats](https://github.com/Saehon/Saeid-Homayoun/tree/research/saeid-auditbert-v2-20261016/research/saeid-homayoun-auditbert-v2) · [Google Drive source registry](https://docs.google.com/document/d/1YmktPLQ-be1sIFd-Ghlpvd7r156C2boC3y9eofM8p6k/edit) · [Kaggle synthetic demonstration](https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo).
