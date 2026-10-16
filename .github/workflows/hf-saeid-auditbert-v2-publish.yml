@@ -8,6 +8,7 @@ on:
     paths:
       - "huggingface/spaces/dr-saeid-homayoun-auditbert-v2/**"
       - "huggingface/models/saeid-finbert-kam-v2/**"
+      - "huggingface/models/saeid-finbert-cam-v2/**"
       - "huggingface/models/saeid-llama-31-8b-kam-v2/**"
       - ".github/workflows/hf-saeid-auditbert-v2-publish.yml"
   workflow_dispatch:
@@ -103,7 +104,7 @@ jobs:
           )
           print(f"Space publication requested: https://huggingface.co/spaces/{space_id}")
 
-          for name in ("saeid-finbert-kam-v2", "saeid-llama-31-8b-kam-v2"):
+          for name in ("saeid-finbert-cam-v2", "saeid-finbert-kam-v2", "saeid-llama-31-8b-kam-v2"):
               model_id = "SADHON/" + name
               api.create_repo(
                   repo_id=model_id,
