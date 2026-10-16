@@ -90,3 +90,30 @@ python research/jev-ai-audit/benchmark.py --input /path/to/heldout_predictions.c
 The evaluator returns grouped Brier, precision and recall by model × industry × accounting domain, excluding unknown *outcome* labels without imputing them as negatives. Results are descriptive and must not be interpreted as published validation, statistical significance, or Jev performance. For rare outcomes, extend the analysis with PR-AUC, confidence intervals and cost-sensitive utility before submitting a manuscript.
 
 **Implementation stages:** CAM first (revenue/ASC 606, inventory, goodwill); ICFR second (effective/ineffective/unknown stratification); NAAIL/PCAOB third (human approval and abstention). Only public/synthetic data until privacy approval. No model weights, external package, API token, GPU training or live service has been installed by this PR.
+
+
+## FT50-SUPPORTED COMMON RISK ENGINE — 2026-10-16
+
+**Status:** Implemented feature/provenance checks and synthetic tests, NOT an estimated DEARS risk score, validated Jev model, completed replication, or publication result. Maintainer attribution: **Dr. Saeid Homayoun**.
+
+**Code:** \`common_risk_engine.py\` creates *point-in-time* accounting features using explicit metadata (\`firm_id, fiscal_year, industry, domain, accounting_standard, cutoff_date, evidence_available_date, icfr_status\`). It returns eight candidates: accrual intensity, receivables/sales gap, inventory/sales gap, goodwill/assets, leverage, revenue growth, log segment count, and loss indicator. Missing denominators return \`None\`, not zero; a source availability date after cutoff raises an error; future outcomes are not treated as features. \`cam_smoke_test.py\` includes synthetic feature/leakage tests. Data custodians must audit each raw field's publication date; a single row-level maximum availability date alone is not sufficient proof of point-in-time correctness. Coefficients, calibration, data imputation, sample selection, and any JEV API adapter must be separately fitted and validated, NEVER imputed from journal articles.
+
+**Common taxonomy:** effective / ineffective / unknown ICFR × industry × accounting domain; US-GAAP revenue → ASC 606, IFRS revenue → IFRS 15. CAM selection, CAM effectiveness, ICFR status, and PCAOB findings must be assessed separately and independently. CAM or PCAOB findings are never used as contemporaneous ex-ante risk features. PCAOB public inspection observations generally support auditor/firm level rather than invented issuer-specific links.
+
+### Verified publications and replication sources (authoritative links)
+
+| Study / journal | DOI | Replication access | Role / integrity gate |
+|---|---|---|---|
+| Bao, Ke, Li, Yu & Zhang (2020), **JAR**, accounting fraud ML | https://doi.org/10.1111/1475-679X.12292 | **Author data and MATLAB code:** https://github.com/JarFraud/FraudDetection | Corrected RUSBoost; must incorporate 2022 erratum https://doi.org/10.1111/1475-679X.12454 |
+| deHaan, de Kok, Matsumoto & Rodriguez-Vazquez (2023), **Management Science**, resilience | https://doi.org/10.1287/mnsc.2023.4670 | **Author Python/SAS/Stata:** https://github.com/TiesdeKok/mnsc.2023.4670 | Raw licensed source data not included; reporting-process risk validation |
+| Gassen & Veenman (2026), **JAE**, robust inference | https://doi.org/10.1016/j.jacceco.2026.101895 | **Author R/Stata code:** https://github.com/dveenman/robust | Robust regression / high-dimensional FE; some WRDS inputs required; inferential module only |
+| Breuer & Schütt (2023), **RAST**, Bayesian accruals | https://doi.org/10.1007/s11142-021-09654-0 | **Author sample code/data:** https://github.com/hschuett/AccForUncertaintyCode | Measurement uncertainty; not a calibrated risk score by itself |
+| Dechow, Ge, Larson & Sloan (2011), **CAR**, F-score | https://doi.org/10.1111/j.1911-3846.2010.01041.x | Published method; **original-author executable code not confirmed** | Conventional misstatement-risk benchmark; independently implement and validate |
+| Burke, Hoitash, Hoitash & Xiao (2023), **TAR**, CAM | https://doi.org/10.2308/TAR-2021-0013 | Published methods; **public analysis code not confirmed** | CAM selection / expected-unexpected topics; prevent construct duplication |
+| Dee, Luo, Wang & Zhang (2026), **JAE**, CAM–ICFR | https://doi.org/10.1016/j.jacceco.2025.101834 | Published methods; **public analysis code not confirmed** | Account-level CAM/ICFR mechanism; incremental novelty required |
+| Hassan, Hollander, van Lent & Tahoun (2019), **QJE**, firm political risk | https://doi.org/10.1093/qje/qjz021 | **Authors' risk data:** https://www.firmlevelrisk.com/download | Textual risk design/TF–IDF; different risk construct, not an accounting risk model |
+| PCAOB firm inspection data (regulator, **NOT FT50 paper**) | https://pcaobus.org/oversight/inspections/firm-inspection-reports | Official public Part I.A/B CSV/XML/JSON | Auditor-level deficiency design with inspection-selection and publication-timing safeguards |
+
+**Three FT50 paper pathways:** (A) ex-ante risk × CAM selection/alignment → future outcomes; (B) risk × ICFR taxonomy → future material weaknesses; (C) auditor-level aggregated risk × PCAOB published inspection outcomes (subject to identification and coverage checks). Predictive lift must be established out of sample, and causal claims require separately defensible identification.
+
+**Research reproducibility protocol:** Freeze definitions and source checksums before modeling; train/validate/test strictly by public-availability dates, prevent shared-firm leakage, benchmark logistic regression / Dechow F-score / corrected Bao ML / FinBERT / JEV only if genuine accessible outputs exist, report PR-AUC + Brier + reliability + Recall@K + bootstrap CI, and retain all adverse/null results. Link third-party repositories rather than redistributing weights or licensed data. Upload no confidential Drive data to public GitHub or Hugging Face. Canonical empirical registry: existing Google Sheet \`03_EMPIRICAL_RESULTS_Risk_CAM_DARWIN_V2\`, new tab \`FT50_RISK_REPLICATION\`.
