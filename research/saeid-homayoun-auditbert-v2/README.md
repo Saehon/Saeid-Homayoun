@@ -1,7 +1,7 @@
 # Dr. Saeid Homayoun | AuditBERT V2: Independent CAM–KAM Research Extension
 
 **Principal developer / new research extension:** Dr. Saeid Homayoun, University of Gävle (Sweden)  
-**Development status (16 October 2026):** Source-code prototype and publication protocol. **No new fine-tuned weights, trained model, or validation score are claimed.**
+**Verified deployment (16 October 2026):** Free public Hugging Face static research demo and TWO private model-card repositories have been created under ID `SADHON`. All model checkpoints are **untrained**, no original data were released, and no new validation score is claimed.
 
 ## Scope
 A separately attributable research-extension project for accounting-topic classification and eventual evidence-grounded CAM/KAM response generation. This repository is the **canonical public code**. Confidential/possibly licensed source spreadsheets and unpublished manuscripts remain in Google Drive. Reuse the existing canonical synthetic reproducibility package instead of duplicating data.
@@ -15,7 +15,7 @@ A separately attributable research-extension project for accounting-topic classi
 | Surface | Canonical use | Link |
 |---|---|---|
 | GitHub | Source code, tests, provenance | https://github.com/Saehon/Saeid-Homayoun |
-| Hugging Face | Planned new model: `SADHON/saeid-finbert-kam-v2`; planned separate Llama generator, **not yet created** | https://huggingface.co/SADHON |
+| Hugging Face | Public **static** CAM/KAM demonstration created; two **private, untrained** model-card repositories created | https://huggingface.co/spaces/SADHON/dr-saeid-homayoun-auditbert-v2 |
 | Google Drive | Private source workbooks, draft paper, research registry; **not publicly synchronized** | https://docs.google.com/document/d/1YmktPLQ-be1sIFd-Ghlpvd7r156C2boC3y9eofM8p6k/edit |
 | Kaggle | Reuse the [existing synthetic dataset publishing workflow](../../.github/workflows/kaggle-cam-kam-auditbert-sync.yml), do not publish private training data | https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo |
 | SSRN | Existing collaborative preprint; V2 requires new findings and appropriate authorship decision | https://ssrn.com/abstract=7272139 |
@@ -48,6 +48,15 @@ The earlier project **already has executable research notebooks in Google Drive*
 - `ssrn-7272139.pdf`
 
 These are references to identified assets, not claims that their observations were read, downloaded, licensed for release, or trained on in V2.
+
+## Published Hugging Face assets (verified 16 October 2026)
+
+- [Public no-cost static Space: Dr. Saeid Homayoun AuditBERT Lab](https://huggingface.co/spaces/SADHON/dr-saeid-homayoun-auditbert-v2). Fully browser-side keyword-screening demonstrator; **not yet a model inference or trained classifier**. The Python Gradio variant is staged in GitHub only because free Hugging Face Gradio/Docker cpu-basic hosting currently requires PRO.
+- [Private model-card staging: Saeid-FinBERT-KAM-V2](https://huggingface.co/SADHON/saeid-finbert-kam-v2). Repository created with a documented future independent training plan; **no weights/real-world performance**.
+- [Private model-card staging: Saeid-Llama-3.1-8B-KAM-V2](https://huggingface.co/SADHON/saeid-llama-31-8b-kam-v2). Repository created; **no adapter weights or response metrics**.
+- [Verified successful GitHub-to-Hugging Face publishing run](https://github.com/Saehon/Saeid-Homayoun/actions/runs/38866593916). Hub write access was provided by the existing `HF_TOKEN` GitHub Actions secret; no credential value was disclosed or copied to this code.
+
+**Important:** Hugging Face **account ID remains SADHON**; the research project appears under the name **Dr. Saeid Homayoun**. Changing the Hub profile display name itself is a distinct account-settings action and was not performed.
 
 ## Architecture
 ```text
