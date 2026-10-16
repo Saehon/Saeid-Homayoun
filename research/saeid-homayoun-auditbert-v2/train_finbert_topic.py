@@ -26,9 +26,9 @@ ALIASES = {
 
 def prepare_table(path: Path):
     if path.suffix.lower() == ".csv":
-        df = pd.read_csv(path)
+        df = pd.read_csv(path, dtype="string", low_memory=False)
     elif path.suffix.lower() in {".xlsx", ".xls"}:
-        df = pd.read_excel(path)
+        df = pd.read_excel(path, dtype="string")
     else:
         raise ValueError("Expected a CSV or Excel file.")
     raw_rows = len(df)
@@ -36,14 +36,16 @@ def prepare_table(path: Path):
     for old, new in ALIASES.items():
         if old in df and new not in df:
             df = df.rename(columns={old: new})
-    needed = {"title", "description", "topic"}
+    needed = {"description", "topic"}
     missing = needed - set(df.columns)
     if missing:
         raise ValueError(f"Required CAM/KAM columns not found: {sorted(missing)}")
     df = df.dropna(subset=sorted(needed)).copy()
-    for col in needed:
-        df[col] = df[col].astype(str).str.strip()
-    df = df[(df["title"] != "") & (df["description"] != "") & (df["topic"] != "")]
+    if "title" not in df:
+        df["title"] = ""
+    for col in needed | {"title"}:
+        df[col] = df[col].fillna("").astype(str).str.strip()
+    df = df[(df["description"] != "") & (df["topic"] != "")]
     df["text"] = df["title"] + " [SEP] " + df["description"]
     if "company" in df:
         df["company"] = df["company"].astype("string").str.strip()
@@ -68,7 +70,28 @@ def prepare_table(path: Path):
 
 
 def holdouts(df, mode, cutoff, seed):
-    if mode == "company":
+    if mode == "frozen":
+        if "split" not in df.columns:
+            raise ValueError("Frozen split needs a 'split' column with train/validation/test.")
+        tags = df["split"].astype("string").str.strip().str.lower()
+        if tags.isna().any() or not set(tags.unique()) <= {"train", "validation", "test"}:
+            raise ValueError("Frozen split has missing or unexpected partitions.")
+        train = df.loc[tags.eq("train")].copy()
+        val = df.loc[tags.eq("validation")].copy()
+        test = df.loc[tags.eq("test")].copy()
+        if "company" not in df or df["company"].isna().any() or df["company"].astype(str).str.strip().eq("").any():
+            raise ValueError("Frozen split requires complete issuer company identifiers.")
+        sets = [set(x["company"].astype(str)) for x in (train, val, test)]
+        if sets[0] & sets[1] or sets[0] & sets[2] or sets[1] & sets[2]:
+            raise ValueError("FATAL: frozen split has company overlap.")
+        # Prevent exact normalized title+description duplicates from leaking.
+        def hashes(part):
+            return set(part["text"].map(lambda x: hashlib.sha256(
+                " ".join(x.casefold().split()).encode("utf-8")).hexdigest()))
+        h = [hashes(x) for x in (train, val, test)]
+        if h[0] & h[1] or h[0] & h[2] or h[1] & h[2]:
+            raise ValueError("FATAL: exact normalized text leaks across frozen partitions.")
+    elif mode == "company":
         if "company" not in df or df["company"].isna().any() or (df["company"] == "").any():
             raise ValueError("Complete company identifiers are REQUIRED for company-disjoint split.")
         if df["company"].nunique() < 5:
@@ -106,7 +129,14 @@ def main():
     p.add_argument("--input", type=Path, required=True)
     p.add_argument("--output", type=Path, default=Path("private_auditbert_v2"))
     p.add_argument("--base-model", default="yiyanghkust/finbert-tone")
-    p.add_argument("--split", choices=["company", "year"], default="company")
+    p.add_argument("--split", choices=["company", "year", "frozen"], default="company")
+    p.add_argument("--train-limit", type=int, default=0,
+                   help="Optional positive pilot cap; full validation unchanged, no test by default.")
+    p.add_argument("--evaluation-mode", choices=["validation_only", "heldout_test"],
+                   default="validation_only",
+                   help="Protect frozen heldout test until final signed-off model.")
+    p.add_argument("--gradient-accumulation", type=int, default=1)
+    p.add_argument("--fp16", action="store_true")
     p.add_argument("--cutoff", type=int)
     p.add_argument("--epochs", type=float, default=3.0)
     p.add_argument("--batch-size", type=int, default=8)
@@ -121,13 +151,39 @@ def main():
         return
 
     train, val, test = holdouts(df, args.split, args.cutoff, args.seed)
-    classes = report["topics"]
+    original_train_n = len(train)
+    if args.train_limit < 0:
+        raise ValueError("--train-limit must be non-negative.")
+    if args.train_limit:
+        if args.evaluation_mode != "validation_only":
+            raise ValueError("Pilot --train-limit must never peek at the heldout test.")
+        if args.train_limit <= train["topic"].nunique():
+            raise ValueError("--train-limit must exceed number of training classes.")
+        if args.train_limit < len(train):
+            # Preserve at least one example of each class; sample other rows
+            # without replacement, reproducibly, ONLY from the TRAIN partition.
+            anchors = train.groupby("topic", sort=True, group_keys=False).sample(
+                n=1, random_state=args.seed)
+            remaining = train.drop(index=anchors.index)
+            extra = remaining.sample(n=args.train_limit-len(anchors),
+                                     replace=False, random_state=args.seed)
+            train = pd.concat([anchors, extra]).sample(
+                frac=1, random_state=args.seed).reset_index(drop=True)
+    classes = sorted(train["topic"].unique().tolist())
+    if set(val["topic"]) - set(classes) or set(test["topic"]) - set(classes):
+        raise ValueError("Val/test topics not represented in train (bad labels or pilot).")
+    report["topics"] = classes
+    report["topic_count"] = len(classes)
     label2id = {label: i for i, label in enumerate(classes)}
     id2label = {i: label for label, i in label2id.items()}
     for split in (train, val, test):
         split["label"] = split["topic"].map(label2id).astype(int)
     report.update({
         "split": args.split, "cutoff": args.cutoff, "seed": args.seed,
+        "train_limit": args.train_limit, "full_train_count_before_pilot": original_train_n,
+        "evaluation_mode": args.evaluation_mode,
+        "issuer_disjoint_for_frozen": args.split == "frozen",
+        "real_gpu_training_attempted": True,
         "split_rows": {"train": len(train), "validation": len(val), "test": len(test)},
         "split_company_counts": {
             name: int(part["company"].nunique()) if "company" in part else None
@@ -182,6 +238,8 @@ def main():
         load_best_model_at_end=True, metric_for_best_model="macro_f1",
         greater_is_better=True, save_total_limit=2,
         weight_decay=0.01, seed=args.seed, report_to="none",
+        gradient_accumulation_steps=args.gradient_accumulation,
+        fp16=args.fp16,
     )
     trainer = Trainer(
         model=model, args=config, train_dataset=TopicDataset(train),
@@ -190,27 +248,41 @@ def main():
         compute_metrics=compute_metrics,
     )
     trainer.train()
-    heldout = trainer.predict(TopicDataset(test))
-    predicted = np.argmax(heldout.predictions, axis=-1)
-    target_names = [id2label[i] for i in range(len(classes))]
-    by_topic = classification_report(
-        test["label"], predicted, labels=list(range(len(classes))),
-        target_names=target_names, zero_division=0, output_dict=True,
-    )
-    report["status"] = "TRAINED_AND_EVALUATED"
+    report["status"] = ("PILOT_TRAINED_VALIDATION_ONLY" if args.train_limit
+                        else "TRAINED_VALIDATION_ONLY")
     report["sample_is_trained"] = True
-    report["test_results"] = {
-        k: float(v) for k, v in heldout.metrics.items()
+    validation = trainer.evaluate()
+    report["validation_results"] = {
+        k: float(v) for k, v in validation.items()
         if isinstance(v, (int, float, np.integer, np.floating))
     }
-    report["per_topic_test_results"] = by_topic
+    if args.evaluation_mode == "heldout_test":
+        if args.train_limit:
+            raise ValueError("Pilot heldout evaluation explicitly prohibited.")
+        heldout = trainer.predict(TopicDataset(test))
+        predicted = np.argmax(heldout.predictions, axis=-1)
+        target_names = [id2label[i] for i in range(len(classes))]
+        report["per_topic_test_results"] = classification_report(
+            test["label"], predicted, labels=list(range(len(classes))),
+            target_names=target_names, zero_division=0, output_dict=True)
+        report["test_results"] = {
+            k: float(v) for k, v in heldout.metrics.items()
+            if isinstance(v, (int, float, np.integer, np.floating))
+        }
+        report["status"] = "TRAINED_AND_HELDOUT_EVALUATED"
     trainer.save_model(str(args.output / "model"))
     tokenizer.save_pretrained(str(args.output / "model"))
-    (args.output / "experiment_report.json").write_text(
-        json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
+    target = args.output / "experiment_report.json"
+    target.write_text(json.dumps(report, indent=2, ensure_ascii=False),
+                      encoding="utf-8")
+    # Verify checkpoint and measured report before any user-facing PASS.
+    if not target.is_file() or not (args.output/"model"/"config.json").is_file():
+        raise RuntimeError("Checkpoint readback verification failed.")
     print(json.dumps({"status": report["status"],
-                      "test_results": report["test_results"]}, indent=2))
+                      "split_rows": report["split_rows"],
+                      "validation_results": report["validation_results"],
+                      "test_results": report.get("test_results", "NOT_EVALUATED")},
+                     indent=2))
 
 
 if __name__ == "__main__":
