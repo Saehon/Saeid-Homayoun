@@ -238,3 +238,18 @@ Release actual weights only after training, data-rights and independent evaluati
 7. Publish rights-cleared checkpoint to existing private HF account, write verified metrics and model card, and review manuscript relevance.
 
 **Evidence standard:** Actual trained counts and scores depend on schema/readback and authorized Colab execution; all new artifacts must link back to original Drive sources, and no training or model improvement is claimed in advance.
+
+
+### Read-only first Colab step — new executable corpus preflight
+
+**Stage: code staged; synthetic self-test only. No private CAM/KAM file was opened by GitHub CI, and no model was trained.** After the user mounts their authorized existing Drive folder in Google Colab, run this code with the actual mounted original CSV paths:
+
+~~~bash
+python research/saeid-homayoun-auditbert-v2/large_corpus_preflight.py \
+  --cam "/content/drive/MyDrive/<existing-folder>/CAM.csv" \
+  --kam "/content/drive/MyDrive/<existing-folder>/KAM.csv"
+~~~
+
+Optional: inspect its reported country candidate header names, then run with '--kam-country-column EXACT_HEADER_NAME' for **UK-headquarters candidates only**. Do not treat this count as verified UK audit jurisdiction.
+
+Preflight code: [large_corpus_preflight.py](large_corpus_preflight.py). Processes selected CSV columns in chunks, preserves leading-zero issuer IDs, outputs aggregate vendor-topic counts, rows, complete-text availability, distinct opinion/issuer/matter counts, duplicate identifier/text-hash diagnostics, and source SHA-256. Does not export row-level text, train, publish, or silently invent report years. Date, country reporting standard, source-rights, and leakage approval statuses remain UNVERIFIED until independent checks. First run synthetic smoke test with '--self-test'; it is included in CI. Do not paste original dataset text into GitHub Issues or Hugging Face.
