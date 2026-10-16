@@ -58,3 +58,17 @@ jobs:
               raise AssertionError("Three synthetic companies cannot support publication-grade holdouts")
           print("PASS: undersized grouped split is rejected")
           PY
+
+      - name: Verify Llama-response dataset schema with no GPU or training
+        run: |
+          python research/saeid-homayoun-auditbert-v2/train_llama_response_qlora.py \
+            --input research/cam-kam-auditbert-maryam/synthetic_cam_kam_sample.csv \
+            --dry-run > /tmp/saeid_llama_dry_run.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path("/tmp/saeid_llama_dry_run.json").read_text())
+          assert result["status"] == "SCHEMA_ONLY_NOT_TRAINED"
+          assert result["response_rows"] == 3
+          print("PASS: generator input schema only; no model weights created")
+          PY
