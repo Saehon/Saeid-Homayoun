@@ -285,3 +285,18 @@ The numbers below are **actual full-source TF-IDF + balanced LinearSVC topic-cla
 **FinBERT execution path**: [AuditBERT_USUK_Drive_Colab.ipynb](AuditBERT_USUK_Drive_Colab.ipynb) has been staged to use authenticated Google Drive and a user-selected Colab GPU. It imports the [same source-specific cleaner and issuer grouping protocol](real_corpus_tfidf.py) and the existing [FinBERT training script](train_finbert_topic.py) for independent US CAM and UK-HQ proxy models. It includes explicit stop switches for permitted private data use, old notebook token revocation and GPU authorization. No user Colab runtime was authenticated/started from this chat; hence no claim of FinBERT training.
 
 **Model publication gate**: The existing private Hugging Face SADHON model repositories contain model cards only, not trained neural weights. Source content, older notebook credentials and proprietary labels have not been uploaded. Do not publish neural model weights or F1 until actual trained checkpoints exist and source/model redistribution rights, human validation and independent data-split leakage tests pass.
+
+
+### Verified additional feature ablation: description-only against title-plus-description
+
+Runs below used the actual private CAM.csv/KAM.csv and the **same cleaned issuer-disjoint partition, class frequency threshold, labels, and seed 42** as the corrected baseline. Cleaning and exact-text deduplication remained based on the combined TITLE+DESCRIPTION before removing the title input. Therefore additional DESCRIPTION-only exact/semantic cross-issuer leakage checks are still pending.
+
+| Heldout feature comparison | US CAM (test n=5,648) | UK-headquartered KAM proxy (test n=5,188) |
+|---|---:|---:|
+| Title + description macro F1 | 0.778623 | 0.756715 |
+| Description-only macro F1 | 0.766761 | 0.717099 |
+| Macro F1 attributable to adding title in this paired experiment | +0.011863 | +0.039616 |
+| Description-only accuracy | 0.858888 | 0.792406 |
+| Description-only weighted F1 | 0.853953 | 0.788329 |
+
+Methodological warning: **title wording carries a substantial part of predictable vendor accounting-topic information**, especially for the UK-headquarters subset. Before any FT50/editorial claim, run the title-only negative control, true audit jurisdiction/year verification, boilerplate and semantic near-duplicate checks, and human expert labels. The ablation is associative and does not establish causal improvement or demonstrate FinBERT training. It is reproduced by the new [--text-mode description_only option in the canonical real_corpus_tfidf.py](real_corpus_tfidf.py) using the same original Drive input and source verification. The detailed ablation results were appended to the same existing Google Drive research registry; no separate raw data or duplicate workbook was created.
