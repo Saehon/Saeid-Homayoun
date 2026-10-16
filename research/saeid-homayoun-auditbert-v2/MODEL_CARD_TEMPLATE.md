@@ -14,7 +14,7 @@ base_model: yiyanghkust/finbert-tone
 # Saeid-FinBERT-KAM-V2 — Model Card Template (NOT TRAINED)
 
 **Planned repository:** `SADHON/saeid-finbert-kam-v2`  
-**Independent implementation / research lead:** Prof. Saeid Homayoun, University of Gävle, Sweden  
+**Independent implementation / research lead:** Dr. Saeid Homayoun, University of Gävle, Sweden  
 **Status:** PROPOSED — this file describes the publication standard. **No model has been uploaded or fine-tuned and no test result has been established.**
 
 ## Task
