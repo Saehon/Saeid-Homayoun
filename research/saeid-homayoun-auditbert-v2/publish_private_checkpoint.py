@@ -20,9 +20,9 @@ MODEL_FILES = {
     "sentencepiece.bpe.model", "added_tokens.json",
 }
 TARGETS = {
-    "us_cam": "SADHON/saeid-finbert-kam-v2",
-    # The existing historical name uses KAM; no new repository is created.
-    # Do NOT mix US and UK checkpoints into the same trained model repository.
+    "us_cam": "SADHON/saeid-finbert-cam-v2",
+    "uk_hq_kam": "SADHON/saeid-finbert-kam-v2",
+    # Independently trained CAM and UK-HQ KAM checkpoints NEVER share a Hub repo.
 }
 EXPECTED_STATUSES = {"TRAINED_AND_HELDOUT_EVALUATED"}
 
@@ -37,8 +37,7 @@ def sha256_file(path):
 
 def verify_private_checkpoint(root: Path, cohort: str):
     if cohort not in TARGETS:
-        raise ValueError("Only the independently approved US CAM model target is configured; "
-                         "UK KAM needs a separate explicitly authorized repo target.")
+        raise ValueError("Cohort has no independently approved private model target.")
     report_path = root / "experiment_report.json"
     weights = root / "model"
     if not report_path.is_file() or not weights.is_dir():
