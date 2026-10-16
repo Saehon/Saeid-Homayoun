@@ -7,7 +7,7 @@ sdk: static
 app_file: index.html
 pinned: false
 license: mit
-short_description: Explainable CAM/KAM topic screening research demo (not yet trained)
+short_description: CAM/KAM research topic screener (not trained)
 ---
 
 # Dr. Saeid Homayoun — AuditBERT CAM–KAM Research Lab
