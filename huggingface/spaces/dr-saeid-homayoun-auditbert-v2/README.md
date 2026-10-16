@@ -3,8 +3,8 @@ title: Dr. Saeid Homayoun | AuditBERT CAM-KAM Lab
 emoji: 📑
 colorFrom: blue
 colorTo: indigo
-sdk: gradio
-app_file: app.py
+sdk: static
+app_file: index.html
 pinned: false
 license: mit
 short_description: Explainable CAM/KAM topic screening research demo (not yet trained)
@@ -14,7 +14,9 @@ short_description: Explainable CAM/KAM topic screening research demo (not yet tr
 
 **Hugging Face account:** [SADHON](https://huggingface.co/SADHON)  
 **Independent research-software developer:** Dr. Saeid Homayoun, University of Gävle (Sweden).  
-**Current deployable stage:** interactive *keyword-based* audit-topic screening demonstration, running exclusively on public/synthetic example disclosures. **This Space does not yet contain new FinBERT or Llama 3.1 fine-tuned weights.**
+**Current deployable stage:** free-to-host interactive **static HTML/JavaScript** *keyword-based* audit-topic screening demonstration, running exclusively on public/synthetic example disclosures. **This Space does not yet contain new FinBERT or Llama 3.1 fine-tuned weights.**
+
+The deployed static Space runs fully in the user's browser without server GPU or LLM inference. `app.py` and `topic_screening.py` in GitHub are an optional future Gradio implementation that is **not deployed** on this free static Space. This avoids the October 2026 Hugging Face policy requiring PRO for Gradio/Docker Spaces on cpu-basic.
 
 ## Research components
 
