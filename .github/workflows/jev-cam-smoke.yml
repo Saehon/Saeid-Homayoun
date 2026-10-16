@@ -20,6 +20,8 @@ jobs:
           cache-dependency-path: research/jev-ai-audit/requirements.txt
       - name: Install dependencies
         run: python -m pip install -r research/jev-ai-audit/requirements.txt
+      - name: Validate FT50 common risk feature engine (synthetic only)
+        run: python research/jev-ai-audit/cam_smoke_test.py
       - name: Run CAM ICFR PCAOB harness
         run: python research/jev-ai-audit/three_stage_harness.py
       - name: Run synthetic MLflow pilot
