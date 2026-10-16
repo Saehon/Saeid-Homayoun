@@ -100,3 +100,51 @@ jobs:
           assert "RUN_GPU_FINBERT = False" in rendered
           print("PASS: schema, code syntax, and explicit security/compute stop gates; GPU not executed")
           PY
+
+      - name: Verify frozen issuer-safe FinBERT splits, negative leakage cases, and Hub release gates (synthetic only)
+        run: |
+          python - <<'PY'
+          import importlib.util
+          import pandas as pd
+          from pathlib import Path
+          import tempfile
+          module = Path("research/saeid-homayoun-auditbert-v2/train_finbert_topic.py")
+          spec = importlib.util.spec_from_file_location("finbert_safety", module)
+          m = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(m)
+          with tempfile.TemporaryDirectory() as d:
+              p = Path(d)/"frozen_synthetic.csv"
+              synthetic = pd.DataFrame([
+                  {"title": "", "description": f"Synthetic {i} Goodwill and inventory risk disclosure",
+                   "topic": "Inventory" if i%2 else "Goodwill",
+                   "company": f"{i:010d}",
+                   "split": "train" if i < 14 else "validation" if i < 22 else "test"}
+                  for i in range(30)
+              ])
+              synthetic.to_csv(p, index=False)
+              frame, check = m.prepare_table(p)
+              assert check["cleaned_rows"] == 30
+              assert frame["company"].str.startswith("00000").all(), "CIK leading zero lost"
+              a, b, c = m.holdouts(frame, "frozen", None, 42)
+              assert list(map(len,(a,b,c))) == [14,8,8]
+              assert not (set(a.company) & set(b.company))
+              # Explicit leakage attacks must STOP.
+              tampered = frame.copy()
+              tampered.loc[14,"company"] = tampered.loc[0,"company"]
+              try:
+                  m.holdouts(tampered,"frozen",None,42)
+              except ValueError as e:
+                  assert "overlap" in str(e).lower()
+              else:
+                  raise AssertionError("issuer overlap was not blocked")
+              tampered = frame.copy()
+              tampered.loc[14,"text"] = tampered.loc[0,"text"]
+              try:
+                  m.holdouts(tampered,"frozen",None,42)
+              except ValueError as e:
+                  assert "text leaks" in str(e)
+              else:
+                  raise AssertionError("cross-split exact-text reuse was not blocked")
+          print("PASS: independent frozen split, zero padding, label space, bad splits blocked.")
+          PY
+          python research/saeid-homayoun-auditbert-v2/publish_private_checkpoint.py --self-test
