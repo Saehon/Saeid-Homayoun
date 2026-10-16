@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Independent, private QLoRA KAM audit-response SFT research track.
 
+Research lead: Dr. Saeid Homayoun.
 Requires a GPU runtime, acceptance of the Meta Llama 3.1 license, and explicit
 rights to use all training text. This is research code, NOT trained weights.
 """
