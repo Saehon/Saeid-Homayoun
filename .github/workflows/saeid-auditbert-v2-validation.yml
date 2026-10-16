@@ -76,3 +76,7 @@ jobs:
       - name: Read-only large-corpus preflight synthetic self-test
         run: |
           python research/saeid-homayoun-auditbert-v2/large_corpus_preflight.py --self-test
+
+      - name: Real-corpus training code synthetic end-to-end test
+        run: |
+          python research/saeid-homayoun-auditbert-v2/real_corpus_tfidf.py --self-test
