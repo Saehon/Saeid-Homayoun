@@ -72,3 +72,7 @@ jobs:
           assert result["response_rows"] == 3
           print("PASS: generator input schema only; no model weights created")
           PY
+
+      - name: Read-only large-corpus preflight synthetic self-test
+        run: |
+          python research/saeid-homayoun-auditbert-v2/large_corpus_preflight.py --self-test
