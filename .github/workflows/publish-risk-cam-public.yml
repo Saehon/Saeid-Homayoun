@@ -1,0 +1,41 @@
+name: Publish Risk-CAM public synthetic package
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Publication target"
+        required: true
+        type: choice
+        options:
+          - huggingface
+          - kaggle
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: research-publication
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install uploader
+        run: |
+          if [ "${{ inputs.target }}" = "huggingface" ]; then
+            python -m pip install "huggingface_hub>=0.26,<2"
+          else
+            python -m pip install "kaggle>=1.6,<2"
+          fi
+      - name: Publish to Hugging Face
+        if: inputs.target == 'huggingface'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_REPO_ID: SADHON/darwin-jev-risk-cam-synthetic-replication
+        run: python research/jev-ai-audit/jar-risk-cam/scripts/publish_huggingface.py
+      - name: Publish to Kaggle
+        if: inputs.target == 'kaggle'
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: python research/jev-ai-audit/jar-risk-cam/scripts/publish_kaggle.py
