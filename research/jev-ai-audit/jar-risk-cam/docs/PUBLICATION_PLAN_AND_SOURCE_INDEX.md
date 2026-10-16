@@ -113,3 +113,23 @@ Public project archive: https://github.com/Saehon/Saeid-Homayoun/tree/research/j
 Recorded Git commit: 085afe8af724fd2637a9ae44f3b58e3298668367.
 
 GitHub stores the exact synthetic replication ZIP, an inspectable panel validator, six unit tests, a synthetic example, and a copy of this publication source index. The unpublished Word manuscript and raw empirical datasets remain canonical in this PRIVATE Google Drive folder, not in the PUBLIC GitHub repository. PR #184 was merged previously; PR #186 stages only these new materials and requires human approval before merge. No real-data regression or Jev inference is claimed.
+
+H. HUGGING FACE AND KAGGLE DISTRIBUTION — 16 OCTOBER 2026
+
+Hugging Face account verified: SADHON. Current ChatGPT OAuth scopes are jobs, openid, profile, read-mcp and read-repos; repository write permission is NOT granted, so no Hugging Face dataset was published from this session.
+
+Kaggle connector search returned no available Kaggle integration in this workspace, so no Kaggle dataset was published from this session.
+
+GitHub PR #186 now contains public-ready synthetic distribution metadata, upload scripts and a manual protected workflow:
+
+- Hugging Face intended dataset: SADHON/darwin-jev-risk-cam-synthetic-replication
+
+- Kaggle intended dataset: sadhon/darwin-jev-risk-cam-synthetic-replication
+
+- Workflow: .github/workflows/publish-risk-cam-public.yml
+
+- Public distribution manifest: research/jev-ai-audit/jar-risk-cam/PUBLIC_DISTRIBUTION_MANIFEST.md
+
+Only synthetic data, validation code, documentation and source links are approved for public distribution. The unpublished manuscript and private/raw research datasets remain canonical in this Google Drive folder.
+
+Final Hugging Face publication requires a write-enabled HF token or reconnection with repository-write scope. Final Kaggle publication requires KAGGLE_USERNAME and KAGGLE_KEY or a connected Kaggle integration. These credentials must be stored as secrets; never commit them.
