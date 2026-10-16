@@ -201,7 +201,7 @@ def self_test():
     with TemporaryDirectory() as tmp:
         p = Path(tmp) / "CAM.csv"
         rows = []
-        for i in range(40):
+        for i in range(140):
             rows.append({
                 "TITLE": "Goodwill" if i % 2 == 0 else "Inventory",
                 "DESCRIPTION": f"Audit {i} discusses " +
