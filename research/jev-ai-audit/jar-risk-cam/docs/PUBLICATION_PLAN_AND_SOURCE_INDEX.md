@@ -103,3 +103,13 @@ Outcome linkage and power/cluster sufficiency: NOT VERIFIED.
 Human approval for publication submission: PENDING.
 
 Sustainability policy: Google Drive is the authoritative private data archive; avoid unnecessary copies. GitHub retains executable code and history. Hugging Face may store only permission-cleared model artifacts and data.
+
+G. GITHUB SYNCHRONIZATION — 16 OCTOBER 2026
+
+GitHub draft PR #186: https://github.com/Saehon/Saeid-Homayoun/pull/186
+
+Public project archive: https://github.com/Saehon/Saeid-Homayoun/tree/research/jar-risk-cam-publication-20261016/research/jev-ai-audit/jar-risk-cam
+
+Recorded Git commit: 085afe8af724fd2637a9ae44f3b58e3298668367.
+
+GitHub stores the exact synthetic replication ZIP, an inspectable panel validator, six unit tests, a synthetic example, and a copy of this publication source index. The unpublished Word manuscript and raw empirical datasets remain canonical in this PRIVATE Google Drive folder, not in the PUBLIC GitHub repository. PR #184 was merged previously; PR #186 stages only these new materials and requires human approval before merge. No real-data regression or Jev inference is claimed.
