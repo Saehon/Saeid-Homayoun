@@ -108,9 +108,16 @@ def group_split(d, issuer, seed):
 
 def execute(path: Path, source: str, output: Path,
             seed=42, min_train_support=100, max_features=50000,
-            save_private_pipeline: Path | None = None):
+            save_private_pipeline: Path | None = None, text_mode="title_plus_description"):
     start = time.monotonic()
     d, schema, facts = load_clean(path, source)
+    if text_mode == "description_only":
+        # IMPORTANT: global cleaning/dedup has already used TITLE+DESCRIPTION.
+        # Retains identical issuer splits; description-only exact/near overlap
+        # requires an additional validation before publication.
+        d["text"] = d["DESCRIPTION"].copy()
+    elif text_mode != "title_plus_description":
+        raise ValueError("Unsupported text_mode")
     train, val, test = group_split(d, schema["issuer"], seed)
     counts = train[schema["topic"]].value_counts()
     frequent = set(counts[counts >= min_train_support].index)
@@ -149,6 +156,8 @@ def execute(path: Path, source: str, output: Path,
     facts.update({
         "status": "REAL_PRIVATE_TFIDF_SVM_TRAINED_NOT_FINBERT",
         "source": source,
+        "input_text_mode": text_mode,
+        "description_only_split_text_leakage_verified": False,
         "source_sha256": sha256_file(path),
         "python": sys.version.split()[0],
         "sklearn": sklearn.__version__,
@@ -217,6 +226,10 @@ def self_test():
                     min_train_support=1, max_features=300)
         assert f["issuer_disjoint"] and f["exact_text_disjoint"]
         assert f["metrics"]["macro_f1"] >= 0
+        g = execute(p, "us_cam", Path(tmp)/"description_only.json",
+                    min_train_support=1, max_features=300,
+                    text_mode="description_only")
+        assert g["input_text_mode"] == "description_only"
         print("PASS: fully synthetic, no private data.")
 
 
@@ -228,6 +241,8 @@ def main():
     a.add_argument("--seed", type=int, default=42)
     a.add_argument("--min-train-support", type=int, default=100)
     a.add_argument("--max-features", type=int, default=50000)
+    a.add_argument("--text-mode", choices=("title_plus_description", "description_only"),
+                   default="title_plus_description")
     a.add_argument("--save-private-pipeline", type=Path,
                    help="Optional PRIVATE Drive path, never public GitHub or Hub")
     a.add_argument("--self-test", action="store_true")
@@ -238,7 +253,7 @@ def main():
     if x.input is None or x.source is None or x.output is None:
         a.error("--input, --source and --output are required")
     execute(x.input, x.source, x.output, x.seed, x.min_train_support,
-            x.max_features, x.save_private_pipeline)
+            x.max_features, x.save_private_pipeline, x.text_mode)
 
 
 if __name__ == "__main__":
