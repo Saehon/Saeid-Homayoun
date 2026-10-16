@@ -134,3 +134,107 @@ Do not interpret metrics from the synthetic three-row example as empirical resul
 - Loughran, T., & McDonald, B. (2011). When is a liability not a liability? Textual analysis, dictionaries, and 10-Ks. *Journal of Finance*, 66(1), 35–65. https://doi.org/10.1111/j.1540-6261.2010.01625.x
 
 **Research integrity:** This is an independently authored software extension; it makes no claim to sole authorship of the source publication, to preexisting MaRyAm1295 weights, or to new model performance.
+
+
+---
+
+## MASTER TRAINING PLAN — AuditBERT-USUK-DARWIN V1 (16 October 2026)
+
+**Status: PLANNED, NOT TRAINED.** This plan is grounded in the verified 12–13 October 2026 data-quality report in the user's existing CAMbERT202610 Google Drive archive. Developer branding: **Dr. Saeid Homayoun**; keep earlier collaborative SSRN authorship and MaRyAm1295 checkpoints separately attributed.
+
+### A. Actual existing source evidence, not estimated samples
+
+Main archive: https://drive.google.com/drive/folders/1dmmYE7GuqUM-jfrOOW3nUwERxvxQDD6m
+
+Dated data audit: https://drive.google.com/file/d/1sxaoy-3jzZN3pyEwv74ha6Oxz9gegowt/view
+
+Canonical asset inventory: https://drive.google.com/file/d/1FzQTrZVcrKiHJUuU7O4nFwas82CMlJM5/view
+
+| Canonical Drive file | Source-verified inventory | Role and critical restriction |
+|---|---|---|
+| [CAM.csv](https://drive.google.com/file/d/1O0XqTgVCJHcQnjQ5Jkg2_IumY8k1JLhd/view) | US CAM: 45,924 matter records, 262 fields, 6,671 companies, 32,859 audit opinions, 55 TOPIC_NAME categories; 45,920 nonempty descriptions | Train US model after authorized data-use check, issuer split, report-year verification |
+| [KAM.csv](https://drive.google.com/file/d/1Izr6_ymOJbFUFgAmV-oUw5k9C15tqBWZ/view) | EUROPE-WIDE KAM: 86,122 matters, 76 fields, 5,520 entities, 35,567 opinions, 59 TOPIC values; 86,070 nonempty descriptions; 35,886 matters from UK-headquartered companies | Strict UK cohort must be verified by actual auditing/reporting jurisdiction; other Europe reserved for external tests |
+| [kam (uk)2023.xlsx](https://docs.google.com/spreadsheets/d/1cfsb0x_pVllTh4cFIa0TCEBgOI34XLLb/edit) | UK-focused workbook 28,826 rows, 28,764 keyed matters overlap with KAM.csv | Source triangulation only: never blindly concatenate |
+| [KAM20240505.csv](https://drive.google.com/file/d/1-ImPDxzWbFPzpup4yM7g9KpzlE3Z0ZxJ/view) | Original paper file exactly 65,535 matters; 49 topics / 65,192 rows after paper's >=100-frequency filter | Reproduce historical KAMBERT before improvement, NOT an independent new sample |
+| [KAM-Paper-Code.zip](https://drive.google.com/file/d/1cqb2wNWyEn0DJJYCJnCaLN8b-kZxPpO3/view) | Seven original FinBERT, FinText, Llama classification/generation notebooks | Compare methods, respect coauthors; unsanitized notebooks contain six distinct embedded HF-token strings in multiple copies, so they must not be exported or executed with those credentials |
+
+Combined CAM plus Europe-wide KAM matter rows = 132,046 before filtering, de-duplication, and validation. **Never call all 86,122 KAMs UK KAMs.** The UK-headquarters count is 35,886, not a verified audit-regime classification. The 2020–2024 US dated research subset of 16,171 CAMs / 11,988 audit opinions is independent auxiliary evidence; its date-based selection is biased toward firms with recognizable report-year text. Do not silently substitute it for all CAMs.
+
+### B. Hard scientific gates: halt training if failed
+
+**G0 Rights/security.** Confirm rights to the underlying public audit disclosures, private vendor-formatted extracts, vendor-assigned topic labels, derived weights, and intended outputs. Public annual-report accessibility does not automatically settle licensed extraction and model release terms. Audit/revoke the **six original HF tokens** before any notebook reuse, and never put notebook outputs/secrets in GitHub, Colab shared links, Hugging Face or Kaggle. Record credential remediation without storing credential values.
+
+**G1 Exact time and opinion-link keys.** CAM.csv and KAM.csv have NO verified original audit-report year, date or signature-date column. Do not use MR_FILE_DATE, FISCAL_YE, FISCAL_YEAR_END, market-cap snapshot date or latest fees as audit report date. Secure the audit-opinion table, join on AUDIT_OPINION_FKEY, verify US SEC EDGAR and corresponding UK report/date. Record unmatched and conflicting keys. **Do not run or advertise forward-time holdouts before this gate passes.** Preserve issuer-company crosswalk with zero-padded US CIK; UK ENTITY_MAP_FKEY, CAM COMPANY_FKEY, and audit matter unique keys need stable type-safe handling.
+
+**G2 UK versus US country/regime.** US_CAM requires true PCAOB/US audited CAM text. UK_KAM requires true UK audit-report regime (ISA (UK) 701 as applicable) and a verified company/auditor report, not an HQ-country-only proxy. Log UK headquarters, filing venue, auditor location, consolidated reporting framework (IFRS versus UK GAAP) and report year independently with UNKNOWN permitted. IFRS 15 must be applied ONLY if IFRS reporting is verified; US ASC 606 for relevant US GAAP revenue cases.
+
+**G3 Deduplication and leakage.** Keep one record per authoritative CAM key CRITICAL_AUDIT_MATTER_KEY or KAM key AO_KEY_AUDIT_MATTER_KEY. Use the opinion FKEY to identify reissues and keep report versions distinct until reviewed. Check exact normalized-text SHA-256 and near-verbatim MinHash/embedding clusters over titles, descriptions and auditor responses. Exclude duplicated UK workbook items and archival ZIP copies. Split by stable issuer/corporate group and audit opinion, not random individual matter. Zero overlaps by issuer/matter/opinion and no unresolved exact/near-text leakage in final partitions.
+
+**G4 Distinct source taxonomies.** US has 55 vendor CAM topic labels; Europe has 59 KAM labels. The historical KAMBERT fine-tuning code trains 49 KAM labels after dropping support below 100; the prior paper's abstract states 48 inconsistently. Create versioned (a) raw-US55, (b) raw-UK labels with documented rare class/OTHER logic, (c) human-adjudicated harmonized high-level accounting domains. Do not call identical topic names equivalent without review. Explicit UNKNOWN; CAM/ICFR effectiveness never inferred from presence/absence.
+
+**G5 Human-gold annotations.** Double-code stratified samples by country, industry, opinion year, auditor, long narratives and rare labels. Independently adjudicate disagreement; report Cohen kappa or Krippendorff alpha and label-confidence coverage. Freeze dictionary mapping, quality rules and heldout split IDs before experimenting.
+
+### C. Recommended model architecture: train in scientifically meaningful stages
+
+**Model 1 — AuditBERT-US-CAM-v1:** independently fine-tune FinBERT-based encoder for US CAM topic classification (native 55 labels with explicit rare-label protocol), then harmonized accounting domains. Use matter TITLE + DESCRIPTION, no response as a default feature, because RESPONSE belongs to a distinct generation/response-content task.
+
+**Model 2 — KAMBERT-UK-KAM-v1:** independently fine-tune same base encoder on verified UK KAM-only labels; compare raw 59-taxonomy with frozen 49-label historical reproduction and rare-class protocol. Retain omitted rare-topic support in all inventory reports, not silently discard the records.
+
+**Model 3 — AuditBERT-USUK-Joint-v1:** shared encoder with explicit jurisdiction embedding/marker and jurisdiction-specific 55/59 fine-label heads or adapters, plus an adjudicated harmonized domain head. Compare pooled versus separate training on *identical, frozen group-disjoint splits*. Keep unverified European KAMs in external testing, never opportunistically leak them into joint training.
+
+**Model 4 — Optional AuditBERT-DAPT:** additional masked-language-model adaptation using only authorized training-partition texts (never future test corpus in a prospective temporal analysis). Use fixed wordpiece windows (suggest 384 tokens, overlap logged) and aggregate chunk predictions at full-matter level. BERT training FROM SCRATCH is not the default: established FinBERT fine-tuning is much more defensible and economical on these data. Continue domain adaptation only if it beats directly fine-tuned FinBERT out of sample.
+
+**Separate optional Model 5 — AuditLlama-USUK-response (8B QLoRA):** only with verified, permitted auditor-response pairs, gated source retrieval, and independent audit-expert assessment. Do not equate generator BERTScore with classifier macro-F1 or assume generated output is an audit opinion. Meta Llama terms, GPUs, hallucination audit and dataset rights must be checked.
+
+### D. Locked comparisons and tests
+
+| E | Frozen comparison | Required outcomes |
+|---|---|---|
+| E0 | KAMBERT paper's 65,535/49-class replication versus cleaned full KAM input | Explicit truncation bias, company distribution, differences in text and methodology |
+| E1 | US TF-IDF + LinearSVC against US FinBERT | issuer-group macro-F1, weighted F1, class precision/recall/support, balanced accuracy |
+| E2 | UK TF-IDF + LinearSVC against UK FinBERT | same metrics; rare UK categories and calibration |
+| E3 | Separate US/UK encoders versus joint shared encoder | US, UK, pooled, and jurisdiction performance gaps, not only overall mean |
+| E4 | Verified dated forward-year split (after G1) | prospective heldout scores, issuer/near-duplicate leakage checks |
+| E5 | Non-UK continental European KAM holdout | out-of-jurisdiction transfer and OOD abstention |
+| E6 | 256/512 tokens versus hierarchical long-text chunks | truncation share, token costs, speed, error types |
+| E7 | Optional Llama responses: prompt only/RAG versus trained adapter | grounded audit procedure fidelity, unsupported claims, expert ratings, BERTScore |
+
+Use validation for model selection; seal test labels/sets. Report at least 3 seeds where feasible, per-topic supports, class and country calibration (ECE and Brier for probability models), clustered bootstrap 95% confidence intervals at issuer, and errors by industry, auditor, issuer size and report year. No target F1 improvement or FT50 statistical significance can be assumed before actual runs.
+
+### E. DARWIN scientific-coordinator protocol
+
+**Discover** — read original source manifests and schema, reconstruct dates and UK reporting regime; read actual labels and text lengths; reconcile sources, counts and duplicated ZIP assets.
+
+**Adversarial reviewer** — challenge each assumption: Is the UK cohort real? Is year valid? Could the model memorize boilerplate? Are response texts leaking topic? Are previous-paper labels attributable and rights-cleared? Does apparent accuracy persist with issuer isolation, date holdout and rare classes?
+
+**Reconcile** — freeze approved taxonomy, gold sample, split ID hashes, sources, training flags and reproducible Git commit; every failed gate enters existing OPEN REPAIR QUEUE after two attempts, with **no false PASS**.
+
+**Validate** — multiple independent baselines, leakage and sensitivity ablations, honest null or negative findings, external-country holdout and review by domain experts before publication/model release. No invented scores.
+
+### F. Sustainable Google Drive × GitHub × GPT execution
+
+**Drive = authoritative originals.** Do not create copies of CAM.csv/KAM.csv and other archives. Maintain the same Drive research registry and use any existing canonical experiment workbook with these *additional tabs*, as needed: SOURCE_MANIFEST, UK_COHORT, OPINION_YEAR_JOIN, TOPIC_ONTOLOGY, SPLITS, RUNS, EVALUATION, ERROR_AUDIT, RELEASE_GATES. Only generate temporary private normalized data inside a mounted Colab runtime for authorized compute. Save model checkpoints in the existing project folder rather than proliferating workbooks.
+
+**GitHub = reusable source, not data.** Extend and repair the existing V2 train_finbert_topic.py and benchmark_tfidf.py on PR #185; add source-specific schema adapters, company/entity split guard, UK reporting-regime verification gates, duplicate checks, combined-domain multihead models and smoke tests only when needed. Keep historical collaborative notebooks private until token sanitation and authorship review. GitHub Actions runs synthetic-only unit tests, no private dataset or token logging.
+
+**Colab = user-authenticated compute.** Sign in and mount the verified Google Drive folder. First run only schema inventory/rights/gates. Run matched CPU TF-IDF baselines, then 1k–5k eligible matter FinBERT pilot, then full US and UK separately, then joint and optional DAPT if GPU availability allows. Resume checkpoints safely with existing canonical project paths. Free-tier GPU availability is not guaranteed. Hosted Colab notebook must not save credential content or licensed extracts to open notebook outputs.
+
+**Hugging Face = deployment layer.** Account SADHON already has the private untrained model-card repositories:
+- https://huggingface.co/SADHON/saeid-finbert-kam-v2
+- https://huggingface.co/SADHON/saeid-llama-31-8b-kam-v2
+and a public, clearly labeled STATIC keyword research demo: https://huggingface.co/spaces/SADHON/dr-saeid-homayoun-auditbert-v2 .
+Release actual weights only after training, data-rights and independent evaluation gates. Existing static free Space is not an inference endpoint.
+
+**ChatGPT = scientific planner and quality critic, not background trainer.** It can maintain schema/config/code, cross-examine assumptions, inspect readbacks, write results to existing Drive research registry and review GitHub PRs. User-authorized Colab runtime executes compute; chat alone does not mount a private Google Drive dataset into a GPU.
+
+**Actionable go/no-go sequence:**
+0. Revoke/rotate old HF tokens and confirm source/data-use rights (BLOCKING).
+1. Profile real CAM/KAM schemas, checksums, text and UK country markers with read-only Colab.
+2. Recover/report year with opinion-key join and validate UK auditor-report regime (temporal evaluation BLOCKED until verified).
+3. Deduplicate, map native and harmonized topics, double-code human gold, freeze issuer split hashes.
+4. Estimate E1/E2 TF-IDF models. Record real outcomes, no prewritten significance.
+5. Run 1k–5k pilot and scale full eligible CAM/UK KAM FinBERT; freeze untouched heldout set.
+6. Evaluate joint encoder, optional DAPT, Europe OOD; optional separate QLoRA generation only after gated evaluation.
+7. Publish rights-cleared checkpoint to existing private HF account, write verified metrics and model card, and review manuscript relevance.
+
+**Evidence standard:** Actual trained counts and scores depend on schema/readback and authorized Colab execution; all new artifacts must link back to original Drive sources, and no training or model improvement is claimed in advance.
