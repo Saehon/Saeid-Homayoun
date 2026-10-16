@@ -24,7 +24,9 @@ def run(tracking_dir=None):
                "pr_auc": float(average_precision_score(yte, pred))}
     root = Path(tracking_dir) if tracking_dir else Path(tempfile.mkdtemp(prefix="jev_cam_mlflow_"))
     root.mkdir(parents=True, exist_ok=True)
-    mlflow.set_tracking_uri(root.resolve().as_uri())
+    # MLflow 3.17+ defaults away from the legacy filesystem store.
+    # Use a local SQLite backend so the synthetic run works on current CI.
+    mlflow.set_tracking_uri('sqlite:///' + (root / 'mlflow.db').resolve().as_posix())
     mlflow.set_experiment("synthetic_cam_pipeline_only")
     with mlflow.start_run(run_name="rad_cam_baseline_smoke"):
         mlflow.log_params({"model":"logistic_regression","dataset":"SYNTHETIC",
