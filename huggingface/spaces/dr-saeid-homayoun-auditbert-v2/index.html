@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Saeid Homayoun — AuditBERT CAM/KAM Lab</title>
+  <meta name="description" content="Explainable CAM and KAM accounting-topic research screening by Dr. Saeid Homayoun. Transparent static demonstration; no trained weights." />
+  <style>
+    :root{--navy:#0c1b30;--ink:#162b45;--slate:#506178;--light:#f5f8fc;--line:#dce5ef;--blue:#235cb6;--teal:#08796f}
+    *{box-sizing:border-box}html{font-family:Inter,"Segoe UI",Arial,sans-serif}body{margin:0;background:var(--light);color:var(--ink)}
+    a{color:var(--blue)}.shell{max-width:1190px;margin:0 auto;padding:28px 25px 64px}
+    header{background:var(--navy);color:#f8fbff;border-bottom:3px solid #53c2b5}
+    .head{max-width:1190px;margin:auto;padding:20px 25px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .brand{font-size:15px;letter-spacing:.05em;font-weight:800}.subbrand{font-weight:400;opacity:.77;font-size:13px}
+    .links{display:flex;gap:20px;flex-wrap:wrap}.links a{color:#d9edf9;text-decoration:none;font-size:13px}
+    .hero{background:white;border:1px solid var(--line);border-radius:16px;padding:35px 36px;margin-bottom:21px;box-shadow:0 6px 25px #1831530b}
+    .eyebrow{text-transform:uppercase;letter-spacing:.15em;color:var(--teal);font-weight:800;font-size:12px}
+    h1{font-size:clamp(28px,4vw,43px);line-height:1.15;margin:12px 0;color:var(--navy);letter-spacing:-.035em}
+    .lead{max-width:880px;line-height:1.65;color:var(--slate);font-size:16px;margin:0}
+    .tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+    .tag{font-size:12px;padding:8px 10px;border:1px solid var(--line);border-radius:20px;color:var(--ink);font-weight:650}
+    .tag.warning{background:#fdf2de;color:#775211;border-color:#f5d99c}
+    .work{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .panel{background:white;border:1px solid var(--line);border-radius:15px;padding:24px;box-shadow:0 4px 16px #152b4309;min-width:0}
+    h2{font-size:21px;color:var(--navy);margin:0 0 9px;letter-spacing:-.02em}h3{font-size:16px;margin:0 0 8px;color:var(--navy)}
+    .small{font-size:13px;color:var(--slate);line-height:1.65}.number{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.1em}
+    label{font-size:13px;font-weight:700;display:block;margin:20px 0 8px}select,textarea{width:100%;border:1px solid #bfcddd;border-radius:9px;padding:12px;font:inherit;color:var(--ink);background:white}
+    textarea{height:185px;resize:vertical;line-height:1.55}select:focus,textarea:focus,button:focus-visible{outline:3px solid #98caff;outline-offset:2px}
+    button{background:var(--blue);color:white;padding:13px 18px;border:0;border-radius:9px;font:inherit;font-weight:750;cursor:pointer}
+    button:hover{background:#124884}.example{background:white;color:var(--blue);border:1px solid #c6d7ef;padding:7px 11px;font-size:12px;font-weight:650}
+    button.example:hover{background:#e9f2ff}.samples{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+    table{border-collapse:collapse;width:100%;font-size:13px;text-align:left}
+    th,td{padding:11px 8px;border-bottom:1px solid #e5ecf3;vertical-align:top}
+    th{color:var(--slate);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+    .scroll{overflow-x:auto}.muted{color:var(--slate)}.empty{padding:38px 5px;text-align:center;font-size:14px;color:var(--slate)}
+    .metric{display:inline-block;background:#edf9f6;color:#09695f;padding:5px 9px;border-radius:7px;font-weight:700}
+    .callout{font-size:13px;background:#f0f6fd;border:1px solid #cfe2f7;border-radius:9px;padding:15px;line-height:1.6;margin-top:16px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:21px 0}
+    .mini{padding:21px;background:white;border:1px solid var(--line);border-radius:13px}
+    .mini p{margin:6px 0 0;color:var(--slate);font-size:13px;line-height:1.55}
+    .flag{color:#956516;background:#fff4dd;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:800}
+    footer{padding:18px 3px 5px;color:var(--slate);font-size:12px;line-height:1.7}
+    @media(max-width:850px){.work{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding:23px}.head{flex-direction:column;align-items:flex-start}.shell{padding:16px 14px 40px}}
+  </style>
+</head>
+<body>
+<header><div class="head">
+  <div class="brand">DR. SAEID HOMAYOUN <span class="subbrand"> / Accounting · Auditing · AI Research</span></div>
+  <nav class="links" aria-label="Research links">
+    <a href="https://huggingface.co/SADHON" target="_blank" rel="noopener">Hugging Face: SADHON ↗</a>
+    <a href="https://github.com/Saehon/Saeid-Homayoun/pull/185" target="_blank" rel="noopener">GitHub source ↗</a>
+    <a href="https://ssrn.com/abstract=7272139" target="_blank" rel="noopener">Prior collaborative paper ↗</a>
+  </nav>
+</div></header>
+<main class="shell">
+  <section class="hero">
+    <span class="eyebrow">AuditBERT V2 · Academic Research Laboratory</span>
+    <h1>Explainable analysis of Critical<br/>and Key Audit Matters.</h1>
+    <p class="lead">Research demonstration for CAM/KAM disclosure screening, accounting-topic mapping, and transparent evidence identification. Developed under <strong>Dr. Saeid Homayoun</strong>, University of Gävle, Sweden. This application processes text locally in your browser and makes no external inference calls.</p>
+    <div class="tags">
+      <span class="tag">CAM · PCAOB / US context</span>
+      <span class="tag">KAM · IFRS context</span>
+      <span class="tag">No credentials or private data required</span>
+      <span class="tag warning">Demo only · NOT a trained AI model</span>
+    </div>
+  </section>
+  <section class="work" aria-label="Topic screening tool">
+    <article class="panel">
+      <div class="number">01 / INPUT</div>
+      <h2>Screen an audit matter</h2>
+      <p class="small">Use the synthetic examples or an approved public audit-report excerpt. Do not paste confidential client records into public research demonstrations.</p>
+      <label for="jurisdiction">Reporting context</label>
+      <select id="jurisdiction">
+        <option>US CAM (US GAAP)</option>
+        <option>UK/EU KAM (IFRS)</option>
+      </select>
+      <label for="matter">CAM/KAM narrative</label>
+      <textarea id="matter" maxlength="30000" spellcheck="true">Revenue recognition required significant judgment about contract terms, performance obligations and variable consideration.</textarea>
+      <div class="samples" aria-label="Synthetic examples">
+        <button class="example" type="button" data-ex="revenue">Revenue</button>
+        <button class="example" type="button" data-ex="impairment">Impairment</button>
+        <button class="example" type="button" data-ex="liquidity">Going concern</button>
+      </div>
+      <button type="button" id="analyze">Analyze disclosure</button>
+      <p class="small">Method: a fixed, auditable keyword dictionary. Neither a FinBERT classifier nor a Llama model is invoked.</p>
+    </article>
+    <article class="panel" aria-live="polite">
+      <div class="number">02 / RESULTS</div>
+      <h2>Accounting-topic evidence</h2>
+      <p class="small">Results show exact vocabulary matches and an illustrative accounting reference; the hit count is <strong>not</strong> a probability, risk score, or audit-quality assessment.</p>
+      <div class="scroll"><table>
+        <thead><tr><th>Topic</th><th>Hits</th><th>Terms matched</th><th>Reference</th></tr></thead>
+        <tbody id="results"><tr><td colspan="4" class="empty">Analyze a matter to view vocabulary matches.</td></tr></tbody>
+      </table></div>
+      <div id="interpretation" class="callout">Awaiting input. Every resulting classification requires source verification and expert interpretation.</div>
+    </article>
+  </section>
+  <section class="grid" aria-label="Research model roadmap">
+    <article class="mini"><h3>FinBERT · Topic classifier <span class="flag">Not trained</span></h3>
+      <p>Independent domain adaptation and issuer-disjoint evaluation are proposed. No model weights or new accuracy scores have been published under SADHON.</p>
+    </article>
+    <article class="mini"><h3>Llama 3.1 8B · Responses <span class="flag">Not trained</span></h3>
+      <p>Separate QLoRA response-generation research requires licensed examples, GPU training, human validation and explicit safeguards against fabricated procedures.</p>
+    </article>
+    <article class="mini"><h3>Reproducible research <span class="flag">Code staged</span></h3>
+      <p>Existing notebooks and raw datasets remain in private Google Drive. Public-safe methods and a new TF–IDF benchmark are under GitHub version control.</p>
+    </article>
+  </section>
+  <footer>
+    <strong>Research attribution and governance.</strong> This independently developed demonstration is not a substitute for a professional audit, an assurance opinion, or a regulatory interpretation. The previous collaborative SSRN research remains separately attributed. Original MaRyAm1295 FinBERT-KAM and Llama-KAM model repositories are external research assets and are not represented as owned by this project. <a href="https://ssrn.com/abstract=7272139" target="_blank" rel="noopener">Prior collaborative SSRN paper</a> · <a href="https://github.com/Saehon/Saeid-Homayoun/pull/185" target="_blank" rel="noopener">New software and research protocol</a>.
+  </footer>
+</main>
+<script>
+"use strict";
+const ex={
+ revenue:"Revenue recognition required judgment over contract terms, performance obligations, and variable consideration.",
+ impairment:"The audit addressed goodwill impairment, discounted cash-flow projections, long-term growth and discount rate assumptions.",
+ liquidity:"The auditor discussed going concern due to liquidity, covenant pressure and refinancing uncertainty."
+};
+const patterns=[
+ ["Revenue recognition",["revenue recognition","revenue","contract assets","performance obligation","variable consideration","contract modification","sales returns"],"ASC 606","IFRS 15"],
+ ["Goodwill and impairment",["goodwill","impairment","cash-generating unit","discount rate","recoverable amount","value in use","long-term growth"],"ASC 350 / ASC 360","IAS 36"],
+ ["Inventory",["inventory","inventories","obsolescence","net realizable value","net realisable value","stock valuation","slow-moving"],"ASC 330","IAS 2"],
+ ["Going concern and liquidity",["going concern","liquidity","covenant","cash flow forecast","refinancing","solvency","material uncertainty"],"ASC 205-40","IAS 1"],
+ ["Fair value estimates",["fair value","valuation model","level 3","unobservable input","market approach","valuation techniques"],"Professional review","Professional review"],
+ ["Financial instruments",["financial instruments","expected credit loss","credit losses","derivative","hedging","loan loss"],"ASC 326 / ASC 815","IFRS 9"],
+ ["Tax accounting",["deferred tax","income tax","tax uncertainty","tax provision","tax assets","transfer pricing"],"Professional review","Professional review"],
+ ["Business combinations",["business combination","acquisition","purchase price allocation","acquired intangible","contingent consideration"],"ASC 805","IFRS 3"],
+ ["Provisions and litigation",["provision","litigation","legal claims","contingent liability","restructuring","warranty obligation"],"ASC 450","IAS 37"],
+ ["Technology and cybersecurity",["cybersecurity","cyber","information technology","data breach","system access","information security"],"Professional review","Professional review"]
+];
+function hit(text,phrase){
+ const pattern=phrase.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&");
+ return new RegExp("(^|[^a-z0-9])"+pattern+"($|[^a-z0-9])").test(text);
+}
+function analyze(){
+ const raw=document.getElementById("matter").value||"";
+ const text=raw.toLowerCase().replace(/\s+/g," ").trim();
+ const us=document.getElementById("jurisdiction").value.startsWith("US");
+ const body=document.getElementById("results");
+ const note=document.getElementById("interpretation");
+ body.replaceChildren();
+ if(!text){
+  const row=document.createElement("tr"),td=document.createElement("td");
+  td.colSpan=4;td.className="empty";td.textContent="Enter a public or synthetic disclosure.";row.append(td);body.append(row);
+  note.textContent="No text supplied. No classification attempted.";return;
+ }
+ const matches=patterns.map(x=>{
+  const terms=x[1].filter(t=>hit(text,t));
+  return {topic:x[0],terms:terms,reference:us?x[2]:x[3]};
+ }).filter(x=>x.terms.length>0).sort((a,b)=>b.terms.length-a.terms.length||a.topic.localeCompare(b.topic)).slice(0,5);
+ if(!matches.length){
+  const row=document.createElement("tr"),td=document.createElement("td");
+  td.colSpan=4;td.className="empty";td.textContent="No dictionary expressions matched.";row.append(td);body.append(row);
+  note.textContent="No matches do NOT demonstrate that a matter is low risk, insignificant or correctly reported.";return;
+ }
+ matches.forEach(m=>{
+  const row=document.createElement("tr");
+  [m.topic,String(m.terms.length),m.terms.join(", "),m.reference].forEach(v=>{
+   const td=document.createElement("td");td.textContent=v;row.append(td);
+  });body.append(row);
+ });
+ const best=matches[0];
+ note.textContent="Top lexical match: "+best.topic+" ("+best.terms.length+" keyword expressions). Illustrative framework reference: "+best.reference+". This count is not model confidence or audit significance. Confirm company, fiscal year, classification labels, and audit evidence before interpreting any finding.";
+}
+document.getElementById("analyze").addEventListener("click",analyze);
+document.querySelectorAll("[data-ex]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.getElementById("matter").value=ex[button.getAttribute("data-ex")];
+  analyze();
+ });
+});
+analyze();
+</script>
+</body>
+</html>
