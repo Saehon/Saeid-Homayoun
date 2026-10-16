@@ -133,3 +133,15 @@ GitHub PR #186 now contains public-ready synthetic distribution metadata, upload
 Only synthetic data, validation code, documentation and source links are approved for public distribution. The unpublished manuscript and private/raw research datasets remain canonical in this Google Drive folder.
 
 Final Hugging Face publication requires a write-enabled HF token or reconnection with repository-write scope. Final Kaggle publication requires KAGGLE_USERNAME and KAGGLE_KEY or a connected Kaggle integration. These credentials must be stored as secrets; never commit them.
+
+I. VERIFIED PUBLICATION RESULT — 16 OCTOBER 2026
+
+Hugging Face: PUBLISHED AND VERIFIED.
+
+Dataset URL: https://huggingface.co/datasets/SADHON/darwin-jev-risk-cam-synthetic-replication
+
+GitHub Actions job “huggingface” completed successfully. Public contents are restricted to synthetic demonstration data, validation code/tests, the replication ZIP and public metadata. No unpublished manuscript or private/raw Drive observations were uploaded.
+
+Kaggle: NOT PUBLISHED.
+
+The GitHub Actions Kaggle job installed the client but stopped before any Kaggle API upload because KAGGLE_USERNAME and KAGGLE_KEY were absent from the GitHub Actions environment. Intended slug remains sadhon/darwin-jev-risk-cam-synthetic-replication. Add both values as GitHub Actions secrets and rerun the publication workflow with target kaggle.
