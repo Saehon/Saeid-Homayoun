@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TF–IDF benchmark for independent Saeid Homayoun AuditBERT V2 study.
+"""TF–IDF benchmark for independent Dr. Saeid Homayoun AuditBERT V2 study.
 
 CPU-only baseline with the SAME split function and topic labels as the FinBERT
 track. This is not the original SSRN paper's benchmark and must not be
@@ -50,7 +50,7 @@ def main():
     test_predictions = clf.predict(test["text"])
     all_labels = manifest["topics"]
     report = {
-        "research_lead": "Prof. Saeid Homayoun",
+        "research_lead": "Dr. Saeid Homayoun",
         "status": "TFIDF_ESTIMATED_ON_PROVIDED_AUTHORIZED_DATA",
         "source_sha256": manifest["source_sha256"],
         "split": args.split, "year_cutoff": args.cutoff, "seed": args.seed,
