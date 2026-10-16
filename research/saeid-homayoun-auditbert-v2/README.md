@@ -1,7 +1,7 @@
 # Dr. Saeid Homayoun | AuditBERT V2: Independent CAM–KAM Research Extension
 
 **Principal developer / new research extension:** Dr. Saeid Homayoun, University of Gävle (Sweden)  
-**Verified deployment (16 October 2026):** Free public Hugging Face static research demo and TWO private model-card repositories have been created under ID `SADHON`. All model checkpoints are **untrained**, no original data were released, and no new validation score is claimed.
+**Verified execution (16 October 2026):** Two real-data **TF–IDF + LinearSVC** baselines have been trained and held-out evaluated on private Google Drive CAM/KAM source data. No independently trained FinBERT/Llama neural weights exist; no new neural accuracy is claimed. The public static Space and two private untrained neural model-card repositories remain under SADHON.
 
 ## Scope
 A separately attributable research-extension project for accounting-topic classification and eventual evidence-grounded CAM/KAM response generation. This repository is the **canonical public code**. Confidential/possibly licensed source spreadsheets and unpublished manuscripts remain in Google Drive. Reuse the existing canonical synthetic reproducibility package instead of duplicating data.
@@ -253,3 +253,35 @@ python research/saeid-homayoun-auditbert-v2/large_corpus_preflight.py \
 Optional: inspect its reported country candidate header names, then run with '--kam-country-column EXACT_HEADER_NAME' for **UK-headquarters candidates only**. Do not treat this count as verified UK audit jurisdiction.
 
 Preflight code: [large_corpus_preflight.py](large_corpus_preflight.py). Processes selected CSV columns in chunks, preserves leading-zero issuer IDs, outputs aggregate vendor-topic counts, rows, complete-text availability, distinct opinion/issuer/matter counts, duplicate identifier/text-hash diagnostics, and source SHA-256. Does not export row-level text, train, publish, or silently invent report years. Date, country reporting standard, source-rights, and leakage approval statuses remain UNVERIFIED until independent checks. First run synthetic smoke test with '--self-test'; it is included in CI. Do not paste original dataset text into GitHub Issues or Hugging Face.
+
+
+
+## EXECUTION LOG: actual private CAM and UK-HQ KAM CPU benchmark (16 October 2026)
+
+The numbers below are **actual full-source TF-IDF + balanced LinearSVC topic-classification experiments**, not synthetic CI tests, not FinBERT or Llama training. Source: existing CAMbERT202610 Google Drive folder. The experiment read the real CSVs in a private temporary runtime, and only aggregate results/source hashes were recorded in the existing [Google Drive CAM-KAM research registry](https://docs.google.com/document/d/1YmktPLQ-be1sIFd-Ghlpvd7r156C2boC3y9eofM8p6k/edit). The [GitHub native source adapter](real_corpus_tfidf.py) follows the same preprocessing/splitting and classifier protocol; its CI is synthetic-only.
+
+| Metric / count | US CAM | UK-headquartered KAM (proxy) |
+|---|---:|---:|
+| Raw source matter rows | 45,924 | 35,886 UK HQ from 86,122 pan-European |
+| Valid rows (source IDs + topic + description >=30 characters) | 45,919 | 35,806 |
+| Exact normalized text duplicate rows observed | 8,956 | 2,007 |
+| Conflicting-label exact-text clusters excluded | 192 (588 affected rows) | 75 (244 affected rows) |
+| Deduplicated, nonconflicting eligible texts | 36,771 | 33,724 |
+| Train / validation / test matter counts | 25,774 / 5,349 / 5,648 | 23,576 / 4,960 / 5,188 |
+| Issuer counts in train / validation / test | 4,637 / 994 / 994 | 1,353 / 290 / 291 |
+| Topic classes with training support >=100, plus OTHER_RARE | 36 + 1 | 37 + 1 |
+| Validation macro-F1 | 0.808179 | 0.733128 |
+| Test macro-F1 | **0.778623** | **0.756715** |
+| Test accuracy | **0.867387** | **0.820740** |
+| Test weighted-F1 | 0.863112 | 0.817095 |
+| Test balanced accuracy | 0.775495 | 0.762652 |
+| True report-year and UK auditor-report regime verified? | NO | NO |
+| Semantic near-duplicate leakage and external human annotation audit done? | NO | NO |
+
+**Data source SHA-256**: CAM.csv = 36b964fd8946f831d55a9459f5648e2af464e14788d8a2c93ca48cd441d08d28; KAM.csv = 963b22c8377b7e7b51d962040a7d37d407d2b3ca9e3d42914f4091a4b0ff4c8a. Experimental environment: Python 3.13.5, scikit-learn 1.8.0, TF-IDF word unigrams/bigrams up to 50,000 features, sublinear TF, balanced LinearSVC, random seed 42, issuer-disjoint approximate 70/15/15. Text = TITLE + DESCRIPTION. Exact duplicate text deduplicated globally; ambiguous identical-text groups assigned multiple vendor topic labels were excluded.
+
+**Correction of the preliminary benchmark**: Initial US macro-F1 0.792415 and UK-HQ macro-F1 0.759398 are now superseded by 0.778623 and 0.756715 respectively after stricter removal of ambiguous identical-text groups. These are INTERNAL preliminary results only. The countries have different topic taxonomies; score comparison is not causal, matched-label or publication-ready. The UK cohort is headquarters based, not verified ISA (UK) auditor reports. Original CSVs lack verified audit-report years; time-forward evaluation is blocked.
+
+**FinBERT execution path**: [AuditBERT_USUK_Drive_Colab.ipynb](AuditBERT_USUK_Drive_Colab.ipynb) has been staged to use authenticated Google Drive and a user-selected Colab GPU. It imports the [same source-specific cleaner and issuer grouping protocol](real_corpus_tfidf.py) and the existing [FinBERT training script](train_finbert_topic.py) for independent US CAM and UK-HQ proxy models. It includes explicit stop switches for permitted private data use, old notebook token revocation and GPU authorization. No user Colab runtime was authenticated/started from this chat; hence no claim of FinBERT training.
+
+**Model publication gate**: The existing private Hugging Face SADHON model repositories contain model cards only, not trained neural weights. Source content, older notebook credentials and proprietary labels have not been uploaded. Do not publish neural model weights or F1 until actual trained checkpoints exist and source/model redistribution rights, human validation and independent data-split leakage tests pass.
