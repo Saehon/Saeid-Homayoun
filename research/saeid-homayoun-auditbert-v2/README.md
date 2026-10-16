@@ -38,7 +38,7 @@ Schema + text quality + duplicate checks + company and year identifiers
     |-- FinBERT V2: NEW fine-tuning of yiyanghkust/finbert-tone
     |     company-disjoint OR forward-in-time 3-way test split
     |     macro/weighted F1 + per-class supports + independent test
-    |-- TF–IDF + linear classifier benchmark (planned)
+    |-- TF–IDF + LinearSVC classifier benchmark (source code added, CPU executable)
     |-- External checkpoint comparator (only where license/access permits)
     |-- Independent KAM-Llama-8B QLoRA SFT trainer (source code added; not executed)
     v
@@ -78,6 +78,14 @@ python research/saeid-homayoun-auditbert-v2/train_llama_response_qlora.py \\
   --output /content/drive/MyDrive/auditbert_v2_private_qlora --split company
 ```
 This produces a private research adapter and held-out evaluation loss, **not** a measured BERTScore/F1 or an audit opinion; human source-grounded tests remain mandatory.
+
+To run the **TF–IDF baseline** with the same company/time split:
+```bash
+python research/saeid-homayoun-auditbert-v2/benchmark_tfidf.py \\
+  --input /content/drive/MyDrive/approved_canonical_cam_kam_export.csv \\
+  --output /content/drive/MyDrive/auditbert_v2_tfidf_report.json --split company
+```
+Do not interpret metrics from the synthetic three-row example as empirical results.
 
 **Minimal-file policy:** keep using the same canonical Drive workbook with new stage tabs; do not create per-run spreadsheets. In GitHub, modify the canonical code in place, use commits/history, and link to the prior collaboration rather than copy its assets.
 
