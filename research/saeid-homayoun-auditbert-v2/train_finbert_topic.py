@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Train an independent FinBERT CAM/KAM topic classifier on AUTHORIZED private data.
 
-Research owner: Prof. Saeid Homayoun. Neither the checkpoint nor any evaluated
+Research owner: Dr. Saeid Homayoun. Neither the checkpoint nor any evaluated
 metric is created by this source file alone. Do not publish raw licensed data.
 """
 from __future__ import annotations
