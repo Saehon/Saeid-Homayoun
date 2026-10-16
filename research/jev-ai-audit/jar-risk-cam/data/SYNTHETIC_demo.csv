@@ -1,0 +1,4 @@
+firm_id,fiscal_year,domain,industry,cutoff_date,evidence_available_date,cam_present,eligible,risk_probability,outcome_event,outcome_observed_date,icfr_status,accounting_standard
+SYNTHETIC-001,2022,inventory,Manufacturing,2023-03-01,2023-02-15,0,1,0.75,1,2024-02-01,unknown,US_GAAP
+SYNTHETIC-001,2022,revenue,Manufacturing,2023-03-01,2023-02-15,1,1,0.33,0,2024-02-01,unknown,US_GAAP
+SYNTHETIC-002,2022,goodwill,Services,2023-04-01,2023-01-15,0,1,0.6,,,effective,US_GAAP
