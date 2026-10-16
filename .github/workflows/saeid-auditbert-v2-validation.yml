@@ -1,0 +1,60 @@
+name: Saeid AuditBERT V2 - research integrity smoke test
+
+on:
+  push:
+    paths:
+      - "research/saeid-homayoun-auditbert-v2/**"
+      - ".github/workflows/saeid-auditbert-v2-validation.yml"
+  pull_request:
+    paths:
+      - "research/saeid-homayoun-auditbert-v2/**"
+      - ".github/workflows/saeid-auditbert-v2-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  safe-schema-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install schema-only dependencies
+        run: python -m pip install pandas numpy scikit-learn openpyxl
+      - name: Verify synthetic schema without training or uploading
+        run: |
+          python research/saeid-homayoun-auditbert-v2/train_finbert_topic.py \
+            --input research/cam-kam-auditbert-maryam/synthetic_cam_kam_sample.csv \
+            --dry-run > /tmp/saeid_auditbert_dry_run.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('/tmp/saeid_auditbert_dry_run.json').read_text())
+          assert result["status"] == "SCHEMA_ONLY_NO_TRAINING"
+          assert result["cleaned_rows"] == 3
+          assert result["topic_count"] == 3
+          assert result["sample_is_trained"] is False
+          print("PASS: schema integrity; model training/publication not claimed")
+          PY
+      - name: Validate independent company holdout guard
+        run: |
+          python - <<'PY'
+          import importlib.util
+          from pathlib import Path
+          p = Path("research/saeid-homayoun-auditbert-v2/train_finbert_topic.py")
+          spec = importlib.util.spec_from_file_location("auditbert_v2", p)
+          m = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(m)
+          frame, _ = m.prepare_table(
+              Path("research/cam-kam-auditbert-maryam/synthetic_cam_kam_sample.csv"))
+          try:
+              m.holdouts(frame, "company", None, 42)
+          except ValueError as e:
+              assert "At least 5" in str(e)
+          else:
+              raise AssertionError("Three synthetic companies cannot support publication-grade holdouts")
+          print("PASS: undersized grouped split is rejected")
+          PY
