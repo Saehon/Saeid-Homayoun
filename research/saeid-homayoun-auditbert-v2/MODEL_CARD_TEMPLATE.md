@@ -13,9 +13,9 @@ base_model: yiyanghkust/finbert-tone
 
 # Saeid-FinBERT-KAM-V2 — Model Card Template (NOT TRAINED)
 
-**Planned repository:** `SADHON/saeid-finbert-kam-v2`  
+**Created private staging repository:** `SADHON/saeid-finbert-kam-v2`  
 **Independent implementation / research lead:** Dr. Saeid Homayoun, University of Gävle, Sweden  
-**Status:** PROPOSED — this file describes the publication standard. **No model has been uploaded or fine-tuned and no test result has been established.**
+**Status:** PRIVATE MODEL-CARD REPOSITORY CREATED — no trained weights, trained classifier, or validation results have been published. This file describes future training and evaluation standards.
 
 ## Task
 Classification of CAM/KAM disclosures into reproducibly specified accounting-topic labels.
