@@ -1,6 +1,6 @@
-# Saeid Homayoun | AuditBERT V2: Independent CAM–KAM Research Extension
+# Dr. Saeid Homayoun | AuditBERT V2: Independent CAM–KAM Research Extension
 
-**Principal developer / new research extension:** Prof. Saeid Homayoun, University of Gävle (Sweden)  
+**Principal developer / new research extension:** Dr. Saeid Homayoun, University of Gävle (Sweden)  
 **Development status (16 October 2026):** Source-code prototype and publication protocol. **No new fine-tuned weights, trained model, or validation score are claimed.**
 
 ## Scope
@@ -19,6 +19,27 @@ A separately attributable research-extension project for accounting-topic classi
 | Google Drive | Private source workbooks, draft paper, research registry; **not publicly synchronized** | https://docs.google.com/document/d/1YmktPLQ-be1sIFd-Ghlpvd7r156C2boC3y9eofM8p6k/edit |
 | Kaggle | Reuse the [existing synthetic dataset publishing workflow](../../.github/workflows/kaggle-cam-kam-auditbert-sync.yml), do not publish private training data | https://www.kaggle.com/datasets/sadhon/cam-kam-auditbert-public-demo |
 | SSRN | Existing collaborative preprint; V2 requires new findings and appropriate authorship decision | https://ssrn.com/abstract=7272139 |
+
+
+## Existing original code located in Google Drive — authoritative archive (verified 16 Oct 2026)
+
+The earlier project **already has executable research notebooks in Google Drive**. These are original collaborative-project assets, not V2 code newly invented here. Maintain and inspect the existing Drive archive rather than duplicating it. The independent V2 scripts in this draft are optional extensions/comparators and **must be reconciled against the original notebooks and their provenance before any research claim or model training**.
+
+**Canonical original paper-code ZIP:** [KAM-Paper-Code.zip](https://drive.google.com/file/d/1cqb2wNWyEn0DJJYCJnCaLN8b-kZxPpO3/view), within the [existing research archive](https://drive.google.com/drive/folders/1dmmYE7GuqUM-jfrOOW3nUwERxvxQDD6m). Its downloaded archive was inspected without executing cells. SHA-256: `0d9936250c0d8a55b721990e6795f72ac34c1d56160868d9533166013fa267be`. It contains **seven research notebooks**: one dataset-info notebook, three topic-classification/model-comparison notebooks, and three response-generation/fine-tuning/comparison notebooks.
+
+| Original Drive notebook | Intended prior-code role |
+|---|---|
+| [KAM_finBERT_Topic_Classifier.ipynb](https://drive.google.com/file/d/1Ckx9s6ts1oHUIGn75GmUkYaik7ry4ia0/view) | Historical FinBERT topic-training implementation |
+| [KAM_finText_Topic_Classifier.ipynb](https://drive.google.com/drive/folders/1sYHv5lc5GdM9jmc6UCpPnybO6HhYVA40) | Historical financial-text topic-classification baseline |
+| [KAM_finBERT_vs_models_comparison.ipynb](https://drive.google.com/file/d/1sgHrxvRTh5xdLPpX5t9Via9k7mlcgxQo/view) | Historical classifier comparisons |
+| [Fine_Tuning_KAM_on_Llama3-1_8B.ipynb](https://drive.google.com/file/d/1JVAllEeQbPozVe76frEYzcARbMu3fJtA/view) | Historical Llama 3.1 8B supervised fine-tuning code |
+| [KAM_Response_Generator.ipynb](https://drive.google.com/file/d/1ZxySHiHvby4X3qByVzDqVQKGy5GVOgiu/view) | Historical audit-response generation |
+| [KAM-Llama3-1_vs_models_comparison.ipynb](https://drive.google.com/file/d/1YirnMNDbhTIRexA6NQviIoQhWcnxZYCZ/view) | Historical response-generator evaluation |
+| dataset_info.ipynb | Data profiling; also inside the canonical ZIP |
+
+**Security inspection:** The archived notebook code contains patterns resembling embedded Hugging Face access tokens. Because these might be active credentials, **do not publish or copy any original notebook directly to public GitHub, Kaggle or Hugging Face**. Audit/sanitize the notebooks, revoke and rotate potentially exposed credentials, clean notebook outputs and paths, check redistributable rights, and retain the unmodified originals privately. This scan does not establish that any credential remains valid or that any repository was compromised. No tokens or source code from this ZIP have been committed here.
+
+**Decision:** Original paper's methods/code = archived Google Drive as source; GitHub = reviewed, sanitized, attributable reproduction and *new* Dr. Saeid Homayoun V2 implementation. Differences in splits, topic labels, data-cleaning decisions, hyperparameters and metric calculations require a documented comparison before merging or SSRN release. No assertion that the V2 scripts reproduce the prior paper's reported metrics.
 
 ## Private Drive source references (no automatic export or replication)
 - `SOURCE — US CAM — CAMs for US firms.xlsx`
