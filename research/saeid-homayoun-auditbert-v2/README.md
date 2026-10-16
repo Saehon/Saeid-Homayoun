@@ -389,3 +389,44 @@ OUTPUT FORMAT I REQUIRE: (1) current gate/status matrix; (2) minimal code change
 ```
 
 **No new GPU experiment was run by recording this master prompt.** The approved pilot and full-sample checkpoints remain future actions.
+
+
+## Engineering completion sprint — frozen FinBERT training and guarded private Hugging Face release
+
+**Research owner:** Dr. Saeid Homayoun. **Status:** CODE + SYNTHETIC CI VALIDATED; US CAM and UK-HQ KAM neural GPU jobs **NOT YET RUN**. Original TF-IDF+LinearSVC scores (US macro-F1 0.778623; UK-HQ proxy 0.756715) remain historical reference benchmarks, NOT new model F1. The source [Claude Drive folder](https://drive.google.com/drive/folders/1NMX2_Ojg_maMyokV1j3rlt55aC3KWNV4) and current project registry remain authoritative and private.
+
+### Fixed research-critical training defect
+
+The original Colab notebook created issuer-disjoint train/validation/test assignments but called `train_finbert_topic.py --split company`, **re-partitioning** the cleaned data. The corrected notebook writes the explicit `split` column to ephemeral private temporary CSV, then invokes `--split frozen`. [Updated training CLI](train_finbert_topic.py) checks issuer separation, rejects exact-title+description cross-split duplicates, preserves zero-padded issuer IDs with `dtype=string`, preserves empty titles when description exists, and fails on unseen validation/test class labels rather than silently remapping. All completed heldout TF-IDF comparisons remain the previous historical results pending actual fresh same-split reproduction.
+
+### Compute discipline: pilot → full independently trained US CAM → full independent UK KAM → optional expert/ACRIS
+
+- **Default notebook flags all FALSE:** `RUN_GPU_FINBERT`, `RUN_FULL_AFTER_PILOT`, `EVALUATE_FINAL_HELDOUT`, and `RUN_HF_PRIVATE_UPLOAD`. Legal rights and old credential revocation flags also remain FALSE. Opening Colab or copying the Gemini prompt never trains or publishes by itself.
+- **First user-approved GPU trial:** `RUN_GPU_FINBERT=True`, with source-use/secret-remediation attestations independently verified, triggers a **2,000-training-example US CAM pilot** only. It trains on frozen issuer split and evaluates **validation only**, saving a separate checkpoint in the existing private Drive folder. No unsealed test score or claims of a complete model.
+- **After pilot review:** `RUN_FULL_AFTER_PILOT=True` runs the fully eligible US CAM and separate UK-HQ KAM candidate models on their own frozen partitions, still **validation only** unless `EVALUATE_FINAL_HELDOUT=True` is deliberately approved. Never treat UK headquarters as actual UK ISA auditor-report jurisdiction or compare different label taxonomies directly.
+- **Hugging Face release:** [`publish_private_checkpoint.py`](publish_private_checkpoint.py) supports `--self-test` and a **local DRY RUN by default**; it refuses pilots, missing real heldout evaluation evidence, non-frozen splits, unauthorized weights, unexpected checkpoint files, wrong account, or public repo. The owner must separately authorize derived-weight redistribution and transfer to a PRIVATE repository, supplying a secret via Colab Secrets. A private upload is not automatic after training. The standalone [US CAM private card](https://huggingface.co/SADHON/saeid-finbert-cam-v2) and existing [UK KAM private card](https://huggingface.co/SADHON/saeid-finbert-kam-v2) are distinct **UNTRAINED PLACEHOLDERS** until a verified private upload.
+
+### Exact links and commands
+
+[Open current Colab with built-in Gemini master prompt](https://colab.research.google.com/github/Saehon/Saeid-Homayoun/blob/research/saeid-auditbert-v2-20261016/research/saeid-homayoun-auditbert-v2/AuditBERT_USUK_Drive_Colab.ipynb).
+
+For source-safe synthetic-only local CI:
+
+```bash
+python research/saeid-homayoun-auditbert-v2/real_corpus_tfidf.py --self-test
+python research/saeid-homayoun-auditbert-v2/publish_private_checkpoint.py --self-test
+```
+
+For an owner-approved **post-training, local-only dry run** of a verified US CAM FULL final checkpoint saved in private Drive (replace placeholder with ACTUAL authorized Drive mounted path):
+
+```bash
+python research/saeid-homayoun-auditbert-v2/publish_private_checkpoint.py \
+  --checkpoint /content/drive/MyDrive/Claude/CAMbERT202610/private_auditbert_v2_checkpoints/us_cam/full \
+  --cohort us_cam
+```
+
+This **does not upload anything**. Flags `--rights-attested --approve-private-upload` are deliberately absent and must never be auto-added by CI or Gemini. Existing GitHub Actions publish sanitized *MODEL CARDS ONLY*, not trained model weights.
+
+### Acceptance gates — do not mark the project complete until each has observed evidence
+
+(1) owner confirms private-source use and revokes 6 legacy HF tokens; (2) original CAM/KAM source identity and permissions verified; (3) source/report-date and UK jurisdiction caveats reflected in sample/labels; (4) frozen issuer-disjoint train/validation/test and near-duplicate checks; (5) genuine Colab GPU pilot with saved model/config/report readback; (6) separate full FinBERT runs and sealed test comparisons against same-split TF-IDF baselines; (7) class-level error and expert review of existing 260 unfilled CAM coder fields; (8) model/data license verification before private HF checkpoint publication, if desired; (9) in-place private Drive research registry update; (10) independent economics/FT50 overlap checks before the optional DARWIN–ACRIS stage. Nulls, blockers and status must be documented; no invented tests, model weights or GPU usage.
