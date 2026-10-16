@@ -80,3 +80,23 @@ jobs:
       - name: Real-corpus training code synthetic end-to-end test
         run: |
           python research/saeid-homayoun-auditbert-v2/real_corpus_tfidf.py --self-test
+
+
+      - name: Validate Colab notebook JSON and Python cell syntax only
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("research/saeid-homayoun-auditbert-v2/AuditBERT_USUK_Drive_Colab.ipynb")
+          nb = json.loads(p.read_text(encoding="utf-8"))
+          assert nb["nbformat"] == 4
+          codes = [c for c in nb["cells"] if c["cell_type"] == "code"]
+          assert len(codes) >= 5
+          for i, cell in enumerate(codes):
+              compile("".join(cell["source"]), f"<colab-cell-{i}>", "exec")
+          rendered = p.read_text(encoding="utf-8")
+          assert "AUTHORIZED_PRIVATE_SOURCE_USE = False" in rendered
+          assert "OLD_NOTEBOOK_HF_TOKENS_REVOKED = False" in rendered
+          assert "RUN_GPU_FINBERT = False" in rendered
+          print("PASS: schema, code syntax, and explicit security/compute stop gates; GPU not executed")
+          PY
