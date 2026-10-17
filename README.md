@@ -31,6 +31,10 @@ AI is increasingly used to analyze financial information and support consequenti
 
 **Our learning pathway:** Learn with AI → Test AI → Challenge the Results → Verify the Evidence → Make Human Decisions.
 
+### Journal Co-Scientist — FT50/AJG systematic review and reproducible research (pilot)
+
+**Research status: protocol and offline metadata verification only; no completed systematic review, replication or validated empirical result.** [Explore the Journal Co-Scientist research workflow](NAAIL/research-assurance-mcp/journal-coscientist/README.md) · [Google Drive project master archive](https://drive.google.com/drive/folders/1Y6NqwdwjBlYCqGObTb9UeRNqiZin6iZ). Runs require independent human checks, legitimate data rights, and the NAAIL Human Gate.
+
 ### Start exploring
 
 **[Explore NAAIL OpenLab™](NAAIL-OpenLab/README.md)** · **[Beginner's Start Here Guide](NAAIL-OpenLab/00_START_HERE.md)** · **[Research Status & Prototypes](NAAIL-OpenLab/CURRENT_PROJECT_STATE.md)**
