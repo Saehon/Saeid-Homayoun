@@ -1,0 +1,40 @@
+name: NAAIL Prior Exposure Guard v2
+
+on:
+  push:
+    paths:
+      - "NAAIL/research-assurance-mcp/derived/**"
+      - ".github/workflows/naail_rule_prior_exposure_guard.yml"
+  pull_request:
+    paths:
+      - "NAAIL/research-assurance-mcp/derived/**"
+      - ".github/workflows/naail_rule_prior_exposure_guard.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  prior-exposure-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Fetch open research-assurance protocol history
+        shell: bash
+        run: |
+          git fetch --no-tags origin             refs/heads/naail/research-assurance-pr-b-q5-covid:refs/remotes/origin/naail/research-assurance-pr-b-q5-covid
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install schema validator
+        run: python -m pip install "jsonschema>=4,<5"
+
+      - name: Run prior-exposure guard
+        run: python NAAIL/research-assurance-mcp/derived/test_rule_prior_exposure_guard.py

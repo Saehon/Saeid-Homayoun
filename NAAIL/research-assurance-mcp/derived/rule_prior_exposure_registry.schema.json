@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Saehon/Saeid-Homayoun/NAAIL/research-assurance-mcp/derived/rule_prior_exposure_registry.schema.json",
+  "title": "NAAIL rule/protocol prior-exposure registry",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "artifact_path",
+          "artifact_kind",
+          "artifact_id",
+          "status",
+          "active_for_execution",
+          "prior_exposure",
+          "freeze_commit",
+          "source_csv",
+          "policy_disposition"
+        ],
+        "properties": {
+          "artifact_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_kind": {
+            "enum": [
+              "rule",
+              "protocol"
+            ]
+          },
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "active_for_execution": {
+            "type": "boolean"
+          },
+          "prior_exposure": {
+            "type": "boolean"
+          },
+          "freeze_commit": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "source_csv": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "earliest_outcome_artifact": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "path",
+                  "commit"
+                ],
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{40}$"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "policy_disposition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "correction_record": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
