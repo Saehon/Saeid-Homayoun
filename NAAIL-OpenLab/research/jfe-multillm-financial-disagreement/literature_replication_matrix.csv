@@ -1,0 +1,11 @@
+Study,Journal,LLM/AI focus,Replication resource,Main contribution,Extension in proposed project
+de Kok (2025),Management Science,GPT/Llama textual analysis,GitHub + data + code,Construct validity; prompt/model selection,Multi-model disagreement + assurance
+Lopez-Lira & Tang (2026),Journal of Financial Economics,GPT news interpretation and returns,Mendeley Data replication package,Return predictability / market efficiency,Primary finance replication benchmark
+"Jha, Liu & Manela (2026)",Review of Financial Studies,Language embeddings / LLM construct,Harvard Dataverse + code/data,Latent financial sentiment construct,Blueprint for AI disagreement construct
+"He, Lv, Manela & Wu (forthcoming)",Journal of Financial Economics,ChronoBERT / ChronoGPT,Mendeley + Hugging Face,Look-ahead bias / training leakage,Chronological integrity benchmark
+Siano (2025),Management Science,LLM earnings disclosure information,Supplementary data/material,Disclosure informativeness / returns,Test disagreement around disclosure news
+Eisfeldt et al. (forthcoming),Journal of Finance,Generative AI exposure,Author data repository,Firm value / labor exposure,Economic consequences benchmark
+Sheng et al. (2026),Review of Financial Studies,GenAI adoption by hedge funds,Research materials,Fund abnormal returns,Adoption vs judgment quality
+Cao et al. (2024),Journal of Financial Economics,Human vs AI analyst,Supplementary materials,Forecast accuracy,Human gate / complementarity
+"Audrino, Maly & Stalder (forthcoming)",Journal of Finance,LLM uncertainty measurement,Research materials,Uncertainty / asset pricing,AID as new information/uncertainty construct
+García-Llorente & Olmeda (2026),Finance Research Letters,Claude vs GPT reliability,Open article / empirical design,Inter-model reliability,Direct motivation for AI disagreement
