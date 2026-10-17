@@ -15,13 +15,17 @@ Lemon now combines its evidence-governed ICFR pipeline with a provider-neutral s
 **Evidence → ICFR/COSO Knowledge Core → Structure Discovery → Co-Scientist → Specialized Agents → Scientific Testing → Reviewer → Independent Falsification → Human Approval → Learning Loop**
 
 The design incorporates:
-- Co-Scientist multi-agent hypothesis generation and debate
-- AlphaFold-inspired latent-structure discovery across process/account/assertion/risk/control/evidence relationships
-- AlphaEvolve-inspired benchmark-gated improvement
+- PROPOSED DESIGN — Co-Scientist multi-agent hypothesis generation and debate
+- PROPOSED DESIGN — AlphaFold-inspired latent-structure discovery across process/account/assertion/risk/control/evidence relationships
+- PROPOSED DESIGN — AlphaEvolve-inspired benchmark-gated improvement
 - Scientific discovery and replication
-- Digital Twin / scenario testing
+- PROPOSED DESIGN — Digital Twin / scenario testing
 - Evidence Passports and model/tool lineage
 - mandatory human approval for consequential conclusions
+
+"AlphaFold-inspired" is a structural analogy only; AlphaFold is not used.
+
+Scientific status: ACK2007 = SCIENTIFIC_HOLD. Sprint 1 metrics = DEVELOPMENT_ONLY until a frozen independent holdout is evidenced.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md).
 
@@ -80,7 +84,7 @@ Use the repository's `Big4-Official-Resources/` layer as a cross-cutting public 
 - `organized/evidence/` — provenance and source registries
 - `agents/` — domain-agent specifications
 - `integrations/` — provider adapters and external execution layers
-- `benchmarks/` — test cases and evaluation protocols
+- `organized/benchmarks/` — canonical benchmark collection (see governance/OPEN_REPAIR_QUEUE.md ORQ-008)
 - `research/` / `organized/papers/` — hypotheses, methods and research outputs
 - `governance/` — scientific-learning, falsification and approval policies
 - `src/lemon_icfr/` — runnable provider-neutral agent core

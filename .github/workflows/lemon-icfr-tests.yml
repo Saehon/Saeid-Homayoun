@@ -27,3 +27,12 @@ jobs:
           python-version: "3.11"
       - run: python -m pip install -e ".[test]"
       - run: pytest -q
+      - name: Run fail-closed demo
+        run: |
+          demo_output="$(python examples/minimal_case.py)"
+          printf '%s\n' "$demo_output"
+          first_line="$(printf '%s\\n' "$demo_output" | head -n 1)"
+          if [[ "$first_line" != BLOCKED:* ]]; then
+            echo "Demo must remain fail-closed; first line was: $first_line" >&2
+            exit 1
+          fi

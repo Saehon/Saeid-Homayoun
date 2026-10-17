@@ -1,0 +1,94 @@
+{
+  "_status": "R1 STATUS TEMPLATE populated from PR #76 ontology at head 4db589fd9e7dd8968ea4f1f4ab7ba421276129bf; human approval still required for any promotion",
+  "_rule": "Only VERIFIED variables are executable. VERIFIED requires a primary-publication locator for BOTH the definition and construction rule, plus signed human approval.",
+  "model": "ACK2007",
+  "model_status": "SCIENTIFIC_HOLD",
+  "m1_locked": false,
+  "canonical_source": "Lemon-ICFR-US/research/scientific-compute-reuse/source-definition-recovery/ACK2007-construction-gates.json (PR #76 head)",
+  "variables": {
+    "SEGMENTS": {
+      "status": "PENDING",
+      "source_status": "PENDING_TIMING",
+      "executable": false,
+      "reason": "Exact fiscal timing not locked."
+    },
+    "FOREIGN_SALES": {
+      "status": "SECONDARY",
+      "source_status": "SECONDARY_SOURCE",
+      "executable": false,
+      "reason": "Definition currently supported only by secondary/later evidence, not ACK2007 primary evidence."
+    },
+    "M&A": {
+      "status": "PENDING",
+      "source_status": "PENDING_EXACT_CONSTRUCTION",
+      "executable": false,
+      "reason": "Exact construction unresolved."
+    },
+    "RESTRUCTURE": {
+      "status": "PENDING",
+      "source_status": "PENDING_EXACT_CONSTRUCTION",
+      "executable": false,
+      "reason": "Exact construction unresolved."
+    },
+    "RGROWTH": {
+      "status": "QUARANTINED",
+      "source_status": "PROVENANCE_CONFLICT",
+      "executable": false,
+      "reason": "Primary evidence has not resolved 2001-2003 vs 2002-2004 window, ranking population/direction, or missing-data eligibility rule."
+    },
+    "INVENTORY": {
+      "status": "PENDING",
+      "source_status": "PENDING_TIMING",
+      "executable": false,
+      "reason": "Exact fiscal timing unresolved."
+    },
+    "SIZE": {
+      "status": "QUARANTINED",
+      "source_status": "PROVENANCE_CONFLICT",
+      "executable": false,
+      "reason": "Primary evidence has not resolved ln(MVE) vs average MVE in USD billions, averaging window, or missing-year/sample-eligibility handling."
+    },
+    "%LOSS": {
+      "status": "QUARANTINED",
+      "source_status": "BLOCKED_MISSING_YEAR_RULE",
+      "executable": false,
+      "reason": "Missing-year denominator, sample-eligibility rule, and exact earnings item unresolved."
+    },
+    "RZSCORE": {
+      "status": "QUARANTINED",
+      "source_status": "BLOCKED_RAW_CONSTRUCTION",
+      "executable": false,
+      "reason": "Altman version/formula inputs, ranking population/direction, and missing-data policy unresolved."
+    },
+    "AUDITOR_RESIGN": {
+      "status": "PENDING",
+      "source_status": "PENDING_TIMING",
+      "executable": false,
+      "reason": "Concept supported but exact executable timing unresolved."
+    },
+    "AUDITOR": {
+      "status": "SECONDARY",
+      "source_status": "SECONDARY_SOURCE",
+      "executable": false,
+      "reason": "Exact coding not supported by ACK2007 primary evidence."
+    },
+    "RESTATEMENT": {
+      "status": "PENDING",
+      "source_status": "PENDING_WINDOW",
+      "executable": false,
+      "reason": "Exact executable window unresolved."
+    },
+    "INST_CON": {
+      "status": "SECONDARY",
+      "source_status": "SECONDARY_SOURCE",
+      "executable": false,
+      "reason": "Exact scaling not supported by ACK2007 primary evidence."
+    },
+    "LITIGATION": {
+      "status": "SECONDARY",
+      "source_status": "SECONDARY_SOURCE",
+      "executable": false,
+      "reason": "Exact SIC set not supported by ACK2007 primary evidence."
+    }
+  }
+}
