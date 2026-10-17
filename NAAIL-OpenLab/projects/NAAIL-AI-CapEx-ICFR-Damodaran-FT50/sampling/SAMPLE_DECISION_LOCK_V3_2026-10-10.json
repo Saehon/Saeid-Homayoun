@@ -1,0 +1,83 @@
+{
+  "project": "NAAIL-AI-CapEx-ICFR-Damodaran-FT50",
+  "journal": "The Accounting Review",
+  "journal_groups": [
+    "FT50",
+    "AJG2024_4star"
+  ],
+  "version": "3.0",
+  "freeze_date": "2026-10-10",
+  "design_status": "LOCKED",
+  "empirical_firm_count_status": "PENDING_ACTUAL_ALL_US_SEC_10K_UNIVERSE",
+  "primary_exposure_fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "baseline_fiscal_years": [
+    2017,
+    2018,
+    2019,
+    2020
+  ],
+  "one_year_future_outcomes_fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "two_year_exposure_fiscal_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "two_year_future_outcomes_fiscal_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "fy2025_investment": "secondary contemporary/event only, no FY2026 +1 outcome",
+  "sample_definition": "Historically reporting U.S. domestic nonfinancial operating SEC 10-K issuer-fiscal-years 2021-2024 regardless of 2026 index membership and allowing subsequent delistings",
+  "primary_unit": [
+    "CIK",
+    "fiscal_year",
+    "original_10k_accession"
+  ],
+  "finance_SIC_exclusion": [
+    6000,
+    6999
+  ],
+  "utilities_REIT": "analyzed as separate stratum",
+  "ai_exposure_categories": [
+    "A_direct_quantified_own_AI_CapEx",
+    "B_bounded_mixed_AI_datacenter",
+    "C_unquantified_operational_investment",
+    "D_generic_AI_discussion",
+    "E_no_AI_discussion",
+    "U_insufficient_or_unknown"
+  ],
+  "annual_CAM_eligibility": "PCAOB AS3101 by fiscal year end and issuer filer exemption",
+  "PCAOB_cutoff": "first public release strictly no later than investment/model-as-of timestamp",
+  "readiness": {
+    "full_SEC_FY2021_FY2024": "NOT_DOWNLOADED",
+    "all_424_AI_CapEx": "NOT_VERIFIED",
+    "full_CAM_ICFR_PCAOB_join": "NOT_DONE",
+    "main_interactions": "NOT_RUN"
+  },
+  "verified_current_roster": {
+    "source": "S&P 500 dated 2026-10-09, Git SHA 36472b57910842f4025e8ca8303b93a692d2bbae",
+    "securities": 503,
+    "unique_CIK": 500,
+    "financial_exclusions": 76,
+    "screened_nonfinancial_CIK": 424,
+    "priority_tech_supplier_candidates": 119,
+    "unverified_comparator_candidates": 244,
+    "utilities_REIT_special": 61,
+    "case_pilot_firms": 10,
+    "disjoint_partition_QA": "PASS",
+    "historical_SEC_10K_all_424": "UNVERIFIED"
+  },
+  "final_historical_firm_N": null,
+  "final_historical_firm_year_N": null
+}
