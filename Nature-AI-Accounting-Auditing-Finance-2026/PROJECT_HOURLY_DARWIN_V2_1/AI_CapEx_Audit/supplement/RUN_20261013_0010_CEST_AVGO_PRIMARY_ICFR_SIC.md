@@ -1,0 +1,2 @@
+# AVGO FY2025 primary-source QA
+Status PARTIAL. CIK 0001730168; accession 0001730168-25-000121; filing 2025-12-18; SIC 3674. Management and auditor firm-level ICFR opinions: EFFECTIVE. One revenue CAM; domain control effectiveness UNKNOWN. PwC 2024 PCAOB Part I.A: 10/64, public 2025-03-31, auditor-firm only. AI CapEx UNKNOWN; Form AP unverified. No regression or DiD. Local consistency tests 22/22. Sources: SEC original 10-K and PCAOB 104-2025-040. No private raw data.
