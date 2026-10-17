@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "correction_id": "NAAIL-B2-DUPLICATE-CASE-002-2026-10-05",
+  "recorded_date": "2026-10-05",
+  "status": "DRAFT_ADDITIVE_CORRECTION",
+  "correction_scope": "historical case-count interpretation only",
+  "canonical_case_001": {
+    "case_id": "CASE-001",
+    "normalized_doi": "10.1287/mnsc.2023.4670"
+  },
+  "affected_records": [
+    {
+      "run_id": "RUN-021",
+      "path": "NAAIL/research-assurance-mcp/hourly-build/runs/2026-10-02/1133_V1_V1-0_case002_grounding.md",
+      "git_blob": "9bd1330bcaf3ad66fd2ae38dbd1e37ddf1b5982d",
+      "interpretation": "selected the canonical Case 001 DOI under the Case 002 label"
+    },
+    {
+      "run_id": "RUN-022",
+      "path": "NAAIL/research-assurance-mcp/hourly-build/runs/2026-10-02/1203_V1_V1-1_case002_evidence_mapping.md",
+      "git_blob": "52e1db3cb1282eabd21273c442cfe6c56046aa9a",
+      "interpretation": "continued evidence mapping for the same duplicated Case 002 selection"
+    }
+  ],
+  "prior_additive_evidence": [
+    {
+      "path": "NAAIL/research-assurance-mcp/derived/CORRECTIONS_2026-10-02.md",
+      "git_blob": "4650da0587356f1c07c075eebea3f43833edbf86"
+    },
+    {
+      "path": "NAAIL/research-assurance-mcp/derived/INDEPENDENT_REVIEW_HANDOFF_2026-10-02.md",
+      "git_blob": "56079783f78fd934fd946fb88d8189d02c68b413"
+    }
+  ],
+  "v1_valid_additional_cases_from_runs_021_022": 0,
+  "case_002_slot": "UNASSIGNED_PENDING_HUMAN_SELECTION",
+  "historical_records_modified": false,
+  "scientific_claim_created": false,
+  "poc_complete": false,
+  "v1_complete": false,
+  "limitations": [
+    "This correction does not select, evaluate, or create a replacement Case 002.",
+    "This correction does not validate the scientific content of RUN 021 or RUN 022.",
+    "Future case selection remains gated by the frozen selection protocol and human decision."
+  ]
+}
