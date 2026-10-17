@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "specification_id": "NAAIL-V1-B4-HOLDOUT-V3-SPEC-V1",
+  "status": "FROZEN_OPERATOR_SPECIFICATION_PENDING_CLAUDE_AND_HUMAN_APPROVAL",
+  "scope": "Protocol, independence, sealing, and scoring rules only. This file contains no probes, answers, research-case selections, or evaluation results.",
+  "prior_exposure": {
+    "operator_has_seen_detector_code": true,
+    "operator_has_seen_benchmark_v2_results": true,
+    "operator_has_seen_benchmark_v2_probe_details": true,
+    "consequence": "The operator may specify protocol and metrics but must never author, edit, suggest, preview, or approve holdout probes or ground truth."
+  },
+  "holdout_composition": {
+    "total_packages": 48,
+    "error_bearing_packages": 32,
+    "clean_control_packages": 16,
+    "error_categories": [
+      {
+        "id": "V3-C01",
+        "name": "source_and_provenance_integrity",
+        "packages": 4
+      },
+      {
+        "id": "V3-C02",
+        "name": "numeric_table_result_consistency",
+        "packages": 4
+      },
+      {
+        "id": "V3-C03",
+        "name": "code_output_consistency",
+        "packages": 4
+      },
+      {
+        "id": "V3-C04",
+        "name": "temporal_alignment_and_leakage",
+        "packages": 4
+      },
+      {
+        "id": "V3-C05",
+        "name": "sample_missingness_and_attrition",
+        "packages": 4
+      },
+      {
+        "id": "V3-C06",
+        "name": "methodological_or_causal_overclaim",
+        "packages": 4
+      },
+      {
+        "id": "V3-C07",
+        "name": "reproducibility_and_environment",
+        "packages": 4
+      },
+      {
+        "id": "V3-C08",
+        "name": "compound_cross_artifact_errors",
+        "packages": 4
+      }
+    ],
+    "authoring_rule": "The independent author creates the actual packages and ground truth without operator assistance. Category names are design strata, not probe instructions."
+  },
+  "independence_requirements": {
+    "eligible_author": "A human or separate agent with no access to detector source code, detector rules, Benchmark V2 probe contents, or detector-development discussions.",
+    "required_attestation": [
+      "No detector source, rules, prompts, or implementation were accessed.",
+      "No Benchmark V2 probe content or expected outputs were accessed.",
+      "No probe content was supplied, edited, or suggested by the operator.",
+      "No detector output was observed before the probe archive and ground truth were sealed."
+    ],
+    "disqualifiers": [
+      "Any access to detector implementation or rule logic.",
+      "Any access to disclosed Benchmark V2 probes.",
+      "Any tuning or revision after detector outputs are observed.",
+      "Any operator authorship or substantive editing of probes or ground truth."
+    ]
+  },
+  "sealing_protocol": {
+    "before_scoring": [
+      "Independent author finalizes an opaque probe archive and a separate ground-truth archive.",
+      "Compute SHA-256 for both archives and every contained file.",
+      "Create a manifest containing filenames, byte sizes, hashes, category counts, author attestation, and creation timestamp.",
+      "Commit only the manifest and encrypted or access-controlled sealed artifacts before the operator receives test-time access.",
+      "Claude reviews the manifest, attestation, counts, and hashes before authorizing the single scoring run."
+    ],
+    "test_time_sequence": [
+      "Release the frozen probe archive to the operator only at test time.",
+      "Run the frozen detector once and immediately hash and commit the raw detector outputs.",
+      "Release ground truth only after raw detector outputs are committed.",
+      "Run the frozen scorer once and commit the complete score record."
+    ],
+    "prohibited": [
+      "Previewing probe content before freeze.",
+      "Changing probes, labels, detector rules, thresholds, or metrics after any output is observed.",
+      "Repeated scoring to select a preferred result.",
+      "Replacing or removing difficult probes."
+    ]
+  },
+  "scoring": {
+    "unit": "package",
+    "primary_endpoint": "binary detection of whether a package contains at least one planted error",
+    "primary_metrics": [
+      "true_positive_count",
+      "false_positive_count",
+      "false_negative_count",
+      "true_negative_count",
+      "precision",
+      "recall",
+      "f1",
+      "false_positive_rate"
+    ],
+    "secondary_metrics": [
+      "recall_by_error_category",
+      "exact_category_match_rate",
+      "human_review_escalation_rate",
+      "unsupported_claim_rate"
+    ],
+    "uncertainty": "Report Wilson 95% confidence intervals for all binomial proportions.",
+    "zero_division": "Return null and disclose the undefined metric; never substitute a perfect score.",
+    "missing_or_unreadable_package": "Count as a scored failure and report separately; do not silently exclude.",
+    "thresholds": {
+      "precision_minimum": 0.8,
+      "recall_minimum": 0.75,
+      "f1_minimum": 0.75,
+      "false_positive_rate_maximum": 0.1
+    },
+    "decision_rule": "All four primary thresholds must be met in the single authoritative run. Category-level results and confidence intervals remain visible even when the aggregate rule is met."
+  },
+  "single_run_rule": {
+    "authoritative_scoring_runs": 1,
+    "run_identifier_required": true,
+    "raw_output_hash_required": true,
+    "technical_abort_rule": "A run may be classified as a technical abort only if no detector output or score was emitted. Any replacement attempt requires explicit Claude and human authorization and must preserve the abort evidence.",
+    "result_policy": "Report the observed result without rerunning, tuning, deleting, or substituting probes."
+  },
+  "required_outputs": [
+    "frozen_manifest.json",
+    "independence_attestation.md",
+    "raw_detector_output.json",
+    "score_record.json",
+    "run_environment.json",
+    "limitations.md"
+  ],
+  "phase_boundary": {
+    "current_phase": "V1_PREPARATION",
+    "data_retrieval_authorized": false,
+    "probe_authoring_authorized_for_operator": false,
+    "scoring_authorized": false,
+    "activation_conditions": [
+      "Human POC approval is recorded.",
+      "Claude approves this specification.",
+      "Independent authorship is documented.",
+      "Probe and ground-truth artifacts are hashed and frozen."
+    ]
+  }
+}
