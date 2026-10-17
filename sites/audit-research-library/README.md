@@ -1,3 +1,13 @@
+---
+title: Accounting & Audit AI Research Library
+emoji: 🔬
+colorFrom: blue
+colorTo: green
+sdk: static
+app_file: index.html
+pinned: false
+---
+
 # Audit AI Research Library — static website
 
 Author: **Dr Saeid Homayoun**. Updated 17 October 2026.
@@ -13,3 +23,5 @@ Entry point: `index.html`. Projects: `projects/*.html`. Structured link registry
 **Status:** the four proposed Hugging Face model repositories are blueprints, NOT trained models. Existing public HF dataset: https://huggingface.co/datasets/SADHON/darwin-jev-risk-cam-synthetic-replication. This website includes no private Google Drive data or licensed Audit Analytics records. Publishing requires user-authorized Hugging Face write access.
 
 **Deployment:** this directory is deployable on any free static host without build commands. Planned Hugging Face Space: `SADHON/audit-research-library` (Static HTML).
+
+**Read/write publishing plan:** [HF_READ_WRITE_PLAN.md](HF_READ_WRITE_PLAN.md). The reviewed manual GitHub Actions publisher uses OIDC and stores no Hugging Face token.
