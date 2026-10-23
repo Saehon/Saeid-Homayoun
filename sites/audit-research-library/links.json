@@ -1,0 +1,138 @@
+{
+  "updated": "2026-10-17",
+  "owner": "Dr Saeid Homayoun",
+  "profiles": {
+    "github": "https://github.com/Saehon/Saeid-Homayoun",
+    "google_scholar": "https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en",
+    "kaggle": "https://www.kaggle.com/sadhon",
+    "hugging_face": "https://huggingface.co/SADHON",
+    "orcid": "https://orcid.org/0000-0002-2536-0446"
+  },
+  "existing_hf_public": {
+    "portfolio": "https://huggingface.co/datasets/SADHON/accounting-audit-ai-portfolio",
+    "jev_synthetic_dataset": "https://huggingface.co/datasets/SADHON/darwin-jev-risk-cam-synthetic-replication"
+  },
+  "model_ids": [
+    {
+      "key": "auditbert-us-cam",
+      "name": "AuditBERT — US CAM",
+      "planned_model": "SADHON/auditbert-us-cam",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/research/cam-kam-auditbert-maryam",
+      "status": "Research blueprint — weights not published"
+    },
+    {
+      "key": "kambert-uk-kam",
+      "name": "KAMBERT — UK KAM",
+      "planned_model": "SADHON/kambert-uk-kam",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/Orange-KAM-EU-UK",
+      "status": "Research blueprint — weights not published"
+    },
+    {
+      "key": "jev-accounting-risk-engine",
+      "name": "JEV Accounting Risk",
+      "planned_model": "SADHON/jev-accounting-risk-engine",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/research/jev-ai-audit",
+      "status": "Research proposal and synthetic pilot — no verified fitted Jev model"
+    },
+    {
+      "key": "icfr-timesfm-risk",
+      "name": "ICFR–TimesFM Risk",
+      "planned_model": "SADHON/icfr-timesfm-risk",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab",
+      "status": "Research blueprint — TimesFM model not trained here"
+    }
+  ],
+  "projects": [
+    {
+      "index": 1,
+      "name": "Making Risk Public",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/empirical-results",
+      "source_type": "folder"
+    },
+    {
+      "index": 2,
+      "name": "Risk–CAM Alignment",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/research/jev-ai-audit",
+      "source_type": "folder"
+    },
+    {
+      "index": 3,
+      "name": "CAM-ADAPT",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 4,
+      "name": "CAM-SHADOW",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 5,
+      "name": "ICFR–SEFD–SEC–TimesFM",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab",
+      "source_type": "folder"
+    },
+    {
+      "index": 6,
+      "name": "DARWIN–ACRIS",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/research/cam-kam-auditbert-maryam",
+      "source_type": "folder"
+    },
+    {
+      "index": 7,
+      "name": "Constructing Audit Significance",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 8,
+      "name": "AI CapEx Audit Oversight",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 9,
+      "name": "CAM/KAM AuditBERT",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/research/cam-kam-auditbert-maryam",
+      "source_type": "folder"
+    },
+    {
+      "index": 10,
+      "name": "Verifiable Human–AI",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 11,
+      "name": "AI Investment and Valuation",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 12,
+      "name": "Fama–French AI Asset Pricing",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 13,
+      "name": "Damodaran AI Valuation",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 14,
+      "name": "Tokenized AI Management Accounting",
+      "github": "https://github.com/Saehon/Saeid-Homayoun",
+      "source_type": "main_repo_fallback"
+    },
+    {
+      "index": 15,
+      "name": "Forensic Accounting for Agentic AI",
+      "github": "https://github.com/Saehon/Saeid-Homayoun/tree/main/NAAIL-OpenLab",
+      "source_type": "folder"
+    }
+  ],
+  "verification": "Navigation only; no private data, automated synchronization or model validation claimed."
+}
