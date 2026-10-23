@@ -14,3 +14,9 @@ When using Claude Code:
 - Never commit API keys, passwords, tokens, confidential data, licensed standards text, or restricted datasets.
 - Treat AI output as a draft or analysis until required human review is completed.
 - For accounting, auditing, assurance, finance, ESG, ICFR, CAM/KAM, IFRS, and PCAOB-related work, preserve evidence lineage and clearly distinguish descriptive, predictive, causal, and normative claims.
+
+<!-- PSEUDOCODE-SYSTEMS-THINKING v1 -->
+## Shared method
+
+Read `RESEARCH_METHOD.md` before material work. Use numbered pseudocode, a system boundary, explicit dependencies, feedback/delay analysis and step-to-evidence traceability. Preserve the canonical project instructions and pause state. This documentation does not prove code execution, model training or cross-platform deployment.
+<!-- END PSEUDOCODE-SYSTEMS-THINKING -->

@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Saehon/Saeid-Homayoun",
+  "method_status": "PROPOSED",
+  "execution_verified": false,
+  "boundary": "Existing software interface, caller-visible outcome and upstream compatibility",
+  "inputs": "Existing repository documentation, authorized change request, supported inputs and expected outcomes",
+  "outputs": "Reviewable change or documented method with focused verification and unresolved limits",
+  "objective": null,
+  "unit_of_analysis": null,
+  "information_cutoff": null,
+  "canonical_destination": null,
+  "pause_state": "READ_CANONICAL_PROJECT_RECORD",
+  "system": {
+    "actors": [],
+    "stock": "Open defects and unreviewed change requests",
+    "flow": "Request intake, implementation, review and verified closure",
+    "delay": "Implementation, integration and deployment/release timing",
+    "feedback": "Observed failures and user review → a separate, versioned correction",
+    "bottleneck": null,
+    "unintended_consequence": null,
+    "causal_identification": "NOT_ESTABLISHED_BY_SYSTEM_MAP"
+  },
+  "steps": [
+    {
+      "step_id": "P01",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P02",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P01"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P03",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P02"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P04",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P03"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P05",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P04"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P06",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P05"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P07",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P06"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P08",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P07"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P09",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P08"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    },
+    {
+      "step_id": "P10",
+      "implementation_ref": null,
+      "verification_ref": null,
+      "dependencies": [
+        "P09"
+      ],
+      "status": "PROPOSED",
+      "requirement": null,
+      "inputs": [],
+      "outputs": [],
+      "failure_behavior": null,
+      "output_artifact": null
+    }
+  ],
+  "acceptance_criteria": [],
+  "null_results_policy": "RETAIN",
+  "domain_rule": "Owner workflow additions do not imply ownership of upstream code or upstream endorsement; preserve runtime and release policies.",
+  "source_rights": "VERIFY_BEFORE_USE",
+  "readback_evidence": null
+}
