@@ -1,0 +1,26 @@
+{
+  "title": "DARWIN-JEV Risk-CAM Synthetic Replication Starter",
+  "id": "sadhon/darwin-jev-risk-cam-synthetic-replication",
+  "licenses": [
+    {
+      "name": "MIT"
+    }
+  ],
+  "keywords": [
+    "accounting",
+    "auditing",
+    "critical audit matters",
+    "CAM",
+    "ICFR",
+    "risk",
+    "reproducibility",
+    "synthetic data",
+    "SEC"
+  ],
+  "resources": [
+    {
+      "path": "SYNTHETIC_demo.csv",
+      "description": "Invented firm-year-account-domain rows for schema and pipeline validation only."
+    }
+  ]
+}
