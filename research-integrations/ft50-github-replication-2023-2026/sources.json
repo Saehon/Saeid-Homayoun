@@ -1,0 +1,361 @@
+{
+  "registry_version": "1.0.0",
+  "generated": "2026-10-27",
+  "canonical_account": "Saehon",
+  "purposes": [
+    "source provenance",
+    "scientific replication planning",
+    "DARWIN POMELO KIWI JEV mapping"
+  ],
+  "release_gate": "G0 license/attribution before any code or data import",
+  "disclaimer": "GitHub repository URLs and publication identifiers registered. No external code, dataset, publication PDF, execution environment, empirical finding, or external partnership imported or claimed.",
+  "sources": [
+    {
+      "id": "rfs_implementable_frontier",
+      "title": "Machine Learning and the Implementable Efficient Frontier",
+      "authors": [
+        "Jensen",
+        "Kelly",
+        "Malamud",
+        "Pedersen"
+      ],
+      "publication_year": 2026,
+      "journal": "The Review of Financial Studies",
+      "doi": "10.1093/rfs/hhag022",
+      "paper_url": "https://doi.org/10.1093/rfs/hhag022",
+      "upstream_repository": "https://github.com/theisij/ml-and-the-implementable-efficient-frontier",
+      "role": "author",
+      "upstream_license_metadata": "NOT_DETECTED_REVIEW_REQUIRED",
+      "topic": "asset_pricing",
+      "research_mapping": [
+        "DARWIN asset pricing"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "jar_genscore",
+      "title": "Generative AI in Financial Reporting",
+      "authors": [
+        "Blankespoor",
+        "deHaan",
+        "Li"
+      ],
+      "publication_year": 2026,
+      "journal": "Journal of Accounting Research",
+      "doi": null,
+      "paper_url": "https://www.gsb.stanford.edu/faculty-research/publications/generative-ai-financial-reporting",
+      "upstream_repository": "https://github.com/ed-dehaan/GenScore",
+      "role": "author_data",
+      "upstream_license_metadata": "CC-BY-4.0 (README; verify artifact terms)",
+      "topic": "gai_disclosure",
+      "research_mapping": [
+        "POMELO",
+        "DARWIN AI CapEx"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "rfs_man_ml",
+      "title": "Man versus Machine Learning Revisited",
+      "authors": [
+        "Zhang",
+        "Zhu",
+        "Linnainmaa"
+      ],
+      "publication_year": 2025,
+      "journal": "The Review of Financial Studies",
+      "doi": "10.1093/rfs/hhaf066",
+      "paper_url": "https://doi.org/10.1093/rfs/hhaf066",
+      "upstream_repository": "https://github.com/yandi-zhu/Man-versus-Machine-Learning-Revisited",
+      "role": "author",
+      "upstream_license_metadata": "MIT",
+      "topic": "earnings_forecast_bias",
+      "research_mapping": [
+        "DARWIN earnings",
+        "independent falsification"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "mnsc_google_svi",
+      "title": "Measuring Investor Attention Using Google Search",
+      "authors": [
+        "deHaan",
+        "Lawrence",
+        "Litjens"
+      ],
+      "publication_year": 2024,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2022.02174",
+      "paper_url": "https://doi.org/10.1287/mnsc.2022.02174",
+      "upstream_repository": "https://github.com/robinlitjens/GoogleTickerStock-SVI",
+      "role": "author_data",
+      "upstream_license_metadata": "NOT_DETECTED_REVIEW_REQUIRED",
+      "topic": "investor_attention",
+      "research_mapping": [
+        "DARWIN announcements"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": "Online published 2024, printed issue in 2025"
+    },
+    {
+      "id": "tar_business_complexity",
+      "title": "Using GPT to Measure Business Complexity",
+      "authors": [
+        "Bernard",
+        "Blankespoor",
+        "de Kok",
+        "Toynbee"
+      ],
+      "publication_year": 2026,
+      "journal": "The Accounting Review",
+      "doi": "10.2308/TAR-2023-0716",
+      "paper_url": "https://doi.org/10.2308/TAR-2023-0716",
+      "upstream_repository": "https://github.com/TiesdeKok/gpt-business-complexity",
+      "role": "author",
+      "upstream_license_metadata": "NOT_DETECTED_REVIEW_REQUIRED",
+      "topic": "gpt_complexity",
+      "research_mapping": [
+        "KIWI CAM",
+        "POMELO IFRS"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "jar_consensus",
+      "title": "Consensus? An Examination of Differences in Earnings Information Across Forecast Data Providers",
+      "authors": [
+        "Larocque",
+        "Watkins",
+        "Weisbrod"
+      ],
+      "publication_year": 2026,
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679x.70072",
+      "paper_url": "https://doi.org/10.1111/1475-679x.70072",
+      "upstream_repository": "https://github.com/eweisbrod/consensus",
+      "role": "author_data",
+      "upstream_license_metadata": "CC-BY-4.0",
+      "topic": "earnings_surprises",
+      "research_mapping": [
+        "DARWIN earnings",
+        "analyst forecasts"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "jar_websites",
+      "title": "Company Websites: A New Measure of Disclosure",
+      "authors": [
+        "Boulland",
+        "Bourveau",
+        "Breuer"
+      ],
+      "publication_year": 2026,
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679X.70007",
+      "paper_url": "https://doi.org/10.1111/1475-679X.70007",
+      "upstream_repository": "https://github.com/r-boulland/Company-Website-Disclosure",
+      "role": "author_data",
+      "upstream_license_metadata": "NOT_DETECTED_REVIEW_REQUIRED",
+      "topic": "website_disclosure",
+      "research_mapping": [
+        "POMELO ESG",
+        "VSME"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "mnsc_chatgpt_text",
+      "title": "ChatGPT for Textual Analysis? How to Use Generative LLMs in Accounting Research",
+      "authors": [
+        "de Kok"
+      ],
+      "publication_year": 2025,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2023.03253",
+      "paper_url": "https://doi.org/10.1287/mnsc.2023.03253",
+      "upstream_repository": "https://github.com/TiesdeKok/chatgpt_paper",
+      "role": "author",
+      "upstream_license_metadata": "NOT_DETECTED_REVIEW_REQUIRED",
+      "topic": "llm_text_validity",
+      "research_mapping": [
+        "KIWI CAM-Q",
+        "POMELO",
+        "DARWIN NLP"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "jfe_panel_trees",
+      "title": "Growing the Efficient Frontier on Panel Trees",
+      "authors": [
+        "Cong",
+        "Feng",
+        "He",
+        "He"
+      ],
+      "publication_year": 2025,
+      "journal": "Journal of Financial Economics",
+      "doi": "10.1016/j.jfineco.2025.104024",
+      "paper_url": "https://doi.org/10.1016/j.jfineco.2025.104024",
+      "upstream_repository": "https://github.com/Quantactix/PTree",
+      "role": "author",
+      "upstream_license_metadata": "GPL-3.0",
+      "topic": "panel_trees",
+      "research_mapping": [
+        "DARWIN factors",
+        "portfolio comparison"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "jar_es_global",
+      "title": "Global Evolution of Environmental and Social Disclosure in Annual Reports",
+      "authors": [
+        "Lin",
+        "Shen",
+        "Wang",
+        "Yu"
+      ],
+      "publication_year": 2024,
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679X.12575",
+      "paper_url": "https://doi.org/10.1111/1475-679X.12575",
+      "upstream_repository": "https://github.com/jar-es-disclosure/global-es-disclosure",
+      "role": "author_data",
+      "upstream_license_metadata": "NOT_DETECTED_REVIEW_REQUIRED",
+      "topic": "esg_disclosure",
+      "research_mapping": [
+        "POMELO ESG",
+        "Swedish VSME"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": "Paper notes a staged release of measurements; do not assume all data are currently in repo"
+    },
+    {
+      "id": "jar_carbonfood",
+      "title": "How Does Carbon Footprint Information Affect Consumer Choice? A Field Experiment",
+      "authors": [
+        "Beyer et al."
+      ],
+      "publication_year": 2024,
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679X.12505",
+      "paper_url": "https://doi.org/10.1111/1475-679X.12505",
+      "upstream_repository": "https://github.com/trr266/carbonfood",
+      "role": "author",
+      "upstream_license_metadata": "MIT",
+      "topic": "esg_field_experiment",
+      "research_mapping": [
+        "POMELO sustainability",
+        "experimental design"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": null
+    },
+    {
+      "id": "jof_virtue_replication",
+      "title": "The Virtue of Complexity in Return Prediction",
+      "authors": [
+        "Kelly",
+        "Malamud",
+        "Zhou"
+      ],
+      "publication_year": 2024,
+      "journal": "The Journal of Finance",
+      "doi": "10.1111/jofi.13298",
+      "paper_url": "https://doi.org/10.1111/jofi.13298",
+      "upstream_repository": "https://github.com/zivmi/voc_reproduction",
+      "role": "independent_replication",
+      "upstream_license_metadata": "MIT",
+      "topic": "return_prediction",
+      "research_mapping": [
+        "DARWIN asset pricing",
+        "valuation"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": "Third-party reproduction, not author official code"
+    },
+    {
+      "id": "mnsc_dedl_replication",
+      "title": "Deep Learning-Based Causal Inference for Large-Scale Combinatorial Experiments",
+      "authors": [
+        "Ye et al."
+      ],
+      "publication_year": 2025,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2024.04625",
+      "paper_url": "https://doi.org/10.1287/mnsc.2024.04625",
+      "upstream_repository": "https://github.com/ysd1123/DeDL_Replication",
+      "role": "independent_replication",
+      "upstream_license_metadata": "GPL-3.0",
+      "topic": "causal_machine_learning",
+      "research_mapping": [
+        "DARWIN science core",
+        "JEV evaluation"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": true,
+      "notes": "Third-party reproduction, not author official code"
+    },
+    {
+      "id": "jof_jkp_factors",
+      "title": "Is There a Replication Crisis in Finance?",
+      "authors": [
+        "Jensen",
+        "Kelly",
+        "Pedersen"
+      ],
+      "publication_year": 2023,
+      "journal": "The Journal of Finance",
+      "doi": "10.1111/jofi.13249",
+      "paper_url": "https://doi.org/10.1111/jofi.13249",
+      "upstream_repository": "https://github.com/bkelly-lab/jkp-data",
+      "role": "author",
+      "upstream_license_metadata": "MIT code; CC BY-NC 4.0 datasets",
+      "topic": "factor_replication",
+      "research_mapping": [
+        "DARWIN Fama-French",
+        "JKP bridge"
+      ],
+      "status": "CATALOGUED_ONLY_NO_EMPIRICAL_EXECUTION",
+      "verified_repository_date": "2026-10-27",
+      "within_strict_three_year_online_window": false,
+      "notes": "Published online 26 May 2023, before strict 27 Oct 2023 cutoff; retained as methodological reference"
+    }
+  ]
+}
