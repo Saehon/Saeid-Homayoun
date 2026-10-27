@@ -113,3 +113,7 @@ human_gate_approved = false
 ```
 
 This repository must retain null results, failed specifications, and classification-artifact findings. No agent is permitted to force a positive result.
+
+## Candidate JKP global factor comparison
+
+For a future market-factor robustness specification, see the [NAAIL JKP factor bridge](../../NAAIL-OpenLab/integrations/jkp_global_factors/README.md). Its local Python adapter supplies date-validated retrospective exposures and provenance metadata; it does **not** fetch WRDS data or validate the study's current cost-of-equity estimates. Any JKP-versus-Fama–French and Damodaran comparison requires common geography, currency, period, data rights, point-in-time constraints and a frozen specification.

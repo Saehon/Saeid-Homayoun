@@ -101,3 +101,7 @@ Before runtime promotion of any finance integration:
 - **ERP Digital Twin Lab™:** transaction-level financial/accounting simulation.
 
 NAAIL OpenLab™ is independent. References to Bloomberg, S&P Global, Yahoo, OpenBB, GitHub projects, universities, or other providers do not imply affiliation, endorsement, certification, partnership, or access to proprietary products or datasets.
+
+## JKP Global Factors research adapter (27 October 2026)
+
+A governed, locally runnable bridge to the Jensen–Kelly–Pedersen global factor research ecosystem is available at [JKP Global Factors → NAAIL](integrations/jkp_global_factors/README.md). It accepts rights-cleared local factor CSVs, computes retrospective exposures, and produces an evidence passport for **ECONOVA-S, DARWIN and POMELO**. Its test suite uses only synthetic observations. No vendor dataset is included, no WRDS connection is activated, and no empirical JKP replication or professional JEV/CAM decision is claimed.
