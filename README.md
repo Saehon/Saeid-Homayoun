@@ -96,6 +96,12 @@ Research on **pre-disclosure accounting risk, CAM/KAM entry, persistence, exit, 
 
 Detailed empirical tables, p-values, abstracts, current sample status, FT50/AJG positioning, and scientific boundaries are kept in the dedicated **Empirical Results** folder rather than on the main profile page.
 
+### JKP Global Factor Data — Reproducible Asset-Pricing Integration
+
+➡️ [JKP × NAAIL/DARWIN/POMELO integration: code, synthetic tests, provenance and research protocol](research-integrations/jkp-global-factors/README.md)  
+Source: [bkelly-lab/jkp-data](https://github.com/bkelly-lab/jkp-data) · [JKP factors](https://jkpfactors.com/)  
+**Scope:** reproducibility scaffold; no restricted JKP/WRDS files included and no empirical AI asset-pricing results claimed.
+
 ### Cross-Platform Data & Research Links
 
 - **GitHub master repository:** https://github.com/Saehon/Saeid-Homayoun
