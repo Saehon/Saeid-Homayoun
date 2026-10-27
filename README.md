@@ -66,6 +66,10 @@ For a compact view of the strongest public datasets, benchmarks, open-source too
 - **Kaggle notebook:** https://www.kaggle.com/code/sadhon/accounting-audit-ai-portfolio-start-here
 - **GitHub canonical index:** [portfolio/accounting-audit-ai-portfolio](portfolio/accounting-audit-ai-portfolio/README.md)
 
+## 📚 FT50 Research Replication Library (2023–2026)
+
+➡️ **[14 FT50-linked research GitHub repositories](research-integrations/ft50-github-replication-2023-2026/README.md)** — publisher-linked research catalog, source/rights registry, DARWIN × POMELO × KIWI/JEV mapping, and structural validation; no third-party code copied or empirical replication claimed.
+
 ## 🗂️ Academic Portfolio Navigation
 
 ➡️ **[Academic Research & AI Portfolio Index](ACADEMIC_PORTFOLIO_INDEX.md)** — structured navigation across the existing research, data, AI, audit, IFRS, finance, and development repositories. This is an organizational index only; the underlying projects remain unchanged.
