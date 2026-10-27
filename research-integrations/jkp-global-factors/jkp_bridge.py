@@ -15,6 +15,10 @@ from pathlib import Path
 
 
 def parse_date(value: str) -> date:
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
     value = str(value).strip()
     for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y%m%d", "%Y-%m", "%Y%m"):
         try:
@@ -91,7 +95,7 @@ def validate(
         raw_date = row[date_column]
         if raw_date is None:
             raise ValueError("Date cannot be blank")
-        d = parse_date(str(raw_date))
+        d = parse_date(raw_date)
         if not low <= d <= high:
             excluded += 1
             continue
