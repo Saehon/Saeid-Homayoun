@@ -1,0 +1,19 @@
+# Deny local research datasets and secrets from this subtree.
+data/
+raw/
+licensed/
+outputs/
+*.csv
+*.tsv
+*.parquet
+*.pq
+*.feather
+*.pkl
+.env
+.env.*
+.pgpass
+*credentials*
+*.key
+__pycache__/
+.pytest_cache/
+*.pyc
