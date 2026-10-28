@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-10-28",
+  "policy": "reference-only; opt-in install after review",
+  "repositories": [
+    {
+      "name": "financial-services",
+      "source": "https://github.com/anthropics/financial-services",
+      "commit": "60565064557ca77b12f62aa7877f365d111c129d",
+      "root_license": "Apache-2.0",
+      "install_approved": true,
+      "enabled": false
+    },
+    {
+      "name": "claude-cookbooks",
+      "source": "https://github.com/anthropics/claude-cookbooks",
+      "commit": "bfe50e59dbb4f5546a0af9ca36ebb77e637c9ce1",
+      "root_license": "MIT",
+      "install_approved": true,
+      "enabled": false
+    },
+    {
+      "name": "skills",
+      "source": "https://github.com/anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "root_license": "REVIEW",
+      "install_approved": false,
+      "enabled": false
+    },
+    {
+      "name": "knowledge-work-plugins",
+      "source": "https://github.com/anthropics/knowledge-work-plugins",
+      "commit": "2574e29377c7173d0cecffef29a6ecbd7f8ccb5d",
+      "root_license": "Apache-2.0",
+      "install_approved": true,
+      "enabled": false
+    },
+    {
+      "name": "claude-plugins-official",
+      "source": "https://github.com/anthropics/claude-plugins-official",
+      "commit": "f8c5e7a1dcb71b10cb74586224b5401f3de5db28",
+      "root_license": "Apache-2.0",
+      "install_approved": true,
+      "enabled": false
+    },
+    {
+      "name": "claude-code",
+      "source": "https://github.com/anthropics/claude-code",
+      "commit": "58d6da1e34d6cd1c6379dcbf568bd66f5f9b6102",
+      "root_license": "REVIEW",
+      "install_approved": false,
+      "enabled": false
+    },
+    {
+      "name": "courses",
+      "source": "https://github.com/anthropics/courses",
+      "commit": "f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77",
+      "root_license": "CC-BY-NC-4.0",
+      "install_approved": false,
+      "enabled": false
+    },
+    {
+      "name": "claude-code-action",
+      "source": "https://github.com/anthropics/claude-code-action",
+      "commit": "d70510b174a1244958df0b03166a54912811f3e6",
+      "root_license": "MIT",
+      "install_approved": true,
+      "enabled": false
+    },
+    {
+      "name": "claude-for-financial-advisors",
+      "source": "https://github.com/anthropics/claude-for-financial-advisors",
+      "commit": "0ceaf1ff51be94415f5e0a8ccae81b5eb20e55b7",
+      "root_license": "Apache-2.0",
+      "install_approved": true,
+      "enabled": false
+    },
+    {
+      "name": "claude-code-playground",
+      "source": "https://github.com/anthropics/claude-code-playground",
+      "commit": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86",
+      "root_license": "Apache-2.0",
+      "install_approved": true,
+      "enabled": false
+    }
+  ]
+}
