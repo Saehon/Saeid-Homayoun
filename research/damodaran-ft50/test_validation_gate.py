@@ -21,6 +21,10 @@ class FailClosedTests(unittest.TestCase):
         issues = verify({"cik10":"0001018724","accession":"0000950170-24-000001",
             "sec_original_url":"https://www.sec.gov/Archives/edgar/data/12345/000095017024000001/example.htm"})
         self.assertIn("SEC archive issuer CIK mismatch", issues)
+    def test_invalid_cik_does_not_crash(self):
+        issues = verify({"cik10":"invalid","accession":"0000950170-24-000001",
+            "sec_original_url":"https://www.sec.gov/Archives/edgar/data/1018724/000095017024000001/example.htm"})
+        self.assertIn("CIK10", issues)
     def test_retry_limit(self):
         self.assertEqual(retry(3), "needs_manual_review")
     def test_no_pit_without_evidence(self):
