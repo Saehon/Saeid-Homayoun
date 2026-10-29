@@ -13,7 +13,7 @@ def verify(row):
     cik, acc = str(row.get("cik10","")), str(row.get("accession",""))
     if not re.fullmatch(r"\d{10}",cik): issues.append("CIK10")
     if not re.fullmatch(r"\d{10}-\d{2}-\d{6}",acc): issues.append("accession")
-    if len(acc)>=10 and acc[:10]!=cik: issues.append("CIK/accession mismatch")
+    # Accession prefix identifies the submitting CIK, which can be a filing agent.
     try:
         fy=row["fiscal_year_end"]
         if date.fromisoformat(fy).isoformat()!=fy: raise ValueError()
@@ -21,7 +21,10 @@ def verify(row):
     url=row.get("sec_original_url","")
     if not re.fullmatch(r"https://www\.sec\.gov/Archives/edgar/data/\d+/\d{18}/[^?#]+",url): issues.append("SEC original pointer")
     elif acc.replace("-","") not in url: issues.append("SEC accession pointer mismatch")
+    elif re.search(r"/data/(\\d+)/",url) and int(re.search(r"/data/(\\d+)/",url).group(1)) != int(cik or 0): issues.append("SEC archive issuer CIK mismatch")
     if not re.fullmatch(r"[a-fA-F0-9]{64}",str(row.get("xbrl_sha256",""))): issues.append("XBRL SHA256")
+    for key in ("xbrl_fact","xbrl_context","xbrl_unit","historical_sic","ff_industry_source","damodaran_vintage"):
+        if not row.get(key): issues.append("missing " + key)
     for flag in ("sec_original_verified","xbrl_hash_verified","historical_ff_verified","damodaran_vintage_verified","holdout_sealed","falsification_pass"):
         if row.get(flag) is not True: issues.append(flag)
     if row.get("licensing_status")!="verified": issues.append("license")
