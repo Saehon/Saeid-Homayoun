@@ -21,7 +21,7 @@ def verify(row):
     url=row.get("sec_original_url","")
     if not re.fullmatch(r"https://www\.sec\.gov/Archives/edgar/data/\d+/\d{18}/[^?#]+",url): issues.append("SEC original pointer")
     elif acc.replace("-","") not in url: issues.append("SEC accession pointer mismatch")
-    elif re.search(r"/data/(\\d+)/",url) and int(re.search(r"/data/(\\d+)/",url).group(1)) != int(cik or 0): issues.append("SEC archive issuer CIK mismatch")
+    elif (not cik.isdigit()) or int(re.search(r"/data/(\d+)/", url).group(1)) != int(cik): issues.append("SEC archive issuer CIK mismatch")
     if not re.fullmatch(r"[a-fA-F0-9]{64}",str(row.get("xbrl_sha256",""))): issues.append("XBRL SHA256")
     for key in ("xbrl_fact","xbrl_context","xbrl_unit","historical_sic","ff_industry_source","damodaran_vintage"):
         if not row.get(key): issues.append("missing " + key)
