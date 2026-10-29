@@ -1,0 +1,23 @@
+name: DARWIN V5 PIT guards
+on:
+  pull_request:
+    paths:
+      - 'NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/pit_guards.py'
+      - 'NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/test_pit_guards.py'
+      - '.github/workflows/darwin-v5-pit-guards.yml'
+  workflow_dispatch:
+jobs:
+  offline-guards:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and run isolated tests
+        working-directory: NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling
+        run: |
+          python -m py_compile pit_guards.py test_pit_guards.py
+          python -m unittest -v test_pit_guards.py
