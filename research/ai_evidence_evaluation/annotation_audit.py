@@ -73,7 +73,7 @@ def validate_annotations(rows, case_ids, reviewer_ids, gold):
         text_field(row, "rationale")
         evidence = row.get("evaluated_evidence_ids")
         allowed = gold[case]["evidence_ids"]
-        if not isinstance(evidence, list) or not all(
+        if not isinstance(evidence, list) or not evidence or not all(
             isinstance(x, str) and x in allowed for x in evidence
         ) or len(set(evidence)) != len(evidence):
             raise ValueError("evidence IDs must be unique and from gold reference")
