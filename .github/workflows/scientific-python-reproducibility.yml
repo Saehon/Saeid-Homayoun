@@ -35,6 +35,10 @@ jobs:
         run: |
           python -m research.ai_evidence_evaluation.validate_run --out reports/scientific_ai_synthetic_provenance.json
           python -c 'import json; d=json.load(open("reports/scientific_ai_synthetic_provenance.json")); assert d["records_checked"]==2 and d["source_type"]=="synthetic_fixture"; assert d["model_performance_claim_permitted"] is False and d["independent_validation_status"]=="NOT_VERIFIED"'
+      - name: Validate simulated reviewer agreement and adjudication controls
+        run: |
+          python -m research.ai_evidence_evaluation.annotation_audit --out reports/scientific_ai_synthetic_annotation_audit.json
+          python -c 'import json; d=json.load(open("reports/scientific_ai_synthetic_annotation_audit.json")); s=d["summary"]; assert s["n_cases"] == 5 and s["n_reviewer_records"] == 10 and s["n_adjudicated"] == 1; assert d["actual_independent_human_review_verified"] is False and d["model_evaluation_completed"] is False'
       - name: Upload reproducibility artifact
         uses: actions/upload-artifact@v4
         with:
