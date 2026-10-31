@@ -16,6 +16,14 @@ I am an accounting researcher at the University of Gävle, Sweden. My work conne
 
 [Selected peer-reviewed publications and *AI for Sustainable Business* (Routledge)](https://github.com/Saehon/Saeid-Homayoun/blob/main/research/SELECTED_PUBLICATIONS.md) · [University researcher profile](https://www.hig.se/engelska/university-of-gavle/research/researchers/aue/saeid-homayoun)
 
+### Executable research and evidence standards
+
+- [Financial-AI evaluation and comparative scoring](https://github.com/Saehon/Saeid-Homayoun/tree/main/research/ai_evidence_evaluation) — open Python research code
+- [Provider-neutral LLM run provenance and test protocol](https://github.com/Saehon/Saeid-Homayoun/blob/main/research/ai_evidence_evaluation/PROVENANCE_VALIDATION.md)
+- [Scientific evaluation framework comparison](https://github.com/Saehon/Saeid-Homayoun/blob/main/research/LLM_BENCHMARKS_AND_EVALUATION.md)
+
+These materials are for reproducible science. A synthetic test is not an independent model-performance or professional assurance claim.
+
 ### Explore the research
 
 - [Research portfolio and scientific methods](https://github.com/Saehon/Saeid-Homayoun/tree/main/research)
