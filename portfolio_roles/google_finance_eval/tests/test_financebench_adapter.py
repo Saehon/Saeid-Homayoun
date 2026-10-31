@@ -21,6 +21,12 @@ class TestFinancebenchOfflineAdapter(unittest.TestCase):
                      "cited_evidence_doc_names": ["MADE-UP"]}]
         self.assertEqual(evaluate(self.gold, response)["citation_doc_name_match_rate"], 0)
 
+    def test_numeric_zero_is_not_abstention(self):
+        test_gold = [{"financebench_id":"ZERO", "answer":"0", "question_type":"metrics-generated"}]
+        result = evaluate(test_gold, [{"financebench_id":"ZERO","predicted_answer":0}])
+        self.assertEqual(result["answered"], 1)
+        self.assertEqual(result["strict_exact_match_overall"], 1)
+
     def test_duplicate_gold_rejected(self):
         with self.assertRaises(ValueError):
             evaluate([self.gold[0], self.gold[0]], [])
