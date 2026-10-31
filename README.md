@@ -9,6 +9,8 @@
 
 I investigate how artificial intelligence can contribute to accounting, auditing, financial reporting and sustainable business **without obscuring the underlying evidence or replacing professional judgment**.
 
+**[Explore the scientific research portfolio](research/README.md)** · **[LLM evaluation frameworks and benchmark methodology](research/LLM_BENCHMARKS_AND_EVALUATION.md)**
+
 **[Explore the scientific research portfolio](research/README.md)** · **[Run the open Python financial-AI evaluation](research/ai_evidence_evaluation/README.md)** · **[Research evidence standards](research/RESEARCH_EVIDENCE_POLICY.md)**
 
 [Google Scholar](https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-2536-0446) · [University of Gävle](https://www.hig.se/)
