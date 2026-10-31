@@ -7,6 +7,8 @@
 
 > **Development and privacy notice.** These projects are in progress. Primary working manuscripts, research records and substantive project materials are maintained in a **private, access-controlled personal Google Drive**. This page presents only authorized public research designs, credible bibliographic links, and methodological standards. Public code tests and synthetic fixtures are not externally validated empirical findings.
 
+**Cross-cutting bibliography:** [Harvard-referenced LLM, Fine-Tuning and Agentic AI research registry](LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md). The living list spans selected FT50 and AJG journal groups; Crossref DOI metadata checks cannot authenticate journal rankings or prove the research hypotheses of this framework.
+
 ## 1. Journal basket and honest fit
 
 The **Financial Times FT50 list was revised in April 2026**. The following six accounting journals are in the FT50 basket: *The Accounting Review (TAR)*, *Journal of Accounting Research (JAR)*, *Journal of Accounting and Economics (JAE)*, *Accounting, Organizations and Society (AOS)*, *Contemporary Accounting Research (CAR)*, and *Review of Accounting Studies (RAST)*. See the [April 2026 University of Alberta library list](https://www.ualberta.ca/en/business/research/publications/top-journals-business-management-list.html) and [Financial Times announcement](https://www.ft.com/content/db863a0a-6524-45f9-bc52-fee997634bdc).
