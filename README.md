@@ -31,6 +31,10 @@ AI is increasingly used to analyze financial information and support consequenti
 
 **Our learning pathway:** Learn with AI → Test AI → Challenge the Results → Verify the Evidence → Make Human Decisions.
 
+### AI employer requirements mapped to verified GitHub evidence
+
+[**Current requirements from 19 official AI-company job postings — strengths, hard filters and evidence gaps**](portfolio/recruiter-hub/AI_EMPLOYER_REQUIREMENTS_2026-10-31.md) · [Prioritized implementation plan](portfolio/recruiter-hub/AI_HIRING_EVIDENCE_ROADMAP.md)
+
 ### For employers, research collaborators, and technical reviewers
 
 **[Research & AI Engineering Portfolio — role-aligned evidence, code, and reproducibility](portfolio/recruiter-hub/README.md)**
