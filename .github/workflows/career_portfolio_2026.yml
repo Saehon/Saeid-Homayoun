@@ -1,0 +1,33 @@
+name: Synthetic Career Portfolio Unit Tests
+on:
+  push:
+    branches:
+      - 'career/**'
+    paths:
+      - 'portfolio_roles/**'
+      - '.github/workflows/career_portfolio_2026.yml'
+  pull_request:
+    paths:
+      - 'portfolio_roles/**'
+      - '.github/workflows/career_portfolio_2026.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run all included synthetic demonstrations
+        shell: bash
+        run: |
+          found=0
+          for test_dir in portfolio_roles/*/tests; do
+            if [ -d "$test_dir" ]; then
+              found=1
+              python -m unittest discover -s "$test_dir" -p 'test_*.py' -v
+            fi
+          done
+          test "$found" -eq 1
