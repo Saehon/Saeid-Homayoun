@@ -14,7 +14,7 @@ The [**Academic Evidence Integrity and Release Gates**](literature/ACADEMIC_EVID
 
 The [offline evidence gate](literature/evidence_quality_gate.py) will fail GitHub CI if a listed Harvard author/year/title/journal/DOI drifts from its structured record, or if a project claim references an unknown source, omits limitations or is incorrectly presented as empirically verified. Passing this check **does not prove DOI publisher metadata, journal ranking, full-text content or any program's performance**.
 
-**Source-check status:** a subset of article metadata has been independently cross-checked against publisher websites; the full 21-item seed list has **not** completed a recorded Crossref API round-trip, official AJG license-based classification review, systematic literature screening or comprehensive full-text adjudication. References remain provisional for manuscript citation until individually checked.
+**Source-check status (31 October 2026):** **6 of 21 entries** contain a traceable publisher-page bibliographic spot-check link; **15 remain pending** publisher/Crossref metadata review. Spot checks are limited to publisher-facing bibliographic identity, not article-theory adjudication. The full list has **not** completed a recorded Crossref API round-trip, official AJG license-based classification review, systematic literature screening or comprehensive full-text adjudication. Each record's exact status is available in the [JSON registry](literature/llm_agentic_ai_seed_registry.json). References remain provisional for manuscript citation until individually checked.
 
 ## Navigate the evidence
 
