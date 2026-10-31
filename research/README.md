@@ -43,6 +43,10 @@ flowchart LR
 
 [**LLM Benchmark and Evaluation Methods**](LLM_BENCHMARKS_AND_EVALUATION.md) — a source-linked methodological crosswalk covering OpenAI, Claude, Google Gemini, FinanceBench, Inspect AI, HELM and lm-evaluation-harness. The guide distinguishes benchmark frameworks from completed empirical evaluations, licensing rights and independent assurance.
 
+## Evidence-grounding and human-review research
+
+[**Double-annotation, disagreement and adjudication protocol**](ANNOTATION_AND_ADJUDICATION_PROTOCOL.md) — an executable, synthetic calibration of the distinction between numerical agreement, evidence support and qualified human judgment. This demonstration does **not** claim independent human annotations or empirical scores for any model provider.
+
 ## Executable research demonstration
 
 The [Evidence-Grounded Financial AI Evaluation](ai_evidence_evaluation/README.md) module includes an **offline, deterministic Python evaluator**, a small synthetic corpus, documented scoring contracts, negative tests, and a CI workflow. It is designed as a foundation for proper evaluation studies; it **does not invoke any AI model or claim empirical model accuracy**. Human-labelled/appropriately licensed corpora and real model outputs must be separately supplied before empirical claims.
