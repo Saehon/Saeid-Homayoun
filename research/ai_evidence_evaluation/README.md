@@ -4,6 +4,10 @@
 
 This small module illustrates how to **separate the accuracy of a financial answer from the presence of an admissible evidence identifier**. It supports research methods involving LLM outputs and professional review, without making unsupportable model-performance claims.
 
+### Benchmark design and model-neutral comparability
+
+The documented methodology follows [OpenAI, Anthropic, Google, FinanceBench, Inspect AI, HELM and EleutherAI evaluation practices](../LLM_BENCHMARKS_AND_EVALUATION.md). The repository contains **no real provider outputs** or copied third-party benchmark questions.
+
 ### Reproduce
 
 Python 3.10+ from repository root:

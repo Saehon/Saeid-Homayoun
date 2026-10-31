@@ -1,0 +1,5 @@
+{"case_id":"SYN-MARGIN-01","status":"answered","model_answer":"0.21","cited_evidence_ids":["SYN-PL-001"]}
+{"case_id":"SYN-ICFR-02","status":"answered","model_answer":"No","cited_evidence_ids":["SYN-ICFR-002"]}
+{"case_id":"SYN-MARGIN-03","status":"answered","model_answer":"0.15","cited_evidence_ids":["SYN-PL-003"]}
+{"case_id":"SYN-REPORT-04","status":"abstained"}
+{"case_id":"SYN-ESG-05","status":"answered","model_answer":"Not verified","cited_evidence_ids":["SYN-ESG-005"]}

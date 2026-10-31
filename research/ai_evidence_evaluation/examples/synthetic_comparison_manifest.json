@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "evaluation_class": "synthetic",
+  "reference_path": "synthetic_gold.jsonl",
+  "rights_statement": "Original hand-written synthetic educational fixtures; no source financial data, licensed corpus or model API output.",
+  "runs": [
+    {
+      "run_id": "fixture_a",
+      "provider": "synthetic",
+      "model_id": "handwritten_a",
+      "model_version": "not_a_model",
+      "predictions_path": "synthetic_predictions.jsonl",
+      "source_type": "synthetic_fixture"
+    },
+    {
+      "run_id": "fixture_b",
+      "provider": "synthetic",
+      "model_id": "handwritten_b",
+      "model_version": "not_a_model",
+      "predictions_path": "synthetic_predictions_b.jsonl",
+      "source_type": "synthetic_fixture"
+    }
+  ]
+}
