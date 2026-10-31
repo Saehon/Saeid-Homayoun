@@ -1,0 +1,2 @@
+{"case_id":"SYNTH-MARGIN","prompt":"A synthetic firm has sales of 100 and SG&A of 20. What is SG&A intensity?","gold_answer":"0.2","evidence_text":"Synthetic sales=100 and SG&A=20; intensity=SG&A divided by sales."}
+{"case_id":"SYNTH-NO-EVIDENCE","prompt":"What is this firm's 2026 cost of equity?","gold_answer":"ABSTAIN","evidence_text":"Synthetic source contains no capital-market or cost-of-equity estimates."}
