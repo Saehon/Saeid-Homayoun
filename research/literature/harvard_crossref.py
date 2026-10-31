@@ -1,7 +1,7 @@
 """Harvard references + conservative Crossref DOI metadata audit (stdlib only).
 
-Default is OFFLINE: renders reviewed seed data and does not claim API verification.
---online checks DOI metadata via Crossref with backoff, outputs mismatch reports,
+Default is OFFLINE: renders curated seed data and does not claim API verification.
+--online checks DOI metadata via Crossref with paced requests, outputs mismatch reports,
 and NEVER silently overwrites reviewer-approved bibliography metadata.
 """
 from __future__ import annotations
@@ -108,6 +108,16 @@ def compare_metadata(record, item):
     names = item.get("author") or []
     first_surname = record["authors"][0].split()[-1].lower()
     first_match = bool(names) and (names[0].get("family", "").lower() == first_surname)
+    author_count_matches = len(names) == len(record["authors"])
+    all_family_names_match = author_count_matches and all(
+        crossref.get("family", "").casefold() == original.split()[-1].casefold()
+        for crossref, original in zip(names, record["authors"])
+    )
+    doi_from_metadata = item.get("DOI")
+    doi_matches = (doi_from_metadata.lower() == record["doi"].lower()
+                   if isinstance(doi_from_metadata, str) else None)
+    # Missing DOI in a synthetic Crossref fixture is not positive proof:
+    # leave it unresolved; never call a metadata match "peer review".
     return {
         "key": record["key"], "doi": record["doi"],
         "metadata_queried": True,
@@ -117,9 +127,13 @@ def compare_metadata(record, item):
         "title_similarity": round(title_sim, 4),
         "journal_similarity": round(journal_sim, 4),
         "first_author_family_matches": first_match,
+        "author_count_matches": author_count_matches,
+        "all_author_family_names_match": all_family_names_match,
+        "crossref_doi_matches_registry": doi_matches,
         "metadata_needs_manual_review": (
             title_sim < 0.90 or journal_sim < 0.84 or
-            not first_match or crossref_year is None or
+            not first_match or not all_family_names_match or
+            doi_matches is False or crossref_year is None or
             abs(crossref_year - record["year"]) > 1
         ),
         "tier_verified_by_crossref": False,
