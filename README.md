@@ -15,7 +15,15 @@ I investigate how artificial intelligence can contribute to accounting, auditing
 
 **Selected scholarship:** [peer-reviewed accounting and sustainability research](research/SELECTED_PUBLICATIONS.md) · co-author of [*AI for Sustainable Business* (Routledge)](https://www.routledge.com/AI-for-Sustainable-Business-Leveraging-Technology-for-a-Better-Future/Rezaee-Boumediene-Homayoun-Boumediene/p/book/9781032987309).
 
-The public code distinguishes original academic contributions from external reference projects; synthetic examples are not presented as real-model accuracy, audit certification or independently validated empirical results.
+### Reproducible research in code
+
+| Research contribution | Inspect the implementation | Reproducibility evidence |
+|---|---|---|
+| **Financial LLM and evidence evaluation** | [Numerical grading, paired comparison and run provenance](research/ai_evidence_evaluation/README.md) | [Python checks and JSON audit artifacts](https://github.com/Saehon/Saeid-Homayoun/actions/runs/41226582395) |
+| **Accounting Evidence Passport** | [IFRS-AI Inspector synthetic metadata gates](https://github.com/Saehon/IFRS-AI-Inspector/tree/main/research_tools) | [Fail-closed tests and evidence receipt](https://github.com/Saehon/IFRS-AI-Inspector/actions/runs/41226804563) |
+| **Scientific evaluation governance** | [OpenAI, Claude, Gemini and benchmark methodologies](research/LLM_BENCHMARKS_AND_EVALUATION.md) | [Research evidence and attribution rules](research/RESEARCH_EVIDENCE_POLICY.md) |
+
+**Evidence boundary:** these public tests validate software behavior on **synthetic research fixtures**, not performance claims for GPT, Claude or Gemini, regulatory certification, or independently reviewed accounting conclusions. Original contributions are explicitly distinguished from third-party reference repositories.
 
 
 ![NAAIL OpenLab ecosystem architecture: knowledge and technology cores, human governance, fruit and specialist programmes, navigation pages, and platforms](assets/images/naail-openlab-ecosystem.png)
