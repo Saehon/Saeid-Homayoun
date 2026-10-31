@@ -6,6 +6,12 @@
 
 [Google Scholar](https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-2536-0446) · [NAAIL OpenLab](../../README.md) · [Project evidence matrix](PROJECT_EVIDENCE_MATRIX.md) · [Repository audit](REPOSITORY_AUDIT_2026-10-31.md)
 
+## Verified job requirements: OpenAI, Anthropic, Google DeepMind and other AI employers
+
+**[19 official job descriptions matched to exact GitHub projects and gaps](AI_EMPLOYER_REQUIREMENTS_2026-10-31.md)** · [Machine-readable role matrix](ai_job_requirements_2026-10-31.json) · [Engineering evidence roadmap](AI_HIRING_EVIDENCE_ROADMAP.md)
+
+**Best research/finance fit:** DeepMind Finance Expert Lead, OpenAI Education AI Architect, Mistral Evaluation Engineer, OpenAI Frontier Assurance. **Important restrictions:** several US-only offices, mandatory Big Four SOX experience for certain audit operations, and production AI engineering requirements that synthetic prototypes cannot satisfy.
+
 ## What I work on
 
 - **Financial-model evaluation:** quantitative accounting tests, references, abstentions, evidence provenance, and error taxonomies.
