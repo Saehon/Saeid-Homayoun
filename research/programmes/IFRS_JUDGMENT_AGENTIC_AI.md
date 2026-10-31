@@ -2,6 +2,12 @@
 
 **Principal investigator:** Saeid Homayoun · [Research programme overview](../AGENTIC_AI_ASSURANCE_RESEARCH.md)
 
+## Journal-grade empirical research protocol
+
+[**IFRS FT50 Research Protocol — accounting case taxonomy, applicable standard versions, hypotheses, independent expert labels and experimental identification**](IFRS_FT50_RESEARCH_PROTOCOL.md) · [Verified FT50 sources](../FT50_RESEARCH_DESIGN_AND_EVIDENCE.md).
+
+The **existing standards-aware agentic decision architecture remains unchanged**. The protocol is proposed, not a claim of IFRS certification, a completed expert validation or any measured reduction in error.
+
 ## Research objective
 
 Investigate whether standards-aware retrieval, **temporal authority resolution**, deterministic reconciliation and independent agent critiques can support more transparent financial-reporting judgments—while treating materiality, estimates, policy alternatives and disclosure judgments as matters for competent human decision makers.

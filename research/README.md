@@ -21,6 +21,12 @@ This is an **independent academic research and education portfolio**. Model prov
 
 These are **ongoing research programmes**, not confirmed regulatory products. Principal substantive working materials remain in private, access-controlled Google Drive; the links identify inspectable public research descriptions and software.
 
+## FT50-aligned accounting and assurance research methods
+
+[**Peer-reviewed literature and research design for PCAOB, IFRS and ISSB Agentic AI**](FT50_RESEARCH_DESIGN_AND_EVIDENCE.md) — explicit theory, hypotheses, construct tables, data rights, journal-fit boundaries, identification strategies, falsification and replication requirements. The **original NAAIL research architecture and domain tracks are unchanged**.
+
+[**PCAOB empirical design**](programmes/PCAOB_FT50_RESEARCH_PROTOCOL.md) · [**IFRS experimental design**](programmes/IFRS_FT50_RESEARCH_PROTOCOL.md) · [**ISSB connectedness and identification design**](programmes/ISSB_FT50_RESEARCH_PROTOCOL.md)
+
 ## Research themes
 
 | Theme | Scientific questions and methods | Research materials |

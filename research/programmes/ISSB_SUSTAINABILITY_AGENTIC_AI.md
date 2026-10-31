@@ -2,6 +2,12 @@
 
 **Principal investigator:** Saeid Homayoun · [Research programme overview](../AGENTIC_AI_ASSURANCE_RESEARCH.md)
 
+## Journal-grade empirical research protocol
+
+[**ISSB FT50 Research Protocol — source-backed connectedness construct, applicability, treatment design and economic-outcome validation**](ISSB_FT50_RESEARCH_PROTOCOL.md) · [Verified FT50 sources](../FT50_RESEARCH_DESIGN_AND_EVIDENCE.md).
+
+The existing ISSB agentic disclosure research architecture is retained. The proposed financial-connectedness index and empirical designs have **not** been executed or independently validated. Disclosure analysis is not a sustainability assurance engagement.
+
 ## Research objective
 
 Study whether governed, source-grounded AI can help analysts and researchers evaluate **sustainability-related financial disclosures**, their internal consistency and their links to conventional financial reporting—while separating disclosure assessment from **independent sustainability assurance**.

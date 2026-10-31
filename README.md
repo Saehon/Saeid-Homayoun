@@ -11,6 +11,8 @@
 
 [Audit inspection intelligence](research/programmes/PCAOB_INSPECTION_AGENTIC_AI.md) · [Standards-aware IFRS reasoning](research/programmes/IFRS_JUDGMENT_AGENTIC_AI.md) · [ISSB sustainability disclosure intelligence](research/programmes/ISSB_SUSTAINABILITY_AGENTIC_AI.md)
 
+**[FT50-oriented scientific evidence and reproducible research protocols](research/FT50_RESEARCH_DESIGN_AND_EVIDENCE.md)** · [PCAOB study design](research/programmes/PCAOB_FT50_RESEARCH_PROTOCOL.md) · [IFRS study design](research/programmes/IFRS_FT50_RESEARCH_PROTOCOL.md) · [ISSB study design](research/programmes/ISSB_FT50_RESEARCH_PROTOCOL.md)
+
 Research across **LLM evaluation, agentic AI, auditing, financial reporting, internal control and sustainability**. Selected programmes include NAAIL OpenLab™, KIWI™, IFRS-AI Inspector, and private-core POMELO™/VERA™ research.
 
 > **Active research and private working archive:** These programmes are **in progress**. Their **primary working materials and substantive research documentation are maintained in my personal, access-controlled Google Drive**. GitHub presents selected public-safe research summaries, code, tests, and methodology; it is not a complete record of the private research, and the presence of a public prototype does not establish final scientific validation.
