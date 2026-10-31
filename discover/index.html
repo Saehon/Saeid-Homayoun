@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10192b">
+<meta name="description" content="Explore evidence-governed AI research experiences for auditing, IFRS, internal controls, management accounting and sustainability.">
+<title>Discover | NAAIL OpenLab Research Experiences</title>
+<style>
+:root{color-scheme:light;--ink:#13213a;--muted:#60708b;--line:#e0e7f0;--brand:#3759e6;--panel:#fff;--bg:#f5f7fc;--focus:#f59e0b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:6px;background:#fff;padding:10px;z-index:100}.skip:focus{left:10px}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.top{background:#10192b;color:white;border-bottom:1px solid #31415b}.topin{display:flex;align-items:center;justify-content:space-between;min-height:74px;gap:12px}
+.logo{text-decoration:none;font-weight:850;letter-spacing:-.035em;display:flex;align-items:center;gap:10px;font-size:1.18rem}
+.mark{display:inline-grid;place-items:center;background:#a7f3d0;color:#173d37;border-radius:13px;width:42px;height:42px;font-size:.83rem;letter-spacing:0}
+.topnav{display:flex;gap:18px;align-items:center}.topnav a{font-size:.9rem;text-decoration:none;color:#d4dff2}.topnav a:hover{text-decoration:underline}.topnav .navpill{border:1px solid #7385ac;border-radius:30px;padding:9px 14px}
+.hero{background:radial-gradient(circle at 86% 18%,#2a4b87 0,#14233e 36%,#10192b 85%);color:white;padding:63px 0 58px}
+.hero-inner{display:grid;grid-template-columns:1.5fr .85fr;gap:48px;align-items:center}
+.eyebrow{font-size:.73rem;text-transform:uppercase;letter-spacing:.15em;font-weight:800;color:#95f1d4;margin:0 0 15px}
+h1{font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.08;letter-spacing:-.055em;max-width:810px;margin:0 0 20px}
+.hero p.lede{font-size:1.06rem;max-width:660px;color:#d5dfef;margin:0 0 24px}
+.hero-buttons{display:flex;gap:11px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:12px;font-weight:740;text-decoration:none;border:1px solid transparent}
+.cta.primary{background:#a7f3d0;color:#123d34}.cta.secondary{border-color:#8194b5;color:white}
+.hero-side{border:1px solid #536584;border-radius:22px;padding:24px;background:#ffffff0c;backdrop-filter:blur(6px)}
+.hero-side h2{font-size:1.15rem;margin:0 0 10px}.hero-side p{color:#d6e0f0;font-size:.91rem;margin:0}
+.trust-list{display:grid;gap:12px;margin-top:20px}.trust{display:flex;align-items:flex-start;gap:10px;font-size:.88rem}.dot{width:9px;height:9px;background:#a7f3d0;border-radius:50%;margin-top:7px;flex:none}
+main{padding:40px 0 65px}h2{font-size:1.7rem;line-height:1.2;letter-spacing:-.035em;margin:0 0 9px}.muted{color:var(--muted)}
+.step-label{font-size:.72rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#4f60a0}
+.toolbar{margin-top:21px;background:var(--panel);border:1px solid var(--line);padding:19px;border-radius:20px;box-shadow:0 12px 35px #1c315708}
+.roles{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}.chip{border:1px solid #d6deed;border-radius:999px;background:white;padding:8px 15px;font-weight:650;color:#344563}
+.chip[aria-pressed=true]{background:#233a77;color:white;border-color:#233a77}
+.filterrow{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center}
+.search{display:flex;align-items:center;border:1px solid #cbd6e8;border-radius:12px;gap:10px;padding:0 14px;background:#fff}
+.search input{border:0;padding:13px 0;width:100%;min-width:0;outline:0;background:transparent}.search:focus-within{outline:3px solid #93c5fd}
+.toggle{background:#f3f6fc;border:1px solid #d9e3f0;border-radius:12px;padding:11px 15px;color:#344563;font-weight:700}
+.sectionhead{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin:34px 0 17px}.sectionhead p{margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.product{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 24px #27365509;display:flex;flex-direction:column;min-width:0}
+.art{height:130px;display:flex;align-items:flex-end;justify-content:space-between;padding:20px;background:linear-gradient(125deg,var(--c1),var(--c2));color:white}
+.art .symbol{font-size:2rem;background:#ffffff24;width:62px;height:62px;border:1px solid #ffffff48;display:grid;place-items:center;border-radius:17px}
+.art .type{font-size:.69rem;letter-spacing:.12em;text-transform:uppercase;font-weight:850;background:#ffffff2a;padding:6px 9px;border-radius:9px}
+.product-body{padding:18px 19px 12px;display:flex;flex:1;flex-direction:column}
+.rowbadge{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:25px;margin-bottom:10px}
+.badge{font-size:.72rem;font-weight:750;background:#e6edf9;color:#334e83;padding:4px 9px;border-radius:30px}
+.badge.private{background:#f1ecff;color:#554091}.badge.research{background:#e6f7ef;color:#176047}
+.product h3{margin:0 0 9px;letter-spacing:-.025em;font-size:1.19rem}
+.product p{color:#5d6d86;font-size:.91rem;margin:0 0 12px;flex:1}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}.tags span{background:#f2f5fa;color:#586983;border-radius:7px;padding:3px 8px;font-size:.72rem}
+.product-actions{display:flex;align-items:center;gap:7px;padding-top:13px;border-top:1px solid #e8edf5}
+.try{flex:1;border:0;background:#243d85;color:white;border-radius:10px;padding:10px 11px;font-weight:750}
+.repo{padding:10px 11px;border:1px solid #dae3f0;border-radius:10px;text-decoration:none;font-weight:700;font-size:.86rem;white-space:nowrap}
+.save{height:40px;min-width:39px;background:#fff;border:1px solid #dae3f0;border-radius:10px;font-size:1.16rem;color:#445677}.save[aria-pressed=true]{background:#fff2ce;color:#805000}
+.empty{border:1px dashed #b9c6df;border-radius:15px;padding:25px;background:white}
+.info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.info article{background:white;border:1px solid #e1e8f2;padding:20px;border-radius:17px}.info h3{margin:0 0 7px;font-size:1rem}.info p{margin:0;font-size:.9rem;color:#5f6e85}
+.small{font-size:.79rem;color:#738199}.notice{border-left:4px solid #667eea;background:#ebeffc;border-radius:0 11px 11px 0;padding:13px 17px;font-size:.89rem;margin-top:25px}
+footer{background:#10192b;color:#c2cce0;padding:28px 0;font-size:.85rem}footer a{color:#d7e6ff}
+dialog{border:0;border-radius:22px;max-width:min(600px,calc(100vw - 26px));width:100%;padding:0;color:var(--ink);box-shadow:0 24px 90px #04091488}dialog::backdrop{background:#0a1730aa}
+.modalhead{background:#172a50;color:white;padding:22px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.modalhead h2{font-size:1.45rem;margin:4px 0 0}.close{border:1px solid #a4b5d0;border-radius:9px;background:transparent;color:white;padding:7px 11px;font-size:1.2rem}
+.modalbody{padding:24px}.modalbody .flag{display:inline-block;background:#fff0d5;border:1px solid #f3d49c;color:#825018;font-size:.75rem;padding:6px 9px;border-radius:9px;font-weight:800}
+.progress{height:6px;background:#e6ebf3;border-radius:9px;margin:19px 0 25px;overflow:hidden}.progress>div{height:100%;width:33.333%;background:#4167db;transition:width .2s}
+.modalbody h3{font-size:1.15rem;margin:0 0 10px}.modalbody p{color:#506077;font-size:.94rem}
+.evidence{background:#f3f6fc;border-left:4px solid #5477cb;padding:14px;border-radius:0 11px 11px 0;font-size:.88rem;margin:20px 0}
+.modalfoot{display:flex;gap:10px;justify-content:space-between;align-items:center;border-top:1px solid #e8edf3;padding:15px 24px 20px}.modalfoot button{border-radius:10px;padding:11px 15px;font-weight:750;border:1px solid #cfdbec;background:white}.modalfoot .next{background:#243d85;color:white;border-color:#243d85}
+#step-count{font-size:.8rem;color:#748199}
+@media(max-width:930px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr}.hero-side{max-width:700px}.info{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.topnav a:not(.navpill){display:none}.hero{padding:42px 0}.cards,.info{grid-template-columns:1fr}.filterrow{grid-template-columns:1fr}.sectionhead{margin-top:27px}.hero-inner{gap:24px}.product .art{height:112px}.wrap{padding-left:16px;padding-right:16px}.modalfoot{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress>div{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="top"><div class="wrap topin">
+<a class="logo" href="../index.html"><span class="mark">N✦</span><span>NAAIL <span style="font-weight:450;color:#bed0ec">OpenLab</span></span></a>
+<nav class="topnav" aria-label="Main"><a href="../index.html">Home</a><a href="#explore">Explore</a><a href="#integrity">Scientific integrity</a><a class="navpill" href="https://github.com/Saehon/Saeid-Homayoun">GitHub ↗</a></nav>
+</div></header>
+<section class="hero"><div class="wrap hero-inner">
+<div><p class="eyebrow">NAAIL Research Experiences · Interactive discovery</p><h1>Find the right accounting AI tool. Understand the evidence.</h1>
+<p class="lede">Explore audit, reporting, control and management-accounting research through short, interactive examples—without reading the technical documentation first.</p>
+<div class="hero-buttons"><a class="cta primary" href="#explore">Explore experiences ↓</a><a class="cta secondary" href="#integrity">How we protect scientific integrity</a></div></div>
+<aside class="hero-side" aria-label="Research evidence commitments"><h2>Useful first. Verifiable always.</h2><p>Inspired by the ease of modern discovery feeds, redesigned for researchers and professionals who need defensible information.</p>
+<div class="trust-list"><div class="trust"><span class="dot"></span><span>Guided examples are explicitly synthetic</span></div><div class="trust"><span class="dot"></span><span>Direct access to source repositories and methods</span></div><div class="trust"><span class="dot"></span><span>Human approval for consequential decisions</span></div></div>
+</aside></div></section>
+<main id="main" class="wrap">
+<section id="explore" aria-labelledby="explore-title"><div><span class="step-label">01 · Discover</span><h2 id="explore-title">What would you like to accomplish?</h2><p class="muted" style="margin:0">Choose your role to personalize the order of experiences. No account or tracking is required.</p></div>
+<div class="toolbar"><strong id="role-label">I am a…</strong>
+<div id="roles" class="roles" role="group" aria-labelledby="role-label">
+<button class="chip" data-role="All" aria-pressed="true">Everyone</button>
+<button class="chip" data-role="Auditor" aria-pressed="false">Auditor</button>
+<button class="chip" data-role="CFO" aria-pressed="false">CFO / Controller</button>
+<button class="chip" data-role="Researcher" aria-pressed="false">Researcher</button>
+<button class="chip" data-role="Student" aria-pressed="false">Student</button>
+<button class="chip" data-role="Investor" aria-pressed="false">Investor</button>
+</div>
+<div class="filterrow"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" aria-label="Search research experiences" placeholder="Search IFRS, CAM, ICFR, TDABC, data, sustainability…"></label><button id="saved-only" class="toggle" aria-pressed="false" type="button">☆ Saved only</button></div>
+</div>
+<div class="sectionhead"><div><h2 id="list-title">Explore research experiences</h2><p class="muted">Each card offers a guided, synthetic preview and a direct research link.</p></div><span class="small" id="result-count" role="status" aria-live="polite"></span></div>
+<div class="cards" id="cards"></div><p id="empty" class="empty" hidden>No matching experiences. Try another role, search term, or clear the saved-only filter.</p>
+</section>
+<section id="integrity" style="padding-top:55px" aria-labelledby="trust-title"><span class="step-label">02 · Verify</span><h2 id="trust-title">A feed for professionals—not an attention trap</h2><p class="muted">The interface adopts fast discovery, relevance and interaction, but never ranks research by exaggerated claims or invented results.</p>
+<div class="info">
+<article><h3>1. Explore in one click</h3><p>Role-based ordering and guided walkthroughs make research accessible without installing an AI engine.</p></article>
+<article><h3>2. Inspect the evidence</h3><p>Every experience links to its source repository or an intentionally public product overview. Synthetic examples are labelled.</p></article>
+<article><h3>3. Keep human judgment</h3><p>A demonstration is not empirical validation, a regulatory conclusion, or professional advice. Human review remains required.</p></article>
+</div>
+<div class="notice"><strong>Research maturity notice.</strong> This page is an interactive discovery prototype. It does not invoke proprietary POMELO, audit financial statements, query private Drive files or produce live AI-generated professional conclusions. Real-world decisions require verified data, authority checks, and human approval.</div>
+</section></main>
+<footer><div class="wrap">NAAIL OpenLab™ — independent academic research and education. <a href="../PRODUCT_PORTFOLIO.md">Research portfolio</a> · <a href="../SECURITY.md">Security</a> · <a href="https://orcid.org/0000-0002-2536-0446">ORCID</a>. Saved items remain in this browser only.</div></footer>
+<dialog id="preview" aria-labelledby="modal-title" aria-modal="true">
+<div class="modalhead"><div><span class="eyebrow" style="margin:0">Guided research preview</span><h2 id="modal-title"></h2></div><button class="close" id="close" type="button" aria-label="Close preview">×</button></div>
+<div class="modalbody"><span class="flag">SYNTHETIC EDUCATIONAL EXAMPLE · NOT LIVE AI</span><div class="progress" aria-hidden="true"><div id="progress-bar"></div></div><h3 id="step-title"></h3><p id="step-text"></p><div id="step-evidence" class="evidence"></div><p class="small">Research outputs must pass source, methodological, reproducibility and human-review gates before they support professional claims.</p></div>
+<div class="modalfoot"><button id="previous" type="button">← Back</button><span id="step-count" aria-live="polite"></span><button id="next" class="next" type="button">Continue →</button></div>
+</dialog>
+<script>
+(function(){
+"use strict";
+var portfolio="https://github.com/Saehon/Saeid-Homayoun";
+var products=[
+{id:"kiwi",name:"KIWI · CAM / KAM Intelligence",kind:"Audit intelligence",symbol:"◎",palette:["#2649b0","#183063"],status:"Research prototype",roles:["Auditor","Researcher","Investor"],tags:["CAM","KAM","Audit risk"],description:"Explore how a critical audit matter links financial-reporting risk to audit response and investor-facing disclosures.",link:portfolio+"/tree/main/NAAIL-OpenLab/KIWI",steps:[
+["Start with a reporting risk","A hypothetical company reports goodwill of €80 million and a forecast-driven impairment assessment.","Synthetic case only · No company records are being analyzed."],
+["Follow the audit evidence","An audit team would examine forecast assumptions, discount rates, management sensitivity analyses and corroborating documents.","Evidence Passport concept: identify source, reporting period, assertion, reviewer and uncertainty."],
+["Translate evidence into a decision","Compare the risk addressed and the specificity of the proposed audit response. Escalate gaps for professional review.","A CAM description alone does not establish audit quality or investment value."]]},
+{id:"ifrs",name:"IFRS-AI Inspector",kind:"Financial reporting",symbol:"▧",palette:["#187c8d","#18505e"],status:"Research prototype",roles:["CFO","Auditor","Student","Researcher"],tags:["IFRS","Evidence","Reporting"],description:"Explore an evidence-first workflow for reporting judgments and source traceability.",link:"https://github.com/Saehon/IFRS-AI-Inspector",steps:[
+["Identify an accounting judgment","A synthetic lease agreement has renewal options and management assumptions affecting the estimated lease term.","Educational illustration · Do not infer a compliant IFRS treatment from this preview."],
+["Organize the evidence","Identify signed agreements, option clauses, approved assumptions, the applicable standard and the reporting date.","Verify authoritative IFRS requirements through an appropriately licensed source."],
+["Escalate unresolved issues","Present alternative conclusions, missing inputs and questions for a qualified reviewer.","The research prototype does not certify IFRS compliance."]]},
+{id:"icfr",name:"ICFR · Controls & Evidence",kind:"Internal control",symbol:"⌁",palette:["#7251aa","#392765"],status:"Research area",roles:["Auditor","CFO","Investor"],tags:["ICFR","SOX","Controls"],description:"Trace how a control deficiency could affect evidence reliability and financial-reporting risk.",link:portfolio+"/tree/main/Lemon-ICFR-US",steps:[
+["Spot a potential control gap","In a fictional company, privileged access changes were not independently reviewed for one month.","Synthetic scenario · A missing review is not automatically a material weakness."],
+["Collect the audit trail","Inspect approval logs, access listings, affected systems, compensating controls and the exact period at risk.","Preserve completeness, timing, ownership and reproducibility of every supporting item."],
+["Assess and escalate","Evaluate likelihood and magnitude of misstatement with an appropriately qualified human reviewer.","A control finding must not be relabelled as a confirmed ICFR deficiency without evidence."]]},
+{id:"tdabc",name:"MACEI · Time-Driven ABC",kind:"Management accounting",symbol:"∑",palette:["#bd6b25","#7d391a"],status:"Research prototype",roles:["CFO","Student","Researcher"],tags:["TDABC","Cost","Efficiency"],description:"Understand capacity cost rates and how time-based activities can be translated into management insight.",link:"https://github.com/Saehon/MACEI-AI-Cost-Manag",steps:[
+["Choose a resource capacity","In a fictional finance team, resource cost is €12,000 per period and practical capacity is 6,000 minutes.","Synthetic input · Capacity cost rate = €12,000 / 6,000 = €2 per minute."],
+["Trace activity cost","A routine process uses 15 minutes of resource time. Under the toy assumptions, resource cost is €30.","Time-driven ABC: 15 minutes × €2 per minute. No overhead allocation has been validated."],
+["Make a managerial decision","Compare alternative activity times, investigate capacity utilization, and validate the time equations with operational data.","Do not infer cost savings or ROI from this illustration."]]},
+{id:"data",name:"AuditData-API · Data Standards",kind:"Research infrastructure",symbol:"{ }",palette:["#156b86","#17415d"],status:"Public toolkit",roles:["Researcher","Auditor","Student"],tags:["API","Data","Audit"],description:"Explore structured audit data and the field mapping needed for consistent research or analytics.",link:"https://github.com/Saehon/AuditData-API",steps:[
+["Define a data question","A fictional transaction dataset contains invoice identifiers, posting dates and ledger amounts.","Use only records with appropriate permissions and clear data provenance."],
+["Inspect the structure","Map source fields to a common schema, then assess identifier quality, units and date consistency.","Example validation: unique transaction IDs, reconciliation, null checks and period coverage."],
+["Reuse with confidence","Export a documented mapping and reproducibility manifest before running downstream models.","A standard schema improves comparability; it cannot itself guarantee accurate underlying data."]]},
+{id:"pomelo",name:"POMELO / VERA · Verification",kind:"Professional intelligence",symbol:"✧",palette:["#365aa9","#24294e"],status:"Private R&D",roles:["Auditor","CFO","Researcher","Investor"],tags:["POMELO","VERA","AI validation"],description:"See the conceptual evidence-to-judgment path of a private, vendor-neutral accounting AI research platform.",link:portfolio+"/blob/main/PRODUCT_PORTFOLIO.md",steps:[
+["Formulate a professional question","A fictional model proposes a financial-reporting conclusion without citing the underlying evidence.","This is a conceptual walk-through, not access to private POMELO software."],
+["Apply verification gates","Conceptually check source authority, provenance, calculation, contradicting evidence and model uncertainty.","Knowledge Core stays authoritative and governed; Technology Core remains replaceable."],
+["Require human approval","Route unresolved evidence or professional judgments to an authorized reviewer instead of asserting compliance.","A private prototype is not a commercial certification service or regulator-approved tool."]]},
+{id:"issb",name:"ISSB / ESG · Disclosure",kind:"Sustainability",symbol:"◈",palette:["#21836d","#154e49"],status:"Research area",roles:["CFO","Investor","Researcher","Student"],tags:["ISSB","ESG","Disclosure"],description:"Explore the traceability of a sustainability disclosure from reported metric to underlying evidence.",link:portfolio+"/blob/main/research/programmes/ISSB_SUSTAINABILITY_AGENTIC_AI.md",steps:[
+["Select a disclosure question","A fictional issuer describes an emissions reduction using operational data aggregated across facilities.","Sample disclosure only · No company-specific data or assurance is being provided."],
+["Trace the measurement","Inspect the measurement boundary, periods, estimation methods, exclusions and verification trail.","Check relevant standards and jurisdiction before making a disclosure conclusion."],
+["Evaluate limitations","Identify missing coverage, ambiguous definitions and possible comparability problems.","Presentation quality and independently assured accuracy are distinct constructs."]]}
+];
+var state={role:"All",query:"",savedOnly:false,active:null,step:0};
+var cards=document.getElementById("cards"),count=document.getElementById("result-count"),empty=document.getElementById("empty");
+var modal=document.getElementById("preview"),lastFocus=null,saved=[];
+try{saved=JSON.parse(localStorage.getItem("naail-experience-saved-v1")||"[]");if(!Array.isArray(saved))saved=[];}catch(e){saved=[];}
+saved=saved.filter(function(id){return products.some(function(p){return p.id===id;});});
+function node(tag,cls,txt){var el=document.createElement(tag);if(cls)el.className=cls;if(txt!==undefined)el.textContent=txt;return el;}
+function saveData(){try{localStorage.setItem("naail-experience-saved-v1",JSON.stringify(saved));}catch(e){}}
+function render(){
+var q=state.query.trim().toLowerCase();
+var visible=products.filter(function(p){return (!state.savedOnly||saved.indexOf(p.id)!==-1)&&(!q||[p.name,p.kind,p.description].concat(p.tags).join(" ").toLowerCase().indexOf(q)!==-1);});
+visible.sort(function(a,b){var score=function(p){return state.role!=="All"&&p.roles.indexOf(state.role)!==-1?1:0;};return score(b)-score(a)||products.indexOf(a)-products.indexOf(b);});
+cards.replaceChildren();
+visible.forEach(function(p){
+var article=node("article","product");var art=node("div","art");art.style.setProperty("--c1",p.palette[0]);art.style.setProperty("--c2",p.palette[1]);
+art.append(node("span","symbol",p.symbol),node("span","type",p.kind));article.append(art);
+var body=node("div","product-body"),badges=node("div","rowbadge"),status=node("span","badge "+(p.status==="Private R&D"?"private":"research"),p.status);
+badges.append(status);body.append(badges,node("h3","",p.name),node("p","",p.description));
+var tags=node("div","tags");p.tags.forEach(function(t){tags.append(node("span","",t));});body.append(tags);
+var actions=node("div","product-actions"),tryBtn=node("button","try","Try preview");tryBtn.type="button";tryBtn.addEventListener("click",function(){openPreview(p);});
+var repo=node("a","repo",p.status==="Private R&D"?"Overview ↗":"Research ↗");repo.href=p.link;repo.target="_blank";repo.rel="noopener noreferrer";repo.setAttribute("aria-label","Open research source for "+p.name);
+var bookmark=node("button","save",saved.indexOf(p.id)!==-1?"★":"☆");bookmark.type="button";bookmark.setAttribute("aria-label",(saved.indexOf(p.id)!==-1?"Remove saved ":"Save ")+p.name);
+bookmark.setAttribute("aria-pressed",saved.indexOf(p.id)!==-1?"true":"false");
+bookmark.addEventListener("click",function(){var i=saved.indexOf(p.id);if(i===-1)saved.push(p.id);else saved.splice(i,1);saveData();render();});
+actions.append(tryBtn,repo,bookmark);body.append(actions);article.append(body);cards.append(article);
+});
+count.textContent=visible.length+" experience"+(visible.length===1?"":"s");empty.hidden=visible.length!==0;
+document.getElementById("list-title").textContent=state.role==="All"?"Explore research experiences":"Recommended for "+(state.role==="CFO"?"CFOs / Controllers":state.role+"s");
+}
+document.querySelectorAll("[data-role]").forEach(function(el){el.addEventListener("click",function(){
+state.role=el.getAttribute("data-role");document.querySelectorAll("[data-role]").forEach(function(button){button.setAttribute("aria-pressed",String(button===el));});render();
+});});
+document.getElementById("search").addEventListener("input",function(e){state.query=e.target.value;render();});
+document.getElementById("saved-only").addEventListener("click",function(e){state.savedOnly=!state.savedOnly;e.currentTarget.setAttribute("aria-pressed",String(state.savedOnly));e.currentTarget.textContent=state.savedOnly?"★ Saved only":"☆ Saved only";render();});
+function openPreview(p){state.active=p;state.step=0;lastFocus=document.activeElement;updateStep();if(typeof modal.showModal==="function")modal.showModal();else modal.setAttribute("open","");}
+function updateStep(){var s=state.active.steps[state.step];document.getElementById("modal-title").textContent=state.active.name;document.getElementById("step-title").textContent=s[0];document.getElementById("step-text").textContent=s[1];document.getElementById("step-evidence").textContent=s[2];document.getElementById("step-count").textContent="Step "+(state.step+1)+" of "+state.active.steps.length;document.getElementById("progress-bar").style.width=((state.step+1)/state.active.steps.length*100)+"%";document.getElementById("previous").disabled=state.step===0;document.getElementById("next").textContent=state.step===state.active.steps.length-1?"Finish ✓":"Continue →";}
+function closePreview(){if(typeof modal.close==="function")modal.close();else modal.removeAttribute("open");if(lastFocus&&document.contains(lastFocus))lastFocus.focus();}
+document.getElementById("close").addEventListener("click",closePreview);
+document.getElementById("previous").addEventListener("click",function(){if(state.step>0){state.step--;updateStep();}});
+document.getElementById("next").addEventListener("click",function(){if(state.step<state.active.steps.length-1){state.step++;updateStep();}else closePreview();});
+modal.addEventListener("click",function(e){if(e.target===modal)closePreview();});
+modal.addEventListener("close",function(){if(lastFocus&&document.contains(lastFocus))lastFocus.focus();});
+render();
+})();
+</script>
+</body>
+</html>
