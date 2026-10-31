@@ -31,6 +31,10 @@ jobs:
         run: |
           python -m research.ai_evidence_evaluation.compare_runs --out reports/scientific_ai_synthetic_comparison.json
           python -c 'import json; d=json.load(open("reports/scientific_ai_synthetic_comparison.json")); assert d["reference_count"] == 5 and len(d["run_summaries"]) == 2; assert d["empirical_model_benchmark"] is False and d["independent_gold_validation"] is False'
+      - name: Validate declared model-run provenance, digest and synthetic evidence status
+        run: |
+          python -m research.ai_evidence_evaluation.validate_run --out reports/scientific_ai_synthetic_provenance.json
+          python -c 'import json; d=json.load(open("reports/scientific_ai_synthetic_provenance.json")); assert d["records_checked"]==2 and d["source_type"]=="synthetic_fixture"; assert d["model_performance_claim_permitted"] is False and d["independent_validation_status"]=="NOT_VERIFIED"'
       - name: Upload reproducibility artifact
         uses: actions/upload-artifact@v4
         with:
