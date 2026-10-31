@@ -46,7 +46,7 @@ def evaluate(gold_rows, candidate_rows):
     by_question_type = {}
     for key, reference in gold.items():
         response = cand.get(key, {})
-        answer = str(response.get("predicted_answer") or "").strip()
+        answer = str(response["predicted_answer"]).strip() if response.get("predicted_answer") is not None else ""
         attempted = bool(answer)
         if attempted:
             answered += 1
