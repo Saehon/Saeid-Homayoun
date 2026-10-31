@@ -106,6 +106,22 @@ python -m unittest discover -s research/literature/tests -p 'test_*.py' -v
 
 Each online DOI retrieval uses `https://api.crossref.org/works/{doi}`; metadata is used for **mismatch detection**, not silent changes to a reviewed record. The API returns deposited bibliographic metadata (authors, date, title, venue, DOI); it does **not** certify relevance, reproducibility, article quality, copyright compliance, official AJG rating, or complete coverage of every paper on a topic. Optional polite-pool identification can be supplied via `--email` if desired. Crossref source: [REST documentation](https://www.crossref.org/documentation/retrieve-metadata/rest-api/).
 
+### Opt-in API discovery queue for additional FT50 / AJG 4–1 references
+
+The [journal and keyword search scope](literature/crossref_journal_search_scope.json) provides an **illustrative** eight-journal ISSN seed spanning AJG 4*, 4, 3, 2 and 1, and the [Crossref discovery script](literature/crossref_discovery.py) searches deposited DOI records for six LLM/fine-tuning/agentic AI query concepts. It saves a **candidate queue**, not accepted references, and intentionally cannot assert complete retrieval.
+
+```bash
+# Optional discovery — network access required, bounded by journal and keyword
+python -m research.literature.crossref_discovery --online \
+  --rows 20 --delay 1 \
+  --out reports/llm_crossref_candidates_review_required.json
+
+# Offline tests of the discovery restrictions
+python -m unittest discover -s research/literature/tests -p 'test_*.py' -v
+```
+
+**Workflow:** a domain expert must extend the authorized AJG ISSN universe to all target journals, resolve 2024 grades against CABS, screen candidate titles/abstracts/full texts with permissions, reconcile duplicates and exclusions, and only then add verified DOI records to the reviewed bibliography. Search results cannot automatically validate relevance or theoretical claims. No live discovery request is made by GitHub Actions.
+
 For the comprehensive review the user envisions, the next authorized stage is a **PRISMA-style search protocol** over all in-scope journals and years, using normalized ISSN, Crossref/OpenAlex/disciplinary indexes, search strings for `"large language model"`, `"generative AI"`, `"fine-tuning"`, `"agentic AI"`, `"multi-agent"`, `"RAG"`, and accounting/audit/finance/sustainability variants; screening and two-reviewer adjudication are still required. Search APIs can miss records and cannot infer AJG 2024 grade reliably. Keep a dated frozen reference corpus and an update log, and do not redistribute restricted publisher full text.
 
 ### Scientific status of this registry
