@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Opt-in Crossref discovery candidates, not certified AJG coverage or complete literature",
+  "ft50_list_version": "2026-04",
+  "ajg_list_version": "2024; grades secondary and manually checked",
+  "journal_candidates": [
+    {
+      "journal": "Journal of Accounting Research",
+      "issn": "0021-8456",
+      "ft50": true,
+      "ajg_2024_secondary": "4*"
+    },
+    {
+      "journal": "Management Science",
+      "issn": "0025-1909",
+      "ft50": true,
+      "ajg_2024_secondary": "4*"
+    },
+    {
+      "journal": "Information Systems Research",
+      "issn": "1047-7047",
+      "ft50": true,
+      "ajg_2024_secondary": "4*"
+    },
+    {
+      "journal": "Review of Accounting Studies",
+      "issn": "1380-6653",
+      "ft50": true,
+      "ajg_2024_secondary": "4"
+    },
+    {
+      "journal": "The British Accounting Review",
+      "issn": "0890-8389",
+      "ft50": false,
+      "ajg_2024_secondary": "3"
+    },
+    {
+      "journal": "International Journal of Accounting Information Systems",
+      "issn": "1467-0895",
+      "ft50": false,
+      "ajg_2024_secondary": "2"
+    },
+    {
+      "journal": "Accounting Research Journal",
+      "issn": "1030-9616",
+      "ft50": false,
+      "ajg_2024_secondary": "2"
+    },
+    {
+      "journal": "Asian Journal of Accounting Research",
+      "issn": "2443-4175",
+      "ft50": false,
+      "ajg_2024_secondary": "1"
+    }
+  ],
+  "search_terms": [
+    "large language models",
+    "generative artificial intelligence",
+    "fine-tuning",
+    "agentic AI",
+    "multi-agent systems",
+    "retrieval augmented generation"
+  ],
+  "warning": "Search output is a candidate queue. Ranking from source journal list requires official CABS verification; Crossref API searches are not exhaustive."
+}
