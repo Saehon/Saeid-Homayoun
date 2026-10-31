@@ -7,6 +7,8 @@
 
 > **Development and privacy notice.** These projects are in progress. Primary working manuscripts, research records and substantive project materials are maintained in a **private, access-controlled personal Google Drive**. This page presents only authorized public research designs, credible bibliographic links, and methodological standards. Public code tests and synthetic fixtures are not externally validated empirical findings.
 
+**Academic claim-level integrity:** [Evidence traceability and release checks](literature/ACADEMIC_EVIDENCE_QUALITY_GATES.md) distinguish DOI metadata, theory motivation and methods from independently replicated research findings. The [project literature ledger](literature/project_evidence_ledger.json) tracks explicitly untested hypotheses and unresolved evidence.
+
 **Cross-cutting bibliography:** [Harvard-referenced LLM, Fine-Tuning and Agentic AI research registry](LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md). The living list spans selected FT50 and AJG journal groups; Crossref DOI metadata checks cannot authenticate journal rankings or prove the research hypotheses of this framework.
 
 ## 1. Journal basket and honest fit

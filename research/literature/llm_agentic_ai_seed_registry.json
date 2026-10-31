@@ -20,7 +20,9 @@
       "theme": "LLM;disclosure;measurement",
       "projects": "IFRS;ISSB;NAAIL",
       "nature": "empirical",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "publisher_page_spot_check_not_full_text_review",
+      "publisher_metadata_source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/1475-679x.70050"
     },
     {
       "key": "JAR-2026-choi",
@@ -36,7 +38,9 @@
       "theme": "LLM;human oversight;accounting",
       "projects": "IFRS;PCAOB;NAAIL",
       "nature": "field evidence",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "publisher_page_spot_check_not_full_text_review",
+      "publisher_metadata_source_url": "https://onlinelibrary.wiley.com/doi/10.1111/1475-679x.70052"
     },
     {
       "key": "JAR-2026-levy",
@@ -51,7 +55,8 @@
       "theme": "LLM;look-ahead;temporal validity",
       "projects": "IFRS;PCAOB;ISSB",
       "nature": "methodological",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "MS-2026-zhang",
@@ -69,7 +74,8 @@
       "theme": "fine-tuning;synthetic data;training validity",
       "projects": "NAAIL;POMELO;KIWI",
       "nature": "empirical/experimental",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "MS-2025-zhong",
@@ -84,7 +90,8 @@
       "theme": "human oversight;delegation;AI",
       "projects": "PCAOB;IFRS;ISSB",
       "nature": "theory/model",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "ISR-2025-gopal",
@@ -106,7 +113,9 @@
       "theme": "agentic AI;multiagent;research governance",
       "projects": "NAAIL;DARWIN;POMELO",
       "nature": "editorial/conceptual",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "publisher_page_spot_check_not_full_text_review",
+      "publisher_metadata_source_url": "https://pubsonline.informs.org/doi/10.1287/isre.2025.editorial.v36.n4"
     },
     {
       "key": "ISR-2026-wang",
@@ -123,7 +132,8 @@
       "theme": "LLM;human intelligence;experiments",
       "projects": "IFRS;NAAIL",
       "nature": "experimental",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "MS-2026-bick",
@@ -140,7 +150,8 @@
       "theme": "AI adoption;productivity",
       "projects": "SME;NAAIL",
       "nature": "empirical",
-      "directness": "contextual"
+      "directness": "contextual",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "RAST-2022-fedyk",
@@ -158,7 +169,8 @@
       "theme": "AI auditing;process quality",
       "projects": "PCAOB;KIWI",
       "nature": "empirical",
-      "directness": "contextual"
+      "directness": "contextual",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "JAR-2021-stuber",
@@ -174,7 +186,8 @@
       "theme": "PCAOB inspection;accounting estimates",
       "projects": "PCAOB;IFRS",
       "nature": "empirical",
-      "directness": "foundational/indirect"
+      "directness": "foundational/indirect",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "BAR-2026-darcy",
@@ -191,7 +204,9 @@
       "theme": "LLM;construct validity;financial text",
       "projects": "PCAOB;KIWI;ISSB",
       "nature": "empirical/methods",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "publisher_page_spot_check_not_full_text_review",
+      "publisher_metadata_source_url": "https://www.sciencedirect.com/science/article/pii/S089083892600168X"
     },
     {
       "key": "IJIM-2024-handler",
@@ -208,7 +223,8 @@
       "theme": "LLM;decision-support;governance",
       "projects": "NAAIL;IFRS",
       "nature": "conceptual",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "IJAIS-2025-strat",
@@ -224,7 +240,9 @@
       "theme": "AI;accounting research;methods",
       "projects": "PCAOB;IFRS;ISSB",
       "nature": "framework",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "publisher_page_spot_check_not_full_text_review",
+      "publisher_metadata_source_url": "https://www.sciencedirect.com/science/article/pii/S1467089525000363"
     },
     {
       "key": "IJAIS-2025-fotoh",
@@ -240,7 +258,8 @@
       "theme": "LLM;audit ethics;human judgment",
       "projects": "PCAOB;KIWI",
       "nature": "mixed methods",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "IJAIS-2026-li",
@@ -258,7 +277,8 @@
       "theme": "LLM;continuous audit;evidence",
       "projects": "PCAOB;KIWI;NAAIL",
       "nature": "empirical",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "ARJ-2026-grey",
@@ -274,7 +294,8 @@
       "theme": "LLM;audit skepticism",
       "projects": "PCAOB;KIWI",
       "nature": "case study",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "AJAR-2026-lui",
@@ -289,7 +310,9 @@
       "theme": "AI disclosure;bank performance",
       "projects": "ISSB;SME;NAAIL",
       "nature": "empirical",
-      "directness": "AI disclosure only; NOT LLM"
+      "directness": "AI disclosure only; NOT LLM",
+      "bibliographic_verification_status": "publisher_page_spot_check_not_full_text_review",
+      "publisher_metadata_source_url": "https://doi.org/10.1108/AJAR-06-2025-0237"
     },
     {
       "key": "ESWA-2025-yan",
@@ -309,7 +332,8 @@
       "theme": "fine-tuning;PEFT;NLP",
       "projects": "POMELO;KIWI;NAAIL",
       "nature": "technical",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "ESWA-2026-amelio",
@@ -329,7 +353,8 @@
       "theme": "fine-tuning;knowledge graph;LLM",
       "projects": "POMELO;IFRS",
       "nature": "technical",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "ESWA-2026-navas",
@@ -346,7 +371,8 @@
       "theme": "fine-tuning;symbolic verification;contract reasoning",
       "projects": "IFRS;POMELO",
       "nature": "technical",
-      "directness": "direct"
+      "directness": "direct",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     },
     {
       "key": "JBR-2025-wobst",
@@ -362,7 +388,9 @@
       "theme": "construct validity;LLM;text analysis",
       "projects": "KIWI;ISSB",
       "nature": "methodological",
-      "directness": "contextual"
+      "directness": "contextual",
+      "bibliographic_verification_status": "crossref_and_publisher_review_pending"
     }
-  ]
+  ],
+  "verification_policy": "Spot checks cite accessible publisher pages and are limited to title/author/date/DOI where available; this is not a Crossref API audit of all records or a full-text scientific validity review."
 }

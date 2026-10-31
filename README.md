@@ -11,6 +11,8 @@
 
 [Audit inspection intelligence](research/programmes/PCAOB_INSPECTION_AGENTIC_AI.md) · [Standards-aware IFRS reasoning](research/programmes/IFRS_JUDGMENT_AGENTIC_AI.md) · [ISSB sustainability disclosure intelligence](research/programmes/ISSB_SUSTAINABILITY_AGENTIC_AI.md)
 
+**[Academic Evidence & Claim Quality Gates](research/literature/ACADEMIC_EVIDENCE_QUALITY_GATES.md)** — auditable DOI-to-project theory map, transparent research maturity, and fail-closed scientific integrity checks.
+
 **[Harvard Research References — LLM, Fine-Tuning, Agentic AI · FT50 / ABS 4–1](research/LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md)** — a DOI-linked living bibliography and Crossref API checking protocol; literature informs the research methods but does not certify every system claim.
 
 **[FT50-oriented scientific evidence and reproducible research protocols](research/FT50_RESEARCH_DESIGN_AND_EVIDENCE.md)** · [PCAOB study design](research/programmes/PCAOB_FT50_RESEARCH_PROTOCOL.md) · [IFRS study design](research/programmes/IFRS_FT50_RESEARCH_PROTOCOL.md) · [ISSB study design](research/programmes/ISSB_FT50_RESEARCH_PROTOCOL.md)

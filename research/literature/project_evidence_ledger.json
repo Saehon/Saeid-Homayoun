@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-10-31",
+  "policy": "Theoretical relevance is NOT empirical validation of a NAAIL product; no licensed data copied; no finished trial asserted.",
+  "project_claims": [
+    {
+      "id": "PCAOB-01",
+      "project": "PCAOB Inspection Intelligence",
+      "claim": "A source-linked research workflow can help formulate tests of audit evidence gaps.",
+      "evidence_keys": [
+        "JAR-2021-stuber",
+        "RAST-2022-fedyk",
+        "IJAIS-2025-fotoh"
+      ],
+      "relationship": "context_and_method",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "Inspection report information is frequently firm-level; engagement-level deficiencies cannot be inferred without authorized evidence."
+    },
+    {
+      "id": "PCAOB-02",
+      "project": "PCAOB/KIWI",
+      "claim": "Human skepticism and false-positive costs should be evaluated when interpreting AI-generated audit alerts.",
+      "evidence_keys": [
+        "ARJ-2026-grey",
+        "IJAIS-2025-fotoh"
+      ],
+      "relationship": "methodological_motivation",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "A publication about AI skepticism does not establish real-world PCAOB inspection accuracy."
+    },
+    {
+      "id": "IFRS-01",
+      "project": "IFRS Judgment Intelligence",
+      "claim": "Numerical correctness, temporal leakage, and human-in-the-loop decisions warrant separate evaluation rubrics.",
+      "evidence_keys": [
+        "JAR-2026-levy",
+        "JAR-2026-choi",
+        "MS-2025-zhong"
+      ],
+      "relationship": "direct_methods",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "These studies do not certify particular IFRS treatments or production readiness."
+    },
+    {
+      "id": "IFRS-02",
+      "project": "POMELO/VERA",
+      "claim": "Source-grounded financial reporting and deterministic checks are motivated by published work on generative AI in disclosures.",
+      "evidence_keys": [
+        "JAR-2026-blankespoor",
+        "IJAIS-2025-strat"
+      ],
+      "relationship": "context_and_method",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "The underlying private implementation is not directly inspectable on public GitHub."
+    },
+    {
+      "id": "ISSB-01",
+      "project": "ISSB Sustainability Intelligence",
+      "claim": "AI-derived financial-disclosure measures require validation against independent coding and reporting incentives.",
+      "evidence_keys": [
+        "BAR-2026-darcy",
+        "JAR-2026-blankespoor",
+        "JBR-2025-wobst"
+      ],
+      "relationship": "construct_measurement_caution",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "Neither ISSB jurisdictional compliance nor sustainability assurance is established by the references."
+    },
+    {
+      "id": "ISSB-02",
+      "project": "ISSB / AI disclosure",
+      "claim": "AI disclosure is a distinct construct from actual AI adoption and operational capability.",
+      "evidence_keys": [
+        "AJAR-2026-lui"
+      ],
+      "relationship": "indirect_domain_context",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "The cited paper is on bank AI disclosure, not agentic AI or IFRS S1/S2."
+    },
+    {
+      "id": "KIWI-01",
+      "project": "KIWI CAM/KAM risk measures",
+      "claim": "Text classification may over-assign disclosure topics and needs construct-validity checks.",
+      "evidence_keys": [
+        "BAR-2026-darcy",
+        "JBR-2025-wobst"
+      ],
+      "relationship": "construct_measurement_caution",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "The literature does not validate KIWI's specific CAM-Q scoring weights."
+    },
+    {
+      "id": "NAAIL-01",
+      "project": "NAAIL multi-agent research governance",
+      "claim": "LLM-assisted scientific analysis requires traceable provenance, disclosure of AI use, human decisions and reproducibility.",
+      "evidence_keys": [
+        "ISR-2025-gopal",
+        "MS-2025-zhong"
+      ],
+      "relationship": "conceptual_and_methodological",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "Conceptual recommendations cannot certify implemented governance or prevent agent failures."
+    },
+    {
+      "id": "NAAIL-02",
+      "project": "NAAIL / DARWIN productivity",
+      "claim": "AI diffusion and delegation motivate studying implementation costs and organizational heterogeneity.",
+      "evidence_keys": [
+        "MS-2026-bick",
+        "ISR-2026-wang"
+      ],
+      "relationship": "indirect_context",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "Adoption descriptions are not causal evidence that NAAIL creates measurable cost savings."
+    },
+    {
+      "id": "FINE-01",
+      "project": "KIWI/POMELO fine-tuning research",
+      "claim": "Synthetic/real data balance and generalization risk must be tested before making fine-tuning performance claims.",
+      "evidence_keys": [
+        "MS-2026-zhang",
+        "ESWA-2025-yan"
+      ],
+      "relationship": "methods_and_caution",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "No real checkpoint, training manifest or clean evaluation holdout is supplied here."
+    },
+    {
+      "id": "FINE-02",
+      "project": "POMELO knowledge graph / structured reasoning",
+      "claim": "Knowledge-graph and logical-verification approaches motivate alternative implementations of model adaptation.",
+      "evidence_keys": [
+        "ESWA-2026-amelio",
+        "ESWA-2026-navas"
+      ],
+      "relationship": "methodological_motivation",
+      "empirical_status": "NOT_TESTED_IN_THIS_REPOSITORY",
+      "uncertainty": "The cited methods have not been reproduced in this repository."
+    }
+  ]
+}
