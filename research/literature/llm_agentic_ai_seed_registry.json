@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0",
+  "updated_utc": "2026-10-31",
+  "status": "curated_nonexhaustive_requires_doi_api_check",
+  "journal_tier_source": "2024 AJG independent reproduction, confirm against authorized Chartered ABS guide",
+  "ft50_source": "Financial Times revised list April 2026",
+  "records": [
+    {
+      "key": "JAR-2026-blankespoor",
+      "authors": [
+        "Elizabeth Blankespoor",
+        "Ed deHaan",
+        "Qianqian Li"
+      ],
+      "year": 2026,
+      "title": "Generative AI in Financial Reporting",
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679x.70050",
+      "tier": "FT50 | AJG 4*",
+      "theme": "LLM;disclosure;measurement",
+      "projects": "IFRS;ISSB;NAAIL",
+      "nature": "empirical",
+      "directness": "direct"
+    },
+    {
+      "key": "JAR-2026-choi",
+      "authors": [
+        "Jung Ho Choi",
+        "Chloe L. Xie"
+      ],
+      "year": 2026,
+      "title": "Human + AI in Accounting: Early Evidence from the Field",
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679x.70052",
+      "tier": "FT50 | AJG 4*",
+      "theme": "LLM;human oversight;accounting",
+      "projects": "IFRS;PCAOB;NAAIL",
+      "nature": "field evidence",
+      "directness": "direct"
+    },
+    {
+      "key": "JAR-2026-levy",
+      "authors": [
+        "Bradford Levy"
+      ],
+      "year": 2026,
+      "title": "Caution Ahead: Numerical Reasoning and Look-Ahead Bias in AI Models",
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679x.70058",
+      "tier": "FT50 | AJG 4*",
+      "theme": "LLM;look-ahead;temporal validity",
+      "projects": "IFRS;PCAOB;ISSB",
+      "nature": "methodological",
+      "directness": "direct"
+    },
+    {
+      "key": "MS-2026-zhang",
+      "authors": [
+        "Jinghui Zhang",
+        "Mochen Yang",
+        "Dandan Qiao",
+        "Qiang Wei"
+      ],
+      "year": 2026,
+      "title": "Regurgitative Training: The Value of Real Data in Training Large Language Models",
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2024.07005",
+      "tier": "FT50 | AJG 4*",
+      "theme": "fine-tuning;synthetic data;training validity",
+      "projects": "NAAIL;POMELO;KIWI",
+      "nature": "empirical/experimental",
+      "directness": "direct"
+    },
+    {
+      "key": "MS-2025-zhong",
+      "authors": [
+        "Hongda Zhong"
+      ],
+      "year": 2025,
+      "title": "Optimal Integration: Human, Machine, and Generative AI",
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2024.07401",
+      "tier": "FT50 | AJG 4*",
+      "theme": "human oversight;delegation;AI",
+      "projects": "PCAOB;IFRS;ISSB",
+      "nature": "theory/model",
+      "directness": "direct"
+    },
+    {
+      "key": "ISR-2025-gopal",
+      "authors": [
+        "Ram D. Gopal",
+        "Jingjing Li",
+        "Kai Riemer",
+        "Suprateek Sarker",
+        "Param Vir Singh",
+        "Anjana Susarla",
+        "Martin Bichler",
+        "Jason Bennett Thatcher"
+      ],
+      "year": 2025,
+      "title": "Inventing with Machines: Generative AI and the Evolving Landscape of IS Research",
+      "journal": "Information Systems Research",
+      "doi": "10.1287/isre.2025.editorial.v36.n4",
+      "tier": "FT50 | AJG 4*",
+      "theme": "agentic AI;multiagent;research governance",
+      "projects": "NAAIL;DARWIN;POMELO",
+      "nature": "editorial/conceptual",
+      "directness": "direct"
+    },
+    {
+      "key": "ISR-2026-wang",
+      "authors": [
+        "Wen Wang",
+        "Siqi Pei",
+        "Tianshu Sun"
+      ],
+      "year": 2026,
+      "title": "Unraveling Generative AI from a Human Intelligence Perspective: A Battery of Experiments",
+      "journal": "Information Systems Research",
+      "doi": "10.1287/isre.2023.0487",
+      "tier": "FT50 | AJG 4*",
+      "theme": "LLM;human intelligence;experiments",
+      "projects": "IFRS;NAAIL",
+      "nature": "experimental",
+      "directness": "direct"
+    },
+    {
+      "key": "MS-2026-bick",
+      "authors": [
+        "Alexander Bick",
+        "Adam Blandin",
+        "David J. Deming"
+      ],
+      "year": 2026,
+      "title": "The Rapid Adoption of Generative AI",
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2025.02523",
+      "tier": "FT50 | AJG 4*",
+      "theme": "AI adoption;productivity",
+      "projects": "SME;NAAIL",
+      "nature": "empirical",
+      "directness": "contextual"
+    },
+    {
+      "key": "RAST-2022-fedyk",
+      "authors": [
+        "Anastassia Fedyk",
+        "James Hodson",
+        "Natalia Khimich",
+        "Taras Fedyk"
+      ],
+      "year": 2022,
+      "title": "Is artificial intelligence improving the audit process?",
+      "journal": "Review of Accounting Studies",
+      "doi": "10.1007/s11142-022-09697-x",
+      "tier": "FT50 | AJG 4",
+      "theme": "AI auditing;process quality",
+      "projects": "PCAOB;KIWI",
+      "nature": "empirical",
+      "directness": "contextual"
+    },
+    {
+      "key": "JAR-2021-stuber",
+      "authors": [
+        "Stephen B. Stuber",
+        "Chris E. Hogan"
+      ],
+      "year": 2021,
+      "title": "Do PCAOB Inspections Improve the Accuracy of Accounting Estimates?",
+      "journal": "Journal of Accounting Research",
+      "doi": "10.1111/1475-679X.12339",
+      "tier": "FT50 | AJG 4*",
+      "theme": "PCAOB inspection;accounting estimates",
+      "projects": "PCAOB;IFRS",
+      "nature": "empirical",
+      "directness": "foundational/indirect"
+    },
+    {
+      "key": "BAR-2026-darcy",
+      "authors": [
+        "Anne d'Arcy",
+        "Christian Haas",
+        "Nicolaus Wallner"
+      ],
+      "year": 2026,
+      "title": "Large Language Models as Research Assistants: The Risk of Topic-Overclassification in Financial Disclosure Research",
+      "journal": "The British Accounting Review",
+      "doi": "10.1016/j.bar.2026.101986",
+      "tier": "AJG 3",
+      "theme": "LLM;construct validity;financial text",
+      "projects": "PCAOB;KIWI;ISSB",
+      "nature": "empirical/methods",
+      "directness": "direct"
+    },
+    {
+      "key": "IJIM-2024-handler",
+      "authors": [
+        "Abram Handler",
+        "Kai R. Larsen",
+        "Richard Hackathorn"
+      ],
+      "year": 2024,
+      "title": "Large language models present new questions for decision support",
+      "journal": "International Journal of Information Management",
+      "doi": "10.1016/j.ijinfomgt.2024.102811",
+      "tier": "AJG grade pending official check",
+      "theme": "LLM;decision-support;governance",
+      "projects": "NAAIL;IFRS",
+      "nature": "conceptual",
+      "directness": "direct"
+    },
+    {
+      "key": "IJAIS-2025-strat",
+      "authors": [
+        "Theophanis C. Stratopoulos",
+        "Victor Xiaoqi Wang"
+      ],
+      "year": 2025,
+      "title": "Artificial intelligence and accounting research: a framework and agenda",
+      "journal": "International Journal of Accounting Information Systems",
+      "doi": "10.1016/j.accinf.2025.100760",
+      "tier": "AJG 2",
+      "theme": "AI;accounting research;methods",
+      "projects": "PCAOB;IFRS;ISSB",
+      "nature": "framework",
+      "directness": "direct"
+    },
+    {
+      "key": "IJAIS-2025-fotoh",
+      "authors": [
+        "Lazarus Elad Fotoh",
+        "Tatenda Mugwira"
+      ],
+      "year": 2025,
+      "title": "Exploring Large Language Models in external audits: Implications and ethical considerations",
+      "journal": "International Journal of Accounting Information Systems",
+      "doi": "10.1016/j.accinf.2025.100748",
+      "tier": "AJG 2",
+      "theme": "LLM;audit ethics;human judgment",
+      "projects": "PCAOB;KIWI",
+      "nature": "mixed methods",
+      "directness": "direct"
+    },
+    {
+      "key": "IJAIS-2026-li",
+      "authors": [
+        "Huaxia Li",
+        "Marcelo Machado de Freitas",
+        "Heejae (Erica) Lee",
+        "Miklos A. Vasarhelyi"
+      ],
+      "year": 2026,
+      "title": "Enhancing continuous auditing with large language models: AI-assisted real-time accounting information cross-verification",
+      "journal": "International Journal of Accounting Information Systems",
+      "doi": "10.1016/j.accinf.2026.100786",
+      "tier": "AJG 2",
+      "theme": "LLM;continuous audit;evidence",
+      "projects": "PCAOB;KIWI;NAAIL",
+      "nature": "empirical",
+      "directness": "direct"
+    },
+    {
+      "key": "ARJ-2026-grey",
+      "authors": [
+        "Lane F. Grey",
+        "Yueqi Li"
+      ],
+      "year": 2026,
+      "title": "Can ChatGPT be skeptical? A case-based evaluation of generative AI in financial statement auditing",
+      "journal": "Accounting Research Journal",
+      "doi": "10.1108/ARJ-12-2025-0527",
+      "tier": "AJG 2",
+      "theme": "LLM;audit skepticism",
+      "projects": "PCAOB;KIWI",
+      "nature": "case study",
+      "directness": "direct"
+    },
+    {
+      "key": "AJAR-2026-lui",
+      "authors": [
+        "Tze Kiat Lui"
+      ],
+      "year": 2026,
+      "title": "From black box to bottom line: the role of AI disclosure in bank performance in Malaysia",
+      "journal": "Asian Journal of Accounting Research",
+      "doi": "10.1108/AJAR-06-2025-0237",
+      "tier": "AJG 1",
+      "theme": "AI disclosure;bank performance",
+      "projects": "ISSB;SME;NAAIL",
+      "nature": "empirical",
+      "directness": "AI disclosure only; NOT LLM"
+    },
+    {
+      "key": "ESWA-2025-yan",
+      "authors": [
+        "Yaoyao Yan",
+        "Hui Yu",
+        "Da Wang",
+        "Jing Ye",
+        "Fang'ai Liu",
+        "Weizhi Xu"
+      ],
+      "year": 2025,
+      "title": "STP: Special token prompt for parameter-efficient tuning of pre-trained language models",
+      "journal": "Expert Systems with Applications",
+      "doi": "10.1016/j.eswa.2025.127665",
+      "tier": "AJG classification not verified",
+      "theme": "fine-tuning;PEFT;NLP",
+      "projects": "POMELO;KIWI;NAAIL",
+      "nature": "technical",
+      "directness": "direct"
+    },
+    {
+      "key": "ESWA-2026-amelio",
+      "authors": [
+        "Alessia Amelio",
+        "Christopher Buratti",
+        "Michele Marchetti",
+        "Davide Traini",
+        "Domenico Ursino",
+        "Luca Virgili"
+      ],
+      "year": 2026,
+      "title": "Exploiting knowledge graph communities to fine-tune large language models",
+      "journal": "Expert Systems with Applications",
+      "doi": "10.1016/j.eswa.2025.129816",
+      "tier": "AJG classification not verified",
+      "theme": "fine-tuning;knowledge graph;LLM",
+      "projects": "POMELO;IFRS",
+      "nature": "technical",
+      "directness": "direct"
+    },
+    {
+      "key": "ESWA-2026-navas",
+      "authors": [
+        "María Navas-Loro",
+        "Hideaki Takeda",
+        "Ken Satoh"
+      ],
+      "year": 2026,
+      "title": "Large Language Models for translating contract-related texts to logical predicates: Prompting, fine-tuning or dedicated library?",
+      "journal": "Expert Systems with Applications",
+      "doi": "10.1016/j.eswa.2025.131031",
+      "tier": "AJG classification not verified",
+      "theme": "fine-tuning;symbolic verification;contract reasoning",
+      "projects": "IFRS;POMELO",
+      "nature": "technical",
+      "directness": "direct"
+    },
+    {
+      "key": "JBR-2025-wobst",
+      "authors": [
+        "Janice Wobst",
+        "Rainer Lueg"
+      ],
+      "year": 2025,
+      "title": "Avoiding algorithm errors in textual analysis: A guide to selecting software, and a research agenda toward generative artificial intelligence",
+      "journal": "Journal of Business Research",
+      "doi": "10.1016/j.jbusres.2025.115571",
+      "tier": "AJG classification not independently checked",
+      "theme": "construct validity;LLM;text analysis",
+      "projects": "KIWI;ISSB",
+      "nature": "methodological",
+      "directness": "contextual"
+    }
+  ]
+}

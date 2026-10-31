@@ -6,6 +6,10 @@
 
 > **Research in progress.** The **primary working documents, developing scientific studies, and substantive research materials are maintained in my personal, access-controlled Google Drive**. This GitHub page is a curated **public research overview**, not the full internal record. Some programme implementations and supporting materials remain private; the components below vary in maturity and are **not represented as validated regulatory software**.
 
+## Academic literature and theory validation
+
+[**Central Harvard-style LLM / Fine-Tuning / Agentic AI reference registry**](LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md) — DOI-linked records spanning FT50 and AJG journal groups; bibliographic API checks; research programme relevance; and explicit distinction between theoretical motivation and independently supported empirical findings.
+
 ## FT50 journal-oriented scientific development
 
 The **existing NAAIL two-core, three-domain, human-governed Agentic AI framework is preserved without architectural changes**. Its new [**FT50 research-design and evidence companion**](FT50_RESEARCH_DESIGN_AND_EVIDENCE.md) connects each specialist track to *The Accounting Review*, *Journal of Accounting Research*, *Journal of Accounting and Economics*, *Accounting, Organizations and Society*, *Contemporary Accounting Research*, and *Review of Accounting Studies*.

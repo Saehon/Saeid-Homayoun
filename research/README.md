@@ -21,6 +21,10 @@ This is an **independent academic research and education portfolio**. Model prov
 
 These are **ongoing research programmes**, not confirmed regulatory products. Principal substantive working materials remain in private, access-controlled Google Drive; the links identify inspectable public research descriptions and software.
 
+## Central Harvard literature registry — LLM, fine-tuning and agentic AI
+
+[**DOI-linked Harvard academic references across FT50 and AJG 4*/4/3/2/1**](LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md), with a conservative project-to-theory map and optional [Crossref API metadata audit](literature/harvard_crossref.py). The current seeded list is **curated, not exhaustive**; verified publication metadata does not mean the referenced papers experimentally validate every NAAIL or POMELO result.
+
 ## FT50-aligned accounting and assurance research methods
 
 [**Peer-reviewed literature and research design for PCAOB, IFRS and ISSB Agentic AI**](FT50_RESEARCH_DESIGN_AND_EVIDENCE.md) — explicit theory, hypotheses, construct tables, data rights, journal-fit boundaries, identification strategies, falsification and replication requirements. The **original NAAIL research architecture and domain tracks are unchanged**.

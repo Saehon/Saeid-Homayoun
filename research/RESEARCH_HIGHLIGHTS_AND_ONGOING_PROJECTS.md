@@ -22,6 +22,10 @@ The research spans financial-reporting decisions, Critical and Key Audit Matters
 
 The programmes connect **PCAOB auditing/inspection research, IASB financial-reporting standards, and ISSB sustainability disclosures** through common *evidence passports, temporal and jurisdictional controls, independent falsification and qualified human review*. These frameworks have **different authorities and scopes**. All three research tracks remain in development; their primary working materials are maintained in the investigator's **private, access-controlled personal Google Drive**. The pages describe public research objectives and methods, not completed regulatory inspections or certified assurance systems.
 
+## Harvard-referenced academic research foundation
+
+[**LLM, Fine-tuning & Agentic AI — Harvard academic reference hub**](LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md) supports scholarly exploration across NAAIL, PCAOB/ICFR, IFRS, ISSB, CAM/KAM and agentic-model governance. The register provides DOI-linked publications, documented journal-tier uncertainty, and an optional Crossref metadata audit. References are **context, theoretical motivation or methodological evidence**, not blanket proof that every software module or prediction is correct.
+
 ## FT50-oriented research protocols and scientific validation
 
 The established PCAOB–IFRS–ISSB research framework is supported by an additional [**FT50 research design and peer-reviewed evidence companion**](FT50_RESEARCH_DESIGN_AND_EVIDENCE.md) and three focused protocols: [PCAOB](programmes/PCAOB_FT50_RESEARCH_PROTOCOL.md), [IFRS](programmes/IFRS_FT50_RESEARCH_PROTOCOL.md), and [ISSB](programmes/ISSB_FT50_RESEARCH_PROTOCOL.md).
