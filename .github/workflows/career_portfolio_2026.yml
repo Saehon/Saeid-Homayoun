@@ -46,6 +46,19 @@ jobs:
             module="${module//\//.}"
             python -m "$module" --out "reports/${slug}.json"
           done
+      - name: Dry-run OpenAI Gemini Claude without external API calls
+        shell: bash
+        run: |
+          set -eu
+          for provider in openai gemini anthropic; do
+            python -m portfolio_roles.google_finance_eval.live_provider_eval \
+              --cases portfolio_roles/google_finance_eval/fixtures/synthetic_live_cases.jsonl \
+              --schema synthetic --provider "$provider" --model example-model \
+              --max-cases 2 --max-output-tokens 200 \
+              --input-usd-per-million 1 --output-usd-per-million 1 \
+              --price-source "SYNTHETIC-ONLY-NOT-REAL-PRICING" \
+              --max-usd 0.25 --out "reports/google_finance_eval_${provider}_dryrun.json"
+          done
       - name: Attach reports to this GitHub Actions run
         uses: actions/upload-artifact@v4
         with:
