@@ -22,6 +22,12 @@ The research spans financial-reporting decisions, Critical and Key Audit Matters
 
 The programmes connect **PCAOB auditing/inspection research, IASB financial-reporting standards, and ISSB sustainability disclosures** through common *evidence passports, temporal and jurisdictional controls, independent falsification and qualified human review*. These frameworks have **different authorities and scopes**. All three research tracks remain in development; their primary working materials are maintained in the investigator's **private, access-controlled personal Google Drive**. The pages describe public research objectives and methods, not completed regulatory inspections or certified assurance systems.
 
+## FT50-oriented research protocols and scientific validation
+
+The established PCAOB–IFRS–ISSB research framework is supported by an additional [**FT50 research design and peer-reviewed evidence companion**](FT50_RESEARCH_DESIGN_AND_EVIDENCE.md) and three focused protocols: [PCAOB](programmes/PCAOB_FT50_RESEARCH_PROTOCOL.md), [IFRS](programmes/IFRS_FT50_RESEARCH_PROTOCOL.md), and [ISSB](programmes/ISSB_FT50_RESEARCH_PROTOCOL.md).
+
+The new protocols link the programmes to verified scholarship in **TAR, JAR, JAE, AOS, CAR, and RAST** and specify testable mechanisms, data and measurement units, independent gold labels, economically meaningful outcomes, preregistration, causal identification limits and falsification. **FT50 alignment describes research design quality, not journal acceptance or empirical verification.** The projects remain in progress; underlying working manuscripts and substantive project files remain in private, access-controlled Google Drive.
+
 ## Selected research programmes
 
 | Programme | Research direction | What is publicly inspectable | Current boundary |
