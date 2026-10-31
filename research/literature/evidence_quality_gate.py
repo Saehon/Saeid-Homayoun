@@ -41,6 +41,19 @@ def audit(registry, ledger, markdown):
     records = validate_registry(registry)
     if not isinstance(markdown, str):
         raise ValueError("expected markdown text")
+    for row in records:
+        status = row.get("bibliographic_verification_status")
+        if status not in (
+            "publisher_page_spot_check_not_full_text_review",
+            "crossref_and_publisher_review_pending",
+        ):
+            raise ValueError("invalid or missing bibliographic verification state")
+        url = row.get("publisher_metadata_source_url")
+        if status == "publisher_page_spot_check_not_full_text_review":
+            if not isinstance(url, str) or not url.startswith("https://"):
+                raise ValueError("publisher check requires a traceable HTTPS source")
+        elif url:
+            raise ValueError("unreviewed citation cannot advertise publisher-checked source")
     by_key = {r["key"]: r for r in records}
     if len(by_key) != len(records):
         raise ValueError("duplicate key")
@@ -114,6 +127,12 @@ def audit(registry, ledger, markdown):
         "all_project_hypotheses_empirically_supported": False,
         "nonexhaustive_literature": True,
         "bibliographic_records": len(records),
+        "publisher_page_spot_checks": sum(
+            r["bibliographic_verification_status"] ==
+            "publisher_page_spot_check_not_full_text_review" for r in records),
+        "records_pending_crossref_and_publisher_review": sum(
+            r["bibliographic_verification_status"] ==
+            "crossref_and_publisher_review_pending" for r in records),
         "public_harvard_references": len(refs),
         "tracked_project_claims": len(claims),
         "unique_cited_sources_in_claim_ledger": len(mapped),
