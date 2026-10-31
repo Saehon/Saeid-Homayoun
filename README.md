@@ -5,6 +5,12 @@
 
 ### Research by Saeid Homayoun
 
+[![Scientific Python Reproducibility](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific-python-reproducibility.yml/badge.svg)](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific-python-reproducibility.yml)
+
+**Research evidence:** [Peer-reviewed scholarship and book](research/SELECTED_PUBLICATIONS.md) · [Source-linked LLM evaluation standards](research/LLM_BENCHMARKS_AND_EVALUATION.md) · [Human-review protocol](research/ANNOTATION_AND_ADJUDICATION_PROTOCOL.md) · [Testable Python research software](research/ai_evidence_evaluation/README.md)
+
+
+
 **Accounting & Auditing · Large Language Models · Financial NLP · Agentic AI · Responsible AI · Reproducible Science**
 
 I investigate how artificial intelligence can contribute to accounting, auditing, financial reporting and sustainable business **without obscuring the underlying evidence or replacing professional judgment**.
