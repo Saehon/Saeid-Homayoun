@@ -13,6 +13,14 @@ This is an **independent academic research and education portfolio**. Model prov
 
 **Research status and primary working material:** The featured programmes remain under active development. Their primary working documents and substantive research materials are maintained in a private, access-controlled personal Google Drive. The public GitHub repository contains selected research outputs, versioned software and open methodology rather than the full working archive.
 
+## Featured interdisciplinary research
+
+[**PCAOB Inspection, IFRS Financial Reporting, and ISSB Sustainability with Agentic AI**](AGENTIC_AI_ASSURANCE_RESEARCH.md) — a connected programme addressing audit evidence, accounting judgment, sustainability disclosure, adversarial model evaluation and professional human oversight.
+
+[**PCAOB research track**](programmes/PCAOB_INSPECTION_AGENTIC_AI.md) · [**IFRS research track**](programmes/IFRS_JUDGMENT_AGENTIC_AI.md) · [**ISSB research track**](programmes/ISSB_SUSTAINABILITY_AGENTIC_AI.md)
+
+These are **ongoing research programmes**, not confirmed regulatory products. Principal substantive working materials remain in private, access-controlled Google Drive; the links identify inspectable public research descriptions and software.
+
 ## Research themes
 
 | Theme | Scientific questions and methods | Research materials |
