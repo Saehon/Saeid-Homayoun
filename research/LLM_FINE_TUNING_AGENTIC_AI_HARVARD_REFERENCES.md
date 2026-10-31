@@ -8,6 +8,14 @@
 
 > **Evidence-integrity statement:** Relevant scholarly articles **inform or motivate the theoretical, methodological and governance design** of the GitHub research programmes. They **do not demonstrate that every proposed hypothesis, agent architecture, model result or scientific claim in this account has been independently tested or supported**. Some references are methodological cautions, some are domain-specific empirical evidence, and some are indirect background. Every project retains its existing architecture and human professional approval boundaries.
 
+## Evidence integrity controls — publication references are not project validation
+
+The [**Academic Evidence Integrity and Release Gates**](literature/ACADEMIC_EVIDENCE_QUALITY_GATES.md) describe how research support is **bounded, inspectable and tested**. A [machine-readable claims-to-sources ledger](literature/project_evidence_ledger.json) records **11 specific research-programme claims**, exact reference keys, degree of theoretical/methodological relevance, missing evidence, and the explicit status **NOT_TESTED_IN_THIS_REPOSITORY**.
+
+The [offline evidence gate](literature/evidence_quality_gate.py) will fail GitHub CI if a listed Harvard author/year/title/journal/DOI drifts from its structured record, or if a project claim references an unknown source, omits limitations or is incorrectly presented as empirically verified. Passing this check **does not prove DOI publisher metadata, journal ranking, full-text content or any program's performance**.
+
+**Source-check status:** a subset of article metadata has been independently cross-checked against publisher websites; the full 21-item seed list has **not** completed a recorded Crossref API round-trip, official AJG license-based classification review, systematic literature screening or comprehensive full-text adjudication. References remain provisional for manuscript citation until individually checked.
+
 ## Navigate the evidence
 
 - **[FT50 empirical and conceptual research protocols](FT50_RESEARCH_DESIGN_AND_EVIDENCE.md)** — identification, falsification, theory and research designs.
