@@ -7,6 +7,12 @@ I study how **large language models (LLMs), financial NLP, machine learning, mul
 
 This is an **independent academic research and education portfolio**. Model providers, universities, professional bodies, audit firms and standards setters mentioned in scientific literature are not implied to sponsor or endorse this repository.
 
+## Research highlights and work in progress
+
+[**Explore the featured research programmes, current scientific status, and access boundaries**](RESEARCH_HIGHLIGHTS_AND_ONGOING_PROJECTS.md).
+
+**Research status and primary working material:** The featured programmes remain under active development. Their primary working documents and substantive research materials are maintained in a private, access-controlled personal Google Drive. The public GitHub repository contains selected research outputs, versioned software and open methodology rather than the full working archive.
+
 ## Research themes
 
 | Theme | Scientific questions and methods | Research materials |

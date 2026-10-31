@@ -24,6 +24,12 @@ I am an accounting researcher at the University of Gävle, Sweden. My work conne
 
 These materials are for reproducible science. A synthetic test is not an independent model-performance or professional assurance claim.
 
+### Featured research in progress
+
+[**Research Highlights & Ongoing Projects**](https://github.com/Saehon/Saeid-Homayoun/blob/main/research/RESEARCH_HIGHLIGHTS_AND_ONGOING_PROJECTS.md) — NAAIL OpenLab, KIWI CAM/KAM intelligence, IFRS-AI Inspector, financial LLM evaluation, and POMELO/VERA architectures.
+
+**Research status:** The programmes are actively developing. Their primary working research materials are held in my **private, access-controlled Google Drive**; GitHub shares selected public research descriptions, code and reproducibility protocols. No private working documents are publicly accessible through these links.
+
 ### Explore the research
 
 - [Research portfolio and scientific methods](https://github.com/Saehon/Saeid-Homayoun/tree/main/research)

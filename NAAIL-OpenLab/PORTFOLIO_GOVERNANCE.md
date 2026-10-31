@@ -8,7 +8,9 @@
 
 NAAIL OpenLab™ is the umbrella architecture. KIWI™, POMELO™, VERA™, ECONOVA-S™, IFRS/PCAOB agents, ICFR/TimesFM, Research Lab, Audit Agent Lab, Student Lab, ESG Intelligence, and Forensic Intelligence are specialist modules or research families under the umbrella; they are not competing top-level platforms.
 
-GitHub is the canonical source of truth. Google Drive is a mirror/archive. Private repositories may contain pre-release, IP-sensitive, provider-specific, restricted-data, or experimental implementation and must not be treated as public release evidence.
+**Public/private record boundary:** GitHub is the canonical source of truth for **publicly released code, research snapshots, versioned protocols and public governance claims**. The investigator's **primary working research documents and substantive project materials are maintained in a private, access-controlled personal Google Drive**. That private Drive is a working research archive, not an automatically public source, and GitHub does not purport to reproduce its complete contents. Some released artefacts may also be mirrored or archived in Drive. Private repositories may contain pre-release, IP-sensitive, provider-specific, restricted-data or experimental implementations and must not be treated as public release evidence.
+
+**Public status:** Featured programmes are actively developing. A roadmap, proposal, or software test does not by itself establish complete research execution, independent validation, regulatory compliance, or publishable empirical findings. Public research highlights must link only to inspectable public evidence and must never reveal private Drive file identifiers, datasets, or credentials.
 
 ## Repository classifications
 

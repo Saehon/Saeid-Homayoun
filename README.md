@@ -5,6 +5,14 @@
 
 ### Research by Saeid Homayoun
 
+**[Research Highlights & Ongoing Projects — Explore the programme](research/RESEARCH_HIGHLIGHTS_AND_ONGOING_PROJECTS.md)**
+
+Research across **LLM evaluation, agentic AI, auditing, financial reporting, internal control and sustainability**. Selected programmes include NAAIL OpenLab™, KIWI™, IFRS-AI Inspector, and private-core POMELO™/VERA™ research.
+
+> **Active research and private working archive:** These programmes are **in progress**. Their **primary working materials and substantive research documentation are maintained in my personal, access-controlled Google Drive**. GitHub presents selected public-safe research summaries, code, tests, and methodology; it is not a complete record of the private research, and the presence of a public prototype does not establish final scientific validation.
+
+
+
 [![Scientific Python Reproducibility](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific-python-reproducibility.yml/badge.svg)](https://github.com/Saehon/Saeid-Homayoun/actions/workflows/scientific-python-reproducibility.yml)
 
 **Research evidence:** [Peer-reviewed scholarship and book](research/SELECTED_PUBLICATIONS.md) · [Source-linked LLM evaluation standards](research/LLM_BENCHMARKS_AND_EVALUATION.md) · [Human-review protocol](research/ANNOTATION_AND_ADJUDICATION_PROTOCOL.md) · [Testable Python research software](research/ai_evidence_evaluation/README.md)
