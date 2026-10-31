@@ -24,6 +24,12 @@ I am an accounting researcher at the University of Gävle, Sweden. My work conne
 
 These materials are for reproducible science. A synthetic test is not an independent model-performance or professional assurance claim.
 
+### Agentic AI for professional assurance and disclosure research
+
+[**PCAOB Inspection, IFRS Judgment and ISSB Sustainability Intelligence**](https://github.com/Saehon/Saeid-Homayoun/blob/main/research/AGENTIC_AI_ASSURANCE_RESEARCH.md)
+
+Three connected research tracks address audit-evidence traceability, time-aware financial-reporting judgments, and sustainability-related financial disclosures through governed multi-agent reasoning, adversarial checks and qualified professional oversight. The research is ongoing; primary working documents are held in private Google Drive and public pages contain only released, appropriately bounded evidence.
+
 ### Featured research in progress
 
 [**Research Highlights & Ongoing Projects**](https://github.com/Saehon/Saeid-Homayoun/blob/main/research/RESEARCH_HIGHLIGHTS_AND_ONGOING_PROJECTS.md) — NAAIL OpenLab, KIWI CAM/KAM intelligence, IFRS-AI Inspector, financial LLM evaluation, and POMELO/VERA architectures.

@@ -12,6 +12,16 @@ The research spans financial-reporting decisions, Critical and Key Audit Matters
 
 > **Research in progress — private working materials.** These projects are **actively evolving**. The **primary working materials and substantive project documentation are maintained in my personal, access-controlled Google Drive**, including detailed research drafts, internal analysis materials, supporting research records, and evolving project plans. **They are not publicly accessible through this GitHub repository.** GitHub provides selected public-safe research descriptions, versioned software, evaluation protocols, and reproducibility materials. Public repository contents should not be interpreted as the complete project, a final research outcome, an independent validation, or a production-ready system.
 
+## Featured: PCAOB, IFRS and ISSB integrated with Agentic AI
+
+**[Explore the integrated research architecture and the three specialist research tracks](AGENTIC_AI_ASSURANCE_RESEARCH.md)**
+
+- **[PCAOB Inspection Intelligence](programmes/PCAOB_INSPECTION_AGENTIC_AI.md):** evidence-oriented inspection research, risk–response correspondence, CAM/ICFR analyses, adversarial critique and reviewer escalation.
+- **[IFRS Judgment Intelligence](programmes/IFRS_JUDGMENT_AGENTIC_AI.md):** standards-aware accounting judgments, applicable-version resolution, deterministic checks and human-governed agent workflows.
+- **[ISSB Sustainability Intelligence](programmes/ISSB_SUSTAINABILITY_AGENTIC_AI.md):** IFRS S1/S2 disclosure quality, financial connectedness, climate-related information and a distinct sustainability assurance boundary.
+
+The programmes connect **PCAOB auditing/inspection research, IASB financial-reporting standards, and ISSB sustainability disclosures** through common *evidence passports, temporal and jurisdictional controls, independent falsification and qualified human review*. These frameworks have **different authorities and scopes**. All three research tracks remain in development; their primary working materials are maintained in the investigator's **private, access-controlled personal Google Drive**. The pages describe public research objectives and methods, not completed regulatory inspections or certified assurance systems.
+
 ## Selected research programmes
 
 | Programme | Research direction | What is publicly inspectable | Current boundary |
