@@ -2,7 +2,7 @@
 
 **Purpose:** turn the NAAIL research literature index into an **auditable scholarly evidence system**, without replacing the existing NAAIL/PCAOB/IFRS/ISSB framework or presenting a literature search as a completed empirical research study.
 
-**Evidence scope:** 21 *seed* references across selected FT50/AJG groups as of 31 October 2026; 11 bounded project-to-literature relationship statements. **Not** an exhaustive FT50/AJG 1–4 census. The primary working research documents remain in the investigator's **private, access-controlled personal Google Drive**; the GitHub site releases only public-safe research documentation and code.
+**Evidence scope:** 21 *seed* references across selected FT50/AJG groups as of 31 October 2026 (**6 publisher-page bibliographic spot-checks; 15 still requiring review**); 11 bounded project-to-literature relationship statements. **Not** an exhaustive FT50/AJG 1–4 census. The primary working research documents remain in the investigator's **private, access-controlled personal Google Drive**; the GitHub site releases only public-safe research documentation and code.
 
 ## Why scholarly integrity requires more than references
 
