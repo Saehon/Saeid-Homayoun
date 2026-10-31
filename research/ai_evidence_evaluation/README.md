@@ -19,6 +19,10 @@ The documented methodology follows [OpenAI, Anthropic, Google, FinanceBench, Ins
 
 Actual GPT, Claude or Gemini outputs can be evaluated **only after** collection with lawful data rights, contemporaneous model/run records and independent review. This public repository contains *no such empirical outputs*.
 
+### Human evidence-grounding protocol
+
+The [annotation and adjudication protocol](../ANNOTATION_AND_ADJUDICATION_PROTOCOL.md) adds a two-reviewer *synthetic simulation* with an explicit rubric, confusion matrix, disagreement flags and adjudication coverage. Its reviewer IDs are simulated; an empirical use would require real, independent expert raters and source-document entailment assessment.
+
 ### Reproduce
 
 Python 3.10+ from repository root:
