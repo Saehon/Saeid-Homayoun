@@ -20,14 +20,36 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Run all included synthetic demonstrations
+      - name: Compile independently authored portfolio code
+        run: python -m compileall -q portfolio_roles
+      - name: Run deterministic and contract unit tests
         shell: bash
         run: |
-          found=0
-          for test_dir in portfolio_roles/*/tests; do
+          shopt -s nullglob
+          dirs=(portfolio_roles/*/tests)
+          test "${#dirs[@]}" -gt 0
+          for test_dir in "${dirs[@]}"; do
             if [ -d "$test_dir" ]; then
-              found=1
               python -m unittest discover -s "$test_dir" -p 'test_*.py' -v
             fi
           done
-          test "$found" -eq 1
+      - name: Produce reproducible synthetic benchmark reports
+        shell: bash
+        run: |
+          shopt -s nullglob
+          mkdir -p reports
+          benchmarks=(portfolio_roles/*/benchmark.py)
+          test "${#benchmarks[@]}" -gt 0
+          for file in "${benchmarks[@]}"; do
+            slug="$(basename "$(dirname "$file")")"
+            module="${file%.py}"
+            module="${module//\//.}"
+            python -m "$module" --out "reports/${slug}.json"
+          done
+      - name: Attach reports to this GitHub Actions run
+        uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-career-evaluation-report
+          path: reports/*.json
+          retention-days: 30
+          if-no-files-found: error
