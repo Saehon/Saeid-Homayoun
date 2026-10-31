@@ -21,6 +21,23 @@ class ScholarlyEvidenceQualityTests(unittest.TestCase):
         self.assertEqual(result["tracked_project_claims"], 11)
         self.assertFalse(result["all_project_hypotheses_empirically_supported"])
 
+    def test_spot_checked_vs_pending_counts_are_explicit(self):
+        report = audit(self.registry, self.ledger, self.page)
+        self.assertEqual(report["publisher_page_spot_checks"], 6)
+        self.assertEqual(report["records_pending_crossref_and_publisher_review"], 15)
+
+    def test_unsupported_publisher_verified_status_blocks(self):
+        bad = copy.deepcopy(self.registry)
+        bad["records"][0]["bibliographic_verification_status"] = "independently_replicated"
+        with self.assertRaisesRegex(ValueError, "bibliographic verification state"):
+            audit(bad, self.ledger, self.page)
+
+    def test_no_publisher_source_for_claimed_spot_check_blocks(self):
+        bad = copy.deepcopy(self.registry)
+        bad["records"][0].pop("publisher_metadata_source_url", None)
+        with self.assertRaisesRegex(ValueError, "traceable HTTPS source"):
+            audit(bad, self.ledger, self.page)
+
     def test_doi_replacement_in_public_page_blocks_release(self):
         text = self.page.replace("10.1111/1475-679x.70050", "10.1111/fake-doi", 1)
         with self.assertRaisesRegex(ValueError, "DOI drift"):
