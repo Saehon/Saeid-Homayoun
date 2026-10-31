@@ -45,6 +45,10 @@ jobs:
           python -m unittest discover -s research/literature/tests -p 'test_*.py' -v
           python -m research.literature.harvard_crossref --out reports/harvard_bibliography_offline.json
           python -c 'import json; p=json.load(open("reports/harvard_bibliography_offline.json")); assert p["records_total"] >= 20 and p["crossref_api_accessed"] is False and p["no_claim_of_exhaustiveness"] is True; assert p["api_metadata_match_count"] == 0'
+      - name: Enforce Harvard citation and project scientific evidence gates
+        run: |
+          python -m research.literature.evidence_quality_gate --out reports/scholarly_claim_integrity_offline.json
+          python -c 'import json; p=json.load(open("reports/scholarly_claim_integrity_offline.json")); assert p["bibliographic_records"] == p["public_harvard_references"] and p["tracked_project_claims"] >= 10; assert p["all_project_hypotheses_empirically_supported"] is False and p["official_ajg_ranking_verified"] is False and p["bibliographic_metadata_verified_against_publisher_api"] is False'
       - name: Upload reproducibility artifact
         uses: actions/upload-artifact@v4
         with:
@@ -52,5 +56,6 @@ jobs:
           path: |
             reports/scientific_ai_synthetic*.json
             reports/harvard_bibliography_offline.json
+            reports/scholarly_claim_integrity_offline.json
           retention-days: 30
           if-no-files-found: error
