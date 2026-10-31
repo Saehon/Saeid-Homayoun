@@ -31,6 +31,14 @@ AI is increasingly used to analyze financial information and support consequenti
 
 **Our learning pathway:** Learn with AI → Test AI → Challenge the Results → Verify the Evidence → Make Human Decisions.
 
+### For employers, research collaborators, and technical reviewers
+
+**[Research & AI Engineering Portfolio — role-aligned evidence, code, and reproducibility](portfolio/recruiter-hub/README.md)**
+
+This short guide maps accounting/AI expertise to inspectable Python prototypes, current pull requests, open validation issues, and research attribution boundaries. **Prototype checks and synthetic benchmark results are not production validations or real LLM performance claims.**
+
+[Projects by job role](portfolio/recruiter-hub/PROJECT_EVIDENCE_MATRIX.md) · [GitHub improvement audit](portfolio/recruiter-hub/REPOSITORY_AUDIT_2026-10-31.md) · [Prepared account-profile README](portfolio/recruiter-hub/PROFILE_README_READY.md)
+
 ### Start exploring
 
 **[Explore NAAIL OpenLab™](NAAIL-OpenLab/README.md)** · **[Beginner's Start Here Guide](NAAIL-OpenLab/00_START_HERE.md)** · **[Research Status & Prototypes](NAAIL-OpenLab/CURRENT_PROJECT_STATE.md)**
