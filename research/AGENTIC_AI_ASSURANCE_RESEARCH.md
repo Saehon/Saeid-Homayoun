@@ -6,6 +6,14 @@
 
 > **Research in progress.** The **primary working documents, developing scientific studies, and substantive research materials are maintained in my personal, access-controlled Google Drive**. This GitHub page is a curated **public research overview**, not the full internal record. Some programme implementations and supporting materials remain private; the components below vary in maturity and are **not represented as validated regulatory software**.
 
+## FT50 journal-oriented scientific development
+
+The **existing NAAIL two-core, three-domain, human-governed Agentic AI framework is preserved without architectural changes**. Its new [**FT50 research-design and evidence companion**](FT50_RESEARCH_DESIGN_AND_EVIDENCE.md) connects each specialist track to *The Accounting Review*, *Journal of Accounting Research*, *Journal of Accounting and Economics*, *Accounting, Organizations and Society*, *Contemporary Accounting Research*, and *Review of Accounting Studies*.
+
+**Specialist research protocols:** [PCAOB inspections](programmes/PCAOB_FT50_RESEARCH_PROTOCOL.md) · [IFRS judgments](programmes/IFRS_FT50_RESEARCH_PROTOCOL.md) · [ISSB disclosures](programmes/ISSB_FT50_RESEARCH_PROTOCOL.md).
+
+The added material specifies theory and rival mechanisms, unit of analysis, hypotheses, construct definitions, sources and access restrictions, identification assumptions, falsification tests, and replication gates. **These are journal-oriented designs, not acceptance promises, independently validated results, or completed empirical papers.** Primary working research materials remain in the investigator's private, access-controlled Google Drive.
+
 ## The research vision
 
 My research examines how **human-governed, evidence-traceable agentic AI** can support three challenging professional domains without allowing a language model to substitute for a regulator, standard setter, qualified accountant, or independent assurance practitioner:
