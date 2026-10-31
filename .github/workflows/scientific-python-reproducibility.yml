@@ -1,0 +1,36 @@
+name: Scientific Python Reproducibility
+on:
+  pull_request:
+    paths:
+      - 'research/**'
+      - '.github/workflows/scientific-python-reproducibility.yml'
+  push:
+    branches: ['research/**']
+    paths:
+      - 'research/**'
+      - '.github/workflows/scientific-python-reproducibility.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-reproducibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate Python syntax
+        run: python -m compileall -q research/ai_evidence_evaluation
+      - name: Test evidence-scoring contract and failure cases
+        run: python -m unittest discover -s research/ai_evidence_evaluation/tests -p 'test_*.py' -v
+      - name: Reproduce documented synthetic evaluation
+        run: |
+          python -m research.ai_evidence_evaluation.evaluate --out reports/scientific_ai_synthetic.json
+          python -c 'import json; d=json.load(open("reports/scientific_ai_synthetic.json")); assert d["summary"]["n"] == 5; assert d["scope"] == "deterministic synthetic_contract_validation"'
+      - name: Upload reproducibility artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scientific-ai-synthetic-evaluation
+          path: reports/scientific_ai_synthetic.json
+          retention-days: 30
+          if-no-files-found: error
