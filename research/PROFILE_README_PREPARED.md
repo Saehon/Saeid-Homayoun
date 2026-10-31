@@ -12,6 +12,10 @@ I am an accounting researcher at the University of Gävle, Sweden. My work conne
 - **Financial and sustainability reporting** — IFRS, ESG/ISSB, earnings quality and governance
 - **Open and reproducible science** — Python, transparent datasets, versioned experiments and research validation
 
+### Selected scholarship
+
+[Selected peer-reviewed publications and *AI for Sustainable Business* (Routledge)](https://github.com/Saehon/Saeid-Homayoun/blob/main/research/SELECTED_PUBLICATIONS.md) · [University researcher profile](https://www.hig.se/engelska/university-of-gavle/research/researchers/aue/saeid-homayoun)
+
 ### Explore the research
 
 - [Research portfolio and scientific methods](https://github.com/Saehon/Saeid-Homayoun/tree/main/research)
