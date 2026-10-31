@@ -4,6 +4,12 @@
 
 **Scientific purpose:** investigate **inspection-oriented analyses of audit-work evidence and quality-control information** through evidence-governed agents, not replicate or impersonate the PCAOB's authority. This is an **independent academic project**; **not affiliated with, endorsed by or deployed at the PCAOB**.
 
+## Journal-grade empirical research protocol
+
+[**PCAOB FT50 Research Protocol — theoretical mechanisms, construct dictionary, randomized study, identification and falsification**](PCAOB_FT50_RESEARCH_PROTOCOL.md) · [Shared verified FT50 literature](../FT50_RESEARCH_DESIGN_AND_EVIDENCE.md).
+
+This is a **methodological extension**, not a replacement for the PCAOB agentic architecture below. Published empirical anchors distinguish firm-level public inspection reports from undisclosed engagement-level inspection selections. No PCAOB endorsement or completed real-world inspection claim is implied.
+
 ## Problem and hypotheses to test
 
 A selected audit area may disclose a critical risk but provide a weak or poorly documented connection between **risk assessment**, **procedures performed**, **results**, **control testing**, and **the basis for the final audit conclusion**. A traceable research workflow can flag *potential* inconsistencies and prioritize expert review. It cannot establish a regulatory inspection finding by itself.
