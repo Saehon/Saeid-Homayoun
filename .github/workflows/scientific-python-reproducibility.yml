@@ -39,10 +39,18 @@ jobs:
         run: |
           python -m research.ai_evidence_evaluation.annotation_audit --out reports/scientific_ai_synthetic_annotation_audit.json
           python -c 'import json; d=json.load(open("reports/scientific_ai_synthetic_annotation_audit.json")); s=d["summary"]; assert s["n_cases"] == 5 and s["n_reviewer_records"] == 10 and s["n_adjudicated"] == 1; assert d["actual_independent_human_review_verified"] is False and d["model_evaluation_completed"] is False'
+      - name: Validate scholarly DOI records and Harvard citation formatting
+        run: |
+          python -m compileall -q research/literature
+          python -m unittest discover -s research/literature/tests -p 'test_*.py' -v
+          python -m research.literature.harvard_crossref --out reports/harvard_bibliography_offline.json
+          python -c 'import json; p=json.load(open("reports/harvard_bibliography_offline.json")); assert p["records_total"] >= 20 and p["crossref_api_accessed"] is False and p["no_claim_of_exhaustiveness"] is True; assert p["api_metadata_match_count"] == 0'
       - name: Upload reproducibility artifact
         uses: actions/upload-artifact@v4
         with:
           name: scientific-ai-synthetic-evaluation
-          path: reports/scientific_ai_synthetic*.json
+          path: |
+            reports/scientific_ai_synthetic*.json
+            reports/harvard_bibliography_offline.json
           retention-days: 30
           if-no-files-found: error
