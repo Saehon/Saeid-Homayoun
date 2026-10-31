@@ -37,6 +37,8 @@ The [Evidence-Grounded Financial AI Evaluation](ai_evidence_evaluation/README.md
 
 ## Publications and open-science identity
 
+**[Selected peer-reviewed research and Routledge book — bibliographic sources](SELECTED_PUBLICATIONS.md)**
+
 Research publications, their verified bibliographic records and citation indicators should be consulted directly through [Google Scholar](https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en) and [ORCID](https://orcid.org/0000-0002-2536-0446). Avoid treating citation totals in a README as permanently current or asserting DOI metadata that has not been verified.
 
 ## Source code and intellectual-property boundaries
