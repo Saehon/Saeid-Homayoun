@@ -2,7 +2,7 @@
 
 ## Supported scope
 
-This repository documents ECONOVA-S™ research architecture and selected implementation artifacts. Security issues relating to published code, configuration, dependency use, or disclosure of sensitive implementation information should be reported privately rather than posted in a public issue.
+This repository is the public NAAIL OpenLab™ research and education platform. It contains selected accounting, auditing, financial analytics, LLM-evaluation, sustainability, and governance research materials; it is not a production accounting or assurance service. Security issues relating to published code, configuration, dependency use, or disclosure of sensitive implementation information should be reported privately rather than posted in a public issue.
 
 ## Reporting a vulnerability
 
