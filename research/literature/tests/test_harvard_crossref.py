@@ -74,9 +74,13 @@ class HarvardRegistryTests(unittest.TestCase):
         metadata = {"title":[record["title"]],
                     "container-title":[record["journal"]],
                     "published":{"date-parts":[[record["year"], 1, 1]]},
-                    "author":[{"family":"Blankespoor"}]}
+                    "DOI":record["doi"],
+                    "author":[{"family":"Blankespoor"}, {"family":"deHaan"}, {"family":"Li"}]}
         result = compare_metadata(record, metadata)
         self.assertFalse(result["metadata_needs_manual_review"])
+        self.assertTrue(result["author_count_matches"])
+        self.assertTrue(result["all_author_family_names_match"])
+        self.assertTrue(result["crossref_doi_matches_registry"])
         self.assertFalse(result["research_conclusion_verified_by_crossref"])
         self.assertFalse(result["tier_verified_by_crossref"])
 
@@ -88,6 +92,29 @@ class HarvardRegistryTests(unittest.TestCase):
                     "author":[{"family":"Blankespoor"}]}
         result = compare_metadata(record, metadata)
         self.assertTrue(result["metadata_needs_manual_review"])
+
+
+    def test_incomplete_author_list_requires_manual_review(self):
+        record = self.data["records"][0]
+        metadata = {"title":[record["title"]],
+                    "container-title":[record["journal"]],
+                    "published":{"date-parts":[[record["year"]]]},
+                    "DOI":record["doi"],
+                    "author":[{"family":"Blankespoor"}]}
+        result = compare_metadata(record, metadata)
+        self.assertTrue(result["metadata_needs_manual_review"])
+        self.assertFalse(result["author_count_matches"])
+
+    def test_mismatched_doi_blocks_metadata_match(self):
+        record = self.data["records"][0]
+        metadata = {"title":[record["title"]],
+                    "container-title":[record["journal"]],
+                    "published":{"date-parts":[[record["year"]]]},
+                    "DOI":"10.1234/another",
+                    "author":[{"family":"Blankespoor"}, {"family":"deHaan"}, {"family":"Li"}]}
+        result = compare_metadata(record, metadata)
+        self.assertTrue(result["metadata_needs_manual_review"])
+        self.assertFalse(result["crossref_doi_matches_registry"])
 
     def test_crossref_cannot_verify_ajg(self):
         result = build(self.data)
