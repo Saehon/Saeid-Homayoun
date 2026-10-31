@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "evaluation_class": "synthetic_fixture",
+  "rights_statement": "original_synthetic_data",
+  "gold_path": "synthetic_gold.jsonl",
+  "annotations_path": "synthetic_annotations.jsonl",
+  "resolutions_path": "synthetic_adjudications.jsonl",
+  "reviewers": [
+    {
+      "reviewer_id": "SIMULATED_A",
+      "source_type": "synthetic_fixture"
+    },
+    {
+      "reviewer_id": "SIMULATED_B",
+      "source_type": "synthetic_fixture"
+    }
+  ],
+  "adjudicator": {
+    "reviewer_id": "SIMULATED_C",
+    "source_type": "synthetic_fixture"
+  }
+}
