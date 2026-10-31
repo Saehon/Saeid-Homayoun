@@ -21,6 +21,12 @@ This is an **independent academic research and education portfolio**. Model prov
 
 These are **ongoing research programmes**, not confirmed regulatory products. Principal substantive working materials remain in private, access-controlled Google Drive; the links identify inspectable public research descriptions and software.
 
+## Academic evidence integrity and research claim auditing
+
+[**Evidence validation gates and source-to-claim ledger**](literature/ACADEMIC_EVIDENCE_QUALITY_GATES.md) · [**Auditable project evidence JSON**](literature/project_evidence_ledger.json) · [**Offline fail-closed scholarly checks**](literature/evidence_quality_gate.py).
+
+Literature and method references **inform research hypotheses**, but scientific support for a specific AI system still requires independent model runs, external validity and professional reviewer evidence.
+
 ## Central Harvard literature registry — LLM, fine-tuning and agentic AI
 
 [**DOI-linked Harvard academic references across FT50 and AJG 4*/4/3/2/1**](LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md), with a conservative project-to-theory map and optional [Crossref API metadata audit](literature/harvard_crossref.py). The current seeded list is **curated, not exhaustive**; verified publication metadata does not mean the referenced papers experimentally validate every NAAIL or POMELO result.
