@@ -31,6 +31,10 @@ flowchart LR
 
 **Reproducibility policy.** Distinguish (1) a research proposal, (2) implemented code, (3) tests executed on synthetic examples, (4) measured experiments on permitted real data, (5) independently reviewed findings, and (6) peer-reviewed publications. None is interchangeable. Version model identifiers, prompts, sampling rules, source-rights information, monetary costs and known limitations where they apply.
 
+## Transparent model evaluation standards
+
+[**LLM Benchmark and Evaluation Methods**](LLM_BENCHMARKS_AND_EVALUATION.md) — a source-linked methodological crosswalk covering OpenAI, Claude, Google Gemini, FinanceBench, Inspect AI, HELM and lm-evaluation-harness. The guide distinguishes benchmark frameworks from completed empirical evaluations, licensing rights and independent assurance.
+
 ## Executable research demonstration
 
 The [Evidence-Grounded Financial AI Evaluation](ai_evidence_evaluation/README.md) module includes an **offline, deterministic Python evaluator**, a small synthetic corpus, documented scoring contracts, negative tests, and a CI workflow. It is designed as a foundation for proper evaluation studies; it **does not invoke any AI model or claim empirical model accuracy**. Human-labelled/appropriately licensed corpora and real model outputs must be separately supplied before empirical claims.
