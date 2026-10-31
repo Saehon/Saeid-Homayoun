@@ -6,6 +6,10 @@
 
 > **Research in progress.** The **primary working documents, developing scientific studies, and substantive research materials are maintained in my personal, access-controlled Google Drive**. This GitHub page is a curated **public research overview**, not the full internal record. Some programme implementations and supporting materials remain private; the components below vary in maturity and are **not represented as validated regulatory software**.
 
+## Claim-specific academic evidence gates
+
+[**NAAIL research claim audit: theory, DOI provenance and scientific limitations**](literature/ACADEMIC_EVIDENCE_QUALITY_GATES.md). An inspectable [claim-to-literature ledger](literature/project_evidence_ledger.json) distinguishes published background research from *untested* AI/agentic research hypotheses across PCAOB, IFRS, ISSB, KIWI and POMELO. The original scientific framework remains unchanged.
+
 ## Academic literature and theory validation
 
 [**Central Harvard-style LLM / Fine-Tuning / Agentic AI reference registry**](LLM_FINE_TUNING_AGENTIC_AI_HARVARD_REFERENCES.md) — DOI-linked records spanning FT50 and AJG journal groups; bibliographic API checks; research programme relevance; and explicit distinction between theoretical motivation and independently supported empirical findings.
