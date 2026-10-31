@@ -13,6 +13,8 @@ I investigate how artificial intelligence can contribute to accounting, auditing
 
 [Google Scholar](https://scholar.google.com/citations?user=1PKckooAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-2536-0446) · [University of Gävle](https://www.hig.se/)
 
+**Selected scholarship:** [peer-reviewed accounting and sustainability research](research/SELECTED_PUBLICATIONS.md) · co-author of [*AI for Sustainable Business* (Routledge)](https://www.routledge.com/AI-for-Sustainable-Business-Leveraging-Technology-for-a-Better-Future/Rezaee-Boumediene-Homayoun-Boumediene/p/book/9781032987309).
+
 The public code distinguishes original academic contributions from external reference projects; synthetic examples are not presented as real-model accuracy, audit certification or independently validated empirical results.
 
 
