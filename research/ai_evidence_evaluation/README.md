@@ -8,6 +8,17 @@ This small module illustrates how to **separate the accuracy of a financial answ
 
 The documented methodology follows [OpenAI, Anthropic, Google, FinanceBench, Inspect AI, HELM and EleutherAI evaluation practices](../LLM_BENCHMARKS_AND_EVALUATION.md). The repository contains **no real provider outputs** or copied third-party benchmark questions.
 
+### Research workflow, evidence and provenance
+
+| Component | Public evidence | Validation boundary |
+|---|---|---|
+| Financial answer evaluator | [`evaluate.py`](evaluate.py), synthetic data and regression tests | Numeric/error/citation-ID contracts only |
+| Paired result comparator | [`compare_runs.py`](compare_runs.py), hand-authored alternative predictions | Illustrative paired comparisons, not model rankings |
+| **Provider-neutral run provenance validator** | [`validate_run.py`](validate_run.py), [protocol](PROVENANCE_VALIDATION.md) and negative tests | Verifies local digests and declared metadata; **never attests model execution** |
+| Model/benchmark methodology | [OpenAI, Anthropic, Gemini and independent benchmark crosswalk](../LLM_BENCHMARKS_AND_EVALUATION.md) | Framework references, not affiliation or completed benchmarks |
+
+Actual GPT, Claude or Gemini outputs can be evaluated **only after** collection with lawful data rights, contemporaneous model/run records and independent review. This public repository contains *no such empirical outputs*.
+
 ### Reproduce
 
 Python 3.10+ from repository root:
