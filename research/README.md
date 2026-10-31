@@ -11,11 +11,11 @@ This is an **independent academic research and education portfolio**. Model prov
 
 | Theme | Scientific questions and methods | Research materials |
 |---|---|---|
-| **LLM evaluation for finance and accounting** | When are financial answers correct, source-grounded and reproducible? Numerical rubrics, abstention, adversarial cases, evaluation leakage checks | [Reproducible evidence-based evaluation demonstration](ai-evidence-evaluation/README.md) |
+| **LLM evaluation for finance and accounting** | When are financial answers correct, source-grounded and reproducible? Numerical rubrics, abstention, adversarial cases, evaluation leakage checks | [Reproducible evidence-based evaluation demonstration](ai_evidence_evaluation/README.md) |
 | **AI-enabled auditing and assurance** | How should CAM/KAM, ICFR, audit responses and inspection evidence be measured and challenged? | [KIWI research](../NAAIL-OpenLab/KIWI/README.md) · [IFRS-AI Inspector](https://github.com/Saehon/IFRS-AI-Inspector) |
 | **Agentic AI and human governance** | How can multiple models collaborate without replacing professional authority? Evidence passports, decision traceability, reviewer/falsification gates | [NAAIL architecture](../NAAIL-OpenLab/README.md) · [Portfolio governance](../NAAIL-OpenLab/PORTFOLIO_GOVERNANCE.md) |
 | **Financial disclosure and sustainability** | Financial reporting judgment, IFRS/ISSB, ESG, disclosure quality and measurement validity | [Academic research index](../ACADEMIC_PORTFOLIO_INDEX.md) |
-| **Data and financial analytics** | SEC/XBRL, missing data, cost behavior, financial predictions, transparent panels and temporal integrity | [Research integrations](../research-integrations/README.md) (where available) |
+| **Data and financial analytics** | SEC/XBRL, missing data, cost behavior, financial predictions, transparent panels and temporal integrity | [Research integrations](../research-integrations/ft50-github-replication-2023-2026/README.md) (where available) |
 
 ## Research method: evidence before claims
 
@@ -33,7 +33,7 @@ flowchart LR
 
 ## Executable research demonstration
 
-The [Evidence-Grounded Financial AI Evaluation](ai-evidence-evaluation/README.md) module includes an **offline, deterministic Python evaluator**, a small synthetic corpus, documented scoring contracts, negative tests, and a CI workflow. It is designed as a foundation for proper evaluation studies; it **does not invoke any AI model or claim empirical model accuracy**. Human-labelled/appropriately licensed corpora and real model outputs must be separately supplied before empirical claims.
+The [Evidence-Grounded Financial AI Evaluation](ai_evidence_evaluation/README.md) module includes an **offline, deterministic Python evaluator**, a small synthetic corpus, documented scoring contracts, negative tests, and a CI workflow. It is designed as a foundation for proper evaluation studies; it **does not invoke any AI model or claim empirical model accuracy**. Human-labelled/appropriately licensed corpora and real model outputs must be separately supplied before empirical claims.
 
 ## Publications and open-science identity
 
