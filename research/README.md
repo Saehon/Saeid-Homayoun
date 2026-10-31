@@ -17,6 +17,14 @@ This is an **independent academic research and education portfolio**. Model prov
 | **Financial disclosure and sustainability** | Financial reporting judgment, IFRS/ISSB, ESG, disclosure quality and measurement validity | [Academic research index](../ACADEMIC_PORTFOLIO_INDEX.md) |
 | **Data and financial analytics** | SEC/XBRL, missing data, cost behavior, financial predictions, transparent panels and temporal integrity | [Research integrations](../research-integrations/ft50-github-replication-2023-2026/README.md) (where available) |
 
+## Inspectable code and validation
+
+- [**Financial AI and evidence evaluation**](ai_evidence_evaluation/README.md) — executable Python, synthetic unit tests and reproducibility artifacts.
+- [**Run provenance and model-neutral metadata**](ai_evidence_evaluation/PROVENANCE_VALIDATION.md) — file hashes, model/version declarations, costs and timestamps, without claiming API attestation.
+- [**Methodological benchmark comparison**](LLM_BENCHMARKS_AND_EVALUATION.md) — published evaluation practices for model reliability and professional judgment.
+
+This public code provides a **testable research infrastructure**, not evidence that GPT, Claude or Gemini has been benchmarked on a statistically validated sample.
+
 ## Research method: evidence before claims
 
 ```mermaid
