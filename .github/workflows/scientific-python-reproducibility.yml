@@ -5,7 +5,7 @@ on:
       - 'research/**'
       - '.github/workflows/scientific-python-reproducibility.yml'
   push:
-    branches: ['research/**']
+    branches: ['main', 'research/**']
     paths:
       - 'research/**'
       - '.github/workflows/scientific-python-reproducibility.yml'
