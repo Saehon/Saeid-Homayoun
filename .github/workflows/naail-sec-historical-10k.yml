@@ -1,0 +1,65 @@
+name: NAAIL SEC historical 10-K universe (FY2021–2024)
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - ".github/workflows/naail-sec-historical-10k.yml"
+      - "NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/extract_sec_historical_submissions.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  historical-sec-screen:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          persist-credentials: true
+      - name: Install free Python SEC processing libraries
+        run: |
+          python -m pip install --disable-pip-version-check duckdb==1.4.1 pandas==2.2.3
+      - name: Download pinned SEC archival metadata files from public audited GitHub release
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/naail_sec"
+          RELEASE="https://github.com/iangow/sec_submissions_data/releases/download/2026-09-30"
+          curl -fL --retry 3 --retry-delay 5 --connect-timeout 30 --max-time 2000 "$RELEASE/filings.parquet" -o "$RUNNER_TEMP/naail_sec/filings.parquet"
+          curl -fL --retry 3 --retry-delay 5 --connect-timeout 30 --max-time 180 "$RELEASE/companies.parquet" -o "$RUNNER_TEMP/naail_sec/companies.parquet"
+          sha256sum "$RUNNER_TEMP/naail_sec/"*.parquet
+      - name: Build fiscal-year 2017–2025 historical 10-K population and 2021–2024 screen
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT=NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50
+          python "$PROJECT/sampling/extract_sec_historical_submissions.py"             --filings "$RUNNER_TEMP/naail_sec/filings.parquet"             --companies "$RUNNER_TEMP/naail_sec/companies.parquet"             --out "$PROJECT/sampling/actual_sec_historical_2026-09-30"
+          python - <<'PY'
+          import json,pathlib
+          p=pathlib.Path('NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/actual_sec_historical_2026-09-30/SEC_FY2021_2024_ACTUAL_COUNTS_AND_LIMITS.json')
+          data=json.loads(p.read_text())
+          assert data['FY2021_2024_original_10K_issuer_years']>0
+          assert data['FY2021_2024_original_10K_unique_CIK']>0
+          assert data['final_FT50_eligible_N'] is None
+          print('SEC_FILING_METADATA_SCREEN_PASSED')
+          PY
+      - name: Upload versioned public-filing-metadata reproduction artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: naail-sec-historical-sample-fy2021-2024
+          path: NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/actual_sec_historical_2026-09-30/
+          retention-days: 90
+          if-no-files-found: error
+      - name: Save source-backed sample outputs in existing feature branch (never to main)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add NAAIL-OpenLab/projects/NAAIL-AI-CapEx-ICFR-Damodaran-FT50/sampling/actual_sec_historical_2026-09-30/
+          if ! git diff --staged --quiet; then
+            git commit -m "Record actual historical SEC FY2021-2024 issuer-year screen with pending audit eligibility"
+            git push origin "HEAD:${{ github.head_ref || github.ref_name }}"
+          fi
