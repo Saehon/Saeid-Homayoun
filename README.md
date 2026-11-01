@@ -1,4 +1,7 @@
 # NAAIL OpenLab™
+
+> **New UX pilot — NAAIL Product Experience Hub:** [Explore the mobile-first product discovery prototype](product-hub/index.html) · [How to use and review](product-hub/README.md) · [Product UX architecture](product-hub/PRODUCT_UX_SPEC.md). This is an **illustrative front-end**, not a deployed application, live AI demo, or evidence of production readiness.
+
 **Next-Generation Accounting, Audit & Assurance Intelligence Lab**
 
 *Evidence-governed AI education and research for accounting, auditing, finance and sustainability.*
