@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "NAAIL-V1-B3-CASE-SELECTION-V1",
+  "status": "FROZEN_BEFORE_SEARCH",
+  "approval_state": "DRAFT_PENDING_CLAUDE_AND_HUMAN",
+  "scope": "V1 preparation protocol only; no candidate search, ranking, or selection",
+  "prior_exposure": {
+    "operator_has_seen_detector_code": true,
+    "operator_has_seen_case_001": true,
+    "operator_has_seen_invalid_run_021_022_duplicate": true,
+    "candidate_search_conducted_under_this_protocol": false,
+    "candidate_data_or_results_seen_under_this_protocol": false,
+    "declaration": "The operator has prior exposure to Case 001 and the invalid duplicate recorded in RUN 021/022, but authored this protocol before any new candidate search, candidate evidence retrieval, scoring, or selection under B3."
+  },
+  "candidate_eligibility": [
+    {
+      "id": "B3-E01",
+      "criterion": "doi_uniqueness",
+      "required": true,
+      "rule": "Normalize the DOI using the B1 registry rule and hard-fail any DOI already present in registry/cases.yaml or elsewhere in the candidate set."
+    },
+    {
+      "id": "B3-E02",
+      "criterion": "peer_reviewed_field_fit",
+      "required": true,
+      "rule": "The article must be peer reviewed and published in accounting, auditing, or finance. FT50 is preferred but is not itself proof of eligibility."
+    },
+    {
+      "id": "B3-E03",
+      "criterion": "public_replication_package",
+      "required": true,
+      "rule": "A publicly accessible replication package must be identifiable with stable source location, provenance, access date, and license or reuse-status disclosure."
+    },
+    {
+      "id": "B3-E04",
+      "criterion": "table_to_code_map",
+      "required": true,
+      "rule": "The public package must permit a documented mapping from at least one reported table or result to specific executable code."
+    },
+    {
+      "id": "B3-E05",
+      "criterion": "executable_stata_or_python_path",
+      "required": true,
+      "rule": "At least one documented execution path must use Stata or Python, with entry point, execution order, environment requirements, and expected output location."
+    },
+    {
+      "id": "B3-E06",
+      "criterion": "public_data_independent_reproduction_path",
+      "required": true,
+      "rule": "Each eligible candidate must identify at least one bounded result or construct that can be independently reproduced from public data without substituting for licensed-data results."
+    },
+    {
+      "id": "B3-E07",
+      "criterion": "prior_exposure_declaration",
+      "required": true,
+      "rule": "The candidate record must disclose all known prior operator, reviewer, and human exposure to the paper, package, expected results, and any earlier screening."
+    }
+  ],
+  "screening_sequence": [
+    "record_source_and_access_time",
+    "normalize_and_check_doi",
+    "confirm_peer_review_and_field",
+    "document_replication_package_provenance_and_reuse_status",
+    "map_reported_result_to_code",
+    "document_stata_or_python_execution_path",
+    "identify_bounded_public_data_reproduction_path",
+    "complete_prior_exposure_declaration",
+    "record_eligible_or_ineligible_without_ranking",
+    "submit_eligible_candidates_to_human_for_selection"
+  ],
+  "decision_authority": {
+    "operator": "documents evidence and eligibility only",
+    "claude": "independent protocol and evidence review",
+    "human": "selects Case 002 and Case 003 after POC approval",
+    "automatic_selection_prohibited": true
+  },
+  "stop_conditions": [
+    "duplicate normalized DOI",
+    "no public replication package",
+    "no table-to-code map",
+    "no executable Stata or Python path",
+    "no bounded public-data independent-reproduction path",
+    "missing prior-exposure declaration",
+    "unclear license or access status requiring human review"
+  ],
+  "execution_gate": "Candidate search and evidence retrieval are prohibited until this protocol has been independently reviewed and the human has recorded POC approval.",
+  "poc_complete": false,
+  "v1_complete": false
+}
