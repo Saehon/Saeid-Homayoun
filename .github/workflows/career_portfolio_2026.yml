@@ -1,0 +1,68 @@
+name: Synthetic Career Portfolio Unit Tests
+on:
+  push:
+    branches:
+      - 'career/**'
+    paths:
+      - 'portfolio_roles/**'
+      - '.github/workflows/career_portfolio_2026.yml'
+  pull_request:
+    paths:
+      - 'portfolio_roles/**'
+      - '.github/workflows/career_portfolio_2026.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile independently authored portfolio code
+        run: python -m compileall -q portfolio_roles
+      - name: Run deterministic and contract unit tests
+        shell: bash
+        run: |
+          shopt -s nullglob
+          dirs=(portfolio_roles/*/tests)
+          test "${#dirs[@]}" -gt 0
+          for test_dir in "${dirs[@]}"; do
+            if [ -d "$test_dir" ]; then
+              python -m unittest discover -s "$test_dir" -p 'test_*.py' -v
+            fi
+          done
+      - name: Produce reproducible synthetic benchmark reports
+        shell: bash
+        run: |
+          shopt -s nullglob
+          mkdir -p reports
+          benchmarks=(portfolio_roles/*/benchmark.py)
+          test "${#benchmarks[@]}" -gt 0
+          for file in "${benchmarks[@]}"; do
+            slug="$(basename "$(dirname "$file")")"
+            module="${file%.py}"
+            module="${module//\//.}"
+            python -m "$module" --out "reports/${slug}.json"
+          done
+      - name: Dry-run OpenAI Gemini Claude without external API calls
+        shell: bash
+        run: |
+          set -eu
+          for provider in openai gemini anthropic; do
+            python -m portfolio_roles.google_finance_eval.live_provider_eval \
+              --cases portfolio_roles/google_finance_eval/fixtures/synthetic_live_cases.jsonl \
+              --schema synthetic --provider "$provider" --model example-model \
+              --max-cases 2 --max-output-tokens 200 \
+              --input-usd-per-million 1 --output-usd-per-million 1 \
+              --price-source "SYNTHETIC-ONLY-NOT-REAL-PRICING" \
+              --max-usd 0.25 --out "reports/google_finance_eval_${provider}_dryrun.json"
+          done
+      - name: Attach reports to this GitHub Actions run
+        uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-career-evaluation-report
+          path: reports/*.json
+          retention-days: 30
+          if-no-files-found: error
