@@ -1,0 +1,26 @@
+name: DATASETFREE metadata validation
+on:
+  push:
+    paths:
+      - "DATASETFREE/**"
+      - ".github/workflows/datasetfree-metadata.yml"
+  pull_request:
+    paths:
+      - "DATASETFREE/**"
+      - ".github/workflows/datasetfree-metadata.yml"
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate free-data and replication metadata
+        run: python DATASETFREE/tools/validate_catalog.py
+      - name: Validate FT50 AI papers and complete journal coverage matrix
+        run: python DATASETFREE/tools/check_literature_catalog.py
+      - name: Run deterministic registry unit tests
+        run: python -m unittest discover -s DATASETFREE/tests -v

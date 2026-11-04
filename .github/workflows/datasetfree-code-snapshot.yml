@@ -1,0 +1,31 @@
+name: DATASETFREE licensed code archive
+on:
+  push:
+    paths:
+      - "DATASETFREE/archives/**"
+      - ".github/workflows/datasetfree-code-snapshot.yml"
+  pull_request:
+    paths:
+      - "DATASETFREE/archives/**"
+      - ".github/workflows/datasetfree-code-snapshot.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  licensed-code-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Download MIT and Apache source code (no participant data)
+        run: python DATASETFREE/archives/build_open_code_snapshot.py
+      - name: Store code-only ZIP for Drive upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: DATASETFREE-open-licensed-code-only
+          path: DATASETFREE/archives/dist/DATASETFREE_open_licensed_code_ONLY.zip
+          retention-days: 14
+          if-no-files-found: error
