@@ -1,0 +1,71 @@
+{
+  "F1_clean_seed_false_positives": {
+    "clean_packages": 30,
+    "seeds_skipped_by_design_assert": 4,
+    "packages_with_findings": 0,
+    "examples": []
+  },
+  "F2_evasion_probes": {
+    "probes": [
+      {
+        "probe": "RPT-01 alteration inside rounding precision (+0.0004)",
+        "target_id": "RPT-01",
+        "detected_ids": [
+          "RPT-01"
+        ],
+        "caught": true
+      },
+      {
+        "probe": "RPT-01 on a cell the check does not cover (n)",
+        "target_id": "RPT-01",
+        "detected_ids": [],
+        "caught": false
+      },
+      {
+        "probe": "RPT-03 paraphrase without the phrase 'statistically significant'",
+        "target_id": "RPT-03",
+        "detected_ids": [],
+        "caught": false
+      },
+      {
+        "probe": "INT-01 causal claim using an unlisted verb ('increases')",
+        "target_id": "INT-01",
+        "detected_ids": [],
+        "caught": false
+      },
+      {
+        "probe": "DAT-04 scaling applied consistently to data AND dictionary factor",
+        "target_id": "DAT-04",
+        "detected_ids": [],
+        "caught": false
+      },
+      {
+        "probe": "DAT-03 look-ahead with availability metadata also falsified",
+        "target_id": "DAT-03",
+        "detected_ids": [],
+        "caught": false
+      },
+      {
+        "probe": "IDN-04 leakage without declaring the target in feature recipe",
+        "target_id": "IDN-04",
+        "detected_ids": [],
+        "caught": false
+      },
+      {
+        "probe": "REP-05 hidden state that is declared as an input",
+        "target_id": "REP-05",
+        "detected_ids": [],
+        "caught": false
+      },
+      {
+        "probe": "SPC-01 control removed from BOTH code and manuscript",
+        "target_id": "SPC-01",
+        "detected_ids": [],
+        "caught": false
+      }
+    ],
+    "caught": 1,
+    "missed": 8
+  },
+  "F3_determinism_detected_ids_identical": true
+}

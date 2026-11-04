@@ -11,3 +11,14 @@ Not claimed: full-sample regression reproduction; population inference; Audit An
 Governance: original source/author artifacts are immutable. Mutations and repairs must be derived artifacts. Missing evidence cannot become PASS. Author-output consistency, independent reproduction, computational correctness, and methodological validity remain separate assurance dimensions.
 
 Next: P1 Error Taxonomy V2.
+
+## Correction entry — 2026-10-04 — independent review / Option B
+
+The historical `264/264` statement is retained only as **author-output consistency**. The current POC does not contain inspectable per-cell comparison evidence sufficient to independently re-perform all 264 checks. Therefore the author-output consistency claim is **PARTIAL** for this recovery gate, not independent reproduction.
+
+Human decision for the POC: **Option B — documented limitation**. Do not reconstruct unavailable cells in the POC. A full per-cell transparency check may be performed later if the article PDF and author output/log package are supplied.
+
+The earlier statement that the binary Microsoft COVID-presence classification was verified is also superseded for current gate purposes. FilingLag remains separately supported; the COVID classification remains **PARTIAL** until the frozen preregistered 10-accession scan is executed and independently reviewed.
+
+This correction is additive. It does not alter the frozen historical source artifacts and does not set `POC_COMPLETE = TRUE`.
+

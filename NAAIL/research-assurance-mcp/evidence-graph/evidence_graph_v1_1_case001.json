@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.1.0",
+  "graph_id": "NAAIL-EG-V1.1-CASE001",
+  "derived_from": "evidence-graph/evidence_graph_v1_case001.json",
+  "case_id": "MNSC-2023-4670",
+  "scope": "Case 001 POC evidence lineage. V1.1 separates verified Microsoft FilingLag evidence from the unresolved COVID classification and adds the author-output consistency verification artifact.",
+  "assurance_states": [
+    "VERIFIED",
+    "CONSISTENT",
+    "PARTIAL",
+    "FLAGGED",
+    "HUMAN_REVIEW"
+  ],
+  "nodes": [
+    {
+      "id": "CLAIM_AOC",
+      "type": "claim",
+      "label": "Published regression cells checked against author outputs",
+      "evidence_class": "author_provided",
+      "assurance_state": "PARTIAL",
+      "evidence_basis": "USER-REPORTED historical 264/264 author-output summary; cell-level paper/log evidence is absent from the repository."
+    },
+    {
+      "id": "TABLE_REG",
+      "type": "table_figure",
+      "label": "Published regression tables 2B,2C,3A,3B,4A,4B,4C,5B,5C,5D",
+      "evidence_class": "published"
+    },
+    {
+      "id": "RESULT_AOC",
+      "type": "result",
+      "label": "Reported 264/264 author-output cell matches; only summary counts are currently inspectable",
+      "evidence_class": "author_provided",
+      "assurance_state": "PARTIAL",
+      "evidence_basis": "USER-REPORTED historical 264/264 author-output summary; cell-level paper/log evidence is absent from the repository."
+    },
+    {
+      "id": "VERIFICATION_AOC",
+      "type": "verification",
+      "path": "case-001-management-science/verification/author_output_consistency_v01.json",
+      "relative_path_from_case_root": "verification/author_output_consistency_v01.json",
+      "evidence_class": "derived",
+      "assurance_state": "PARTIAL",
+      "evidence_basis": "USER-REPORTED historical 264/264 author-output summary; cell-level paper/log evidence is absent from the repository.",
+      "label": "Author-output consistency summary; cell-level verification remains pending Q6"
+    },
+    {
+      "id": "CODE_MAIN",
+      "type": "code",
+      "path": "1_code/c_2a_run_regressions_main.do",
+      "evidence_class": "author_provided"
+    },
+    {
+      "id": "DATA_REG",
+      "type": "data",
+      "path": "2_pipeline/c_1_generate_variables/out/regression_data.dta",
+      "availability": "generated/not_public",
+      "evidence_class": "restricted_dependency",
+      "assurance_state": "PARTIAL"
+    },
+    {
+      "id": "SOURCE_PAPER",
+      "type": "source",
+      "label": "Management Science article",
+      "doi": "10.1287/mnsc.2023.4670",
+      "evidence_class": "published"
+    },
+    {
+      "id": "CLAIM_MSFT_FILINGLAG",
+      "type": "claim",
+      "label": "Microsoft public-SEC FilingLag reconstruction is verified for all 10 frozen observations and the same-calendar-quarter-2019 change vector",
+      "evidence_class": "independently_regenerated",
+      "assurance_state": "VERIFIED"
+    },
+    {
+      "id": "CLAIM_MSFT_COVID",
+      "type": "claim",
+      "label": "Microsoft COVID classification remains unresolved pending the frozen preregistered primary-filing text scan",
+      "evidence_class": "public_source_reconstructed",
+      "assurance_state": "PARTIAL"
+    },
+    {
+      "id": "RESULT_MSFT",
+      "type": "result",
+      "label": "10 filings; FilingLag levels verified; zero late filings; matched changes +5,-2,+4,-3,+3,-3 versus same calendar quarter of 2019",
+      "evidence_class": "independently_regenerated",
+      "assurance_state": "VERIFIED"
+    },
+    {
+      "id": "CODE_MSFT",
+      "type": "code",
+      "path": "case-001-management-science/reexecution/sec_one_company_msft/sec_one_company_check.py",
+      "evidence_class": "derived",
+      "note": "Historical generator covers four observations. FilingLag claim is supported separately by the ten-observation Claude independent evidence."
+    },
+    {
+      "id": "DATA_MSFT",
+      "type": "data",
+      "path": "case-001-management-science/reexecution/sec_one_company_msft/msft_one_company_final.csv",
+      "evidence_class": "public_source_reconstructed",
+      "assurance_state": "PARTIAL",
+      "note": "FilingLag fields are verified; COVID binary fields remain subject to the preregistered scan."
+    },
+    {
+      "id": "SOURCE_SEC",
+      "type": "source",
+      "label": "SEC public filings for Microsoft Corporation",
+      "cik": "0000789019",
+      "evidence_class": "public_source"
+    },
+    {
+      "id": "LIMIT_COVID_RULE",
+      "type": "limitation",
+      "label": "v1 preregistration was rejected because outcomes were previously exposed. Authoritative retrospective v1-R run 37204180146 regenerated all 10 FilingLag rows and COVID sensitivity outputs; the COVID claim remains PARTIAL pending Claude file/snippet review.",
+      "assurance_state": "PARTIAL"
+    },
+    {
+      "id": "LIMIT_FULL_REPRO",
+      "type": "limitation",
+      "label": "Full paper replication remains partial because restricted/proprietary inputs are not independently reconstructed.",
+      "assurance_state": "PARTIAL"
+    },
+    {
+      "id": "LIMIT_METHOD",
+      "type": "limitation",
+      "label": "Computational consistency does not establish methodological validity.",
+      "assurance_state": "HUMAN_REVIEW"
+    },
+    {
+      "id": "VERIFICATION_MSFT_FILINGLAG",
+      "type": "verification",
+      "path": "derived/claude_2026-10-02/msft_filinglag_independent_check_v2.json",
+      "evidence_class": "independently_regenerated",
+      "assurance_state": "VERIFIED",
+      "evidence_basis": "READBACK-VERIFIED SHA256 2933ad5ec7e1d1bff11f43469b969966f8f869d820baa855a100a94b15757fc7"
+    },
+    {
+      "id": "LIMIT_MSFT_10ROW_GENERATOR",
+      "type": "limitation",
+      "label": "No in-repository generator currently reproduces the complete 10-row msft_one_company_final.csv; the historical sec_one_company_check.py covers only four observations.",
+      "assurance_state": "PARTIAL"
+    }
+  ],
+  "edges": [
+    {
+      "from": "CLAIM_AOC",
+      "to": "TABLE_REG",
+      "relation": "asserted_in"
+    },
+    {
+      "from": "TABLE_REG",
+      "to": "RESULT_AOC",
+      "relation": "supported_by"
+    },
+    {
+      "from": "RESULT_AOC",
+      "to": "VERIFICATION_AOC",
+      "relation": "verified_by"
+    },
+    {
+      "from": "RESULT_AOC",
+      "to": "CODE_MAIN",
+      "relation": "generated_by"
+    },
+    {
+      "from": "CODE_MAIN",
+      "to": "DATA_REG",
+      "relation": "uses"
+    },
+    {
+      "from": "DATA_REG",
+      "to": "SOURCE_PAPER",
+      "relation": "documented_by"
+    },
+    {
+      "from": "CLAIM_AOC",
+      "to": "LIMIT_FULL_REPRO",
+      "relation": "bounded_by"
+    },
+    {
+      "from": "CLAIM_AOC",
+      "to": "LIMIT_METHOD",
+      "relation": "bounded_by"
+    },
+    {
+      "from": "CLAIM_MSFT_FILINGLAG",
+      "to": "RESULT_MSFT",
+      "relation": "supported_by"
+    },
+    {
+      "from": "RESULT_MSFT",
+      "to": "CODE_MSFT",
+      "relation": "partially_generated_by"
+    },
+    {
+      "from": "CODE_MSFT",
+      "to": "DATA_MSFT",
+      "relation": "uses"
+    },
+    {
+      "from": "DATA_MSFT",
+      "to": "SOURCE_SEC",
+      "relation": "derived_from"
+    },
+    {
+      "from": "CLAIM_MSFT_FILINGLAG",
+      "to": "LIMIT_FULL_REPRO",
+      "relation": "does_not_resolve"
+    },
+    {
+      "from": "CLAIM_MSFT_FILINGLAG",
+      "to": "LIMIT_METHOD",
+      "relation": "bounded_by"
+    },
+    {
+      "from": "CLAIM_MSFT_COVID",
+      "to": "DATA_MSFT",
+      "relation": "currently_encoded_in"
+    },
+    {
+      "from": "CLAIM_MSFT_COVID",
+      "to": "LIMIT_COVID_RULE",
+      "relation": "bounded_by"
+    },
+    {
+      "from": "CLAIM_MSFT_COVID",
+      "to": "LIMIT_METHOD",
+      "relation": "bounded_by"
+    },
+    {
+      "from": "RESULT_MSFT",
+      "to": "VERIFICATION_MSFT_FILINGLAG",
+      "relation": "independently_checked_by"
+    },
+    {
+      "from": "RESULT_MSFT",
+      "to": "LIMIT_MSFT_10ROW_GENERATOR",
+      "relation": "bounded_by"
+    }
+  ],
+  "validation": {
+    "node_count": 18,
+    "edge_count": 19,
+    "all_node_ids_unique": true,
+    "all_edge_endpoints_resolve": true,
+    "author_and_independent_evidence_separated": true,
+    "filinglag_and_covid_claims_separated": true,
+    "missing_evidence_never_verified": true,
+    "canonical_assurance_states_only": true
+  },
+  "changelog": [
+    {
+      "date": "2026-10-02",
+      "change": "Place Q4 correction in the requested evidence-graph path, retain original V1 and earlier derived copy, classify the uninspectable 264/264 claim as PARTIAL, and link the ten-observation independent FilingLag evidence."
+    },
+    {
+      "date": "2026-10-04",
+      "change": "Independent-review correction: relabel Microsoft code provenance as partial, record absence of an in-repo 10-row generator, and update the COVID limitation to reflect that the rule is already frozen and now awaits execution plus independent review."
+    },
+    {
+      "date": "2026-10-04",
+      "change": "Additive v1-R correction: v1 preregistration was rejected for prior exposure; authoritative retrospective run 37204180146 regenerated all 10 FilingLag rows. COVID remains PARTIAL pending Claude file/snippet review."
+    }
+  ]
+}
