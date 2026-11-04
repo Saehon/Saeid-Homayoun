@@ -128,3 +128,9 @@ This stack is synchronized from one canonical source into three public research 
 - **Kaggle target:** https://www.kaggle.com/datasets/sadhon/accounting-finance-audit-open-registry
 
 Publication is handled by `.github/workflows/publish-accounting-finance-audit-open-registry.yml`. GitHub remains the source of truth; Hugging Face and Kaggle receive generated CSV catalogues, the canonical YAML registries, provenance metadata and checksums. Third-party repositories and large upstream datasets are linked rather than republished.
+
+## Source-audited accounting / financial NLP datasets — 2026-10-17
+
+Use the [free accounting and audit data directory](../../sites/audit-research-library/sources.html) and its [metadata CSV](../../sites/audit-research-library/free_data_sources.csv) for source-level access, licence/terms, pilot provenance and a mapping to all 15 research projects. Official upstream sources include SEC EDGAR/XBRL, Analytext, Notre Dame SRAF/Loughran–McDonald, Kenneth French, Aswath Damodaran, PCAOB inspections, SEC AAER and World Bank WDI.
+
+**Read/write policy:** the link registry is original metadata only. It is not permission to rehost licensed CAM/KAM opinions, IEX/CRSP price feeds, vendor-derived individual-firm data, paid Analytext code or research manuscripts. Hugging Face and Kaggle profile updates require separate authenticated publishing and readback.

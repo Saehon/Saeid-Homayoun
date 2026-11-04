@@ -109,3 +109,9 @@ https://www.kaggle.com/datasets/sadhon/aws-free-accounting-audit-finance-registr
 Canonical GitHub source: ../aws/FREE_DATA_REGISTRY.md
 
 It contains provenance and links, not restricted vendor-delivered data.
+
+## Free-data pilot registry for Kaggle navigation — 2026-10-17
+
+A metadata-only [research source catalogue](../sites/audit-research-library/sources.html) now maps 11 original provider URLs and 7 checked pilot-document records to the 15 FT50 accounting and information-systems projects. [Download CSV](../sites/audit-research-library/free_data_sources.csv) or [review the HF/Kaggle description wording](../sites/audit-research-library/HF_KAGGLE_LINKING_COPY.md).
+
+**No Kaggle dataset was created or updated by this change.** The file is deliberately outside `kaggle/datasets/` to avoid accidental publishing by the existing sync workflow. Reuse a verified existing dataset ID and manually review privacy, licence and external rights before any Kaggle release.

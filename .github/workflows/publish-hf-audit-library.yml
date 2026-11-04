@@ -1,0 +1,59 @@
+name: Publish Audit Library to Hugging Face (OIDC)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: audit-library-hf-manual-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'Saehon/Saeid-Homayoun' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout reviewed source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Verify static Space metadata and no embedded HF token
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f sites/audit-research-library/index.html
+          grep -q '^sdk: static' sites/audit-research-library/README.md
+          grep -q '^app_file: index.html' sites/audit-research-library/README.md
+          python - <<'PY'
+          import pathlib, re
+          root = pathlib.Path("sites/audit-research-library")
+          allowed = {".html", ".css", ".js", ".json", ".md"}
+          for p in root.rglob("*"):
+              if not p.is_file():
+                  continue
+              assert p.suffix in allowed, f"Unexpected publication file: {p}"
+              txt = p.read_text(encoding="utf-8")
+              assert not re.search(r"hf_[a-zA-Z0-9]{30,}", txt), f"Possible hard-coded Hugging Face token in {p}"
+          print("Static website metadata and basic credential scan PASS")
+          PY
+
+      - name: Install Hugging Face Hub CLI
+        run: python -m pip install 'huggingface_hub>=1.19,<2'
+
+      - name: Publish public site with a one-hour repo-scoped OIDC credential
+        env:
+          HF_OIDC_RESOURCE: spaces/SADHON/audit-research-library
+        run: |
+          hf upload SADHON/audit-research-library sites/audit-research-library .             --repo-type space             --commit-message "Publish reviewed GitHub source ${GITHUB_SHA}"
+
+      - name: Verify published index is retrievable
+        run: |
+          hf download SADHON/audit-research-library index.html             --repo-type space --local-dir /tmp/hf-public-readback
+          grep -q "Accounting intelligence" /tmp/hf-public-readback/index.html
+          echo "Hugging Face static site readback PASS"

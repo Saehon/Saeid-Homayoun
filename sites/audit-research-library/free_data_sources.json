@@ -1,0 +1,379 @@
+{
+  "schema_version": "1.0",
+  "curated_utc_date": "2026-10-17",
+  "owner": "Dr Saeid Homayoun",
+  "visibility": "public_metadata_only",
+  "remit": "Original-source links and pilot provenance, no copyrighted source content, prices, model weights or licensed rows",
+  "notes": [
+    "Free to download is NOT automatically free to redistribute.",
+    "Pilot analysis status is from project documents and has not been independently reproduced in this registry.",
+    "Release requires human approval, provenance, rights, leakage checks and explicit per-file list.",
+    "HF direct repository writes and Kaggle account publishing are not available to this connected assistant."
+  ],
+  "sources": [
+    {
+      "id": "sec-xbrl",
+      "name": "SEC EDGAR XBRL CompanyFacts",
+      "provider": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "access": "Free API / no key",
+      "reuse": "Link API; any public derived file requires field/date and rights review",
+      "terms": "SEC fair-access policy; identify user agent, maximum 10 requests/s",
+      "use": "Financial statement ratios, ICFR/CapEx, audit-risk ex-ante measures",
+      "project_ids": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "08",
+        "09",
+        "11",
+        "13",
+        "15"
+      ],
+      "category": "Structured finance",
+      "priority": 1,
+      "publication": "link_first",
+      "pilot_evidence": "Portfolio ICFR/CAM/CapEx concepts; per-firm reproducibility pending",
+      "caveat": "CompanyFacts contains standardized facts, not complete CAM, KAM, or narrative text."
+    },
+    {
+      "id": "sec-filings",
+      "name": "SEC EDGAR filings / 10-K / 10-Q",
+      "provider": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/edgar/search/",
+      "access": "Free public filings",
+      "reuse": "Link original filings; new text datasets only after extraction/provenance and legal review",
+      "terms": "SEC fair-access policy; per-filing provenance, acceptance and public availability dates",
+      "use": "Risk factors, auditor report, CAM narrative, internal controls, AI spending disclosure",
+      "project_ids": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "08",
+        "09",
+        "10",
+        "11",
+        "13",
+        "15"
+      ],
+      "category": "Financial text",
+      "priority": 1,
+      "publication": "link_first",
+      "pilot_evidence": "CAM/ICFR and financial text source plan",
+      "caveat": "Do not use 2026 disclosures as features for an earlier fiscal-year prediction."
+    },
+    {
+      "id": "sec-fsds",
+      "name": "SEC Financial Statement Data Sets",
+      "provider": "SEC / Data.gov",
+      "url": "https://catalog.data.gov/dataset/financial-statement-data-sets",
+      "access": "Free quarterly downloads",
+      "reuse": "Source link + verified code/small independently prepared examples",
+      "terms": "SEC filing-derived; quality caveats and filing precedence",
+      "use": "Panel accounting facts and reconciliation to XBRL",
+      "project_ids": [
+        "01",
+        "02",
+        "05",
+        "08",
+        "11",
+        "13"
+      ],
+      "category": "Structured finance",
+      "priority": 2,
+      "publication": "link_first",
+      "pilot_evidence": "Supporting SEC/XBRL replication; no independent full panel audit here",
+      "caveat": "Not a substitute for the original company filing."
+    },
+    {
+      "id": "analytext",
+      "name": "Analytext financial textual repository",
+      "provider": "Codesso, Hoitash and Hoitash",
+      "url": "https://www.analytext.com/",
+      "access": "Public free research resources",
+      "reuse": "External-link first; check CC BY-NC 4.0 and file-specific terms; never assume paid extraction code is free",
+      "terms": "Website states CC BY-NC 4.0; noncommercial, attribution; some Python source code available to purchase",
+      "use": "10-K/10-Q notes and sections, 32 accounting topics, human capital/footnote metrics",
+      "project_ids": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "14",
+        "15"
+      ],
+      "category": "Financial text",
+      "priority": 1,
+      "publication": "link_first",
+      "pilot_evidence": "Drive has Analytext/TextBlocks folders; actual pilot-file audit not completed",
+      "caveat": "Noncommercial access is not the same as permission to relicense material as CC0/MIT."
+    },
+    {
+      "id": "lm",
+      "name": "Loughran–McDonald Master Dictionary",
+      "provider": "Notre Dame SRAF; Loughran & McDonald",
+      "url": "https://sraf.nd.edu/loughranmcdonald-master-dictionary/",
+      "access": "Free for academic research",
+      "reuse": "External-link first; request separate commercial licence where applicable",
+      "terms": "Academic noncommercial use; commercial licence via authors; cite original work",
+      "use": "Financial tone, negative words, uncertainty, litigiousness, complexity/reproducible lexicons",
+      "project_ids": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "14",
+        "15"
+      ],
+      "category": "Financial text",
+      "priority": 1,
+      "publication": "link_first",
+      "pilot_evidence": "Multiple master dictionary 1993–2025 files located in user's Drive; version/duplication audit pending",
+      "caveat": "Versioned 2026 source includes MasterDictionary_1993-2025; do not mix with 1993–2021 silently."
+    },
+    {
+      "id": "sraf",
+      "name": "SRAF textual analysis resources",
+      "provider": "University of Notre Dame",
+      "url": "https://sraf.nd.edu/textual-analysis/",
+      "access": "Free academic resources",
+      "reuse": "Links/code metadata first; assess each resource separately",
+      "terms": "Noncommercial research on 'as is' basis; sources may carry different terms",
+      "use": "Financial NLP preprocessing, dictionary methods, stopwords and code",
+      "project_ids": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "09",
+        "10",
+        "15"
+      ],
+      "category": "Financial text",
+      "priority": 2,
+      "publication": "link_first",
+      "pilot_evidence": "Source registry reference in CAM/KAM/AI NLP research",
+      "caveat": "Not a uniformly licensed dataset."
+    },
+    {
+      "id": "fama-french",
+      "name": "Kenneth French Data Library",
+      "provider": "Kenneth R. French / Dartmouth Tuck",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/Ken.French/data_library.html",
+      "access": "Free public CSV/TXT downloads",
+      "reuse": "Link original factor files; verify redistribution rights for CRSP-derived inputs before mirroring",
+      "terms": "Factors constructed from licensed upstream data; method changed from CRSP FIZ to CIZ for 2025 releases",
+      "use": "Fama–French 3/5 factor, industry peers, momentum and asset-pricing benchmarks",
+      "project_ids": [
+        "02",
+        "08",
+        "11",
+        "12",
+        "13"
+      ],
+      "category": "Asset pricing",
+      "priority": 1,
+      "publication": "link_first",
+      "pilot_evidence": "3-company pilot MSFT/WMT/JPM executed using Ken French factors plus IEX/Alpaca pricing",
+      "caveat": "Public factor data do not grant redistribution rights to raw CRSP, IEX or other price feeds."
+    },
+    {
+      "id": "damodaran",
+      "name": "Aswath Damodaran valuation and industry data",
+      "provider": "NYU Stern / Aswath Damodaran",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/data.html",
+      "access": "Free current/archival Excel & web data",
+      "reuse": "Link published industry aggregates; company-level vendor-derived data not for republication",
+      "terms": "Third-party company-level restrictions; source data and vintage should be recorded",
+      "use": "Valuation, cost of capital, industry beta, capex/FCF benchmarks and risk premia",
+      "project_ids": [
+        "08",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "category": "Asset pricing",
+      "priority": 1,
+      "publication": "link_first",
+      "pilot_evidence": "10-firm CapEx pilot uses 30 exploratory observations (FY2023–2025), transcribed from StockAnalysis, not validated AI-specific CapEx",
+      "caveat": "Do not represent Damodaran methodology as a source for these manually transcribed firm-level cash flows."
+    },
+    {
+      "id": "pcaob",
+      "name": "PCAOB public firm inspection reports",
+      "provider": "Public Company Accounting Oversight Board",
+      "url": "https://pcaobus.org/oversight/inspections/firm-inspection-reports",
+      "access": "Public reports + CSV/XML/JSON",
+      "reuse": "Link to report and official public structured files; source-level rights check before mirror",
+      "terms": "Only public report portions and correct unit of analysis",
+      "use": "Audit firm inspections, auditor oversight and quality signals",
+      "project_ids": [
+        "01",
+        "02",
+        "04",
+        "05",
+        "06",
+        "08",
+        "09",
+        "10",
+        "15"
+      ],
+      "category": "Audit enforcement",
+      "priority": 1,
+      "publication": "link_first",
+      "pilot_evidence": "PC/PCAOB part of research roadmap; issuer-level outcomes not automatically identifiable",
+      "caveat": "Do not invent firm-issuer match or treat inspection deficiency as issuer restatement."
+    },
+    {
+      "id": "aaer",
+      "name": "SEC Accounting & Auditing Enforcement Releases",
+      "provider": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/enforcement-litigation/accounting-auditing-enforcement-releases",
+      "access": "Free public enforcement index",
+      "reuse": "Link to original enforcement orders; independently label outcomes and as-of dates",
+      "terms": "Not an exhaustive universe of all misconduct cases",
+      "use": "Forensic accounting, future reporting enforcement, independent outcomes",
+      "project_ids": [
+        "01",
+        "02",
+        "05",
+        "08",
+        "10",
+        "15"
+      ],
+      "category": "Audit enforcement",
+      "priority": 2,
+      "publication": "link_first",
+      "pilot_evidence": "User project benchmark includes AAER; full evidence outcome mapping not validated",
+      "caveat": "A filed/settled action is not a blanket issuer-year fraud label."
+    },
+    {
+      "id": "world-bank",
+      "name": "World Development Indicators",
+      "provider": "World Bank Open Data",
+      "url": "https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators",
+      "access": "Free public dataset/API",
+      "reuse": "Candidate for a verified CC BY 4.0 credited extract; check each indicator's specific terms",
+      "terms": "WDI CC BY 4.0 (some third-party data exceptions); proper attribution required",
+      "use": "Macroeconomic control variables in risk, valuation and sustainable investment",
+      "project_ids": [
+        "08",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "category": "Macro / ESG",
+      "priority": 3,
+      "publication": "candidate_after_review",
+      "pilot_evidence": "Potential macro controls, not a verified input in every pilot",
+      "caveat": "Do not use current-year macro values as known historical predictors if released later."
+    }
+  ],
+  "pilot_audit": [
+    {
+      "name": "Three-company Fama–French factor pilot",
+      "status": "source_reported_executed",
+      "source_ids": [
+        "fama-french"
+      ],
+      "private_reference": "THREE_COMPANY_FAMA_FRENCH_V1_2.md",
+      "note": "31 monthly observations per MSFT/WMT/JPM from 2024-01 to 2026-07; factor library documented; IEX via Alpaca price feed is not redistributable CRSP data; no rows approved for public upload."
+    },
+    {
+      "name": "Ten-firm Damodaran-style AI CapEx pilot",
+      "status": "exploratory_source_reported",
+      "source_ids": [
+        "damodaran",
+        "sec-xbrl",
+        "sec-filings"
+      ],
+      "private_reference": "10_Firm_Damodaran_AI_CapEx_Cash_Flow_Pilot_RESULTS_V1_2026-10-10",
+      "note": "30 firm-fiscal-year values, manually transcribed from StockAnalysis standardized statements citing S&P Global Market Intelligence; do not mirror vendor rows; full SEC reconciliation still incomplete; AI-specific CapEx not measured."
+    },
+    {
+      "name": "KIWI CAM Compass 50-firm checkpoint",
+      "status": "planned_or_repair",
+      "source_ids": [
+        "sec-filings",
+        "sec-xbrl",
+        "analytext",
+        "lm"
+      ],
+      "private_reference": "NAAIL AI Developer — Five Products and FT50 Pilot Map — 2026-10-10",
+      "note": "Proposed 50-firm repair checkpoint; independently verify auditor report dates and ex-ante features. No new public CAM extraction is authorized."
+    },
+    {
+      "name": "LEMON-ICFR Sentinel 200-filings pilot",
+      "status": "proposed",
+      "source_ids": [
+        "sec-xbrl",
+        "sec-filings",
+        "lm"
+      ],
+      "private_reference": "NAAIL AI Developer — Five Products and FT50 Pilot Map — 2026-10-10",
+      "note": "Pilot proposal only. ICFR effective/ineffective/unknown labels must be validated independently; absence of MW disclosure is not verified effectiveness."
+    },
+    {
+      "name": "EvidenceGate 120-question simulation",
+      "status": "proposed",
+      "source_ids": [
+        "sec-filings",
+        "sraf"
+      ],
+      "private_reference": "NAAIL AI Developer — Five Products and FT50 Pilot Map — 2026-10-10",
+      "note": "Synthetic/public accounting questions proposed; proposed N is not an execution result."
+    },
+    {
+      "name": "TokenCost & Carbon Twin 20-workload pilot",
+      "status": "proposed",
+      "source_ids": [
+        "world-bank",
+        "damodaran"
+      ],
+      "private_reference": "NAAIL AI Developer — Five Products and FT50 Pilot Map — 2026-10-10",
+      "note": "Synthetic token/TDABC scenarios proposed; no public evidence of 20 externally validated workloads."
+    },
+    {
+      "name": "DARWIN JEV–Risk–CAM synthetic starter",
+      "status": "existing_hf_synthetic_dataset",
+      "source_ids": [
+        "sec-xbrl",
+        "sec-filings",
+        "lm"
+      ],
+      "private_reference": "https://huggingface.co/datasets/SADHON/darwin-jev-risk-cam-synthetic-replication",
+      "note": "An existing public synthetic dataset exists. Public listing does not validate scientific performance, privacy clearance or right to redistribute new materials."
+    }
+  ],
+  "platform_links": {
+    "hugging_face": "https://huggingface.co/SADHON",
+    "existing_hf_registry": "https://huggingface.co/datasets/SADHON/accounting-finance-audit-open-registry",
+    "existing_hf_portfolio": "https://huggingface.co/datasets/SADHON/accounting-audit-ai-portfolio",
+    "kaggle": "https://www.kaggle.com/sadhon",
+    "github": "https://github.com/Saehon/Saeid-Homayoun",
+    "website": "https://saeid-audit-ai-research-library.vercel.app"
+  }
+}
