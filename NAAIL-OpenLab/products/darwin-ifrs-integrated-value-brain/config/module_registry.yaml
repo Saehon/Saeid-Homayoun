@@ -1,0 +1,43 @@
+product: DARWIN IFRS Integrated Value Brain
+status: public_non_enabling_architecture
+north_star: maximum_integrated_sustainable_economic_value
+
+modules:
+  - ifrs_accounting_brain
+  - internal_audit_assurance_brain
+  - economic_semantic_layer
+  - cost_truth_engine
+  - management_accounting_decision_engine
+  - economic_value_ledger
+  - ifrs_value_genome
+  - evi_engine
+  - eva_engine
+  - double_materiality_filter
+  - sustainability_value_added_engine
+  - six_capital_transformation_graph
+  - systems_thinking_engine
+  - opportunity_cost_engine
+  - counterfactual_scenario_engine
+  - ceo_100_reference_class
+  - co_scientist_hypothesis_engine
+  - science_discovery
+  - alphaevolve_style_search
+  - falsification_challenge_agent
+  - human_approval_gate
+  - outcome_learning_loop
+
+initial_event_gates:
+  - purchase_order
+  - sales_order
+
+initial_actions:
+  - APPROVE
+  - MODIFY
+  - REJECT
+
+public_ip_boundary:
+  implementation_algorithms: private
+  proprietary_prompts: private
+  customer_data: private
+  credentials: private
+  ifrs_licensed_text: restricted

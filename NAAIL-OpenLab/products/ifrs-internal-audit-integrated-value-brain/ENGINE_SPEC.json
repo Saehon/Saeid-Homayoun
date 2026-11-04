@@ -1,0 +1,38 @@
+{
+  "product": "IFRS Internal Audit Integrated Value Brain™",
+  "status": "public_non_enabling_architecture",
+  "north_star": "Maximum Integrated Value with assurance, controls and audit independence",
+  "inputs": "IFRS-triggered ERP events, controls, evidence, risk, audit findings, economic and sustainability data",
+  "modules": [
+    "IFRS Internal Audit Brain™",
+    "Evidence & Controls Layer",
+    "Construct Firewall",
+    "Economic Value Hemisphere",
+    "Sustainability Value Hemisphere",
+    "Six-Capital Graph",
+    "Systems Thinking",
+    "Falsification Agent",
+    "Opportunity Cost Engine™",
+    "Counterfactual Engine",
+    "Human Approval Gate™",
+    "Assurance Learning"
+  ],
+  "actions": [
+    "ASSURE",
+    "CHALLENGE",
+    "ESCALATE",
+    "MODIFY",
+    "RENEGOTIATE",
+    "REJECT",
+    "APPROVE_WITH_CONDITIONS"
+  ],
+  "pomelo_style_governance": {
+    "evidence_passport": true,
+    "construct_firewall": true,
+    "competing_hypotheses": true,
+    "falsification": true,
+    "counterfactuals": true,
+    "human_gate": true,
+    "outcome_learning": true
+  }
+}

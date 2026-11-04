@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DARWIN Economic Event",
+  "type": "object",
+  "required": ["event_id", "event_type", "source_system", "event_time", "amount", "currency"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "event_type": {
+      "type": "string",
+      "enum": ["purchase_requisition", "purchase_order", "sales_quote", "sales_order", "invoice", "contract", "lease", "capex", "inventory", "project", "supplier", "customer", "mna", "other"]
+    },
+    "source_system": {"type": "string"},
+    "event_time": {"type": "string", "format": "date-time"},
+    "amount": {"type": "number"},
+    "currency": {"type": "string"},
+    "product_id": {"type": ["string", "null"]},
+    "project_id": {"type": ["string", "null"]},
+    "customer_id": {"type": ["string", "null"]},
+    "supplier_id": {"type": ["string", "null"]},
+    "contract_id": {"type": ["string", "null"]},
+    "ifrs_route": {"type": ["string", "null"]},
+    "materiality_tier": {"type": ["string", "null"]},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

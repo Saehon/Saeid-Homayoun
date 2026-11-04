@@ -1,0 +1,38 @@
+{
+  "product": "DARWIN IFRS Integrated Value Brain™",
+  "status": "public_non_enabling_architecture",
+  "north_star": "Maximum Integrated Sustainable Economic Value",
+  "engine_role": "ERP-connected system of economic decision",
+  "pomelo_style_governance": [
+    "Evidence Passport",
+    "Construct Firewall",
+    "Competing Hypotheses",
+    "Falsification",
+    "Counterfactuals",
+    "Human Gate",
+    "Outcome Learning"
+  ],
+  "modules": [
+    "Economic Semantic Layer",
+    "IFRS Accounting Brain",
+    "Internal Audit Assurance Brain",
+    "Cost Truth Engine",
+    "Management Accounting Decision Engine",
+    "Economic Value Ledger",
+    "IFRS Value Genome",
+    "EVI/EVA Engine",
+    "SVA Engine",
+    "Double Materiality Filter",
+    "Six-Capital Transformation Graph",
+    "Systems Thinking Engine",
+    "Opportunity Cost Engine",
+    "Counterfactual Engine",
+    "CEO-100 Reference Class",
+    "Co-Scientist",
+    "Science Discovery",
+    "AlphaEvolve-style Search",
+    "Falsification Agent",
+    "Human Gate",
+    "Outcome Learning"
+  ]
+}
