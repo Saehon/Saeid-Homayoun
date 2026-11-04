@@ -1,0 +1,69 @@
+name: NAAIL Journal Co-Scientist (metadata-only)
+
+on:
+  pull_request:
+    paths:
+      - "NAAIL/research-assurance-mcp/journal-coscientist/**"
+      - ".github/workflows/naail-journal-coscientist.yml"
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Offline verification phase"
+        type: choice
+        required: true
+        options:
+          - systematic-review
+          - meta-analysis
+          - replication
+          - hypothesis-test
+          - digital-twin
+      journal_tier:
+        description: "Candidate metadata filter"
+        type: choice
+        required: true
+        options:
+          - ALL
+          - FT50
+          - AJG-4-star
+          - AJG-4
+          - AJG-3
+  schedule:
+    - cron: "30 5 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: naail-journal-coscientist
+  cancel-in-progress: false
+
+jobs:
+  offline-registry-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Offline unit tests
+        run: |
+          python -m unittest discover -s NAAIL/research-assurance-mcp/journal-coscientist/tests -p 'test_*.py' -v
+      - name: Registry validation and truthful report
+        env:
+          PHASE: ${{ inputs.phase || 'systematic-review' }}
+          JOURNAL_TIER: ${{ inputs.journal_tier || 'ALL' }}
+        run: |
+          python NAAIL/research-assurance-mcp/journal-coscientist/src/journal_task.py \
+            --phase "$PHASE" \
+            --journal-tier "$JOURNAL_TIER" \
+            --registry NAAIL/research-assurance-mcp/journal-coscientist/registry/candidates.csv \
+            --output-dir outputs/naail-journal-coscientist/current-run
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: naail-journal-audit-${{ github.run_number }}
+          path: outputs/naail-journal-coscientist/current-run/
+          if-no-files-found: warn
+          retention-days: 30

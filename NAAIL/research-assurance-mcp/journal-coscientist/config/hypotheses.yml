@@ -1,0 +1,32 @@
+# Prospective hypotheses, not preregistered and not yet tested.
+# This conceptual finance track is separate from the ICFR model-benchmark H1-H4 in pilot PR #152.
+project:
+  name: NAAIL_NEVM_Finance_Research
+  status: PROSPECTIVE_UNTESTED
+  preregistration: NOT_REGISTERED
+  holdout_opened: false
+  journal_target: JF_JFE_STRETCH_NOT_SUBMISSION_READY
+hypotheses:
+  H1:
+    name: Evidence-topology misalignment
+    proposed_predictor: prerelease_evidence_misalignment_score
+    proposed_outcome: post_filing_abnormal_return
+    expected_direction: negative
+    status: PROPOSED_NOT_VERIFIED_NOVEL
+  H2:
+    name: Macroeconomic translation failure
+    proposed_predictor: independent_risk_signal_by_macro_exposure
+    proposed_outcome: post_filing_abnormal_return
+    expected_direction: negative
+    status: PROPOSED_NOT_VERIFIED_NOVEL
+  H3:
+    name: Audit verification credibility switch
+    proposed_predictor: independent_audit_verification_interaction
+    proposed_outcome: correction_speed
+    expected_direction: positive
+    status: PROPOSED_NOT_VERIFIED_NOVEL
+controls:
+  blind_gold: SEPARATE_FROM_MODEL_INPUTS
+  human_review: REQUIRED
+  real_data: NOT_YET_ACQUIRED
+  research_results: NONE_VERIFIED
