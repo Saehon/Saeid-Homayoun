@@ -117,3 +117,14 @@ The evaluator returns grouped Brier, precision and recall by model × industry �
 **Three FT50 paper pathways:** (A) ex-ante risk × CAM selection/alignment → future outcomes; (B) risk × ICFR taxonomy → future material weaknesses; (C) auditor-level aggregated risk × PCAOB published inspection outcomes (subject to identification and coverage checks). Predictive lift must be established out of sample, and causal claims require separately defensible identification.
 
 **Research reproducibility protocol:** Freeze definitions and source checksums before modeling; train/validate/test strictly by public-availability dates, prevent shared-firm leakage, benchmark logistic regression / Dechow F-score / corrected Bao ML / FinBERT / JEV only if genuine accessible outputs exist, report PR-AUC + Brier + reliability + Recall@K + bootstrap CI, and retain all adverse/null results. Link third-party repositories rather than redistributing weights or licensed data. Upload no confidential Drive data to public GitHub or Hugging Face. Canonical empirical registry: existing Google Sheet `03_EMPIRICAL_RESULTS_Risk_CAM_DARWIN_V2`, new tab `FT50_RISK_REPLICATION`.
+
+## JAR Risk–CAM Manuscript and Replication Package — 2026-10-16
+
+[Publication package and synthetic validation source](./jar-risk-cam/README.md) includes the exact previously archived synthetic starter ZIP, six unit tests, validation script, synthetic data, and the publication timetable and reference links.
+
+- **Private canonical Drive folder:** https://drive.google.com/drive/folders/1rX5r3VIS5x4prq0hlFFNIrH6OTACyuvB
+- **Word manuscript (Drive only; unpublished):** https://docs.google.com/document/d/1ARsLl2pDqf1wmtwo8GWO2vxr5UKMxegc/edit
+- **Google Drive ZIP:** https://drive.google.com/file/d/1qGtbIOubT4X6NOxbybTI-F-whWIRETWX/view
+- **Publication plan:** https://docs.google.com/document/d/1CT6pp2160s51kgY1k2vF31jCGaS_DM22hUvMnslLf18/edit
+
+The GitHub repo is **public**. No private raw CAM dataset, restricted external data, or unpublished full-text manuscript has been copied into the public repository. The synthetic validation is NOT empirical evidence, and neither actual Jev inference nor FT50 model replication is claimed.
