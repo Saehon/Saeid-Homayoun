@@ -1,0 +1,26 @@
+name: IFRS Value OS Tests
+
+on:
+  push:
+    paths:
+      - "IFRS-Value-OS/**"
+      - ".github/workflows/ifrs-value-os-tests.yml"
+  pull_request:
+    paths:
+      - "IFRS-Value-OS/**"
+      - ".github/workflows/ifrs-value-os-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: IFRS-Value-OS
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e . pytest
+      - run: pytest -q

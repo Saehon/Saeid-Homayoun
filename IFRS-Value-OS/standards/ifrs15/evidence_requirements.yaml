@@ -1,0 +1,18 @@
+standard: IFRS15
+evidence_requirements:
+  identify_contract:
+    - executed_contract
+    - approval_or_authorization
+    - payment_terms
+  identify_performance_obligations:
+    - promised_goods_services
+    - contract_clauses
+  determine_transaction_price:
+    - fixed_consideration
+    - variable_consideration_inputs
+  allocate_transaction_price:
+    - standalone_selling_price_evidence
+  determine_recognition_pattern:
+    - transfer_of_control_evidence
+    - delivery_or_service_completion_evidence
+lineage_required: true

@@ -1,0 +1,19 @@
+standard: IFRS15
+version: bootstrap-0.1
+copyright_note: >
+  This file contains only original metadata and workflow placeholders.
+  It intentionally does not reproduce licensed IFRS Standard text.
+decision_stages:
+  - identify_contract
+  - identify_performance_obligations
+  - determine_transaction_price
+  - allocate_transaction_price
+  - determine_recognition_pattern
+judgment_flags:
+  - contract_modification
+  - variable_consideration
+  - principal_agent
+  - significant_financing_component
+  - over_time_vs_point_in_time
+human_gate:
+  material_judgment: true
