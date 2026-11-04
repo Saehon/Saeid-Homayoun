@@ -1,0 +1,26 @@
+{
+  "label": "SIMULATED POWER/FALSE POSITIVE RATES, NOT REAL EMPIRICAL RESULTS",
+  "seed": 271828,
+  "firms": 100,
+  "periods": 4,
+  "replications_per_scenario": 80,
+  "assumed_alternative_effects": {
+    "H1": -0.015,
+    "H2": -0.02,
+    "H3": -0.015
+  },
+  "test": "cluster-robust OLS by firm, two-sided alpha=.05, three unadjusted hypotheses (illustrative)",
+  "caution": "Correct multiple testing, detectability and design before preregistration. Simulation does not establish hypotheses or model accuracy.",
+  "rejection_rates": {
+    "NULL_ALL_ZERO": {
+      "assurance_surprise": 0.037,
+      "disagreement_x_evidence": 0.062,
+      "peer_exposure_x_credibility": 0.037
+    },
+    "ALTERNATIVE_ASSUMED": {
+      "assurance_surprise": 0.575,
+      "disagreement_x_evidence": 0.425,
+      "peer_exposure_x_credibility": 0.35
+    }
+  }
+}
