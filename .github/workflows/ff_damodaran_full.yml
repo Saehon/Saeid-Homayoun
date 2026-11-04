@@ -46,7 +46,7 @@ jobs:
       - name: Run scientific contract
         run: python studies/FF-Damodaran-Discovery-01/tests/test_contract.py
       - name: Upload reproducible baseline package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ff-damodaran-baseline-results
           retention-days: 30

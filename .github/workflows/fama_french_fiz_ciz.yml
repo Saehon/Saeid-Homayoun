@@ -52,7 +52,7 @@ jobs:
       - name: List generated artifacts
         run: find artifacts -maxdepth 1 -type f -print | sort
       - name: Upload empirical tables and Evidence Passport
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: MNSc-FamaFrench-01-FIZ-CIZ-artifacts
           path: studies/MNSc-FamaFrench-01/artifacts/

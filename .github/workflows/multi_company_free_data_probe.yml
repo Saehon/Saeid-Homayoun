@@ -26,7 +26,7 @@ jobs:
           python NAAIL-OpenLab/prototypes/multi-company-free-data-v1/code/sec_free_public_probe.py
       - name: Upload machine-readable probe result
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: naail-multi-company-sec-free-data-probe
           path: NAAIL-OpenLab/prototypes/multi-company-free-data-v1/sec_free_public_probe_results.json
