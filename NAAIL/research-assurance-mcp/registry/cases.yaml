@@ -1,0 +1,8 @@
+schema_version: "1.0"
+normalization: "lowercase DOI; trim outer whitespace; remove doi.org, dx.doi.org, and doi: prefixes; reject internal whitespace"
+cases:
+  - case_id: "CASE-001"
+    doi: "10.1287/mnsc.2023.4670"
+    title: "How Resilient Are Firms' Financial Reporting Processes?"
+    registry_status: "BASELINE"
+    source_record: "Existing canonical Case 001; no new case-selection decision"
