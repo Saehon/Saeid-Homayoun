@@ -1,0 +1,326 @@
+[
+  {
+    "case_id": "SIM-001",
+    "data_class": "SYNTHETIC",
+    "gold_label": "HIGH",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-001-E1",
+        "source_uri": "synthetic://SIM-001/E1",
+        "fact": "Unreconciled privileged journal posted after the reporting cutoff."
+      },
+      {
+        "evidence_id": "SIM-001-E2",
+        "source_uri": "synthetic://SIM-001/E2",
+        "fact": "Management override exception has no approval trail."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-002",
+    "data_class": "SYNTHETIC",
+    "gold_label": "HIGH",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-002-E1",
+        "source_uri": "synthetic://SIM-002/E1",
+        "fact": "Unauthorized change to the revenue recognition mapping occurred."
+      },
+      {
+        "evidence_id": "SIM-002-E2",
+        "source_uri": "synthetic://SIM-002/E2",
+        "fact": "Accounting review was not documented."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-003",
+    "data_class": "SYNTHETIC",
+    "gold_label": "HIGH",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-003-E1",
+        "source_uri": "synthetic://SIM-003/E1",
+        "fact": "Unrestricted access to vendor master data remains active."
+      },
+      {
+        "evidence_id": "SIM-003-E2",
+        "source_uri": "synthetic://SIM-003/E2",
+        "fact": "Control sign-off was not evidenced."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-004",
+    "data_class": "SYNTHETIC",
+    "gold_label": "HIGH",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-004-E1",
+        "source_uri": "synthetic://SIM-004/E1",
+        "fact": "Untested privileged access allows posting and approving adjustments."
+      },
+      {
+        "evidence_id": "SIM-004-E2",
+        "source_uri": "synthetic://SIM-004/E2",
+        "fact": "Monitoring logs are incomplete."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-005",
+    "data_class": "SYNTHETIC",
+    "gold_label": "HIGH",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-005-E1",
+        "source_uri": "synthetic://SIM-005/E1",
+        "fact": "A material error in the closing ledger was not corrected before certification."
+      },
+      {
+        "evidence_id": "SIM-005-E2",
+        "source_uri": "synthetic://SIM-005/E2",
+        "fact": "The reconciliation was incomplete."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-006",
+    "data_class": "SYNTHETIC",
+    "gold_label": "MODERATE",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-006-E1",
+        "source_uri": "synthetic://SIM-006/E1",
+        "fact": "Two manual exception tickets were resolved late."
+      },
+      {
+        "evidence_id": "SIM-006-E2",
+        "source_uri": "synthetic://SIM-006/E2",
+        "fact": "Independent reviewer evidence exists for subsequent closure."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-007",
+    "data_class": "SYNTHETIC",
+    "gold_label": "MODERATE",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-007-E1",
+        "source_uri": "synthetic://SIM-007/E1",
+        "fact": "A monthly balance-sheet reconciliation was late."
+      },
+      {
+        "evidence_id": "SIM-007-E2",
+        "source_uri": "synthetic://SIM-007/E2",
+        "fact": "Differences were subsequently investigated."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-008",
+    "data_class": "SYNTHETIC",
+    "gold_label": "MODERATE",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-008-E1",
+        "source_uri": "synthetic://SIM-008/E1",
+        "fact": "The review threshold was not documented in the process narrative."
+      },
+      {
+        "evidence_id": "SIM-008-E2",
+        "source_uri": "synthetic://SIM-008/E2",
+        "fact": "Supporting report was subsequently recovered."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-009",
+    "data_class": "SYNTHETIC",
+    "gold_label": "MODERATE",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-009-E1",
+        "source_uri": "synthetic://SIM-009/E1",
+        "fact": "Manual reconciliations were performed with evidence of supervisory checks."
+      },
+      {
+        "evidence_id": "SIM-009-E2",
+        "source_uri": "synthetic://SIM-009/E2",
+        "fact": "One exception requires additional testing."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-010",
+    "data_class": "SYNTHETIC",
+    "gold_label": "MODERATE",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-010-E1",
+        "source_uri": "synthetic://SIM-010/E1",
+        "fact": "Access reviews were incomplete for one quarter."
+      },
+      {
+        "evidence_id": "SIM-010-E2",
+        "source_uri": "synthetic://SIM-010/E2",
+        "fact": "Remediation signoff exists in subsequent quarter."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-011",
+    "data_class": "SYNTHETIC",
+    "gold_label": "MODERATE",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-011-E1",
+        "source_uri": "synthetic://SIM-011/E1",
+        "fact": "A control walkthrough identified an untested interface."
+      },
+      {
+        "evidence_id": "SIM-011-E2",
+        "source_uri": "synthetic://SIM-011/E2",
+        "fact": "Change-management evidence is available."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-012",
+    "data_class": "SYNTHETIC",
+    "gold_label": "LOW",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-012-E1",
+        "source_uri": "synthetic://SIM-012/E1",
+        "fact": "Quarterly reconciliations were completed and signed on schedule."
+      },
+      {
+        "evidence_id": "SIM-012-E2",
+        "source_uri": "synthetic://SIM-012/E2",
+        "fact": "Source reports include completeness and accuracy checks."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-013",
+    "data_class": "SYNTHETIC",
+    "gold_label": "LOW",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-013-E1",
+        "source_uri": "synthetic://SIM-013/E1",
+        "fact": "Segregation-of-duties controls were documented and independently reviewed."
+      },
+      {
+        "evidence_id": "SIM-013-E2",
+        "source_uri": "synthetic://SIM-013/E2",
+        "fact": "No deviation was found in the sample."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-014",
+    "data_class": "SYNTHETIC",
+    "gold_label": "LOW",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-014-E1",
+        "source_uri": "synthetic://SIM-014/E1",
+        "fact": "Evidence of monthly management review was retained."
+      },
+      {
+        "evidence_id": "SIM-014-E2",
+        "source_uri": "synthetic://SIM-014/E2",
+        "fact": "Assertions and control owners were documented."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-015",
+    "data_class": "SYNTHETIC",
+    "gold_label": "LOW",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-015-E1",
+        "source_uri": "synthetic://SIM-015/E1",
+        "fact": "System access profiles were approved and periodically revalidated."
+      },
+      {
+        "evidence_id": "SIM-015-E2",
+        "source_uri": "synthetic://SIM-015/E2",
+        "fact": "No conflicting privileges were found."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-016",
+    "data_class": "SYNTHETIC",
+    "gold_label": "LOW",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-016-E1",
+        "source_uri": "synthetic://SIM-016/E1",
+        "fact": "Automated close monitoring was documented and reconciled."
+      },
+      {
+        "evidence_id": "SIM-016-E2",
+        "source_uri": "synthetic://SIM-016/E2",
+        "fact": "Testing found no material exceptions in the synthetic sample."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-017",
+    "data_class": "SYNTHETIC",
+    "gold_label": "HIGH",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-017-E1",
+        "source_uri": "synthetic://SIM-017/E1",
+        "fact": "Unreconciled inventory movements span two fiscal periods."
+      },
+      {
+        "evidence_id": "SIM-017-E2",
+        "source_uri": "synthetic://SIM-017/E2",
+        "fact": "Unauthorized adjustments were observed in logs."
+      }
+    ]
+  },
+  {
+    "case_id": "SIM-018",
+    "data_class": "SYNTHETIC",
+    "gold_label": "MODERATE",
+    "assertion": "ICFR risk triage",
+    "evidence": [
+      {
+        "evidence_id": "SIM-018-E1",
+        "source_uri": "synthetic://SIM-018/E1",
+        "fact": "An incomplete control population was discovered."
+      },
+      {
+        "evidence_id": "SIM-018-E2",
+        "source_uri": "synthetic://SIM-018/E2",
+        "fact": "Independent reconciliation is being performed."
+      }
+    ]
+  }
+]
