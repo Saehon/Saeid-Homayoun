@@ -5,6 +5,8 @@
 
 ### Research by Saeid Homayoun
 
+**Featured public finance research:** [NOMOS AI V6 — Financial Data Provenance & Reproducibility](research/nomos-ai-v6/README.md) · [Phase 1 Validation Report](research/nomos-ai-v6/reports/PHASE1_VALIDATION_REPORT.md). **Data audit only; no trading strategy has been validated.**
+
 **[Research Highlights & Ongoing Projects — Explore the programme](research/RESEARCH_HIGHLIGHTS_AND_ONGOING_PROJECTS.md)**
 
 **Featured research: [PCAOB Inspection · IFRS Judgment · ISSB Sustainability — with Agentic AI](research/AGENTIC_AI_ASSURANCE_RESEARCH.md)**

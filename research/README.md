@@ -49,6 +49,9 @@ Literature and method references **inform research hypotheses**, but scientific 
 
 ## Inspectable code and validation
 
+- **[NOMOS AI V6 — Financial Data Provenance and Reproducibility](nomos-ai-v6/README.md)** — public Python audit using OpenAP, Kenneth French FF5 and Tidy Finance, with 60/48-month research panels and explicit historical-vintage restrictions.
+
+
 - [**Financial AI and evidence evaluation**](ai_evidence_evaluation/README.md) — executable Python, synthetic unit tests and reproducibility artifacts.
 - [**Run provenance and model-neutral metadata**](ai_evidence_evaluation/PROVENANCE_VALIDATION.md) — file hashes, model/version declarations, costs and timestamps, without claiming API attestation.
 - [**Methodological benchmark comparison**](LLM_BENCHMARKS_AND_EVALUATION.md) — published evaluation practices for model reliability and professional judgment.
