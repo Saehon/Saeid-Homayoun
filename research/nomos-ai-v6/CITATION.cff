@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Cite this research release at an exact commit and acknowledge the original financial data authors."
+type: software
+title: "NOMOS AI V6: Financial Data Provenance and Reproducibility (Phase 1)"
+authors:
+  - family-names: "Homayoun"
+    given-names: "Saeid"
+    orcid: "https://orcid.org/0000-0002-2536-0446"
+repository-code: "https://github.com/Saehon/Saeid-Homayoun"
+url: "https://github.com/Saehon/Saeid-Homayoun/tree/main/research/nomos-ai-v6"
+version: "6.0.0-phase1"
+date-released: "2026-11-05"
+keywords:
+  - asset pricing
+  - reproducibility
+  - financial data quality
+  - data provenance
+  - NOMOS AI
+abstract: "Python research tools for auditing source revisions, financial returns, factor joins, temporal data quality and matching portfolio cost specifications. No financial-policy test was performed."

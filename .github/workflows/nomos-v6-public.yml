@@ -1,0 +1,35 @@
+name: "NOMOS V6 | Public Data Quality"
+
+on:
+  push:
+    paths:
+      - "research/nomos-ai-v6/**"
+      - ".github/workflows/nomos-v6-public.yml"
+  pull_request:
+    paths:
+      - "research/nomos-ai-v6/**"
+      - ".github/workflows/nomos-v6-public.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  data-contracts:
+    name: "Offline data-contract tests (Python ${{ matrix.python-version }})"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "${{ matrix.python-version }}"
+          cache: pip
+          cache-dependency-path: "research/nomos-ai-v6/requirements.txt"
+      - name: "Install reproducible research dependencies"
+        run: python -m pip install -r research/nomos-ai-v6/requirements.txt
+      - name: "Test data contracts without downloading source data"
+        run: python -m pytest -q research/nomos-ai-v6/tests/test_v6_data.py

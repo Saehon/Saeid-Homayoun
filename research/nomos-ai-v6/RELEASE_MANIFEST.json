@@ -1,0 +1,75 @@
+{
+  "title": "NOMOS V6 Public Phase 1 Release",
+  "date": "2026-11-05",
+  "files": {
+    ".github/workflows/nomos-v6-public.yml": {
+      "bytes": 1055,
+      "sha256": "2e8c97f6d9b75f8608c443c3a9dc339380983e007cfd0e6e2580c7cdc6112fab"
+    },
+    "research/nomos-ai-v6/README.md": {
+      "bytes": 6700,
+      "sha256": "73db46b8834216d92c515ac59011c6f176d4781b81a141f3627cfc8377b8bc49"
+    },
+    "research/nomos-ai-v6/RELEASE_NOTES.md": {
+      "bytes": 1023,
+      "sha256": "ac31a9f237da56060e71e41f2b54657f8881d52947b6a56a4c7764f80eac53de"
+    },
+    "research/nomos-ai-v6/requirements.txt": {
+      "bytes": 74,
+      "sha256": "5c79b30a27e7387df68e607bd0865703c5fdf17ff176a5b670624caa7ba1b4c7"
+    },
+    "research/nomos-ai-v6/THIRD_PARTY_NOTICES.md": {
+      "bytes": 1016,
+      "sha256": "00dcce2cce2a8280174627385fa8496b07481a4841a4fea79500d4e850f8b44c"
+    },
+    "research/nomos-ai-v6/CITATION.cff": {
+      "bytes": 839,
+      "sha256": "3fb719f0aaf4e118718349694a46e5098c8a1438a5debd59a0d83e9fb2612aec"
+    },
+    "research/nomos-ai-v6/.gitignore": {
+      "bytes": 106,
+      "sha256": "6fa63e773b658b4996420abcb18da811be81172016064600c67feae5fa7c3808"
+    },
+    "research/nomos-ai-v6/docs/REFERENCES.md": {
+      "bytes": 2590,
+      "sha256": "a2e1b40b809f5a98297c0f81cfb3b326b067ef3423ccfd9ab94f69ec672a1059"
+    },
+    "research/nomos-ai-v6/docs/DATA_DICTIONARY.md": {
+      "bytes": 2536,
+      "sha256": "8d034d070caf37abbd8daf622433ca89c2a445bc6c8fa9e512d546fde799f90b"
+    },
+    "research/nomos-ai-v6/docs/PHASE2_GO_NO_GO.md": {
+      "bytes": 2174,
+      "sha256": "30d210867e6085659845c6404ab293a6ca38c70af02c82b8aafd31e9cecc7431"
+    },
+    "research/nomos-ai-v6/data/README.md": {
+      "bytes": 1881,
+      "sha256": "d8e1021cd631a46ae7a6813d35110974e7eec6afb881765be00fbb6ac1ddb475"
+    },
+    "research/nomos-ai-v6/src/inspect_parquets.py": {
+      "bytes": 1721,
+      "sha256": "2188af54c0279f14470d7ae2f762ef885f401d2c1554aeb2e4be98a78b0beadb"
+    },
+    "research/nomos-ai-v6/src/build_panel.py": {
+      "bytes": 12872,
+      "sha256": "d89304c6ca39c86b93fdd4046e984f554a6e7fda270473a7b1d948072c1f9a35"
+    },
+    "research/nomos-ai-v6/src/probe_sources.py": {
+      "bytes": 3488,
+      "sha256": "7369ab20d0140998728f4571948987c3076349ef105227c85f0e236d96672169"
+    },
+    "research/nomos-ai-v6/reports/PHASE1_VALIDATION_REPORT.md": {
+      "bytes": 5915,
+      "sha256": "41312351999a71366c7fde821851b2a61b0bee2d891ac68402edca4ec7f1f180"
+    },
+    "research/nomos-ai-v6/reports/v6_quality_report.json": {
+      "bytes": 19261,
+      "sha256": "1d492d20cd859773c7335fbf3aa03e247045e9c48239f9d8a81c54230f2c0b31"
+    },
+    "research/nomos-ai-v6/tests/test_v6_data.py": {
+      "bytes": 2702,
+      "sha256": "36cc55c4cef1660eab15e2ea214d12cdfa24afc294861f04bcb4f4363b4d2530"
+    }
+  },
+  "status": "DATA_AUDIT_ONLY"
+}

@@ -1,0 +1,506 @@
+{
+  "phase": "V6 Phase 1 \u2014 Data Validation",
+  "status": "RESEARCH_DATA_AUDIT",
+  "evidence_type": "public_revised_historical_data",
+  "point_in_time_verified": false,
+  "notes": [
+    "No decision policy is trained or tested in this phase",
+    "OpenAP 2026 release retrospective: historical publication-time not proven",
+    "Tidy portfolio specifications may differ from OpenAP original methods",
+    "No inference-cost estimation or trading-profits claim"
+  ],
+  "sources": {
+    "OpenAP_2026": {
+      "url": "https://huggingface.co/datasets/OpenSourceAP/CrossSection/resolve/dd1054254c4501776432caa6d7ce5ecd9586f6a9/Portfolios/Full%20Sets%20OP/PredictorLSretWide.parquet",
+      "bytes": 1439671,
+      "sha256": "fc01df25d4383153cb3ae9e0dd730cc34b6d15a5207abeff09f34beda45bca58"
+    },
+    "OpenAP_2021": {
+      "url": "https://huggingface.co/datasets/OpenSourceAP/CrossSection/resolve/2ef566a3a35fc075ceaf5f6fd01b58d39b25e1b6/Portfolios/Full_Sets_Main/PredictorLSretWide.parquet",
+      "bytes": 1310444,
+      "sha256": "8ad8f59d390ee95e100d5b79e47e3faf99feeb4918d0480f88013ccf2c5e1793"
+    },
+    "French_FF5": {
+      "url": "https://mba.tuck.dartmouth.edu/pages/Faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip",
+      "bytes": 11971,
+      "sha256": "17d7a575e71d6764a70ddec3f8d887756c0eebf3a60f64d6ba95d2adde3fed26"
+    },
+    "TidyGrid_Accruals": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/accruals.parquet",
+      "bytes": 116857,
+      "sha256": "95daab7b45bca62e9d0e8854daf8bded50d3029b8551d4b7e38ba65c3ef2d4c0"
+    },
+    "TidyReturns_Accruals": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_3087001-3088000.parquet",
+      "bytes": 4109118,
+      "sha256": "02d7e98ae87ca2489bfd70f45132d06ef178acc09ed780db27c4be49b4faed70"
+    },
+    "TidyCosts_Accruals": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_3087001-3088000.parquet",
+      "bytes": 4898847,
+      "sha256": "bcdb3bce2a593f4dda0a22c594950e022eda923f7917f9dac4a78e7230227b9f"
+    },
+    "TidyGrid_AssetGrowth": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/assetgrowth.parquet",
+      "bytes": 116866,
+      "sha256": "01487b2ad37e75393cdc498e844ae5b651aae2c35261f01ca363050491c56a6e"
+    },
+    "TidyReturns_AssetGrowth": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_3145001-3146000.parquet",
+      "bytes": 4108062,
+      "sha256": "9206cad0aafb00a335de7192afed7d512f41b4489ccf24e0f5af41de7387c8df"
+    },
+    "TidyCosts_AssetGrowth": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_3145001-3146000.parquet",
+      "bytes": 4897322,
+      "sha256": "52a9b0db4a7f6313fcdcfddd2af6881b826f3e1ed319a74096dcad5df393ac23"
+    },
+    "TidyGrid_BM": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/bm.parquet",
+      "bytes": 116838,
+      "sha256": "7692cc0113404216af7e7f160f3f5e317a65d23cfc0c7a4914c6b635318f69a1"
+    },
+    "TidyReturns_BM": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_3185001-3186000.parquet",
+      "bytes": 4110060,
+      "sha256": "acc5e2aee3b603d976f98009e291c1d2ab316e2dbb96cd7bec8c512598bce0e5"
+    },
+    "TidyCosts_BM": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_3185001-3186000.parquet",
+      "bytes": 4898847,
+      "sha256": "cbb3fbb1b89f0174dadd43e85e9599b97f26200db515c59ca004c6c472dbade9"
+    },
+    "TidyGrid_Mom12m": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/mom12m.parquet",
+      "bytes": 116851,
+      "sha256": "7367e8fba46ef8e5bbc8c3788562b3483b4f9d89f6b30466413a0311e85a0522"
+    },
+    "TidyReturns_Mom12m": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_3680001-3681000.parquet",
+      "bytes": 4110823,
+      "sha256": "e13072f4814cca25932fc01ed9956078a99639f215489e251b2b313e672ae7b3"
+    },
+    "TidyCosts_Mom12m": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_3680001-3681000.parquet",
+      "bytes": 4898847,
+      "sha256": "99a9c6454432d90e9fc56b08a17e6f2302496abfd244396df5789782cb82ff03"
+    },
+    "TidyGrid_GP": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/gp.parquet",
+      "bytes": 116838,
+      "sha256": "e5d2385c8e245c59ef7506942a2f11afc59f2a28d0cf1a34365e67d4a68aa7a1"
+    },
+    "TidyReturns_GP": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_3496001-3497000.parquet",
+      "bytes": 4109010,
+      "sha256": "1399787ff536fdb264a67841bc7e58d03a7ca1fa7d510120abc200cdc15b2433"
+    },
+    "TidyCosts_GP": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_3496001-3497000.parquet",
+      "bytes": 4897322,
+      "sha256": "e46c93a8c0d0a714a3a4540b520c5022223d98cc2cc1e1ee6e457b5110c59470"
+    },
+    "TidyGrid_Investment": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/investment.parquet",
+      "bytes": 116863,
+      "sha256": "6a084b022fad4f4312ec0e6cd212b1a86f9031cda53635f825b3f3d57206039f"
+    },
+    "TidyReturns_Investment": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_3623001-3624000.parquet",
+      "bytes": 4108380,
+      "sha256": "750002b4f175ad01b64f55e74f7f5c2b3d7de26da11c2632ccb32faf351552c6"
+    },
+    "TidyCosts_Investment": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_3623001-3624000.parquet",
+      "bytes": 4898847,
+      "sha256": "85081a37d735094ec7e60c8688f7d82a80c10a4d552410cfa7be70de4ab4ffb3"
+    },
+    "TidyGrid_EP": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/ep.parquet",
+      "bytes": 116838,
+      "sha256": "8d925f132b54a328e9cc4e96dcc0b5a28331d4e8e73ab7c659ffaf52cac4ddb7"
+    },
+    "TidyReturns_EP": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_3438001-3439000.parquet",
+      "bytes": 4109462,
+      "sha256": "b3cbecc3466ad774b7300027fd4fcdd70a35f37fb898d5b1a77a4d3b80df25fb"
+    },
+    "TidyCosts_EP": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_3438001-3439000.parquet",
+      "bytes": 4898847,
+      "sha256": "f3d79c24315407201fe7c5c7adb3f1f6e93cad8f179f63ed92af8858d021854b"
+    },
+    "TidyGrid_STreversal": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library-grid/resolve/54da7bfaef55bdfb566849be56e9f1d5826798ea/portfolio_sort_grid/streversal.parquet",
+      "bytes": 116863,
+      "sha256": "f96f2753b8837baaffe7b9ea90593a165ba4d275010edbc8ab71cddee9550f33"
+    },
+    "TidyReturns_STreversal": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/id_4033001-4034000.parquet",
+      "bytes": 4111010,
+      "sha256": "882fd9c8c052599b399b2f850e1a87490025cefda55356301aeceb021fb1f5c9"
+    },
+    "TidyCosts_STreversal": {
+      "url": "https://huggingface.co/datasets/tidy-finance/factor-library/resolve/31887641d9df6aeeeb901c985edf3fe370dc59f7/costs/id_4033001-4034000.parquet",
+      "bytes": 4898847,
+      "sha256": "aa0ae22bf83fea0e8f2058955a9363d0cdfc634affe4ebd3b7bc615f04a33108"
+    }
+  },
+  "tidy": {
+    "specs": {
+      "Accruals": {
+        "id": 3087638,
+        "sorting_variable": "accruals",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      },
+      "AssetGrowth": {
+        "id": 3145238,
+        "sorting_variable": "assetgrowth",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      },
+      "BM": {
+        "id": 3185558,
+        "sorting_variable": "bm",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      },
+      "Mom12m": {
+        "id": 3680918,
+        "sorting_variable": "mom12m",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      },
+      "GP": {
+        "id": 3496598,
+        "sorting_variable": "gp",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      },
+      "Investment": {
+        "id": 3623318,
+        "sorting_variable": "investment",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      },
+      "EP": {
+        "id": 3438998,
+        "sorting_variable": "ep",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      },
+      "STreversal": {
+        "id": 4033430,
+        "sorting_variable": "streversal",
+        "min_size_quantile": null,
+        "min_stock_price": null,
+        "min_listing_age": 24,
+        "exclude_financials": false,
+        "exclude_utilities": false,
+        "exclude_negative_book_equity": false,
+        "exclude_negative_earnings": false,
+        "sorting_variable_lag": "ff",
+        "rebalancing": "monthly",
+        "n_portfolios_main": 5.0,
+        "sorting_method": "univariate",
+        "breakpoints_min_size_threshold": null,
+        "n_portfolios_secondary": null,
+        "breakpoints_exchanges": "NYSE",
+        "weighting_scheme": "VW"
+      }
+    },
+    "coverage": {
+      "Accruals": {
+        "id": 3087638,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_Accruals_ret": 0.0,
+          "tidy_Accruals_turnover": 0.0,
+          "tidy_Accruals_cost": 0.0,
+          "tidy_Accruals_microcap_share": 0.0
+        }
+      },
+      "AssetGrowth": {
+        "id": 3145238,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_AssetGrowth_ret": 0.0,
+          "tidy_AssetGrowth_turnover": 0.0,
+          "tidy_AssetGrowth_cost": 0.0,
+          "tidy_AssetGrowth_microcap_share": 0.0
+        }
+      },
+      "BM": {
+        "id": 3185558,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_BM_ret": 0.0,
+          "tidy_BM_turnover": 0.0,
+          "tidy_BM_cost": 0.0,
+          "tidy_BM_microcap_share": 0.0
+        }
+      },
+      "Mom12m": {
+        "id": 3680918,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_Mom12m_ret": 0.0,
+          "tidy_Mom12m_turnover": 0.0,
+          "tidy_Mom12m_cost": 0.0,
+          "tidy_Mom12m_microcap_share": 0.0
+        }
+      },
+      "GP": {
+        "id": 3496598,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_GP_ret": 0.0,
+          "tidy_GP_turnover": 0.0,
+          "tidy_GP_cost": 0.0,
+          "tidy_GP_microcap_share": 0.0
+        }
+      },
+      "Investment": {
+        "id": 3623318,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_Investment_ret": 0.0,
+          "tidy_Investment_turnover": 0.0,
+          "tidy_Investment_cost": 0.0,
+          "tidy_Investment_microcap_share": 0.0
+        }
+      },
+      "EP": {
+        "id": 3438998,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_EP_ret": 0.0,
+          "tidy_EP_turnover": 0.0,
+          "tidy_EP_cost": 0.0,
+          "tidy_EP_microcap_share": 0.0
+        }
+      },
+      "STreversal": {
+        "id": 4033430,
+        "rows_2021_2024": 48,
+        "observed_min": "2021-01-01",
+        "observed_max": "2024-12-01",
+        "null_rates": {
+          "tidy_STreversal_ret": 0.0,
+          "tidy_STreversal_turnover": 0.0,
+          "tidy_STreversal_cost": 0.0,
+          "tidy_STreversal_microcap_share": 0.0
+        }
+      }
+    },
+    "errors": [],
+    "joined_months": 48,
+    "joined_months_start": "2021-01-01",
+    "joined_months_end": "2024-12-01"
+  },
+  "core_quality": {
+    "months_expected": 60,
+    "months_present": 60,
+    "missing_months": 0,
+    "start": "2021-01-01",
+    "end": "2025-12-01",
+    "duplicate_dates": 0,
+    "na_rate_by_signal": {
+      "Accruals": 0.0,
+      "AssetGrowth": 0.0,
+      "BM": 0.0,
+      "Mom12m": 0.0,
+      "GP": 0.0,
+      "Investment": 0.0,
+      "EP": 0.0,
+      "STreversal": 0.0
+    },
+    "nonfinite_by_signal": {
+      "Accruals": 0,
+      "AssetGrowth": 0,
+      "BM": 0,
+      "Mom12m": 0,
+      "GP": 0,
+      "Investment": 0,
+      "EP": 0,
+      "STreversal": 0
+    },
+    "french_missing_by_factor": {
+      "Mkt-RF": 0.0,
+      "SMB": 0.0,
+      "HML": 0.0,
+      "RMW": 0.0,
+      "CMA": 0.0,
+      "RF": 0.0
+    },
+    "openap_2026_full_start": "1926-01-01",
+    "openap_2026_full_end": "2025-12-01",
+    "openap_2021_full_start": "1926-01-01",
+    "openap_2021_full_end": "2020-12-01",
+    "french_full_end": "2026-09-01",
+    "vintage_months_overlap": 1140,
+    "historical_revision_by_signal": {
+      "Accruals": {
+        "common_n": 822,
+        "mean_abs_difference_pct_points": 1.0302797125201415
+      },
+      "AssetGrowth": {
+        "common_n": 822,
+        "mean_abs_difference_pct_points": 0.1966461743120359
+      },
+      "BM": {
+        "common_n": 714,
+        "mean_abs_difference_pct_points": 2.6406192258864944
+      },
+      "Mom12m": {
+        "common_n": 1128,
+        "mean_abs_difference_pct_points": 0.28714437824202915
+      },
+      "GP": {
+        "common_n": 834,
+        "mean_abs_difference_pct_points": 0.12050157946019424
+      },
+      "Investment": {
+        "common_n": 810,
+        "mean_abs_difference_pct_points": 0.18891975740430847
+      },
+      "EP": {
+        "common_n": 840,
+        "mean_abs_difference_pct_points": 0.1349882698952183
+      },
+      "STreversal": {
+        "common_n": 1139,
+        "mean_abs_difference_pct_points": 0.31622961373885766
+      }
+    },
+    "lag1_feature_na_rate": {
+      "Accruals": 0.0,
+      "AssetGrowth": 0.0,
+      "BM": 0.0,
+      "Mom12m": 0.0,
+      "GP": 0.0,
+      "Investment": 0.0,
+      "EP": 0.0,
+      "STreversal": 0.0,
+      "Mkt-RF": 0.0,
+      "SMB": 0.0,
+      "HML": 0.0,
+      "RMW": 0.0,
+      "CMA": 0.0,
+      "RF": 0.0
+    }
+  },
+  "quality_gate": {
+    "structural_integrity": "PASS",
+    "publication_time_vintage": "FAIL_NOT_ESTABLISHED",
+    "all_8_tidy_cost_series": "PASS",
+    "trading_cost_equivalence_to_openap": "NOT_ESTABLISHED",
+    "ready_for_prospective_V6_finance_backtest": false
+  }
+}

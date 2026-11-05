@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.parquet
+*.zip
+outputs/
+reports/*.csv
+data/raw/
+.env
+.env.*
