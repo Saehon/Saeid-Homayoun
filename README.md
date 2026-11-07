@@ -3,6 +3,10 @@
 
 *Evidence-governed AI education and research for accounting, auditing, finance and sustainability.*
 
+**[Discover NAAIL research experiences — choose your role, explore products, try guided synthetic examples](discover/)** · [Product UX architecture and validation plan](docs/EXPERIENCE_HUB_PRODUCT_ARCHITECTURE.md)
+
+*This is a public educational preview, not a live audit, IFRS-compliance service, or validated research result.*
+
 ### Research by Saeid Homayoun
 
 **Featured public finance research:** [NOMOS AI V6 — Financial Data Provenance & Reproducibility](research/nomos-ai-v6/README.md) · [Phase 1 Validation Report](research/nomos-ai-v6/reports/PHASE1_VALIDATION_REPORT.md). **Data audit only; no trading strategy has been validated.**
