@@ -1,0 +1,35 @@
+{
+  "validated_on": "2026-10-10",
+  "independent_validation": "PASS",
+  "artifact": "NAAIL_REAL_SEC_HISTORICAL_10K_FY2021_2024_20260930.zip",
+  "source_snapshot": "2026-09-30",
+  "FY2021_2024_raw_issuer_years": 28483,
+  "distinct_original_CIK": 8926,
+  "provisional_nonfinancial_company_years": 18336,
+  "provisional_nonfinancial_distinct_CIK": 5489,
+  "SIC_2026_snapshot_missing_count": 569,
+  "financial_by_SIC_snapshot_FY2021_2024_count": 9578,
+  "original_10KT_transition_reports": 66,
+  "multiple_fiscal_period_ends_within_company_year": 105,
+  "zero_duplicated_CIK_FY_in_selected": true,
+  "original_form_always_10K": true,
+  "negative_file_date_minus_period_date_count": 0,
+  "isXBRL_true_count": 24811,
+  "all_SEC_url_present": true,
+  "all_current_year_SIC_not_historically_validated": true,
+  "none_AI_CAM_ICFR_PCAOB_verified": true,
+  "filing_to_report_period_days": {
+    "min": 1,
+    "median": 72,
+    "p99": 230,
+    "max": 1273
+  },
+  "timestamp_provenance_counts": {
+    "trusted_snapshot_eastern": 21328,
+    "live_file_inferred": 6412,
+    "live_pair": 609,
+    "sgml": 87,
+    "cross_cik_pair": 47
+  },
+  "QA_logic": "Observed SEC submission filing-date/FY and row linkage checks only. 2026 SIC snapshot cannot replace historical SIC. No quantitative AI investment, CAM eligibility, ICFR or PCAOB matching has yet been verified."
+}

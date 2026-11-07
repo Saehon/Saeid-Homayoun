@@ -1,0 +1,57 @@
+{
+  "study": "The Value of Audit Oversight in AI Capital Investment",
+  "version": "V6",
+  "verified_utc": "2026-10-10",
+  "source_sec": "23 official SEC quarterly XBRL ZIPs (2021Q1–2026Q3)",
+  "source_formap": "PCAOB AuditorSearch full bulk Form AP (frozen 2026-10-10)",
+  "source_sec_dated_filings": "iangow/sec_submissions_data release 2026-09-30, original SEC Form 10-K archive",
+  "actual_SEC_original_10K_accessions": 29550,
+  "actual_SEC_CIK_mismatch_quarantined": 228,
+  "abs_fye_gap_gt7_quarantined": 11,
+  "source_CIK_and_period_gate_pass": 29313,
+  "main_fy2021_2024_nonfinancial_SIC_as_filed_and_source_gate": 17492,
+  "main_period_and_formAP_single_registered_firm_issuer_years": 17104,
+  "main_unique_CIK_with_registered_auditor": 5310,
+  "main_distinct_registered_auditor_firms": 305,
+  "main_CFO_and_cash_PPE_and_following_year_CFO_and_formAP": 9487,
+  "main_CFO_and_cash_PPE_and_following_year_CFO_unique_CIK": 3157,
+  "form_ap_dated_after_original_SEC_10K_share_approx": 0.9777,
+  "source_inspection_report_first_public_release_asof_complete": false,
+  "actual_company_AI_only_capex_quantified": false,
+  "CAM_eligibility_and_risk_verified": false,
+  "SOX_ICFR_material_weakness_verified": false,
+  "full_FT50_causal_N": null,
+  "by_exposure_FY": [
+    {
+      "FY": 2021,
+      "candidate_original_SEC_SIC_source": 4616,
+      "formAP_auditor_match": 4503,
+      "gaap_with_future_CFO_formAP": 2546
+    },
+    {
+      "FY": 2022,
+      "candidate_original_SEC_SIC_source": 4540,
+      "formAP_auditor_match": 4424,
+      "gaap_with_future_CFO_formAP": 2457
+    },
+    {
+      "FY": 2023,
+      "candidate_original_SEC_SIC_source": 4292,
+      "formAP_auditor_match": 4192,
+      "gaap_with_future_CFO_formAP": 2318
+    },
+    {
+      "FY": 2024,
+      "candidate_original_SEC_SIC_source": 4044,
+      "formAP_auditor_match": 3985,
+      "gaap_with_future_CFO_formAP": 2166
+    }
+  ],
+  "source_files": {
+    "real_SEC_XBRL": "https://drive.google.com/file/d/1diGY2eSn1s8AOeudZD-vR9q042Uu8aPb/view",
+    "real_PCAOB_formAP": "https://drive.google.com/file/d/1aJx6tqpTaJM6gQtagYzGruAbbKrsx4YP/view",
+    "joint_source_zip": "https://drive.google.com/file/d/1s0_paa1zHGFb2gTwQrR292JjwNxEv6Wg/view",
+    "PCAOB_inspection_detailed": "https://drive.google.com/file/d/1TfXkNt7MtrnQt7Hq__Kqx95_5aFUINW1/view"
+  },
+  "scientific_limit": "Auditor firm REGISTRATION ID and whole-company CFO/cash PPE identified, but AI-only capex and audit oversight at as-of time unmeasured. No H1-H5 inferential model or significant value creation estimate."
+}

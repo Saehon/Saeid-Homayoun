@@ -1,0 +1,43 @@
+{
+  "validated_on": "2026-10-10",
+  "source_snapshot": "2026-09-30",
+  "population_description": "Original 10-K issuer-year FY2021-2024 with provisional 2026-SIC nonfinancial screen",
+  "total_provisional_nonfinancial_firm_years": 18336,
+  "total_provisional_nonfinancial_unique_CIK": 5489,
+  "one_year_forward_10K_available_firm_years": 16581,
+  "one_year_forward_10K_available_CIK": 5076,
+  "one_year_forward_10K_available_share": 0.9043,
+  "two_year_exposure_FY2021_2023_firm_years": 14140,
+  "two_year_forward_10K_available_firm_years": 11533,
+  "two_year_forward_10K_available_CIK": 4391,
+  "two_year_forward_10K_available_share": 0.8156,
+  "unique_CIK_present_every_FY2021_2024": 3662,
+  "unique_CIK_present_every_FY2021_2025": 3303,
+  "by_exposure_fy": [
+    {
+      "year": 2021,
+      "exposures": 4902,
+      "tplus1": 4530,
+      "tplus2": 4071
+    },
+    {
+      "year": 2022,
+      "exposures": 4786,
+      "tplus1": 4287,
+      "tplus2": 3864
+    },
+    {
+      "year": 2023,
+      "exposures": 4452,
+      "tplus1": 4005,
+      "tplus2": 3598
+    },
+    {
+      "year": 2024,
+      "exposures": 4196,
+      "tplus1": 3759,
+      "tplus2": null
+    }
+  ],
+  "limits": "Forward 10-K filing presence is not financial-metric availability. Cash-flow XBRL, pre-public CAM/ICFR/PCAOB, account-risk and AI-specific investment all remain NOT VERIFIED. Balanced panel estimates are likely selection-biased."
+}
