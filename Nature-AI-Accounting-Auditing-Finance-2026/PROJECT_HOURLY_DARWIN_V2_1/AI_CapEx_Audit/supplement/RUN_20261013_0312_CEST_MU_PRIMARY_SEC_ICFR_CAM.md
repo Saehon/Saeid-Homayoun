@@ -1,0 +1,9 @@
+# RUN 2026-10-13 03:12 CEST — MU FY2025 primary SEC ICFR / SIC / CAM evidence gate
+Status: PARTIAL. Exactly one NEW issuer-year QA observation, not a new private main-sample row.
+Source: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/0000723125-25-000028-index.html
+Original filing: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+CIK 0000723125; accession 0000723125-25-000028; SEC 10-K filed 2025-10-03, accepted 14:42:25 ET; FY end 2025-08-28; SEC SIC 3674.
+Primary filing Item 9A: management expressly concluded company-level ICFR EFFECTIVE as of 2025-08-28. Item 8 PwC report expressly opined company-level ICFR EFFECTIVE. One CAM: accounting for U.S. CHIPS Act funding agreements, category government incentives; this CAM does NOT indicate material weakness, and domain-specific control effectiveness remains UNKNOWN. AI-specific CapEx remains NULL, not estimated from generic CapEx or AI demand. PCAOB Form AP actual filing timestamp unverified, so partner fields are unavailable as-of 10-K.
+Local in-memory JavaScript data-consistency tests 17/17 PASS, using source-inspected metadata; not source-byte reproduction or independent source extraction. DiD/regression NOT_RUN. Nature35 methods NOT_USED. Original 10-row restricted sample and manuscript UNCHANGED. One publicly sourced QA record only.
+Ancillary blocked action: PCAOB AuditorSearch bulk ZIP official URL https://assets.pcaobus.org/firm-filings/FirmFilings.zip located, but download failed in this runtime (web binary unsupported; container network DNS unavailable). No inference about AP filing timestamp. Record in OPEN REPAIR QUEUE and move to independent source validation. Writer lock UNKNOWN; no protected-main merge. GitHub CI status not asserted. Eight scientific gates not complete.
+Next: independently verify another unchecked 2025 issuer-year or acquire official Form AP bulk row with exact filing timestamp when network is available.

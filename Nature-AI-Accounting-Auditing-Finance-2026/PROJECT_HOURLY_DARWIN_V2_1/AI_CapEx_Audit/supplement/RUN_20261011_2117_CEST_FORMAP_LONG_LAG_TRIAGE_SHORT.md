@@ -1,0 +1,1 @@
+DARWIN V5 2026-10-11 21:17 CEST. Original ZIP QA: 17104 firm-years, 400 Form AP dates more than 365 days after SEC filing; 239 of 9487 analytic rows affected. 12/12 source checks passed. First publication date remains unverified; causal inference blocked. Status PARTIAL.

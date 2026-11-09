@@ -1,0 +1,3 @@
+# FY2025 ICFR and CAM domain construct QA — 2026-10-12 22:15 CEST
+
+Status PARTIAL. Original project Drive source inspected: 10 unique firm-years, 10 secondary ICFR effective-opinion claims, 0 ineffective claims, 13 CAM mentions (revenue 2; inventory 2; tax 5; contingencies 2; valuation 1; government incentives 1). 16 of 16 JS assertions passed on original CSV. Primary ICFR opinions NOT independently verified in this run. CAM topics do not measure control effectiveness. Economic role does not equal SIC/NAICS. AI-specific CapEx missing all 10. DiD not identified from one year with no status variation. No Nature35 transfer, no regressions. Restricted raw data stays in Drive. Google Drive status document is authoritative; prior CI SKIPPED and lock unverified.

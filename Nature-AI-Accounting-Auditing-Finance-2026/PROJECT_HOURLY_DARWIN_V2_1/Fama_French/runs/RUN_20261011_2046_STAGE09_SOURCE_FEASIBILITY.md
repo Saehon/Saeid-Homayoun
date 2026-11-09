@@ -1,0 +1,4 @@
+# Fama French Stage 09: source feasibility
+
+2026-10-11 20:46 Europe/Stockholm.
+One task: audited documentation for CRSP/WRDS, Sharadar, OpenFIGI, and Alpaca. CRSP offers permanent security IDs, returns and delisting records but subscription access is unverified. Sharadar broad coverage requires a subscription; its free subset is limited. OpenFIGI maps identifiers but does not provide returns. Alpaca offers historical bars but a complete historical delisting universe is unverified. No candidate is confirmed to meet all required access, historical ID, total return and delisting gates. No new security observations or regressions. The existing three-stock panel is a pilot only. Next: verify lawful institutional CRSP access. Drive report content insertion blocked twice; archive PARTIAL. No scientific PASS claimed.

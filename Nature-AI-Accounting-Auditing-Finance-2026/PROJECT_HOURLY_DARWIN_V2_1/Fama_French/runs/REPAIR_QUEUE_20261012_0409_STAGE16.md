@@ -1,0 +1,3 @@
+# Stage16 repair queue — 2026-10-12
+
+Canonical Drive report was created, inserted and moved successfully; read-back confirmed parent and summary. GitHub dated report commit 3a7424a000697ddd2959b403f0d19ce820b7391d read back. Attempt 1 to append GitHub URL to Drive Doc via batch_update_document failed: `This tool call was blocked by OpenAI's safety checks`. Attempt 2 with only commit SHA failed identically. Stop retrying this mutation; manual UI insertion and read-back is the repair. Full code and JSON remain in local ZIP; CI, writer lock, and human signoff not verified. No empirical asset-pricing regression.
