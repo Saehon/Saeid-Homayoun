@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - research/saeid-auditbert-v2-20261016
     paths:
       - "open-data/cam-kam-auditbert-demo-001/**"
       - "kaggle/datasets/cam-kam-auditbert-public-demo/**"
@@ -49,13 +50,32 @@ jobs:
       - name: Validate canonical CAM/KAM demo
         run: python open-data/cam-kam-auditbert-demo-001/validate.py
 
+      - name: Validate aggregate metrics and source-data exclusion
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("kaggle/datasets/cam-kam-auditbert-public-demo/auditbert_v2_benchmark_metrics.json")
+          d = json.loads(p.read_text(encoding="utf-8"))
+          assert d["model_status"]["tfidf_baselines_executed"] is True
+          assert d["model_status"]["independent_finbert_weights_trained"] is False
+          assert d["model_status"]["llama_31_8b_qlora_adapter_trained"] is False
+          assert {x["cohort"] for x in d["datasets"]} == {"US_CAM", "UK_HEADQUARTERS_KAM_PROXY_NOT_VERIFIED_UK_AUDIT_REPORTS"}
+          assert all("description_only" in x for x in d["datasets"])
+          directory = p.parent
+          disallowed = ["CAM.csv", "KAM.csv", "KAM20240505.csv", "kam (uk)2023.xlsx"]
+          assert not any((directory / name).exists() for name in disallowed)
+          print("PASS: synthetic example + aggregate metrics only; zero private training rows or neural weights")
+          PY
+
       - name: Stage canonical data
         shell: bash
         run: |
           cp open-data/cam-kam-auditbert-demo-001/synthetic_cam_kam_sample.csv kaggle/datasets/cam-kam-auditbert-public-demo/
           cp open-data/cam-kam-auditbert-demo-001/provenance.json kaggle/datasets/cam-kam-auditbert-public-demo/
 
-      - name: Publish private Kaggle dataset
+      - name: Publish existing synthetic-safe Kaggle dataset version
         env:
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
         shell: bash

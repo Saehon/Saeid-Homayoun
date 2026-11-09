@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "project": "AuditBERT US–UK V2",
+  "research_lead": "Dr. Saeid Homayoun",
+  "recorded_date": "2026-10-16",
+  "publication_scope": "Aggregate experimental metrics only. No non-synthetic audit matter text, row identifiers, individual company observations, or trained neural model weights.",
+  "methods": {
+    "baseline": "TF-IDF (word 1-2 grams; max 50000 features; sublinear TF) + class-weighted LinearSVC",
+    "seed": 42,
+    "split": "Issuer-disjoint group split ~70/15/15",
+    "deduplication": "Normalized TITLE + DESCRIPTION exact duplicates removed, and all conflicting-label exact-text clusters excluded",
+    "rare_label_rule": "Native source labels with <100 examples in training mapped to OTHER_RARE",
+    "status": "Internal preliminary research benchmark, not publication-quality external validation"
+  },
+  "datasets": [
+    {
+      "cohort": "US_CAM",
+      "source_rows": 45924,
+      "unique_eligible_texts": 36771,
+      "train": 25774,
+      "validation": 5349,
+      "test": 5648,
+      "native_source_topics": 55,
+      "training_output_classes_including_other_rare": 37,
+      "title_and_description": {
+        "macro_f1": 0.7786232108,
+        "accuracy": 0.8673866856,
+        "weighted_f1": 0.8631115393,
+        "balanced_accuracy": 0.7754953988
+      },
+      "description_only": {
+        "macro_f1": 0.766761,
+        "accuracy": 0.858888,
+        "weighted_f1": 0.853953
+      },
+      "caveats": [
+        "Original report years are not verified",
+        "Near-verbatim semantic cross-split leakage still requires testing"
+      ]
+    },
+    {
+      "cohort": "UK_HEADQUARTERS_KAM_PROXY_NOT_VERIFIED_UK_AUDIT_REPORTS",
+      "pan_european_source_rows": 86122,
+      "uk_hq_candidate_rows": 35886,
+      "unique_eligible_texts": 33724,
+      "train": 23576,
+      "validation": 4960,
+      "test": 5188,
+      "native_source_topics_pan_european": 59,
+      "training_output_classes_including_other_rare": 38,
+      "title_and_description": {
+        "macro_f1": 0.7567145138,
+        "accuracy": 0.8207401696,
+        "weighted_f1": 0.8170950861,
+        "balanced_accuracy": 0.7626521025
+      },
+      "description_only": {
+        "macro_f1": 0.717099,
+        "accuracy": 0.792406,
+        "weighted_f1": 0.788329
+      },
+      "caveats": [
+        "Headquarters is NOT evidence of a UK ISA (UK) auditor reporting regime",
+        "Original report years not independently verified",
+        "Near-duplicate semantic cross-split leakage requires testing"
+      ]
+    }
+  ],
+  "model_status": {
+    "tfidf_baselines_executed": true,
+    "independent_finbert_weights_trained": false,
+    "llama_31_8b_qlora_adapter_trained": false,
+    "public_static_space_is_keyword_only": true
+  },
+  "reference_code": "https://github.com/Saehon/Saeid-Homayoun/tree/research/saeid-auditbert-v2-20261016/research/saeid-homayoun-auditbert-v2",
+  "private_source_registry": "https://docs.google.com/document/d/1YmktPLQ-be1sIFd-Ghlpvd7r156C2boC3y9eofM8p6k/edit",
+  "historical_collaborative_research": "https://ssrn.com/abstract=7272139",
+  "cross_country_comparison_limitation": "US and UK native topic taxonomies/class supports differ; do not rank country model quality from F1.",
+  "redistribution_warning": "Public-source disclosure availability is not proof that original Audit Analytics-format extracts and their assigned labels can be redistributed. This package contains no source rows."
+}
