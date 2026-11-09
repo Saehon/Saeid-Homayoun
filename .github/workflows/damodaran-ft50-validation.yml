@@ -1,0 +1,34 @@
+name: Damodaran FT50 Evidence Gate CI
+
+on:
+  pull_request:
+    paths:
+      - 'research/damodaran-ft50/**'
+      - '.github/workflows/damodaran-ft50-validation.yml'
+  push:
+    paths:
+      - 'research/damodaran-ft50/**'
+      - '.github/workflows/damodaran-ft50-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fail-closed-unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile validation scripts
+        run: python -m compileall -q research/damodaran-ft50/
+      - name: Run offline regression tests
+        run: python -m unittest discover -s research/damodaran-ft50 -p 'test_*.py' -v
+      - name: Declare scientific verification boundary
+        run: |
+          echo "Software unit tests only; no SEC originals, XBRL SHA-256 verification, historical vintage, or eight-gate scientific PASS claimed."
