@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ready_original",
+    "category": "valid_control",
+    "expected_blocked": false,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "0.20",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  },
+  {
+    "id": "ready_repeat",
+    "category": "repeatability",
+    "expected_blocked": false,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "0.20",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  },
+  {
+    "id": "arithmetic_error",
+    "category": "arithmetic_error",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "0.29",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  },
+  {
+    "id": "source_mismatch",
+    "category": "source_mismatch",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "0.20",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "UNKNOWN"
+      ]
+    }
+  },
+  {
+    "id": "missing_gold",
+    "category": "missing_gold",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": null,
+      "model_value": "0.20",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  },
+  {
+    "id": "negative_tolerance",
+    "category": "negative_tolerance",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "0.20",
+      "tolerance": "-1",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  },
+  {
+    "id": "no_citation",
+    "category": "no_citation",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "0.20",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": []
+    }
+  },
+  {
+    "id": "unparseable_value",
+    "category": "unparseable_value",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "not_number",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  },
+  {
+    "id": "nonfinite",
+    "category": "nonfinite",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": "NaN",
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  },
+  {
+    "id": "no_model_value",
+    "category": "no_model_value",
+    "expected_blocked": true,
+    "input": {
+      "case_id": "SYN-01",
+      "gold_value": "0.20",
+      "model_value": null,
+      "tolerance": "0.001",
+      "allowed_evidence_ids": [
+        "FIN-SYN-01"
+      ],
+      "cited_evidence_ids": [
+        "FIN-SYN-01"
+      ]
+    }
+  }
+]
