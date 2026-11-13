@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "tools": {
+    "inspect_package": {
+      "description": "Inventory files below a project-relative directory without reading file contents.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {"root": {"type": "string"}},
+        "required": ["root"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "root": {"type": "string"},
+          "file_count": {"type": "integer", "minimum": 0},
+          "extensions": {"type": "array", "items": {"type": "string"}},
+          "files": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["root", "file_count", "extensions", "files"],
+        "additionalProperties": false
+      }
+    },
+    "map_table_to_code": {
+      "description": "Trace a table node to code nodes through the supplied evidence graph.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {"graph": {"type": "object"}, "table_id": {"type": "string"}},
+        "required": ["graph", "table_id"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {"table_id": {"type": "string"}, "code_paths": {"type": "array", "items": {"type": "object"}}},
+        "required": ["table_id", "code_paths"],
+        "additionalProperties": false
+      }
+    },
+    "compare_reported_result": {
+      "description": "Compare reported and regenerated numeric values within a declared tolerance.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "reported": {"type": "number"},
+          "regenerated": {"type": "number"},
+          "tolerance": {"type": "number", "minimum": 0}
+        },
+        "required": ["reported", "regenerated"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "reported": {"type": "number"}, "regenerated": {"type": "number"},
+          "delta": {"type": "number"}, "tolerance": {"type": "number", "minimum": 0},
+          "match": {"type": "boolean"},
+          "assurance_state": {"type": "string", "enum": ["CONSISTENT", "FLAGGED"]}
+        },
+        "required": ["reported", "regenerated", "delta", "tolerance", "match", "assurance_state"],
+        "additionalProperties": false
+      }
+    },
+    "trace_provenance": {
+      "description": "Trace downstream evidence nodes from a supplied graph node.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {"graph": {"type": "object"}, "start_id": {"type": "string"}},
+        "required": ["graph", "start_id"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {"start_id": {"type": "string"}, "nodes": {"type": "array", "items": {"type": "object"}}},
+        "required": ["start_id", "nodes"],
+        "additionalProperties": false
+      }
+    },
+    "score_detection": {
+      "description": "Compute raw detection counts and precision, recall, and F1 from taxonomy identifiers.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "expected_ids": {"type": "array", "items": {"type": "string"}},
+          "detected_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["expected_ids", "detected_ids"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "tp": {"type": "integer", "minimum": 0}, "fp": {"type": "integer", "minimum": 0},
+          "fn": {"type": "integer", "minimum": 0}, "precision": {"type": "number"},
+          "recall": {"type": "number"}, "f1": {"type": "number"}
+        },
+        "required": ["tp", "fp", "fn", "precision", "recall", "f1"],
+        "additionalProperties": false
+      }
+    },
+    "generate_assurance_report": {
+      "description": "Summarize existing assurance states from a supplied evidence graph without promoting any state.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {"graph": {"type": "object"}},
+        "required": ["graph"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "graph_id": {"type": ["string", "null"]},
+          "overall_state": {"type": "string", "enum": ["CONSISTENT", "PARTIAL", "FLAGGED", "HUMAN_REVIEW"]},
+          "state_counts": {"type": "object"},
+          "findings": {"type": "array", "items": {"type": "object"}},
+          "governance": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["graph_id", "overall_state", "state_counts", "findings", "governance"],
+        "additionalProperties": false
+      }
+    }
+  }
+}
