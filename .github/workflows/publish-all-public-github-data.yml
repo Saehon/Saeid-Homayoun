@@ -93,7 +93,7 @@ jobs:
         run: python -m pip install --quiet --upgrade kaggle
 
       - name: Download snapshot
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: github-public-research-data
           path: /tmp/github-public-data
@@ -162,7 +162,7 @@ jobs:
         run: python -m pip install --quiet --upgrade huggingface_hub
 
       - name: Download snapshot
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: github-public-research-data
           path: /tmp/github-public-data
