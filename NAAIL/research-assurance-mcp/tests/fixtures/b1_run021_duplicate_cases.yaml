@@ -1,0 +1,15 @@
+# Synthetic historical reconstruction for the duplicate-DOI guard only.
+# It is not a case-selection record and does not edit historical RUN 021/022.
+schema_version: "1.0"
+normalization: "same as canonical registry"
+cases:
+  - case_id: "CASE-001"
+    doi: "10.1287/mnsc.2023.4670"
+    title: "Canonical Case 001"
+    registry_status: "BASELINE"
+    source_record: "Historical baseline"
+  - case_id: "CASE-002"
+    doi: "https://doi.org/10.1287/MNSC.2023.4670"
+    title: "RUN 021 duplicate reconstruction"
+    registry_status: "REJECTED_DUPLICATE_FIXTURE"
+    source_record: "Synthetic fixture proving RUN 021-style duplication is rejected"
