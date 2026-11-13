@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "metric_spec_id": "NAAIL-V1-B6-PILOT-METRICS-V1",
+  "status": "FROZEN_BEFORE_DATA",
+  "scoring_scope": "Compute every metric separately for each arm and evaluation stratum from the same frozen item identifiers and ground truth.",
+  "primary_metrics": [
+    {
+      "name": "precision",
+      "formula": "TP / (TP + FP)",
+      "zero_denominator_value": 0.0
+    },
+    {
+      "name": "recall",
+      "formula": "TP / (TP + FN)",
+      "zero_denominator_value": 0.0
+    },
+    {
+      "name": "f1",
+      "formula": "2 * precision * recall / (precision + recall)",
+      "zero_denominator_value": 0.0
+    }
+  ],
+  "required_counts": ["TP", "FP", "FN", "TN", "N"],
+  "secondary_outputs": [
+    "taxonomy_label_micro_precision",
+    "taxonomy_label_micro_recall",
+    "taxonomy_label_micro_f1",
+    "taxonomy_label_macro_f1",
+    "exact_taxonomy_set_match_count",
+    "unscorable_item_count_with_reasons",
+    "arm_abstention_count",
+    "item_level_disagreement_matrix"
+  ],
+  "taxonomy_macro_rule": "Compute per-label F1 using the same zero-denominator convention, then take the unweighted arithmetic mean across every label in the frozen schema, including labels with no predicted positives.",
+  "abstention_rule": "An abstention is not dropped. For binary scoring it is treated as an error against the frozen ground truth: FN for a positive item and FP for a negative item; it is also reported separately.",
+  "missing_output_rule": "A missing arm output is not imputed or excluded. The affected item is scored under the abstention rule and listed with its reason.",
+  "paired_comparisons": {
+    "reference_arm": "BASELINE_ALWAYS_NO_ERROR",
+    "required_deltas": [
+      "SYSTEM_NAAIL minus BASELINE_ALWAYS_NO_ERROR for precision recall and f1",
+      "each HUMAN_CODER minus BASELINE_ALWAYS_NO_ERROR for precision recall and f1",
+      "SYSTEM_NAAIL minus each HUMAN_CODER for precision recall and f1"
+    ],
+    "item_level_test": "two-sided exact McNemar test on paired binary correctness for each prespecified arm pair and stratum",
+    "multiplicity": "Report unadjusted exact p-values as descriptive pilot evidence; do not use them as gate-passing criteria."
+  },
+  "uncertainty": {
+    "method": "paired nonparametric bootstrap over item identifiers",
+    "replicates": 10000,
+    "seed": 20261005,
+    "interval": "two-sided 95% percentile interval",
+    "scope": "precision recall f1 and prespecified arm deltas within each stratum",
+    "small_or_degenerate_sample_rule": "If a metric is undefined across a resample under ordinary arithmetic, apply the frozen zero-denominator value and report the count of such resamples."
+  },
+  "aggregation_prohibitions": [
+    "No tuning threshold or metric definition after any evaluation input is unsealed.",
+    "No selecting a favorable coder, label subset, stratum, seed, or run.",
+    "No pooled headline metric across holdout and real-case strata.",
+    "No percentage-style completion claim from these metrics.",
+    "No claim that statistical significance alone establishes assurance value."
+  ],
+  "output_precision": {
+    "counts": "integer",
+    "metrics": "six decimal places",
+    "p_values": "six decimal places or exact bound when smaller",
+    "intervals": "six decimal places"
+  }
+}

@@ -1,0 +1,27 @@
+name: NAAIL V1 B6 Pilot Comparison Protocol Guard
+
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  b6-pilot-comparison-protocol-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frozen protocol
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile protocol guard
+        run: python -m py_compile NAAIL/research-assurance-mcp/v1-preparation/b6/test_b6_pilot_comparison_protocol.py
+
+      - name: Validate freeze hashes and protocol invariants
+        run: python NAAIL/research-assurance-mcp/v1-preparation/b6/test_b6_pilot_comparison_protocol.py
