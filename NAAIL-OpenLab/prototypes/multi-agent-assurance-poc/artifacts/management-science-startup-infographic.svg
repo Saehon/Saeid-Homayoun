@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="hdr" x1="0" x2="1"><stop stop-color="#062d55"/><stop offset="1" stop-color="#0879c9"/></linearGradient>
+  <linearGradient id="navy" x1="0" x2="1"><stop stop-color="#0a3d72"/><stop offset="1" stop-color="#1760a8"/></linearGradient>
+  <style>
+    .t{font-family:Arial,sans-serif;fill:#10273d}.w{font-family:Arial,sans-serif;fill:#fff}
+    .h1{font-size:42px;font-weight:700}.h2{font-size:24px;font-weight:700}.h3{font-size:18px;font-weight:700}
+    .b{font-size:15px}.s{font-size:13px}.box{fill:#fff;stroke:#c5d7e5;stroke-width:1.5}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="#eef5fa"/>
+<rect width="1600" height="120" fill="url(#hdr)"/>
+<text x="35" y="63" class="w h1">NAAIL Assurance Intelligence</text>
+<text x="35" y="98" class="w h2">Evidence-Governed AI Agent Assurance for Financial Risk and Sustainable Value</text>
+<rect x="1160" y="20" width="400" height="78" rx="12" fill="#083f72" stroke="#6cb7ed"/>
+<text x="1180" y="47" class="w h3">Independent trust layer for AI-powered finance</text>
+<text x="1180" y="70" class="w b">Evidence before confidence • Challenge before assurance</text>
+<text x="1180" y="91" class="w b">Human accountability before autonomous decisions</text>
+
+<text x="25" y="153" class="t h2">Scientific Foundation — Management Science Research Chain</text>
+<g class="t">
+  <rect x="20" y="172" width="170" height="125" rx="10" fill="#e3f0fc" stroke="#72aee6"/>
+  <text x="37" y="202" class="h3">Penno (2021)</text><text x="37" y="230" class="b">Assurance &amp;</text><text x="37" y="251" class="b">formal controls</text>
+  <rect x="205" y="172" width="170" height="125" rx="10" fill="#e6f7ef" stroke="#64bf95"/>
+  <text x="222" y="202" class="h3">Kim et al. (2022)</text><text x="222" y="230" class="b">ICFR / reporting</text><text x="222" y="251" class="b">failure indicators</text>
+  <rect x="390" y="172" width="170" height="125" rx="10" fill="#fff1df" stroke="#e5a24e"/>
+  <text x="407" y="202" class="h3">deHaan et al. (2023)</text><text x="407" y="230" class="b">Reporting-process</text><text x="407" y="251" class="b">resilience</text>
+  <rect x="575" y="172" width="170" height="125" rx="10" fill="#f0ebff" stroke="#9c83dc"/>
+  <text x="592" y="202" class="h3">Ashraf et al. (2024)</text><text x="592" y="230" class="b">Monitoring capacity</text><text x="592" y="251" class="b">&amp; overload</text>
+  <rect x="760" y="172" width="170" height="125" rx="10" fill="#e3f4fb" stroke="#55add2"/>
+  <text x="777" y="202" class="h3">Law &amp; Shen (2024/25)</text><text x="777" y="230" class="b">AI → better audit /</text><text x="777" y="251" class="b">ICFR judgments</text>
+  <rect x="945" y="172" width="170" height="125" rx="10" fill="#ffe9ec" stroke="#df7886"/>
+  <text x="962" y="202" class="h3">de Kok (2025)</text><text x="962" y="230" class="b">LLM accounting</text><text x="962" y="251" class="b">intelligence + validity</text>
+  <rect x="1130" y="172" width="170" height="125" rx="10" fill="#e7f6ed" stroke="#65ba81"/>
+  <text x="1147" y="202" class="h3">Krakowski et al.</text><text x="1147" y="224" class="b">(2025/26)</text><text x="1147" y="251" class="b">Human–AI augmentation</text>
+  <rect x="1315" y="172" width="120" height="125" rx="10" fill="#eee7ff" stroke="#8f6fd3"/>
+  <text x="1331" y="202" class="h3">Zhong</text><text x="1331" y="224" class="b">(2025/26)</text><text x="1331" y="251" class="b">Multi-layer authority</text>
+  <rect x="1450" y="172" width="125" height="125" rx="10" fill="#ffe7e7" stroke="#e56c6c"/>
+  <text x="1466" y="201" class="h3">Research gap</text><text x="1466" y="230" class="b">Who assures</text><text x="1466" y="251" class="b">the AI agents?</text>
+</g>
+
+<text x="25" y="335" class="t h2">NAAIL Multi-Agent Architecture — bounded, evidence-first and provider-neutral</text>
+<rect x="20" y="355" width="230" height="365" rx="14" class="box"/>
+<text x="40" y="390" class="t h3">Data &amp; Evidence</text>
+<text x="40" y="425" class="t b">SEC EDGAR / XBRL</text><text x="40" y="450" class="t b">Financial statements</text>
+<text x="40" y="475" class="t b">ICFR disclosures</text><text x="40" y="500" class="t b">Audit reports / PCAOB</text>
+<text x="40" y="525" class="t b">CAM/KAM</text><text x="40" y="550" class="t b">AAER / enforcement</text>
+<text x="40" y="575" class="t b">ESG / sustainability</text><text x="40" y="600" class="t b">ERP / GL / documents</text>
+<text x="40" y="640" class="t s">Gate: source, date, rights,</text><text x="40" y="660" class="t s">cutoff and provenance.</text>
+
+<rect x="275" y="355" width="1040" height="70" rx="12" fill="url(#navy)"/>
+<text x="540" y="388" class="w h2">NAAIL Agent Orchestrator</text>
+<text x="440" y="412" class="w b">Task planning • bounded routing • trace preservation • unresolved-objection retention</text>
+
+<g>
+  <rect x="275" y="450" width="190" height="225" rx="12" fill="#1678c8"/><text x="300" y="485" class="w h3">Evidence Agent</text>
+  <text x="298" y="522" class="w b">Source retrieval</text><text x="298" y="547" class="w b">Fact verification</text><text x="298" y="572" class="w b">Citation &amp; provenance</text><text x="298" y="597" class="w b">Evidence Passport</text><text x="298" y="622" class="w b">Temporal cutoff gate</text>
+  <rect x="480" y="450" width="190" height="225" rx="12" fill="#159b69"/><text x="502" y="485" class="w h3">LEMON ICFR</text>
+  <text x="502" y="522" class="w b">Risk estimation</text><text x="502" y="547" class="w b">Key drivers</text><text x="502" y="572" class="w b">ML / science models</text><text x="502" y="597" class="w b">Uncertainty / abstain</text><text x="502" y="622" class="w b">No audit opinion</text>
+  <rect x="685" y="450" width="190" height="225" rx="12" fill="#e7524d"/><text x="705" y="485" class="w h3">Challenger</text>
+  <text x="705" y="522" class="w b">Falsify assumptions</text><text x="705" y="547" class="w b">Contradictory evidence</text><text x="705" y="572" class="w b">Alternative explanations</text><text x="705" y="597" class="w b">Leakage / brittle logic</text><text x="705" y="622" class="w b">Model disagreement</text>
+  <rect x="890" y="450" width="190" height="225" rx="12" fill="#7247c5"/><text x="909" y="485" class="w h3">Assurance Reviewer</text>
+  <text x="910" y="522" class="w b">Integrate results</text><text x="910" y="547" class="w b">Assess reliability</text><text x="910" y="572" class="w b">Preserve disagreement</text><text x="910" y="597" class="w b">Escalate uncertainty</text><text x="910" y="622" class="w b">Decision package</text>
+  <rect x="1095" y="450" width="220" height="225" rx="12" fill="#c99112"/><text x="1120" y="485" class="w h3">Human Approval Gate</text>
+  <text x="1120" y="522" class="w b">Approve</text><text x="1120" y="547" class="w b">Request more evidence</text><text x="1120" y="572" class="w b">Modify / reject</text><text x="1120" y="597" class="w b">Professional judgment</text><text x="1120" y="622" class="w b">Accountable final action</text>
+</g>
+
+<rect x="1340" y="355" width="235" height="365" rx="14" class="box"/>
+<text x="1360" y="390" class="t h3">Shared Product Suite</text>
+<text x="1360" y="425" class="t b">LEMON — ICFR</text><text x="1360" y="452" class="t b">KIWI — CAM/KAM</text>
+<text x="1360" y="479" class="t b">APPLE — Forensic/AAER</text><text x="1360" y="506" class="t b">MANGO — IFRS</text>
+<text x="1360" y="533" class="t b">AVOCADO — ESG</text><text x="1360" y="560" class="t b">GRAPE — PCAOB</text>
+<text x="1360" y="587" class="t b">BERRY — Cyber/ITGC</text>
+<text x="1360" y="630" class="t s">Each module must pass</text><text x="1360" y="650" class="t s">separate scientific and</text><text x="1360" y="670" class="t s">market validation.</text>
+
+<rect x="20" y="745" width="1555" height="125" rx="14" fill="#fff" stroke="#bcd3e3"/>
+<text x="40" y="780" class="t h3">Core research proposition</text>
+<text x="40" y="810" class="t b">Evidence-governed multi-agent systems should be evaluated against human-only, single-AI and ordinary multi-agent alternatives on decision loss, calibration, unsupported claims, contradictory-evidence use, review effort, abstention and error disagreement.</text>
+<text x="40" y="842" class="t b">Public-artifact boundary: all example scores or “live/verified” states are illustrative unless linked to an executed, reproducible run. NAAIL/LEMON is a research/startup POC, not an audit opinion system or regulator-approved product.</text>
+</svg>
