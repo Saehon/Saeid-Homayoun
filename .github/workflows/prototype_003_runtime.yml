@@ -99,7 +99,7 @@ jobs:
           PY
 
       - name: Upload Gemini result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: prototype-004-gemini
           path: NAAIL-OpenLab/Prototype_003/runtime/outputs/provider_gemini.json
@@ -151,7 +151,7 @@ jobs:
           PY
 
       - name: Upload Microsoft Foundry result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: prototype-004-microsoft-foundry
           path: NAAIL-OpenLab/Prototype_003/runtime/outputs/provider_foundry.json

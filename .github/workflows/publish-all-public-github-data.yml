@@ -62,7 +62,7 @@ jobs:
           PY
 
       - name: Upload snapshot artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: github-public-research-data
           path: /tmp/github-public-data/

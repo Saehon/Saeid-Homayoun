@@ -55,7 +55,7 @@ jobs:
           print("Scientific automation invariants passed.")
           PY
       - name: Upload auditable automation trace
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: econova-ai-to-ai-demo-trace
           path: automation/artifacts/demo_chain.json

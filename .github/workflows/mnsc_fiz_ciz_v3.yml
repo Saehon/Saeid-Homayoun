@@ -105,50 +105,50 @@ jobs:
           cat studies/MNSc-FamaFrench-01/v3/artifact/RUN_SUMMARY.json
 
       - name: Upload full replication package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: MNSc_FIZ_CIZ_V3_real_data_package
           path: studies/MNSc-FamaFrench-01/v3/artifact/
           if-no-files-found: error
 
       - name: Upload frozen scientific protocol
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 00_Protocol
           path: studies/MNSc-FamaFrench-01/v3/artifact/00_Protocol/
 
       - name: Upload raw data
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 01_Data_Raw
           path: studies/MNSc-FamaFrench-01/v3/artifact/01_Data_Raw/
 
       - name: Upload clean data
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 02_Data_Clean
           path: studies/MNSc-FamaFrench-01/v3/artifact/02_Data_Clean/
 
       - name: Upload Stata code
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 03_Stata_Code
           path: studies/MNSc-FamaFrench-01/v3/artifact/03_Stata_Code/
 
       - name: Upload five-table outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 04_Output_5_Tables
           path: studies/MNSc-FamaFrench-01/v3/artifact/04_Output_5_Tables/
 
       - name: Upload empirical results document
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 05_Manuscript
           path: studies/MNSc-FamaFrench-01/v3/artifact/05_Manuscript/
 
       - name: Upload literature anchors
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 07_FT50_ABS4_Literature
           path: studies/MNSc-FamaFrench-01/v3/artifact/07_FT50_ABS4_Literature/
