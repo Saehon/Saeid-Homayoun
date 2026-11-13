@@ -6,4 +6,4 @@ numpy>=2.5.3
 statsmodels>=0.15.0
 scikit-learn>=1.4
 requests>=2.34.2
-pytest>=8.0
+pytest>=9.1.1
