@@ -1,0 +1,27 @@
+name: NAAIL V1 B2 Duplicate Case Correction Guard
+
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  b2-duplicate-case-correction-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout additive correction
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile correction guard
+        run: python -m py_compile NAAIL/research-assurance-mcp/v1-preparation/b2/test_b2_duplicate_case_correction.py
+
+      - name: Validate additive correction invariants
+        run: python NAAIL/research-assurance-mcp/v1-preparation/b2/test_b2_duplicate_case_correction.py
