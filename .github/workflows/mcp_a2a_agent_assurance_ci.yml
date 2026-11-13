@@ -1,0 +1,37 @@
+name: MCP A2A Agent Assurance CI
+
+on:
+  pull_request:
+    paths:
+      - "MCP-A2A-Agent-Assurance/**"
+      - ".github/workflows/mcp_a2a_agent_assurance_ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile reference package
+        run: python -m compileall -q MCP-A2A-Agent-Assurance/src
+
+      - name: Run unit tests
+        env:
+          PYTHONPATH: MCP-A2A-Agent-Assurance/src
+        run: python -m unittest discover -s MCP-A2A-Agent-Assurance/tests -v
+
+      - name: Validate example Evidence Passport
+        env:
+          PYTHONPATH: MCP-A2A-Agent-Assurance/src
+        run: python -m naail_agent_assurance.cli validate MCP-A2A-Agent-Assurance/examples/evidence_passport.example.json
