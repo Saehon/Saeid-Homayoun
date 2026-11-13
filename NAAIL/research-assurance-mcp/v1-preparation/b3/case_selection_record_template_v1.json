@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "NAAIL-V1-B3-CASE-SELECTION-V1",
+  "record_status": "BLANK_TEMPLATE_NOT_A_CANDIDATE",
+  "candidate_id": null,
+  "normalized_doi": null,
+  "article": {
+    "title": null,
+    "authors": [],
+    "journal": null,
+    "publication_year": null,
+    "peer_review_evidence_url": null,
+    "field": null,
+    "ft50_status": null,
+    "ft50_evidence_url": null
+  },
+  "replication_package": {
+    "source_url": null,
+    "provider": null,
+    "accessed_at_utc": null,
+    "version_or_commit": null,
+    "license_or_reuse_status": null,
+    "fingerprints": []
+  },
+  "table_to_code_map": [
+    {
+      "reported_result": null,
+      "code_path": null,
+      "entry_point": null,
+      "expected_output_path": null
+    }
+  ],
+  "execution_path": {
+    "language": null,
+    "allowed_values": ["Stata", "Python"],
+    "entry_point": null,
+    "execution_order": [],
+    "environment_requirements": [],
+    "restricted_dependencies": []
+  },
+  "public_data_independent_reproduction_path": {
+    "bounded_result_or_construct": null,
+    "public_sources": [],
+    "method": null,
+    "licensed_result_substitution_prohibited": true,
+    "limitations": []
+  },
+  "prior_exposure": {
+    "operator": null,
+    "claude": null,
+    "human": null,
+    "earlier_screening_or_runs": []
+  },
+  "eligibility": {
+    "criterion_results": [],
+    "operator_determination": null,
+    "claude_review": null
+  },
+  "human_selection": {
+    "decision": null,
+    "decision_at_utc": null,
+    "decision_record": null
+  },
+  "assurance_boundaries": {
+    "no_scientific_claim_from_selection": true,
+    "no_automatic_case_selection": true,
+    "poc_approval_required_before_execution": true
+  }
+}
