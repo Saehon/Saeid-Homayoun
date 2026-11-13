@@ -1,4 +1,6 @@
-sentiment,sentence,label
-neutral,"The shares carry a right to dividend and other shareholder rights as from their registration with the Finnish Trade Register .",1
-positive,"UPM-Kymmene has generated four consecutive quarters of positive Free Cash Flow .",2
-negative,"Pharmaceuticals group Orion Corp reported a fall in its third-quarter earnings that were hit by larger expenditures on R&D and marketing .",0
+label,sentence,sentiment
+1,The shares carry a right to dividend and other shareholder rights as from their registration with the Finnish Trade Register .,neutral
+2,UPM-Kymmene has generated four consecutive quarters of positive Free Cash Flow .,positive
+2,"Known as Post Bank , the concept would see Fidelity Bank rolling out 75 offices in Ghana Post premises , to provide financial services to the people .",positive
+0,Hobby Hall 's sales decrease 26 pct due to implementing a new information system that involved changing in the principal of posting sales .,negative
+1,"The total restructuring costs are expected to be about EUR 30mn , of which EUR 13.5 mn was booked in December 2008 .",neutral

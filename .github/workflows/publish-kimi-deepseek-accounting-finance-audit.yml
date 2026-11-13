@@ -27,7 +27,7 @@ jobs:
       has_kaggle: ${{ steps.creds.outputs.kaggle }}
     steps:
       - name: Checkout canonical GitHub repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Verify stack
         shell: bash
@@ -82,7 +82,7 @@ jobs:
     if: needs.build.outputs.has_hf == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -121,7 +121,7 @@ jobs:
     if: needs.build.outputs.has_kaggle == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
