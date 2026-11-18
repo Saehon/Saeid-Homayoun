@@ -150,3 +150,35 @@ This standard should be applied to:
 - future KIWI™, ICFR/time-series, sustainability, forensic, and data-economy products.
 
 Reference forks such as TimesFM should remain clearly attributed to their upstream owners and used as dependencies, benchmarks, or integration sandboxes rather than represented as original NAAIL products.
+
+
+## 7. User-facing Product Experience Contract (UX pilot, November 2026)
+
+For public-facing **original NAAIL research products**, use the following UX sequence in addition to the technical/scientific repository requirements above:
+
+1. **Discover:** state the user, the task and the concrete outcome in plain language, preferably on the first screen.
+2. **Understand:** provide one representative 30–60-second *illustrative* scenario or a truthful, independently reproducible demo.
+3. **Try:** if executable, provide exact prerequisites, sandbox data, limits and a one-command/single-click task. If not executable, label it **conceptual walkthrough**.
+4. **Verify:** link scientific claims directly to code, source/data rights, provenance, tests, peer-reviewed support and known uncertainty.
+5. **Decide:** show a clear next action (view source, reproduce, cite, request approved collaboration) and do not impersonate a professional approval.
+
+### Mandatory product-card metadata
+
+`product_name`, `audience`, `problem`, `outcome`, `maturity`, `ownership/provenance`, `public_evidence_url` (or explicitly unavailable), `data_rights`, `human_review_boundary`, `last_reviewed`.
+
+### Launch / trust gates
+
+- No false "live demo": static storyboards must not claim inference, source retrieval, computed risk scores or successful empirical verification.
+- No display of private repository addresses, private Google Drive links, credentials, client records, confidential datasets or licensed full text.
+- No automatic change to professional conclusions from user clicks, model responses or engagement data; retain the Human Gate.
+- No metric/impact or regulatory assurance claims without scoped reproducible evidence.
+- Minimal, accessible, mobile-first navigation and a visible maturity label.
+- Perform owner/IP review, link validation, keyboard/mobile accessibility testing and user-task evaluation prior to public deployment.
+
+### Preferred design and research success metric
+
+A short-form visual story and discovery card are **navigation interfaces**, not engagement-maximization machinery. Favor task-based discovery over opaque recommendation algorithms or endless-scroll incentives.
+
+Proposed north-star metric: **Evidence-grounded successful product discovery rate** = participants who (i) select the correct product for a scenario, (ii) correctly identify its maturity, and (iii) locate a public evidence source, divided by all participants given that scenario. Treat any targets as hypotheses until a documented usability test is completed.
+
+UX pilot and review specification: [product-hub/index.html](product-hub/index.html) · [product-hub/PRODUCT_UX_SPEC.md](product-hub/PRODUCT_UX_SPEC.md).
