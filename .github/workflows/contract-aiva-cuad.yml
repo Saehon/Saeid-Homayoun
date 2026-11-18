@@ -1,0 +1,26 @@
+name: Contract-AIVA CUAD Full Baseline
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'contract-aiva/full_cuad_pilot.py'
+      - '.github/workflows/contract-aiva-cuad.yml'
+jobs:
+  full-cuad:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download official CUAD and run all documents
+        run: python contract-aiva/full_cuad_pilot.py --out results_full
+      - name: Upload derived results
+        uses: actions/upload-artifact@v4
+        with:
+          name: contract-aiva-cuad-full-results
+          path: results_full/
+          retention-days: 30
